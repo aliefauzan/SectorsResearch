@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "name": "aem sgd",
+      "symbol": "AWX.SI",
+      "date": "2026-07-08",
+      "volume": 758800,
+      "value": 7150370.0
+    }
+  ],
+  "pagination": {
+    "total_count": 16665,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

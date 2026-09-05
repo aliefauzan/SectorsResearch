@@ -1,0 +1,352 @@
+{
+ "Direct Fields (Top-level columns)": [
+  {
+   "field": "symbol",
+   "desc": "SGX ticker symbol (3-4 characters, e.g. `D05`, `U11`, `Z74`, `TCPD`; accepts optional `.SI` suffix on input, always returned with it)"
+  },
+  {
+   "field": "company_name",
+   "desc": "Full registered company name"
+  },
+  {
+   "field": "sector",
+   "desc": "SGX sector classification. NB: source data contains duplicate labels (e.g. `Consumer Cyclical` vs `Consumer Cyclicals`, `Financial Services` vs `Financials`) \u2014 pending upstream cleanup."
+  },
+  {
+   "field": "sub_sector",
+   "desc": "SGX sub-sector classification (126 distinct values)"
+  },
+  {
+   "field": "market_cap",
+   "desc": "Market capitalisation in SGD"
+  },
+  {
+   "field": "volume",
+   "desc": "Recent average daily trading volume (shares)"
+  },
+  {
+   "field": "last_close_price",
+   "desc": "Most recent close price in SGD"
+  },
+  {
+   "field": "employee_num",
+   "desc": "Total number of employees"
+  },
+  {
+   "field": "pe",
+   "desc": "Price-to-earnings ratio"
+  },
+  {
+   "field": "eps",
+   "desc": "Earnings per share (SGD)"
+  },
+  {
+   "field": "beta",
+   "desc": "Beta vs SGX market"
+  },
+  {
+   "field": "ps",
+   "desc": "Price-to-sales ratio"
+  },
+  {
+   "field": "pcf",
+   "desc": "Price-to-cash-flow ratio"
+  },
+  {
+   "field": "pb",
+   "desc": "Price-to-book ratio"
+  },
+  {
+   "field": "gross_margin",
+   "desc": "Gross profit margin (decimal, e.g. 0.45 = 45%)"
+  },
+  {
+   "field": "operating_margin",
+   "desc": "Operating profit margin (decimal)"
+  },
+  {
+   "field": "net_profit_margin",
+   "desc": "Net profit margin (decimal)"
+  },
+  {
+   "field": "quick_ratio",
+   "desc": "Quick ratio (acid test)"
+  },
+  {
+   "field": "current_ratio",
+   "desc": "Current ratio"
+  },
+  {
+   "field": "debt_to_equity",
+   "desc": "Debt-to-equity ratio"
+  },
+  {
+   "field": "one_year_eps_growth",
+   "desc": "1-year EPS growth (decimal)"
+  },
+  {
+   "field": "one_year_sales_growth",
+   "desc": "1-year sales (revenue) growth (decimal)"
+  },
+  {
+   "field": "forward_dividend",
+   "desc": "Forward annual dividend per share in SGD"
+  },
+  {
+   "field": "forward_dividend_yield",
+   "desc": "Forward annual dividend yield (decimal)"
+  },
+  {
+   "field": "dividend_ttm",
+   "desc": "Trailing-twelve-month dividend per share in SGD"
+  },
+  {
+   "field": "dividend_yield_5y_avg",
+   "desc": "5-year average dividend yield (decimal)"
+  },
+  {
+   "field": "dividend_growth_rate",
+   "desc": "Year-over-year dividend growth rate (decimal)"
+  },
+  {
+   "field": "payout_ratio",
+   "desc": "Dividend payout ratio (decimal)"
+  },
+  {
+   "field": "change_1d",
+   "desc": "1-day price change (decimal)"
+  },
+  {
+   "field": "change_7d",
+   "desc": "7-day price change (decimal)"
+  },
+  {
+   "field": "change_1m",
+   "desc": "1-month price change (decimal)"
+  },
+  {
+   "field": "change_ytd",
+   "desc": "Year-to-date price change (decimal)"
+  },
+  {
+   "field": "change_1y",
+   "desc": "1-year price change (decimal)"
+  },
+  {
+   "field": "change_3y",
+   "desc": "3-year price change (decimal)"
+  }
+ ],
+ "Array Fields": [
+  {
+   "field": "tags",
+   "desc": "Analyst sentiment / classification tags"
+  }
+ ],
+ "JSON Object Fields (Most Recent Data)": [
+  {
+   "field": "ytd_low_price",
+   "desc": "Year-to-date lowest closing price in SGD"
+  },
+  {
+   "field": "ytd_low_date",
+   "desc": "Date of the year-to-date lowest closing price"
+  },
+  {
+   "field": "ytd_high_price",
+   "desc": "Year-to-date highest closing price in SGD"
+  },
+  {
+   "field": "ytd_high_date",
+   "desc": "Date of the year-to-date highest closing price"
+  },
+  {
+   "field": "52_w_low_price",
+   "desc": "52-week lowest closing price in SGD"
+  },
+  {
+   "field": "52_w_low_date",
+   "desc": "Date of the 52-week lowest closing price"
+  },
+  {
+   "field": "52_w_high_price",
+   "desc": "52-week highest closing price in SGD"
+  },
+  {
+   "field": "52_w_high_date",
+   "desc": "Date of the 52-week highest closing price"
+  },
+  {
+   "field": "90_d_low_price",
+   "desc": "90-day lowest closing price in SGD"
+  },
+  {
+   "field": "90_d_low_date",
+   "desc": "Date of the 90-day lowest closing price"
+  },
+  {
+   "field": "90_d_high_price",
+   "desc": "90-day highest closing price in SGD"
+  },
+  {
+   "field": "90_d_high_date",
+   "desc": "Date of the 90-day highest closing price"
+  },
+  {
+   "field": "all_time_low_price",
+   "desc": "All-time lowest closing price in SGD"
+  },
+  {
+   "field": "all_time_low_date",
+   "desc": "Date of the all-time lowest closing price"
+  },
+  {
+   "field": "all_time_high_price",
+   "desc": "All-time highest closing price in SGD"
+  },
+  {
+   "field": "all_time_high_date",
+   "desc": "Date of the all-time highest closing price"
+  }
+ ],
+ "Yearly JSON Fields (Historical & Forecast Data)": [
+  {
+   "field": "revenue",
+   "desc": "Annual revenue in SGD. Use: `revenue[2024]`."
+  },
+  {
+   "field": "earnings",
+   "desc": "Annual net profit/loss in SGD. Use: `earnings[2024]`."
+  },
+  {
+   "field": "total_dividend",
+   "desc": "Total dividends paid per share for the year (SGD). Use: `total_dividend[2024]`."
+  },
+  {
+   "field": "total_yield",
+   "desc": "Total dividend yield for the year (decimal). Use: `total_yield[2024]`."
+  },
+  {
+   "field": "operating_cash_flow",
+   "desc": "Operating cash flow in SGD. Use: `operating_cash_flow[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "investing_cash_flow",
+   "desc": "Investing cash flow in SGD. Use: `investing_cash_flow[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "financing_cash_flow",
+   "desc": "Financing cash flow in SGD. Use: `financing_cash_flow[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "free_cash_flow",
+   "desc": "Free cash flow in SGD. Use: `free_cash_flow[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "net_cash_flow",
+   "desc": "Net cash flow in SGD. Use: `net_cash_flow[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "capital_expenditure",
+   "desc": "Capital expenditure in SGD. Use: `capital_expenditure[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "ebit",
+   "desc": "EBIT (earnings before interest and tax) in SGD. Use: `ebit[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "ebitda",
+   "desc": "EBITDA in SGD. Use: `ebitda[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "gross_income",
+   "desc": "Gross income in SGD. Use: `gross_income[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "cost_of_revenue",
+   "desc": "Cost of revenue in SGD. Use: `cost_of_revenue[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "operating_income",
+   "desc": "Operating income in SGD. Use: `operating_income[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "operating_expense",
+   "desc": "Operating expense in SGD. Use: `operating_expense[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "pretax_income",
+   "desc": "Pre-tax income in SGD. Use: `pretax_income[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "income_taxes",
+   "desc": "Income taxes paid in SGD. Use: `income_taxes[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "total_asset",
+   "desc": "Total assets in SGD. Use: `total_asset[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "total_equity",
+   "desc": "Total equity in SGD. Use: `total_equity[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "total_liabilities",
+   "desc": "Total liabilities in SGD. Use: `total_liabilities[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "working_capital",
+   "desc": "Working capital in SGD. Use: `working_capital[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "total_current_asset",
+   "desc": "Total current assets in SGD. Use: `total_current_asset[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "total_non_current_asset",
+   "desc": "Total non-current assets in SGD. Use: `total_non_current_asset[2024]`. _(coverage: Big caps only)_"
+  },
+  {
+   "field": "net_interest_income",
+   "desc": "Net interest income in SGD. Use: `net_interest_income[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "interest_income",
+   "desc": "Total interest income in SGD. Use: `interest_income[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "interest_expense",
+   "desc": "Total interest expense in SGD. Use: `interest_expense[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "net_fee_and_commission_income",
+   "desc": "Net fee and commission income in SGD. Use: `net_fee_and_commission_income[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "net_trading_income",
+   "desc": "Net trading income in SGD. Use: `net_trading_income[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "net_loan",
+   "desc": "Net loans outstanding in SGD. Use: `net_loan[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "gross_loan",
+   "desc": "Gross loans outstanding in SGD. Use: `gross_loan[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "total_deposit",
+   "desc": "Total customer deposits in SGD. Use: `total_deposit[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "core_capital_tier1",
+   "desc": "Core capital (Tier 1) in SGD. Use: `core_capital_tier1[2024]`. _(coverage: Banks only)_"
+  },
+  {
+   "field": "total_risk_weighted_asset",
+   "desc": "Total risk-weighted assets in SGD. Use: `total_risk_weighted_asset[2024]`. _(coverage: Banks only)_"
+  }
+ ],
+ "Quarterly Financial Data": [],
+ "JSON List Fields": []
+}

@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "commodity_type": "Nickel",
+      "city": "Luwu Timur",
+      "province": "Sulawesi Selatan",
+      "company_name": "Aneka Tambang",
+      "winner_date": "2024-06-20",
+      "licensed_area_ha": 4252.0,
+      "license_number": "56.K/MB.01/MEM.B/2023",
+      "area_type": "WIUPK",
+      "kdi": "14409850000",
+      "wiup_code": "1473242122023001",
+      "auction_status": "Lelang Selesai",
+      "participant_count": 3,
+      "winner": true,
+      "company_slug": "pt-aneka-tambang-tbk"
+    }
+  ],
+  "pagination": {
+    "total_count": 14,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

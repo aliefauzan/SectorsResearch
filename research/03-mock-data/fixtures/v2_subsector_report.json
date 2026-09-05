@@ -1,0 +1,208 @@
+{
+  "sector": "Financials",
+  "sub_sector": "Banks",
+  "statistics": {
+    "total_companies": 48,
+    "filtered_median_pe": 10.4288135366844,
+    "filtered_weighted_avg_pe": 21.4251075763744,
+    "min_company_pe": -71.1356797834811,
+    "max_company_pe": 2260.11995611975
+  },
+  "market_cap": {
+    "total_market_cap": 2270674491028811.0,
+    "avg_market_cap": 47305718563100.23,
+    "quarterly_market_cap": {
+      "prev_ttm_mcap": {
+        "2024.Q3": 3551044934989155,
+        "2024.Q4": 3127779808736190,
+        "2025.Q1": 2920729472077129,
+        "2025.Q2": 2894282900181794
+      },
+      "current_ttm_mcap": {
+        "2025.Q3": 2888396179351048,
+        "2025.Q4": 2967395075922848,
+        "2026.Q1": 2546937649790620,
+        "2026.Q2": 2159261346185052
+      },
+      "current_ttm_mcap_pavg": {
+        "2025.Q3": 374931133894889.75,
+        "2025.Q4": 402428987201133.1,
+        "2026.Q1": 308490581440144.6,
+        "2026.Q2": 241711460429060.4
+      }
+    },
+    "mcap_summary": {
+      "mcap_change": {
+        "1w": 0.07234231322058868,
+        "1y": -0.18232863116204015,
+        "ytd": -0.2196969909388355
+      },
+      "monthly_performance": {
+        "2026-07-07": 0.07234231322058868
+      },
+      "performance_quantile": 0.303030303030303
+    }
+  },
+  "stability": {
+    "weighted_max_drawdown": -0.413142185849409,
+    "weighted_rsd_close": 0.11954026035742876
+  },
+  "valuation": {
+    "historical_valuation": {
+      "2026": {
+        "pb": 0.715411092561811,
+        "pe": 10.4288135366844,
+        "ps": 2.69225050633287,
+        "pcf": 1.84872725964141,
+        "pb_rank": 3,
+        "pe_rank": 21,
+        "ps_rank": 26,
+        "pcf_rank": 8
+      }
+    }
+  },
+  "growth": {
+    "weighted_avg_growth_data": {
+      "2025": {
+        "avg_annual_earning_growth": -0.173413347578721,
+        "avg_annual_revenue_growth": 0.0244417440723376
+      }
+    },
+    "growth_forecasts": {
+      "2027": {
+        "base_year": 2025,
+        "eps_growth": 0.255179257989511,
+        "revenue_growth": 0.286618145500655
+      }
+    }
+  },
+  "companies": {
+    "top_companies": {
+      "top_mcap": {
+        "BBCA.JK": {
+          "name": "PT Bank Central Asia Tbk.",
+          "market_cap": 753611199412500
+        },
+        "BBNI.JK": {
+          "name": "PT Bank Negara Indonesia (Persero) Tbk",
+          "market_cap": 124804268476680
+        },
+        "BBRI.JK": {
+          "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+          "market_cap": 418621118327730
+        },
+        "BMRI.JK": {
+          "name": "PT Bank Mandiri (Persero) Tbk",
+          "market_cap": 366827999984120
+        },
+        "BNLI.JK": {
+          "name": "Bank Permata Tbk",
+          "market_cap": 86325105679250
+        }
+      },
+      "top_growth": {
+        "BBKP.JK": {
+          "name": "PT Bank KB Indonesia Tbk",
+          "revenue_growth": 0.589501041428457
+        },
+        "BBSI.JK": {
+          "name": "PT Krom Bank Indonesia Tbk",
+          "revenue_growth": 0.963331291882344
+        },
+        "BINA.JK": {
+          "name": "PT Bank Ina Perdana Tbk.",
+          "revenue_growth": 0.49280231161552
+        },
+        "BJTM.JK": {
+          "name": "Bank Pembangunan Daerah Jawa Timur Tbk",
+          "revenue_growth": 0.398197873508861
+        },
+        "PNBS.JK": {
+          "name": "PT Bank Panin Dubai Syariah Tbk",
+          "revenue_growth": 0.445366692691176
+        }
+      },
+      "top_profit": {
+        "BBCA.JK": {
+          "name": "PT Bank Central Asia Tbk.",
+          "profit_ttm": 58136525000000
+        },
+        "BBNI.JK": {
+          "name": "PT Bank Negara Indonesia (Persero) Tbk",
+          "profit_ttm": 20446776000000
+        },
+        "BBRI.JK": {
+          "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+          "profit_ttm": 59452521000000
+        },
+        "BMRI.JK": {
+          "name": "PT Bank Mandiri (Persero) Tbk",
+          "profit_ttm": 67577842000000
+        },
+        "BRIS.JK": {
+          "name": "PT Bank Syariah Indonesia Tbk",
+          "profit_ttm": 7888825000000
+        }
+      },
+      "top_revenue": {
+        "BBCA.JK": {
+          "name": "PT Bank Central Asia Tbk.",
+          "revenue_ttm": 114174419000000
+        },
+        "BBNI.JK": {
+          "name": "PT Bank Negara Indonesia (Persero) Tbk",
+          "revenue_ttm": 62907785000000
+        },
+        "BBRI.JK": {
+          "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+          "revenue_ttm": 208321228000000
+        },
+        "BMRI.JK": {
+          "name": "PT Bank Mandiri (Persero) Tbk",
+          "revenue_ttm": 153899943000000
+        },
+        "BRIS.JK": {
+          "name": "PT Bank Syariah Indonesia Tbk",
+          "revenue_ttm": 27020137000000
+        }
+      }
+    },
+    "top_change_companies": {
+      "ARTO.JK": {
+        "pe": 46.1612721168696,
+        "1yr": -0.40117994100295,
+        "1mth": 0.260869565217391,
+        "name": "PT Bank Jago Tbk.",
+        "last_close": 1015
+      },
+      "BBCA.JK": {
+        "pe": 12.9627837132078,
+        "1yr": -0.273529411764706,
+        "1mth": 0.27319587628866,
+        "name": "PT Bank Central Asia Tbk.",
+        "last_close": 6175
+      },
+      "BCIC.JK": {
+        "pe": -4.3461391771011,
+        "1yr": -0.3,
+        "1mth": 0.525641025641026,
+        "name": "PT Bank JTrust Indonesia Tbk.",
+        "last_close": 119
+      },
+      "BNBA.JK": {
+        "pe": 1089.19681754738,
+        "1yr": -0.15028901734104,
+        "1mth": 0.256410256410256,
+        "name": "Bank Bumi Arta Tbk",
+        "last_close": 735
+      },
+      "DNAR.JK": {
+        "pe": 9.55678478709061,
+        "1yr": 0.0471698113207547,
+        "1mth": 0.233333333333333,
+        "name": "PT Bank Oke Indonesia Tbk",
+        "last_close": 111
+      }
+    }
+  }
+}

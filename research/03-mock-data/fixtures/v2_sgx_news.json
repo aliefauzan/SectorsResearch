@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "title": "Three SGX underdog stocks raise dividends amid soft profit trends",
+      "body": "The article discusses three Singapore Exchange‑listed companies that increased their total dividend payouts for the most recent financial year. Credit Bureau Asia lifted its full‑year dividend to S$0,042 per share on a FY2025 revenue of S$60.1 million, profit of S$10.7 million and free cash flow of S$27.2 million, while holding S$71.1 million in liquid assets and no borrowings. Valuetronics announced a FY2026 dividend of HK$0.38 per share, a 41 % rise, backed by free cash flow of HK$178.4 million, cash of HK$1.21 billion and a plan to return HK$300 million to shareholders through special dividends and buybacks, despite a net profit drop to HK$111.4 million. Old Chang Kee raised its total payout to S$0.03 per share, of which S$0.02 is recurring, on FY2026 revenue of S$103.5 million, net profit of S$9.6 million and free cash flow of S$21.0 million, with S$61.6 million cash and minimal debt. The piece notes that each company’s higher dividend is supported by strong cash generation and balance‑sheet strength rather than rising earnings, a point retirees should consider when evaluating sustainable income.",
+      "source": "https://thesmartinvestor.com.sg/hunting-for-cash-these-sgx-underdog-stocks-just-paid-out-big/",
+      "timestamp": "2026-07-09T11:30:00",
+      "sector": "financial-services",
+      "sub_sector": [
+        "financial-data-shell-companies",
+        "hardware-electronics",
+        "restaurants-food-retail"
+      ],
+      "tags": [
+        "Dividend Announcement",
+        "Financial Metrics",
+        "Stock Buyback",
+        "Bullish"
+      ],
+      "symbols": [
+        "TCU.SI",
+        "BN2.SI",
+        "5ML.SI"
+      ],
+      "dimension": {
+        "future": 0,
+        "dividend": 0,
+        "ownership": 0,
+        "technical": 0,
+        "valuation": 0,
+        "financials": 1,
+        "management": 0,
+        "sustainability": 0
+      }
+    }
+  ],
+  "pagination": {
+    "total_count": 243,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

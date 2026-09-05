@@ -1,0 +1,98 @@
+# Sectors · REITs
+
+> A neutral analyst terminal for Singapore-listed REITs (S-REITs) by Supertype. Every trust's FY filing fundamentals — gearing, occupancy, distribution per unit (DPU), WALE, portfolio value — alongside the live market layer (price, yield, market cap), plus where each REIT owns property, country by country. Figures are as reported in annual filings; nothing is a grade or a recommendation.
+
+Key facts:
+- Covers 37 listed Singapore REITs across 7 sub-sectors.
+- Portfolios span 3420 properties in 30 countries.
+- Filing data refreshes roughly yearly; the market layer is current.
+
+## Market hubs
+
+- [Market overview](https://reits.sectors.app/): the S-REIT market at a glance — medians, sub-sectors, geography.
+- [Screener](https://reits.sectors.app/screener): every listed S-REIT in one sortable table (yield, gearing, occupancy, WALE, P/B).
+- [Sub-sectors](https://reits.sectors.app/sub-sectors): the market split by asset class, defensive to cyclical.
+- [Countries](https://reits.sectors.app/countries): where the rent is earned, every country ranked by exposure.
+
+## REIT profiles
+
+- [Centurion Accommodation REIT (8C8U)](https://reits.sectors.app/reit/8c8u-centurion-accommodation-reit): Hospitality S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [CapitaLand Ascendas REIT (A17U)](https://reits.sectors.app/reit/a17u-capitaland-ascendas-reit): Industrial S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Keppel DC REIT (AJBU)](https://reits.sectors.app/reit/ajbu-keppel-dc-reit): Data Centre S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [CapitaLand China Trust (AU8U)](https://reits.sectors.app/reit/au8u-capitaland-china-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [First Real Estate Investment Trust (AW9U)](https://reits.sectors.app/reit/aw9u-first-real-estate-investment-trust): Healthcare S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [BHG Retail REIT (BMGU)](https://reits.sectors.app/reit/bmgu-bhg-retail-reit): Retail S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Manulife US REIT (BTOU)](https://reits.sectors.app/reit/btou-manulife-us-reit): Office S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Frasers Logistics & Commercial Trust (BUOU)](https://reits.sectors.app/reit/buou-frasers-logistics-commercial-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Parkway Life Real Estate Investment Trust (C2PU)](https://reits.sectors.app/reit/c2pu-parkway-life-real-estate-investment-trust): Healthcare S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [CapitaLand Integrated Commercial Trust (C38U)](https://reits.sectors.app/reit/c38u-capitaland-integrated-commercial-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Keppel Pacific Oak US REIT (CMOU)](https://reits.sectors.app/reit/cmou-keppel-pacific-oak-us-reit): Office S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Sasseur REIT (CRPU)](https://reits.sectors.app/reit/crpu-sasseur-reit): Retail S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [CapitaLand India Trust (CY6U)](https://reits.sectors.app/reit/cy6u-capitaland-india-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Lippo Malls Indonesia Retail Trust (D5IU)](https://reits.sectors.app/reit/d5iu-lippo-malls-indonesia-retail-trust): Retail S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Digital Core REIT (DCRU)](https://reits.sectors.app/reit/dcru-digital-core-reit): Data Centre S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Daiwa House Logistics Trust (DHLU)](https://reits.sectors.app/reit/dhlu-daiwa-house-logistics-trust): Industrial S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [CapitaLand Ascott Trust (HMN)](https://reits.sectors.app/reit/hmn-capitaland-ascott-trust): Hospitality S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Frasers Centrepoint Trust (J69U)](https://reits.sectors.app/reit/j69u-frasers-centrepoint-trust): Retail S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [CDL Hospitality Trusts (J85)](https://reits.sectors.app/reit/j85-cdl-hospitality-trusts): Hospitality S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [ESR-REIT (J91U)](https://reits.sectors.app/reit/j91u-esr-reit): Industrial S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Lendlease Global Commercial REIT (JYEU)](https://reits.sectors.app/reit/jyeu-lendlease-global-commercial-reit): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Keppel REIT (K71U)](https://reits.sectors.app/reit/k71u-keppel-reit): Office S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Alpha Integrated REIT (M1GU)](https://reits.sectors.app/reit/m1gu-alpha-integrated-reit): Industrial S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Mapletree Logistics Trust (M44U)](https://reits.sectors.app/reit/m44u-mapletree-logistics-trust): Industrial S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Mapletree Industrial Trust (ME8U)](https://reits.sectors.app/reit/me8u-mapletree-industrial-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Elite UK REIT (MXNU)](https://reits.sectors.app/reit/mxnu-elite-uk-reit): Office S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Mapletree Pan Asia Commercial Trust (N2IU)](https://reits.sectors.app/reit/n2iu-mapletree-pan-asia-commercial-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [AIMS APAC REIT (O5RU)](https://reits.sectors.app/reit/o5ru-aims-apac-reit): Industrial S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [United Hampshire US REIT (ODBU)](https://reits.sectors.app/reit/odbu-united-hampshire-us-reit): Retail S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Prime US REIT (OXMU)](https://reits.sectors.app/reit/oxmu-prime-us-reit): Office S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Starhill Global Real Estate Investment Trust (P40U)](https://reits.sectors.app/reit/p40u-starhill-global-real-estate-investment-trust): Retail S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Far East Hospitality Trust (Q5T)](https://reits.sectors.app/reit/q5t-far-east-hospitality-trust): Hospitality S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Stoneweg Europe Stapled Trust (SET)](https://reits.sectors.app/reit/set-stoneweg-europe-stapled-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Suntec Real Estate Investment Trust (T82U)](https://reits.sectors.app/reit/t82u-suntec-real-estate-investment-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [OUE Real Estate Investment Trust (TS0U)](https://reits.sectors.app/reit/ts0u-oue-real-estate-investment-trust): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [IREIT Global (UD1U)](https://reits.sectors.app/reit/ud1u-ireit-global): Diversified S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+- [Acrophyte Hospitality Trust (XZL)](https://reits.sectors.app/reit/xzl-acrophyte-hospitality-trust): Hospitality S-REIT — FY fundamentals, distribution history, portfolio and tenants.
+
+## Sub-sectors
+
+- [Healthcare S-REITs](https://reits.sectors.app/sub-sectors/healthcare): 2 trusts vs the market median.
+- [Data Centre S-REITs](https://reits.sectors.app/sub-sectors/data-centre): 2 trusts vs the market median.
+- [Industrial S-REITs](https://reits.sectors.app/sub-sectors/industrial): 6 trusts vs the market median.
+- [Diversified S-REITs](https://reits.sectors.app/sub-sectors/diversified): 11 trusts vs the market median.
+- [Retail S-REITs](https://reits.sectors.app/sub-sectors/retail): 6 trusts vs the market median.
+- [Office S-REITs](https://reits.sectors.app/sub-sectors/office): 5 trusts vs the market median.
+- [Hospitality S-REITs](https://reits.sectors.app/sub-sectors/hospitality): 5 trusts vs the market median.
+
+## Countries
+
+- [S-REITs in Singapore](https://reits.sectors.app/countries/singapore): 22 REITs, 866 properties.
+- [S-REITs in United States](https://reits.sectors.app/countries/united-states): 9 REITs, 480 properties.
+- [S-REITs in Japan](https://reits.sectors.app/countries/japan): 14 REITs, 367 properties.
+- [S-REITs in Australia](https://reits.sectors.app/countries/australia): 13 REITs, 348 properties.
+- [S-REITs in United Kingdom](https://reits.sectors.app/countries/united-kingdom): 9 REITs, 262 properties.
+- [S-REITs in China](https://reits.sectors.app/countries/china): 9 REITs, 209 properties.
+- [S-REITs in France](https://reits.sectors.app/countries/france): 5 REITs, 175 properties.
+- [S-REITs in Germany](https://reits.sectors.app/countries/germany): 8 REITs, 126 properties.
+- [S-REITs in Indonesia](https://reits.sectors.app/countries/indonesia): 3 REITs, 94 properties.
+- [S-REITs in South Korea](https://reits.sectors.app/countries/south-korea): 4 REITs, 72 properties.
+- [S-REITs in Netherlands](https://reits.sectors.app/countries/netherlands): 4 REITs, 51 properties.
+- [S-REITs in Malaysia](https://reits.sectors.app/countries/malaysia): 5 REITs, 50 properties.
+- [S-REITs in United Kingdom/Europe](https://reits.sectors.app/countries/united-kingdom-europe): 1 REIT, 50 properties.
+- [S-REITs in Vietnam](https://reits.sectors.app/countries/vietnam): 3 REITs, 46 properties.
+- [S-REITs in India](https://reits.sectors.app/countries/india): 2 REITs, 44 properties.
+- [S-REITs in Italy](https://reits.sectors.app/countries/italy): 4 REITs, 38 properties.
+- [S-REITs in Hong Kong](https://reits.sectors.app/countries/hong-kong): 2 REITs, 30 properties.
+- [S-REITs in Denmark](https://reits.sectors.app/countries/denmark): 1 REIT, 24 properties.
+- [S-REITs in Finland](https://reits.sectors.app/countries/finland): 1 REIT, 18 properties.
+- [S-REITs in Czech Republic](https://reits.sectors.app/countries/czech-republic): 1 REIT, 14 properties.
+- [S-REITs in Spain](https://reits.sectors.app/countries/spain): 2 REITs, 11 properties.
+- [S-REITs in Poland](https://reits.sectors.app/countries/poland): 1 REIT, 10 properties.
+- [S-REITs in Slovakia](https://reits.sectors.app/countries/slovakia): 1 REIT, 10 properties.
+- [S-REITs in Ireland](https://reits.sectors.app/countries/ireland): 2 REITs, 6 properties.
+- [S-REITs in Canada](https://reits.sectors.app/countries/canada): 2 REITs, 4 properties.
+- [S-REITs in Maldives](https://reits.sectors.app/countries/maldives): 1 REIT, 4 properties.
+- [S-REITs in Belgium](https://reits.sectors.app/countries/belgium): 1 REIT, 4 properties.
+- [S-REITs in Philippines](https://reits.sectors.app/countries/philippines): 1 REIT, 4 properties.
+- [S-REITs in New Zealand](https://reits.sectors.app/countries/new-zealand): 1 REIT, 2 properties.
+- [S-REITs in Switzerland](https://reits.sectors.app/countries/switzerland): 1 REIT, 1 property.

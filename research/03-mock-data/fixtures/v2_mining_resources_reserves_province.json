@@ -1,0 +1,18 @@
+{
+  "province": "Kalimantan Selatan",
+  "data": {
+    "2024": {
+      "Coal": {
+        "exploration_target_Mt": 7.83,
+        "total_inventory_Mt": 1846.31,
+        "inferred_resources_Mt": 3481.9,
+        "indicated_resources_Mt": 3414.04,
+        "measured_resources_Mt": 6635.73,
+        "total_resources_Mt": 13531.67,
+        "total_resources_verify_Mt": 12376.75,
+        "total_reserves_Mt": 4066.94,
+        "total_reserves_verify_Mt": 3644.19
+      }
+    }
+  }
+}

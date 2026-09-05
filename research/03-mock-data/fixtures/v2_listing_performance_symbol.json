@@ -1,0 +1,21 @@
+{
+  "symbol": "BREN.JK",
+  "chg_7d": 2.52564,
+  "chg_30d": 4.64103,
+  "chg_90d": 8.26282,
+  "chg_365d": 7.58974,
+  "company_name": "PT Barito Renewables Energy Tbk.",
+  "listing_date": null,
+  "shares_offered": 4015000000,
+  "percent_total_shares": 0.03,
+  "book_building_start_date": "2023-09-18",
+  "book_building_end_date": "2023-09-25",
+  "book_building_lower_bound": 670,
+  "book_building_upper_bound": 780,
+  "offering_start_date": "2023-10-03",
+  "offering_end_date": "2023-10-05",
+  "offering_price": 780,
+  "distribution_date": "2023-10-06",
+  "prospectus_url": "https://e-ipo.co.id/en/pipeline/get-propectus-file?id=266&type=",
+  "additional_info_url": "https://e-ipo.co.id/en/pipeline/get-additional-info?id=266"
+}

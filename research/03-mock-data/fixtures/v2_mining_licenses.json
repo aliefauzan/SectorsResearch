@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "wiup_code": "2232785402019006",
+      "license_number": "540/59/29.1.07.0/DPMPTSP/2020",
+      "license_type": "IUP",
+      "province": "Jawa Barat",
+      "city": "Kota Tasikmalaya",
+      "license_effective_date": "2020-10-14",
+      "license_expiry_date": "2025-10-14",
+      "activity": "Operasi Produksi",
+      "licensed_area_ha": 9.2,
+      "location": "Kota Tasikmalaya",
+      "commodity_type": "Sand, Stone, Gravel",
+      "company_name": "CV Anak Sejati",
+      "cnc": "CNC",
+      "generation": null,
+      "company_slug": null
+    }
+  ],
+  "pagination": {
+    "total_count": 4151,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "country": "Albania",
+    "commodity_type": "Coal",
+    "resources_reserves": null,
+    "resources_reserves_share": null,
+    "resources_reserves_unit": null,
+    "export_import_usd": {
+      "2023": {
+        "export": null,
+        "import": null
+      }
+    },
+    "production_volume": null,
+    "production_share": null,
+    "production_volume_unit": null
+  }
+]

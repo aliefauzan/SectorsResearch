@@ -1,0 +1,11 @@
+{
+  "symbol": "BBCA.JK",
+  "financial_year": 2025,
+  "revenue_breakdown": [
+    {
+      "value": 67446394000000,
+      "source": "Loans",
+      "target": "Interest Income"
+    }
+  ]
+}

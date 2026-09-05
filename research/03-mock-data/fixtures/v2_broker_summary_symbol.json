@@ -1,0 +1,26 @@
+{
+  "symbol": "BBCA.JK",
+  "start": "2025-05-01",
+  "end": "2025-05-14",
+  "data": [
+    {
+      "date": "2025-05-02",
+      "summary": [
+        {
+          "broker_code": "AF",
+          "bfreq": 1,
+          "blot": 55,
+          "bval": 48950000,
+          "bavg_per_share": 8900.0,
+          "sfreq": 1,
+          "slot": 50,
+          "sval": 44875000,
+          "savg_per_share": 8975.0,
+          "nlot": 5,
+          "nval": 4075000,
+          "navg_per_share": 8900.0
+        }
+      ]
+    }
+  ]
+}

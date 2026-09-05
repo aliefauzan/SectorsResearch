@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "name": "Tutupan Utara",
+      "project_name": null,
+      "year": 2024,
+      "commodity_type": "Coal",
+      "production_volume": null,
+      "unit": "Mt",
+      "strip_ratio": null,
+      "province": "Kalimantan Selatan",
+      "city": "Balangan",
+      "company_slug": "pt-adaro-indonesia",
+      "company_name": "PT Adaro Indonesia",
+      "slug": "tutupan-utara"
+    }
+  ],
+  "pagination": {
+    "total_count": 156,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

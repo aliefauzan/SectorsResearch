@@ -1,0 +1,30 @@
+{
+  "name": "Batubara Benhes 3",
+  "project_name": null,
+  "year": 2024,
+  "commodity_type": "Coal",
+  "production_volume": null,
+  "unit": "Mt",
+  "overburden_removal_volume": null,
+  "strip_ratio": null,
+  "resources_reserves": {
+    "measurement_year": 2022,
+    "probable_reserves_Mt": 447.28,
+    "proven_reserves_Mt": 475.12,
+    "total_reserves_Mt": null,
+    "inferred_resources_Mt": 176.8,
+    "indicated_resources_Mt": 672.8,
+    "measured_resources_Mt": 482.5,
+    "total_resources_Mt": 555.0,
+    "calorific_value_kcal": null
+  },
+  "location": {
+    "province": "Kalimantan Timur",
+    "city": "Kutai Timur",
+    "latitude": 1.13465,
+    "longitude": 116.753186
+  },
+  "company_slug": "pt-bumi-kaliman-sejahtera",
+  "company_name": "PT Bumi Kaliman Sejahtera",
+  "slug": "batubara-benhes-3"
+}

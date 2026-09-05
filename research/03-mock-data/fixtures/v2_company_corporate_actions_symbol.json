@@ -1,0 +1,31 @@
+{
+  "symbol": "BBCA.JK",
+  "corporate_actions": {
+    "agm": [
+      {
+        "agm_date": "2025-03-12",
+        "agm_time": "09:30:00",
+        "agm_place": "Menara Bca, Grand Indonesia, Jl. M. H. Thamrin No. 1, Jakarta 10310 Kota Adm. Jakarta Pusat",
+        "agm_result": null
+      }
+    ],
+    "bonus": null,
+    "warrant": null,
+    "dividend": [
+      {
+        "ex_date": "2025-12-03",
+        "payment_date": "2025-12-22",
+        "dividend_yield": 0.00641717,
+        "dividend_amount": 55
+      }
+    ],
+    "right_issue": null,
+    "stock_split": [
+      {
+        "date": "2021-10-13",
+        "split_ratio": 5
+      }
+    ],
+    "upcoming_dividend": null
+  }
+}

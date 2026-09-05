@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "symbol": "AADI.JK",
+      "date": "2025-05-02",
+      "close": 7150
+    }
+  ],
+  "pagination": {
+    "total_count": 942,
+    "showing": 1,
+    "limit": 30,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 30,
+    "previous_offset": null
+  }
+}

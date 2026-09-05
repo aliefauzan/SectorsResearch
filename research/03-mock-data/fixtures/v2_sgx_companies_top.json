@@ -1,0 +1,37 @@
+{
+  "dividend_yield": [
+    {
+      "symbol": "T14.SI",
+      "forward_dividend_yield": 0.2528,
+      "company_name": "Tianjin Pharmaceutical Da Ren Tang Group Corp Ltd"
+    }
+  ],
+  "revenue": [
+    {
+      "symbol": "F34.SI",
+      "revenue": 90420797802,
+      "company_name": "Wilmar International Ltd"
+    }
+  ],
+  "earnings": [
+    {
+      "symbol": "D05.SI",
+      "earnings": 10934000000,
+      "company_name": "DBS Group Holdings Ltd"
+    }
+  ],
+  "market_cap": [
+    {
+      "symbol": "M12.SI",
+      "market_cap": 735208084260,
+      "company_name": "Maruwa Co Ltd"
+    }
+  ],
+  "pe": [
+    {
+      "symbol": "B61.SI",
+      "pe": 0.095391,
+      "company_name": "Bukit Sembawang Estates Ltd"
+    }
+  ]
+}

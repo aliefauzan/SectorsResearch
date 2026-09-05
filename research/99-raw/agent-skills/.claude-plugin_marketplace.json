@@ -1,0 +1,19 @@
+{
+  "name": "sectors-agent-skills",
+  "owner": {
+    "name": "Supertype AI"
+  },
+  "metadata": {
+    "description": "Financial market data skills for IDX (Indonesia Stock Exchange) and SGX (Singapore Exchange) markets, powered by the Sectors API.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "sectors-api",
+      "source": "./",
+      "description": "Query financial market data from the Sectors API (api.sectors.app) for IDX and SGX markets. Covers stock prices, company reports, financials, market indices, top movers, dividends, earnings, and more.",
+      "category": "finance",
+      "tags": ["finance", "stocks", "idx", "sgx", "indonesia", "singapore", "api"]
+    }
+  ]
+}

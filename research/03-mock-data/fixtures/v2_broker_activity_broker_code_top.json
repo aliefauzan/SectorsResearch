@@ -1,0 +1,23 @@
+{
+  "broker_code": "YP",
+  "start": "2025-05-01",
+  "end": "2025-05-14",
+  "top_accumulations": [
+    {
+      "rank": 1,
+      "symbol": "ASII.JK",
+      "net_idr": 58416394000,
+      "buy_idr": 117493365000,
+      "sell_idr": 59076971000
+    }
+  ],
+  "top_distributions": [
+    {
+      "rank": 1,
+      "symbol": "BBCA.JK",
+      "net_idr": -99677162500,
+      "buy_idr": 97605242500,
+      "sell_idr": 197282405000
+    }
+  ]
+}

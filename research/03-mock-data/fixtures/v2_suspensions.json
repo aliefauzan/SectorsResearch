@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "symbol": "FLMC.JK",
+      "suspension_date": "2026-07-03",
+      "reason": "Terjadinya penurunan harga kumulatif yang signifikan pada saham FLMC.JK",
+      "pdf_url": "https://www.idx.co.id/Portals/0/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/Exchange/2026/JUL/20260702-WAS_Suspensi_FLMC.pdf"
+    }
+  ],
+  "pagination": {
+    "total_count": 556,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

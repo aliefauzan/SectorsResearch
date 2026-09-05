@@ -1,0 +1,25 @@
+{
+  "symbol": "BBCA.JK",
+  "start": "2025-05-01",
+  "end": "2025-05-14",
+  "origin": "all",
+  "cohort": "all",
+  "top_buyers": [
+    {
+      "rank": 1,
+      "broker_code": "KZ",
+      "net_idr": 645536242500,
+      "buy_idr": 1163325432500,
+      "sell_idr": 517789190000
+    }
+  ],
+  "top_sellers": [
+    {
+      "rank": 1,
+      "broker_code": "BK",
+      "net_idr": -318961117500,
+      "buy_idr": 561727337500,
+      "sell_idr": 880688455000
+    }
+  ]
+}

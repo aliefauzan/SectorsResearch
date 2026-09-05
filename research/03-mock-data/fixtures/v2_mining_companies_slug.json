@@ -1,0 +1,38 @@
+{
+  "name": "PT Adaro Andalan Indonesia Tbk",
+  "slug": "pt-adaro-andalan-indonesia-tbk",
+  "symbol": "AADI.JK",
+  "company_type": "Holding",
+  "operation_province": "Jakarta",
+  "operation_district": "Jakarta Selatan",
+  "key_operation": "Coal Trading",
+  "representative_address": "Cyber 2 Tower Lantai 26, Jl. H.R. Rasuna Said Blok X-5, No.13, Jakarta 12950",
+  "website": "www.adaroindonesia.com",
+  "phone_number": "021-25533065",
+  "email": "corsec@adaroindonesia.com",
+  "activities": [
+    "Trading"
+  ],
+  "commodity_type": [
+    "Coal"
+  ],
+  "mining_license": [
+    {
+      "license_type": "IUPK",
+      "license_number": "11/1/IUP/PMA/2022",
+      "wiup_code": "1300003032014132",
+      "province": "Kalimantan Selatan",
+      "city": "Kabupaten Tabalong",
+      "license_effective_date": "2022-09-13",
+      "license_expiry_date": "2032-10-01",
+      "activity": "Operasi Produksi",
+      "licensed_area_ha": 23942.0,
+      "cnc": "CNC",
+      "generation": "GEN I",
+      "location": "Kabupaten Tabalong, Kabupaten Balangan",
+      "commodity_type": "Coal"
+    }
+  ],
+  "mining_contract": [],
+  "mining_site_count": 0
+}

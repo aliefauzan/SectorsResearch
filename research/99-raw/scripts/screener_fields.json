@@ -1,0 +1,890 @@
+{
+ "Direct Fields (Top-level columns)": [
+  {
+   "field": "symbol",
+   "desc": "IDX ticker symbol (e.g. BBCA, TLKM)"
+  },
+  {
+   "field": "company_name",
+   "desc": "Full registered company name"
+  },
+  {
+   "field": "listing_board",
+   "desc": "IDX board: Main, Development, or Acceleration"
+  },
+  {
+   "field": "industry",
+   "desc": "IDX industry classification"
+  },
+  {
+   "field": "sub_industry",
+   "desc": "IDX sub-industry classification"
+  },
+  {
+   "field": "sector",
+   "desc": "IDX sector classification (broader than industry)"
+  },
+  {
+   "field": "sub_sector",
+   "desc": "IDX sub-sector classification"
+  },
+  {
+   "field": "market_cap",
+   "desc": "Market capitalisation in IDR"
+  },
+  {
+   "field": "market_cap_rank",
+   "desc": "Rank by market cap among all IDX companies (1 = largest)"
+  },
+  {
+   "field": "employee_num",
+   "desc": "Total number of employees"
+  },
+  {
+   "field": "employee_num_rank",
+   "desc": "Rank by employee count among all IDX companies"
+  },
+  {
+   "field": "listing_date",
+   "desc": "Date the company was first listed on IDX"
+  },
+  {
+   "field": "last_ex_dividend_date",
+   "desc": "Most recent ex-dividend date"
+  },
+  {
+   "field": "last_close_price",
+   "desc": "Latest closing price in IDR"
+  },
+  {
+   "field": "daily_close_change",
+   "desc": "Day-over-day closing price change as a decimal"
+  },
+  {
+   "field": "forward_pe",
+   "desc": "Forward price-to-earnings ratio based on next year earnings estimate"
+  },
+  {
+   "field": "intrinsic_value",
+   "desc": "Estimated intrinsic value per share in IDR"
+  },
+  {
+   "field": "esg_score",
+   "desc": "ESG (Environmental, Social, Governance) composite score"
+  },
+  {
+   "field": "yield_ttm",
+   "desc": "Dividend yield over the trailing twelve months"
+  },
+  {
+   "field": "dividend_ttm",
+   "desc": "Total dividends paid per share over the trailing twelve months in IDR"
+  },
+  {
+   "field": "payout_ratio",
+   "desc": "Proportion of earnings paid out as dividends"
+  },
+  {
+   "field": "cash_payout_ratio",
+   "desc": "Proportion of free cash flow paid out as dividends"
+  },
+  {
+   "field": "yoy_quarter_earnings_growth",
+   "desc": "Year-over-year earnings growth based on the most recent quarter"
+  },
+  {
+   "field": "yoy_quarter_revenue_growth",
+   "desc": "Year-over-year revenue growth based on the most recent quarter"
+  }
+ ],
+ "Array Fields": [
+  {
+   "field": "tags",
+   "desc": "Analyst sentiment tags (e.g. 'bullish'). Filter with `in` operator."
+  },
+  {
+   "field": "indices",
+   "desc": "IDX indices this stock belongs to (e.g. LQ45, IDX30). Filter with `in` operator."
+  },
+  {
+   "field": "affiliates",
+   "desc": "Related company tickers (affiliates/group entities)"
+  }
+ ],
+ "JSON Object Fields (Most Recent Data)": [
+  {
+   "field": "pe_ttm",
+   "desc": "Price-to-earnings ratio (trailing twelve months)"
+  },
+  {
+   "field": "pb_mrq",
+   "desc": "Price-to-book ratio (most recent quarter)"
+  },
+  {
+   "field": "ps_ttm",
+   "desc": "Price-to-sales ratio (trailing twelve months)"
+  },
+  {
+   "field": "dar_mrq",
+   "desc": "Debt-to-assets ratio (most recent quarter)"
+  },
+  {
+   "field": "der_mrq",
+   "desc": "Debt-to-equity ratio (most recent quarter)"
+  },
+  {
+   "field": "roa_ttm",
+   "desc": "Return on assets (trailing twelve months)"
+  },
+  {
+   "field": "roe_ttm",
+   "desc": "Return on equity (trailing twelve months)"
+  },
+  {
+   "field": "total_assets_mrq",
+   "desc": "Total assets in IDR (most recent quarter)"
+  },
+  {
+   "field": "total_equity_mrq",
+   "desc": "Total shareholders equity in IDR (most recent quarter)"
+  },
+  {
+   "field": "total_revenue_mrq",
+   "desc": "Total revenue in IDR (most recent quarter)"
+  },
+  {
+   "field": "earnings_mrq",
+   "desc": "Net profit/loss in IDR (most recent quarter)"
+  },
+  {
+   "field": "total_liabilities_mrq",
+   "desc": "Total liabilities in IDR (most recent quarter)"
+  },
+  {
+   "field": "yearly_mcap_change",
+   "desc": "Year-over-year market cap change as a decimal"
+  },
+  {
+   "field": "dividend_yield_avg_period",
+   "desc": "Number of years used to compute average dividend yield"
+  },
+  {
+   "field": "dividend_yield_avg",
+   "desc": "Average annual dividend yield over the period"
+  },
+  {
+   "field": "ytd_low_price",
+   "desc": "Year-to-date lowest closing price in IDR"
+  },
+  {
+   "field": "ytd_low_date",
+   "desc": "Date of the year-to-date lowest closing price"
+  },
+  {
+   "field": "ytd_high_price",
+   "desc": "Year-to-date highest closing price in IDR"
+  },
+  {
+   "field": "ytd_high_date",
+   "desc": "Date of the year-to-date highest closing price"
+  },
+  {
+   "field": "52_w_low_price",
+   "desc": "52-week lowest closing price in IDR"
+  },
+  {
+   "field": "52_w_low_date",
+   "desc": "Date of the 52-week lowest closing price"
+  },
+  {
+   "field": "52_w_high_price",
+   "desc": "52-week highest closing price in IDR"
+  },
+  {
+   "field": "52_w_high_date",
+   "desc": "Date of the 52-week highest closing price"
+  },
+  {
+   "field": "90_d_low_price",
+   "desc": "90-day lowest closing price in IDR"
+  },
+  {
+   "field": "90_d_low_date",
+   "desc": "Date of the 90-day lowest closing price"
+  },
+  {
+   "field": "90_d_high_price",
+   "desc": "90-day highest closing price in IDR"
+  },
+  {
+   "field": "90_d_high_date",
+   "desc": "Date of the 90-day highest closing price"
+  },
+  {
+   "field": "all_time_low_price",
+   "desc": "All-time lowest closing price in IDR"
+  },
+  {
+   "field": "all_time_low_date",
+   "desc": "Date of the all-time lowest closing price"
+  },
+  {
+   "field": "all_time_high_price",
+   "desc": "All-time highest closing price in IDR"
+  },
+  {
+   "field": "all_time_high_date",
+   "desc": "Date of the all-time highest closing price"
+  }
+ ],
+ "Yearly JSON Fields (Historical & Forecast Data)": [
+  {
+   "field": "eps",
+   "desc": "Earnings per share for the year. Use: `eps[2024]`."
+  },
+  {
+   "field": "eps_growth",
+   "desc": "Year-over-year EPS growth rate. Use: `eps_growth[2024]`."
+  },
+  {
+   "field": "total_dividend",
+   "desc": "Total dividends paid per share for the year. Use: `total_dividend[2024]`."
+  },
+  {
+   "field": "total_yield",
+   "desc": "Total dividend yield for the year. Use: `total_yield[2024]`."
+  },
+  {
+   "field": "earnings",
+   "desc": "Annual net profit/loss in IDR. Use: `earnings[2024]`."
+  },
+  {
+   "field": "allowance_for_loans",
+   "desc": "Allowance for loan losses in IDR. Use: `allowance_for_loans[2024]`. (banking)"
+  },
+  {
+   "field": "capital_expenditure",
+   "desc": "Capital expenditure in IDR. Use: `capital_expenditure[2024]`."
+  },
+  {
+   "field": "cash_and_equivalents",
+   "desc": "Cash and cash equivalents in IDR. Use: `cash_and_equivalents[2024]`."
+  },
+  {
+   "field": "cash_inflow",
+   "desc": "Total cash inflow in IDR. Use: `cash_inflow[2024]`."
+  },
+  {
+   "field": "cash_only",
+   "desc": "Cash excluding equivalents in IDR. Use: `cash_only[2024]`."
+  },
+  {
+   "field": "cash_outflow",
+   "desc": "Total cash outflow in IDR. Use: `cash_outflow[2024]`."
+  },
+  {
+   "field": "core_capital_tier1",
+   "desc": "Tier 1 core capital in IDR. Use: `core_capital_tier1[2024]`. (banking)"
+  },
+  {
+   "field": "cost_of_revenue",
+   "desc": "Cost of goods sold / cost of revenue in IDR. Use: `cost_of_revenue[2024]`."
+  },
+  {
+   "field": "credit_rwa",
+   "desc": "Credit risk-weighted assets in IDR. Use: `credit_rwa[2024]`. (banking)"
+  },
+  {
+   "field": "current_account",
+   "desc": "Current account deposits in IDR. Use: `current_account[2024]`. (banking)"
+  },
+  {
+   "field": "current_assets",
+   "desc": "Total current assets in IDR. Use: `current_assets[2024]`."
+  },
+  {
+   "field": "current_liabilities",
+   "desc": "Total current liabilities in IDR. Use: `current_liabilities[2024]`."
+  },
+  {
+   "field": "earnings_before_tax",
+   "desc": "Earnings before income tax in IDR. Use: `earnings_before_tax[2024]`."
+  },
+  {
+   "field": "ebit",
+   "desc": "Earnings before interest and tax in IDR. Use: `ebit[2024]`."
+  },
+  {
+   "field": "ebitda",
+   "desc": "Earnings before interest, tax, depreciation and amortisation in IDR. Use: `ebitda[2024]`."
+  },
+  {
+   "field": "end_cash_position",
+   "desc": "Ending cash position from the cash flow statement in IDR. Use: `end_cash_position[2024]`."
+  },
+  {
+   "field": "financing_cash_flow",
+   "desc": "Net cash from financing activities in IDR. Use: `financing_cash_flow[2024]`."
+  },
+  {
+   "field": "fixed_assets",
+   "desc": "Net property, plant and equipment in IDR. Use: `fixed_assets[2024]`."
+  },
+  {
+   "field": "free_cash_flow",
+   "desc": "Operating cash flow minus capex in IDR. Use: `free_cash_flow[2024]`."
+  },
+  {
+   "field": "gross_loan",
+   "desc": "Gross loan portfolio before allowances in IDR. Use: `gross_loan[2024]`. (banking)"
+  },
+  {
+   "field": "gross_profit",
+   "desc": "Revenue minus cost of revenue in IDR. Use: `gross_profit[2024]`."
+  },
+  {
+   "field": "high_quality_liquid_asset",
+   "desc": "High-quality liquid assets (HQLA) held in IDR. Use: `high_quality_liquid_asset[2024]`. (banking)"
+  },
+  {
+   "field": "interest_expense",
+   "desc": "Total interest expense in IDR. Use: `interest_expense[2024]`."
+  },
+  {
+   "field": "interest_expense_non_operating",
+   "desc": "Non-operating interest expense in IDR. Use: `interest_expense_non_operating[2024]`."
+  },
+  {
+   "field": "interest_income",
+   "desc": "Total interest income in IDR. Use: `interest_income[2024]`."
+  },
+  {
+   "field": "inventories",
+   "desc": "Inventories on the balance sheet in IDR. Use: `inventories[2024]`."
+  },
+  {
+   "field": "investing_cash_flow",
+   "desc": "Net cash from investing activities in IDR. Use: `investing_cash_flow[2024]`."
+  },
+  {
+   "field": "market_rwa",
+   "desc": "Market risk-weighted assets in IDR. Use: `market_rwa[2024]`. (banking)"
+  },
+  {
+   "field": "net_cash_flow",
+   "desc": "Net change in cash for the period in IDR. Use: `net_cash_flow[2024]`."
+  },
+  {
+   "field": "net_interest_income",
+   "desc": "Interest income minus interest expense in IDR. Use: `net_interest_income[2024]`. (banking)"
+  },
+  {
+   "field": "net_loan",
+   "desc": "Net loans after allowances in IDR. Use: `net_loan[2024]`. (banking)"
+  },
+  {
+   "field": "net_premium_income",
+   "desc": "Net insurance premium income in IDR. Use: `net_premium_income[2024]`. (insurance)"
+  },
+  {
+   "field": "non_current_liabilities",
+   "desc": "Long-term liabilities in IDR. Use: `non_current_liabilities[2024]`."
+  },
+  {
+   "field": "non_interest_bearing_liabilities",
+   "desc": "Liabilities that do not accrue interest in IDR. Use: `non_interest_bearing_liabilities[2024]`. (banking)"
+  },
+  {
+   "field": "non_interest_income",
+   "desc": "Fee and commission income outside of interest in IDR. Use: `non_interest_income[2024]`. (banking)"
+  },
+  {
+   "field": "non_loan_assets",
+   "desc": "Total assets excluding loans in IDR. Use: `non_loan_assets[2024]`. (banking)"
+  },
+  {
+   "field": "non_loan_earning_assets",
+   "desc": "Interest-earning assets excluding loans in IDR. Use: `non_loan_earning_assets[2024]`. (banking)"
+  },
+  {
+   "field": "non_loan_non_earning_assets",
+   "desc": "Non-earning assets excluding loans in IDR. Use: `non_loan_non_earning_assets[2024]`. (banking)"
+  },
+  {
+   "field": "non_operating_income_or_loss",
+   "desc": "Income or losses outside core operations in IDR. Use: `non_operating_income_or_loss[2024]`."
+  },
+  {
+   "field": "operating_cash_flow",
+   "desc": "Net cash generated from core operations in IDR. Use: `operating_cash_flow[2024]`."
+  },
+  {
+   "field": "operating_expense",
+   "desc": "Total operating expenses in IDR. Use: `operating_expense[2024]`."
+  },
+  {
+   "field": "operating_pnl",
+   "desc": "Operating profit/loss (revenue minus operating expenses) in IDR. Use: `operating_pnl[2024]`."
+  },
+  {
+   "field": "operational_rwa",
+   "desc": "Operational risk-weighted assets in IDR. Use: `operational_rwa[2024]`. (banking)"
+  },
+  {
+   "field": "other_interest_bearing_liabilities",
+   "desc": "Other interest-bearing liabilities excluding deposits in IDR. Use: `other_interest_bearing_liabilities[2024]`. (banking)"
+  },
+  {
+   "field": "outstanding_shares",
+   "desc": "Total shares outstanding. Use: `outstanding_shares[2024]`."
+  },
+  {
+   "field": "prepaid_assets",
+   "desc": "Prepaid expenses and other current assets in IDR. Use: `prepaid_assets[2024]`."
+  },
+  {
+   "field": "premium_expense",
+   "desc": "Insurance premium expenses in IDR. Use: `premium_expense[2024]`. (insurance)"
+  },
+  {
+   "field": "premium_income",
+   "desc": "Gross insurance premium income in IDR. Use: `premium_income[2024]`. (insurance)"
+  },
+  {
+   "field": "provision",
+   "desc": "Provision for loan losses or liabilities in IDR. Use: `provision[2024]`."
+  },
+  {
+   "field": "realized_capital_goods_investment",
+   "desc": "Realised investment in capital goods in IDR. Use: `realized_capital_goods_investment[2024]`."
+  },
+  {
+   "field": "retained_earnings",
+   "desc": "Cumulative retained earnings on balance sheet in IDR. Use: `retained_earnings[2024]`."
+  },
+  {
+   "field": "revenue",
+   "desc": "Annual total revenue in IDR. Use: `revenue[2024]`."
+  },
+  {
+   "field": "savings_account",
+   "desc": "Savings account deposits in IDR. Use: `savings_account[2024]`. (banking)"
+  },
+  {
+   "field": "supplementary_capital_tier2",
+   "desc": "Tier 2 supplementary capital in IDR. Use: `supplementary_capital_tier2[2024]`. (banking)"
+  },
+  {
+   "field": "tax",
+   "desc": "Income tax expense in IDR. Use: `tax[2024]`."
+  },
+  {
+   "field": "time_deposit",
+   "desc": "Time deposit liabilities in IDR. Use: `time_deposit[2024]`. (banking)"
+  },
+  {
+   "field": "total_assets",
+   "desc": "Total assets on the balance sheet in IDR. Use: `total_assets[2024]`."
+  },
+  {
+   "field": "total_capital",
+   "desc": "Total regulatory capital in IDR. Use: `total_capital[2024]`. (banking)"
+  },
+  {
+   "field": "total_cash_and_due_from_banks",
+   "desc": "Cash and amounts due from other banks in IDR. Use: `total_cash_and_due_from_banks[2024]`. (banking)"
+  },
+  {
+   "field": "total_debt",
+   "desc": "Total interest-bearing debt in IDR. Use: `total_debt[2024]`."
+  },
+  {
+   "field": "total_deposit",
+   "desc": "Total customer deposits in IDR. Use: `total_deposit[2024]`. (banking)"
+  },
+  {
+   "field": "total_equity",
+   "desc": "Total shareholders equity in IDR. Use: `total_equity[2024]`."
+  },
+  {
+   "field": "total_liabilities",
+   "desc": "Total liabilities on the balance sheet in IDR. Use: `total_liabilities[2024]`."
+  },
+  {
+   "field": "total_risk_weighted_asset",
+   "desc": "Total risk-weighted assets in IDR. Use: `total_risk_weighted_asset[2024]`. (banking)"
+  },
+  {
+   "field": "special_mention_loan",
+   "desc": "Special mention (watch-list) loans in IDR. Use: `special_mention_loan[2024]`. (banking)"
+  },
+  {
+   "field": "non_performing_loan",
+   "desc": "Non-performing loans (NPL) in IDR. Use: `non_performing_loan[2024]`. (banking)"
+  },
+  {
+   "field": "restructured_loan_current",
+   "desc": "Restructured loans currently performing in IDR. Use: `restructured_loan_current[2024]`. (banking)"
+  },
+  {
+   "field": "forecast_eps_growth",
+   "desc": "Analyst consensus EPS growth forecast. Use: `forecast_eps_growth[2025]`."
+  },
+  {
+   "field": "forecast_revenue_growth",
+   "desc": "Analyst consensus revenue growth forecast. Use: `forecast_revenue_growth[2025]`."
+  },
+  {
+   "field": "forecast_eps_estimate",
+   "desc": "Analyst consensus EPS estimate in IDR. Use: `forecast_eps_estimate[2025]`."
+  },
+  {
+   "field": "forecast_revenue_estimate",
+   "desc": "Analyst consensus revenue estimate in IDR. Use: `forecast_revenue_estimate[2025]`."
+  },
+  {
+   "field": "pe",
+   "desc": "Price-to-earnings ratio for the year. Use: `pe[2024]`."
+  },
+  {
+   "field": "pb",
+   "desc": "Price-to-book ratio for the year. Use: `pb[2024]`."
+  },
+  {
+   "field": "ps",
+   "desc": "Price-to-sales ratio for the year. Use: `ps[2024]`."
+  },
+  {
+   "field": "pcf",
+   "desc": "Price-to-cash-flow ratio for the year. Use: `pcf[2024]`."
+  },
+  {
+   "field": "peg",
+   "desc": "Price/earnings-to-growth ratio for the year. Use: `peg[2024]`."
+  },
+  {
+   "field": "enterprise_to_ebitda",
+   "desc": "Enterprise value to EBITDA for the year. Use: `enterprise_to_ebitda[2024]`."
+  },
+  {
+   "field": "enterprise_to_revenue",
+   "desc": "Enterprise value to revenue for the year. Use: `enterprise_to_revenue[2024]`."
+  },
+  {
+   "field": "pb_peer_avg",
+   "desc": "Peer average price-to-book ratio for the year. Use: `pb_peer_avg[2024]`."
+  },
+  {
+   "field": "pe_peer_avg",
+   "desc": "Peer average price-to-earnings ratio for the year. Use: `pe_peer_avg[2024]`."
+  },
+  {
+   "field": "ps_peer_avg",
+   "desc": "Peer average price-to-sales ratio for the year. Use: `ps_peer_avg[2024]`."
+  },
+  {
+   "field": "debt_to_asset_ratio",
+   "desc": "Total debt divided by total assets. Use: `debt_to_asset_ratio[2024]`."
+  },
+  {
+   "field": "debt_to_equity_ratio",
+   "desc": "Total debt divided by shareholders equity. Use: `debt_to_equity_ratio[2024]`."
+  },
+  {
+   "field": "cash_flow_to_debt_ratio",
+   "desc": "Operating cash flow divided by total debt. Use: `cash_flow_to_debt_ratio[2024]`."
+  },
+  {
+   "field": "interest_coverage_ratio",
+   "desc": "EBIT divided by interest expense. Use: `interest_coverage_ratio[2024]`."
+  },
+  {
+   "field": "current_ratio",
+   "desc": "Current assets divided by current liabilities. Use: `current_ratio[2024]`."
+  },
+  {
+   "field": "operating_cash_flow_margin",
+   "desc": "Operating cash flow as a percentage of revenue. Use: `operating_cash_flow_margin[2024]`."
+  },
+  {
+   "field": "fixed_asset_turnover",
+   "desc": "Revenue divided by net fixed assets. Use: `fixed_asset_turnover[2024]`."
+  },
+  {
+   "field": "total_asset_turnover",
+   "desc": "Revenue divided by total assets. Use: `total_asset_turnover[2024]`."
+  },
+  {
+   "field": "roa",
+   "desc": "Return on assets for the year. Use: `roa[2024]`."
+  },
+  {
+   "field": "roe",
+   "desc": "Return on equity for the year. Use: `roe[2024]`."
+  },
+  {
+   "field": "net_profit_margin",
+   "desc": "Net profit as a percentage of revenue. Use: `net_profit_margin[2024]`."
+  },
+  {
+   "field": "gross_profit_margin",
+   "desc": "Gross profit as a percentage of revenue. Use: `gross_profit_margin[2024]`."
+  },
+  {
+   "field": "operating_profit_margin",
+   "desc": "Operating profit as a percentage of revenue. Use: `operating_profit_margin[2024]`."
+  },
+  {
+   "field": "capital_adequacy_ratio",
+   "desc": "Regulatory capital as a percentage of risk-weighted assets. Use: `capital_adequacy_ratio[2024]`. (banking)"
+  },
+  {
+   "field": "casa_ratio",
+   "desc": "Current and savings account deposits as a share of total deposits. Use: `casa_ratio[2024]`. (banking)"
+  },
+  {
+   "field": "leverage_ratio",
+   "desc": "Tier 1 capital divided by total exposure. Use: `leverage_ratio[2024]`. (banking)"
+  },
+  {
+   "field": "loan_to_deposit_ratio",
+   "desc": "Net loans divided by total deposits. Use: `loan_to_deposit_ratio[2024]`. (banking)"
+  },
+  {
+   "field": "liquidity_coverage_ratio",
+   "desc": "HQLA divided by net cash outflows over 30 days. Use: `liquidity_coverage_ratio[2024]`. (banking)"
+  },
+  {
+   "field": "efficiency_ratio",
+   "desc": "Operating expenses divided by net revenue. Use: `efficiency_ratio[2024]`."
+  },
+  {
+   "field": "net_interest_margin",
+   "desc": "Net interest income as a percentage of earning assets. Use: `net_interest_margin[2024]`. (banking)"
+  },
+  {
+   "field": "cost_to_income_ratio",
+   "desc": "Operating costs divided by operating income. Use: `cost_to_income_ratio[2024]`."
+  }
+ ],
+ "Quarterly Financial Data": [
+  {
+   "field": "revenue_q",
+   "desc": "Quarterly revenue in IDR. Use: `revenue_q[Q1-2024]`."
+  },
+  {
+   "field": "earnings_q",
+   "desc": "Quarterly net profit/loss in IDR. Use: `earnings_q[Q1-2024]`."
+  },
+  {
+   "field": "net_loan_q",
+   "desc": "Quarterly net loans in IDR. Use: `net_loan_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "gross_profit_q",
+   "desc": "Quarterly gross profit in IDR. Use: `gross_profit_q[Q1-2024]`."
+  },
+  {
+   "field": "time_deposit_q",
+   "desc": "Quarterly time deposits in IDR. Use: `time_deposit_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "operating_pnl_q",
+   "desc": "Quarterly operating profit/loss in IDR. Use: `operating_pnl_q[Q1-2024]`."
+  },
+  {
+   "field": "total_deposit_q",
+   "desc": "Quarterly total deposits in IDR. Use: `total_deposit_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "ebit_q",
+   "desc": "Quarterly EBIT in IDR. Use: `ebit_q[Q1-2024]`."
+  },
+  {
+   "field": "ebitda_q",
+   "desc": "Quarterly EBITDA in IDR. Use: `ebitda_q[Q1-2024]`."
+  },
+  {
+   "field": "earnings_before_tax_q",
+   "desc": "Quarterly earnings before tax in IDR. Use: `earnings_before_tax_q[Q1-2024]`."
+  },
+  {
+   "field": "tax_q",
+   "desc": "Quarterly income tax expense in IDR. Use: `tax_q[Q1-2024]`."
+  },
+  {
+   "field": "cost_of_revenue_q",
+   "desc": "Quarterly cost of revenue in IDR. Use: `cost_of_revenue_q[Q1-2024]`."
+  },
+  {
+   "field": "current_account_q",
+   "desc": "Quarterly current account deposits in IDR. Use: `current_account_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "interest_income_q",
+   "desc": "Quarterly interest income in IDR. Use: `interest_income_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "premium_expense_q",
+   "desc": "Quarterly premium expenses in IDR. Use: `premium_expense_q[Q1-2024]`. (insurance)"
+  },
+  {
+   "field": "savings_account_q",
+   "desc": "Quarterly savings account deposits in IDR. Use: `savings_account_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "interest_expense_q",
+   "desc": "Quarterly interest expense in IDR. Use: `interest_expense_q[Q1-2024]`."
+  },
+  {
+   "field": "operating_expense_q",
+   "desc": "Quarterly operating expenses in IDR. Use: `operating_expense_q[Q1-2024]`."
+  },
+  {
+   "field": "non_operating_income_or_loss_q",
+   "desc": "Quarterly non-operating income/loss in IDR. Use: `non_operating_income_or_loss_q[Q1-2024]`."
+  },
+  {
+   "field": "interest_expense_non_operating_q",
+   "desc": "Quarterly non-operating interest expense in IDR. Use: `interest_expense_non_operating_q[Q1-2024]`."
+  },
+  {
+   "field": "non_interest_bearing_liabilities_q",
+   "desc": "Quarterly non-interest-bearing liabilities in IDR. Use: `non_interest_bearing_liabilities_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "realized_capital_goods_investment_q",
+   "desc": "Quarterly realised capital goods investment in IDR. Use: `realized_capital_goods_investment_q[Q1-2024]`."
+  },
+  {
+   "field": "other_interest_bearing_liabilities_q",
+   "desc": "Quarterly other interest-bearing liabilities in IDR. Use: `other_interest_bearing_liabilities_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "total_assets_q",
+   "desc": "Quarterly total assets in IDR. Use: `total_assets_q[Q1-2024]`."
+  },
+  {
+   "field": "current_assets_q",
+   "desc": "Quarterly current assets in IDR. Use: `current_assets_q[Q1-2024]`."
+  },
+  {
+   "field": "total_liabilities_q",
+   "desc": "Quarterly total liabilities in IDR. Use: `total_liabilities_q[Q1-2024]`."
+  },
+  {
+   "field": "net_premium_income_q",
+   "desc": "Quarterly net premium income in IDR. Use: `net_premium_income_q[Q1-2024]`. (insurance)"
+  },
+  {
+   "field": "allowance_for_loans_q",
+   "desc": "Quarterly allowance for loan losses in IDR. Use: `allowance_for_loans_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "current_liabilities_q",
+   "desc": "Quarterly current liabilities in IDR. Use: `current_liabilities_q[Q1-2024]`."
+  },
+  {
+   "field": "non_current_liabilities_q",
+   "desc": "Quarterly non-current liabilities in IDR. Use: `non_current_liabilities_q[Q1-2024]`."
+  },
+  {
+   "field": "total_equity_q",
+   "desc": "Quarterly total equity in IDR. Use: `total_equity_q[Q1-2024]`."
+  },
+  {
+   "field": "total_debt_q",
+   "desc": "Quarterly total debt in IDR. Use: `total_debt_q[Q1-2024]`."
+  },
+  {
+   "field": "cash_only_q",
+   "desc": "Quarterly cash (excluding equivalents) in IDR. Use: `cash_only_q[Q1-2024]`."
+  },
+  {
+   "field": "provision_q",
+   "desc": "Quarterly provision for losses in IDR. Use: `provision_q[Q1-2024]`."
+  },
+  {
+   "field": "gross_loan_q",
+   "desc": "Quarterly gross loans before allowances in IDR. Use: `gross_loan_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "total_cash_and_due_from_banks_q",
+   "desc": "Quarterly cash and amounts due from banks in IDR. Use: `total_cash_and_due_from_banks_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "operating_cash_flow_q",
+   "desc": "Quarterly operating cash flow in IDR. Use: `operating_cash_flow_q[Q1-2024]`."
+  },
+  {
+   "field": "investing_cash_flow_q",
+   "desc": "Quarterly investing cash flow in IDR. Use: `investing_cash_flow_q[Q1-2024]`."
+  },
+  {
+   "field": "financing_cash_flow_q",
+   "desc": "Quarterly financing cash flow in IDR. Use: `financing_cash_flow_q[Q1-2024]`."
+  },
+  {
+   "field": "net_interest_income_q",
+   "desc": "Quarterly net interest income in IDR. Use: `net_interest_income_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "non_interest_income_q",
+   "desc": "Quarterly non-interest income in IDR. Use: `non_interest_income_q[Q1-2024]`. (banking)"
+  },
+  {
+   "field": "free_cash_flow_q",
+   "desc": "Quarterly free cash flow in IDR. Use: `free_cash_flow_q[Q1-2024]`."
+  },
+  {
+   "field": "premium_income_q",
+   "desc": "Quarterly gross premium income in IDR. Use: `premium_income_q[Q1-2024]`. (insurance)"
+  },
+  {
+   "field": "capital_expenditure_q",
+   "desc": "Quarterly capital expenditure in IDR. Use: `capital_expenditure_q[Q1-2024]`."
+  }
+ ],
+ "JSON List Fields": [
+  {
+   "field": "key_executives_name",
+   "desc": "Filter by executive name in the key_executives list. Use `like` operator."
+  },
+  {
+   "field": "key_executives_position",
+   "desc": "Filter by executive position/title in the key_executives list. Use `like` operator."
+  },
+  {
+   "field": "executives_shareholdings_name",
+   "desc": "Filter by executive name in the shareholdings list."
+  },
+  {
+   "field": "executives_shareholdings_share_amount",
+   "desc": "Filter by executive share amount (number of shares)."
+  },
+  {
+   "field": "executives_shareholdings_share_percentage",
+   "desc": "Filter by executive ownership percentage."
+  },
+  {
+   "field": "major_shareholders_name",
+   "desc": "Filter by major shareholder name. Use `like` operator."
+  },
+  {
+   "field": "major_shareholders_share_value",
+   "desc": "Filter by major shareholder share value in IDR."
+  },
+  {
+   "field": "major_shareholders_share_amount",
+   "desc": "Filter by major shareholder number of shares."
+  },
+  {
+   "field": "major_shareholders_share_percentage",
+   "desc": "Filter by major shareholder ownership percentage."
+  },
+  {
+   "field": "free_float",
+   "desc": "Public (non-insider) ownership percentage from major_shareholders. Value is a decimal (0.45 = 45%)."
+  }
+ ]
+}

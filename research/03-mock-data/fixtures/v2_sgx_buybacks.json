@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "symbol": "U11.SI",
+      "purchase_date": "2026-07-08",
+      "type": "On Market",
+      "price_per_share": {
+        "lowest": 41.71,
+        "highest": 42.44
+      },
+      "total_value": 633841.58,
+      "total_shares_purchased": 15100,
+      "treasury_shares_after_purchase": 13376400,
+      "mandate": {
+        "mandate_end": "2027-04-17",
+        "mandate_start": "2026-04-17",
+        "mandate_total": 82676174,
+        "mandate_remaining": 79645474,
+        "cumulative_purchased": 3030700
+      }
+    }
+  ],
+  "pagination": {
+    "total_count": 2884,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "symbol": "S59.SI",
+      "timestamp": "2026-07-06",
+      "transaction_type": "award",
+      "holder_name": "Chin Yau Seng",
+      "holder_type": "insider",
+      "holding_before": 172700,
+      "holding_after": 495193,
+      "amount_transaction": 322493,
+      "transaction_value": null,
+      "price_per_share": null,
+      "share_percentage_before": 0.00015,
+      "share_percentage_after": 0.00044,
+      "share_percentage_transaction": 0.00029
+    }
+  ],
+  "pagination": {
+    "total_count": 541,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

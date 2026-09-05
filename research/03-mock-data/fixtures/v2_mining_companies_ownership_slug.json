@@ -1,0 +1,19 @@
+{
+  "slug": "pt-adaro-andalan-indonesia-tbk",
+  "parents": [
+    {
+      "name": "PT Alamtri Resources Indonesia Tbk",
+      "slug": "pt-alamtri-resources-indonesia-tbk",
+      "symbol": "ADRO.JK",
+      "percentage_ownership": 15.37
+    }
+  ],
+  "subsidiaries": [
+    {
+      "name": "PT Adaro Mining Technologies",
+      "slug": "pt-adaro-mining-technologies",
+      "symbol": null,
+      "percentage_ownership": 100.0
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "title": "OJK says Henry Surya's false statements delayed the investigation into PT Asuransi Jiwa Prolife Indonesia fraud case",
+      "body": "The Financial Services Authority (OJK) said Henry Surya's lies prolonged the probe of a fraud at PT Asuransi Jiwa Prolife Indonesia. Surya is the sole suspect for embezzling roughly Rp 500 billion of customer funds, of which Rp 300 billion was used personally. OJK investigators have seized 485 pieces of evidence worth Rp 113.97 billion, including three shops, a house in Medan and cash. Surya, already serving an 18‑year prison term for another case, will face trial for this fraud after his conditional release.",
+      "source": "https://money.kompas.com/read/2026/07/09/180504926/ojk-sebut-kebohongan-henry-surya-buat-pengusutan-kasus-indosurya-makan-waktu",
+      "thumbnail": "https://asset.kompas.com/crops/qceDuDkratLeHCXO28fC2iGFTys=/0x0:0x0/230x152/data/photo/2026/07/09/6a4f38026d694.jpg",
+      "timestamp": "2026-07-09T18:05:00",
+      "sector": "financials",
+      "sub_sector": [
+        "insurance"
+      ],
+      "tags": [
+        "Violation",
+        "Risk & Compliance",
+        "Politics & Regulation",
+        "Bearish"
+      ],
+      "symbols": [],
+      "dimension": {
+        "future": 0,
+        "dividend": 0,
+        "ownership": 0,
+        "technical": 0,
+        "valuation": 0,
+        "financials": 0,
+        "management": 0,
+        "sustainability": 0
+      }
+    }
+  ],
+  "pagination": {
+    "total_count": 8665,
+    "showing": 1,
+    "limit": 2,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 2,
+    "previous_offset": null
+  }
+}

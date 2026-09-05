@@ -1,0 +1,26 @@
+{
+  "broker_code": "YP",
+  "start": "2025-05-01",
+  "end": "2025-05-02",
+  "data": [
+    {
+      "date": "2025-05-02",
+      "summary": [
+        {
+          "symbol": "AADI.JK",
+          "bfreq": 588,
+          "blot": 8591,
+          "bval": 5764735000,
+          "bavg_per_share": 6710.2025,
+          "sfreq": 401,
+          "slot": 7301,
+          "sval": 4896690000,
+          "savg_per_share": 6706.8758,
+          "nlot": 1290,
+          "nval": 868045000,
+          "navg_per_share": 6710.2025
+        }
+      ]
+    }
+  ]
+}

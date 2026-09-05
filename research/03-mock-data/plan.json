@@ -1,0 +1,706 @@
+{
+  "name": "Sectors golden pull — record once, replay forever",
+  "grant": 1000,
+  "basket": [
+    "BBCA",
+    "BBRI",
+    "BMRI",
+    "TLKM",
+    "ASII",
+    "ADRO",
+    "BREN",
+    "ANTM"
+  ],
+  "deep_basket": [
+    "BBCA",
+    "BBRI",
+    "TLKM",
+    "ADRO"
+  ],
+  "notes": [
+    "Costs are the spec's DECLARED costs. Reconcile against the ledger after tier 0.",
+    "Tier 0 first, always: it validates every slug the later tiers depend on.",
+    "404 costs 1 credit, so never call a symbol not present in a tier-0/tier-1 result.",
+    "sections / classifications / periods are constrained everywhere on purpose."
+  ],
+  "calls": [
+    {
+      "tier": 0,
+      "path": "/v2/subsectors/",
+      "params": {},
+      "est_cost": 1,
+      "note": "taxonomy — cache forever, validates every later slug"
+    },
+    {
+      "tier": 0,
+      "path": "/v2/industries/",
+      "params": {},
+      "est_cost": 1,
+      "note": "taxonomy — cache forever, validates every later slug"
+    },
+    {
+      "tier": 0,
+      "path": "/v2/subindustries/",
+      "params": {},
+      "est_cost": 1,
+      "note": "taxonomy — cache forever, validates every later slug"
+    },
+    {
+      "tier": 0,
+      "path": "/v2/tags/",
+      "params": {},
+      "est_cost": 1,
+      "note": "taxonomy — cache forever, validates every later slug"
+    },
+    {
+      "tier": 0,
+      "path": "/v2/brokers/",
+      "params": {},
+      "est_cost": 1,
+      "note": "broker registry with origin + cohort"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/companies/",
+      "params": {
+        "where": "market_cap > 1000000000000",
+        "order_by": "-market_cap",
+        "limit": 200
+      },
+      "est_cost": 1,
+      "note": "200 large caps in ONE credit — best value in the API"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/companies/",
+      "params": {
+        "where": "sub_sector = 'banks'",
+        "order_by": "-market_cap",
+        "limit": 200
+      },
+      "est_cost": 1,
+      "note": "whole banking sector, for the LAR screen"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/companies/",
+      "params": {
+        "where": "yield_ttm > 0.03 and payout_ratio < 0.9",
+        "order_by": "-yield_ttm",
+        "limit": 200
+      },
+      "est_cost": 1,
+      "note": "dividend universe"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/idx-total/",
+      "params": {},
+      "est_cost": 1,
+      "note": "whole-market cap series, 90d"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/companies/top-changes/",
+      "params": {
+        "classifications": "top_gainers",
+        "periods": "1d",
+        "min_mcap_billion": 0
+      },
+      "est_cost": 1,
+      "note": "CONSTRAINED — defaults would cost 10 and hide sub-5T caps"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/companies/top-changes/",
+      "params": {
+        "classifications": "top_losers",
+        "periods": "1d",
+        "min_mcap_billion": 0
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "extension": "idx"
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 1,
+      "path": "/v2/suspensions/",
+      "params": {},
+      "est_cost": 1,
+      "note": "no recipe uses this endpoint"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/index-daily/ihsg/",
+      "params": {},
+      "est_cost": 1,
+      "note": "verify index_code actually resolves"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/index-daily/lq45/",
+      "params": {},
+      "est_cost": 1,
+      "note": "verify index_code actually resolves"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/index-daily/idx30/",
+      "params": {},
+      "est_cost": 1,
+      "note": "verify index_code actually resolves"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/BBCA/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/BBCA/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/BBRI/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/BBRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/BMRI/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/BMRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/TLKM/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/TLKM/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/ASII/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/ASII/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/ADRO/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/ADRO/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/BREN/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/BREN/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/ANTM/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 8 = 8 credits"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/ANTM/",
+      "params": {},
+      "est_cost": 1,
+      "note": "90d max"
+    },
+    {
+      "tier": 2,
+      "path": "/v2/free-float/",
+      "params": {},
+      "est_cost": 10,
+      "note": "~950 companies, 1 credit per 100"
+    },
+    {
+      "tier": 2,
+      "path": "/v2/close/",
+      "params": {
+        "limit": 30
+      },
+      "est_cost": 32,
+      "note": "~32 pages at limit=30; capture walks every offset",
+      "pages": 32
+    },
+    {
+      "tier": 2,
+      "path": "/v2/companies/quarterly-financial-dates/",
+      "params": {
+        "limit": 30
+      },
+      "est_cost": 32,
+      "note": "full sweep ONCE; then poll with ?since= for pennies",
+      "pages": 32
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/BBCA/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/BBRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/BMRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/TLKM/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/ASII/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/ADRO/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/BREN/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/foreign-flow/ANTM/",
+      "params": {},
+      "est_cost": 1,
+      "note": "bandarmology input"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/broker-summary/BBCA/top/",
+      "params": {},
+      "est_cost": 2,
+      "note": "zero-sum trap lives here"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/financials/quarterly/BBCA/",
+      "params": {
+        "n_quarters": 4
+      },
+      "est_cost": 4,
+      "note": "1 credit per quarter"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/get-segments/BBCA/",
+      "params": {},
+      "est_cost": 1,
+      "note": "segments incl. key customers"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/corporate-actions/BBCA/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/shareholders-composition/BBCA/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/listing-performance/BBCA/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/broker-summary/BBRI/top/",
+      "params": {},
+      "est_cost": 2,
+      "note": "zero-sum trap lives here"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/financials/quarterly/BBRI/",
+      "params": {
+        "n_quarters": 4
+      },
+      "est_cost": 4,
+      "note": "1 credit per quarter"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/get-segments/BBRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": "segments incl. key customers"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/corporate-actions/BBRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/shareholders-composition/BBRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/listing-performance/BBRI/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/broker-summary/TLKM/top/",
+      "params": {},
+      "est_cost": 2,
+      "note": "zero-sum trap lives here"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/financials/quarterly/TLKM/",
+      "params": {
+        "n_quarters": 4
+      },
+      "est_cost": 4,
+      "note": "1 credit per quarter"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/get-segments/TLKM/",
+      "params": {},
+      "est_cost": 1,
+      "note": "segments incl. key customers"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/corporate-actions/TLKM/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/shareholders-composition/TLKM/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/listing-performance/TLKM/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/broker-summary/ADRO/top/",
+      "params": {},
+      "est_cost": 2,
+      "note": "zero-sum trap lives here"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/financials/quarterly/ADRO/",
+      "params": {
+        "n_quarters": 4
+      },
+      "est_cost": 4,
+      "note": "1 credit per quarter"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/get-segments/ADRO/",
+      "params": {},
+      "est_cost": 1,
+      "note": "segments incl. key customers"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/corporate-actions/ADRO/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/company/shareholders-composition/ADRO/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/listing-performance/ADRO/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/brokers/top/",
+      "params": {
+        "metric": "net"
+      },
+      "est_cost": 2,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/most-traded/",
+      "params": {},
+      "est_cost": 2,
+      "note": ""
+    },
+    {
+      "tier": 3,
+      "path": "/v2/subsector/report/banks/",
+      "params": {
+        "sections": "statistics"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 6"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/subsector/report/oil-gas-coal/",
+      "params": {
+        "sections": "statistics"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 6"
+    },
+    {
+      "tier": 3,
+      "path": "/v2/subsector/report/telecommunication/",
+      "params": {
+        "sections": "statistics"
+      },
+      "est_cost": 1,
+      "note": "ONE section — default is all 6"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/commodities/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/companies/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/sites/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/licenses/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/license-auctions/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/total-production/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/resources-reserves/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/exports/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/contracts/",
+      "params": {},
+      "est_cost": 1,
+      "note": "mining — zero recipes exist"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/commodities/Gold/price/",
+      "params": {
+        "start_year": 2023,
+        "end_year": 2025
+      },
+      "est_cost": 1,
+      "note": "gold history runs to 1968; 3-year max per call"
+    },
+    {
+      "tier": 4,
+      "path": "/v2/mining/commodities/Coal/price/",
+      "params": {
+        "start_year": 2023,
+        "end_year": 2025
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 4,
+      "path": "/v2/sgx/sectors/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 4,
+      "path": "/v2/sgx/companies/",
+      "params": {
+        "order_by": "-market_cap",
+        "limit": 100
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 4,
+      "path": "/v2/klse/sectors/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    }
+  ]
+}

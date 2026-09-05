@@ -1,0 +1,25 @@
+{
+  "dividend_yield": [],
+  "revenue": [
+    {
+      "symbol": "4197",
+      "revenue": 70515000000.0,
+      "company_name": "Sime Darby Berhad"
+    }
+  ],
+  "earnings": [
+    {
+      "symbol": "5099",
+      "earnings": 12372463000.0,
+      "company_name": "Capital A Berhad"
+    }
+  ],
+  "market_cap": [
+    {
+      "symbol": "1155",
+      "market_cap": 132322770944.0,
+      "company_name": "Malayan Banking Berhad"
+    }
+  ],
+  "pe": []
+}

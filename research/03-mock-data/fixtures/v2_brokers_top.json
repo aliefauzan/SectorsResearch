@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-08",
+  "metric": "gross",
+  "origin": "foreign",
+  "cohort": "all",
+  "results": [
+    {
+      "rank": 1,
+      "broker_code": "AK",
+      "gross": 1984643350000,
+      "net": -326211642600
+    }
+  ]
+}

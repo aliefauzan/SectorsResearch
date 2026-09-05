@@ -1,0 +1,55 @@
+{
+  "symbol": "1155",
+  "name": "Malayan Banking Berhad",
+  "overview": {
+    "market_cap": 132322770944.0,
+    "volume": 0.0,
+    "employee_num": null,
+    "sector": "Financials",
+    "sub_sector": "Banks",
+    "change_1d": -0.0018281083049780415,
+    "change_7d": 0.012987045156833878,
+    "change_1m": 0.020560772986024694,
+    "change_1y": 0.19163606346373,
+    "change_ytd": 0.0760704953535786,
+    "change_3y": 0.509291731067174
+  },
+  "valuation": {
+    "pe": 12.720929,
+    "beta": 0.121,
+    "ps": 4.6424375,
+    "pcf": 35.7142710858687,
+    "pb": 1.462958
+  },
+  "financials": {
+    "historical_earnings": {
+      "TTM": 10405749000.0,
+      "2022": 7960526000.0,
+      "2023": 9349780000.0,
+      "2024": 10088673000.0,
+      "2025": 10513948000.0
+    },
+    "historical_revenue": {
+      "TTM": 27649336000.0,
+      "2022": 24742271000.0,
+      "2023": 25999633000.0,
+      "2024": 28041657000.0,
+      "2025": 27863232000.0
+    },
+    "eps": 0.86,
+    "gross_margin": 0.0,
+    "operating_margin": 0.49575,
+    "net_profit_margin": 0.36508,
+    "quick_ratio": null,
+    "current_ratio": null,
+    "debt_to_equity": null
+  },
+  "dividend": {
+    "dividend_yield_5y_avg": 0.0664,
+    "dividend_growth_rate": "-0.4677419354838709",
+    "payout_ratio": "0.7315",
+    "forward_dividend": 0.66,
+    "forward_dividend_yield": 0.0612,
+    "dividend_ttm": 0.63
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "symbol": "BBCA.JK",
+      "company_name": "PT Bank Central Asia Tbk.",
+      "query_values": {
+        "sub_sector": "Banks",
+        "market_cap": 753611199412500
+      }
+    }
+  ],
+  "pagination": {
+    "total_count": 48,
+    "showing": 1,
+    "limit": 3,
+    "offset": 0,
+    "has_next": true,
+    "has_previous": false,
+    "next_offset": 3,
+    "previous_offset": null
+  },
+  "llm_translation": {
+    "natural_query": "top 3 banks by market cap",
+    "translated_params": {
+      "where": "sub_sector = 'Banks' and market_cap IS NOT NULL",
+      "order_by": "-market_cap",
+      "limit": 3,
+      "offset": null,
+      "include_query_values": true
+    },
+    "message": null
+  }
+}

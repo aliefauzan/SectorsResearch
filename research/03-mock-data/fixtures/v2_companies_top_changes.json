@@ -1,0 +1,96 @@
+{
+  "top_gainers": {
+    "1d": [
+      {
+        "name": "PT Nitrasanata Dharma Tbk",
+        "symbol": "JECX.JK",
+        "price_change": 0.25,
+        "last_close_price": 1950,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "7d": [
+      {
+        "name": "PT Samator Indo Gas Tbk",
+        "symbol": "AGII.JK",
+        "price_change": 0.232,
+        "last_close_price": 3080,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "14d": [
+      {
+        "name": "PT Maha Properti Indonesia Tbk",
+        "symbol": "MPRO.JK",
+        "price_change": 0.225,
+        "last_close_price": 9800,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "30d": [
+      {
+        "name": "PT Apollo Global Interactive Tbk",
+        "symbol": "BOGA.JK",
+        "price_change": 0.745762711864407,
+        "last_close_price": 1545,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "365d": [
+      {
+        "name": "PT Panca Anugrah Wisesa Tbk",
+        "symbol": "MGLV.JK",
+        "price_change": 27.9855072463768,
+        "last_close_price": 8000,
+        "latest_close_date": "2026-07-08"
+      }
+    ]
+  },
+  "top_losers": {
+    "1d": [
+      {
+        "name": "Sentul City Tbk",
+        "symbol": "BKSL.JK",
+        "price_change": -0.0895522388059701,
+        "last_close_price": 61,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "7d": [
+      {
+        "name": "PT Pelayaran Nasional Ekalya Purnamasari Tbk",
+        "symbol": "ELPI.JK",
+        "price_change": -0.164658634538153,
+        "last_close_price": 1040,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "14d": [
+      {
+        "name": "PT Merdeka Gold Resources Tbk",
+        "symbol": "EMAS.JK",
+        "price_change": -0.186813186813187,
+        "last_close_price": 5550,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "30d": [
+      {
+        "name": "J Resources Asia Pasifik Tbk",
+        "symbol": "PSAB.JK",
+        "price_change": -0.251851851851852,
+        "last_close_price": 404,
+        "latest_close_date": "2026-07-08"
+      }
+    ],
+    "365d": [
+      {
+        "name": "PT Abadi Nusantara Hijau Investama Tbk",
+        "symbol": "PACK.JK",
+        "price_change": -0.930246913580247,
+        "last_close_price": 226,
+        "latest_close_date": "2026-07-08"
+      }
+    ]
+  }
+}

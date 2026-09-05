@@ -1,0 +1,22 @@
+{
+  "2025-05-02": [
+    {
+      "symbol": "GOTO.JK",
+      "company_name": "PT GoTo Gojek Tokopedia Tbk",
+      "volume": 2627450200,
+      "price": 82
+    },
+    {
+      "symbol": "DEWA.JK",
+      "company_name": "Darma Henwa Tbk",
+      "volume": 1563426700,
+      "price": 138
+    },
+    {
+      "symbol": "BUMI.JK",
+      "company_name": "Bumi Resources Tbk",
+      "volume": 1012962400,
+      "price": 112
+    }
+  ]
+}
