@@ -47,6 +47,14 @@ IDX_HOLIDAYS_2026 = {
     (8, 17), (8, 25), (12, 24), (12, 25), (12, 31),
 }
 
+# The date the committed `synth/` was generated from, and the default anchor for every
+# series. Pinning it makes `diff -rq` against the committed tree a genuine
+# reproducibility check: with `date.today()` as the anchor the output changed every
+# trading day, and three consecutive audits certified "byte-identical to committed"
+# only because they all ran across the 4-6 September weekend, when the 260-day window
+# does not move.
+AS_OF_DEFAULT = "2026-09-04"
+
 # Index codes confirmed from sectors.app/indonesia/index/<code>.
 # All 17 codes the spec's own <Accordion title="Available index codes"> lists for
 # /v2/index-daily/{index_code}/. An earlier version of this generator modelled only the 8
@@ -116,8 +124,20 @@ BROKER_NAMES = {
 
 
 def is_trading_day(day):
-    """IDX trades Monday-Friday excluding gazetted market holidays."""
-    return day.weekday() < 5 and (day.month, day.day) not in IDX_HOLIDAYS_2026
+    """IDX trades Monday-Friday excluding gazetted market holidays.
+
+    The holiday set is 2026's and is applied to 2026 only. Indonesian public
+    holidays are largely lunar and move several weeks between years, so matching on
+    `(month, day)` alone would exclude the wrong days in every other year: 18 of the
+    22 pairs land on a 2025 weekday, and the default 260-trading-day window reaches
+    back into 2025. Outside 2026 this models weekdays only, which is honestly
+    incomplete rather than confidently wrong.
+    """
+    if day.weekday() >= 5:
+        return False
+    if day.year == 2026:
+        return (day.month, day.day) not in IDX_HOLIDAYS_2026
+    return True
 
 
 def trading_days(end, count):
@@ -654,6 +674,11 @@ def main():
                     help="output directory of synth_universe.py")
     ap.add_argument("--out", default=os.path.join(here, "synth"))
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--as-of", default=AS_OF_DEFAULT, metavar="YYYY-MM-DD",
+                    help="anchor date for every generated series. Defaults to "
+                         f"{AS_OF_DEFAULT}, the date the committed synth/ was built, "
+                         "so `diff -rq` against it is a real reproducibility check. "
+                         "Pass `today` for a window ending now.")
     ap.add_argument("--years", type=int, default=4)
     ap.add_argument("--quarters", type=int, default=8)
     ap.add_argument("--mining-companies", type=int, default=120)
@@ -668,7 +693,19 @@ def main():
     companies = json.load(open(companies_path))
 
     rng = random.Random(args.seed)
-    today = date.today()
+    if args.as_of == "today":
+        today = date.today()
+    else:
+        try:
+            today = date(*(int(p) for p in args.as_of.split("-")))
+        except (TypeError, ValueError):
+            raise SystemExit(f"--as-of must be YYYY-MM-DD or `today`, got {args.as_of!r}")
+    if args.years < 1 or args.quarters < 1:
+        raise SystemExit("--years and --quarters must be >= 1 "
+                         f"(got years={args.years}, quarters={args.quarters})")
+    if not companies:
+        raise SystemExit(f"{companies_path} contains no companies — "
+                         "re-run synth_universe.py with --companies >= 1")
     days = trading_days(today, 260)
     years = list(range(today.year - args.years + 1, today.year + 1))
     months = [f"{y}-{m:02d}" for y in years[-2:] for m in range(1, 13)][-18:]
@@ -730,7 +767,8 @@ def main():
     print(f"  mining: {len(mining['companies.json'])} companies, {len(mining['sites.json'])} sites, "
           f"{len(mining['licenses.json'])} licences, {len(mining['license_auctions.json'])} auctions, "
           f"{len(mining['commodity_prices.json'])} price points")
-    print(f"  trading days modelled: {len(days)} (IDX 2026 holidays excluded)")
+    print(f"  trading days modelled: {len(days)} ending {days[-1]} "
+          f"(2026 IDX holidays excluded; other years are weekdays only)")
 
 
 if __name__ == "__main__":

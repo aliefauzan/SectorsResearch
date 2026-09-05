@@ -112,7 +112,7 @@ The design, in brief:
 - **Command-palette scoping.** `/sg banks` or `/id ...` parses before touching the index — scoping never costs a model call or network hop.
 - **Tiered comparator instead of weighted scores.** They explicitly reject `1000*inFull + 100*inName + 10*inDesc` as brittle "magic numbers", in favour of a comparator where each `||` is a tier and a later signal only matters on a tie.
 - **Relevance cutoff.** If any name-tier match exists, drop the description-only tail; if nothing matched a name, keep everything so a narrow query is never starved to empty.
-- **Lite-IDF weighting** so a rare token (`pan`) outweighs a common one (`bank`) — otherwise "Bank Jago" ties with "Panin Financial" on a `bank pan` query.
+- **Lite-IDF weighting** so a rare token (`pan`) outweighs a common one (`bank`) — the article's own example. (The worked illustration that follows from it — a `bank pan` query having to separate Bank Jago from Panin — is this dossier's, not theirs.)
 - **Web workers** keep indexing and searching off the typing thread.
 
 Two things to take from it:

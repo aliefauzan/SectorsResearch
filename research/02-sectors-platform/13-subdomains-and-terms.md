@@ -46,6 +46,14 @@ reference, and the basis for royalty calculation — has a dedicated page on the
 If your project premise is "track Indonesian coal against its official benchmark", the
 benchmark is product-only. Verify before building.
 
+> **It is upstream, though.** The public pipeline behind the mining product,
+> [`supertypeai/coalresearch`](https://github.com/supertypeai/coalresearch), states that its
+> `commodity_price` table is scraped weekly from **ESDM Minerba's `harga_acuan` page** —
+> which is the HBA page — with LBMA feeds for gold and silver. So the reference price is in
+> their warehouse and simply is not projected onto the endpoint. That does not make it
+> reachable from the API, but it does mean the gap is a product decision rather than missing
+> data, and it names the source you would scrape yourself if you needed it.
+
 ### What the commodity price endpoint *does* give you
 
 From the fixture for `/v2/mining/commodities/`:
@@ -133,7 +141,7 @@ commercial roadmap in your judging video.
 It also interacts with two hackathon rules in a way worth noting:
 
 - The rules require your repo to stay **public for 90 days** and grant Sectors promotional rights, while **IP stays entirely with you**. None of that conflicts with the ToS — but the ToS restricts what you may do with *their data*, not with your code.
-- Any "competes with us" reading is a reason to avoid rebuilding Sectors Workflow or the screener as your project — a point already argued on product grounds in [`../04-build-plan/competitive-landscape.md`](../04-build-plan/competitive-landscape.md).
+- Any "compete with us" reading is a reason to avoid rebuilding Sectors Workflow or the screener as your project — a point already argued on product grounds in [`../04-build-plan/competitive-landscape.md`](../04-build-plan/competitive-landscape.md).
 
 > This is a plain reading of a public terms page, not legal advice. If your plans go beyond
 > the hackathon, ask in Slack `#support` or email help@sectors.app rather than relying on

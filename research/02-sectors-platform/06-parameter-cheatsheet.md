@@ -98,11 +98,16 @@ Passing anything outside these lists returns a 400 — which is free, but wastes
 
 | Parameter | Endpoint | Values |
 | --- | --- | --- |
-| `origin` | broker-summary top, broker-activity top | `all`, `domestic`, `foreign` |
+| `origin` | `/v2/broker-summary/{symbol}/top/`, `/v2/brokers/top/` | `all`, `domestic`, `foreign` |
 | `origin` | `/v2/brokers/` registry | `domestic`, `foreign` |
-| `cohort` | broker-summary top, broker-activity top | `all`, `institutional`, `mixed`, `retail`, `unknown` |
+| `cohort` | `/v2/broker-summary/{symbol}/top/`, `/v2/brokers/top/` | `all`, `institutional`, `mixed`, `retail`, `unknown` |
 | `cohort` | `/v2/brokers/` registry | `institutional`, `mixed`, `retail`, `unknown` |
 | `metric` | `/v2/brokers/top/` | `gross`, `net` |
+
+> **`/v2/broker-activity/{broker_code}/top/` takes neither `origin` nor `cohort`.** Its only
+> parameters are `broker_code`, `start`, `end` and `n_brokers`. An earlier draft of this table
+> listed it alongside broker-summary top; it does not filter by cohort, because it is already
+> scoped to one broker.
 
 > The `origin` × `cohort` grid is the whole basis of a bandarmology product:
 > `origin=foreign&cohort=institutional` isolates exactly the flow retail traders care about.
@@ -125,7 +130,8 @@ Passing anything outside these lists returns a 400 — which is free, but wastes
 `index_code` on `/v2/index-daily/{index_code}/` carries **no JSON-schema enum**, and the
 parameter description gives only `lq45`, `ihsg`, `idx30` as examples — which is why an earlier
 draft of this page called the valid set undocumented. It is not. The endpoint's own description
-carries an **`<Accordion title="Available index codes">` listing all 17**:
+carries an **`<Accordion title="Available index codes">` listing all 17**. The table below is
+those 17 plus one candidate (`klse`) that only the ingestion pipeline attests:
 
 | Code | Index | Confirmed by |
 | --- | --- | --- |
@@ -145,18 +151,46 @@ carries an **`<Accordion title="Available index codes">` listing all 17**:
 | `ftse` | FTSE Indonesia | spec · CSV |
 | `sminfra18` | SMinfra18 — infrastructure | spec · CSV |
 | `idxvesta28` | IDX Vesta 28 | spec · CSV |
-| `sti` | Straits Times Index (Singapore) | spec |
+| `sti` | Straits Times Index (Singapore) | spec · pipeline |
+| `klse` | Bursa Malaysia — **undocumented, pipeline only** | pipeline |
 
-Three independent sources agree: the spec accordion (all 17), the product's own
-`sectors.app/indonesia/index/<code>` pages (8), and the public
+Four independent sources agree: the spec accordion (all 17), the product's own
+`sectors.app/indonesia/index/<code>` pages (8), the public
 [`supertypeai/sectors_indices_company_list`](https://github.com/supertypeai/sectors_indices_company_list)
-repository, which publishes a constituent CSV per index for 15 of them. **`idxv30`,
-`sminfra18`, `sti` and `idxvesta28` appear in no product page** — the spec is the only place
-they are listed, and an earlier draft of this dossier missed all four.
+repository, which publishes a constituent CSV per index for 15 of them, and **that same
+repository's ingestion code**, which is what actually populates the endpoint. **`idxv30`,
+`sminfra18`, `sti` and `idxvesta28` appear in no product page** — the spec is the only
+*documentation* that lists them, and an earlier draft of this dossier missed all four.
 
-Note `sti` is Singapore's index on an otherwise IDX-only endpoint; treat it as unverified
-until a live call confirms it resolves. Codes are lower-case in the spec, though the `indices`
-array inside company reports renders them upper-case (`LQ45`, `IDX30`).
+**On `sti`, and on a possible 18th code.** An earlier draft flagged `sti` as "unverified —
+Singapore's index on an otherwise IDX-only endpoint". The ingestion pipeline settles it.
+`sectors_indices_company_list/index_name.csv` is the registry the daily scraper joins against,
+and it carries **18 rows**, including:
+
+```
+STI,Straits Times Index,^STI
+KLSE,Bursa Malaysia,^KLSE
+IHSG,IHSG,^JKSE
+```
+
+`index_daily_data_scraper.py` then does exactly what you would hope: `# Fetch STI, KLSE, FTSE
+from yf` / `indices = ["^STI","^KLSE","WIIDN.FGI"]`, and inserts the result into the
+**`index_daily_data`** table — the table `/v2/index-daily/{index_code}/` reads. So `sti` is a
+real series, not a spec artefact. It also means **`klse` is a candidate 18th code that the
+spec's accordion does not list**; that one is still unverifiable-until-live.
+
+Two smaller traps in the same registry: `srikehati` is spelled `SRI-KEHATI` there (the API
+code in the spec is `srikehati`, unhyphenated), and only 15 of the 18 have a constituent CSV —
+`IHSG` and `STI` do not, which is also why the second docs listing below omits them.
+
+> **A second, shorter list exists in the documentation.** The agent-skills reference page,
+> under the heading `### Available Indices (IDX)` (`llms-full.txt:10629`, captured verbatim at
+> [`99-raw/agent-skills/SKILL.md:282`](../99-raw/agent-skills/SKILL.md)) lists only **15**
+> codes — the 17 minus `ihsg` and `sti`. Since `ihsg` is unquestionably valid, that list is
+> incomplete rather than authoritative; use the endpoint's own accordion.
+
+Codes are lower-case in the spec, though the `indices` array inside company reports renders
+them upper-case (`LQ45`, `IDX30`).
 
 ### Mining — commodity types
 
@@ -171,7 +205,7 @@ The valid set **differs per endpoint**. This is the single most error-prone area
 | `/v2/mining/license-auctions/`, `/v2/mining/sites/` | Coal, Copper, Gold, Nickel |
 | `/v2/mining/licenses/` | Bauxite, Clay, Coal, Copper, Gold, Granite, Iron, Limestone, Nickel, Non-Metallic Mineral, Others, Sand, "Sand, Stone, Gravel", Tin |
 | `/v2/mining/resources-reserves/{province}/` | Coal, Cobalt, Copper, Gold, Nickel, Silver, Tin |
-| `/v2/news/?extension=mining` | Bauxite, Coal, Copper, Gold, Iron, Nickel, Non-Metallic Mineral, Sand, "Sand, Stone, Gravel", Tin |
+| `/v2/news/?extension=mining` | Bauxite, Coal, Copper, Gold, Iron, Nickel, Non-Metallic Mineral, "Sand, Stone, Gravel", Tin |
 
 Values are **title-case with spaces**, not kebab-case slugs — unlike the equity taxonomy.
 Note `Zinc and Lead` and `Sand, Stone, Gravel` are single values containing spaces and a comma.

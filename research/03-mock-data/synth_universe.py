@@ -263,11 +263,26 @@ def main():
     ap.add_argument("--news", type=int, default=500)
     ap.add_argument("--broker-days", type=int, default=14, help="days of per-broker detail (the API caps at 14)")
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--as-of", default="2026-09-04", metavar="YYYY-MM-DD",
+                    help="anchor date for the price window. Defaults to the date the "
+                         "committed synth/ was built so a diff against it is a real "
+                         "reproducibility check; pass `today` for a window ending now.")
     ap.add_argument("--out", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "synth"))
     args = ap.parse_args()
 
+    if args.companies < 1 or args.days < 1:
+        raise SystemExit("--companies and --days must be >= 1 "
+                         f"(got companies={args.companies}, days={args.days})")
+    if args.as_of == "today":
+        anchor = date.today()
+    else:
+        try:
+            anchor = date(*(int(p) for p in args.as_of.split("-")))
+        except (TypeError, ValueError):
+            raise SystemExit(f"--as-of must be YYYY-MM-DD or `today`, got {args.as_of!r}")
+
     rng = random.Random(args.seed)
-    days = trading_days(date.today(), args.days)
+    days = trading_days(anchor, args.days)
     os.makedirs(os.path.join(args.out, "daily"), exist_ok=True)
 
     used, companies = set(), []

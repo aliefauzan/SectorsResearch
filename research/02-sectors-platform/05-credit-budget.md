@@ -29,7 +29,7 @@ a disqualifying offence.
 | Full quarterly-dates universe sweep | ~32 | but `?since=` makes repeat polls cheap |
 | Free float, whole market (~950 companies) | 10 | 1 per 100, rounded up |
 | A 404 on a bad ticker | **1** | the lookup ran |
-| A 400 (bad params) | 0 | free |
+| A 400 (bad params) | 0 | free — **one exception**: a `?q=` screener 400 that fails *after* the model ran costs **1** |
 | A 429 or 5xx | 0 | free — retry safely |
 
 ---

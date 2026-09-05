@@ -61,23 +61,34 @@ python3 capture.py --report                   # what has actually been spent
 
 ---
 
-## Why 176 and not 271
+## Why 176 and not 297
 
-Every parameter in the plan is constrained deliberately. The same 87 calls with defaults would
-cost **271 credits — 54% more**:
+Every parameter in the plan is constrained deliberately. The same 87 calls with every
+cost-bearing parameter left at its documented default would cost **297 credits — 69% more**:
 
 | Call | Default | In the plan | Saved |
 | --- | --- | --- | --- |
 | `company/report` × 8 | 8 sections = **64** | `sections=overview` = **8** | 56 |
 | `top-changes` × 2 | 2 class × 5 periods = **20** | 1 class × 1 period = **2** | 18 |
 | `subsector/report` × 3 | 6 sections = **18** | `sections=statistics` = **3** | 15 |
+| `close` + `quarterly-financial-dates` | `limit=20` → 48 pages each = **96** | `limit=30` → 32 pages each = **64** | 32 |
 | `financials/quarterly` × 4 | unbounded | `n_quarters=4` = **16** | — |
-| Screener × 3 | `?q=` = 9 | structured `where` = **3** | 6 |
 
-**95 credits saved on 87 calls**, purely from not letting parameters default — 176 against
-a 271-credit default run. (An earlier draft called this "roughly three times"; the table's own
-arithmetic does not support that. `financials/quarterly` is excluded from the total because the
-spec documents no default for `n_quarters`, so its default cost is genuinely unknown.)
+**121 credits saved on 87 calls**, purely from not letting parameters default — 176 against
+a 297-credit default run.
+
+Two notes on how that total is built, because earlier drafts got it wrong in both directions:
+
+- `financials/quarterly` is excluded. The spec gives `n_quarters` `minimum: 1` and **no
+  default and no maximum**, so its default cost is genuinely unknowable.
+- **The screener is not part of this.** An earlier draft counted 6 credits "saved" by using
+  `where` instead of `?q=` and reached 271. That is not a default: the spec gives `q` no
+  default, so a screener call with *no* parameters is already the 1-credit structured mode.
+  Choosing `?q=` is opting into a more expensive mode, not failing to constrain one. Using
+  `?q=` for all four screener calls in the plan would add 8 credits on top of the 297.
+- The `limit` row is the one an earlier draft missed. `/v2/close/` and
+  `/v2/companies/quarterly-financial-dates/` bill **per page** and default `limit` to 20
+  against a maximum of 30, so the same ~950-ticker sweep is 48 pages instead of 32.
 
 Also constrained: `top-changes` passes `min_mcap_billion=0`, because the default of 5000
 silently hides every company under IDR 5 trillion — a correctness fix, not just a cost one.
@@ -88,7 +99,9 @@ silently hides every company under IDR 5 trillion — a correctness fix, not jus
 
 | Property | Why it saves money |
 | --- | --- |
-| **Idempotent** | A recorded call is skipped. Crash halfway through, re-run, pay nothing for what succeeded. |
+| **Idempotent on settled calls** | A call that returned 2xx (payload on disk) or 404 (a credit already paid for the lookup) is skipped. Crash halfway through, re-run, pay nothing for what succeeded. |
+| **Retries what it never paid for** | A 402, a 400, an exhausted 429/5xx retry, a network error — all unbilled — are re-attempted on the next run instead of being recorded as done. A version before pass 4 skipped on the mere presence of a manifest entry, so one connection blip silently dropped a call from the plan forever. |
+| **Resumable sweeps** | A paginated entry that dies partway keeps the pages it paid for, marks them `incomplete`, and resumes from the first missing page. Against the mock: a 32-page sweep cut off at page 15 by a 402 bills 15, and the resume run bills 17 — 32 total, not 47. |
 | **Hard budget cap** | Refuses to start a call that would exceed `--budget`. Default 250. |
 | **Dry run** | Full plan with cumulative cost, calls nothing. |
 | **404s recorded** | A 404 costs 1 credit. It is written to the manifest as a negative result so the same bad symbol is never paid for twice. |

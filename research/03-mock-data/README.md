@@ -78,6 +78,18 @@ otherwise only show up in production:
 - **Empty results.** The Postman collection states that a filter matching nothing returns
   `200` with an empty collection **and still consumes credits**. Fixtures are always
   non-empty, so the mock never produces that case; your parser should still handle it.
+- **Parameter validation.** The mock never checks an enum. `?sections=bogus,alsobogus` is
+  served as a 200 and **billed 2 credits**; live, "unknown sections" is a `400`, which is
+  free. So the mock over-bills a typo instead of teaching you about it. Same for a
+  `commodity_type` or `classifications` value outside its enum.
+- **Response slicing.** `?sections=overview` bills 1 credit and still returns the whole
+  eight-section fixture, because the fixture is served whole. A parser developed here can
+  therefore depend on fields the same call would not return live. Constrain `sections` in
+  your code *and* assume you only get what you asked for.
+- **Per-row billing on `/v2/free-float/`.** The spec bills 1 credit per 100 companies rounded
+  up (~10 for the whole market); the fixture has a handful of rows, so the mock charges 1.
+  This is the whole of the 9-credit gap between `capture.py`'s ledger (176) and the mock's
+  meter (167) on a full-plan rehearsal — expected, not a defect.
 
 ### Worked example: budget rehearsal
 

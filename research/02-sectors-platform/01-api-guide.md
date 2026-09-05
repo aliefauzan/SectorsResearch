@@ -252,6 +252,22 @@ There is no real-time or intraday tick feed. Design accordingly — an "alert th
 moves" product is not buildable on this API. An end-of-day brief, a post-close screener, or a
 filings/news trigger is.
 
+**Per-dataset cadences, from the public ingestion repos.** The docs give one blanket answer;
+the pipelines are more specific, and the differences matter if you are scheduling a job:
+
+| Dataset | Refresh | Source |
+| --- | --- | --- |
+| Insider filings → `/v2/filings/`, `/v2/news/` | **every 2 hours** | `sectors_idx_filing_pipeline` README |
+| News articles | every 4 hours (`15 */4 * * *`) | `sectors_news` workflow |
+| Index daily → `/v2/index-daily/` | weekdays **18:00 WIB** (`0 11 * * 1-5`) | `sectors_indices_company_list` workflow |
+| Suspensions → `/v2/suspensions/` | daily **10:00 WIB** (`0 3 * * *`) | `sectors_idx_suspension` workflow |
+| Mining commodity prices | weekly | `coalresearch` README |
+| Corporate actions (rights issues, reverse splits, buybacks) | **entered by hand** via a Streamlit app | `sectors_corporate_actions` README |
+
+These are read off committed cron expressions, not observed against the API — see
+[`11-data-provenance.md`](11-data-provenance.md). Align a scheduled job to the slowest input
+it depends on.
+
 ---
 
 ## Rate limits

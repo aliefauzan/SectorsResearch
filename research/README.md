@@ -20,7 +20,7 @@ Researched 4 September 2026. Primary sources: `hackathon.sectors.app`, `sectors.
 2. **Scoring.** Real-world usability 40%, video & storytelling 30%, technical depth 30%. **Seventy percent is problem framing and communication**, not engineering.
 3. **The one hard constraint.** Sectors MCP or REST API must be a *core* data source — remove it and the product must stop working. Automated trade execution is banned in every track.
 4. **Credits.** 1,000 per team, no top-up. That is one fifth of a single month of an Insider plan. Develop against the [local mock](03-mock-data/), not the live API.
-5. **Track 02 is the least crowded**, but by less than it was. Recounted live 5 Sep: of **48** teams on the public matching board, 15 chose Track 01, 12 chose Track 03, **7 chose Track 02**, 14 have not chosen. On 4 Sep it was 44 and 16/11/4 — the board moved by four teams in a day and three of them picked Track 02. Still the thinnest field and still the most objective qualifying test; **re-count it near the 22 September close.**
+5. **Track 02 is the least crowded**, but by less than it was. Recounted live 5 Sep and re-counted independently in pass 4: of **48** teams on the public matching board, 15 chose Track 01, 12 chose Track 03, **7 chose Track 02**, 14 have not chosen. On 4 Sep it was 44 and 16/11/4 — the board moved by four teams in a day and three of them picked Track 02. Still the thinnest field and still the most objective qualifying test; **re-count it near the 22 September close.** Note the board is a lower bound on the field: the hackathon Slack reports **105 members** against 52 people on the board.
 6. **The obvious project in each track is already a published Supertype tutorial.** A 7am scheduled top-movers digest to Discord, a natural-language stock chatbot, and a multi-agent fundamental/technical/news analyst are all recipes on docs.sectors.app. See [`already-published.md`](04-build-plan/already-published.md).
 7. **Sectors already ships an alerting product.** Sectors Workflow does entity → trigger → WhatsApp/Email/Slack/Telegram/Sheets with ~60 templates. A bare Track 02 "alert bot" reimplements it. See [`competitive-landscape.md`](04-build-plan/competitive-landscape.md).
 8. **The screener returns only `symbol` and `company_name`.** You can filter on 219 fields but the response doesn't contain them — pass `include_query_values=true` and name your metrics in `where`. This shapes your whole data architecture; see [`08-hidden-data.md`](02-sectors-platform/08-hidden-data.md).
@@ -50,7 +50,7 @@ Researched 4 September 2026. Primary sources: `hackathon.sectors.app`, `sectors.
 | [`05-credit-budget.md`](02-sectors-platform/05-credit-budget.md) | What everything costs, five rules that save the most, sample budgets per track, and a metered caching client |
 | [`06-parameter-cheatsheet.md`](02-sectors-platform/06-parameter-cheatsheet.md) | Every enum value, default, minimum and maximum in the API — including **four defaults that silently change your results** — plus what's known about rate limits |
 | [`07-response-shapes.md`](02-sectors-platform/07-response-shapes.md) | Data dictionary: the envelope and row keys each of the 70 endpoints returns. The API is **not** uniform — read this before writing a parser |
-| [`15-fetch-strategy.md`](02-sectors-platform/15-fetch-strategy.md) | **The spend plan.** 87 calls in 5 tiers for **176 of 1,000 credits** — against 271 if every parameter defaulted — and the record-once-replay-forever loop |
+| [`15-fetch-strategy.md`](02-sectors-platform/15-fetch-strategy.md) | **The spend plan.** 87 calls in 5 tiers for **176 of 1,000 credits** — against 297 if every parameter defaulted — and the record-once-replay-forever loop |
 | [`14-flare-community-and-engineering.md`](02-sectors-platform/14-flare-community-and-engineering.md) | **FLARE** — the missing definitions for every banking field in the API, with the OJK/Basel III citations · the referral-to-API-credits program · **Stories**, which show what the organizers consider good derived insight · and their search-architecture write-up as engineering calibration |
 | [`13-subdomains-and-terms.md`](02-sectors-platform/13-subdomains-and-terms.md) | **Two entire products on subdomains the sitemap never showed** — `mining.sectors.app` (594 coal companies, unlisted firms, the HBA benchmark) and `reits.sectors.app` (37 S-REITs, **no API at all**) — plus the **Terms of Service commercial-use restriction** |
 | [`12-trading-calendar-and-releases.md`](02-sectors-platform/12-trading-calendar-and-releases.md) | **IDX has 22 market holidays in 2026 and no endpoint exposes them** — a scheduled job that ignores them produces blank days. Plus Sectors' 2026 release timeline and which product features have no API |
@@ -148,11 +148,11 @@ there is no FAQ, prizes, judges, timeline or sponsor page (all 404). Everything 
 
 | Gap | Status |
 | --- | --- |
-| Bahasa Indonesia rules | The rules page says they exist, but there is no public `/id`, `/rules/id`, or language toggle in the page source. Likely distributed via Slack or a separate document |
+| Bahasa Indonesia rules | **Closed in pass 4: they are not on the website.** The client bundle ships exactly five routes (`/`, `/rules`, `/tracks/*`, `/matching`, `/portal*`); 20 candidate Indonesian paths 404; `?lang=id` and `Accept-Language: id-ID` are both ignored; `<html lang="en">` with no `hreflang`. The rules page still says they exist, so they are distributed some other way — Slack or a document |
 | Prize breakdown by placement or track | Not published anywhere — only the IDR 50M total split (30M cash / 20M credits) |
 | Judge identities | Stated only as "the internal Sectors and Supertype judging team" |
 | Numeric rate limit | Never published. The docs' own recipe implies ~3 req/sec is safe — see [`06-parameter-cheatsheet.md`](02-sectors-platform/06-parameter-cheatsheet.md) |
-| Live Slack discussion | Requires joining; the only place organizers answer track-boundary questions |
+| Live Slack discussion | Requires joining; the only place organizers answer track-boundary questions. **105 members as of 5 Sep, and the shared invite link expires ~20 September — before registration closes on the 22nd** |
 | Portal contents (team page, submit form) | Login-gated |
 | ~~Full IDX index code list~~ | **Closed in pass 3.** No *helper endpoint* enumerates them, but the `/v2/index-daily/{index_code}/` description carries an accordion listing all **17**, and `supertypeai/sectors_indices_company_list` publishes a constituent CSV for 15. See [`06-parameter-cheatsheet.md`](02-sectors-platform/06-parameter-cheatsheet.md) |
 
@@ -257,7 +257,7 @@ Re-run deeper, covering what the first pass sampled rather than enumerated:
 | `synth_extended.py` docstring vs files actually produced | all 16 outputs present |
 | `capture.py` behaviour, driven against the local mock | idempotency, budget cap, resume, 404-recorded-once, ledger, cost-header detection — **all confirmed** |
 | Build-plan per-idea cost claims vs spec costs | 9/9 pass; one estimate corrected (idea 3.1 is 4 credits/ticker, not ~3) |
-| Fetch-strategy savings arithmetic | 95 saved, 824 remaining — both check out |
+| Fetch-strategy savings arithmetic | 95 saved, 824 remaining — both check out · **superseded in pass 4: the saving is 121 and the default run 297** |
 | Cross-document numeric consistency | one stale "46 teams" found and fixed |
 
 **Further corrections made:**
@@ -273,7 +273,7 @@ running API.
 ### Third audit pass — 5 September 2026, adversarial
 
 Run on the assumption that the corpus contains hallucinations and that **neither prior audit
-record is evidence**. Every check re-derived from a primary source. No live `/v2/*` call, no
+record is evidence**. *(Pass 4 re-derived all twelve: **ten stand**, §1.1 is wrong — the correct figure is 297, not 271 — and §1.12 was incomplete, having verified only the paging happy path. §1.8 was not re-checked. See the fourth-pass section below.)* Every check re-derived from a primary source. No live `/v2/*` call, no
 account, no form. Full report: [`VERIFICATION-PASS-3.md`](VERIFICATION-PASS-3.md).
 
 | Check | Method | Result |
@@ -282,7 +282,7 @@ account, no form. Full report: [`VERIFICATION-PASS-3.md`](VERIFICATION-PASS-3.md
 | Endpoint count | Operations counted in the spec | **70 GET, 0 non-GET**; 34/12/19/5 by market |
 | Prose ↔ spec paths | All 133 `/v2/…` strings resolved | 127 resolve; the 6 others are docs URLs |
 | Credit costs | Cost sentence extracted from all 70, diffed against all prose | **1 error** — shareholders composition still said 2 |
-| Non-flat formulas + worked examples | Re-computed | all correct; **the 176-vs-defaults ratio was wrong** (271, not ~528) |
+| Non-flat formulas + worked examples | Re-computed | all correct; **the 176-vs-defaults ratio was wrong** (271, not ~528) · **271 was itself wrong — pass 4 derives 297** |
 | Screener fields | Re-extracted from the spec | **IDX 219/219, SGX 85/85 exact**, all 6 category subtotals match |
 | Enums & defaults | All 45 enum params machine-diffed both ways | 30/31 claims exact; **1 invented** (`resources-reserves` index takes no params) |
 | Index codes | Spec accordion vs docs | **17 documented, dossier had 8 + 5 guesses and called the set undocumented** |
@@ -312,6 +312,48 @@ source and ~40 dataset ingestion pipelines; **two further hosts** — `admin.sec
 > Pass 3 extends the same lesson one step: **footer enumeration missed two hosts too.**
 > Certificate transparency is what closes host enumeration.
 
+### Fourth audit pass — 5 September 2026, adversarial, targeting pass 3
+
+Run on the assumption that **pass 3's report is a claim, not evidence**. Each of its twelve
+corrections re-derived from a primary source, then every standing check re-run independently.
+No live `/v2/*` call, no account, no form. Full report:
+[`VERIFICATION-PASS-4.md`](VERIFICATION-PASS-4.md); live evidence:
+[`99-raw/pass4-live-recheck-2026-09-05.md`](99-raw/pass4-live-recheck-2026-09-05.md).
+
+| Check | Method | Result |
+| --- | --- | --- |
+| **Pass 3's 271-credit claim** | `plan.json` re-costed against the spec's defaults | **FAIL — 297, not 271.** Its table counted `?q=` as a "default" (it has none) and missed `limit`'s 20-vs-30 effect on the two paginated sweeps. Saving is 121, not 95. The `financials/quarterly` exclusion **is** honest — `n_quarters` has no documented default |
+| **Pass 3's 17 index codes** | Spec accordion + `llms-full.txt` | **PASS**, verbatim. Its `sti` caution was right on its evidence — and Phase 2 **resolves it**: the ingestion pipeline fetches `^STI` into the very table the endpoint reads. A candidate 18th code, `klse`, is in that registry and not in the spec |
+| **Pass 3's mock cost model** | **Every** per-item endpoint exercised, plus constrained variants | **PASS** — 8/6/4/4/10/5/5 and every constrained combination correct. Three undocumented divergences found and written down (enum values billed instead of 400-free, reports not sliced by `sections`, free-float flat-billed) |
+| **Pass 3's `capture.py` pagination** | Driven against the mock, happy path **and failure path** | Mechanism **PASS** (32 calls, merged, idempotent; full plan 149 calls / ledger 176). **Two defects in the failure path** — a mid-sweep stop billed 15 credits and logged 0, discarding every page it paid for |
+| **Pass 3's billed-404** | Five unknown slugs, plus real symbols | **PASS** — charges 1, body is a verbatim spec string, real symbols still 200 |
+| **Matching board** | Recounted live, three independent methods | **48 / 15-7-12-14 confirmed.** But the board's *text* moved: two claims falsified (see below) |
+| Generated docs · endpoint census | Both scripts re-run; operations counted | **byte-identical**; 70 GET, 0 non-GET; every spec template referenced, every prose path resolving |
+| Declared costs · worked examples | All 70 cost sentences extracted and machine-diffed; every example recomputed | 49 flat-1, 4 flat-2, 17 non-flat; **zero prose mismatches**; all arithmetic correct |
+| Screener fields | Re-extracted both directions | **IDX 219/219, SGX 85/85 exact**, all ten category subtotals, plus the 20/10 SGX coverage-marker split |
+| Enums · defaults | 239 enum values and 46 defaults machine-diffed both ways | **2 errors** — one invented value (`Sand` on `/v2/news/`), one wrong endpoint attribution (`origin`/`cohort` on broker-activity top) |
+| Quotes | 106 quotations outside code fences, normalised and grepped | **4 failures**, including **a fabricated sentence attributed as "their framing, explicitly"** |
+| Hackathon rules | Full live re-read, sentence-hash diff | **Unchanged** — 7 differences, all markdown-vs-innerText line joins |
+| Docs drift | `schema.json`, `llms.txt`, `llms-full.txt` re-fetched | **All three byte-identical to the captures.** Release page unchanged |
+| `plan.json` · generators · holiday calendar · links | Re-run from scratch | **87/87 clean · deterministic and byte-identical to committed · 22 dates and 239 days · zero broken links** |
+
+**Fourteen corrections, six substantive:** the 297-vs-271 arithmetic; a fabricated provenance
+quotation; two falsified competitive claims (**two teams now recruit video/motion skill, and a
+team has published a bandarmology brief**); and two `capture.py` failure-path defects, one of
+which — any unbilled failure permanently deleting a call from the plan — predates pass 3 and
+survived three audits that each certified that file.
+
+**New material:** `sectors-mcp` ships its **own `schema.json`** which agrees with the committed
+one on all 70 endpoints, every parameter, every cost sentence and every response example, with
+zero differences — a third independent source. Fifteen `supertypeai` ingestion repos read,
+giving **real provenance and per-dataset refresh cadences** in place of marketing copy.
+`status.supertype.ai` **does not exist** (NXDOMAIN on two public resolvers). The Bahasa
+Indonesia rules are **definitively not on the website**. Host enumeration is **uncloseable**:
+`*.sectors.app` is wildcard DNS *and* a wildcard certificate, so CT corroborates but cannot
+prove completeness. The Slack invite **expires around 20 September**, before registration
+closes.
+
+
 ### Research completion criteria
 
 This dossier is considered complete against the following checklist. Every item is verified,
@@ -330,7 +372,7 @@ not asserted — the verification command is given where one exists.
 | 7c | Every public sectors.app product surface examined | ✅ `/`, `/pricing`, `/api`, `/api-for-idx`, `/workflow`, `/data-operations`, `/faq`, `/release`, `/indonesia/calendars/trading-calendar` — Playground and Key Management tabs are login-gated |
 | 7d | **sectors.app sitemap fully enumerated and classified** | ✅ **2,006 URLs**. ~1,960 are per-entity product pages generated from the same data the API exposes (129 company pages, 89 broker pages, 82 group pages, 53 list pages, 15 index pages, 11 IPO pages, 7 ownership pages). The ~45 distinct informational pages are all visited or classified |
 | 8 | Competing Sectors products examined | ✅ Sectors Workflow captured |
-| 9 | Competitor field surveyed | ✅ 44 public teams, track distribution computed |
+| 9 | Competitor field surveyed | ✅ **48** public teams (recounted live 5 Sep), track distribution computed. The Slack has 105 members, so the board is a lower bound |
 | 10 | Offline simulation working end to end | ✅ mock server 14/14 endpoints, generators run clean from scratch |
 | 11 | Every numeric claim re-derived from source | ✅ see below |
 | 12 | Zero broken internal links | ✅ verified each pass |
@@ -365,6 +407,23 @@ linked from any footer or sitemap; and `github.com/supertypeai` is a 74-repo pub
 including the MCP server source and ~40 dataset pipelines — that this closure argument never
 considered and that pass 3 enumerated but did not exhaust.
 
+**Three further caveats from pass 4:**
+
+- **Certificate transparency cannot close this either.** A second, independent CT source
+  (certspotter) returns exactly the same 10 names as crt.sh, which corroborates pass 3 — but
+  `*.sectors.app` is a **wildcard certificate**, so CT can only show which names were
+  separately certificated, never that no other host exists. A 103-name DNS brute force
+  returned 103 "hits" because `*.sectors.app` is also **wildcard DNS**: every label, including
+  `definitely-not-real-1234.sectors.app`, resolves to the same two Vercel edge IPs. DNS
+  enumeration is worthless against this domain. Host enumeration here is *best-effort*, not
+  closed.
+- **The enumeration was scoped to the wrong apex.** It covered `*.sectors.app` only.
+  `supertype.ai` has **22** CT names of its own, two of them Sectors-related:
+  `sectors-mcp.supertype.ai` (already documented as the MCP endpoint) and
+  `sectors.supertype.ai` (not previously noted).
+- **`status.supertype.ai`, referenced twice in the OAuth docs, does not exist** — NXDOMAIN on
+  both Google and Cloudflare public resolvers, and absent from those 22 CT names.
+
 **Self-audit.** Every numeric claim in these docs was re-derived from the OpenAPI spec and
 the fixtures on the final pass: 70 endpoints (IDX 34 / SGX 12 / mining 19 / KLSE 5), 219 IDX
 screener fields, 85 SGX screener fields, 942 tickers in the IDX universe (~32 pages at
@@ -377,6 +436,6 @@ with the counts to back it.
 
 ---
 
-*Compiled 4 September 2026; three verification passes 4–5 September, the third adversarial. Rules, pricing and the
+*Compiled 4 September 2026; four verification passes 4–5 September, the third and fourth adversarial. Rules, pricing and the
 matching board were captured on that date — verify anything time-sensitive against the
 official sources before relying on it.*

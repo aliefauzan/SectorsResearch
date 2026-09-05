@@ -46,23 +46,30 @@ the problem (30%)**. A daily brief that has genuinely been running unattended fo
 demonstrates both more convincingly than a chat interface does.
 
 There's a second reason Track 01's popularity is a warning rather than an invitation: it has
-the strictest disqualifying test in the event. Seventeen teams heading for Track 01 means the
+the strictest disqualifying test in the event. Fifteen teams heading for Track 01 means the
 judges will see a lot of off-the-shelf-client-plus-MCP projects, and will be well calibrated
 on the difference between those and real orchestration by the time they reach yours.
 
 ## Team sizes on the board
 
-| Size | Teams |
-| --- | --- |
-| 1 of 4 | 41 |
-| 2 of 4 | 2 |
-| 3 of 4 | 1 |
-| **Total** | **44** |
+| Size | Teams (5 Sep, recounted) | (4 Sep) |
+| --- | --- | --- |
+| 1 of 4 | **45** | 41 |
+| 2 of 4 | 2 | 2 |
+| 3 of 4 | 1 | 1 |
+| **Total** | **48** | 44 |
+| **Participants on the board** | **52** | 47 |
+
+No card shows 4 of 4 — by construction, since the board only lists teams with room to grow.
 
 All but three listed teams are solo builders looking for people. Two implications:
 
 - **Recruiting is easy right now.** Lots of people are unattached, and several list exactly what they bring (AI engineer, designer, video editor, financial analyst).
-- **Many of these will not finish.** Solo teams that were still forming in early September, on a 30 September deadline, have a high attrition rate. The real competitive field is smaller than 44.
+- **Many of these will not finish.** Solo teams that were still forming in early September, on a 30 September deadline, have a high attrition rate. The real competitive field is smaller than 48.
+
+> **The board is not the field.** The hackathon Slack invite page reports **105 members**
+> ("Aurellia Christie and 104 other members") against 52 people on the board, so most
+> participants never publish a profile. Treat every figure here as a lower bound.
 
 ## What teams say they need
 
@@ -73,34 +80,60 @@ Reading the "looking for" text across the board, the most-requested roles are, i
 3. **Backend and product engineers**
 4. **Business analyst / marketing**
 
-Notably scarce: nobody is advertising for a **video editor** — and one participant lists
-themselves as a "Creative Technologist, Video Editor & Creative Designer."
+**This changed between 4 and 5 September, and it is the finding in this document with the
+shortest shelf life.** On 4 September nobody on the board was advertising for a video editor,
+while one participant listed themselves as a "Creative Technologist, Video Editor & Creative
+Designer". On the 5 September recount **two teams are now recruiting for exactly that**:
 
-That's worth pausing on. **Thirty percent of the score is the video**, judged asynchronously
-with no live session. The field is competing for designers and analysts while under-valuing
-the one skill that maps directly onto nearly a third of the rubric.
+- **Sepi** (Track 02) — *"Cari 1 orang video/motion untuk judging video 3 menit. Produk sudah didefinisikan dan backend dikerjakan solo."*
+- **StockPro** (Track 03) — *"Need a designer, editor, motion graphics and maybe someone who familiar with cron ,automations ,n8n and hermes"* (spacing as written on the board)
+
+**Thirty percent of the score is the video**, judged asynchronously with no live session. The
+field is still mostly competing for designers and analysts, but the edge here is narrowing —
+at least one team has read the rubric the same way. Treat it as an advantage worth taking
+now rather than a gap that will still be open on 22 September.
 
 ## Named projects visible on the board
 
-Only one team has published a project name and description in enough detail to identify:
-**Xninetzy** — a solo builder in Track 03, "Building SAKTI end-to-end across AI/agentic
-systems, backend infrastructure, data pipelines, and product development."
+On the 5 September recount, **22 of the 48 cards carry text** and four disclose enough to
+identify the project:
 
-Everything else is either "No description yet" or a recruiting note. There is no public
-information about what the majority of the field is actually building, and no leaderboard,
-so **do not over-fit to this**. It tells you which tracks are crowded; it does not tell you
-which ideas are taken.
+| Team | Track | What they say |
+| --- | --- | --- |
+| **Xninetzy** | 03 | "Solo builder. Not currently looking for additional teammates. Building SAKTI end-to-end across AI/agentic systems, backend infrastructure, data pipelines, and product development." |
+| **Apriyanto** | 03 | "Hiddwn gems & early accumulation by bandar" |
+| **RWL** | 02 | "daily watch of stock with certain filter (RSI/MA/MACD)" |
+| **StockPro** | 03 | recruiting for "cron ,automations ,n8n and hermes" — i.e. a scheduled pipeline |
+
+The rest is either "No description yet" or a recruiting note. Two things follow.
+
+**Bandarmology is taken, at least once.** Apriyanto's one-liner is a broker-accumulation
+screen — the same territory as idea 1.1 in
+[`what-we-can-build.md`](what-we-can-build.md). It does not make the idea unavailable, but
+"nobody else will think of this" is no longer true of the broker-cohort data specifically.
+
+**RWL's brief is a Track 02 project built on indicators the Sectors API does not compute** —
+none of RSI, MA or MACD is among the 219 screener fields. Whoever builds that is deriving them
+from `/v2/daily/`. Worth knowing before you copy it: Sectors' own recipes
+`quick-start-in-python/03-simple-moving-average` and `05-EDA-stock-price` already do exactly
+that, the second one computing `MA_21`, `RSI`, `OBV`, `MACD` and rolling volatility with the
+`ta` library and feeding them to a model. So it is a derivation the API does not hand you —
+but not one the organizers have never seen.
+
+There is still no leaderboard and no public information about what the other 26 silent teams
+are doing, so **do not over-fit to this**. It tells you which tracks are crowded and gives a
+sample of what four teams are building; it does not tell you which ideas are taken.
 
 ## What this changes
 
 | Finding | So |
 | --- | --- |
 | Track 02 has ~1/2 the teams of Track 01 (was ~1/4 on 4 Sep) | Least crowded, and the one where the qualifying bar is objective and easy to prove |
-| 30% of teams haven't picked a track | The distribution will shift; don't treat 9% as final |
+| 29% of teams haven't picked a track | The distribution will shift; don't treat Track 02's 15% as final |
 | Track 01 is crowded *and* has the strictest disqualifier | Only pick it if you're genuinely building orchestration — see [the trap](../02-sectors-platform/04-mcp-and-ai-agents.md) |
 | Almost all teams are solo and still forming | Easy to recruit; real field is smaller than it looks |
-| Nobody is competing for video skill | 30% of the rubric is under-contested |
-| No visible project ideas | The unusual-data plays (mining licences, broker cohorts, suspensions) are very unlikely to be duplicated |
+| Two teams now recruit video/motion skill (was zero on 4 Sep) | 30% of the rubric is still under-contested, but the gap is closing — act on it now |
+| Four visible project ideas, one of them a bandarmology screen | Mining licences and suspensions still look untouched; **broker cohorts are not** — at least one team is on them |
 
 ## ⚠️ Your real Track 02 competitor is Sectors Workflow
 

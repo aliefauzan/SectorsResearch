@@ -14,8 +14,10 @@ response to disk, and develop against the recording from then on.
 
 Safety properties, in order of how much money they save:
 
-  * **Idempotent.** A call whose response is already on disk is skipped. Re-running
-    the whole plan after a crash costs nothing for what already succeeded.
+  * **Idempotent, but only for calls that actually settled.** A 2xx (payload on disk)
+    or a 404 (a credit already paid for the lookup) is skipped on re-run. An unbilled
+    failure --- 402, 400, an exhausted 429/5xx retry, a network error --- is *retried*,
+    because it cost nothing and the condition is transient.
   * **Hard budget cap.** Refuses to start a call that would push estimated spend
     past --budget. Default 250.
   * **Dry run.** Prints the full plan with per-call and cumulative cost, calls nothing.
@@ -24,6 +26,9 @@ Safety properties, in order of how much money they save:
     reconcile the guess against reality after the first run.
   * **Never re-fetches a 404.** A 404 costs a credit; it is recorded as a negative
     result so the same bad symbol is never paid for twice.
+  * **Resumable sweeps.** A paginated entry that dies partway keeps the pages it paid
+    for, records them as `incomplete`, and is resumed on the next run rather than
+    silently counting as done.
   * **Rate limited.** 0.35s between calls, above the 0.3s the docs call mandatory.
   * **Retries only what is free.** 429 and 5xx are not billed, so they back off and
     retry; 4xx do not.
@@ -92,8 +97,35 @@ def spent_so_far():
         except ValueError:
             continue
         if entry.get("billed"):
-            total += entry.get("est_cost", 0)
+            # `billed_cost` is what the call actually cost (a partial sweep bills only
+            # the pages that returned). Older ledger lines only carry `est_cost`.
+            total += entry.get("billed_cost", entry.get("est_cost", 0))
     return total
+
+
+def is_settled(entry: dict) -> bool:
+    """True when a manifest entry represents a call that must never be repeated.
+
+    Only two outcomes are settled: a 2xx (we have the payload) and a 404 (we paid a
+    credit for the lookup, and the answer will not change). Everything else --- 402
+    insufficient credits, 400, a 429/5xx that outlived its retries, a network failure
+    recorded as status 0 --- cost nothing and is a transient condition, so re-running
+    the plan must retry it rather than treat it as done. An earlier version skipped on
+    the mere presence of a manifest key, which meant one connection blip permanently
+    dropped a call from the plan.
+    """
+    status = entry.get("status")
+    if not isinstance(status, int):
+        return False
+    if 200 <= status < 300:
+        # A partial sweep that stopped on a *billed* 404 is settled even though it is
+        # incomplete: resuming it re-issues the same 404 and pays for it again, every
+        # run, forever. "Never pay for the same 404 twice" has to hold inside a sweep
+        # as well as outside one.
+        if entry.get("incomplete"):
+            return entry.get("stopped_on") == 404
+        return True
+    return status == 404
 
 
 def has_next(payload) -> bool:
@@ -109,10 +141,19 @@ def merge_pages(pages: list):
         return [row for page in pages for row in (page if isinstance(page, list) else [page])]
     merged = dict(pages[0])
     merged["results"] = [row for page in pages for row in (page.get("results") or [])]
+    # `has_next` / `next_offset` come from the LAST page (they describe where the sweep
+    # stopped), but `offset`, `previous_offset` and `limit` must describe the MERGED
+    # payload, not that final page: copying the last page's envelope wholesale yields
+    # `offset: 900` in front of rows that start at 0, and a consumer that resumes from
+    # `previous_offset` re-buys pages it already holds.
+    last = dict(pages[-1].get("pagination") or {})
     merged["pagination"] = {
-        **(pages[-1].get("pagination") or {}),
+        **last,
+        "offset": (pages[0].get("pagination") or {}).get("offset", 0),
+        "previous_offset": None,
         "showing": len(merged["results"]),
         "pages_fetched": len(pages),
+        "merged": True,
     }
     return merged
 
@@ -175,9 +216,12 @@ def run(plan, tiers, budget, dry_run, api_key, only, base_url=BASE):
     todo = []
     for call in calls:
         key = slug(call["path"], call.get("params"))
-        if key in manifest:
+        if key in manifest and is_settled(manifest[key]):
             print(f"  SKIP  {call['path']:52} (recorded, {manifest[key]['status']})")
             continue
+        if key in manifest:
+            print(f"  RETRY {call['path']:52} (unbilled {manifest[key]['status']}, "
+                  f"retrying)")
         projected += call["est_cost"]
         todo.append((call, key))
         flag = "" if projected <= budget else "  << OVER BUDGET"
@@ -208,10 +252,53 @@ def run(plan, tiers, budget, dry_run, api_key, only, base_url=BASE):
         # for; a single call would record one page while billing for all of them.
         pages = int(call.get("pages") or 1)
         page_size = int((call.get("params") or {}).get("limit") or 0)
+        if pages > 1 and page_size <= 0:
+            print(f"  SKIP  {call['path']:52} (pages={pages} but no `limit` in params; "
+                  f"every page would repeat offset 0)")
+            continue
+        # Resume a sweep that died partway: the pages already on disk were paid for
+        # once, so start at the first page we do not have rather than re-buying them.
         collected = []
+        prior = manifest.get(key) or {}
+        start_page = 0
+        if prior.get("incomplete") and prior.get("pages_fetched"):
+            try:
+                kept = json.load(open(os.path.join(RECORDED, key + ".json")))
+                collected = [kept]
+                start_page = int(prior["pages_fetched"])
+                print(f"  RESUME{call['path']:52} from page {start_page}/{pages}")
+            except (OSError, ValueError) as err:
+                # OSError: the recording is gone. ValueError (JSONDecodeError): it is
+                # truncated or corrupt — a half-written file from a crash during
+                # json.dump. Either way the prefix is unusable, so re-buy the sweep
+                # from page 0 rather than aborting the whole run: an unhandled decode
+                # error here would strand every remaining plan entry behind one bad
+                # file, permanently, on every future run.
+                print(f"  RESET {call['path']:52} (unusable partial recording: "
+                      f"{type(err).__name__}; refetching from page 0)")
+                collected, start_page = [], 0
+        # A plan edited to fewer pages than are already on disk would otherwise loop
+        # forever: range(start_page, pages) is empty, nothing is fetched, and the entry
+        # is rewritten as `incomplete` on every run without ever settling.
+        if start_page >= pages and collected:
+            print(f"  DONE  {call['path']:52} (have {start_page} pages, plan now asks "
+                  f"for {pages}; marking settled)")
+            payload = merge_pages(collected)
+            if isinstance(payload, dict) and isinstance(payload.get("pagination"), dict):
+                payload["pagination"]["pages_fetched"] = start_page
+            json.dump(payload, open(os.path.join(RECORDED, key + ".json"), "w"),
+                      indent=1, ensure_ascii=False)
+            manifest[key] = {"path": call["path"], "params": call.get("params"),
+                             "status": 200, "tier": call.get("tier"),
+                             "pages_fetched": start_page, "pages_expected": pages,
+                             "est_cost": call["est_cost"],
+                             "billed_cost": prior.get("billed_cost", 0),
+                             "fetched_at": time.time(), "cost_headers": {}}
+            save_manifest(manifest)
+            continue
         status = payload = None
         headers = {}
-        for page in range(pages):
+        for page in range(start_page, pages):
             page_params = dict(call.get("params") or {})
             if pages > 1:
                 page_params["offset"] = page * page_size
@@ -224,19 +311,56 @@ def run(plan, tiers, budget, dry_run, api_key, only, base_url=BASE):
                 break
             if pages > 1 and page + 1 < pages:
                 time.sleep(RATE_LIMIT_SLEEP)
+        failure = None if 200 <= (status or 0) < 300 else (status, payload)
+        # collected[0] is the resumed prefix when start_page > 0, so it already holds
+        # start_page pages that were paid for; the rest are new this session.
+        new_pages = len(collected) - (1 if start_page else 0)
+        total_pages = start_page + new_pages
         if pages > 1 and collected:
             payload = merge_pages(collected)
+            if isinstance(payload, dict) and isinstance(payload.get("pagination"), dict):
+                payload["pagination"]["pages_fetched"] = total_pages
         observed = cost_headers(headers)
-        # 400s and 429/5xx are not billed; 2xx and 404 are.
-        billed = status == 404 or 200 <= status < 300
-        if billed:
-            running += call["est_cost"]
+        # 400s and 429/5xx are not billed; 2xx and 404 are. A sweep that died partway
+        # still paid for the pages that came back, so bill those rather than nothing:
+        # the whole point of the ledger is that it matches the real meter.
+        pages_billed = new_pages if pages > 1 else 0
+        if failure is None:
+            billed_cost = call["est_cost"] if pages == 1 else max(pages_billed, 1)
+        elif failure[0] == 404:
+            billed_cost = pages_billed + 1
+        else:
+            billed_cost = pages_billed
+        billed = billed_cost > 0
+        running += billed_cost
 
         log({"ts": time.time(), "path": call["path"], "params": call.get("params"),
              "status": status, "est_cost": call["est_cost"], "billed": billed,
+             "billed_cost": billed_cost, "pages_fetched": pages_billed,
              "cost_headers": observed})
 
-        if 200 <= status < 300:
+        # A sweep that fetched some pages and then failed is written to disk anyway ---
+        # those pages were paid for --- but flagged `incomplete` so the next run
+        # resumes it instead of treating the entry as settled.
+        if failure is not None and collected:
+            json.dump(payload, open(os.path.join(RECORDED, key + ".json"), "w"),
+                      indent=1, ensure_ascii=False)
+            manifest[key] = {"path": call["path"], "params": call.get("params"),
+                             "status": 200, "tier": call.get("tier"),
+                             "incomplete": True, "pages_fetched": total_pages,
+                             "pages_expected": pages, "stopped_on": failure[0],
+                             "error": str(failure[1])[:200],
+                             "est_cost": call["est_cost"], "billed_cost": billed_cost,
+                             "fetched_at": time.time(), "cost_headers": observed}
+            save_manifest(manifest)
+            verb = ("truncated by a billed 404, settled"
+                    if failure[0] == 404 else "kept, will resume")
+            print(f"  PART  {call['path']:52} {failure[0]}  {total_pages}/{pages} pages "
+                  f"{verb}  spent {running}")
+            time.sleep(RATE_LIMIT_SLEEP)
+            continue
+
+        if failure is None:
             json.dump(payload, open(os.path.join(RECORDED, key + ".json"), "w"),
                       indent=1, ensure_ascii=False)
             manifest[key] = {"path": call["path"], "params": call.get("params"),
@@ -272,10 +396,12 @@ def report():
     rows = [json.loads(line) for line in open(LEDGER) if line.strip()]
     billed = [r for r in rows if r.get("billed")]
     by_path = {}
+    def cost_of(r):
+        return r.get("billed_cost", r.get("est_cost", 0))
     for r in billed:
-        by_path[r["path"]] = by_path.get(r["path"], 0) + r.get("est_cost", 0)
+        by_path[r["path"]] = by_path.get(r["path"], 0) + cost_of(r)
     print(f"attempts: {len(rows)}   billed: {len(billed)}   "
-          f"estimated credits: {sum(r.get('est_cost', 0) for r in billed)}")
+          f"estimated credits: {sum(cost_of(r) for r in billed)}")
     print("\nby endpoint:")
     for path, cost in sorted(by_path.items(), key=lambda kv: -kv[1]):
         print(f"  {cost:>5}  {path}")

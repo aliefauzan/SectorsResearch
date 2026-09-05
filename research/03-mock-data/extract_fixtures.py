@@ -72,7 +72,16 @@ def main() -> None:
                     "in": p.get("in"),
                     "required": bool(p.get("required")),
                     "type": (p.get("schema") or {}).get("type"),
-                    "enum": (p.get("schema") or {}).get("enum"),
+                    # Multi-select parameters (`sections`, `classifications`, `periods`)
+                    # are `type: array` and carry their enum on `items`, not on the
+                    # schema itself. Reading only `schema.enum` dropped all 12 of them
+                    # -- which are exactly the parameters that drive billing -- so the
+                    # mock could not reject an out-of-enum section and billed the typo
+                    # instead.
+                    "enum": ((p.get("schema") or {}).get("enum")
+                             or ((p.get("schema") or {}).get("items") or {}).get("enum")),
+                    "minimum": (p.get("schema") or {}).get("minimum"),
+                    "maximum": (p.get("schema") or {}).get("maximum"),
                 }
                 for p in operation.get("parameters", [])
             ],

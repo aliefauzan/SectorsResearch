@@ -12,28 +12,36 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "symbol",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -52,28 +60,36 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_brokers",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 90
       }
     ],
     "credit_cost": "2 API credits",
@@ -92,28 +108,36 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "broker_code",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -132,21 +156,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "cohort",
@@ -159,14 +189,18 @@
           "mixed",
           "retail",
           "unknown"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_brokers",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 90
       },
       {
         "name": "origin",
@@ -177,7 +211,9 @@
           "all",
           "domestic",
           "foreign"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "2 API credits",
@@ -201,7 +237,9 @@
           "mixed",
           "retail",
           "unknown"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "origin",
@@ -211,7 +249,9 @@
         "enum": [
           "domestic",
           "foreign"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -236,14 +276,18 @@
           "mixed",
           "retail",
           "unknown"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "date",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "metric",
@@ -253,14 +297,18 @@
         "enum": [
           "gross",
           "net"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_brokers",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 90
       },
       {
         "name": "origin",
@@ -271,7 +319,9 @@
           "all",
           "domestic",
           "foreign"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "2 API credits",
@@ -290,21 +340,27 @@
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "date",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per page",
@@ -323,49 +379,63 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "q",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "order_by",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "desc",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 200
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "include_query_values",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit for structured queries",
@@ -395,28 +465,36 @@
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "since",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per page",
@@ -435,35 +513,54 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_stock",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
       },
       {
         "name": "classifications",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "top_gainers",
+          "top_losers"
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "periods",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "14d",
+          "1d",
+          "30d",
+          "365d",
+          "7d"
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "min_mcap_billion",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested classification × period combination",
@@ -482,7 +579,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -501,14 +600,18 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "financial_year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       }
     ],
     "credit_cost": "1 API credit",
@@ -527,7 +630,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -546,14 +651,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend",
+          "financials",
+          "future",
+          "management",
+          "overview",
+          "ownership",
+          "peers",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -572,14 +690,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend",
+          "financials",
+          "future",
+          "management",
+          "overview",
+          "ownership",
+          "peers",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -598,14 +729,18 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       }
     ],
     "credit_cost": "1 API credit",
@@ -624,21 +759,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -657,49 +798,63 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sector",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sub_sector",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "transaction_type",
@@ -710,14 +865,18 @@
           "buy",
           "others",
           "sell"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "tags",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "holder_type",
@@ -728,7 +887,9 @@
           "corporate-investor",
           "insider",
           "institution"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -747,28 +908,36 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "report_date",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "approx",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_quarters",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per quarter returned",
@@ -787,21 +956,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -820,28 +995,36 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sub_sector",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "industry",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sub_industry",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per 100 companies returned, rounded up",
@@ -860,14 +1043,18 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -886,21 +1073,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -930,7 +1123,9 @@
         "in": "query",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -949,28 +1144,42 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_stock",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
       },
       {
         "name": "classifications",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend_yield",
+          "earnings",
+          "market_cap",
+          "pe",
+          "revenue"
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "min_mcap_million",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested classification",
@@ -989,14 +1198,23 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -1015,14 +1233,23 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -1052,7 +1279,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1082,21 +1311,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start_year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       },
       {
         "name": "end_year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       }
     ],
     "credit_cost": "1 API credit",
@@ -1123,28 +1358,36 @@
           "Nickel",
           "Silver",
           "Zinc and Lead"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "keyword",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "company_type",
@@ -1158,14 +1401,18 @@
           "Manufacturer",
           "Mine Owner",
           "Trader"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "has_financials",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1184,7 +1431,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1203,14 +1452,18 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       }
     ],
     "credit_cost": "1 API credit",
@@ -1229,7 +1482,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1248,7 +1503,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "commodity_type",
@@ -1261,14 +1518,18 @@
           "Gold",
           "Nickel",
           "Silver"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       }
     ],
     "credit_cost": "1 API credit",
@@ -1287,14 +1548,18 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "mine_owner",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1317,21 +1582,27 @@
           "Coal",
           "Copper",
           "Gold"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "year",
         "in": "query",
         "required": true,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       }
     ],
     "credit_cost": "1 API credit",
@@ -1356,21 +1627,27 @@
           "Copper",
           "Gold",
           "Nickel"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "country",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       }
     ],
     "credit_cost": "1 API credit",
@@ -1398,7 +1675,9 @@
           "Sulawesi Selatan",
           "Sulawesi Utara",
           "Sumatera Selatan"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "commodity_type",
@@ -1410,7 +1689,9 @@
           "Copper",
           "Gold",
           "Nickel"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "order_by",
@@ -1426,21 +1707,27 @@
           "licensed_area_ha",
           "participant_count",
           "winner_date"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "area_type",
@@ -1450,35 +1737,45 @@
         "enum": [
           "WIUP",
           "WIUPK"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "status",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "participant",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "qualified",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "min_participants",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1497,7 +1794,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1554,7 +1853,9 @@
           "Sumatera Selatan",
           "Sumatera Utara",
           "Yogyakarta"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "commodity_type",
@@ -1576,14 +1877,18 @@
           "Sand",
           "Sand, Stone, Gravel",
           "Tin"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "company",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "order_by",
@@ -1599,28 +1904,36 @@
           "license_effective_date",
           "license_expiry_date",
           "licensed_area_ha"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "expiring_soon",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "license_type",
@@ -1634,7 +1947,9 @@
           "KK",
           "PKP2B",
           "SIPB"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "activity",
@@ -1644,14 +1959,18 @@
         "enum": [
           "Eksplorasi",
           "Operasi Produksi"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "cnc",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1715,7 +2034,9 @@
           "Sumatera Barat",
           "Sumatera Selatan",
           "Sumatera Utara"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "commodity_type",
@@ -1730,14 +2051,18 @@
           "Nickel",
           "Silver",
           "Tin"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       }
     ],
     "credit_cost": "1 API credit",
@@ -1756,14 +2081,18 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       }
     ],
     "credit_cost": "1 API credit",
@@ -1805,7 +2134,9 @@
           "Sumatera Barat",
           "Sumatera Selatan",
           "Sumatera Utara"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "commodity_type",
@@ -1817,21 +2148,27 @@
           "Copper",
           "Gold",
           "Nickel"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "company",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "year",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
       },
       {
         "name": "order_by",
@@ -1845,28 +2182,36 @@
           "production_volume",
           "strip_ratio",
           "year"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "min_production",
         "in": "query",
         "required": false,
         "type": "number",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1885,7 +2230,9 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1909,7 +2256,9 @@
           "Copper",
           "Gold",
           "Nickel"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -1928,35 +2277,45 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "adjusted",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_stock",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
       }
     ],
     "credit_cost": "2 API credits",
@@ -1975,14 +2334,18 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sub_sector",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "commodity_type",
@@ -1999,42 +2362,54 @@
           "Non-Metallic Mineral",
           "Sand, Stone, Gravel",
           "Tin"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "tags",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "extension",
@@ -2044,21 +2419,27 @@
         "enum": [
           "idx",
           "mining"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "keyword",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "symbols",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -2077,35 +2458,45 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -2124,49 +2515,63 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "q",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "order_by",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "desc",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 200
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "include_query_values",
         "in": "query",
         "required": false,
         "type": "boolean",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit for structured queries",
@@ -2185,28 +2590,42 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "n_stock",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
       },
       {
         "name": "classifications",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend_yield",
+          "earnings",
+          "market_cap",
+          "pe",
+          "revenue"
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "min_mcap_million",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested classification",
@@ -2225,14 +2644,23 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -2251,14 +2679,23 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -2277,21 +2714,27 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -2310,35 +2753,45 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "transaction_type",
@@ -2351,7 +2804,9 @@
           "others",
           "sell",
           "transfer"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "holder_type",
@@ -2361,7 +2816,9 @@
         "enum": [
           "insider",
           "institution"
-        ]
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -2380,56 +2837,72 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sub_sector",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       },
       {
         "name": "tags",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "symbols",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -2459,35 +2932,45 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",
@@ -2539,14 +3022,25 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "companies",
+          "growth",
+          "market_cap",
+          "stability",
+          "statistics",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -2565,14 +3059,25 @@
         "in": "path",
         "required": true,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "sections",
         "in": "query",
         "required": false,
         "type": "array",
-        "enum": null
+        "enum": [
+          "companies",
+          "growth",
+          "market_cap",
+          "stability",
+          "statistics",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit per requested section",
@@ -2602,35 +3107,45 @@
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "start",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "end",
         "in": "query",
         "required": false,
         "type": "string",
-        "enum": null
+        "enum": null,
+        "minimum": null,
+        "maximum": null
       },
       {
         "name": "limit",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
       },
       {
         "name": "offset",
         "in": "query",
         "required": false,
         "type": "integer",
-        "enum": null
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
       }
     ],
     "credit_cost": "1 API credit",

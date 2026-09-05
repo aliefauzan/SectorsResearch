@@ -55,11 +55,20 @@ class Recordings:
     def __init__(self, recorded_dir: str):
         self.dir = recorded_dir
         self.by_path = {}
+        self.partial = []
         manifest_path = os.path.join(recorded_dir, "_manifest.json")
         if not os.path.exists(manifest_path):
             return
         for key, meta in json.load(open(manifest_path)).items():
             if meta.get("status") != 200:
+                continue
+            # A sweep that stopped partway is written with status 200 and
+            # `incomplete: true`. Replaying it as a complete response would serve a
+            # fraction of the universe as if it were all of it -- the single most
+            # misleading thing this server could do, because it looks authoritative.
+            if meta.get("incomplete"):
+                self.partial.append((meta["path"], meta.get("pages_fetched"),
+                                     meta.get("pages_expected")))
                 continue
             self.by_path.setdefault(meta["path"], []).append((key, meta.get("params") or {}))
 
@@ -67,7 +76,16 @@ class Recordings:
         return sum(len(v) for v in self.by_path.values())
 
     def lookup(self, path: str, query: dict):
-        """Exact param match first, then any recording for the same concrete path."""
+        """Exact param match only.
+
+        Returns (payload, exact) so the handler can tell the caller which request the
+        body actually answers. An earlier version fell back to `candidates[0]` -- any
+        recording for the same path, whatever its parameters -- so
+        `?sections=financials` silently replayed a `?sections=overview` capture and
+        labelled it `X-Mock-Source: recording`. That is worse than falling back to the
+        spec example: it looks like observed truth while answering a different
+        question. Params must match; otherwise the caller falls back to the fixture.
+        """
         candidates = self.by_path.get(path)
         if not candidates:
             return None
@@ -75,12 +93,16 @@ class Recordings:
         for key, params in candidates:
             if {str(k): str(v) for k, v in params.items()} == {str(k): str(v) for k, v in flat.items()}:
                 return self._load(key)
-        return self._load(candidates[0][0])
+        return None
 
     def _load(self, key):
         try:
             return json.load(open(os.path.join(self.dir, key + ".json")))
-        except OSError:
+        except (OSError, ValueError):
+            # OSError: recording gone. ValueError (JSONDecodeError): recording
+            # truncated by a crash mid-write. Either way, fall back to the spec
+            # example rather than killing the request with a 500-shaped connection
+            # drop -- a corrupt file in recorded/ must not take the server down.
             return None
 
 
@@ -112,6 +134,61 @@ class Catalog:
     def payload(self, meta: dict):
         with open(os.path.join(self.fixtures_dir, meta["fixture"])) as fh:
             return json.load(fh)
+
+
+def validate(meta: dict, query: dict):
+    """Return an error string when a query parameter is invalid, else None.
+
+    The real API answers a bad parameter with a 400, and **400s are free** -- that is
+    one of the few billing facts the docs state outright. A mock that instead bills a
+    typo teaches the wrong lesson and, worse, mis-states the budget. Three concrete
+    failures this closes, all found by fuzzing the server rather than reading it:
+
+      * `?n_quarters=abc` raised ValueError inside cost_for and dropped the connection
+        with no HTTP response at all.
+      * `?n_quarters=-5` was charged as -5 credits, which *increased* the balance:
+        five such calls moved the meter from 51 spent to -449 spent. The mock's one
+        job is a truthful meter.
+      * `?sections=,,,` counted four empty strings and charged four credits.
+    """
+    for spec in meta.get("parameters") or []:
+        if spec.get("in") != "query":
+            continue
+        name = spec.get("name")
+        if name not in query:
+            continue
+        raw = query[name][0]
+        enum = spec.get("enum")
+        if spec.get("type") == "array":
+            if raw == "":
+                continue                      # empty means "unset" -> defaults apply
+            values = raw.split(",")
+            if any(v.strip() == "" for v in values):
+                return f"Invalid value for `{name}`: empty item in list."
+            if enum:
+                bad = [v for v in values if v not in enum]
+                if bad:
+                    return (f"Invalid value(s) for `{name}`: {', '.join(bad)}. "
+                            f"Valid values: {', '.join(enum)}.")
+            continue
+        if enum and raw not in enum:
+            return (f"Invalid value for `{name}`: {raw}. "
+                    f"Valid values: {', '.join(map(str, enum))}.")
+        if spec.get("type") in ("integer", "number"):
+            if raw == "":
+                continue
+            try:
+                number = float(raw) if spec["type"] == "number" else int(raw)
+            except (TypeError, ValueError):
+                return f"Invalid value for `{name}`: {raw} is not a {spec['type']}."
+            low, high = spec.get("minimum"), spec.get("maximum")
+            if low is not None and number < low:
+                return f"`{name}` must be >= {low} (got {raw})."
+            if high is not None and number > high:
+                return f"`{name}` must be <= {high} (got {raw})."
+        if spec.get("type") == "boolean" and raw.lower() not in ("true", "false", "1", "0"):
+            return f"Invalid value for `{name}`: {raw} is not a boolean."
+    return None
 
 
 class CreditMeter:
@@ -262,6 +339,12 @@ class Handler(BaseHTTPRequestHandler):
                 "error": f"No such endpoint: {path}.",
             })
 
+        # Validate before charging: a 400 is free on the real API, so billing an
+        # invalid parameter would over-state every budget rehearsed here.
+        problem = validate(meta, query)
+        if problem:
+            return self._send(400, {"error": problem})
+
         cost = self.meter.cost_for(meta, query)
         # Screener natural-language mode is billed at 3 credits. Both screeners:
         # /v2/companies/ and /v2/sgx/companies/ document the same 1-vs-3 split.
@@ -312,6 +395,9 @@ def main() -> None:
     print(f"Sectors mock API on http://{options.host}:{options.port}")
     print(f"  {len(Handler.catalog.index)} endpoints · {options.credits} simulated credits")
     print(f"  {len(Handler.recordings)} real recordings replayed (rest fall back to spec examples)")
+    for path, got, want in Handler.recordings.partial:
+        print(f"  ! {path} is an INCOMPLETE capture ({got}/{want} pages) — not replayed; "
+              f"re-run capture.py to finish the sweep")
     print(f"  usage report: GET /__usage")
     try:
         server.serve_forever()
