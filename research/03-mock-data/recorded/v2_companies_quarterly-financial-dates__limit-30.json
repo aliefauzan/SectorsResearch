@@ -1,0 +1,4816 @@
+{
+ "results": [
+  {
+   "symbol": "AADI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "AALI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ABBA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "ABDA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ABMM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ACES.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ACRO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ACST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ADCP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ADES.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ADHI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ADMF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ADMG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ADMR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "ADRO.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "AEGS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AGAR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AGII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AGRO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AGRS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AHAP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AIMS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AISA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AKKU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AKPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AKRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AKSI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ALDO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ALII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ALKA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ALMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ALTO.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "AMAG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AMAN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AMAR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AMFG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AMIN.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "AMMN.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "AMMS.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "AMOR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "AMRT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ANDI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ANJT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ANTM.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "APEX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "APIC.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "APII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "APLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "APLN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ARCI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "AREA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ARGO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ARII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ARKA.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "ARKO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ARMY.JK",
+   "date": "2021-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "ARNA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ARTA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "ARTI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "ARTO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASBI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASDM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASGR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASHA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASJT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASLC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASPR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASRI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASRM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ASSA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ATAP.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "ATIC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ATLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AUTO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AVIA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AWAN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AXIO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AYAM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "AYLS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BABP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BABY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BACA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BAIK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BAJA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BALI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BANK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BAPA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BAPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BATA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BATR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BAUT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BAYU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBCA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBHI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBKP.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BBLD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBMD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBNI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBRI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BBRM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBSI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBSS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBTN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BBYB.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BCAP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BCIC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BCIP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BDKR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BDMN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BEBS.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "BEEF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BEER.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BEKS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BELI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BELL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BESS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BEST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BFIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BGTG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BHAT.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "BHIT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BIKA.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "BIKE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BIMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BINA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BINO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BIPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BIPP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BIRD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BISI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BJBR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BJTM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BKDP.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BKSL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BKSW.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BLES.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BLOG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BLTA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BLTZ.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BLUE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BMAS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BMBL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BMHS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BMRI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BMSR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BMTR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BNBA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BNBR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BNGA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BNII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BNLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BOAT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BOBA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BOGA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BOLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BOLT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BOSS.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "BPFI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BPII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BPTR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BRAM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BREN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BRIS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BRMS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BRNA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BRPT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BRRC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BSBK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BSDE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BSIM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BSML.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BSSR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BSWD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BTEK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BTEL.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "BTON.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BTPN.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BTPS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BUAH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BUDI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BUKA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BUKK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BULL.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "BUMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BUVA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BVIC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BWPT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "BYAN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CAKK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CAMP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CANI.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CARE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CARS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CASA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CASH.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "CASS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CBDK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CBMF.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "CBPE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CBRE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CBUT.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "CCSI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CDIA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CEKA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CENT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CFIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CGAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CHEK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CHEM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CHIP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CINT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CITA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CITY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CLAY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CLEO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CLPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CMNP.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "CMNT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CMPP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CMRY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CNKO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CNMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CNTX.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "COAL.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "COCO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "COIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CPIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CPRI.JK",
+   "date": "2022-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "CPRO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CRAB.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "CRSN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CSAP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CSIS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "CSMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CSRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CTBN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CTRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CTTH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CUAN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "CYBR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "DAAZ.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DADA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DART.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DATA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DAYA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DCII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DEAL.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "DEFI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DEPO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DEWA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DEWI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "DFAM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DGIK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DGNS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DGWG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DIGI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DILD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DIVA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DKFT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DKHH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DLTA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DMAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DMMX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DMND.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DNAR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DNET.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DOID.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DOOH.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "DOSS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DPNS.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "DPUM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DRMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DSFI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "DSNG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DSSA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "DUCK.JK",
+   "date": "2020-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "DUTI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DVLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DWGL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "DYAN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EAST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ECII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EDGE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EKAD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ELIT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ELPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ELSA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ELTY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EMAS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "EMDE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EMMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EMTK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ENAK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ENRG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ENVY.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "ENZO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EPAC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EPMT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ERAA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ERAL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ERTX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ESIP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ESSA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ESTA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ESTI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ETWA.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "EURO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "EXCL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FAPA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FAST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FASW.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FILM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FIMP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FIRE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FISH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FITT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FLMC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FMII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FOLK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FOOD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FORE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FORU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FORZ.JK",
+   "date": "2020-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "FPNI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FREN.JK",
+   "date": "2024-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "FUJI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FUTR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "FWCT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GAMA.JK",
+   "date": "2022-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "GDST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GDYR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GEMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GEMS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "GGRM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GGRP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GHON.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GIAA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "GJTL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GLOB.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GLVA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GMFI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "GMTD.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "GOLD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GOLF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GOLL.JK",
+   "date": "2021-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "GOOD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GOTO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GPRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GPSO.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "GRIA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GRPH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GRPM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GSMF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GTBO.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "GTRA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "GTSI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GULA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GUNA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GWSA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "GZCO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HADE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HAIS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HAJJ.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HALO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HATM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HBAT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HDFA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HDIT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HDTX.JK",
+   "date": "2025-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "HEAL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HELI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "HERO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HEXA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HGII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HILL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HITS.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "HKMU.JK",
+   "date": "2023-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "HMSP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HOKI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HOME.JK",
+   "date": "2020-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "HOMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HOPE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HOTL.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "HRME.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HRTA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HRUM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HUMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "HYGN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IATA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IBFN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IBOS.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "IBST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ICBP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ICON.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IDEA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IDPR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IFII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IFSH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IGAR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IIKP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IKAI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "IKAN.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "IKBI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "IKPM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IMAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IMJS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IMPC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INAF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INAI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INCF.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "INCI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "INCO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INDF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INDO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INDR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INDS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INDX.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "INDY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INET.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "INKP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INOV.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INPC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INPP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INPS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INRU.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "INTA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INTD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "INTP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IOTF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IPAC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IPCC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IPCM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IPOL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IPPE.JK",
+   "date": "2024-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IPTV.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IRRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "IRSX.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "ISAP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ISAT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ISEA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ISSP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ITIC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ITMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ITMG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JARR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JAST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JATI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JAWA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JAYA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JECC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JELI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JGLE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JIHD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JKON.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JKSW.JK",
+   "date": "2025-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "JMAS.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "JPFA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JRPT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JSKY.JK",
+   "date": "2022-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "JSMR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "JSPT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "JTPE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KAEF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KAQI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KARW.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KAYU.JK",
+   "date": "2023-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "KBAG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KBLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KBLM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KBLV.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KDSI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KDTN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KEEN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KEJU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KETR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KIAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KICI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KIJA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KING.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KINO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KIOS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KJEN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KKES.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KKGI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KLAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KLBF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KLIN.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "KMDS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KMTR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KOBX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KOCI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KOIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KOKA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KONI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KOPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KOTA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "KPAL.JK",
+   "date": "2020-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "KPAS.JK",
+   "date": "2021-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "KPIG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KRAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KREN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KRYA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KSIX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "KUAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LABA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "LABS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LAJU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LAND.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LAPD.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "LCGP.JK",
+   "date": "2021-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "LCKM.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "LEAD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LFLO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LIFE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LINK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LION.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LIVE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LMAS.JK",
+   "date": "2021-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "LMAX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LMPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LMSH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LOPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LPCK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LPGI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LPIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LPKR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LPLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LPPF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LPPS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LRNA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LSIP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LTLS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LUCK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "LUCY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAGP.JK",
+   "date": "2022-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MAHA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAMI.JK",
+   "date": "2022-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "MANG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAPA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAPB.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MARI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MARK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MASA.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MASB.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAXI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MAYA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MBAP.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MBMA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MBSS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MBTO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MCAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MCOL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MCOR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MDIA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MDIY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MDKA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MDKI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MDLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MDLN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MDRN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MEDC.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MEDS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MEGA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MEJA.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "MENN.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MERI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MERK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "META.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MFIN.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MFMI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MGLV.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MGNA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MGRO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MHKI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MICE.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MIDI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MIKA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MINA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MINE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MIRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MITI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MKAP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MKNT.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MKPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MKTR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MLBI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MLIA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MLPL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MLPT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MMIX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MMLP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MNCN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MOLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MORA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MPIX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MPMX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MPOW.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MPPA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MPRO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MPXL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MRAT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MREI.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "MSIE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MSIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MSJA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MSKY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MSTI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MTDL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MTEL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MTFN.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MTLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MTMH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MTPS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MTRA.JK",
+   "date": "2022-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "MTSM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MTWI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MUTU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MYOH.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "MYOR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "MYTX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NAIK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NANO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NASA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NASI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NATO.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "NAYZ.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NCKL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NELY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NEST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NETV.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NFCX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NICE.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "NICK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NICL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NIKL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NINE.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NIRO.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "NISP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NOBU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NPGF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NRCA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NSSS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NTBK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "NZIA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "OASA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "OBAT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "OBMD.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "OCAP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "OILS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "OKAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "OLIV.JK",
+   "date": "2024-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "OMED.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "OMRE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "OPMS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PACK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PADA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PADI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PALM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PAMG.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PANI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PANR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PANS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PART.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PBID.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PBRX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PBSA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PCAR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PDES.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PDPP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PEGE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PEHA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PEVE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PGAS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PGEO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PGJO.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "PGLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PGUN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PICO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PIPA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PJAA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PJHB.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PKPK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PLAN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PLAS.JK",
+   "date": "2020-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PLIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PMJS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PMMP.JK",
+   "date": "2025-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PMUI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PNBN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PNBS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PNGO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PNIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PNLF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PNSE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POLI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POLL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POLU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POLY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POOL.JK",
+   "date": "2022-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "PORT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POSA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "POWR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PPGL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PPRE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PPRI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PPRO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PRAS.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "PRAY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PRDA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PRDL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PRIM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PSAB.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PSAT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PSDN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PSGO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PSKT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PSSI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTBA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PTDU.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "PTIS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTMP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTMR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTPP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTPS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTPW.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTRO.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "PTSN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PTSP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PUDP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PURA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PURE.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "PURI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PWON.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PYFA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "PZZA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RAAM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RAFI.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "RAJA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RALS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RANC.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "RATU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RBMS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RCCC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RDTX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "REAL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RELF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RELI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RGAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RICY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RIGS.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "RISE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RLCO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RMBA.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "RMKE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RMKO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ROCK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RODA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RONY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ROTI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RSCH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RSGK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RUIS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "RUNS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SAFE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SAGE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SAME.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SAMF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SAPX.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SATU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SBAT.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "SBMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SCCO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SCMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SCNP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SCPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SDMU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SDPC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SDRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SEMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SFAN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SGER.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SGRO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SHID.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SHIP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SICO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SIDO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SILO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SIMP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SINI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SIPD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SKBM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SKLT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SKRN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SLIS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMAR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMBR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SMCB.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SMDM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMDR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMGA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SMGR.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SMIL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMKL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMKM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMLE.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SMMA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SMMT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMRU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SMSM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SNLK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SOCI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SOFA.JK",
+   "date": "2025-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "SOHO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SOLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SONA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SOSS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SOTS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SOUL.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SPMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SPRE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SPTO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SQMI.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SRAJ.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SRIL.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "SRSN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SRTG.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SSIA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SSMS.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "SSTM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "STAA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "STAR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "STRK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "STTP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SULI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SUNI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SUPA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SUPR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SURE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SURI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "SWAT.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "SWID.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TALF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TAMA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "TAMU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TAPG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TARA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TAXI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TAYS.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "TBIG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TBLA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TBMS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TCID.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TCPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TDPM.JK",
+   "date": "2023-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "TEBE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TECH.JK",
+   "date": "2023-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "TELE.JK",
+   "date": "2025-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TFAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TFCO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TGKA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TGRA.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "TGUK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TIFA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TINS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TIRA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TIRT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TKIM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TLDN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TLKM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TMAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TMPO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TNCA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TOBA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "TOOL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TOPS.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "TOSK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TOTL.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TOTO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TOWR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TOYS.JK",
+   "date": "2023-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "TPIA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TPMA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRAM.JK",
+   "date": "2020-12-31",
+   "quarter": "q4"
+  },
+  {
+   "symbol": "TRGU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRIL.JK",
+   "date": "2021-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "TRIM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRIN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRIO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRIS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRJA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRON.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRUE.JK",
+   "date": "2025-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "TRUK.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TRUS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TSPC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TUGU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "TYRE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UANG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UCID.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UDNG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UFOE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ULTJ.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UNIC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UNIQ.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UNIT.JK",
+   "date": "2020-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UNSP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UNTD.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "UNTR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UNVR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "URBN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "UVCR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VAST.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VERN.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VICI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VICO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VINS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VISI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VIVA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "VKTR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VOKS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VRNA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "VTNY.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WAPO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WEGE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WEHA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WGSH.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WICO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WIDI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WIFI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WIIM.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WIKA.JK",
+   "date": "2026-03-31",
+   "quarter": "q1"
+  },
+  {
+   "symbol": "WINE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WINR.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WINS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WIRG.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WMPP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WMUU.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WOMF.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WOOD.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WOWS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WSBP.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WSKT.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "WTON.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "YELO.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "YOII.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "YPAS.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "YULE.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "YUPI.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ZATA.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  },
+  {
+   "symbol": "ZBRA.JK",
+   "date": "2024-09-30",
+   "quarter": "q3"
+  },
+  {
+   "symbol": "ZINC.JK",
+   "date": "2026-06-30",
+   "quarter": "q2"
+  }
+ ],
+ "pagination": {
+  "total_count": 962,
+  "showing": 960,
+  "limit": 30,
+  "offset": 0,
+  "has_next": true,
+  "has_previous": true,
+  "next_offset": 960,
+  "previous_offset": null,
+  "pages_fetched": 32,
+  "merged": true
+ }
+}

@@ -39,6 +39,11 @@ W("> (`info.version` = 2.0.0). Raw copy kept at [`99-raw/schema.json`](../99-raw
 W("")
 W("**Base URL:** `https://api.sectors.app`")
 W("**Auth:** `Authorization: <YOUR_API_KEY>` header (raw key, *no* `Bearer` prefix for the REST API).")
+W("")
+W("The key comes from the git-ignored `.env` at the repository root — "
+  "`from sectors_env import api_key` — never from a literal in code. See "
+  "[`SETUP.md`](../../SETUP.md).")
+W("")
 W("**Method:** every endpoint is `GET`.")
 W(f"**Endpoint count:** {sum(len(v) for v in by_tag.values())}")
 W("")

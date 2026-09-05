@@ -27,7 +27,7 @@ Everything the rules require, in the order you have to do it. Dates in WIB.
 | ☐ | Verify with `git log --reverse --format='%ad %s' \| head -3` | Judges may inspect commit history |
 | ☐ | Public template or boilerplate is fine — just make the **first commit** fall inside the window | Explicitly allowed by the rules |
 | ☐ | No code from prior projects, and no open-sourcing your old project in order to reuse it | Explicit violation |
-| ☐ | `.env` in `.gitignore` from commit #1 | Committed keys are the classic disqualifier |
+| ☐ | `.env` in `.gitignore` from commit #1 — commit `.env.example` instead | Committed keys are the classic disqualifier. This repo is already set up that way: see [`SETUP.md`](../../SETUP.md) |
 | ☐ | Add a `LICENSE` if you like — **no specific license is required** | Public repo is sufficient |
 | ☐ | Commit regularly, with real messages | Commit history is the evidence that the project is real and not faked |
 

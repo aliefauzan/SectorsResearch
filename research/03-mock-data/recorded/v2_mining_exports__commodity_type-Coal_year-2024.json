@@ -1,0 +1,72 @@
+[
+ {
+  "country": "China",
+  "export_usd": 6553700000.0,
+  "export_volume_bps": 93.1649,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "India",
+  "export_usd": 6245800000.0,
+  "export_volume_bps": 108.0689,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Japan",
+  "export_usd": 3872800000.0,
+  "export_volume_bps": 28.9966,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Others",
+  "export_usd": 3545300000.0,
+  "export_volume_bps": 49.9975,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Philippines",
+  "export_usd": 2765800000.0,
+  "export_volume_bps": 38.9394,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Malaysia",
+  "export_usd": 2435900000.0,
+  "export_volume_bps": 27.1848,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Korea. Republic Of",
+  "export_usd": 2099600000.0,
+  "export_volume_bps": 26.2974,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Taiwan",
+  "export_usd": 1763100000.0,
+  "export_volume_bps": 15.3148,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Thailand",
+  "export_usd": 840500000.0,
+  "export_volume_bps": 13.8322,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ },
+ {
+  "country": "Hongkong",
+  "export_usd": 367000000.0,
+  "export_volume_bps": 3.9647,
+  "export_volume_esdm": null,
+  "volume_unit": "Mt"
+ }
+]

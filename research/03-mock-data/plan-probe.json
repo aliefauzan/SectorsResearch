@@ -1,0 +1,24 @@
+{
+  "name": "Probe — why the four bare report roots refuse, and what the error paths look like",
+  "grant": 1000,
+  "notes": [
+    "Every call here is expected to fail. A 400 and a 401 are free on the live API, so the",
+    "whole plan costs nothing unless a probe unexpectedly succeeds — which is the result we",
+    "are looking for.",
+    "capture.py retries unbilled failures rather than recording them as settled, so re-running",
+    "this plan re-probes rather than replaying."
+  ],
+  "calls": [
+    {"tier": 9, "path": "/v2/company/report/", "params": {"symbol": "BBCA"}, "est_cost": 1, "note": "symbol as a query parameter — the spec calls it a path parameter"},
+    {"tier": 9, "path": "/v2/company/report/", "params": {"symbols": "BBCA"}, "est_cost": 1, "note": "plural"},
+    {"tier": 9, "path": "/v2/company/report/", "params": {"ticker": "BBCA"}, "est_cost": 1, "note": "alternate name"},
+    {"tier": 9, "path": "/v2/company/report/", "params": {"stock": "BBCA"}, "est_cost": 1, "note": "alternate name"},
+    {"tier": 9, "path": "/v2/company/report/", "params": {"q": "BBCA"}, "est_cost": 1, "note": "screener-style"},
+    {"tier": 9, "path": "/v2/company/report/", "params": {}, "est_cost": 1, "note": "bare, no parameters at all"},
+    {"tier": 9, "path": "/v2/subsector/report/", "params": {"sub_sector": "banks"}, "est_cost": 1},
+    {"tier": 9, "path": "/v2/subsector/report/", "params": {"sector": "banks"}, "est_cost": 1},
+    {"tier": 9, "path": "/v2/subsector/report/", "params": {"subsector": "banks"}, "est_cost": 1},
+    {"tier": 9, "path": "/v2/sgx/company/report/", "params": {"symbol": "D05.SI"}, "est_cost": 1},
+    {"tier": 9, "path": "/v2/klse/company/report/", "params": {"symbol": "2089"}, "est_cost": 1}
+  ]
+}

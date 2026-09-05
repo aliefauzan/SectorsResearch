@@ -1,0 +1,414 @@
+{
+ "results": [
+  {
+   "symbol": "D05.SI",
+   "company_name": "DBS Group Holdings Ltd"
+  },
+  {
+   "symbol": "O39.SI",
+   "company_name": "Oversea-Chinese Banking Corp Ltd"
+  },
+  {
+   "symbol": "Z74.SI",
+   "company_name": "Singapore Telecommunications Ltd"
+  },
+  {
+   "symbol": "Z77.SI",
+   "company_name": "Singapore Telecommunications Ltd"
+  },
+  {
+   "symbol": "U11.SI",
+   "company_name": "United Overseas Bank Ltd"
+  },
+  {
+   "symbol": "O6Z.SI",
+   "company_name": "Lonza Group Ltd"
+  },
+  {
+   "symbol": "K6S.SI",
+   "company_name": "Prudential PLC"
+  },
+  {
+   "symbol": "N33.SI",
+   "company_name": "Nomura Holdings Inc"
+  },
+  {
+   "symbol": "TATD.SI",
+   "company_name": "Airports of Thailand PCL DRC"
+  },
+  {
+   "symbol": "S63.SI",
+   "company_name": "Singapore Technologies Engineering Ltd"
+  },
+  {
+   "symbol": "S68.SI",
+   "company_name": "Singapore Exchange Ltd"
+  },
+  {
+   "symbol": "F34.SI",
+   "company_name": "Wilmar International Ltd"
+  },
+  {
+   "symbol": "H78.SI",
+   "company_name": "Hongkong Land Holdings Ltd"
+  },
+  {
+   "symbol": "Q0F.SI",
+   "company_name": "IHH Healthcare Bhd"
+  },
+  {
+   "symbol": "J36.SI",
+   "company_name": "Jardine Matheson Holdings Ltd"
+  },
+  {
+   "symbol": "C6L.SI",
+   "company_name": "Singapore Airlines Ltd"
+  },
+  {
+   "symbol": "BN4.SI",
+   "company_name": "Keppel Ltd"
+  },
+  {
+   "symbol": "TPED.SI",
+   "company_name": "PTT Exploration Production PCL DRC"
+  },
+  {
+   "symbol": "G07.SI",
+   "company_name": "Great Eastern Holdings Ltd"
+  },
+  {
+   "symbol": "BS6.SI",
+   "company_name": "Yangzijiang Shipbuilding (Holdings) Ltd"
+  },
+  {
+   "symbol": "SO7.SI",
+   "company_name": "Yangzijiang Shipbuilding (Holdings) Ltd"
+  },
+  {
+   "symbol": "C38U.SI",
+   "company_name": "CapitaLand Integrated Commercial Trust"
+  },
+  {
+   "symbol": "TCPD.SI",
+   "company_name": "CP All PCL DRC"
+  },
+  {
+   "symbol": "9CI.SI",
+   "company_name": "CapitaLand Investment Ltd"
+  },
+  {
+   "symbol": "NIO.SI",
+   "company_name": "NIO Inc"
+  },
+  {
+   "symbol": "A17U.SI",
+   "company_name": "CapitaLand Ascendas REIT"
+  },
+  {
+   "symbol": "Y92.SI",
+   "company_name": "Thai Beverage PLC"
+  },
+  {
+   "symbol": "U96.SI",
+   "company_name": "Sembcorp Industries Ltd"
+  },
+  {
+   "symbol": "C07.SI",
+   "company_name": "Jardine Cycle & Carriage Ltd"
+  },
+  {
+   "symbol": "C09.SI",
+   "company_name": "City Developments Ltd"
+  },
+  {
+   "symbol": "U14.SI",
+   "company_name": "UOL Group Ltd"
+  },
+  {
+   "symbol": "G13.SI",
+   "company_name": "Genting Singapore Ltd"
+  },
+  {
+   "symbol": "5E2.SI",
+   "company_name": "Seatrium Ltd"
+  },
+  {
+   "symbol": "EB5.SI",
+   "company_name": "First Resources Ltd"
+  },
+  {
+   "symbol": "N2IU.SI",
+   "company_name": "Mapletree Pan Asia Commercial Trust"
+  },
+  {
+   "symbol": "D01.SI",
+   "company_name": "DFI Retail Group Holdings Ltd"
+  },
+  {
+   "symbol": "M44U.SI",
+   "company_name": "Mapletree Logistics Trust"
+  },
+  {
+   "symbol": "S58.SI",
+   "company_name": "SATS Ltd"
+  },
+  {
+   "symbol": "ME8U.SI",
+   "company_name": "Mapletree Industrial Trust"
+  },
+  {
+   "symbol": "AJBU.SI",
+   "company_name": "Keppel DC REIT"
+  },
+  {
+   "symbol": "M12.SI",
+   "company_name": "Maruwa Co Ltd"
+  },
+  {
+   "symbol": "EMI.SI",
+   "company_name": "Emperador Inc"
+  },
+  {
+   "symbol": "OV8.SI",
+   "company_name": "Sheng Siong Group Ltd"
+  },
+  {
+   "symbol": "V03.SI",
+   "company_name": "Venture Corp Ltd"
+  },
+  {
+   "symbol": "U06.SI",
+   "company_name": "Singapore Land Group Ltd"
+  },
+  {
+   "symbol": "T14.SI",
+   "company_name": "Tianjin Pharmaceutical Da Ren Tang Group Corp Ltd"
+  },
+  {
+   "symbol": "8A8.SI",
+   "company_name": "China Medical System Holdings Ltd"
+  },
+  {
+   "symbol": "J69U.SI",
+   "company_name": "Frasers Centrepoint Trust"
+  },
+  {
+   "symbol": "T82U.SI",
+   "company_name": "Suntec Real Estate Investment Trust"
+  },
+  {
+   "symbol": "K71U.SI",
+   "company_name": "Keppel REIT"
+  },
+  {
+   "symbol": "E5H.SI",
+   "company_name": "Golden Agri-Resources Ltd"
+  },
+  {
+   "symbol": "U10.SI",
+   "company_name": "UOB-Kay Hian Holdings Ltd"
+  },
+  {
+   "symbol": "VC2.SI",
+   "company_name": "Olam Group Ltd"
+  },
+  {
+   "symbol": "TQ5.SI",
+   "company_name": "Frasers Property Ltd"
+  },
+  {
+   "symbol": "CJLU.SI",
+   "company_name": "NetLink NBN Trust"
+  },
+  {
+   "symbol": "AVP.SI",
+   "company_name": "AvePoint Inc"
+  },
+  {
+   "symbol": "P8Z.SI",
+   "company_name": "Bumitama Agri Ltd"
+  },
+  {
+   "symbol": "S59.SI",
+   "company_name": "SIA Engineering Co Ltd"
+  },
+  {
+   "symbol": "BUOU.SI",
+   "company_name": "Frasers Logistics & Commercial Trust"
+  },
+  {
+   "symbol": "HMN.SI",
+   "company_name": "CapitaLand Ascott Trust"
+  },
+  {
+   "symbol": "A7RU.SI",
+   "company_name": "Keppel Infrastructure Trust"
+  },
+  {
+   "symbol": "H02.SI",
+   "company_name": "Haw Par Corp Ltd"
+  },
+  {
+   "symbol": "C52.SI",
+   "company_name": "ComfortDelGro Corp Ltd"
+  },
+  {
+   "symbol": "AWX.SI",
+   "company_name": "AEM Holdings Ltd"
+  },
+  {
+   "symbol": "XWA.SI",
+   "company_name": "AEM Holdings Ltd"
+  },
+  {
+   "symbol": "AIY.SI",
+   "company_name": "iFAST Corp Ltd"
+  },
+  {
+   "symbol": "C2PU.SI",
+   "company_name": "Parkway Life Real Estate Investment Trust"
+  },
+  {
+   "symbol": "F17.SI",
+   "company_name": "GuocoLand Ltd"
+  },
+  {
+   "symbol": "H15.SI",
+   "company_name": "Hotel Properties Ltd"
+  },
+  {
+   "symbol": "H22.SI",
+   "company_name": "Hong Leong Asia Ltd"
+  },
+  {
+   "symbol": "S07.SI",
+   "company_name": "Shangri-La Asia Ltd"
+  },
+  {
+   "symbol": "558.SI",
+   "company_name": "UMS Integration Ltd"
+  },
+  {
+   "symbol": "P7VU.SI",
+   "company_name": "Hutchison Port Holdings Trust"
+  },
+  {
+   "symbol": "NS8U.SI",
+   "company_name": "Hutchison Port Holdings Trust"
+  },
+  {
+   "symbol": "F99.SI",
+   "company_name": "Fraser and Neave Ltd"
+  },
+  {
+   "symbol": "8YZ.SI",
+   "company_name": "Yangzijiang Maritime Development Ltd"
+  },
+  {
+   "symbol": "8C8U.SI",
+   "company_name": "Centurion Accommodation REIT"
+  },
+  {
+   "symbol": "TS0U.SI",
+   "company_name": "OUE Real Estate Investment Trust"
+  },
+  {
+   "symbol": "CC3.SI",
+   "company_name": "StarHub Ltd"
+  },
+  {
+   "symbol": "HKB.SI",
+   "company_name": "AMTD IDEA Group"
+  },
+  {
+   "symbol": "JYEU.SI",
+   "company_name": "Lendlease Global Commercial REIT"
+  },
+  {
+   "symbol": "9A4U.SI",
+   "company_name": "ESR-REIT"
+  },
+  {
+   "symbol": "AGS.SI",
+   "company_name": "The Hour Glass Ltd"
+  },
+  {
+   "symbol": "AMQ.SI",
+   "company_name": "AMQ"
+  },
+  {
+   "symbol": "BVA.SI",
+   "company_name": "Top Glove Corp Bhd"
+  },
+  {
+   "symbol": "BSL.SI",
+   "company_name": "Raffles Medical Group Ltd"
+  },
+  {
+   "symbol": "CY6U.SI",
+   "company_name": "CapitaLand India Trust"
+  },
+  {
+   "symbol": "F03.SI",
+   "company_name": "Food Empire Holdings Ltd"
+  },
+  {
+   "symbol": "A50.SI",
+   "company_name": "Thomson Medical Group Ltd"
+  },
+  {
+   "symbol": "S2D.SI",
+   "company_name": "Tosei Corp"
+  },
+  {
+   "symbol": "H13.SI",
+   "company_name": "Ho Bee Land Ltd"
+  },
+  {
+   "symbol": "OU8.SI",
+   "company_name": "Centurion Corp Ltd"
+  },
+  {
+   "symbol": "NC2.SI",
+   "company_name": "Sri Trang Agro-Industry PLC"
+  },
+  {
+   "symbol": "SET.SI",
+   "company_name": "Stoneweg Europe Stapled Trust"
+  },
+  {
+   "symbol": "P15.SI",
+   "company_name": "Pacific Century Regional Developments Ltd"
+  },
+  {
+   "symbol": "OYY.SI",
+   "company_name": "PropNex Ltd"
+  },
+  {
+   "symbol": "SEB.SI",
+   "company_name": "Stoneweg Europe Stapled Trust"
+  },
+  {
+   "symbol": "NTDU.SI",
+   "company_name": "NTT DC REIT"
+  },
+  {
+   "symbol": "G92.SI",
+   "company_name": "China Aviation Oil (Singapore) Corp Ltd"
+  },
+  {
+   "symbol": "P40U.SI",
+   "company_name": "Starhill Global Real Estate Investment Trust"
+  }
+ ],
+ "pagination": {
+  "total_count": 580,
+  "showing": 100,
+  "limit": 100,
+  "offset": 0,
+  "has_next": true,
+  "has_previous": false,
+  "next_offset": 100,
+  "previous_offset": null
+ }
+}

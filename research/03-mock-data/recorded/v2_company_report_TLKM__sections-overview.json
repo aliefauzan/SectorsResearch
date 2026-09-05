@@ -1,0 +1,70 @@
+{
+ "symbol": "TLKM.JK",
+ "company_name": "PT Telkom Indonesia (Persero) Tbk",
+ "overview": {
+  "listing_board": "Main",
+  "industry": "Telecommunication Service",
+  "sub_industry": "Integrated Telecommunication Service",
+  "sector": "Infrastructures",
+  "sub_sector": "Telecommunication",
+  "market_cap": 258552385326000,
+  "market_cap_rank": 8,
+  "address": "Telkom Landmark Tower, Lantai 39",
+  "employee_num": 19695.0,
+  "employee_num_rank": 25,
+  "listing_date": "1995-11-14",
+  "website": "www.telkom.co.id",
+  "phone": "(021) 5215109",
+  "email": "investor@telkom.co.id",
+  "last_close_price": 2610,
+  "latest_close_date": "2026-09-04",
+  "daily_close_change": 0.00384615384615385,
+  "all_time_price": {
+   "ytd_low": {
+    "2026-06-08": 2350
+   },
+   "52_w_low": {
+    "2026-06-08": 2350
+   },
+   "90_d_low": {
+    "2026-06-08": 2350
+   },
+   "ytd_high": {
+    "2026-01-27": 3990
+   },
+   "52_w_high": {
+    "2026-01-27": 3990
+   },
+   "90_d_high": {
+    "2026-06-17": 3030
+   },
+   "all_time_low": {
+    "2004-09-29": 810
+   },
+   "all_time_high": {
+    "2022-04-28": 4850
+   }
+  },
+  "esg_score": 24.57,
+  "tags": [
+   "dividend-yield-ttm-above-5-percent",
+   "esg-under-25",
+   "invested-by-danantara",
+   "top-90d-transaction-value"
+  ],
+  "indices": [
+   "IDXHIDIV20",
+   "SMINFRA18",
+   "LQ45",
+   "KOMPAS100",
+   "IDXQ30",
+   "IDXESGL",
+   "IDX30",
+   "IDXG30",
+   "JII70",
+   "FTSE",
+   "IDXBUMN20"
+  ],
+  "affiliates": null
+ }
+}

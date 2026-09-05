@@ -154,6 +154,48 @@ defensible under the 30% technical-depth criterion than one that computes a sing
 
 ---
 
+## Pitfalls confirmed live, 6 September 2026
+
+These four cost real credits to discover. Full account in
+[`../VERIFICATION-LIVE.md`](../VERIFICATION-LIVE.md).
+
+**Quarterly financials rename a field by sector.** `/v2/financials/quarterly/{symbol}/` returns
+`realized_capital_goods_investment` for banks (BBCA, BBRI) — the name the spec example shows —
+and `capital_expenditure` in the same slot for everyone else (ADRO, TLKM). `financials_sector_metrics`
+is populated for banks and an empty object otherwise. A parser written against the documented
+example handles banks and silently drops capex for the rest of the market. Read both keys.
+
+**`listing-performance` has no data for anything listed before May 2005.** Every Indonesian
+blue chip 404s, and a 404 bills 1 credit. Use a recent listing — the spec's own example is
+`BREN`.
+
+**SGX and KLSE `classifications` are not the IDX vocabulary.** `top_gainers` / `top_losers`
+belong to `/v2/companies/top-changes/` only. The SGX and KLSE `top` endpoints take
+`dividend_yield | revenue | earnings | market_cap | pe`, bill per classification, and default
+to all five.
+
+**The rate limiter counts calls, not seconds.** 25 billed requests per rolling ~30 s. Sleeping
+between calls does not help unless the sleep is long enough to keep 25 out of any window —
+1.0 s is not (trips on the 26th), 1.5 s is. A 429 carries no `Retry-After`, and polling one
+keeps it shut: retrying every 5 s stayed blocked for 36 s where waiting quietly cleared in
+under a second.
+
+**A missing key is a 403, not a 401.** Client code branching on 401 never fires. There is no
+`code` field either — just `{"error": "Authentication credentials were not provided."}`.
+
+**Mining detail endpoints cover 9 companies, not 366.** `financials`, `performance` and
+`sales-destination` 404 for almost every slug. `/v2/mining/companies/?has_financials=true`
+returns the nine that work — all listed coal holdings. Filter first; a guessed slug is a
+billed 404. The three are **not** one universe, either:
+`/v2/mining/companies/performance/pt-adaro-indonesia/` answers 200 for a slug that `financials`
+404s on, so "has financials" does not mean "has performance".
+
+**`klse` is not an index code.** It appears in the ingestion registry that populates
+`/v2/index-daily/`, which is why an earlier pass listed it as a candidate. The API rejects it
+with a free 400. `sti` — flagged unverifiable for two passes — **does** resolve.
+
+---
+
 ## Where these come from
 
 | Recipe | What to mine it for |

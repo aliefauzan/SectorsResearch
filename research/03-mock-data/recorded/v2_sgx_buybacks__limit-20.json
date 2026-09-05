@@ -1,0 +1,387 @@
+{
+ "results": [
+  {
+   "symbol": "U11.SI",
+   "purchase_date": "2026-09-04",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 41.68,
+    "highest": 42.4
+   },
+   "total_value": 2781318.93,
+   "total_shares_purchased": 66000,
+   "treasury_shares_after_purchase": 14127900,
+   "mandate": {
+    "mandate_end": "2027-04-17",
+    "mandate_start": "2026-04-17",
+    "mandate_total": 82676174,
+    "mandate_remaining": 78142574,
+    "cumulative_purchased": 4533600
+   }
+  },
+  {
+   "symbol": "S59.SI",
+   "purchase_date": "2026-09-04",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 3.11,
+    "highest": 3.11
+   },
+   "total_value": 49508.29,
+   "total_shares_purchased": 15900,
+   "treasury_shares_after_purchase": 3902931,
+   "mandate": {
+    "mandate_end": "2027-07-23",
+    "mandate_start": "2026-07-23",
+    "mandate_total": 22429204,
+    "mandate_remaining": 21182404,
+    "cumulative_purchased": 1246800
+   }
+  },
+  {
+   "symbol": "BN4.SI",
+   "purchase_date": "2026-09-04",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 11.51,
+    "highest": 11.62
+   },
+   "total_value": 2315356.98,
+   "total_shares_purchased": 200000,
+   "treasury_shares_after_purchase": 26156258,
+   "mandate": {
+    "mandate_end": "2027-04-17",
+    "mandate_start": "2026-04-17",
+    "mandate_total": 90646698,
+    "mandate_remaining": 72098698,
+    "cumulative_purchased": 18548000
+   }
+  },
+  {
+   "symbol": "H30.SI",
+   "purchase_date": "2026-09-04",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 0.895,
+    "highest": 0.905
+   },
+   "total_value": 394112.5,
+   "total_shares_purchased": 435000,
+   "treasury_shares_after_purchase": 74409600,
+   "mandate": {
+    "mandate_end": "2027-04-30",
+    "mandate_start": "2026-04-30",
+    "mandate_total": 80371314,
+    "mandate_remaining": 72860714,
+    "cumulative_purchased": 7510600
+   }
+  },
+  {
+   "symbol": "5UX.SI",
+   "purchase_date": "2026-09-04",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 0.07,
+    "highest": 0.071
+   },
+   "total_value": 7131.08,
+   "total_shares_purchased": 100000,
+   "treasury_shares_after_purchase": 120377700,
+   "mandate": {
+    "mandate_end": "2026-10-27",
+    "mandate_start": "2025-10-27",
+    "mandate_total": 210983495,
+    "mandate_remaining": 193189895,
+    "cumulative_purchased": 17793600
+   }
+  },
+  {
+   "symbol": "YF8.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "price_paid_per_share": 0.1977
+   },
+   "total_value": 395787.9,
+   "total_shares_purchased": 2000000,
+   "treasury_shares_after_purchase": 2000000,
+   "mandate": {
+    "mandate_end": "2027-04-29",
+    "mandate_start": "2026-04-29",
+    "mandate_total": 348045052,
+    "mandate_remaining": 346045052,
+    "cumulative_purchased": 2000000
+   }
+  },
+  {
+   "symbol": "U11.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 41.55,
+    "highest": 41.92
+   },
+   "total_value": 2758909.09,
+   "total_shares_purchased": 66000,
+   "treasury_shares_after_purchase": 14094900,
+   "mandate": {
+    "mandate_end": "2027-04-17",
+    "mandate_start": "2026-04-17",
+    "mandate_total": 82676174,
+    "mandate_remaining": 78208574,
+    "cumulative_purchased": 4467600
+   }
+  },
+  {
+   "symbol": "BN2.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "price_paid_per_share": 0.9859
+   },
+   "total_value": 197456.05,
+   "total_shares_purchased": 200000,
+   "treasury_shares_after_purchase": 25292600,
+   "mandate": {
+    "mandate_end": "2027-07-27",
+    "mandate_start": "2026-07-27",
+    "mandate_total": 40790502,
+    "mandate_remaining": 40040502,
+    "cumulative_purchased": 750000
+   }
+  },
+  {
+   "symbol": "Z74.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 4.41,
+    "highest": 4.43
+   },
+   "total_value": 1769156.26,
+   "total_shares_purchased": 400000,
+   "treasury_shares_after_purchase": 14413479,
+   "mandate": {
+    "mandate_end": "2027-07-29",
+    "mandate_start": "2026-07-29",
+    "mandate_total": 815992956,
+    "mandate_remaining": 799893656,
+    "cumulative_purchased": 16099300
+   }
+  },
+  {
+   "symbol": "5UX.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 0.07,
+    "highest": 0.071
+   },
+   "total_value": 14190.14,
+   "total_shares_purchased": 200000,
+   "treasury_shares_after_purchase": 120277700,
+   "mandate": {
+    "mandate_end": "2026-10-27",
+    "mandate_start": "2025-10-27",
+    "mandate_total": 210983495,
+    "mandate_remaining": 193289895,
+    "cumulative_purchased": 17693600
+   }
+  },
+  {
+   "symbol": "S59.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 3.1,
+    "highest": 3.12
+   },
+   "total_value": 269467.46,
+   "total_shares_purchased": 86500,
+   "treasury_shares_after_purchase": 3887031,
+   "mandate": {
+    "mandate_end": "2027-07-23",
+    "mandate_start": "2026-07-23",
+    "mandate_total": 22429204,
+    "mandate_remaining": 21198304,
+    "cumulative_purchased": 1230900
+   }
+  },
+  {
+   "symbol": "F03.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "price_paid_per_share": 2.1932
+   },
+   "total_value": 329482.03,
+   "total_shares_purchased": 150000,
+   "treasury_shares_after_purchase": 3543088,
+   "mandate": {
+    "mandate_end": "2027-04-17",
+    "mandate_start": "2026-04-17",
+    "mandate_total": 54985242,
+    "mandate_remaining": 50634842,
+    "cumulative_purchased": 4350400
+   }
+  },
+  {
+   "symbol": "V03.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "price_paid_per_share": 16.6
+   },
+   "total_value": 202764.13,
+   "total_shares_purchased": 12200,
+   "treasury_shares_after_purchase": 1340000,
+   "mandate": {
+    "mandate_end": "2027-04-24",
+    "mandate_start": "2026-04-24",
+    "mandate_total": 14375948,
+    "mandate_remaining": 14124548,
+    "cumulative_purchased": 251400
+   }
+  },
+  {
+   "symbol": "F99.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 1.39,
+    "highest": 1.39
+   },
+   "total_value": 58595.92,
+   "total_shares_purchased": 42100,
+   "treasury_shares_after_purchase": 2610588,
+   "mandate": {
+    "mandate_end": "2027-01-27",
+    "mandate_start": "2026-01-27",
+    "mandate_total": 101967963,
+    "mandate_remaining": 99496463,
+    "cumulative_purchased": 2471500
+   }
+  },
+  {
+   "symbol": "AGS.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "price_paid_per_share": 2.7347
+   },
+   "total_value": 204772.35,
+   "total_shares_purchased": 74700,
+   "treasury_shares_after_purchase": 10800000,
+   "mandate": {
+    "mandate_end": "2027-07-21",
+    "mandate_start": "2026-07-21",
+    "mandate_total": 63900848,
+    "mandate_remaining": 59727848,
+    "cumulative_purchased": 4173000
+   }
+  },
+  {
+   "symbol": "H30.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 0.89,
+    "highest": 0.895
+   },
+   "total_value": 332855.91,
+   "total_shares_purchased": 370800,
+   "treasury_shares_after_purchase": 73974600,
+   "mandate": {
+    "mandate_end": "2027-04-30",
+    "mandate_start": "2026-04-30",
+    "mandate_total": 80371314,
+    "mandate_remaining": 73295714,
+    "cumulative_purchased": 7075600
+   }
+  },
+  {
+   "symbol": "BN4.SI",
+   "purchase_date": "2026-09-03",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 11.41,
+    "highest": 11.6
+   },
+   "total_value": 2306249.06,
+   "total_shares_purchased": 200000,
+   "treasury_shares_after_purchase": 25956258,
+   "mandate": {
+    "mandate_end": "2027-04-17",
+    "mandate_start": "2026-04-17",
+    "mandate_total": 90646698,
+    "mandate_remaining": 72298698,
+    "cumulative_purchased": 18348000
+   }
+  },
+  {
+   "symbol": "AGS.SI",
+   "purchase_date": "2026-09-02",
+   "type": "On Market",
+   "price_per_share": {
+    "price_paid_per_share": 2.74296
+   },
+   "total_value": 48392.24,
+   "total_shares_purchased": 17600,
+   "treasury_shares_after_purchase": 10725300,
+   "mandate": {
+    "mandate_end": "2027-07-21",
+    "mandate_start": "2026-07-21",
+    "mandate_total": 63900848,
+    "mandate_remaining": 59802548,
+    "cumulative_purchased": 4098300
+   }
+  },
+  {
+   "symbol": "Z74.SI",
+   "purchase_date": "2026-09-02",
+   "type": "On Market",
+   "price_per_share": {
+    "price_paid_per_share": 4.45
+   },
+   "total_value": 890582.06,
+   "total_shares_purchased": 200000,
+   "treasury_shares_after_purchase": 14413479,
+   "mandate": {
+    "mandate_end": "2027-07-29",
+    "mandate_start": "2026-07-29",
+    "mandate_total": 815992956,
+    "mandate_remaining": 800293656,
+    "cumulative_purchased": 15699300
+   }
+  },
+  {
+   "symbol": "U11.SI",
+   "purchase_date": "2026-09-02",
+   "type": "On Market",
+   "price_per_share": {
+    "lowest": 41.14,
+    "highest": 41.77
+   },
+   "total_value": 2738525.47,
+   "total_shares_purchased": 66000,
+   "treasury_shares_after_purchase": 14061900,
+   "mandate": {
+    "mandate_end": "2027-04-17",
+    "mandate_start": "2026-04-17",
+    "mandate_total": 82676174,
+    "mandate_remaining": 78274574,
+    "cumulative_purchased": 4401600
+   }
+  }
+ ],
+ "pagination": {
+  "total_count": 2887,
+  "showing": 20,
+  "limit": 20,
+  "offset": 0,
+  "has_next": true,
+  "has_previous": false,
+  "next_offset": 20,
+  "previous_offset": null
+ }
+}

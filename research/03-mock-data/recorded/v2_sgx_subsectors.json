@@ -1,0 +1,246 @@
+[
+ {
+  "sector": "reit",
+  "subsector": "reit-industrial"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "business-employment-services"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "packaging-containers"
+ },
+ {
+  "sector": "transportation-logistics",
+  "subsector": "transportation-logistics"
+ },
+ {
+  "sector": "properties-real-estate",
+  "subsector": "real-estate-development"
+ },
+ {
+  "sector": "basic-materials",
+  "subsector": "chemicals"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "automotive"
+ },
+ {
+  "sector": "reit",
+  "subsector": "reit-data-centre"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "retail"
+ },
+ {
+  "sector": "infrastructures",
+  "subsector": "telecommunication"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "rental-leasing-security-services"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "apparel-accessories"
+ },
+ {
+  "sector": "financial-services",
+  "subsector": "asset-management-investment"
+ },
+ {
+  "sector": "reit",
+  "subsector": "reit-office"
+ },
+ {
+  "sector": "financial-services",
+  "subsector": "financial-data-shell-companies"
+ },
+ {
+  "sector": "reit",
+  "subsector": "reit-retail"
+ },
+ {
+  "sector": "technology",
+  "subsector": "semiconductors-equipment"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "conglomerates-holdings"
+ },
+ {
+  "sector": "communication-services",
+  "subsector": "media-entertainment"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "supply-chain-freight-infrastructure"
+ },
+ {
+  "sector": "technology",
+  "subsector": "communication-instruments"
+ },
+ {
+  "sector": "healthcare",
+  "subsector": "pharmaceuticals-research"
+ },
+ {
+  "sector": "reit",
+  "subsector": "reit-diversified"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "restaurants-food-retail"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "hotels-resorts-leisure"
+ },
+ {
+  "sector": "utilities",
+  "subsector": "utilities-renewable"
+ },
+ {
+  "sector": "unknown",
+  "subsector": "unknown"
+ },
+ {
+  "sector": "properties-real-estate",
+  "subsector": "real-estate-services"
+ },
+ {
+  "sector": "financial-services",
+  "subsector": "insurance"
+ },
+ {
+  "sector": "consumer-non-cyclicals",
+  "subsector": "food-beverage-retail-production"
+ },
+ {
+  "sector": "technology",
+  "subsector": "software-it-services"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "aerospace-defense"
+ },
+ {
+  "sector": "utilities",
+  "subsector": "utilities-independent-diversified"
+ },
+ {
+  "sector": "utilities",
+  "subsector": "utilities-regulated"
+ },
+ {
+  "sector": "energy",
+  "subsector": "oil-gas-coal"
+ },
+ {
+  "sector": "basic-materials",
+  "subsector": "metals-mining"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "industrial-machinery-parts"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "furnishings-fixtures-appliances"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "personal-services"
+ },
+ {
+  "sector": "healthcare",
+  "subsector": "medical-devices-supplies"
+ },
+ {
+  "sector": "properties-real-estate",
+  "subsector": "real-estate-diversified"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "engineering-construction-building-products"
+ },
+ {
+  "sector": "technology",
+  "subsector": "hardware-electronics"
+ },
+ {
+  "sector": "reit",
+  "subsector": "reit-hospitality"
+ },
+ {
+  "sector": "infrastructures",
+  "subsector": "heavy-construction-transport-infrastructure"
+ },
+ {
+  "sector": "consumer-defensive",
+  "subsector": "food-distribution"
+ },
+ {
+  "sector": "reit",
+  "subsector": "reit-healthcare"
+ },
+ {
+  "sector": "basic-materials",
+  "subsector": "building-materials"
+ },
+ {
+  "sector": "basic-materials",
+  "subsector": "basic-materials-diversified"
+ },
+ {
+  "sector": "consumer-defensive",
+  "subsector": "food-beverage-production"
+ },
+ {
+  "sector": "consumer-cyclicals",
+  "subsector": "luxury-goods"
+ },
+ {
+  "sector": "energy",
+  "subsector": "oil-gas-operations-services"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "industrial-distribution"
+ },
+ {
+  "sector": "properties-real-estate",
+  "subsector": "other-real-estate-operations"
+ },
+ {
+  "sector": "healthcare",
+  "subsector": "medical-care-facilities"
+ },
+ {
+  "sector": "basic-materials",
+  "subsector": "paper-forest-products"
+ },
+ {
+  "sector": "communication-services",
+  "subsector": "telecom-services"
+ },
+ {
+  "sector": "consumer-defensive",
+  "subsector": "education-training-services"
+ },
+ {
+  "sector": "healthcare",
+  "subsector": "healthcare-facilities-services"
+ },
+ {
+  "sector": "financial-services",
+  "subsector": "banks-credit-services"
+ },
+ {
+  "sector": "industrials",
+  "subsector": "waste-management-pollution-control"
+ }
+]

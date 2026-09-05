@@ -1,0 +1,53 @@
+{
+ "year": 2024,
+ "data": {
+  "China": {
+   "revenue_usd": null,
+   "percentage_of_total_revenue": null,
+   "volume": null,
+   "percentage_of_sales_volume": 16.0,
+   "commodity_type": "Coal",
+   "unit": "Mt"
+  },
+  "India": {
+   "revenue_usd": null,
+   "percentage_of_total_revenue": null,
+   "volume": null,
+   "percentage_of_sales_volume": 11.0,
+   "commodity_type": "Coal",
+   "unit": "Mt"
+  },
+  "Indonesia": {
+   "revenue_usd": null,
+   "percentage_of_total_revenue": null,
+   "volume": null,
+   "percentage_of_sales_volume": 25.0,
+   "commodity_type": "Coal",
+   "unit": "Mt"
+  },
+  "Northeast Asia": {
+   "revenue_usd": null,
+   "percentage_of_total_revenue": null,
+   "volume": null,
+   "percentage_of_sales_volume": 23.0,
+   "commodity_type": "Coal",
+   "unit": "Mt"
+  },
+  "Others": {
+   "revenue_usd": null,
+   "percentage_of_total_revenue": null,
+   "volume": null,
+   "percentage_of_sales_volume": 2.0,
+   "commodity_type": "Coal",
+   "unit": "Mt"
+  },
+  "Southeast Asia (Malaysia, Philippines, Singapore and Vietnam)": {
+   "revenue_usd": null,
+   "percentage_of_total_revenue": null,
+   "volume": null,
+   "percentage_of_sales_volume": 23.0,
+   "commodity_type": "Coal",
+   "unit": "Mt"
+  }
+ }
+}

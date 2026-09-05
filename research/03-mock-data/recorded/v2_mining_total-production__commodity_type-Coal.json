@@ -1,0 +1,86 @@
+[
+ {
+  "year": 2024,
+  "production_volume": 836.1,
+  "prev_year_volume": 775.2,
+  "unit": "Mt",
+  "yoy_change_percent": 7.86
+ },
+ {
+  "year": 2023,
+  "production_volume": 775.2,
+  "prev_year_volume": 687.4,
+  "unit": "Mt",
+  "yoy_change_percent": 12.77
+ },
+ {
+  "year": 2022,
+  "production_volume": 687.4,
+  "prev_year_volume": 614.0,
+  "unit": "Mt",
+  "yoy_change_percent": 11.95
+ },
+ {
+  "year": 2021,
+  "production_volume": 614.0,
+  "prev_year_volume": 563.7,
+  "unit": "Mt",
+  "yoy_change_percent": 8.92
+ },
+ {
+  "year": 2020,
+  "production_volume": 563.7,
+  "prev_year_volume": 616.2,
+  "unit": "Mt",
+  "yoy_change_percent": -8.52
+ },
+ {
+  "year": 2019,
+  "production_volume": 616.2,
+  "prev_year_volume": 557.8,
+  "unit": "Mt",
+  "yoy_change_percent": 10.47
+ },
+ {
+  "year": 2018,
+  "production_volume": 557.8,
+  "prev_year_volume": 461.2,
+  "unit": "Mt",
+  "yoy_change_percent": 20.95
+ },
+ {
+  "year": 2017,
+  "production_volume": 461.2,
+  "prev_year_volume": 456.2,
+  "unit": "Mt",
+  "yoy_change_percent": 1.1
+ },
+ {
+  "year": 2016,
+  "production_volume": 456.2,
+  "prev_year_volume": 461.6,
+  "unit": "Mt",
+  "yoy_change_percent": -1.17
+ },
+ {
+  "year": 2015,
+  "production_volume": 461.6,
+  "prev_year_volume": 458.1,
+  "unit": "Mt",
+  "yoy_change_percent": 0.76
+ },
+ {
+  "year": 2014,
+  "production_volume": 458.1,
+  "prev_year_volume": 474.4,
+  "unit": "Mt",
+  "yoy_change_percent": -3.44
+ },
+ {
+  "year": 2013,
+  "production_volume": 474.4,
+  "prev_year_volume": null,
+  "unit": "Mt",
+  "yoy_change_percent": null
+ }
+]

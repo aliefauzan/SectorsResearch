@@ -1,0 +1,83 @@
+{
+ "province": "Aceh",
+ "data": {
+  "2024": {
+   "Coal": {
+    "exploration_target_Mt": 1.16,
+    "total_inventory_Mt": 20.92,
+    "inferred_resources_Mt": 314.58,
+    "indicated_resources_Mt": 401.94,
+    "measured_resources_Mt": 326.23,
+    "total_resources_Mt": 1042.75,
+    "total_resources_verify_Mt": 791.28,
+    "total_reserves_Mt": 507.05,
+    "total_reserves_verify_Mt": 409.4
+   }
+  },
+  "2023": {
+   "Coal": {
+    "exploration_target_Mt": 1.16,
+    "total_inventory_Mt": 20.92,
+    "inferred_resources_Mt": 279.13,
+    "indicated_resources_Mt": 424.7,
+    "measured_resources_Mt": 403.06,
+    "total_resources_Mt": 1106.89,
+    "total_resources_verify_Mt": 895.67,
+    "total_reserves_Mt": 583.13,
+    "total_reserves_verify_Mt": 485.47
+   }
+  },
+  "2022": {
+   "Coal": {
+    "exploration_target_Mt": 1.16,
+    "total_inventory_Mt": 87.83,
+    "inferred_resources_Mt": 275.46,
+    "indicated_resources_Mt": 421.87,
+    "measured_resources_Mt": 325.59,
+    "total_resources_Mt": 1022.93,
+    "total_resources_verify_Mt": 803.79,
+    "total_reserves_Mt": 539.34,
+    "total_reserves_verify_Mt": 428.65
+   }
+  },
+  "2021": {
+   "Coal": {
+    "exploration_target_Mt": 1.16,
+    "total_inventory_Mt": 87.83,
+    "inferred_resources_Mt": 275.46,
+    "indicated_resources_Mt": 421.87,
+    "measured_resources_Mt": 325.59,
+    "total_resources_Mt": 1022.93,
+    "total_resources_verify_Mt": 803.79,
+    "total_reserves_Mt": 539.34,
+    "total_reserves_verify_Mt": 428.65
+   }
+  },
+  "2020": {
+   "Coal": {
+    "exploration_target_Mt": 0.0,
+    "total_inventory_Mt": 0.0,
+    "inferred_resources_Mt": 296.38,
+    "indicated_resources_Mt": 445.65,
+    "measured_resources_Mt": 379.31,
+    "total_resources_Mt": 1122.5,
+    "total_resources_verify_Mt": 0.0,
+    "total_reserves_Mt": 548.48,
+    "total_reserves_verify_Mt": 0.0
+   }
+  },
+  "2019": {
+   "Coal": {
+    "exploration_target_Mt": 0.0,
+    "total_inventory_Mt": 0.0,
+    "inferred_resources_Mt": 326.68,
+    "indicated_resources_Mt": 465.57,
+    "measured_resources_Mt": 346.9,
+    "total_resources_Mt": 1139.16,
+    "total_resources_verify_Mt": 1071.0,
+    "total_reserves_Mt": 553.0,
+    "total_reserves_verify_Mt": 546.15
+   }
+  }
+ }
+}

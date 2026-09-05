@@ -1,0 +1,23 @@
+{
+  "name": "Fidelity — the expensive default forms, so the mock never has to guess one",
+  "grant": 1000,
+  "notes": [
+    "Every call here is a shape the mock currently serves from a spec example because we",
+    "only ever captured the constrained form. Buying each once, deliberately, means the",
+    "mock can answer a defaulted request with the payload the API really returns — and it",
+    "prices the per-item billing claims that no other call in this corpus tests.",
+    "These are the most expensive calls in the whole capture. They are bought once, and",
+    "capture.py will never re-buy them."
+  ],
+  "calls": [
+    {"tier": 6, "path": "/v2/company/report/BBCA/", "params": {}, "est_cost": 8, "note": "all sections — the 8-credit form the budget doc warns about"},
+    {"tier": 6, "path": "/v2/subsector/report/banks/", "params": {}, "est_cost": 6, "note": "all sections"},
+    {"tier": 6, "path": "/v2/companies/top-changes/", "params": {}, "est_cost": 10, "note": "defaults: 2 classifications x 5 periods, and min_mcap_billion=5000"},
+    {"tier": 6, "path": "/v2/sgx/company/report/D05.SI/", "params": {}, "est_cost": 4, "note": "all sections"},
+    {"tier": 6, "path": "/v2/klse/company/report/2089/", "params": {}, "est_cost": 4, "note": "all sections"},
+    {"tier": 6, "path": "/v2/sgx/companies/top/", "params": {}, "est_cost": 5, "note": "defaults: all five classifications"},
+    {"tier": 6, "path": "/v2/klse/companies/top/", "params": {}, "est_cost": 5, "note": "defaults: all five classifications"},
+    {"tier": 6, "path": "/v2/companies/", "params": {"q": "banks with return on equity above 15 percent", "limit": 20}, "est_cost": 3, "note": "natural-language screener: 3 credits, and the only way to see llm_translation"},
+    {"tier": 6, "path": "/v2/subsectors/", "params": {}, "no_auth": true, "est_cost": 1, "note": "what the 401 body actually looks like"}
+  ]
+}

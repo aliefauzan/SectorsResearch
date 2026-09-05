@@ -1,0 +1,376 @@
+{
+ "top_gainers": {
+  "1d": [
+   {
+    "name": "Golden Eagle Energy Tbk",
+    "symbol": "SMMT.JK",
+    "price_change": 0.248803827751196,
+    "last_close_price": 2610,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Olympus Strategic Indonesia Tbk",
+    "symbol": "NATO.JK",
+    "price_change": 0.246305418719212,
+    "last_close_price": 1265,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Perdana Karya Perkasa Tbk",
+    "symbol": "PKPK.JK",
+    "price_change": 0.17426273458445,
+    "last_close_price": 4380,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT MD Entertainment Tbk",
+    "symbol": "FILM.JK",
+    "price_change": 0.146341463414634,
+    "last_close_price": 940,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Panca Anugrah Wisesa Tbk",
+    "symbol": "MGLV.JK",
+    "price_change": 0.0984340044742729,
+    "last_close_price": 12275,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "7d": [
+   {
+    "name": "PT Olympus Strategic Indonesia Tbk",
+    "symbol": "NATO.JK",
+    "price_change": 0.846715328467153,
+    "last_close_price": 1265,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Bank Sinarmas Tbk",
+    "symbol": "BSIM.JK",
+    "price_change": 0.680851063829787,
+    "last_close_price": 1185,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Singaraja Putra Tbk",
+    "symbol": "SINI.JK",
+    "price_change": 0.506493506493506,
+    "last_close_price": 14500,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT MSIG Life Insurance Indonesia Tbk",
+    "symbol": "LIFE.JK",
+    "price_change": 0.505917159763314,
+    "last_close_price": 12725,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Global Digital Niaga Tbk",
+    "symbol": "BELI.JK",
+    "price_change": 0.338461538461538,
+    "last_close_price": 348,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "14d": [
+   {
+    "name": "PT MSIG Life Insurance Indonesia Tbk",
+    "symbol": "LIFE.JK",
+    "price_change": 1.24229074889868,
+    "last_close_price": 12725,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Olympus Strategic Indonesia Tbk",
+    "symbol": "NATO.JK",
+    "price_change": 0.902255639097744,
+    "last_close_price": 1265,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Singaraja Putra Tbk",
+    "symbol": "SINI.JK",
+    "price_change": 0.795665634674923,
+    "last_close_price": 14500,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Bank Sinarmas Tbk",
+    "symbol": "BSIM.JK",
+    "price_change": 0.680851063829787,
+    "last_close_price": 1185,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Golden Flower Tbk",
+    "symbol": "POLU.JK",
+    "price_change": 0.624175824175824,
+    "last_close_price": 18475,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "30d": [
+   {
+    "name": "PT MSIG Life Insurance Indonesia Tbk",
+    "symbol": "LIFE.JK",
+    "price_change": 1.18454935622318,
+    "last_close_price": 12725,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Abadi Nusantara Hijau Investama Tbk",
+    "symbol": "PACK.JK",
+    "price_change": 1.10526315789474,
+    "last_close_price": 560,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Singaraja Putra Tbk",
+    "symbol": "SINI.JK",
+    "price_change": 0.986301369863014,
+    "last_close_price": 14500,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Olympus Strategic Indonesia Tbk",
+    "symbol": "NATO.JK",
+    "price_change": 0.931297709923664,
+    "last_close_price": 1265,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Jhonlin Agro Raya Tbk",
+    "symbol": "JARR.JK",
+    "price_change": 0.694736842105263,
+    "last_close_price": 3220,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "365d": [
+   {
+    "name": "PT Ekamas Mora Republik Tbk",
+    "symbol": "MORA.JK",
+    "price_change": 11.2727272727273,
+    "last_close_price": 5400,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Panca Anugrah Wisesa Tbk",
+    "symbol": "MGLV.JK",
+    "price_change": 10.6904761904762,
+    "last_close_price": 12275,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Olympus Strategic Indonesia Tbk",
+    "symbol": "NATO.JK",
+    "price_change": 8.44029850746269,
+    "last_close_price": 1265,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT VKTR Teknologi Mobilitas Tbk",
+    "symbol": "VKTR.JK",
+    "price_change": 6.79279279279279,
+    "last_close_price": 865,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Perdana Karya Perkasa Tbk",
+    "symbol": "PKPK.JK",
+    "price_change": 6.42372881355932,
+    "last_close_price": 4380,
+    "latest_close_date": "2026-09-04"
+   }
+  ]
+ },
+ "top_losers": {
+  "1d": [
+   {
+    "name": "PT Intermedia Capital Tbk",
+    "symbol": "MDIA.JK",
+    "price_change": -0.142857142857143,
+    "last_close_price": 216,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Bali Towerindo Sentra Tbk.",
+    "symbol": "BALI.JK",
+    "price_change": -0.075,
+    "last_close_price": 1295,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT VKTR Teknologi Mobilitas Tbk",
+    "symbol": "VKTR.JK",
+    "price_change": -0.0546448087431694,
+    "last_close_price": 865,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Cisarua Mountain Dairy Tbk",
+    "symbol": "CMRY.JK",
+    "price_change": -0.0538302277432712,
+    "last_close_price": 4570,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Triputra Agro Persada Tbk",
+    "symbol": "TAPG.JK",
+    "price_change": -0.051063829787234,
+    "last_close_price": 2230,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "7d": [
+   {
+    "name": "PT VKTR Teknologi Mobilitas Tbk",
+    "symbol": "VKTR.JK",
+    "price_change": -0.103626943005181,
+    "last_close_price": 865,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Intermedia Capital Tbk",
+    "symbol": "MDIA.JK",
+    "price_change": -0.1,
+    "last_close_price": 216,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Yupi Indo Jelly Gum Tbk",
+    "symbol": "YUPI.JK",
+    "price_change": -0.0896551724137931,
+    "last_close_price": 1320,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Indofood CBP Sukses Makmur Tbk",
+    "symbol": "ICBP.JK",
+    "price_change": -0.0849056603773585,
+    "last_close_price": 7275,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Transcoal Pacific Tbk",
+    "symbol": "TCPI.JK",
+    "price_change": -0.0775510204081633,
+    "last_close_price": 2260,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "14d": [
+   {
+    "name": "PT Intermedia Capital Tbk",
+    "symbol": "MDIA.JK",
+    "price_change": -0.228571428571429,
+    "last_close_price": 216,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Multipolar Technology Tbk",
+    "symbol": "MLPT.JK",
+    "price_change": -0.139285714285714,
+    "last_close_price": 1205,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Indosat Tbk",
+    "symbol": "ISAT.JK",
+    "price_change": -0.121323529411765,
+    "last_close_price": 2390,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Bayan Resources Tbk",
+    "symbol": "BYAN.JK",
+    "price_change": -0.115384615384615,
+    "last_close_price": 13800,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "J Resources Asia Pasifik Tbk",
+    "symbol": "PSAB.JK",
+    "price_change": -0.109375,
+    "last_close_price": 570,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "30d": [
+   {
+    "name": "PT Transcoal Pacific Tbk",
+    "symbol": "TCPI.JK",
+    "price_change": -0.426395939086294,
+    "last_close_price": 2260,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Multipolar Technology Tbk",
+    "symbol": "MLPT.JK",
+    "price_change": -0.276276276276276,
+    "last_close_price": 1205,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Bank Jago Tbk.",
+    "symbol": "ARTO.JK",
+    "price_change": -0.216417910447761,
+    "last_close_price": 1050,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT MNC Digital Entertainment Tbk",
+    "symbol": "MSIN.JK",
+    "price_change": -0.193877551020408,
+    "last_close_price": 316,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Pacific Strategic Financial Tbk",
+    "symbol": "APIC.JK",
+    "price_change": -0.19047619047619,
+    "last_close_price": 510,
+    "latest_close_date": "2026-09-04"
+   }
+  ],
+  "365d": [
+   {
+    "name": "PT Abadi Nusantara Hijau Investama Tbk",
+    "symbol": "PACK.JK",
+    "price_change": -0.794871794871795,
+    "last_close_price": 560,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Chandra Asri Pacific Tbk",
+    "symbol": "TPIA.JK",
+    "price_change": -0.754461538461539,
+    "last_close_price": 1995,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT MD Entertainment Tbk",
+    "symbol": "FILM.JK",
+    "price_change": -0.752631578947368,
+    "last_close_price": 940,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Dian Swastatika Sentosa Tbk",
+    "symbol": "DSSA.JK",
+    "price_change": -0.722352941176471,
+    "last_close_price": 1180,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Indokripto Koin Semesta Tbk",
+    "symbol": "COIN.JK",
+    "price_change": -0.679924242424242,
+    "last_close_price": 845,
+    "latest_close_date": "2026-09-04"
+   }
+  ]
+ }
+}

@@ -1,0 +1,240 @@
+[
+ {
+  "mine_owner_slug": "pt-maruwai-coal",
+  "mine_owner_name": "PT Maruwai Coal",
+  "contractor_slug": "pt-indonesia-bulk-terminal",
+  "contractor_name": "PT Indonesia Bulk Terminal",
+  "contract_period_end": "2024-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-lahai-coal",
+  "mine_owner_name": "PT Lahai Coal",
+  "contractor_slug": "pt-indonesia-bulk-terminal",
+  "contractor_name": "PT Indonesia Bulk Terminal",
+  "contract_period_end": "2024-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-berau-coal",
+  "mine_owner_name": "PT Berau Coal",
+  "contractor_slug": "pt-fajar-anugerah-dinamika",
+  "contractor_name": "PT Fajar Anugerah Dinamika",
+  "contract_period_end": "2025-01-01"
+ },
+ {
+  "mine_owner_slug": "pt-berau-coal",
+  "mine_owner_name": "PT Berau Coal",
+  "contractor_slug": "pt-kaltim-diamond-coal",
+  "contractor_name": "PT Kaltim Diamond Coal",
+  "contract_period_end": "2025-01-01"
+ },
+ {
+  "mine_owner_slug": "pt-maruwai-coal",
+  "mine_owner_name": "PT Maruwai Coal",
+  "contractor_slug": "pt-maritim-barito-perkasa",
+  "contractor_name": "PT Maritim Barito Perkasa",
+  "contract_period_end": "2025-02-28"
+ },
+ {
+  "mine_owner_slug": "pt-lahai-coal",
+  "mine_owner_name": "PT Lahai Coal",
+  "contractor_slug": "pt-maritim-barito-perkasa",
+  "contractor_name": "PT Maritim Barito Perkasa",
+  "contract_period_end": "2025-02-28"
+ },
+ {
+  "mine_owner_slug": "pt-mitrabara-adiperdana-tbk",
+  "mine_owner_name": "PT Mitrabara Adiperdana Tbk",
+  "contractor_slug": "pt-kalimantan-prima-persada",
+  "contractor_name": "PT Kalimantan Prima Persada",
+  "contract_period_end": "2025-02-28"
+ },
+ {
+  "mine_owner_slug": "pt-perkasa-inakakerta",
+  "mine_owner_name": "PT Perkasa Inakakerta",
+  "contractor_slug": "pt-sentosa-laju-sejahtera",
+  "contractor_name": "PT Sentosa Laju Sejahtera",
+  "contract_period_end": "2025-03-31"
+ },
+ {
+  "mine_owner_slug": "pt-berau-coal",
+  "mine_owner_name": "PT Berau Coal",
+  "contractor_slug": "pt-bukit-makmur-mandiri-utama",
+  "contractor_name": "PT Bukit Makmur Mandiri Utama",
+  "contract_period_end": "2025-04-25"
+ },
+ {
+  "mine_owner_slug": "pt-wahana-baratama-mining",
+  "mine_owner_name": "PT Wahana Baratama Mining",
+  "contractor_slug": "pt-thiess-contractors-indonesia",
+  "contractor_name": "PT Thiess Contractors Indonesia",
+  "contract_period_end": "2025-05-31"
+ },
+ {
+  "mine_owner_slug": "pt-teguh-sinarabadi",
+  "mine_owner_name": "PT Teguh Sinarabadi",
+  "contractor_slug": "pt-thiess-contractors-indonesia",
+  "contractor_name": "PT Thiess Contractors Indonesia",
+  "contract_period_end": "2025-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-firman-ketaun-perkasa",
+  "mine_owner_name": "PT Firman Ketaun Perkasa",
+  "contractor_slug": "pt-thiess-contractors-indonesia",
+  "contractor_name": "PT Thiess Contractors Indonesia",
+  "contract_period_end": "2025-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-mitrabara-adiperdana-tbk",
+  "mine_owner_name": "PT Mitrabara Adiperdana Tbk",
+  "contractor_slug": "pt-global-trans-energy-international",
+  "contractor_name": "PT Global Trans Energy International",
+  "contract_period_end": "2025-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-gunungbayan-pratamacoal",
+  "mine_owner_name": "PT Gunungbayan Pratamacoal",
+  "contractor_slug": "pt-karunia-armada-indonesia",
+  "contractor_name": "PT Karunia Armada Indonesia",
+  "contract_period_end": "2026-05-20"
+ },
+ {
+  "mine_owner_slug": "pt-maruwai-coal",
+  "mine_owner_name": "PT Maruwai Coal",
+  "contractor_slug": "pt-pada-idi",
+  "contractor_name": "PT Pada Idi",
+  "contract_period_end": "2026-06-30"
+ },
+ {
+  "mine_owner_slug": "pt-wahana-baratama-mining",
+  "mine_owner_name": "PT Wahana Baratama Mining",
+  "contractor_slug": "pt-karunia-armada-indonesia",
+  "contractor_name": "PT Karunia Armada Indonesia",
+  "contract_period_end": "2026-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-pamapersada-nusantara",
+  "mine_owner_name": "PT Pamapersada Nusantara",
+  "contractor_slug": "pt-transkon-jaya-tbk",
+  "contractor_name": "PT Transkon Jaya Tbk",
+  "contract_period_end": "2027-01-21"
+ },
+ {
+  "mine_owner_slug": "pt-amman-mineral-nusa-tenggara",
+  "mine_owner_name": "PT Amman Mineral Nusa Tenggara",
+  "contractor_slug": "pt-transkon-jaya-tbk",
+  "contractor_name": "PT Transkon Jaya Tbk",
+  "contract_period_end": "2027-02-11"
+ },
+ {
+  "mine_owner_slug": "pt-berau-coal",
+  "mine_owner_name": "PT Berau Coal",
+  "contractor_slug": "pt-madhani-talatah-nusantara",
+  "contractor_name": "PT Madhani Talatah Nusantara",
+  "contract_period_end": "2027-06-30"
+ },
+ {
+  "mine_owner_slug": "pt-thiess-contractors-indonesia",
+  "mine_owner_name": "PT Thiess Contractors Indonesia",
+  "contractor_slug": "pt-transkon-jaya-tbk",
+  "contractor_name": "PT Transkon Jaya Tbk",
+  "contract_period_end": "2027-09-30"
+ },
+ {
+  "mine_owner_slug": "pt-indonesia-pratama",
+  "mine_owner_name": "PT Indonesia Pratama",
+  "contractor_slug": "pt-mandiri-herindo-adiperkasa-tbk",
+  "contractor_name": "PT Mandiri Herindo Adiperkasa Tbk",
+  "contract_period_end": "2027-12-30"
+ },
+ {
+  "mine_owner_slug": "pt-tiwa-abadi",
+  "mine_owner_name": "PT Tiwa Abadi",
+  "contractor_slug": "pt-kalimantan-citra-bara",
+  "contractor_name": "PT Kalimantan Citra Bara",
+  "contract_period_end": "2027-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-kideco-jaya-agung",
+  "mine_owner_name": "PT Kideco Jaya Agung",
+  "contractor_slug": "pt-mintec-abadi",
+  "contractor_name": "PT Mintec Abadi",
+  "contract_period_end": "2027-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-mitrabara-adiperdana-tbk",
+  "mine_owner_name": "PT Mitrabara Adiperdana Tbk",
+  "contractor_slug": "pt-baramulti-sugih-sentosa",
+  "contractor_name": "PT Baramulti Sugih Sentosa",
+  "contract_period_end": "2028-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-maruwai-coal",
+  "mine_owner_name": "PT Maruwai Coal",
+  "contractor_slug": "pt-saptaindra-sejati",
+  "contractor_name": "PT Saptaindra Sejati",
+  "contract_period_end": "2029-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-kideco-jaya-agung",
+  "mine_owner_name": "PT Kideco Jaya Agung",
+  "contractor_slug": "pt-sims-jaya-kaltim",
+  "contractor_name": "PT SIMS Jaya Kaltim",
+  "contract_period_end": "2029-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-bara-tabang",
+  "mine_owner_name": "PT Bara Tabang",
+  "contractor_slug": "pt-kalimantan-citra-bara",
+  "contractor_name": "PT Kalimantan Citra Bara",
+  "contract_period_end": "2030-07-31"
+ },
+ {
+  "mine_owner_slug": "pt-indonesia-pratama",
+  "mine_owner_name": "PT Indonesia Pratama",
+  "contractor_slug": "pt-karunia-armada-indonesia",
+  "contractor_name": "PT Karunia Armada Indonesia",
+  "contract_period_end": "2031-12-30"
+ },
+ {
+  "mine_owner_slug": "pt-kideco-jaya-agung",
+  "mine_owner_name": "PT Kideco Jaya Agung",
+  "contractor_slug": "pt-samindo-utama-kaltim",
+  "contractor_name": "PT Samindo Utama Kaltim",
+  "contract_period_end": "2032-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-kideco-jaya-agung",
+  "mine_owner_name": "PT Kideco Jaya Agung",
+  "contractor_slug": "pt-trasindo-murni-perkasa",
+  "contractor_name": "PT Trasindo Murni Perkasa",
+  "contract_period_end": "2032-12-31"
+ },
+ {
+  "mine_owner_slug": "pt-indonesia-pratama",
+  "mine_owner_name": "PT Indonesia Pratama",
+  "contractor_slug": "pt-kalimantan-citra-bara",
+  "contractor_name": "PT Kalimantan Citra Bara",
+  "contract_period_end": "2035-07-22"
+ },
+ {
+  "mine_owner_slug": "pt-fajar-sakti-prima",
+  "mine_owner_name": "PT Fajar Sakti Prima",
+  "contractor_slug": "pt-kalimantan-citra-bara",
+  "contractor_name": "PT Kalimantan Citra Bara",
+  "contract_period_end": "2035-07-22"
+ },
+ {
+  "mine_owner_slug": "pt-kaltim-prima-coal",
+  "mine_owner_name": "PT Kaltim Prima Coal",
+  "contractor_slug": "pt-darma-henwa-tbk",
+  "contractor_name": "PT Darma Henwa Tbk",
+  "contract_period_end": null
+ },
+ {
+  "mine_owner_slug": "pt-arutmin-indonesia",
+  "mine_owner_name": "PT Arutmin Indonesia",
+  "contractor_slug": "pt-darma-henwa-tbk",
+  "contractor_name": "PT Darma Henwa Tbk",
+  "contract_period_end": null
+ }
+]

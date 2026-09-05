@@ -1,0 +1,1571 @@
+{
+  "v2_broker-activity_AD__end-2026-08-14_start-2026-08-01": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627218.142088,
+    "params": {
+      "end": "2026-08-14",
+      "start": "2026-08-01"
+    },
+    "path": "/v2/broker-activity/AD/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_broker-activity_AD_top__end-2026-08-14_start-2026-08-01": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627219.3801029,
+    "params": {
+      "end": "2026-08-14",
+      "start": "2026-08-01"
+    },
+    "path": "/v2/broker-activity/AD/top/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_broker-summary_ADRO_top": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788626977.332188,
+    "params": {},
+    "path": "/v2/broker-summary/ADRO/top/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_broker-summary_BBCA__end-2026-08-14_start-2026-08-01": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627220.703192,
+    "params": {
+      "end": "2026-08-14",
+      "start": "2026-08-01"
+    },
+    "path": "/v2/broker-summary/BBCA/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_broker-summary_BBCA_top": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788626960.957189,
+    "params": {},
+    "path": "/v2/broker-summary/BBCA/top/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_broker-summary_BBRI_top": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788626965.1440809,
+    "params": {},
+    "path": "/v2/broker-summary/BBRI/top/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_broker-summary_TLKM_top": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788626971.690033,
+    "params": {},
+    "path": "/v2/broker-summary/TLKM/top/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_brokers": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626896.989098,
+    "params": {},
+    "path": "/v2/brokers/",
+    "status": 200,
+    "tier": 0
+  },
+  "v2_brokers_top__metric-net": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788626984.9036229,
+    "params": {
+      "metric": "net"
+    },
+    "path": "/v2/brokers/top/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_close__limit-30": {
+    "cost_headers": {},
+    "est_cost": 32,
+    "fetched_at": 1788627104.507013,
+    "params": {
+      "limit": 30
+    },
+    "path": "/v2/close/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_companies__limit-200_order_by--market_cap_where-market_cap-10000000000": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626914.944161,
+    "params": {
+      "limit": 200,
+      "order_by": "-market_cap",
+      "where": "market_cap > 1000000000000"
+    },
+    "path": "/v2/companies/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_companies__limit-200_order_by--market_cap_where-sub_sector-banks-": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626915.747484,
+    "params": {
+      "limit": 200,
+      "order_by": "-market_cap",
+      "where": "sub_sector = 'banks'"
+    },
+    "path": "/v2/companies/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_companies__limit-200_order_by--yield_ttm_where-yield_ttm-0.03-and-pay": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626916.725419,
+    "params": {
+      "limit": 200,
+      "order_by": "-yield_ttm",
+      "where": "yield_ttm > 0.03 and payout_ratio < 0.9"
+    },
+    "path": "/v2/companies/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_companies__limit-20_q-banks-with-return-on-equ": {
+    "cost_headers": {},
+    "est_cost": 3,
+    "fetched_at": 1788628598.7153652,
+    "params": {
+      "limit": 20,
+      "q": "banks with return on equity above 15 percent"
+    },
+    "path": "/v2/companies/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_companies_list_companies_with_segments": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627200.149626,
+    "params": {},
+    "path": "/v2/companies/list_companies_with_segments/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_companies_quarterly-financial-dates__limit-30": {
+    "cost_headers": {},
+    "est_cost": 32,
+    "fetched_at": 1788627111.1420102,
+    "params": {
+      "limit": 30
+    },
+    "path": "/v2/companies/quarterly-financial-dates/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_companies_top-changes": {
+    "cost_headers": {},
+    "est_cost": 10,
+    "fetched_at": 1788628586.7646341,
+    "params": {},
+    "path": "/v2/companies/top-changes/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_companies_top-changes__classifications-top_gainers_min_mcap_billion-0_periods-1d": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626918.723595,
+    "params": {
+      "classifications": "top_gainers",
+      "min_mcap_billion": 0,
+      "periods": "1d"
+    },
+    "path": "/v2/companies/top-changes/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_companies_top-changes__classifications-top_losers_min_mcap_billion-0_periods-1d": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626919.3474612,
+    "params": {
+      "classifications": "top_losers",
+      "min_mcap_billion": 0,
+      "periods": "1d"
+    },
+    "path": "/v2/companies/top-changes/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_corporate-actions_ADRO": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626982.400179,
+    "params": {},
+    "path": "/v2/company/corporate-actions/ADRO/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_corporate-actions_BBCA": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626963.39679,
+    "params": {},
+    "path": "/v2/company/corporate-actions/BBCA/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_corporate-actions_BBRI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626969.514297,
+    "params": {},
+    "path": "/v2/company/corporate-actions/BBRI/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_corporate-actions_TLKM": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626975.069248,
+    "params": {},
+    "path": "/v2/company/corporate-actions/TLKM/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_get-segments_ADRO": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626981.7431722,
+    "params": {},
+    "path": "/v2/company/get-segments/ADRO/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_get-segments_BBCA": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626962.831699,
+    "params": {},
+    "path": "/v2/company/get-segments/BBCA/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_get-segments_BBRI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626966.765919,
+    "params": {},
+    "path": "/v2/company/get-segments/BBRI/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_get-segments_TLKM": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626974.133305,
+    "params": {},
+    "path": "/v2/company/get-segments/TLKM/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_get_quarterly_financial_dates_BBCA": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627212.283544,
+    "params": {},
+    "path": "/v2/company/get_quarterly_financial_dates/BBCA/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_company_report": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid stock symbol.'}",
+    "fetched_at": 1788628471.778364,
+    "params": {},
+    "path": "/v2/company/report/",
+    "status": 400
+  },
+  "v2_company_report_ADRO__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626931.3430169,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/ADRO/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_ANTM__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626937.580263,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/ANTM/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_ASII__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626930.0046232,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/ASII/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_BBCA": {
+    "cost_headers": {},
+    "est_cost": 8,
+    "fetched_at": 1788628577.834167,
+    "params": {},
+    "path": "/v2/company/report/BBCA/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_company_report_BBCA.JK__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788628507.760353,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/BBCA.JK/",
+    "status": 200,
+    "tier": 9
+  },
+  "v2_company_report_BBCA__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626923.988534,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/BBCA/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_BBRI__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626925.126337,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/BBRI/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_BMRI__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626926.316819,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/BMRI/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_BREN__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626935.213119,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/BREN/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_TLKM__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626927.513259,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/TLKM/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report__q-BBCA": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid stock symbol.'}",
+    "fetched_at": 1788628470.527358,
+    "params": {
+      "q": "BBCA"
+    },
+    "path": "/v2/company/report/",
+    "status": 400
+  },
+  "v2_company_report__sections-overview_symbol-BBCA": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid stock symbol.'}",
+    "fetched_at": 1788627213.4819992,
+    "params": {
+      "sections": "overview",
+      "symbol": "BBCA"
+    },
+    "path": "/v2/company/report/",
+    "status": 400
+  },
+  "v2_company_report__stock-BBCA": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid stock symbol.'}",
+    "fetched_at": 1788628469.286392,
+    "params": {
+      "stock": "BBCA"
+    },
+    "path": "/v2/company/report/",
+    "status": 400
+  },
+  "v2_company_report__symbol-BBCA": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid stock symbol.'}",
+    "fetched_at": 1788628465.569238,
+    "params": {
+      "symbol": "BBCA"
+    },
+    "path": "/v2/company/report/",
+    "status": 400
+  },
+  "v2_company_report__symbols-BBCA": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid stock symbol.'}",
+    "fetched_at": 1788628466.8124669,
+    "params": {
+      "symbols": "BBCA"
+    },
+    "path": "/v2/company/report/",
+    "status": 400
+  },
+  "v2_company_report__ticker-BBCA": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid stock symbol.'}",
+    "fetched_at": 1788628468.002944,
+    "params": {
+      "ticker": "BBCA"
+    },
+    "path": "/v2/company/report/",
+    "status": 400
+  },
+  "v2_company_report_bbca__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788628506.562065,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/company/report/bbca/",
+    "status": 200,
+    "tier": 9
+  },
+  "v2_company_shareholders-composition_ADRO": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626983.449334,
+    "params": {},
+    "path": "/v2/company/shareholders-composition/ADRO/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_shareholders-composition_BBCA": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626963.969802,
+    "params": {},
+    "path": "/v2/company/shareholders-composition/BBCA/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_shareholders-composition_BBRI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626970.540884,
+    "params": {},
+    "path": "/v2/company/shareholders-composition/BBRI/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_company_shareholders-composition_TLKM": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626976.111049,
+    "params": {},
+    "path": "/v2/company/shareholders-composition/TLKM/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_daily_ADRO": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626934.606739,
+    "params": {},
+    "path": "/v2/daily/ADRO/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_ANTM": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626938.186953,
+    "params": {},
+    "path": "/v2/daily/ANTM/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_ASII": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626930.62464,
+    "params": {},
+    "path": "/v2/daily/ASII/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_BBCA": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626924.553729,
+    "params": {},
+    "path": "/v2/daily/BBCA/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_BBRI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626925.77849,
+    "params": {},
+    "path": "/v2/daily/BBRI/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_BMRI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626926.936874,
+    "params": {},
+    "path": "/v2/daily/BMRI/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_BREN": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626935.785053,
+    "params": {},
+    "path": "/v2/daily/BREN/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_TLKM": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626928.105094,
+    "params": {},
+    "path": "/v2/daily/TLKM/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_does-not-exist": {
+    "billed": true,
+    "error": "{'details': 'The requested endpoint does not exist', 'urls': {'homepage': 'https://sectors.app/', 'API docs': 'https://docs.sectors.app/'}}",
+    "fetched_at": 1788628508.997988,
+    "params": {},
+    "path": "/v2/does-not-exist/",
+    "status": 404
+  },
+  "v2_filings": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626920.556946,
+    "params": {},
+    "path": "/v2/filings/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_financials_quarterly_ADRO__n_quarters-4": {
+    "cost_headers": {},
+    "est_cost": 4,
+    "fetched_at": 1788626978.2254028,
+    "params": {
+      "n_quarters": 4
+    },
+    "path": "/v2/financials/quarterly/ADRO/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_financials_quarterly_BBCA__n_quarters-4": {
+    "cost_headers": {},
+    "est_cost": 4,
+    "fetched_at": 1788626961.9859872,
+    "params": {
+      "n_quarters": 4
+    },
+    "path": "/v2/financials/quarterly/BBCA/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_financials_quarterly_BBRI__n_quarters-4": {
+    "cost_headers": {},
+    "est_cost": 4,
+    "fetched_at": 1788626966.1204731,
+    "params": {
+      "n_quarters": 4
+    },
+    "path": "/v2/financials/quarterly/BBRI/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_financials_quarterly_TLKM__n_quarters-4": {
+    "cost_headers": {},
+    "est_cost": 4,
+    "fetched_at": 1788626973.0601778,
+    "params": {
+      "n_quarters": 4
+    },
+    "path": "/v2/financials/quarterly/TLKM/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_ADRO": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626957.618859,
+    "params": {},
+    "path": "/v2/foreign-flow/ADRO/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_ANTM": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626959.993408,
+    "params": {},
+    "path": "/v2/foreign-flow/ANTM/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_ASII": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626956.846011,
+    "params": {},
+    "path": "/v2/foreign-flow/ASII/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_BBCA": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626951.4943502,
+    "params": {},
+    "path": "/v2/foreign-flow/BBCA/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_BBRI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626952.728866,
+    "params": {},
+    "path": "/v2/foreign-flow/BBRI/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_BMRI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626953.4810822,
+    "params": {},
+    "path": "/v2/foreign-flow/BMRI/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_BREN": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626959.0965052,
+    "params": {},
+    "path": "/v2/foreign-flow/BREN/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_foreign-flow_TLKM": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626956.038311,
+    "params": {},
+    "path": "/v2/foreign-flow/TLKM/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_free-float": {
+    "cost_headers": {},
+    "est_cost": 10,
+    "fetched_at": 1788627013.1751401,
+    "params": {},
+    "path": "/v2/free-float/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_idx-total": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626918.043637,
+    "params": {},
+    "path": "/v2/idx-total/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_index-daily_idx30": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626922.8785448,
+    "params": {},
+    "path": "/v2/index-daily/idx30/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_index-daily_ihsg": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626921.77514,
+    "params": {},
+    "path": "/v2/index-daily/ihsg/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_index-daily_klse": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid index code.'}",
+    "fetched_at": 1788628542.109261,
+    "params": {},
+    "path": "/v2/index-daily/klse/",
+    "status": 400
+  },
+  "v2_index-daily_lq45": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626922.331038,
+    "params": {},
+    "path": "/v2/index-daily/lq45/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_index-daily_sti": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788628511.695754,
+    "params": {},
+    "path": "/v2/index-daily/sti/",
+    "status": 200,
+    "tier": 9
+  },
+  "v2_industries": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626894.9780228,
+    "params": {},
+    "path": "/v2/industries/",
+    "status": 200,
+    "tier": 0
+  },
+  "v2_klse_companies__sector-consumer-non-cyclicals": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627253.5180001,
+    "params": {
+      "sector": "consumer-non-cyclicals"
+    },
+    "path": "/v2/klse/companies/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_klse_companies_top": {
+    "cost_headers": {},
+    "est_cost": 5,
+    "fetched_at": 1788628594.975095,
+    "params": {},
+    "path": "/v2/klse/companies/top/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_klse_companies_top__classifications-market_cap_n_stock-5": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627340.721233,
+    "params": {
+      "classifications": "market_cap",
+      "n_stock": 5
+    },
+    "path": "/v2/klse/companies/top/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_klse_companies_top__classifications-top_gainers_n_stock-5": {
+    "billed": false,
+    "error": "{'error': 'Invalid classifications provided, select from these choices: dividend_yield, revenue, earnings, market_cap, pe.'}",
+    "fetched_at": 1788627255.303966,
+    "params": {
+      "classifications": "top_gainers",
+      "n_stock": 5
+    },
+    "path": "/v2/klse/companies/top/",
+    "status": 400
+  },
+  "v2_klse_company_report_2089": {
+    "cost_headers": {},
+    "est_cost": 4,
+    "fetched_at": 1788628590.2549188,
+    "params": {},
+    "path": "/v2/klse/company/report/2089/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_klse_company_report_2089__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627342.062101,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/klse/company/report/2089/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_klse_company_report__symbol-2089": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid KLSE symbol.'}",
+    "fetched_at": 1788628480.242709,
+    "params": {
+      "symbol": "2089"
+    },
+    "path": "/v2/klse/company/report/",
+    "status": 400
+  },
+  "v2_klse_sectors": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627003.474998,
+    "params": {},
+    "path": "/v2/klse/sectors/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_listing-performance_ADRO": {
+    "billed": true,
+    "error": "{'error': 'Given stock symbol does not exist for this data.'}",
+    "fetched_at": 1788626984.0413911,
+    "params": {},
+    "path": "/v2/listing-performance/ADRO/",
+    "status": 404
+  },
+  "v2_listing-performance_BBCA": {
+    "billed": true,
+    "error": "{'error': 'Given stock symbol does not exist for this data.'}",
+    "fetched_at": 1788626964.579484,
+    "params": {},
+    "path": "/v2/listing-performance/BBCA/",
+    "status": 404
+  },
+  "v2_listing-performance_BBRI": {
+    "billed": true,
+    "error": "{'error': 'Given stock symbol does not exist for this data.'}",
+    "fetched_at": 1788626971.07458,
+    "params": {},
+    "path": "/v2/listing-performance/BBRI/",
+    "status": 404
+  },
+  "v2_listing-performance_BREN": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627413.502544,
+    "params": {},
+    "path": "/v2/listing-performance/BREN/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_listing-performance_TLKM": {
+    "billed": true,
+    "error": "{'error': 'Given stock symbol does not exist for this data.'}",
+    "fetched_at": 1788626976.680126,
+    "params": {},
+    "path": "/v2/listing-performance/TLKM/",
+    "status": 404
+  },
+  "v2_mining_commodities": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626988.692389,
+    "params": {},
+    "path": "/v2/mining/commodities/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_commodities_Coal_price__end_year-2025_start_year-2023": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627000.32715,
+    "params": {
+      "end_year": 2025,
+      "start_year": 2023
+    },
+    "path": "/v2/mining/commodities/Coal/price/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_commodities_Gold_price__end_year-2025_start_year-2023": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626999.234496,
+    "params": {
+      "end_year": 2025,
+      "start_year": 2023
+    },
+    "path": "/v2/mining/commodities/Gold/price/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_companies": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626992.105366,
+    "params": {},
+    "path": "/v2/mining/companies/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_companies__has_financials-true_limit-20": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627366.2219741,
+    "params": {
+      "has_financials": "true",
+      "limit": 20
+    },
+    "path": "/v2/mining/companies/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_financials_pt-abm-investama-tbk": {
+    "billed": true,
+    "error": "{'error': 'Company not found or no financial data available.'}",
+    "fetched_at": 1788627332.162113,
+    "params": {},
+    "path": "/v2/mining/companies/financials/pt-abm-investama-tbk/",
+    "status": 404
+  },
+  "v2_mining_companies_financials_pt-adaro-andalan-indonesia-tbk": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627381.439553,
+    "params": {},
+    "path": "/v2/mining/companies/financials/pt-adaro-andalan-indonesia-tbk/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_financials_pt-adaro-indonesia": {
+    "billed": true,
+    "error": "{'error': 'Company not found or no financial data available.'}",
+    "fetched_at": 1788627224.777042,
+    "params": {},
+    "path": "/v2/mining/companies/financials/pt-adaro-indonesia/",
+    "status": 404
+  },
+  "v2_mining_companies_ownership_pt-abm-investama-tbk": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627334.721789,
+    "params": {},
+    "path": "/v2/mining/companies/ownership/pt-abm-investama-tbk/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_ownership_pt-adaro-andalan-indonesia-tbk": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627383.2173388,
+    "params": {},
+    "path": "/v2/mining/companies/ownership/pt-adaro-andalan-indonesia-tbk/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_ownership_pt-adaro-indonesia": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627228.83218,
+    "params": {},
+    "path": "/v2/mining/companies/ownership/pt-adaro-indonesia/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_performance_pt-abm-investama-tbk__commodity_type-Coal": {
+    "billed": true,
+    "error": "{'error': 'No performance data found.'}",
+    "fetched_at": 1788627336.421896,
+    "params": {
+      "commodity_type": "Coal"
+    },
+    "path": "/v2/mining/companies/performance/pt-abm-investama-tbk/",
+    "status": 404
+  },
+  "v2_mining_companies_performance_pt-adaro-andalan-indonesia-tbk__commodity_type-Coal": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627385.382955,
+    "params": {
+      "commodity_type": "Coal"
+    },
+    "path": "/v2/mining/companies/performance/pt-adaro-andalan-indonesia-tbk/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_performance_pt-adaro-indonesia__commodity_type-Coal": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627231.056106,
+    "params": {
+      "commodity_type": "Coal"
+    },
+    "path": "/v2/mining/companies/performance/pt-adaro-indonesia/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_pt-abm-investama-tbk": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627329.247921,
+    "params": {},
+    "path": "/v2/mining/companies/pt-abm-investama-tbk/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_pt-adaro-andalan-indonesia-tbk": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627379.643328,
+    "params": {},
+    "path": "/v2/mining/companies/pt-adaro-andalan-indonesia-tbk/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_companies_pt-adaro-indonesia": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627222.85622,
+    "params": {},
+    "path": "/v2/mining/companies/pt-adaro-indonesia/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_contracts": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626997.880971,
+    "params": {},
+    "path": "/v2/mining/contracts/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_exports": {
+    "billed": false,
+    "error": "{'error': \"Query parameters 'year' and 'commodity_type' are required.\"}",
+    "fetched_at": 1788626997.2403898,
+    "params": {},
+    "path": "/v2/mining/exports/",
+    "status": 400
+  },
+  "v2_mining_exports__commodity_type-Coal_year-2024": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627211.042315,
+    "params": {
+      "commodity_type": "Coal",
+      "year": 2024
+    },
+    "path": "/v2/mining/exports/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_global-commodity__commodity_type-Coal_limit-20": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627206.810053,
+    "params": {
+      "commodity_type": "Coal",
+      "limit": 20
+    },
+    "path": "/v2/mining/global-commodity/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_license-auctions": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626995.1757572,
+    "params": {},
+    "path": "/v2/mining/license-auctions/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_license-auctions_1473242122023001": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627237.533856,
+    "params": {},
+    "path": "/v2/mining/license-auctions/1473242122023001/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_licenses": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626994.0458398,
+    "params": {},
+    "path": "/v2/mining/licenses/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_resources-reserves": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626996.724471,
+    "params": {},
+    "path": "/v2/mining/resources-reserves/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_resources-reserves_Aceh__commodity_type-Coal": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627239.3025222,
+    "params": {
+      "commodity_type": "Coal"
+    },
+    "path": "/v2/mining/resources-reserves/Aceh/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_sales-destination_pt-abm-investama-tbk": {
+    "billed": true,
+    "error": "{'error': \"No sales destination data found for company 'pt-abm-investama-tbk'.\"}",
+    "fetched_at": 1788627338.134474,
+    "params": {},
+    "path": "/v2/mining/sales-destination/pt-abm-investama-tbk/",
+    "status": 404
+  },
+  "v2_mining_sales-destination_pt-adaro-andalan-indonesia-tbk": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627387.7340999,
+    "params": {},
+    "path": "/v2/mining/sales-destination/pt-adaro-andalan-indonesia-tbk/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_sales-destination_pt-adaro-indonesia": {
+    "billed": true,
+    "error": "{'error': \"No sales destination data found for company 'pt-adaro-indonesia'.\"}",
+    "fetched_at": 1788627234.456498,
+    "params": {},
+    "path": "/v2/mining/sales-destination/pt-adaro-indonesia/",
+    "status": 404
+  },
+  "v2_mining_sites": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626992.8889291,
+    "params": {},
+    "path": "/v2/mining/sites/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_mining_sites_tutupan-utara": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627236.1665761,
+    "params": {},
+    "path": "/v2/mining/sites/tutupan-utara/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_mining_total-production": {
+    "billed": false,
+    "error": "{'error': \"Query parameter 'commodity_type' is required.\"}",
+    "fetched_at": 1788626995.704329,
+    "params": {},
+    "path": "/v2/mining/total-production/",
+    "status": 400
+  },
+  "v2_mining_total-production__commodity_type-Coal": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627209.652054,
+    "params": {
+      "commodity_type": "Coal"
+    },
+    "path": "/v2/mining/total-production/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_most-traded": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788626985.7705579,
+    "params": {},
+    "path": "/v2/most-traded/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_news__extension-idx": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626919.941323,
+    "params": {
+      "extension": "idx"
+    },
+    "path": "/v2/news/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_sgx_buybacks__limit-20": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627244.5651698,
+    "params": {
+      "limit": 20
+    },
+    "path": "/v2/sgx/buybacks/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_companies__limit-100_order_by--market_cap": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627002.5708401,
+    "params": {
+      "limit": 100,
+      "order_by": "-market_cap"
+    },
+    "path": "/v2/sgx/companies/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_sgx_companies_top": {
+    "cost_headers": {},
+    "est_cost": 5,
+    "fetched_at": 1788628593.092574,
+    "params": {},
+    "path": "/v2/sgx/companies/top/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_sgx_companies_top__classifications-market_cap_n_stock-5": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627339.476392,
+    "params": {
+      "classifications": "market_cap",
+      "n_stock": 5
+    },
+    "path": "/v2/sgx/companies/top/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_companies_top__classifications-top_gainers_n_stock-5": {
+    "billed": false,
+    "error": "{'error': 'Invalid classifications provided, select from these choices: dividend_yield, revenue, earnings, market_cap, pe.'}",
+    "fetched_at": 1788627240.519351,
+    "params": {
+      "classifications": "top_gainers",
+      "n_stock": 5
+    },
+    "path": "/v2/sgx/companies/top/",
+    "status": 400
+  },
+  "v2_sgx_company_report_D05.SI": {
+    "cost_headers": {},
+    "est_cost": 4,
+    "fetched_at": 1788628588.491319,
+    "params": {},
+    "path": "/v2/sgx/company/report/D05.SI/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_sgx_company_report_D05.SI__sections-overview": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627250.5649998,
+    "params": {
+      "sections": "overview"
+    },
+    "path": "/v2/sgx/company/report/D05.SI/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_company_report__sections-overview_symbol-D05.SI": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid SGX symbol.'}",
+    "fetched_at": 1788627248.52536,
+    "params": {
+      "sections": "overview",
+      "symbol": "D05.SI"
+    },
+    "path": "/v2/sgx/company/report/",
+    "status": 400
+  },
+  "v2_sgx_company_report__symbol-D05.SI": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid SGX symbol.'}",
+    "fetched_at": 1788628479.004148,
+    "params": {
+      "symbol": "D05.SI"
+    },
+    "path": "/v2/sgx/company/report/",
+    "status": 400
+  },
+  "v2_sgx_daily_D05.SI__end-2026-08-14_start-2026-08-01": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627252.273032,
+    "params": {
+      "end": "2026-08-14",
+      "start": "2026-08-01"
+    },
+    "path": "/v2/sgx/daily/D05.SI/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_filings__limit-20": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627241.831579,
+    "params": {
+      "limit": 20
+    },
+    "path": "/v2/sgx/filings/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_news__limit-20": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627243.049427,
+    "params": {
+      "limit": 20
+    },
+    "path": "/v2/sgx/news/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_sectors": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627001.933318,
+    "params": {},
+    "path": "/v2/sgx/sectors/",
+    "status": 200,
+    "tier": 4
+  },
+  "v2_sgx_short-sell__limit-20": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627247.3533802,
+    "params": {
+      "limit": 20
+    },
+    "path": "/v2/sgx/short-sell/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_subsectors": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627203.377036,
+    "params": {},
+    "path": "/v2/sgx/subsectors/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_sgx_tags": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788627204.709642,
+    "params": {},
+    "path": "/v2/sgx/tags/",
+    "status": 200,
+    "tier": 5
+  },
+  "v2_subindustries": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626895.578759,
+    "params": {},
+    "path": "/v2/subindustries/",
+    "status": 200,
+    "tier": 0
+  },
+  "v2_subsector_report__sections-overview_sub_sector-banks": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid sector.'}",
+    "fetched_at": 1788627215.9756181,
+    "params": {
+      "sections": "overview",
+      "sub_sector": "banks"
+    },
+    "path": "/v2/subsector/report/",
+    "status": 400
+  },
+  "v2_subsector_report__sector-banks": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid sector.'}",
+    "fetched_at": 1788628474.2014499,
+    "params": {
+      "sector": "banks"
+    },
+    "path": "/v2/subsector/report/",
+    "status": 400
+  },
+  "v2_subsector_report__sub_sector-banks": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid sector.'}",
+    "fetched_at": 1788628473.0053031,
+    "params": {
+      "sub_sector": "banks"
+    },
+    "path": "/v2/subsector/report/",
+    "status": 400
+  },
+  "v2_subsector_report__subsector-banks": {
+    "billed": false,
+    "error": "{'error': 'Please provide a valid sector.'}",
+    "fetched_at": 1788628477.674968,
+    "params": {
+      "subsector": "banks"
+    },
+    "path": "/v2/subsector/report/",
+    "status": 400
+  },
+  "v2_subsector_report_banks": {
+    "cost_headers": {},
+    "est_cost": 6,
+    "fetched_at": 1788628579.553144,
+    "params": {},
+    "path": "/v2/subsector/report/banks/",
+    "status": 200,
+    "tier": 6
+  },
+  "v2_subsector_report_banks__sections-statistics": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626986.354671,
+    "params": {
+      "sections": "statistics"
+    },
+    "path": "/v2/subsector/report/banks/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_subsector_report_oil-gas-coal__sections-statistics": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626986.911544,
+    "params": {
+      "sections": "statistics"
+    },
+    "path": "/v2/subsector/report/oil-gas-coal/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_subsector_report_telecommunication__sections-statistics": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626987.454365,
+    "params": {
+      "sections": "statistics"
+    },
+    "path": "/v2/subsector/report/telecommunication/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_subsectors": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626894.184244,
+    "params": {},
+    "path": "/v2/subsectors/",
+    "status": 200,
+    "tier": 0
+  },
+  "v2_subsectors__noauth": {
+    "billed": false,
+    "error": "{'error': 'Authentication credentials were not provided.'}",
+    "fetched_at": 1788628600.4832509,
+    "params": {},
+    "path": "/v2/subsectors/",
+    "status": 403
+  },
+  "v2_subsectors__noslash": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788628538.5038238,
+    "params": {},
+    "path": "/v2/subsectors",
+    "status": 200,
+    "tier": 9
+  },
+  "v2_subsectors__options": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788628540.897821,
+    "params": {},
+    "path": "/v2/subsectors/",
+    "status": 200,
+    "tier": 9
+  },
+  "v2_subsectors__post": {
+    "billed": false,
+    "error": "{'error': 'Method \"POST\" not allowed.'}",
+    "fetched_at": 1788628539.698571,
+    "params": {},
+    "path": "/v2/subsectors/",
+    "status": 405
+  },
+  "v2_suspensions": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626921.112134,
+    "params": {},
+    "path": "/v2/suspensions/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_tags": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788626896.4242811,
+    "params": {},
+    "path": "/v2/tags/",
+    "status": 200,
+    "tier": 0
+  }
+}

@@ -1,0 +1,234 @@
+[
+ {
+  "subsector": "investment-service",
+  "industry": "investment-services"
+ },
+ {
+  "subsector": "apparel-luxury-goods",
+  "industry": "apparel-luxury-goods"
+ },
+ {
+  "subsector": "oil-gas-coal",
+  "industry": "oil-gas"
+ },
+ {
+  "subsector": "basic-materials",
+  "industry": "chemicals"
+ },
+ {
+  "subsector": "industrial-services",
+  "industry": "professional-services"
+ },
+ {
+  "subsector": "transportation",
+  "industry": "passenger-land-transportation"
+ },
+ {
+  "subsector": "industrial-goods",
+  "industry": "electrical"
+ },
+ {
+  "subsector": "food-beverage",
+  "industry": "agricultural-products"
+ },
+ {
+  "subsector": "basic-materials",
+  "industry": "metals-minerals"
+ },
+ {
+  "subsector": "alternative-energy",
+  "industry": "alternative-energy-equipment"
+ },
+ {
+  "subsector": "healthcare-equipment-providers",
+  "industry": "healthcare-providers"
+ },
+ {
+  "subsector": "food-staples-retailing",
+  "industry": "food-staples-retailing"
+ },
+ {
+  "subsector": "household-goods",
+  "industry": "household-goods"
+ },
+ {
+  "subsector": "oil-gas-coal",
+  "industry": "coal"
+ },
+ {
+  "subsector": "food-beverage",
+  "industry": "processed-foods"
+ },
+ {
+  "subsector": "technology-hardware-equipment",
+  "industry": "networking-equipment"
+ },
+ {
+  "subsector": "industrial-services",
+  "industry": "diversified-industrial-trading"
+ },
+ {
+  "subsector": "software-it-services",
+  "industry": "online-applications-services"
+ },
+ {
+  "subsector": "technology-hardware-equipment",
+  "industry": "computer-hardware"
+ },
+ {
+  "subsector": "transportation",
+  "industry": "airlines"
+ },
+ {
+  "subsector": "leisure-goods",
+  "industry": "consumer-electronics"
+ },
+ {
+  "subsector": "heavy-constructions-civil-engineering",
+  "industry": "heavy-constructions-civil-engineering"
+ },
+ {
+  "subsector": "industrial-goods",
+  "industry": "machinery"
+ },
+ {
+  "subsector": "media-entertainment",
+  "industry": "entertainment-movie-production"
+ },
+ {
+  "subsector": "telecommunication",
+  "industry": "telecommunication-service"
+ },
+ {
+  "subsector": "media-entertainment",
+  "industry": "media"
+ },
+ {
+  "subsector": "financing-service",
+  "industry": "consumer-financing"
+ },
+ {
+  "subsector": "food-beverage",
+  "industry": "beverages"
+ },
+ {
+  "subsector": "industrial-goods",
+  "industry": "building-products-fixtures"
+ },
+ {
+  "subsector": "telecommunication",
+  "industry": "wireless-telecommunication-services"
+ },
+ {
+  "subsector": "tobacco",
+  "industry": "tobacco"
+ },
+ {
+  "subsector": "holding-investment-companies",
+  "industry": "holding-investment-companies"
+ },
+ {
+  "subsector": "multi-sector-holdings",
+  "industry": "multi-sector-holdings"
+ },
+ {
+  "subsector": "retailing",
+  "industry": "consumer-distributors"
+ },
+ {
+  "subsector": "leisure-goods",
+  "industry": "sport-equipment-hobbies-goods"
+ },
+ {
+  "subsector": "logistics-deliveries",
+  "industry": "logistics-deliveries"
+ },
+ {
+  "subsector": "software-it-services",
+  "industry": "it-services-consulting"
+ },
+ {
+  "subsector": "insurance",
+  "industry": "insurance"
+ },
+ {
+  "subsector": "basic-materials",
+  "industry": "containers-packaging"
+ },
+ {
+  "subsector": "oil-gas-coal",
+  "industry": "oil-gas-coal-supports"
+ },
+ {
+  "subsector": "consumer-services",
+  "industry": "tourism-recreation"
+ },
+ {
+  "subsector": "retailing",
+  "industry": "department-stores"
+ },
+ {
+  "subsector": "properties-real-estate",
+  "industry": "real-estate-management-development"
+ },
+ {
+  "subsector": "healthcare-equipment-providers",
+  "industry": "healthcare-equipment-supplies"
+ },
+ {
+  "subsector": "utilities",
+  "industry": "electric-utilities"
+ },
+ {
+  "subsector": "consumer-services",
+  "industry": "education-support-services"
+ },
+ {
+  "subsector": "retailing",
+  "industry": "specialty-retail"
+ },
+ {
+  "subsector": "banks",
+  "industry": "banks"
+ },
+ {
+  "subsector": "basic-materials",
+  "industry": "construction-materials"
+ },
+ {
+  "subsector": "transportation-infrastructure",
+  "industry": "transport-infrastructure-operator"
+ },
+ {
+  "subsector": "technology-hardware-equipment",
+  "industry": "electronic-equipment-instruments-components"
+ },
+ {
+  "subsector": "automobiles-components",
+  "industry": "auto-components"
+ },
+ {
+  "subsector": "nondurable-household-products",
+  "industry": "personal-care-products"
+ },
+ {
+  "subsector": "industrial-services",
+  "industry": "commercial-services"
+ },
+ {
+  "subsector": "basic-materials",
+  "industry": "forestry-paper"
+ },
+ {
+  "subsector": "utilities",
+  "industry": "gas-utilities"
+ },
+ {
+  "subsector": "software-it-services",
+  "industry": "software"
+ },
+ {
+  "subsector": "pharmaceuticals-health-care-research",
+  "industry": "pharmaceuticals"
+ }
+]

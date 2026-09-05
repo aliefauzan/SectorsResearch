@@ -1,0 +1,63 @@
+{
+ "symbol": "BREN.JK",
+ "company_name": "PT Barito Renewables Energy Tbk.",
+ "overview": {
+  "listing_board": "Main",
+  "industry": "Electric Utilities",
+  "sub_industry": "Electric Utilities",
+  "sector": "Infrastructures",
+  "sub_sector": "Utilities",
+  "market_cap": 449521699200000,
+  "market_cap_rank": 5,
+  "address": "Wisma Barito Pacific II, Lantai 23,\nJl. Let. Jend. S. Parman Kav. 60, RT 010, RW 005, Slipi, Palmerah, Jakarta 11410,\nIndonesia",
+  "employee_num": 679.0,
+  "employee_num_rank": 399,
+  "listing_date": "2023-10-09",
+  "website": "www.baritorenewables.co.id",
+  "phone": "(021) 530 6711",
+  "email": "corpsec@baritorenewables.co.id",
+  "last_close_price": 3360,
+  "latest_close_date": "2026-09-04",
+  "daily_close_change": 0.0,
+  "all_time_price": {
+   "ytd_low": {
+    "2026-05-25": 2300
+   },
+   "52_w_low": {
+    "2026-05-25": 2300
+   },
+   "90_d_low": {
+    "2026-06-30": 3040
+   },
+   "ytd_high": {
+    "2026-01-02": 9800
+   },
+   "52_w_high": {
+    "2025-11-10": 10725
+   },
+   "90_d_high": {
+    "2026-06-15": 4460
+   },
+   "all_time_low": {
+    "2023-10-09": 975
+   },
+   "all_time_high": {
+    "2024-05-17": 12200
+   }
+  },
+  "esg_score": 20.91,
+  "tags": [
+   "esg-under-25",
+   "public-float-under-25",
+   "top-20-institution-selling",
+   "top-90d-transaction-value"
+  ],
+  "indices": [
+   "KOMPAS100"
+  ],
+  "affiliates": [
+   "Barito",
+   "Prajogo Pangestu"
+  ]
+ }
+}

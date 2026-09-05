@@ -1,0 +1,38 @@
+{
+ "name": "PT ABM Investama Tbk",
+ "slug": "pt-abm-investama-tbk",
+ "symbol": "ABMM.JK",
+ "company_type": "Trader",
+ "operation_province": "Jakarta",
+ "operation_district": "Jakarta Selatan",
+ "key_operation": "Coal Trading",
+ "representative_address": "Gedung TMT 1 Lantai 18 Jl. Cilandak KKO No. 1 Jakarta 12560",
+ "website": "www.abm-investama.com",
+ "phone_number": "021-29976767",
+ "email": "corporate.secretary@abm-investama.co.id",
+ "activities": [
+  "Trading"
+ ],
+ "commodity_type": [
+  "Coal"
+ ],
+ "mining_license": [
+  {
+   "license_type": "IUP",
+   "license_number": "52/1/IUP/PMDN/2023",
+   "wiup_code": "3363023032023131",
+   "province": "Kalimantan Selatan",
+   "city": "Kabupaten Kotabaru",
+   "license_effective_date": "2023-12-28",
+   "license_expiry_date": "2030-04-26",
+   "activity": "Operasi Produksi",
+   "licensed_area_ha": 2947.0,
+   "cnc": "I.T",
+   "generation": null,
+   "location": "Kabupaten Kotabaru",
+   "commodity_type": "Coal"
+  }
+ ],
+ "mining_contract": [],
+ "mining_site_count": 0
+}

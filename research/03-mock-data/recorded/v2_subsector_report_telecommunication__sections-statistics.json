@@ -1,0 +1,11 @@
+{
+ "sector": "Infrastructures",
+ "sub_sector": "Telecommunication",
+ "statistics": {
+  "total_companies": 22,
+  "filtered_median_pe": 16.5560168435482,
+  "filtered_weighted_avg_pe": 147.234161199717,
+  "min_company_pe": -52.8527279913969,
+  "max_company_pe": 437.269627652905
+ }
+}

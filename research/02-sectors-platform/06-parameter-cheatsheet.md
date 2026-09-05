@@ -151,8 +151,8 @@ those 17 plus one candidate (`klse`) that only the ingestion pipeline attests:
 | `ftse` | FTSE Indonesia | spec · CSV |
 | `sminfra18` | SMinfra18 — infrastructure | spec · CSV |
 | `idxvesta28` | IDX Vesta 28 | spec · CSV |
-| `sti` | Straits Times Index (Singapore) | spec · pipeline |
-| `klse` | Bursa Malaysia — **undocumented, pipeline only** | pipeline |
+| `sti` | Straits Times Index (Singapore) | spec · pipeline · **called live, 200** |
+| ~~`klse`~~ | ~~Bursa Malaysia~~ — **not a valid code.** Live returns a free 400, *"Please provide a valid index code."* | pipeline registry only |
 
 Four independent sources agree: the spec accordion (all 17), the product's own
 `sectors.app/indonesia/index/<code>` pages (8), the public
@@ -162,8 +162,15 @@ repository's ingestion code**, which is what actually populates the endpoint. **
 `sminfra18`, `sti` and `idxvesta28` appear in no product page** — the spec is the only
 *documentation* that lists them, and an earlier draft of this dossier missed all four.
 
+> **Settled live, 6 September 2026.** `/v2/index-daily/sti/` returns **200** — the Straits
+> Times index really is served by this IDX endpoint. `/v2/index-daily/klse/` returns a free
+> **400, "Please provide a valid index code."** The candidate 18th code exists in the
+> ingestion registry and *not* in the API. **The set is the documented 17.** Evidence:
+> [`../VERIFICATION-LIVE.md`](../VERIFICATION-LIVE.md).
+
 **On `sti`, and on a possible 18th code.** An earlier draft flagged `sti` as "unverified —
-Singapore's index on an otherwise IDX-only endpoint". The ingestion pipeline settles it.
+Singapore's index on an otherwise IDX-only endpoint". The ingestion pipeline suggested it, and
+the live call confirms it.
 `sectors_indices_company_list/index_name.csv` is the registry the daily scraper joins against,
 and it carries **18 rows**, including:
 
@@ -271,13 +278,14 @@ Fetch the taxonomy once, cache it forever, and validate before you spend credits
 
 ```python
 import json
-import os
 from pathlib import Path
 
 import requests
 
+from sectors_env import api_key      # loads the git-ignored .env at the repo root
+
 CACHE = Path(".cache/taxonomy.json")
-HEADERS = {"Authorization": os.environ["SECTORS_API_KEY"]}
+HEADERS = {"Authorization": api_key()}
 BASE = "https://api.sectors.app/v2"
 
 

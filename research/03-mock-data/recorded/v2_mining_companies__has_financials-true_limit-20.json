@@ -1,0 +1,107 @@
+{
+ "results": [
+  {
+   "slug": "pt-adaro-andalan-indonesia-tbk",
+   "name": "PT Adaro Andalan Indonesia Tbk",
+   "symbol": "AADI.JK",
+   "company_type": "Holding",
+   "key_operation": "Coal Trading",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-adaro-minerals-indonesia-tbk",
+   "name": "PT Adaro Minerals Indonesia Tbk",
+   "symbol": "ADMR.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal",
+    "Aluminium"
+   ]
+  },
+  {
+   "slug": "pt-alamtri-resources-indonesia-tbk",
+   "name": "PT Alamtri Resources Indonesia Tbk",
+   "symbol": "ADRO.JK",
+   "company_type": "Holding",
+   "key_operation": "Investment",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-bayan-resources-tbk",
+   "name": "PT Bayan Resources Tbk",
+   "symbol": "BYAN.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-bumi-resources-tbk",
+   "name": "PT Bumi Resources Tbk",
+   "symbol": "BUMI.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-dian-swastatika-sentosa-tbk",
+   "name": "PT Dian Swastatika Sentosa Tbk",
+   "symbol": "DSSA.JK",
+   "company_type": "Holding",
+   "key_operation": "Investment",
+   "commodity_type": [
+    "Coal",
+    "Gold"
+   ]
+  },
+  {
+   "slug": "pt-golden-energy-mines-tbk",
+   "name": "PT Golden Energy Mines Tbk",
+   "symbol": "GEMS.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-indika-energy-tbk",
+   "name": "PT Indika Energy Tbk",
+   "symbol": "INDY.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal",
+    "Gold"
+   ]
+  },
+  {
+   "slug": "pt-indo-tambangraya-megah-tbk",
+   "name": "PT Indo Tambangraya Megah Tbk",
+   "symbol": "ITMG.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  }
+ ],
+ "pagination": {
+  "total_count": 9,
+  "showing": 9,
+  "limit": 20,
+  "offset": 0,
+  "has_next": false,
+  "has_previous": false,
+  "next_offset": null,
+  "previous_offset": null
+ }
+}

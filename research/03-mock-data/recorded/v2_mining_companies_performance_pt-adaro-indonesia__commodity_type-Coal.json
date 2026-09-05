@@ -1,0 +1,37 @@
+{
+ "year": 2024,
+ "available_years": [
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "data": [
+  {
+   "year": 2024,
+   "commodity_type": "Coal",
+   "commodity_sub_type": "Thermal Coal",
+   "commodity_stats": {
+    "unit": "Mt",
+    "mining_operation_status": "production",
+    "production_volume": 48.11,
+    "sales_volume": 55.8,
+    "overburden_removal_volume": 214.18,
+    "strip_ratio": 4.45,
+    "resources_reserves": {
+     "measurement_year": 2024,
+     "probable_reserves_Mt": 245.4,
+     "proven_reserves_Mt": 371.5,
+     "total_reserves_Mt": 616.9,
+     "inferred_resources_Mt": 199.6,
+     "indicated_resources_Mt": 597.4,
+     "measured_resources_Mt": 2572.8,
+     "total_resources_Mt": 3369.8
+    },
+    "products": null
+   }
+  }
+ ]
+}

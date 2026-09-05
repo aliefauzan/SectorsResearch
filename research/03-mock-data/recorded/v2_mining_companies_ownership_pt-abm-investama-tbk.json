@@ -1,0 +1,24 @@
+{
+ "slug": "pt-abm-investama-tbk",
+ "parents": [],
+ "subsidiaries": [
+  {
+   "name": "PT Nagata Dinamika Hidro Pongko",
+   "slug": "pt-nagata-dinamika-hidro-pongko",
+   "symbol": null,
+   "percentage_ownership": 100.0
+  },
+  {
+   "name": "PT Cipta Kridatama ",
+   "slug": "pt-cipta-kridatama-",
+   "symbol": null,
+   "percentage_ownership": 99.99
+  },
+  {
+   "name": "PT Reswara Minergi Hartama",
+   "slug": "pt-reswara-minergi-hartama",
+   "symbol": null,
+   "percentage_ownership": 99.99
+  }
+ ]
+}

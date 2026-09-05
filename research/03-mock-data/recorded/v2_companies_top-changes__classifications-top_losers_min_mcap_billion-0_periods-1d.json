@@ -1,0 +1,41 @@
+{
+ "top_losers": {
+  "1d": [
+   {
+    "name": "Pioneerindo Gourmet International Tbk",
+    "symbol": "PTSP.JK",
+    "price_change": -0.149847094801223,
+    "last_close_price": 1390,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Intermedia Capital Tbk",
+    "symbol": "MDIA.JK",
+    "price_change": -0.142857142857143,
+    "last_close_price": 216,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Asia Sejahtera Mina Tbk",
+    "symbol": "AGAR.JK",
+    "price_change": -0.098159509202454,
+    "last_close_price": 1470,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Agro Bahari Nusantara Tbk",
+    "symbol": "UDNG.JK",
+    "price_change": -0.0972222222222222,
+    "last_close_price": 975,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Logisticsplus International Tbk",
+    "symbol": "LOPI.JK",
+    "price_change": -0.0958904109589041,
+    "last_close_price": 66,
+    "latest_close_date": "2026-09-04"
+   }
+  ]
+ }
+}

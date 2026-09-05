@@ -1,0 +1,111 @@
+{
+ "dividend_yield": [
+  {
+   "symbol": "T14.SI",
+   "forward_dividend_yield": 0.2745,
+   "company_name": "Tianjin Pharmaceutical Da Ren Tang Group Corp Ltd"
+  },
+  {
+   "symbol": "NTDU.SI",
+   "forward_dividend_yield": 0.1202,
+   "company_name": "NTT DC REIT"
+  },
+  {
+   "symbol": "9A4U.SI",
+   "forward_dividend_yield": 0.0965,
+   "company_name": "ESR-REIT"
+  },
+  {
+   "symbol": "K71U.SI",
+   "forward_dividend_yield": 0.089,
+   "company_name": "Keppel REIT"
+  },
+  {
+   "symbol": "SEB.SI",
+   "forward_dividend_yield": 0.0879,
+   "company_name": "Stoneweg Europe Stapled Trust"
+  }
+ ],
+ "revenue": [
+  {
+   "symbol": "TPED.SI",
+   "revenue": 364278937217,
+   "company_name": "PTT Exploration Production PCL DRC"
+  },
+  {
+   "symbol": "F34.SI",
+   "revenue": 90420797802,
+   "company_name": "Wilmar International Ltd"
+  },
+  {
+   "symbol": "J36.SI",
+   "revenue": 43938049700,
+   "company_name": "Jardine Matheson Holdings Ltd"
+  },
+  {
+   "symbol": "TCPD.SI",
+   "revenue": 38533803518,
+   "company_name": "CP All PCL DRC"
+  },
+  {
+   "symbol": "K6S.SI",
+   "revenue": 35175351300,
+   "company_name": "Prudential PLC"
+  }
+ ],
+ "earnings": [
+  {
+   "symbol": "TPED.SI",
+   "earnings": 78011540634,
+   "company_name": "PTT Exploration Production PCL DRC"
+  },
+  {
+   "symbol": "D05.SI",
+   "earnings": 10933000000,
+   "company_name": "DBS Group Holdings Ltd"
+  },
+  {
+   "symbol": "O39.SI",
+   "earnings": 7422000000,
+   "company_name": "Oversea-Chinese Banking Corp Ltd"
+  },
+  {
+   "symbol": "Z74.SI",
+   "earnings": 5606100000,
+   "company_name": "Singapore Telecommunications Ltd"
+  },
+  {
+   "symbol": "K6S.SI",
+   "earnings": 5108149800,
+   "company_name": "Prudential PLC"
+  }
+ ],
+ "market_cap": [
+  {
+   "symbol": "D05.SI",
+   "market_cap": 223680600000,
+   "company_name": "DBS Group Holdings Ltd"
+  },
+  {
+   "symbol": "O39.SI",
+   "market_cap": 144920840523,
+   "company_name": "Oversea-Chinese Banking Corp Ltd"
+  },
+  {
+   "symbol": "Z74.SI",
+   "market_cap": 73696635499,
+   "company_name": "Singapore Telecommunications Ltd"
+  },
+  {
+   "symbol": "U11.SI",
+   "market_cap": 69353552820,
+   "company_name": "United Overseas Bank Ltd"
+  },
+  {
+   "symbol": "O6Z.SI",
+   "market_cap": 63587790573,
+   "company_name": "Lonza Group Ltd"
+  }
+ ],
+ "pe": []
+}

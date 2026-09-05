@@ -1,0 +1,11 @@
+{
+ "sector": "Financials",
+ "sub_sector": "Banks",
+ "statistics": {
+  "total_companies": 48,
+  "filtered_median_pe": 10.2569850372583,
+  "filtered_weighted_avg_pe": 20.1436830859749,
+  "min_company_pe": -76.6760266270983,
+  "max_company_pe": 2438.80465350529
+ }
+}

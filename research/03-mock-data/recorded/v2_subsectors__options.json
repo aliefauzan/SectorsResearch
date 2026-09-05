@@ -1,0 +1,12 @@
+{
+ "name": "Subsector List",
+ "description": "LIST all possible sub_sectors",
+ "renders": [
+  "application/json"
+ ],
+ "parses": [
+  "application/json",
+  "application/x-www-form-urlencoded",
+  "multipart/form-data"
+ ]
+}

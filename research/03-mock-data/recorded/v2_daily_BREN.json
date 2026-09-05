@@ -1,0 +1,202 @@
+[
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-06",
+  "close": 3440,
+  "open": 3330,
+  "high": 3440,
+  "low": 3330,
+  "volume": 80056200,
+  "market_cap": 460224596800000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-07",
+  "close": 3510,
+  "open": 3450,
+  "high": 3600,
+  "low": 3410,
+  "volume": 59572600,
+  "market_cap": 469589632200000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-10",
+  "close": 3370,
+  "open": 3560,
+  "high": 3610,
+  "low": 3360,
+  "volume": 48929300,
+  "market_cap": 450859561400000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-11",
+  "close": 3310,
+  "open": 3400,
+  "high": 3410,
+  "low": 3250,
+  "volume": 41740900,
+  "market_cap": 442832388200000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-12",
+  "close": 3750,
+  "open": 3300,
+  "high": 3760,
+  "low": 3300,
+  "volume": 108071500,
+  "market_cap": 501698325000000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-13",
+  "close": 3660,
+  "open": 3760,
+  "high": 3940,
+  "low": 3630,
+  "volume": 99076800,
+  "market_cap": 489657565200000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-14",
+  "close": 3570,
+  "open": 3650,
+  "high": 3690,
+  "low": 3540,
+  "volume": 47943300,
+  "market_cap": 477616805400000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-18",
+  "close": 3520,
+  "open": 3590,
+  "high": 3630,
+  "low": 3460,
+  "volume": 38696100,
+  "market_cap": 470927494400000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-19",
+  "close": 3450,
+  "open": 3520,
+  "high": 3560,
+  "low": 3430,
+  "volume": 28455800,
+  "market_cap": 461562459000000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-20",
+  "close": 3450,
+  "open": 3500,
+  "high": 3550,
+  "low": 3430,
+  "volume": 25444500,
+  "market_cap": 461562459000000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-21",
+  "close": 3460,
+  "open": 3490,
+  "high": 3530,
+  "low": 3440,
+  "volume": 40902200,
+  "market_cap": 462900321200000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-24",
+  "close": 3400,
+  "open": 3490,
+  "high": 3520,
+  "low": 3380,
+  "volume": 33390600,
+  "market_cap": 454873148000000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-26",
+  "close": 3310,
+  "open": 3400,
+  "high": 3410,
+  "low": 3300,
+  "volume": 21977200,
+  "market_cap": 442832388200000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-27",
+  "close": 3400,
+  "open": 3310,
+  "high": 3400,
+  "low": 3260,
+  "volume": 14918700,
+  "market_cap": 454873148000000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-28",
+  "close": 3360,
+  "open": 3410,
+  "high": 3460,
+  "low": 3350,
+  "volume": 18715400,
+  "market_cap": 449521699200000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-08-31",
+  "close": 3320,
+  "open": 3370,
+  "high": 3390,
+  "low": 3320,
+  "volume": 8866700,
+  "market_cap": 444170250400000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-09-01",
+  "close": 3420,
+  "open": 3330,
+  "high": 3450,
+  "low": 3310,
+  "volume": 24522500,
+  "market_cap": 457548872400000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-09-02",
+  "close": 3350,
+  "open": 3440,
+  "high": 3450,
+  "low": 3330,
+  "volume": 25260600,
+  "market_cap": 448183837000000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-09-03",
+  "close": 3360,
+  "open": 3360,
+  "high": 3410,
+  "low": 3350,
+  "volume": 18507200,
+  "market_cap": 449521699200000
+ },
+ {
+  "symbol": "BREN.JK",
+  "date": "2026-09-04",
+  "close": 3360,
+  "open": 3380,
+  "high": 3420,
+  "low": 3330,
+  "volume": 21631700,
+  "market_cap": 449521699200000
+ }
+]

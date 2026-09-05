@@ -484,6 +484,8 @@ trial and error — compose visually, copy the URL, then run it once.
 Copy-paste starting points. All are 1 credit each in structured mode.
 
 ```bash
+set -a && . .env && set +a          # export the repo-root .env into this shell
+
 BASE=https://api.sectors.app/v2/companies/
 AUTH="Authorization: $SECTORS_API_KEY"
 
@@ -560,7 +562,7 @@ WHERE = (
 
 payload = requests.get(
     "https://api.sectors.app/v2/companies/",
-    headers={"Authorization": os.environ["SECTORS_API_KEY"]},
+    headers={"Authorization": api_key()},        # from sectors_env / .env
     params={
         "where": WHERE,
         "order_by": "-market_cap",

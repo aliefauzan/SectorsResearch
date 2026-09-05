@@ -1,0 +1,85 @@
+{
+ "slug": "pt-adaro-andalan-indonesia-tbk",
+ "parents": [
+  {
+   "name": "PT Alamtri Resources Indonesia Tbk",
+   "slug": "pt-alamtri-resources-indonesia-tbk",
+   "symbol": "ADRO.JK",
+   "percentage_ownership": 15.37
+  }
+ ],
+ "subsidiaries": [
+  {
+   "name": "PT Adaro Mining Technologies",
+   "slug": "pt-adaro-mining-technologies",
+   "symbol": null,
+   "percentage_ownership": 100.0
+  },
+  {
+   "name": "PT Ratah Coal",
+   "slug": "pt-ratah-coal",
+   "symbol": null,
+   "percentage_ownership": 100.0
+  },
+  {
+   "name": "PT Adaro Indonesia",
+   "slug": "pt-adaro-indonesia",
+   "symbol": null,
+   "percentage_ownership": 100.0
+  },
+  {
+   "name": "PT Adaro Logistics",
+   "slug": "pt-adaro-logistics",
+   "symbol": null,
+   "percentage_ownership": 99.83
+  },
+  {
+   "name": "PT Laskar Semesta Alam",
+   "slug": "pt-laskar-semesta-alam",
+   "symbol": null,
+   "percentage_ownership": 75.2
+  },
+  {
+   "name": "PT Semesta Centramas",
+   "slug": "pt-semesta-centramas",
+   "symbol": null,
+   "percentage_ownership": 75.0
+  },
+  {
+   "name": "PT Paramitha Cipta Sarana",
+   "slug": "pt-paramitha-cipta-sarana",
+   "symbol": null,
+   "percentage_ownership": 75.0
+  },
+  {
+   "name": "PT Mustika Indah Permai",
+   "slug": "pt-mustika-indah-permai",
+   "symbol": null,
+   "percentage_ownership": 75.0
+  },
+  {
+   "name": "PT Pari Coal",
+   "slug": "pt-pari-coal",
+   "symbol": null,
+   "percentage_ownership": 65.0
+  },
+  {
+   "name": "PT Bukit Enim Energy",
+   "slug": "pt-bukit-enim-energy",
+   "symbol": null,
+   "percentage_ownership": 61.04
+  },
+  {
+   "name": "Kestrel Coal Resources",
+   "slug": "kestrel-coal-resources",
+   "symbol": null,
+   "percentage_ownership": 48.5
+  },
+  {
+   "name": "PT Bhakti Energi Persada",
+   "slug": "pt-bhakti-energi-persada",
+   "symbol": null,
+   "percentage_ownership": 18.5
+  }
+ ]
+}

@@ -23,6 +23,25 @@
 The OpenAPI spec also declares an `OAuthBearerAuth` scheme — a bearer token from the `/oauth/`
 authorization flow — which is what the one-click Claude and ChatGPT connectors use.
 
+### What the REST API actually does when something is wrong
+
+Probed live on 6 September 2026 — all of these are free except the last, and none of them is
+described in the spec. Details in [`../VERIFICATION-LIVE.md`](../VERIFICATION-LIVE.md).
+
+| Situation | Status | Body |
+| --- | --- | --- |
+| No `Authorization` header | **403**, not 401 | `{"error": "Authentication credentials were not provided."}` |
+| `POST` (or any non-GET) on a documented endpoint | **405** | `{"error": "Method \"POST\" not allowed."}` |
+| A path that routes nowhere | **404** | `{"details": "The requested endpoint does not exist", "urls": {…}}` — note: **no `error` key**, unlike every other failure |
+| A required query parameter omitted | **400** | `{"error": "Query parameter 'commodity_type' is required."}` |
+| An identifier that does not exist | **404**, **billed 1** | `{"error": "Given stock symbol does not exist for this data."}` |
+| Default `Python-urllib` user agent | **403** | `{"error": "error code: 1010"}` — Cloudflare, not the API. Send a browser `User-Agent` |
+| `OPTIONS` | **200**, **billed 1** | a CORS preflight from a browser client costs a credit |
+
+Two conveniences worth knowing: the **trailing slash is optional** (`/v2/subsectors` works),
+and symbols are accepted **lowercase and with the `.JK` suffix** (`bbca`, `BBCA.JK`, `BBCA` all
+resolve).
+
 ### First request
 
 ```python
@@ -43,6 +62,24 @@ curl -H "Authorization: $SECTORS_API_KEY" https://api.sectors.app/v2/subsectors/
 
 Never hardcode the key. The docs' own security recipe uses `SECTORS_API_KEY` as the
 environment variable name — the agent skills and MCP guide assume the same.
+
+In this repository that variable comes from a git-ignored `.env` at the root, loaded by
+[`03-mock-data/sectors_env.py`](../03-mock-data/sectors_env.py), so no one has to export
+anything by hand:
+
+```python
+from sectors_env import api_key, base_url
+
+headers = {"Authorization": api_key()}
+```
+
+For a shell command that needs the variable exported — `curl`, or a tool that reads the
+environment directly — source the file for that command only:
+
+```bash
+set -a && . .env && set +a          # exports .env into this shell
+curl -H "Authorization: $SECTORS_API_KEY" https://api.sectors.app/v2/subsectors/
+```
 
 ---
 
@@ -272,16 +309,30 @@ it depends on.
 
 ## Rate limits
 
-The API is rate limited, but **the numeric limit is not published**. What the docs commit to:
+The numeric limit is not published. **It was measured on 6 September 2026:**
 
-- Exceeding it returns **429 Too Many Requests**, which is **not billed**
-- The official banking-benchmark recipe puts `sleep(0.3)` between sequential calls and states
-  that it "is not optional if you expand the universe beyond 10 banks. Omitting it on the
-  free/Insider tier will result in 429 Too Many Requests errors."
+> **25 billed requests per rolling ~30 seconds.** Spacing is not what is counted — 25 calls
+> back-to-back and 25 calls a second apart both stopped on the 26th. **Free responses do not
+> count**: 45 consecutive 400s produced no 429, and free calls sail through while billed ones
+> are being refused. **No `Retry-After` header is ever sent.**
 
-What is *documented* is the 0.3 s sleep, not a rate; **~3 requests/second sequential is the
-implication**, not a published limit. Sleep between calls in
-any loop over tickers, and back off exponentially on 429. Retrying is free; stalling is not.
+Practical consequences:
+
+- **1.5 s between calls is safe** (40/min → 20 per window, 20% headroom). 1.0 s is not; it
+  trips on the 25th call.
+- **Do not poll a 429.** Retrying every 5 s stayed blocked for 36 s; leaving it alone cleared
+  in under a second. Wait out the window.
+- A 429 is **not billed**, so a trip costs time, not credits.
+- Parameter probing is unlimited as well as free — a 400 costs nothing and consumes no budget.
+
+`capture.py` enforces this itself: it tracks real timestamps, waits only when 25 calls are
+already inside the window, and returns the slot when a response turns out to be free. It ran
+**28 billed calls back-to-back with no fixed sleep and took zero 429s**. `mock_server.py
+--rate-limit` reproduces the ceiling for client-side backoff testing.
+
+The docs' own banking-benchmark recipe recommends `sleep(0.3)` and calls it "not optional …
+beyond 10 banks". That is roughly 3 requests/second — **fast enough to trip this limiter in
+eight seconds**. Treat the recipe's figure as a minimum courtesy delay, not a safe rate.
 
 ---
 

@@ -1,0 +1,29 @@
+# Secrets — never commit. Only .env.example belongs in git.
+.env
+.env.*
+!.env.example
+
+# NOTE: research/03-mock-data/recorded/ is deliberately NOT ignored. Those payloads
+# were paid for in credits; committing them is what stops a second teammate paying
+# for the same call. They contain no key — capture.py never writes credentials.
+
+# The portal usage-log exports in research/99-raw/usage-log/ ARE committed: they are the
+# only independent record of what the API actually charged, and they contain no credentials
+# — endpoint, status and credit count only.
+
+# Python / Node
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+node_modules/
+
+# Logs and local scratch
+*.log
+.scratch/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/

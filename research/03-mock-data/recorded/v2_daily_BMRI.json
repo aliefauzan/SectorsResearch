@@ -1,0 +1,202 @@
+[
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-06",
+  "close": 4200,
+  "open": 4240,
+  "high": 4280,
+  "low": 4200,
+  "volume": 95744300,
+  "market_cap": 388079999983200
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-07",
+  "close": 4240,
+  "open": 4220,
+  "high": 4270,
+  "low": 4210,
+  "volume": 110106100,
+  "market_cap": 391775999983040
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-10",
+  "close": 4180,
+  "open": 4250,
+  "high": 4270,
+  "low": 4180,
+  "volume": 148614700,
+  "market_cap": 386231999983280
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-11",
+  "close": 4120,
+  "open": 4200,
+  "high": 4200,
+  "low": 4100,
+  "volume": 148404100,
+  "market_cap": 380687999983520
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-12",
+  "close": 4130,
+  "open": 4130,
+  "high": 4150,
+  "low": 4080,
+  "volume": 153658300,
+  "market_cap": 381611999983480
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-13",
+  "close": 4130,
+  "open": 4140,
+  "high": 4150,
+  "low": 4090,
+  "volume": 108708200,
+  "market_cap": 381611999983480
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-14",
+  "close": 4170,
+  "open": 4140,
+  "high": 4170,
+  "low": 4100,
+  "volume": 75934800,
+  "market_cap": 385307999983320
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-18",
+  "close": 4150,
+  "open": 4200,
+  "high": 4220,
+  "low": 4150,
+  "volume": 116514200,
+  "market_cap": 383459999983400
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-19",
+  "close": 4140,
+  "open": 4160,
+  "high": 4190,
+  "low": 4140,
+  "volume": 79287200,
+  "market_cap": 382535999983440
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-20",
+  "close": 4150,
+  "open": 4150,
+  "high": 4180,
+  "low": 4140,
+  "volume": 74796300,
+  "market_cap": 383459999983400
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-21",
+  "close": 4220,
+  "open": 4170,
+  "high": 4240,
+  "low": 4170,
+  "volume": 142906200,
+  "market_cap": 389927999983120
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-24",
+  "close": 4200,
+  "open": 4220,
+  "high": 4220,
+  "low": 4170,
+  "volume": 86046100,
+  "market_cap": 388079999983200
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-26",
+  "close": 4160,
+  "open": 4190,
+  "high": 4190,
+  "low": 4150,
+  "volume": 156162500,
+  "market_cap": 384383999983360
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-27",
+  "close": 4210,
+  "open": 4140,
+  "high": 4210,
+  "low": 4130,
+  "volume": 66036800,
+  "market_cap": 389003999983160
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-28",
+  "close": 4250,
+  "open": 4220,
+  "high": 4260,
+  "low": 4200,
+  "volume": 111542000,
+  "market_cap": 392699999983000
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-08-31",
+  "close": 4230,
+  "open": 4250,
+  "high": 4280,
+  "low": 4200,
+  "volume": 231356300,
+  "market_cap": 390851999983080
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-09-01",
+  "close": 4320,
+  "open": 4230,
+  "high": 4320,
+  "low": 4230,
+  "volume": 191597900,
+  "market_cap": 399167999982720
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-09-02",
+  "close": 4360,
+  "open": 4350,
+  "high": 4390,
+  "low": 4320,
+  "volume": 140357100,
+  "market_cap": 402863999982560
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-09-03",
+  "close": 4460,
+  "open": 4390,
+  "high": 4460,
+  "low": 4360,
+  "volume": 234997200,
+  "market_cap": 412103999982160
+ },
+ {
+  "symbol": "BMRI.JK",
+  "date": "2026-09-04",
+  "close": 4420,
+  "open": 4470,
+  "high": 4480,
+  "low": 4420,
+  "volume": 95373200,
+  "market_cap": 408407999982320
+ }
+]

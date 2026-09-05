@@ -1,0 +1,52 @@
+{
+ "symbol": "D05.SI",
+ "name": "DBS Group Holdings Ltd",
+ "overview": {
+  "market_cap": 223680600000,
+  "volume": 3764352,
+  "employee_num": 41000.0,
+  "sector": "Financial Services",
+  "sub_sector": "Banks & Credit Services",
+  "tags": [
+   "52-w-high",
+   "90-d-high",
+   "all-time-high",
+   "last-volume-above-10d-volume-average",
+   "top-90d-transaction-value",
+   "ytd-high"
+  ],
+  "last_close_price": 78.65,
+  "change_1d": 0.008980115458627326,
+  "change_7d": 0.03282994090610637,
+  "change_1m": 0.06934058463630184,
+  "change_1y": 0.25318674314850226,
+  "change_3y": 2.08005172453459,
+  "change_ytd": 0.25318674314850226,
+  "all_time_price": {
+   "ytd_low": {
+    "2026-03-09": 52.246315002441406
+   },
+   "52_w_low": {
+    "2025-09-25": 47.70097732543945
+   },
+   "90_d_low": {
+    "2026-06-10": 61.175331115722656
+   },
+   "ytd_high": {
+    "2026-09-04": 78.6500015258789
+   },
+   "52_w_high": {
+    "2026-09-04": 78.6500015258789
+   },
+   "90_d_high": {
+    "2026-09-04": 78.6500015258789
+   },
+   "all_time_low": {
+    "2009-03-09": 2.7012672424316406
+   },
+   "all_time_high": {
+    "2026-09-04": 78.6500015258789
+   }
+  }
+ }
+}

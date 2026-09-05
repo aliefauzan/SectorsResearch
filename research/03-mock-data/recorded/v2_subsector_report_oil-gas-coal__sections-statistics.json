@@ -1,0 +1,11 @@
+{
+ "sector": "Energy",
+ "sub_sector": "Oil, Gas & Coal",
+ "statistics": {
+  "total_companies": 89,
+  "filtered_median_pe": 11.6666070389962,
+  "filtered_weighted_avg_pe": 39.3032273306978,
+  "min_company_pe": -547.531805934204,
+  "max_company_pe": 2021.53850291979
+ }
+}

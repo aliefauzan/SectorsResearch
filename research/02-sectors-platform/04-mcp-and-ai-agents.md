@@ -195,6 +195,12 @@ cd sectors-agent-skills
 export SECTORS_API_KEY="your-key"
 ```
 
+> That `export` is the upstream skill's own setup, quoted as published. Inside **this**
+> repository the same variable comes from the git-ignored `.env` at the root — see
+> [`SETUP.md`](../../SETUP.md). To hand it to an external tool that reads the environment
+> directly, source the file for that command rather than retyping the key:
+> `set -a && . .env && set +a`.
+
 Supported hosts: **Claude Code** (`claude config set env SECTORS_API_KEY ...`),
 **OpenCode** (auto-detects `SKILL.md`), **OpenClaw**
 (`openclaw skills install sectors-api` via [ClawHub](https://www.clawhub.ai)).

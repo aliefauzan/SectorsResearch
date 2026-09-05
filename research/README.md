@@ -14,6 +14,12 @@ Researched 4 September 2026. Primary sources: `hackathon.sectors.app`, `sectors.
 **If you have five minutes**, read this page and
 [`01-hackathon/00-overview.md`](01-hackathon/00-overview.md).
 
+**If you are setting up to run anything**, read [`SETUP.md`](../SETUP.md) first: one
+git-ignored `.env` at the repository root holds `SECTORS_API_KEY`, `SECTORS_BASE_URL` and
+`SECTORS_BUDGET`, and [`03-mock-data/sectors_env.py`](03-mock-data/sectors_env.py) loads it
+for every script here. No script in this repository reads a key from anywhere else, and none
+writes one to disk.
+
 **The four facts that shape every decision:**
 
 1. **Deadlines.** Registration closes **22 Sep 2026, 23:59 WIB**. Submissions close **30 Sep 2026, 23:59 WIB**. As of 4 September: 18 days to register, 26 to submit.
@@ -353,6 +359,59 @@ Indonesia rules are **definitively not on the website**. Host enumeration is **u
 prove completeness. The Slack invite **expires around 20 September**, before registration
 closes.
 
+
+### Live capture — 6 September 2026, the first pass that called the API
+
+Five audits verified this corpus against documentation. This one called it. **66 of 70
+documented paths returned 200; the other four are duplicate spec entries that cannot be called.
+214 credits of the 1,000 grant. 116 payloads recorded, and the mock replays all of them.** Full
+report: [`VERIFICATION-LIVE.md`](VERIFICATION-LIVE.md); machine-generated evidence:
+[`99-raw/live-capture-2026-09-06.md`](99-raw/live-capture-2026-09-06.md).
+
+| Check | Method | Result |
+| --- | --- | --- |
+| Endpoint coverage | Every documented path called with identifiers read from prior responses | **66/66 callable endpoints returned 200** |
+| Spend headers | 116 responses scanned for `credit\|quota\|rate.?limit\|usage\|balance` | **None exist.** The mock's `X-Credits-Charged` is fiction; a client cannot read its own spend |
+| The 70-endpoint count | Four bare `report/` roots called | **The surface is 66 distinct endpoints.** The four extras declare a path parameter with no template and return a free 400 |
+| Response shapes | Live payload diffed field-by-field against the spec example, all 66 | Agree everywhere but one: **quarterly financials rename a field by sector** — `capital_expenditure` for non-banks, `realized_capital_goods_investment` for banks |
+| `plan.json` | Run end to end | **174 of 176 declared credits**; two mining calls were missing required parameters, and the `listing-performance` basket 404'd on every blue chip (4 billed credits) — all three corrected |
+| Rate limit | Bisected across four spacings, free and billed paths | **25 billed requests per rolling ~30 s.** Spacing is not counted — 25 back-to-back and 25 a second apart both stop on the 26th. Free 400s are exempt; no `Retry-After`; polling a 429 extends the lockout. `capture.py` now self-throttles: 28 back-to-back billed calls, zero 429s |
+| Transport | First five calls | **Cloudflare 403 "error code: 1010"** on the stdlib user agent — unbilled, and fatal to any naive client until a browser `User-Agent` is set |
+| Mining detail coverage | `has_financials` filter | **9 companies of 366** carry financials/performance/sales-destination records |
+| Mock replay | Every recording served | `X-Mock-Source: recording` on all 116 |
+
+**Six corrections to the corpus**, three of them things no amount of documentation reading
+would have found: the absent spend headers, the sector-dependent field rename, and the
+Cloudflare user-agent block.
+
+Every failing call was then root-caused and either fixed or proven unfixable, and the mock was
+audited against the result. **All 127 recordings replay byte-identical, and all 66 callable
+endpoints are now served from real data — zero spec-example fallbacks.** Eleven divergences
+from live behaviour were closed, including four that would have shaped client code wrongly:
+a missing key is **403, not 401**; a non-GET is **405**; an unrouted path returns a
+`{"details","urls"}` body with no `error` key; and an unknown identifier now 404s and bills
+instead of quietly returning BBCA's fixture. `03-mock-data/verify_mock.py` re-runs the whole
+audit — replay, error, method and header parity — for zero credits.
+
+Two long-open questions closed by probe, at a cost of 1 credit: **`sti` resolves** (200), and
+**`klse` is not an index code** (free 400) — the set is the documented 17. And the four bare
+`report/` roots were probed eleven ways (`?symbol=`, `?ticker=`, `?q=`, bare, …): every form
+returns the same free 400. The identifier must be a path segment; they are spec artefacts, not
+endpoints.
+
+**Cost model settled against the portal's own usage log** (408 rows, committed at
+[`99-raw/usage-log/`](99-raw/usage-log/)): **377 charged, 377 modelled — exact.** Every
+non-flat claim confirmed by a charged row (free-float 10, defaulted report 8, defaulted
+top-changes 10, `?q=` 3, the four flat-2 endpoints). **429s and 403s never appear in the log**,
+confirming from the billing side that they cost nothing. The reconciliation also caught two
+errors in this harness that had cancelled each other out — a plan entry under-costing
+`broker-activity/{code}/top/` by 1, and `capture.py` billing an unrouted 404 that is free —
+plus a third in the mock, which billed free-float 1 where the API charges 10. All fixed;
+`03-mock-data/reconcile_usage.py` re-runs the check.
+
+**Census, three independent sources:** the spec declares 70 operations (66 callable); the
+documentation site names 67 `GET /v2/…` literals, all inside the spec; the live MCP server
+exposes 66 tools that map 1:1 onto the 66 callable endpoints. **No endpoint is missing.**
 
 ### Research completion criteria
 

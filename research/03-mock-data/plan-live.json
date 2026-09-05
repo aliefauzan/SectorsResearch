@@ -1,0 +1,279 @@
+{
+  "name": "Coverage completion \u2014 the 30 endpoints plan.json never calls",
+  "grant": 1000,
+  "notes": [
+    "Every path parameter here is read out of a payload already in recorded/.",
+    "Nothing is guessed: a 404 on an invented identifier costs 1 credit.",
+    "Report endpoints are constrained to sections=overview; they bill per section.",
+    "Re-run plan_live.py after a capture to pick up identifiers that were not yet on disk."
+  ],
+  "resolved": {
+    "broker_code": "AD",
+    "mining_slug": "pt-adaro-andalan-indonesia-tbk",
+    "site_slug": "tutupan-utara",
+    "wiup_code": "1473242122023001",
+    "province": "Aceh",
+    "sgx_symbol": "D05.SI",
+    "klse_sector": "consumer-non-cyclicals",
+    "klse_symbol": "2089"
+  },
+  "calls": [
+    {
+      "tier": 5,
+      "path": "/v2/companies/list_companies_with_segments/",
+      "params": {},
+      "est_cost": 1,
+      "note": "every company's revenue segments"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/subsectors/",
+      "params": {},
+      "est_cost": 1,
+      "note": "SGX taxonomy"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/tags/",
+      "params": {},
+      "est_cost": 1,
+      "note": "SGX taxonomy"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/global-commodity/",
+      "params": {
+        "commodity_type": "Coal",
+        "limit": 20
+      },
+      "est_cost": 1,
+      "note": "constrained; the endpoint defaults limit to 20 anyway"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/total-production/",
+      "params": {
+        "commodity_type": "Coal"
+      },
+      "est_cost": 1,
+      "note": "commodity_type is required \u2014 plan.json omitted it and got a free 400"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/exports/",
+      "params": {
+        "commodity_type": "Coal",
+        "year": 2024
+      },
+      "est_cost": 1,
+      "note": "year and commodity_type both required"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/company/get_quarterly_financial_dates/BBCA/",
+      "params": {},
+      "est_cost": 1,
+      "note": "the per-symbol form of the universe sweep"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/broker-activity/AD/",
+      "params": {
+        "start": "2026-08-01",
+        "end": "2026-08-14"
+      },
+      "est_cost": 1,
+      "note": "\u226414-day window keeps this at 1 credit"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/broker-activity/AD/top/",
+      "params": {
+        "start": "2026-08-01",
+        "end": "2026-08-14"
+      },
+      "est_cost": 2,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/broker-summary/BBCA/",
+      "params": {
+        "start": "2026-08-01",
+        "end": "2026-08-14"
+      },
+      "est_cost": 1,
+      "note": "non-top form; \u226414 days"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/listing-performance/BREN/",
+      "params": {},
+      "est_cost": 1,
+      "note": "post-2005 listing; BBCA/BBRI/TLKM/ADRO all 404 here"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/companies/",
+      "params": {
+        "has_financials": "true",
+        "limit": 20
+      },
+      "est_cost": 1,
+      "note": "discovery: slugs that actually have detail records behind them"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/companies/pt-adaro-andalan-indonesia-tbk/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/companies/financials/pt-adaro-andalan-indonesia-tbk/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/companies/ownership/pt-adaro-andalan-indonesia-tbk/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/companies/performance/pt-adaro-andalan-indonesia-tbk/",
+      "params": {
+        "commodity_type": "Coal"
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/sales-destination/pt-adaro-andalan-indonesia-tbk/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/sites/tutupan-utara/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/license-auctions/1473242122023001/",
+      "params": {},
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/mining/resources-reserves/Aceh/",
+      "params": {
+        "commodity_type": "Coal"
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/companies/top/",
+      "params": {
+        "classifications": "market_cap",
+        "n_stock": 5
+      },
+      "est_cost": 1,
+      "note": "SGX/KLSE take dividend_yield|revenue|earnings|market_cap|pe \u2014 NOT the IDX top_gainers/top_losers vocabulary; this family bills per classification"
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/filings/",
+      "params": {
+        "limit": 20
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/news/",
+      "params": {
+        "limit": 20
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/buybacks/",
+      "params": {
+        "limit": 20
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/short-sell/",
+      "params": {
+        "limit": 20
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/company/report/D05.SI/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/sgx/daily/D05.SI/",
+      "params": {
+        "start": "2026-08-01",
+        "end": "2026-08-14"
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/klse/companies/",
+      "params": {
+        "sector": "consumer-non-cyclicals"
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/klse/companies/top/",
+      "params": {
+        "classifications": "market_cap",
+        "n_stock": 5
+      },
+      "est_cost": 1,
+      "note": ""
+    },
+    {
+      "tier": 5,
+      "path": "/v2/klse/company/report/2089/",
+      "params": {
+        "sections": "overview"
+      },
+      "est_cost": 1,
+      "note": ""
+    }
+  ]
+}

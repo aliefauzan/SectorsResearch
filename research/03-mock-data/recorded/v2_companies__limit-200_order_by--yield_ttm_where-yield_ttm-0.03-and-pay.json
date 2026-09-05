@@ -1,0 +1,534 @@
+{
+ "results": [
+  {
+   "symbol": "PSAB.JK",
+   "company_name": "J Resources Asia Pasifik Tbk"
+  },
+  {
+   "symbol": "LPPF.JK",
+   "company_name": "PT MDS Retailing Tbk"
+  },
+  {
+   "symbol": "CFIN.JK",
+   "company_name": "Clipan Finance Indonesia Tbk"
+  },
+  {
+   "symbol": "SPTO.JK",
+   "company_name": "PT Surya Pertiwi Tbk"
+  },
+  {
+   "symbol": "UNIC.JK",
+   "company_name": "Unggul Indah Cahaya Tbk"
+  },
+  {
+   "symbol": "BMRI.JK",
+   "company_name": "PT Bank Mandiri (Persero) Tbk"
+  },
+  {
+   "symbol": "BJTM.JK",
+   "company_name": "Bank Pembangunan Daerah Jawa Timur Tbk"
+  },
+  {
+   "symbol": "BJBR.JK",
+   "company_name": "Bank Pembangunan Daerah Jawa Barat dan Banten Tbk"
+  },
+  {
+   "symbol": "CLPI.JK",
+   "company_name": "Colorpak Indonesia Tbk"
+  },
+  {
+   "symbol": "LPIN.JK",
+   "company_name": "Multi Prima Sejahtera Tbk"
+  },
+  {
+   "symbol": "BBRI.JK",
+   "company_name": "PT Bank Rakyat Indonesia (Persero) Tbk"
+  },
+  {
+   "symbol": "BIRD.JK",
+   "company_name": "PT Blue Bird Tbk"
+  },
+  {
+   "symbol": "PBID.JK",
+   "company_name": "PT Panca Budi Idaman Tbk"
+  },
+  {
+   "symbol": "IPCC.JK",
+   "company_name": "PT Indonesia Kendaraan Terminal Tbk"
+  },
+  {
+   "symbol": "TOTO.JK",
+   "company_name": "Surya Toto Indonesia Tbk"
+  },
+  {
+   "symbol": "BNGA.JK",
+   "company_name": "PT Bank CIMB Niaga Tbk"
+  },
+  {
+   "symbol": "TBLA.JK",
+   "company_name": "Tunas Baru Lampung Tbk"
+  },
+  {
+   "symbol": "MSTI.JK",
+   "company_name": "PT Mastersystem Infotama Tbk"
+  },
+  {
+   "symbol": "ACES.JK",
+   "company_name": "PT Aspirasi Hidup Indonesia Tbk"
+  },
+  {
+   "symbol": "ARNA.JK",
+   "company_name": "Arwana Citramulia Tbk"
+  },
+  {
+   "symbol": "GGRP.JK",
+   "company_name": "PT Gunung Raja Paksi Tbk"
+  },
+  {
+   "symbol": "ULTJ.JK",
+   "company_name": "PT Ultrajaya Milk Industry & Trading Company Tbk"
+  },
+  {
+   "symbol": "MEGA.JK",
+   "company_name": "Bank Mega Tbk"
+  },
+  {
+   "symbol": "DKFT.JK",
+   "company_name": "Central Omega Resources Tbk"
+  },
+  {
+   "symbol": "BTPS.JK",
+   "company_name": "PT Bank BTPN Syariah Tbk."
+  },
+  {
+   "symbol": "SMSM.JK",
+   "company_name": "Selamat Sempurna Tbk"
+  },
+  {
+   "symbol": "DMAS.JK",
+   "company_name": "PT Puradelta Lestari Tbk"
+  },
+  {
+   "symbol": "TLDN.JK",
+   "company_name": "PT Teladan Prima Agro Tbk"
+  },
+  {
+   "symbol": "IPCM.JK",
+   "company_name": "PT Jasa Armada Indonesia Tbk"
+  },
+  {
+   "symbol": "ASII.JK",
+   "company_name": "Astra International Tbk"
+  },
+  {
+   "symbol": "AXIO.JK",
+   "company_name": "PT Tera Data Indonusa Tbk"
+  },
+  {
+   "symbol": "ASSA.JK",
+   "company_name": "Adi Sarana Armada Tbk"
+  },
+  {
+   "symbol": "AMAG.JK",
+   "company_name": "Asuransi Multi Artha Guna Tbk"
+  },
+  {
+   "symbol": "HMSP.JK",
+   "company_name": "HM Sampoerna Tbk"
+  },
+  {
+   "symbol": "MAIN.JK",
+   "company_name": "Malindo Feedmill Tbk"
+  },
+  {
+   "symbol": "TOTL.JK",
+   "company_name": "Total Bangun Persada Tbk"
+  },
+  {
+   "symbol": "MCOL.JK",
+   "company_name": "PT Prima Andalan Mandiri Tbk"
+  },
+  {
+   "symbol": "BAYU.JK",
+   "company_name": "Bayu Buana Tbk"
+  },
+  {
+   "symbol": "TUGU.JK",
+   "company_name": "PT Asuransi Tugu Pratama Indonesia Tbk"
+  },
+  {
+   "symbol": "CINT.JK",
+   "company_name": "PT Chitose Internasional Tbk"
+  },
+  {
+   "symbol": "PBSA.JK",
+   "company_name": "PT Paramita Bangun Sarana Tbk"
+  },
+  {
+   "symbol": "ADMF.JK",
+   "company_name": "Adira Dinamika Multi Finance Tbk"
+  },
+  {
+   "symbol": "AKRA.JK",
+   "company_name": "PT AKR Corporindo Tbk."
+  },
+  {
+   "symbol": "MERK.JK",
+   "company_name": "Merck Tbk"
+  },
+  {
+   "symbol": "SSMS.JK",
+   "company_name": "PT Sawit Sumbermas Sarana Tbk"
+  },
+  {
+   "symbol": "PANR.JK",
+   "company_name": "Panorama Sentrawisata Tbk"
+  },
+  {
+   "symbol": "DRMA.JK",
+   "company_name": "PT Dharma Polimetal Tbk"
+  },
+  {
+   "symbol": "AUTO.JK",
+   "company_name": "Astra Otoparts Tbk"
+  },
+  {
+   "symbol": "CEKA.JK",
+   "company_name": "PT Wilmar Cahaya Indonesia Tbk."
+  },
+  {
+   "symbol": "ANTM.JK",
+   "company_name": "Aneka Tambang Tbk."
+  },
+  {
+   "symbol": "UNTR.JK",
+   "company_name": "United Tractors Tbk"
+  },
+  {
+   "symbol": "DVLA.JK",
+   "company_name": "Darya-Varia Laboratoria Tbk"
+  },
+  {
+   "symbol": "WIIM.JK",
+   "company_name": "Wismilak Inti Makmur Tbk"
+  },
+  {
+   "symbol": "TGKA.JK",
+   "company_name": "Tigaraksa Satria Tbk"
+  },
+  {
+   "symbol": "PNGO.JK",
+   "company_name": "PT Pinago Utama Tbk"
+  },
+  {
+   "symbol": "JECC.JK",
+   "company_name": "Jembo Cable Company Tbk"
+  },
+  {
+   "symbol": "AVIA.JK",
+   "company_name": "PT Avia Avian Tbk"
+  },
+  {
+   "symbol": "PLIN.JK",
+   "company_name": "Plaza Indonesia Realty Tbk"
+  },
+  {
+   "symbol": "ASDM.JK",
+   "company_name": "Asuransi Dayin Mitra Tbk"
+  },
+  {
+   "symbol": "ELSA.JK",
+   "company_name": "Elnusa Tbk"
+  },
+  {
+   "symbol": "JPFA.JK",
+   "company_name": "JAPFA Comfeed Indonesia Tbk"
+  },
+  {
+   "symbol": "MDLA.JK",
+   "company_name": "PT Medela Potentia Tbk"
+  },
+  {
+   "symbol": "KBLI.JK",
+   "company_name": "KMI Wire and Cable Tbk"
+  },
+  {
+   "symbol": "IFII.JK",
+   "company_name": "PT Indonesia Fibreboard Industry Tbk"
+  },
+  {
+   "symbol": "EXCL.JK",
+   "company_name": "PT XLSMART Telecom Sejahtera Tbk"
+  },
+  {
+   "symbol": "PRDA.JK",
+   "company_name": "PT Prodia Widyahusada Tbk"
+  },
+  {
+   "symbol": "SRTG.JK",
+   "company_name": "PT Saratoga Investama Sedaya Tbk"
+  },
+  {
+   "symbol": "BBCA.JK",
+   "company_name": "PT Bank Central Asia Tbk."
+  },
+  {
+   "symbol": "CTRA.JK",
+   "company_name": "Ciputra Development Tbk"
+  },
+  {
+   "symbol": "TRIS.JK",
+   "company_name": "Trisula International Tbk"
+  },
+  {
+   "symbol": "PJAA.JK",
+   "company_name": "Pembangunan Jaya Ancol Tbk"
+  },
+  {
+   "symbol": "BLOG.JK",
+   "company_name": "PT Trimitra Trans Persada Tbk"
+  },
+  {
+   "symbol": "TSPC.JK",
+   "company_name": "Tempo Scan Pacific Tbk"
+  },
+  {
+   "symbol": "WEHA.JK",
+   "company_name": "PT WEHA Transportasi Indonesia Tbk"
+  },
+  {
+   "symbol": "ADRO.JK",
+   "company_name": "Alamtri Resources Indonesia Tbk"
+  },
+  {
+   "symbol": "MINE.JK",
+   "company_name": "PT Sinar Terang Mandiri Tbk"
+  },
+  {
+   "symbol": "MTDL.JK",
+   "company_name": "Metrodata Electronics Tbk"
+  },
+  {
+   "symbol": "JTPE.JK",
+   "company_name": "Jasuindo Tiga Perkasa Tbk"
+  },
+  {
+   "symbol": "TAPG.JK",
+   "company_name": "PT Triputra Agro Persada Tbk"
+  },
+  {
+   "symbol": "LSIP.JK",
+   "company_name": "PP London Sumatra Indonesia Tbk"
+  },
+  {
+   "symbol": "AMAR.JK",
+   "company_name": "PT Bank Amar Indonesia Tbk."
+  },
+  {
+   "symbol": "AADI.JK",
+   "company_name": "PT Adaro Andalan Indonesia Tbk"
+  },
+  {
+   "symbol": "PMUI.JK",
+   "company_name": "PT Prima Multi Usaha Indonesia Tbk"
+  },
+  {
+   "symbol": "PWON.JK",
+   "company_name": "Pakuwon Jati Tbk"
+  },
+  {
+   "symbol": "ISAT.JK",
+   "company_name": "PT Indosat Tbk"
+  },
+  {
+   "symbol": "MDKI.JK",
+   "company_name": "PT Emdeki Utama Tbk"
+  },
+  {
+   "symbol": "SKRN.JK",
+   "company_name": "PT Superkrane Mitra Utama Tbk"
+  },
+  {
+   "symbol": "PNBN.JK",
+   "company_name": "Bank Pan Indonesia Tbk"
+  },
+  {
+   "symbol": "NCKL.JK",
+   "company_name": "PT Trimegah Bangun Persada Tbk"
+  },
+  {
+   "symbol": "SICO.JK",
+   "company_name": "PT Sigma Energy Compressindo Tbk"
+  },
+  {
+   "symbol": "ISSP.JK",
+   "company_name": "PT Steel Pipe Industry of Indonesia Tbk"
+  },
+  {
+   "symbol": "WOMF.JK",
+   "company_name": "PT Wahana Ottomitra Multiartha Tbk"
+  },
+  {
+   "symbol": "SCMA.JK",
+   "company_name": "Surya Citra Media Tbk"
+  },
+  {
+   "symbol": "MKPI.JK",
+   "company_name": "Metropolitan Kentjana Tbk"
+  },
+  {
+   "symbol": "KDSI.JK",
+   "company_name": "Kedawung Setia Industrial Tbk"
+  },
+  {
+   "symbol": "BRAM.JK",
+   "company_name": "Indo Kordsa Tbk"
+  },
+  {
+   "symbol": "RDTX.JK",
+   "company_name": "Roda Vivatex Tbk"
+  },
+  {
+   "symbol": "MIDI.JK",
+   "company_name": "Midi Utama Indonesia Tbk"
+  },
+  {
+   "symbol": "ERAA.JK",
+   "company_name": "Erajaya Swasembada Tbk"
+  },
+  {
+   "symbol": "AMIN.JK",
+   "company_name": "PT Ateliers Mecaniques D Indonesie Tbk."
+  },
+  {
+   "symbol": "MEDC.JK",
+   "company_name": "PT Medco Energi Internasional Tbk"
+  },
+  {
+   "symbol": "SIMP.JK",
+   "company_name": "Salim Ivomas Pratama Tbk"
+  },
+  {
+   "symbol": "INDF.JK",
+   "company_name": "Indofood Sukses Makmur Tbk"
+  },
+  {
+   "symbol": "GGRM.JK",
+   "company_name": "Gudang Garam Tbk"
+  },
+  {
+   "symbol": "PTBA.JK",
+   "company_name": "Bukit Asam Tbk"
+  },
+  {
+   "symbol": "AALI.JK",
+   "company_name": "Astra Agro Lestari Tbk"
+  },
+  {
+   "symbol": "BNII.JK",
+   "company_name": "PT Bank Maybank Indonesia Tbk"
+  },
+  {
+   "symbol": "SCCO.JK",
+   "company_name": "PT Supreme Cable Manufacturing & Commerce Tbk"
+  },
+  {
+   "symbol": "MYOR.JK",
+   "company_name": "Mayora Indah Tbk"
+  },
+  {
+   "symbol": "ZYRX.JK",
+   "company_name": "PT Zyrexindo Mandiri Buana Tbk"
+  },
+  {
+   "symbol": "BFIN.JK",
+   "company_name": "BFI Finance Indonesia Tbk"
+  },
+  {
+   "symbol": "ICBP.JK",
+   "company_name": "Indofood CBP Sukses Makmur Tbk"
+  },
+  {
+   "symbol": "SKLT.JK",
+   "company_name": "Sekar Laut Tbk"
+  },
+  {
+   "symbol": "NISP.JK",
+   "company_name": "PT Bank OCBC NISP Tbk"
+  },
+  {
+   "symbol": "SMDR.JK",
+   "company_name": "Samudera Indonesia Tbk"
+  },
+  {
+   "symbol": "LTLS.JK",
+   "company_name": "PT Lautan Luas Tbk"
+  },
+  {
+   "symbol": "DWGL.JK",
+   "company_name": "PT Dwi Guna Laksana Tbk"
+  },
+  {
+   "symbol": "ABMM.JK",
+   "company_name": "ABM Investama Tbk"
+  },
+  {
+   "symbol": "GUNA.JK",
+   "company_name": "PT Gunanusa Eramandiri Tbk"
+  },
+  {
+   "symbol": "SAMF.JK",
+   "company_name": "PT Saraswanti Anugerah Makmur Tbk"
+  },
+  {
+   "symbol": "OBAT.JK",
+   "company_name": "PT Brigit Biofarmaka Teknologi Tbk"
+  },
+  {
+   "symbol": "BPFI.JK",
+   "company_name": "PT Woori Finance Indonesia Tbk"
+  },
+  {
+   "symbol": "BDMN.JK",
+   "company_name": "PT Bank Danamon Indonesia Tbk"
+  },
+  {
+   "symbol": "AMRT.JK",
+   "company_name": "PT Sumber Alfaria Trijaya Tbk."
+  },
+  {
+   "symbol": "NAIK.JK",
+   "company_name": "PT Adiwarna Anugerah Abadi Tbk"
+  },
+  {
+   "symbol": "GLVA.JK",
+   "company_name": "PT Galva Technologies Tbk"
+  },
+  {
+   "symbol": "TBIG.JK",
+   "company_name": "PT Tower Bersama Infrastructure Tbk"
+  },
+  {
+   "symbol": "KMDS.JK",
+   "company_name": "PT Kurniamitra Duta Sentosa Tbk"
+  },
+  {
+   "symbol": "BUDI.JK",
+   "company_name": "PT Budi Starch & Sweetener Tbk."
+  },
+  {
+   "symbol": "ARCI.JK",
+   "company_name": "PT Archi Indonesia Tbk"
+  }
+ ],
+ "pagination": {
+  "total_count": 130,
+  "showing": 130,
+  "limit": 200,
+  "offset": 0,
+  "has_next": false,
+  "has_previous": false,
+  "next_offset": null,
+  "previous_offset": null
+ }
+}

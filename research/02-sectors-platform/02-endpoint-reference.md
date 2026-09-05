@@ -5,6 +5,9 @@
 
 **Base URL:** `https://api.sectors.app`
 **Auth:** `Authorization: <YOUR_API_KEY>` header (raw key, *no* `Bearer` prefix for the REST API).
+
+The key comes from the git-ignored `.env` at the repository root — `from sectors_env import api_key` — never from a literal in code. See [`SETUP.md`](../../SETUP.md).
+
 **Method:** every endpoint is `GET`.
 **Endpoint count:** 70
 

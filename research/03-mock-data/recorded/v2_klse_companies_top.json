@@ -1,0 +1,137 @@
+{
+ "dividend_yield": [
+  {
+   "symbol": "5983",
+   "forward_dividend_yield": 0.1783,
+   "company_name": "MBM Resources Berhad"
+  },
+  {
+   "symbol": "5141",
+   "forward_dividend_yield": 0.175,
+   "company_name": "Dayang Enterprise Holdings Bhd"
+  },
+  {
+   "symbol": "4162",
+   "forward_dividend_yield": 0.1227,
+   "company_name": "British American Tobacco (Malaysia) Berhad"
+  },
+  {
+   "symbol": "5176",
+   "forward_dividend_yield": 0.0893,
+   "company_name": "Sunway Real Estate Investment Trust"
+  },
+  {
+   "symbol": "1562",
+   "forward_dividend_yield": 0.0889,
+   "company_name": "Sports Toto Berhad"
+  }
+ ],
+ "revenue": [
+  {
+   "symbol": "4197",
+   "revenue": 70515000000.0,
+   "company_name": "Sime Darby Berhad"
+  },
+  {
+   "symbol": "5347",
+   "revenue": 68788100000.0,
+   "company_name": "Tenaga Nasional Berhad"
+  },
+  {
+   "symbol": "5681",
+   "revenue": 40326951000.0,
+   "company_name": "PETRONAS Dagangan Berhad"
+  },
+  {
+   "symbol": "4677",
+   "revenue": 30463431000.0,
+   "company_name": "YTL Corporation Berhad"
+  },
+  {
+   "symbol": "3182",
+   "revenue": 27868504000.0,
+   "company_name": "Genting Berhad"
+  }
+ ],
+ "earnings": [
+  {
+   "symbol": "5099",
+   "earnings": 12372463000.0,
+   "company_name": "Capital A Berhad"
+  },
+  {
+   "symbol": "5211",
+   "earnings": 10527032000.0,
+   "company_name": "Sunway Berhad"
+  },
+  {
+   "symbol": "1155",
+   "earnings": 10405749000.0,
+   "company_name": "Malayan Banking Berhad"
+  },
+  {
+   "symbol": "1023",
+   "earnings": 7802604000.0,
+   "company_name": "CIMB Group Holdings Berhad"
+  },
+  {
+   "symbol": "1295",
+   "earnings": 7230860000.0,
+   "company_name": "Public Bank Berhad"
+  }
+ ],
+ "market_cap": [
+  {
+   "symbol": "1155",
+   "market_cap": 127729319936.0,
+   "company_name": "Malayan Banking Berhad"
+  },
+  {
+   "symbol": "1295",
+   "market_cap": 96665247744.0,
+   "company_name": "Public Bank Berhad"
+  },
+  {
+   "symbol": "1023",
+   "market_cap": 86480142336.0,
+   "company_name": "CIMB Group Holdings Berhad"
+  },
+  {
+   "symbol": "5347",
+   "market_cap": 79392915456.0,
+   "company_name": "Tenaga Nasional Berhad"
+  },
+  {
+   "symbol": "5225",
+   "market_cap": 70247415808.0,
+   "company_name": "IHH Healthcare Berhad"
+  }
+ ],
+ "pe": [
+  {
+   "symbol": "2593",
+   "pe": 0.086269386,
+   "company_name": "United Malacca Berhad"
+  },
+  {
+   "symbol": "5099",
+   "pe": 0.22794117,
+   "company_name": "Capital A Berhad"
+  },
+  {
+   "symbol": "4324",
+   "pe": 1.7544911,
+   "company_name": "Hengyuan Refining Company Berhad"
+  },
+  {
+   "symbol": "0138",
+   "pe": 1.9615386,
+   "company_name": "My E.G. Services Berhad"
+  },
+  {
+   "symbol": "5211",
+   "pe": 3.1794872,
+   "company_name": "Sunway Berhad"
+  }
+ ]
+}

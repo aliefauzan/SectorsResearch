@@ -1,0 +1,27 @@
+{
+ "year": 2024,
+ "available_years": [
+  2023,
+  2024
+ ],
+ "data": {
+  "slug": "pt-adaro-andalan-indonesia-tbk",
+  "symbol": "AADI.JK",
+  "name": "PT Adaro Andalan Indonesia Tbk",
+  "year": 2024,
+  "assets_usd": 5993000000.0,
+  "revenue_usd": 5320000000.0,
+  "revenue_breakdown": {
+   "coal_mining_and_trading": 5108610000.0,
+   "logistics": 183680000.0,
+   "others": 27290000.0
+  },
+  "cost_of_revenue_usd": 3853630000.0,
+  "cost_of_revenue_breakdown": {
+   "royalty": 1020160000.0,
+   "freight_and_handling": 412090000.0,
+   "logistic": 89240000.0
+  },
+  "net_profit_usd": 1327000000.0
+ }
+}

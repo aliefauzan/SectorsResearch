@@ -1,0 +1,29 @@
+{
+ "market_cap": [
+  {
+   "symbol": "1155",
+   "market_cap": 127729319936.0,
+   "company_name": "Malayan Banking Berhad"
+  },
+  {
+   "symbol": "1295",
+   "market_cap": 96665247744.0,
+   "company_name": "Public Bank Berhad"
+  },
+  {
+   "symbol": "1023",
+   "market_cap": 86480142336.0,
+   "company_name": "CIMB Group Holdings Berhad"
+  },
+  {
+   "symbol": "5347",
+   "market_cap": 79392915456.0,
+   "company_name": "Tenaga Nasional Berhad"
+  },
+  {
+   "symbol": "5225",
+   "market_cap": 70247415808.0,
+   "company_name": "IHH Healthcare Berhad"
+  }
+ ]
+}

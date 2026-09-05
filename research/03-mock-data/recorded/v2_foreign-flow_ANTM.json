@@ -1,0 +1,255 @@
+{
+ "symbol": "ANTM.JK",
+ "start": "2026-06-07",
+ "end": "2026-09-05",
+ "data": [
+  {
+   "date": "2026-06-08",
+   "net_foreign_inflow": -91576955000
+  },
+  {
+   "date": "2026-06-09",
+   "net_foreign_inflow": 36626631000
+  },
+  {
+   "date": "2026-06-10",
+   "net_foreign_inflow": -132635733000
+  },
+  {
+   "date": "2026-06-11",
+   "net_foreign_inflow": 60088571000
+  },
+  {
+   "date": "2026-06-12",
+   "net_foreign_inflow": 31663508000
+  },
+  {
+   "date": "2026-06-15",
+   "net_foreign_inflow": 194622524000
+  },
+  {
+   "date": "2026-06-17",
+   "net_foreign_inflow": 67523041000
+  },
+  {
+   "date": "2026-06-18",
+   "net_foreign_inflow": -20903589000
+  },
+  {
+   "date": "2026-06-19",
+   "net_foreign_inflow": -46571282000
+  },
+  {
+   "date": "2026-06-22",
+   "net_foreign_inflow": -39830269000
+  },
+  {
+   "date": "2026-06-23",
+   "net_foreign_inflow": -33563468000
+  },
+  {
+   "date": "2026-06-24",
+   "net_foreign_inflow": -60002104000
+  },
+  {
+   "date": "2026-06-25",
+   "net_foreign_inflow": 291327000
+  },
+  {
+   "date": "2026-06-26",
+   "net_foreign_inflow": -91715482000
+  },
+  {
+   "date": "2026-06-29",
+   "net_foreign_inflow": 27449504000
+  },
+  {
+   "date": "2026-06-30",
+   "net_foreign_inflow": 53499985000
+  },
+  {
+   "date": "2026-07-01",
+   "net_foreign_inflow": 5993054000
+  },
+  {
+   "date": "2026-07-02",
+   "net_foreign_inflow": -955972000
+  },
+  {
+   "date": "2026-07-03",
+   "net_foreign_inflow": 23811997000
+  },
+  {
+   "date": "2026-07-06",
+   "net_foreign_inflow": -19423247000
+  },
+  {
+   "date": "2026-07-07",
+   "net_foreign_inflow": -8068885000
+  },
+  {
+   "date": "2026-07-08",
+   "net_foreign_inflow": -9232419000
+  },
+  {
+   "date": "2026-07-09",
+   "net_foreign_inflow": 16597365000
+  },
+  {
+   "date": "2026-07-10",
+   "net_foreign_inflow": 23248011000
+  },
+  {
+   "date": "2026-07-13",
+   "net_foreign_inflow": -4310432000
+  },
+  {
+   "date": "2026-07-14",
+   "net_foreign_inflow": -1770325000
+  },
+  {
+   "date": "2026-07-15",
+   "net_foreign_inflow": -68109667000
+  },
+  {
+   "date": "2026-07-16",
+   "net_foreign_inflow": -37034159000
+  },
+  {
+   "date": "2026-07-17",
+   "net_foreign_inflow": -25441754000
+  },
+  {
+   "date": "2026-07-20",
+   "net_foreign_inflow": -106823935000
+  },
+  {
+   "date": "2026-07-21",
+   "net_foreign_inflow": 8915151000
+  },
+  {
+   "date": "2026-07-22",
+   "net_foreign_inflow": -20409480000
+  },
+  {
+   "date": "2026-07-23",
+   "net_foreign_inflow": 22568723000
+  },
+  {
+   "date": "2026-07-24",
+   "net_foreign_inflow": 20433727000
+  },
+  {
+   "date": "2026-07-27",
+   "net_foreign_inflow": -29977355000
+  },
+  {
+   "date": "2026-07-28",
+   "net_foreign_inflow": -86079377000
+  },
+  {
+   "date": "2026-07-29",
+   "net_foreign_inflow": -34746530000
+  },
+  {
+   "date": "2026-07-30",
+   "net_foreign_inflow": -43316543000
+  },
+  {
+   "date": "2026-07-31",
+   "net_foreign_inflow": -66122699000
+  },
+  {
+   "date": "2026-08-03",
+   "net_foreign_inflow": -11655461000
+  },
+  {
+   "date": "2026-08-04",
+   "net_foreign_inflow": 1369813000
+  },
+  {
+   "date": "2026-08-05",
+   "net_foreign_inflow": 154795305000
+  },
+  {
+   "date": "2026-08-06",
+   "net_foreign_inflow": -15166983000
+  },
+  {
+   "date": "2026-08-07",
+   "net_foreign_inflow": 90782962000
+  },
+  {
+   "date": "2026-08-10",
+   "net_foreign_inflow": -31276557000
+  },
+  {
+   "date": "2026-08-11",
+   "net_foreign_inflow": 17308124000
+  },
+  {
+   "date": "2026-08-12",
+   "net_foreign_inflow": -28538978000
+  },
+  {
+   "date": "2026-08-13",
+   "net_foreign_inflow": -31766126000
+  },
+  {
+   "date": "2026-08-14",
+   "net_foreign_inflow": 14488100000
+  },
+  {
+   "date": "2026-08-18",
+   "net_foreign_inflow": 31837638000
+  },
+  {
+   "date": "2026-08-19",
+   "net_foreign_inflow": -66379467000
+  },
+  {
+   "date": "2026-08-20",
+   "net_foreign_inflow": 96100812000
+  },
+  {
+   "date": "2026-08-21",
+   "net_foreign_inflow": 63489333000
+  },
+  {
+   "date": "2026-08-24",
+   "net_foreign_inflow": 52760424000
+  },
+  {
+   "date": "2026-08-26",
+   "net_foreign_inflow": 26045143000
+  },
+  {
+   "date": "2026-08-27",
+   "net_foreign_inflow": 9926078000
+  },
+  {
+   "date": "2026-08-28",
+   "net_foreign_inflow": -52976884000
+  },
+  {
+   "date": "2026-08-31",
+   "net_foreign_inflow": -27317318000
+  },
+  {
+   "date": "2026-09-01",
+   "net_foreign_inflow": -7492241000
+  },
+  {
+   "date": "2026-09-02",
+   "net_foreign_inflow": 0
+  },
+  {
+   "date": "2026-09-03",
+   "net_foreign_inflow": 39061715000
+  },
+  {
+   "date": "2026-09-04",
+   "net_foreign_inflow": -25405111000
+  }
+ ]
+}

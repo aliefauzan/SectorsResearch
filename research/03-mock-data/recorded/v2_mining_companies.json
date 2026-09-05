@@ -1,0 +1,213 @@
+{
+ "results": [
+  {
+   "slug": "asia-pacific-nickel-pty-ltd",
+   "name": "Asia Pacific Nickel Pty Ltd",
+   "symbol": null,
+   "company_type": "Holding",
+   "key_operation": "Investment",
+   "commodity_type": [
+    "Nickel"
+   ]
+  },
+  {
+   "slug": "cv-mitra-perdana-equipment",
+   "name": "CV Mitra Perdana Equipment",
+   "symbol": null,
+   "company_type": "Contractor",
+   "key_operation": "Equipment Rental",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "j-resources-gold-(uk)-limited-(jrgl)",
+   "name": "J Resources Gold (UK) Limited (JRGL)",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Gold"
+   ]
+  },
+  {
+   "slug": "kestrel-coal-resources",
+   "name": "Kestrel Coal Resources",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "nickel-international-capital-pte",
+   "name": "Nickel International Capital Pte",
+   "symbol": null,
+   "company_type": "Holding",
+   "key_operation": "Investment",
+   "commodity_type": [
+    "Nickel"
+   ]
+  },
+  {
+   "slug": "pt-abm-investama-tbk",
+   "name": "PT ABM Investama Tbk",
+   "symbol": "ABMM.JK",
+   "company_type": "Trader",
+   "key_operation": "Coal Trading",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-adaro-andalan-indonesia-tbk",
+   "name": "PT Adaro Andalan Indonesia Tbk",
+   "symbol": "AADI.JK",
+   "company_type": "Holding",
+   "key_operation": "Coal Trading",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-adaro-indonesia",
+   "name": "PT Adaro Indonesia",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining Services",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-adaro-logistics",
+   "name": "PT Adaro Logistics",
+   "symbol": null,
+   "company_type": "Contractor",
+   "key_operation": "Logistic Management",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-adaro-minerals-indonesia-tbk",
+   "name": "PT Adaro Minerals Indonesia Tbk",
+   "symbol": "ADMR.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal",
+    "Aluminium"
+   ]
+  },
+  {
+   "slug": "pt-adaro-mining-technologies",
+   "name": "PT Adaro Mining Technologies",
+   "symbol": null,
+   "company_type": "Consultant",
+   "key_operation": "Mining Services",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-adhi-kartiko-pratama-tbk",
+   "name": "PT Adhi Kartiko Pratama Tbk",
+   "symbol": "NICE.JK",
+   "company_type": "Holding",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Nickel"
+   ]
+  },
+  {
+   "slug": "pt-adimitra-baratama-nusantara",
+   "name": "PT Adimitra Baratama Nusantara",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-afit-lintas-jaya",
+   "name": "PT Afit Lintas Jaya",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining",
+   "commodity_type": []
+  },
+  {
+   "slug": "pt-agincourt",
+   "name": "PT Agincourt",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Gold"
+   ]
+  },
+  {
+   "slug": "pt-agung-bara-prima",
+   "name": "PT Agung Bara Prima",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-aktio-equipment-indonesia",
+   "name": "PT Aktio Equipment Indonesia",
+   "symbol": null,
+   "company_type": "Contractor",
+   "key_operation": "Equipment Rental",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-alamtri-resources-indonesia-tbk",
+   "name": "PT Alamtri Resources Indonesia Tbk",
+   "symbol": "ADRO.JK",
+   "company_type": "Holding",
+   "key_operation": "Investment",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-alfa-energi-investama-tbk",
+   "name": "PT Alfa Energi Investama Tbk",
+   "symbol": "FIRE.JK",
+   "company_type": "Trader",
+   "key_operation": "Coal Trading",
+   "commodity_type": [
+    "Coal"
+   ]
+  },
+  {
+   "slug": "pt-alhasanie",
+   "name": "PT Alhasanie",
+   "symbol": null,
+   "company_type": "Mine Owner",
+   "key_operation": "Mining",
+   "commodity_type": [
+    "Coal"
+   ]
+  }
+ ],
+ "pagination": {
+  "total_count": 366,
+  "showing": 20,
+  "limit": 20,
+  "offset": 0,
+  "has_next": true,
+  "has_previous": false,
+  "next_offset": 20,
+  "previous_offset": null
+ }
+}

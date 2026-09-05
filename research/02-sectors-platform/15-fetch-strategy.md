@@ -109,17 +109,39 @@ silently hides every company under IDR 5 trillion — a correctness fix, not jus
 | **0.35 s between calls** | Above the 0.3 s the docs call mandatory past ~10 sequential calls. |
 | **Paginates the full-universe sweeps** | A plan entry may carry `"pages": 32`; `capture.py` walks every `offset` and merges the pages into one recording. Without this the two tier-2 sweeps would bill for 32 pages and record one. |
 | **`--base-url`** | Point the whole harness at `mock_server.py` and rehearse the entire run for zero credits before spending anything. Also honours `SECTORS_BASE_URL`. |
+| **Configuration from `.env`** | `SECTORS_API_KEY`, `SECTORS_BASE_URL` and `SECTORS_BUDGET` are read by [`sectors_env.py`](../03-mock-data/sectors_env.py) from the git-ignored `.env` at the repository root, so every teammate runs the same configuration without exporting anything. A real environment variable still wins over the file. The key is never logged and never written to disk — the run header prints only `key: set` or `key: MISSING`. |
 | **Ledger** | Every attempt appended to `recorded/_ledger.jsonl` with status, estimated cost, and any cost header the API returned. |
+
+### Two things the live API does that no document predicted
+
+**Cloudflare rejects the Python standard library.** The first five live calls returned
+`403 {"error": "error code: 1010"}` — an edge block on the default `Python-urllib/3.x` user
+agent, not an auth failure, and not billed. Send a normal browser `User-Agent` and it
+disappears. `capture.py` does; anything you write yourself must too.
+
+**The rate limit is 25 billed requests per rolling ~30 s** — measured, not guessed. Both
+32-page sweeps hit `429` mid-run at 0.35 s spacing (after 25 and 31 pages); the 25 was the
+ceiling showing itself before anyone knew to look. Spacing is not what is counted: 25 calls
+back-to-back and 25 a second apart both stop on the 26th. Free responses are exempt.
+
+`capture.py` no longer relies on a spacing anyone has to remember — `RateWindow` tracks real
+timestamps, waits only when the window is full, and gives the slot back when a response turns
+out to be free. **28 billed calls back-to-back, zero 429s.** The default spacing is now 1.5 s
+(`SECTORS_RATE_LIMIT_SLEEP`), and the window is tunable via `SECTORS_RATE_CALLS` /
+`SECTORS_RATE_WINDOW`. The 429s cost nothing and the resume logic kept every page already paid
+for — 25 + 7 and 31 + 1, not 32 + 32.
 
 ### The header reconciliation step
 
 The OpenAPI spec documents **no** spend headers — the `X-Credits-Charged` header the mock
 emits is invented. `capture.py` records **any** response header matching
-`credit|quota|rate.?limit|usage|balance`, so **tier 0 tells you what they are actually
-called**, for 5 credits.
+`credit|quota|rate.?limit|usage|balance`, so tier 0 was expected to reveal the real names for
+5 credits.
 
-Do that before running the expensive tiers, and reconcile `est_cost` in the ledger against
-whatever the API really reports. If the model is wrong, fix `plan.json` before tier 2 spends 74.
+**It ran on 6 September 2026, and the answer is that there are none.** 116 successful live
+calls, zero matching headers. Reconciliation against the API is therefore impossible: the
+ledger's `est_cost` total and the portal balance are the only two numbers that exist. Compare
+them before the expensive tiers, not the headers.
 
 ---
 

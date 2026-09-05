@@ -1,0 +1,52 @@
+{
+ "results": [
+  {
+   "symbol": "BBCA.JK",
+   "company_name": "PT Bank Central Asia Tbk.",
+   "query_values": {
+    "sub_sector": "Banks",
+    "roe[2025]": 0.204259243898794,
+    "market_cap": 817683406650000
+   }
+  },
+  {
+   "symbol": "BBRI.JK",
+   "company_name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+   "query_values": {
+    "sub_sector": "Banks",
+    "roe[2025]": 0.171185527648375,
+    "market_cap": 508647165279930
+   }
+  },
+  {
+   "symbol": "BMRI.JK",
+   "company_name": "PT Bank Mandiri (Persero) Tbk",
+   "query_values": {
+    "sub_sector": "Banks",
+    "roe[2025]": 0.171941375873949,
+    "market_cap": 408407999982320
+   }
+  }
+ ],
+ "pagination": {
+  "total_count": 3,
+  "showing": 3,
+  "limit": 50,
+  "offset": 0,
+  "has_next": false,
+  "has_previous": false,
+  "next_offset": null,
+  "previous_offset": null
+ },
+ "llm_translation": {
+  "natural_query": "banks with return on equity above 15 percent",
+  "translated_params": {
+   "where": "sub_sector = 'Banks' and roe[2025] > 0.15",
+   "order_by": "-market_cap",
+   "limit": null,
+   "offset": null,
+   "include_query_values": true
+  },
+  "message": null
+ }
+}

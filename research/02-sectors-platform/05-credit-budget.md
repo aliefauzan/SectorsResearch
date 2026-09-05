@@ -143,11 +143,12 @@ the API tells you the answer on every response.
 
 ```python
 import json
-import os
 import time
 from pathlib import Path
 
 import requests
+
+from sectors_env import api_key      # loads the git-ignored .env at the repo root
 
 BASE = "https://api.sectors.app/v2"
 CACHE = Path(".cache/sectors")
@@ -168,7 +169,7 @@ def get(path, params=None, ttl=3600, retries=3):
     for attempt in range(retries):
         response = requests.get(
             f"{BASE}{path}",
-            headers={"Authorization": os.environ["SECTORS_API_KEY"]},
+            headers={"Authorization": api_key()},   # from sectors_env / .env
             params=params,
             timeout=30,
         )
@@ -204,10 +205,12 @@ Add `time.sleep(0.3)` between sequential calls in any loop over tickers — the 
 that omitting it beyond ~10 sequential calls produces 429s. 429s are free, but a stalled job
 on demo day is not.
 
-> Header names: the live API's exact spend headers are not documented in the OpenAPI spec —
-> confirm them against a real response early and adjust the field name. The
-> [mock server](../03-mock-data/) emits `X-Credits-Charged` and `X-Credits-Remaining` so the
-> ledger logic is exercised either way.
+> **Settled 6 September 2026, live: there are no spend headers.** Across 116 successful calls
+> the API returned nothing matching `credit|quota|rate.?limit|usage|balance`. `charged` will be
+> `None` on every response. The mock's `X-Credits-Charged` / `X-Credits-Remaining` are an
+> invention that keeps this ledger logic exercised — do not build on them. Your own
+> `est_cost` running total is the only spend figure a client can compute; the portal balance is
+> the only independent check. Evidence: [`../VERIFICATION-LIVE.md`](../VERIFICATION-LIVE.md).
 
 ---
 

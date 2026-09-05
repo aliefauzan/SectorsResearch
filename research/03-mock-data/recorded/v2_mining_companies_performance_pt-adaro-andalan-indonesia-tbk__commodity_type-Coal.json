@@ -1,0 +1,272 @@
+{
+ "year": 2024,
+ "available_years": [
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "data": [
+  {
+   "year": 2024,
+   "commodity_type": "Coal",
+   "commodity_sub_type": "Sub-bituminous & Metallurgical Coal",
+   "commodity_stats": {
+    "unit": "Mt",
+    "mining_operation_status": "production",
+    "production_volume": 48.11,
+    "sales_volume": 55.8,
+    "overburden_removal_volume": 214.18,
+    "strip_ratio": 4.51,
+    "resources_reserves": {
+     "measurement_year": 2024,
+     "probable_reserves_Mt": 356.0,
+     "proven_reserves_Mt": 463.0,
+     "total_reserves_Mt": 819.0,
+     "inferred_resources_Mt": 640.6,
+     "indicated_resources_Mt": 962.0,
+     "measured_resources_Mt": 3176.0,
+     "total_resources_Mt": 4374.0
+    },
+    "products": [
+     {
+      "product_name": "Envirocoal -North Tutupan",
+      "calorific_value_kcal": {
+       "max": 4843.0,
+       "min": 4843.0
+      },
+      "total_moisture_pct": {
+       "max": 27.1,
+       "min": 27.1
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 2.1,
+       "min": 2.1
+      },
+      "total_sulphur_adb": {
+       "max": 0.1,
+       "min": 0.1
+      },
+      "volatile_matter_adb": {
+       "max": 39.7,
+       "min": 39.7
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "Envirocoal - South Tutupan",
+      "calorific_value_kcal": {
+       "max": 5005.0,
+       "min": 5005.0
+      },
+      "total_moisture_pct": {
+       "max": 27.3,
+       "min": 27.3
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 2.1,
+       "min": 2.1
+      },
+      "total_sulphur_adb": {
+       "max": 0.1,
+       "min": 0.1
+      },
+      "volatile_matter_adb": {
+       "max": 40.6,
+       "min": 40.6
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "Envirocoal - Wara I",
+      "calorific_value_kcal": {
+       "max": 3994.0,
+       "min": 3994.0
+      },
+      "total_moisture_pct": {
+       "max": 39.1,
+       "min": 39.1
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 3.4,
+       "min": 3.4
+      },
+      "total_sulphur_adb": {
+       "max": 0.3,
+       "min": 0.3
+      },
+      "volatile_matter_adb": {
+       "max": 37.7,
+       "min": 37.7
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "Envirocoal - BCC - SCM",
+      "calorific_value_kcal": {
+       "max": 4231.0,
+       "min": 4231.0
+      },
+      "total_moisture_pct": {
+       "max": 34.3,
+       "min": 34.3
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 2.0,
+       "min": 2.0
+      },
+      "total_sulphur_adb": {
+       "max": 0.1,
+       "min": 0.1
+      },
+      "volatile_matter_adb": {
+       "max": 38.3,
+       "min": 38.3
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "Envirocoal - BCC - PCS",
+      "calorific_value_kcal": {
+       "max": 4358.0,
+       "min": 4358.0
+      },
+      "total_moisture_pct": {
+       "max": 33.2,
+       "min": 33.2
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 3.4,
+       "min": 3.4
+      },
+      "total_sulphur_adb": {
+       "max": 0.1,
+       "min": 0.1
+      },
+      "volatile_matter_adb": {
+       "max": 37.1,
+       "min": 37.1
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "Envirocoal - BCC - LSA",
+      "calorific_value_kcal": {
+       "max": 4520.0,
+       "min": 4520.0
+      },
+      "total_moisture_pct": {
+       "max": 32.1,
+       "min": 32.1
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 1.9,
+       "min": 1.9
+      },
+      "total_sulphur_adb": {
+       "max": 0.1,
+       "min": 0.1
+      },
+      "volatile_matter_adb": {
+       "max": 37.5,
+       "min": 37.5
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "MIP",
+      "calorific_value_kcal": {
+       "max": 4282.0,
+       "min": 4282.0
+      },
+      "total_moisture_pct": {
+       "max": 34.0,
+       "min": 34.0
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 7.3,
+       "min": 7.3
+      },
+      "total_sulphur_adb": {
+       "max": 0.5,
+       "min": 0.5
+      },
+      "volatile_matter_adb": {
+       "max": 37.8,
+       "min": 37.8
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "BEP",
+      "calorific_value_kcal": {
+       "max": 3326.0,
+       "min": 3326.0
+      },
+      "total_moisture_pct": {
+       "max": 47.9,
+       "min": 47.9
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 3.7,
+       "min": 3.7
+      },
+      "total_sulphur_adb": {
+       "max": 0.1,
+       "min": 0.1
+      },
+      "volatile_matter_adb": {
+       "max": 42.5,
+       "min": 42.5
+      },
+      "fixed_carbon_adb": null
+     },
+     {
+      "product_name": "Pari Block",
+      "calorific_value_kcal": {
+       "max": 4300.0,
+       "min": 4300.0
+      },
+      "total_moisture_pct": {
+       "max": 33.0,
+       "min": 33.0
+      },
+      "ash_content_arb": null,
+      "total_sulphur_arb": null,
+      "ash_content_adb": {
+       "max": 4.0,
+       "min": 4.0
+      },
+      "total_sulphur_adb": {
+       "max": 0.1,
+       "min": 0.1
+      },
+      "volatile_matter_adb": {
+       "max": 38.9,
+       "min": 38.9
+      },
+      "fixed_carbon_adb": null
+     }
+    ]
+   }
+  }
+ ]
+}

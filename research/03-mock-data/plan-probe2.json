@@ -1,0 +1,15 @@
+{
+  "name": "Probe 2 — transport-level behaviour the spec asserts and nobody tested",
+  "grant": 1000,
+  "notes": ["All expected to fail free (400/401/404/405). A 404 on a real path would bill 1."],
+  "calls": [
+    {"tier": 9, "path": "/v2/subsectors", "params": {}, "est_cost": 1, "note": "no trailing slash — does the API redirect, answer, or refuse?"},
+    {"tier": 9, "path": "/v2/company/report/bbca/", "params": {"sections": "overview"}, "est_cost": 1, "note": "lowercase symbol"},
+    {"tier": 9, "path": "/v2/company/report/BBCA.JK/", "params": {"sections": "overview"}, "est_cost": 1, "note": "symbol with the .JK suffix"},
+    {"tier": 9, "path": "/v2/subsectors/", "params": {}, "method": "POST", "est_cost": 1, "note": "non-GET on a documented GET endpoint"},
+    {"tier": 9, "path": "/v2/subsectors/", "params": {}, "method": "OPTIONS", "est_cost": 1, "note": "CORS preflight shape"},
+    {"tier": 9, "path": "/v2/does-not-exist/", "params": {}, "est_cost": 1, "note": "unknown endpoint — what does the 404 body look like?"},
+    {"tier": 9, "path": "/v2/index-daily/sti/", "params": {}, "est_cost": 1, "note": "long-open corpus question: does the Straits Times index resolve?"},
+    {"tier": 9, "path": "/v2/index-daily/klse/", "params": {}, "est_cost": 1, "note": "candidate 18th index code, present in the ingestion registry, absent from the spec"}
+  ]
+}

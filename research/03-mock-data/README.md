@@ -31,6 +31,71 @@ the live API returns — the most faithful offline stand-in obtainable without s
 | `extract_fixtures.py` | Pulls every example response out of the spec into `fixtures/<endpoint>.json` plus an `_index.json` with parameters and credit costs |
 | `mock_server.py` | Serves those fixtures as a local `api.sectors.app` |
 | `fixtures/` | 70 fixtures + `_index.json`, already generated and committed |
+| `sectors_env.py` | Loads the git-ignored `.env` at the repository root and hands back `api_key()`, `base_url()`, `budget()`. Import it instead of reading `os.environ` directly, so the whole team is configured identically |
+| `capture.py` | Records the live API once, replays forever. Ledger, budget cap, resume, idempotency |
+| `plan_live.py` | Builds `plan-live.json` — the calls that finish coverage of all 66 callable endpoints, with every path parameter read out of a payload already on disk |
+| `plan-probe.json` · `plan-probe2.json` | The root-cause probes: eleven query forms against the bare `report/` roots, plus method, trailing-slash, case, unrouted-path and index-code behaviour. Free — every call is expected to fail |
+| `plan-fidelity.json` | The expensive defaulted forms bought once (all-sections reports, defaulted `top` families, the `?q=` screener) so nothing falls back to a spec example |
+| `verify_mock.py` | Proves the mock still matches the captured API: replay, error, method, rate-limit and header parity. Zero credits, exit code 0/1 |
+| `rate_probe.py` | How the 25-per-30 s ceiling was measured. Phase 0 establishes that free 400s are uncounted, so most of the bisect costs nothing |
+| `reconcile_usage.py` | Diffs the ledger against the portal's usage-log export — the only independent record of what was actually charged. Exit 0/1 |
+| `recorded/` | 116 real payloads + `_ledger.jsonl`. Committed on purpose — they cost credits |
+
+### Fidelity — what the mock copies, and what it cannot
+
+Verified on 6 September 2026 against the live capture, and re-verifiable at any time for
+zero credits:
+
+```bash
+python3 verify_mock.py          # replay, error, method and header parity — exit 0 or 1
+curl -s -H "Authorization: dev-key" localhost:8787/__coverage | python3 -m json.tool
+```
+
+All **66 callable endpoints are served from real recordings**; nothing falls back to a spec
+example any more. The four spec entries that are not served are the bare `report/` roots, which
+the live API refuses too — the mock refuses them the same way, with the same message.
+
+| Behaviour | Live API | This mock |
+| --- | --- | --- |
+| A recorded call | the payload we captured | **byte-identical**, `X-Mock-Source: recording` (127/127) |
+| A page of a universe sweep | 30 rows and a live `has_next` | sliced out of the merged recording — real rows, truthful envelope, `X-Mock-Source: recording-slice` |
+| An unrecorded call | real data | the spec's example payload, labelled `spec-example` |
+| Unknown IDX symbol | 404, **billed 1** | 404, billed 1, same message — checked against the 962-symbol universe from the `/v2/close/` sweep |
+| Mining company with no financials | 404, billed 1 | 404, billed 1 — checked against the 9 companies `?has_financials=true` returns |
+| Missing required query parameter | free 400 | free 400, same message |
+| `/v2/company/report/` and the other three bare roots | free 400 | free 400, same message |
+| Invalid enum value | free 400 | free 400 |
+| Missing `Authorization` | **403** `"Authentication credentials were not provided."` | 403, same body |
+| `POST` / `PUT` / `DELETE` on a GET endpoint | 405 `Method "POST" not allowed.` | 405, same body |
+| `OPTIONS` | 200, and billed | answered like GET |
+| Unrouted path | 404 `{"details", "urls"}` — no `error` key | same shape |
+| Missing trailing slash | 200, identical payload | normalised, same recording served |
+| Index code outside the documented 17 | free 400 | free 400; `sti` allowed, `klse` rejected |
+| Spend headers | **none** | none, unless `--credit-headers` |
+| Per-call credit cost | no headers, but the portal's usage log records every charge | the spec's declared cost — **reconciled against 408 portal rows, 377 vs 377 exact**. Re-check with `reconcile_usage.py` |
+| A defaulted report / `top` call | full payload, 8/6/5 credits | the real one — bought once, replayed free |
+| `?q=` natural-language screener | `llm_translation` + auto `query_values` | the real payload, replayed |
+| Cloudflare user-agent block | 403 on `Python-urllib` | reproduced on demand with `--cloudflare` (off by default) |
+| Rate limiting | 25 billed requests per rolling ~30 s; free responses exempt; no `Retry-After` | reproduced exactly with `--rate-limit` (off by default so test suites are not throttled) |
+
+The last three rows are the honest limits. Everything above them was checked both ways.
+
+Where a universe was only sampled rather than swept — mining companies at large, SGX, KLSE —
+identifiers are deliberately **not** enforced: 404ing a symbol that actually exists would be a
+worse lie than the one being fixed. `--no-universe` turns the checking off entirely.
+
+### Configuration
+
+One file, at the repository root, git-ignored, shared by every script here:
+
+```bash
+cp .env.example .env       # then paste the team key into SECTORS_API_KEY=
+python3 sectors_env.py     # preflight: prints env path, base URL, budget, key set/missing
+```
+
+A real environment variable always beats the file, so overrides still work
+(`SECTORS_BASE_URL=http://127.0.0.1:8787 python3 capture.py ...`). The key is never printed,
+never logged, and never written to disk. Full walkthrough: [`SETUP.md`](../../SETUP.md).
 
 ### Run it
 
@@ -286,12 +351,15 @@ sessions — a rate limit or an outage while recording is a real risk, and havin
 ## A drop-in client that switches between them
 
 ```python
-import os
 import requests
 
-# One environment variable is the entire switch.
-BASE = os.environ.get("SECTORS_BASE_URL", "https://api.sectors.app")
-KEY = os.environ.get("SECTORS_API_KEY", "dev-key")
+# `sectors_env` loads the git-ignored .env at the repository root and hands back
+# configuration. A real environment variable always beats the file, so the switch
+# below still works without editing anything.
+from sectors_env import api_key, base_url
+
+BASE = base_url()
+KEY = api_key()          # raises if unset; never print or log the return value
 
 
 def sectors_get(path, **params):
@@ -306,11 +374,14 @@ def sectors_get(path, **params):
 ```
 
 ```bash
+# check what you are pointed at before you run anything
+python3 sectors_env.py
+
 # development — free
 SECTORS_BASE_URL=http://localhost:8787 python3 app.py
 
-# live — costs credits
-SECTORS_API_KEY=sk_xxx python3 app.py
+# live — costs credits, key comes from .env
+python3 app.py
 ```
 
 Build that switch on day one. It is the highest-leverage twelve lines in the project.

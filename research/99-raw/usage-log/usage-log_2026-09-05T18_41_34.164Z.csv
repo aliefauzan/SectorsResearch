@@ -1,0 +1,9 @@
+time_gmt7,endpoint,source,http_status,status,credits_charged
+"Sep 5, 23:48",/v2/companies/,direct,200,success,1
+"Sep 5, 23:48",/v2/companies/,direct,200,success,1
+"Sep 5, 23:48",/v2/companies/,direct,200,success,1
+"Sep 5, 23:48",/v2/brokers/,direct,200,success,1
+"Sep 5, 23:48",/v2/tags/,direct,200,success,1
+"Sep 5, 23:48",/v2/subindustries/,direct,200,success,1
+"Sep 5, 23:48",/v2/industries/,direct,200,success,1
+"Sep 5, 23:48",/v2/subsectors/,direct,200,success,1

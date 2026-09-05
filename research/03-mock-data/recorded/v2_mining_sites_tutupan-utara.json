@@ -1,0 +1,30 @@
+{
+ "name": "Tutupan Utara",
+ "project_name": null,
+ "year": 2024,
+ "commodity_type": "Coal",
+ "production_volume": null,
+ "unit": "Mt",
+ "overburden_removal_volume": null,
+ "strip_ratio": null,
+ "resources_reserves": {
+  "measurement_year": 2024,
+  "probable_reserves_Mt": 74.8,
+  "proven_reserves_Mt": 258.3,
+  "total_reserves_Mt": 316.9,
+  "inferred_resources_Mt": 63.2,
+  "indicated_resources_Mt": 201.0,
+  "measured_resources_Mt": 843.7,
+  "total_resources_Mt": 1090.4,
+  "calorific_value_kcal": null
+ },
+ "location": {
+  "province": "Kalimantan Selatan",
+  "city": "Balangan",
+  "latitude": -2.171642,
+  "longitude": 115.568231
+ },
+ "company_slug": "pt-adaro-indonesia",
+ "company_name": "PT Adaro Indonesia",
+ "slug": "tutupan-utara"
+}

@@ -1,0 +1,921 @@
+{
+ "symbol": "D05.SI",
+ "name": "DBS Group Holdings Ltd",
+ "overview": {
+  "market_cap": 223680600000,
+  "volume": 3764352,
+  "employee_num": 41000.0,
+  "sector": "Financial Services",
+  "sub_sector": "Banks & Credit Services",
+  "tags": [
+   "52-w-high",
+   "90-d-high",
+   "all-time-high",
+   "last-volume-above-10d-volume-average",
+   "top-90d-transaction-value",
+   "ytd-high"
+  ],
+  "last_close_price": 78.65,
+  "change_1d": 0.008980115458627326,
+  "change_7d": 0.03282994090610637,
+  "change_1m": 0.06934058463630184,
+  "change_1y": 0.25318674314850226,
+  "change_3y": 2.08005172453459,
+  "change_ytd": 0.25318674314850226,
+  "all_time_price": {
+   "ytd_low": {
+    "2026-03-09": 52.246315002441406
+   },
+   "52_w_low": {
+    "2025-09-25": 47.70097732543945
+   },
+   "90_d_low": {
+    "2026-06-10": 61.175331115722656
+   },
+   "ytd_high": {
+    "2026-09-04": 78.6500015258789
+   },
+   "52_w_high": {
+    "2026-09-04": 78.6500015258789
+   },
+   "90_d_high": {
+    "2026-09-04": 78.6500015258789
+   },
+   "all_time_low": {
+    "2009-03-09": 2.7012672424316406
+   },
+   "all_time_high": {
+    "2026-09-04": 78.6500015258789
+   }
+  }
+ },
+ "valuation": {
+  "pe": 20.102637,
+  "beta": null,
+  "ps": null,
+  "pcf": null,
+  "pb": 3.187759
+ },
+ "financials": {
+  "historical_financials": {
+   "2021": {
+    "date": "2021-12-31",
+    "revenue": 14171000000,
+    "earnings": 6805000000,
+    "updated_on": "2026-06-19T05:48:02.884828+00:00",
+    "cash_flow_metrics": {
+     "net_cash_flow": 4488000000,
+     "free_cash_flow": 7164000000,
+     "capital_expenditure": 567000000,
+     "financing_cash_flow": -2582000000,
+     "investing_cash_flow": -1601000000,
+     "operating_cash_flow": 7731000000
+    },
+    "income_stmt_metrics": {
+     "income_taxes": 973000000,
+     "pretax_income": 7780000000,
+     "operating_expense": 6122000000,
+     "diluted_shares_outstanding": 2818567400
+    },
+    "balance_sheet_metrics": {
+     "total_asset": 686073000000,
+     "total_equity": 57714000000,
+     "total_liabilities": 628359000000
+    }
+   },
+   "2022": {
+    "date": "2022-12-31",
+    "revenue": 16494000000,
+    "earnings": 8193000000,
+    "updated_on": "2026-06-19T05:48:02.884828+00:00",
+    "cash_flow_metrics": {
+     "net_cash_flow": -2714000000,
+     "free_cash_flow": 2100000000,
+     "capital_expenditure": 669000000,
+     "financing_cash_flow": -3886000000,
+     "investing_cash_flow": -694000000,
+     "operating_cash_flow": 2769000000
+    },
+    "income_stmt_metrics": {
+     "income_taxes": 1188000000,
+     "pretax_income": 9382000000,
+     "operating_expense": 6992000000,
+     "diluted_shares_outstanding": 2830116300,
+     "amortization_of_intangible_assets": 0
+    },
+    "balance_sheet_metrics": {
+     "total_asset": 743368000000,
+     "total_equity": 57072000000,
+     "total_liabilities": 686296000000
+    }
+   },
+   "2023": {
+    "date": "2023-12-31",
+    "revenue": 20134000000,
+    "earnings": 10062000000,
+    "updated_on": "2026-06-19T05:48:02.884828+00:00",
+    "cash_flow_metrics": {
+     "net_cash_flow": -4101000000,
+     "free_cash_flow": 4691000000,
+     "capital_expenditure": 718000000,
+     "financing_cash_flow": -9432000000,
+     "investing_cash_flow": 727000000,
+     "operating_cash_flow": 5409000000
+    },
+    "income_stmt_metrics": {
+     "income_taxes": 1423000000,
+     "pretax_income": 11486000000,
+     "operating_expense": 8378000000,
+     "diluted_shares_outstanding": 2836000000,
+     "amortization_of_intangible_assets": 9000000
+    },
+    "balance_sheet_metrics": {
+     "total_asset": 739301000000,
+     "total_equity": 62247000000,
+     "total_liabilities": 677054000000
+    }
+   },
+   "2024": {
+    "date": "2024-12-31",
+    "revenue": 22297000000,
+    "earnings": 11289000000,
+    "source_url": "https://www.dbs.com/iwov-resources/images/investors/annual-report/dbs-annual-report-2024.pdf?pid=sg-group-pweb-investors-annual-report-2024-pdf",
+    "updated_on": "2025-09-15T12:25:24+00:00",
+    "sankey_component": {
+     "links": [
+      {
+       "value": 3583000000,
+       "source": "Cash and balances with central banks and due from banks",
+       "target": "Interest Income"
+      },
+      {
+       "value": 18112000000,
+       "source": "Customer non-trade loans",
+       "target": "Interest Income"
+      },
+      {
+       "value": 2473000000,
+       "source": "Trade assets",
+       "target": "Interest Income"
+      },
+      {
+       "value": 6759000000,
+       "source": "Securities & others",
+       "target": "Interest Income"
+      },
+      {
+       "value": 14424000000,
+       "source": "Interest Income",
+       "target": "Net Interest Income"
+      },
+      {
+       "value": 16503000000,
+       "source": "Interest Income",
+       "target": "Interest Expense"
+      },
+      {
+       "value": 14424000000,
+       "source": "Net Interest Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 4168000000,
+       "source": "Net Fee and Commission Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 3381000000,
+       "source": "Net Trading Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 324000000,
+       "source": "Other Non Interest Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 12634000000,
+       "source": "Total Revenue",
+       "target": "Operating Income"
+      },
+      {
+       "value": 9663000000,
+       "source": "Total Revenue",
+       "target": "Operating and Credit-Related Expenses"
+      },
+      {
+       "value": 9018000000,
+       "source": "Operating and Credit-Related Expenses",
+       "target": "Operating Expense"
+      },
+      {
+       "value": 622000000,
+       "source": "Operating and Credit-Related Expenses",
+       "target": "Allowances for Credit and Other Losses"
+      },
+      {
+       "value": 23000000,
+       "source": "Operating and Credit-Related Expenses",
+       "target": "Amortization of Intangible Assets"
+      },
+      {
+       "value": 5594000000,
+       "source": "Operating Expense",
+       "target": "Employee benefit"
+      },
+      {
+       "value": 3424000000,
+       "source": "Operating Expense",
+       "target": "Others (expense)"
+      }
+     ],
+     "nodes": [
+      {
+       "id": "Cash and balances with central banks and due from banks",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Customer non-trade loans",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Trade assets",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Securities & others",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Interest Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Interest Expense",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Net Interest Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Net Fee and Commission Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Other Non Interest Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Net Trading Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Total Revenue",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Operating Income",
+       "nodeColor": "hsl(240, 100%, 50%)"
+      },
+      {
+       "id": "Operating and Credit-Related Expenses",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Operating Expense",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Amortization of Intangible Assets",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Allowances for Credit and Other Losses",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Employee benefit",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Others (expense)",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      }
+     ]
+    },
+    "cash_flow_metrics": {
+     "net_cash_flow": 7494000000.0,
+     "free_cash_flow": 14425000000.0,
+     "capital_expenditure": 916000000.0,
+     "financing_cash_flow": -6604000000.0,
+     "investing_cash_flow": -1243000000.0,
+     "operating_cash_flow": 15341000000.0
+    },
+    "employee_breakdown": {
+     "total_employee": 41000
+    },
+    "industry_breakdown": {
+     "non_loan_asset": [
+      {
+       "class": "Earning Asset",
+       "amount": 58646000000,
+       "category": "Cash and balances"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 81539000000,
+       "category": "Government securities and treasury bills"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 80415000000,
+       "category": "Due from banks"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 27897000000,
+       "category": "Derivative assets"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 105053000000,
+       "category": "Bank and corporate securities"
+      },
+      {
+       "class": "Non-Earning Asset",
+       "amount": 29757000000,
+       "category": "Other Assets"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 3073000000,
+       "category": "Associates and joint ventures"
+      },
+      {
+       "class": "Non-Earning Asset",
+       "amount": 3873000000,
+       "category": "Properties and other fixed assets"
+      },
+      {
+       "class": "Non-Earning Asset",
+       "amount": 6372000000,
+       "category": "Goodwill and intangible assets"
+      }
+     ],
+     "customer_breakdown": {
+      "Others": 1844000000,
+      "Consumer": 6469000000,
+      "Instituitional": 6730000000,
+      "Markets Trading": -619000000
+     },
+     "loan_by_economic_sectors": {
+      "Others": 36025000000,
+      "Housing loans": 85746000000,
+      "Manufacturing": 42934000000,
+      "General commerce": 43709000000,
+      "Building and construction": 113451000000,
+      "Transportation, storage and communications": 33599000000,
+      "Financial institutions, investment and holding companies": 39641000000,
+      "Professionals and private individuals (excluding housing loans)": 41579000000
+     }
+    },
+    "income_stmt_metrics": {
+     "minorities": 1000000,
+     "income_taxes": 1594000000,
+     "pretax_income": 12884000000,
+     "interest_income": 30927000000,
+     "interest_expense": 16503000000,
+     "operating_income": 12634000000,
+     "operating_expense": 9018000000,
+     "net_trading_income": 3381000000,
+     "net_interest_income": 14424000000,
+     "int_income_breakdown": [
+      {
+       "class": "Interbank Placement",
+       "amount": 3583000000,
+       "category": "Cash and balances with central banks and due from banks"
+      },
+      {
+       "class": "Loans & Deposits",
+       "amount": 18112000000,
+       "category": "Customer non-trade loans"
+      },
+      {
+       "class": "Loans & Deposits",
+       "amount": 2473000000,
+       "category": "Trade assets"
+      },
+      {
+       "class": "Securities",
+       "amount": 6759000000,
+       "category": "Securities & others"
+      }
+     ],
+     "other_non_interest_income": 324000000,
+     "diluted_shares_outstanding": 2843000000,
+     "operating_expense_breakdown": [
+      {
+       "class": "Salaries & Benefits",
+       "amount": 5594000000,
+       "category": "Employee benefit"
+      },
+      {
+       "class": "Other expenses",
+       "amount": 3424000000,
+       "category": "Others (expense)"
+      }
+     ],
+     "non_operating_income_or_loss": 0,
+     "net_fee_and_commission_income": 4168000000,
+     "amortization_of_intangible_assets": 23000000,
+     "allowances_for_credit_and_other_losses": 622000000
+    },
+    "balance_sheet_metrics": {
+     "net_loan": 430594000000,
+     "credit_rwa": 274670000000,
+     "gross_loan": 436684000000,
+     "market_rwa": 39512000000,
+     "total_asset": 827219000000,
+     "time_deposit": 270664000000,
+     "total_equity": 68833000000,
+     "earning_asset": 787217000000,
+     "total_capital": 65601000000,
+     "total_deposit": 561730000000,
+     "non_loan_asset": 396625000000,
+     "current_account": 107901000000,
+     "operational_rwa": 37820000000,
+     "savings_account": 183165000000,
+     "total_liabilities": 758386000000,
+     "core_capital_tier1": 62386000000,
+     "allowance_for_loans": -6090000000,
+     "total_risk_weighted_asset": 352002000000,
+     "supplementary_capital_tier2": 3215000000,
+     "non_interest_bearing_liabilities": 63313000000,
+     "other_interest_bearing_liabilities": 133343000000
+    }
+   },
+   "2025": {
+    "date": "2025-12-31",
+    "revenue": 22900000000,
+    "earnings": 10933000000,
+    "source_url": "https://www.dbs.com/iwov-resources/images/investors/annual-report/dbs-annual-report-2025.pdf",
+    "updated_on": "2026-08-14T02:07:33+00:00",
+    "sankey_component": {
+     "links": [
+      {
+       "value": 2665000000,
+       "source": "Placement and balances with banks",
+       "target": "Interest Income"
+      },
+      {
+       "value": 16174000000,
+       "source": "Loans to customers",
+       "target": "Interest Income"
+      },
+      {
+       "value": 2103000000,
+       "source": "Trade assets",
+       "target": "Interest Income"
+      },
+      {
+       "value": 7326000000,
+       "source": "Securities & others",
+       "target": "Interest Income"
+      },
+      {
+       "value": 14500000000,
+       "source": "Interest Income",
+       "target": "Net Interest Income"
+      },
+      {
+       "value": 13768000000,
+       "source": "Interest Income",
+       "target": "Interest Expense"
+      },
+      {
+       "value": 14500000000,
+       "source": "Net Interest Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 4898000000,
+       "source": "Net Fee and Commission Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 3361000000,
+       "source": "Net Trading Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 141000000,
+       "source": "Other Non Interest Income",
+       "target": "Total Revenue"
+      },
+      {
+       "value": 12737000000,
+       "source": "Total Revenue",
+       "target": "Operating Income"
+      },
+      {
+       "value": 10163000000,
+       "source": "Total Revenue",
+       "target": "Operating and Credit-Related Expenses"
+      },
+      {
+       "value": 9349000000,
+       "source": "Operating and Credit-Related Expenses",
+       "target": "Operating Expense"
+      },
+      {
+       "value": 791000000,
+       "source": "Operating and Credit-Related Expenses",
+       "target": "Allowances for Credit and Other Losses"
+      },
+      {
+       "value": 23000000,
+       "source": "Operating and Credit-Related Expenses",
+       "target": "Amortization of Intangible Assets"
+      },
+      {
+       "value": 5832000000,
+       "source": "Operating Expense",
+       "target": "Employee benefit"
+      },
+      {
+       "value": 3517000000,
+       "source": "Operating Expense",
+       "target": "Others (expense)"
+      }
+     ],
+     "nodes": [
+      {
+       "id": "Placement and balances with banks",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Loans to customers",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Trade assets",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Securities & others",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Interest Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Interest Expense",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Net Interest Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Net Fee and Commission Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Other Non Interest Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Net Trading Income",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Total Revenue",
+       "nodeColor": "hsl(195, 53%, 79%)"
+      },
+      {
+       "id": "Operating Income",
+       "nodeColor": "hsl(240, 100%, 50%)"
+      },
+      {
+       "id": "Operating and Credit-Related Expenses",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Operating Expense",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Amortization of Intangible Assets",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Allowances for Credit and Other Losses",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Employee benefit",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      },
+      {
+       "id": "Others (expense)",
+       "nodeColor": "hsl(39, 100%, 50%)"
+      }
+     ]
+    },
+    "cash_flow_metrics": {
+     "net_cash_flow": -864000000,
+     "free_cash_flow": 10108000000,
+     "capital_expenditure": 916000000,
+     "financing_cash_flow": -11180000000,
+     "investing_cash_flow": -708000000,
+     "operating_cash_flow": 11024000000
+    },
+    "industry_breakdown": {
+     "non_loan_asset": [
+      {
+       "class": "Earning Asset",
+       "amount": 55844000000,
+       "category": "Cash and balances"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 107361000000,
+       "category": "Government securities and treasury bills"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 93881000000,
+       "category": "Due from banks"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 23621000000,
+       "category": "Derivative assets"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 128380000000,
+       "category": "Bank and corporate securities"
+      },
+      {
+       "class": "Non-Earning Asset",
+       "amount": 30100000000,
+       "category": "Other Assets"
+      },
+      {
+       "class": "Earning Asset",
+       "amount": 3490000000,
+       "category": "Associates and joint ventures"
+      },
+      {
+       "class": "Non-Earning Asset",
+       "amount": 3486000000,
+       "category": "Properties and other fixed assets"
+      },
+      {
+       "class": "Non-Earning Asset",
+       "amount": 6314000000,
+       "category": "Goodwill and intangible assets"
+      }
+     ],
+     "customer_breakdown": {
+      "Others": 6000000,
+      "Consumer": 6106000000,
+      "Institutional": 6268000000,
+      "Markets Trading": 2120000000
+     },
+     "loan_by_economic_sectors": {
+      "Others": 39091000000,
+      "Housing loans": 84012000000,
+      "Manufacturing": 46829000000,
+      "General commerce": 45576000000,
+      "Building and construction": 111925000000,
+      "Transportation, storage and communications": 33703000000,
+      "Financial institutions, investment and holding companies": 45343000000,
+      "Professionals and private individuals (excluding housing loans)": 44437000000
+     }
+    },
+    "income_stmt_metrics": {
+     "minorities": 1000000,
+     "income_taxes": 2065000000,
+     "pretax_income": 12999000000,
+     "interest_income": 28268000000,
+     "interest_expense": 13768000000,
+     "operating_income": 12737000000,
+     "operating_expense": 9349000000,
+     "net_trading_income": 3361000000,
+     "net_interest_income": 14500000000,
+     "int_income_breakdown": [
+      {
+       "class": "Interbank Placement",
+       "amount": 2665000000,
+       "category": "Placement and balances with banks"
+      },
+      {
+       "class": "Loans & Deposits",
+       "amount": 16174000000,
+       "category": "Loans to customers"
+      },
+      {
+       "class": "Marketable Securities",
+       "amount": 2103000000,
+       "category": "Trade assets"
+      },
+      {
+       "class": "Securities",
+       "amount": 7326000000,
+       "category": "Securities & others"
+      }
+     ],
+     "other_non_interest_income": 141000000,
+     "diluted_shares_outstanding": 2850000000,
+     "operating_expense_breakdown": [
+      {
+       "class": "Salaries & Benefits",
+       "amount": 5832000000,
+       "category": "Employee benefit"
+      },
+      {
+       "class": "Other expenses",
+       "amount": 3517000000,
+       "category": "Others (expense)"
+      }
+     ],
+     "non_operating_income_or_loss": 0,
+     "net_fee_and_commission_income": 4898000000,
+     "amortization_of_intangible_assets": 23000000,
+     "allowances_for_credit_and_other_losses": 791000000
+    },
+    "balance_sheet_metrics": {
+     "net_loan": 445011000000,
+     "credit_rwa": 288007000000,
+     "gross_loan": 450916000000,
+     "market_rwa": 35733000000,
+     "total_asset": 897488000000,
+     "time_deposit": 277537000000,
+     "total_equity": 68916000000,
+     "earning_asset": 857588000000,
+     "total_capital": 65446000000,
+     "total_deposit": 610023000000,
+     "non_loan_asset": 452477000000,
+     "current_account": 123498000000,
+     "operational_rwa": 41641000000,
+     "savings_account": 208988000000,
+     "total_liabilities": 828572000000,
+     "core_capital_tier1": 62195000000,
+     "allowance_for_loans": -5905000000,
+     "total_risk_weighted_asset": 365381000000,
+     "supplementary_capital_tier2": 3251000000,
+     "non_interest_bearing_liabilities": 36506000000,
+     "other_interest_bearing_liabilities": 182043000000
+    }
+   }
+  },
+  "eps": null,
+  "gross_margin": 0.0,
+  "operating_margin": null,
+  "net_profit_margin": 0.477351,
+  "one_year_eps_growth": 0.0785,
+  "one_year_sales_growth": 0.030517,
+  "quick_ratio": null,
+  "current_ratio": null,
+  "debt_to_equity": 1.089114
+ },
+ "dividend": {
+  "dividend_yield_5y_avg": 0.0464,
+  "dividend_growth_rate": -0.147368421052632,
+  "payout_ratio": 0.7975,
+  "forward_dividend": 3.18,
+  "forward_dividend_yield": 0.0418,
+  "dividend_ttm": 3.18,
+  "historical_dividends": {
+   "2022": {
+    "breakdown": [
+     {
+      "date": "2022-04-08",
+      "total": 0.32727,
+      "yield": 0.01047
+     },
+     {
+      "date": "2022-05-11",
+      "total": 0.32727,
+      "yield": 0.01128
+     },
+     {
+      "date": "2022-08-15",
+      "total": 0.32727,
+      "yield": 0.01098
+     },
+     {
+      "date": "2022-11-11",
+      "total": 0.32727,
+      "yield": 0.01035
+     }
+    ],
+    "total_yield": 0.04308,
+    "total_dividend": 1.30909
+   },
+   "2023": {
+    "breakdown": [
+     {
+      "date": "2023-04-10",
+      "total": 0.83636,
+      "yield": 0.0284
+     },
+     {
+      "date": "2023-05-09",
+      "total": 0.38182,
+      "yield": 0.01325
+     },
+     {
+      "date": "2023-08-11",
+      "total": 0.43636,
+      "yield": 0.01428
+     },
+     {
+      "date": "2023-11-14",
+      "total": 0.43636,
+      "yield": 0.01472
+     }
+    ],
+    "total_yield": 0.07065,
+    "total_dividend": 2.09091
+   },
+   "2024": {
+    "breakdown": [
+     {
+      "date": "2024-04-05",
+      "total": 0.49091,
+      "yield": 0.01521
+     },
+     {
+      "date": "2024-05-09",
+      "total": 0.54,
+      "yield": 0.01531
+     },
+     {
+      "date": "2024-08-15",
+      "total": 0.54,
+      "yield": 0.01554
+     },
+     {
+      "date": "2024-11-14",
+      "total": 0.54,
+      "yield": 0.01255
+     }
+    ],
+    "total_yield": 0.05861,
+    "total_dividend": 2.11091
+   },
+   "2025": {
+    "breakdown": [
+     {
+      "date": "2025-04-07",
+      "total": 0.6,
+      "yield": 0.01527
+     },
+     {
+      "date": "2025-05-16",
+      "total": 0.75,
+      "yield": 0.01682
+     },
+     {
+      "date": "2025-08-14",
+      "total": 0.75,
+      "yield": 0.01485
+     },
+     {
+      "date": "2025-11-13",
+      "total": 0.75,
+      "yield": 0.01384
+     }
+    ],
+    "total_yield": 0.06078,
+    "total_dividend": 2.85
+   },
+   "2026": {
+    "breakdown": [
+     {
+      "date": "2026-04-08",
+      "total": 0.81,
+      "yield": 0.01414
+     },
+     {
+      "date": "2026-05-11",
+      "total": 0.81,
+      "yield": 0.01378
+     },
+     {
+      "date": "2026-08-14",
+      "total": 0.81,
+      "yield": 0.01072
+     }
+    ],
+    "total_yield": 0.03864,
+    "total_dividend": 2.43
+   }
+  }
+ }
+}

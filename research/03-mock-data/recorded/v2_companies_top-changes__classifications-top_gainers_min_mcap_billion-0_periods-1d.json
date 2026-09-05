@@ -1,0 +1,41 @@
+{
+ "top_gainers": {
+  "1d": [
+   {
+    "name": "PT Pakuan Tbk",
+    "symbol": "UANG.JK",
+    "price_change": 0.249221183800623,
+    "last_close_price": 4010,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Aracord Nusantara Group Tbk",
+    "symbol": "RONY.JK",
+    "price_change": 0.24901185770751,
+    "last_close_price": 1580,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "Golden Eagle Energy Tbk",
+    "symbol": "SMMT.JK",
+    "price_change": 0.248803827751196,
+    "last_close_price": 2610,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Super Energy Tbk",
+    "symbol": "SURE.JK",
+    "price_change": 0.247148288973384,
+    "last_close_price": 3280,
+    "latest_close_date": "2026-09-04"
+   },
+   {
+    "name": "PT Olympus Strategic Indonesia Tbk",
+    "symbol": "NATO.JK",
+    "price_change": 0.246305418719212,
+    "last_close_price": 1265,
+    "latest_close_date": "2026-09-04"
+   }
+  ]
+ }
+}

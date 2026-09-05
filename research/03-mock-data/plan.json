@@ -1,5 +1,5 @@
 {
-  "name": "Sectors golden pull — record once, replay forever",
+  "name": "Sectors golden pull \u2014 record once, replay forever",
   "grant": 1000,
   "basket": [
     "BBCA",
@@ -21,7 +21,8 @@
     "Costs are the spec's DECLARED costs. Reconcile against the ledger after tier 0.",
     "Tier 0 first, always: it validates every slug the later tiers depend on.",
     "404 costs 1 credit, so never call a symbol not present in a tier-0/tier-1 result.",
-    "sections / classifications / periods are constrained everywhere on purpose."
+    "sections / classifications / periods are constrained everywhere on purpose.",
+    "Corrected 2026-09-06 against the live API: two mining calls were missing required parameters, and the listing-performance basket 404'd on every blue chip."
   ],
   "calls": [
     {
@@ -29,28 +30,28 @@
       "path": "/v2/subsectors/",
       "params": {},
       "est_cost": 1,
-      "note": "taxonomy — cache forever, validates every later slug"
+      "note": "taxonomy \u2014 cache forever, validates every later slug"
     },
     {
       "tier": 0,
       "path": "/v2/industries/",
       "params": {},
       "est_cost": 1,
-      "note": "taxonomy — cache forever, validates every later slug"
+      "note": "taxonomy \u2014 cache forever, validates every later slug"
     },
     {
       "tier": 0,
       "path": "/v2/subindustries/",
       "params": {},
       "est_cost": 1,
-      "note": "taxonomy — cache forever, validates every later slug"
+      "note": "taxonomy \u2014 cache forever, validates every later slug"
     },
     {
       "tier": 0,
       "path": "/v2/tags/",
       "params": {},
       "est_cost": 1,
-      "note": "taxonomy — cache forever, validates every later slug"
+      "note": "taxonomy \u2014 cache forever, validates every later slug"
     },
     {
       "tier": 0,
@@ -68,7 +69,7 @@
         "limit": 200
       },
       "est_cost": 1,
-      "note": "200 large caps in ONE credit — best value in the API"
+      "note": "200 large caps in ONE credit \u2014 best value in the API"
     },
     {
       "tier": 1,
@@ -108,7 +109,7 @@
         "min_mcap_billion": 0
       },
       "est_cost": 1,
-      "note": "CONSTRAINED — defaults would cost 10 and hide sub-5T caps"
+      "note": "CONSTRAINED \u2014 defaults would cost 10 and hide sub-5T caps"
     },
     {
       "tier": 1,
@@ -172,7 +173,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -188,7 +189,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -204,7 +205,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -220,7 +221,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -236,7 +237,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -252,7 +253,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -268,7 +269,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -284,7 +285,7 @@
         "sections": "overview"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 8 = 8 credits"
+      "note": "ONE section \u2014 default is all 8 = 8 credits"
     },
     {
       "tier": 1,
@@ -415,10 +416,10 @@
     },
     {
       "tier": 3,
-      "path": "/v2/listing-performance/BBCA/",
+      "path": "/v2/listing-performance/BREN/",
       "params": {},
       "est_cost": 1,
-      "note": ""
+      "note": "listing performance exists only for tickers listed after May 2005 \u2014 BBCA/BBRI/TLKM/ADRO all 404, and a 404 bills 1 credit"
     },
     {
       "tier": 3,
@@ -453,13 +454,6 @@
     {
       "tier": 3,
       "path": "/v2/company/shareholders-composition/BBRI/",
-      "params": {},
-      "est_cost": 1,
-      "note": ""
-    },
-    {
-      "tier": 3,
-      "path": "/v2/listing-performance/BBRI/",
       "params": {},
       "est_cost": 1,
       "note": ""
@@ -503,13 +497,6 @@
     },
     {
       "tier": 3,
-      "path": "/v2/listing-performance/TLKM/",
-      "params": {},
-      "est_cost": 1,
-      "note": ""
-    },
-    {
-      "tier": 3,
       "path": "/v2/broker-summary/ADRO/top/",
       "params": {},
       "est_cost": 2,
@@ -547,13 +534,6 @@
     },
     {
       "tier": 3,
-      "path": "/v2/listing-performance/ADRO/",
-      "params": {},
-      "est_cost": 1,
-      "note": ""
-    },
-    {
-      "tier": 3,
       "path": "/v2/brokers/top/",
       "params": {
         "metric": "net"
@@ -575,7 +555,7 @@
         "sections": "statistics"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 6"
+      "note": "ONE section \u2014 default is all 6"
     },
     {
       "tier": 3,
@@ -584,7 +564,7 @@
         "sections": "statistics"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 6"
+      "note": "ONE section \u2014 default is all 6"
     },
     {
       "tier": 3,
@@ -593,70 +573,75 @@
         "sections": "statistics"
       },
       "est_cost": 1,
-      "note": "ONE section — default is all 6"
+      "note": "ONE section \u2014 default is all 6"
     },
     {
       "tier": 4,
       "path": "/v2/mining/commodities/",
       "params": {},
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist"
     },
     {
       "tier": 4,
       "path": "/v2/mining/companies/",
       "params": {},
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist"
     },
     {
       "tier": 4,
       "path": "/v2/mining/sites/",
       "params": {},
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist"
     },
     {
       "tier": 4,
       "path": "/v2/mining/licenses/",
       "params": {},
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist"
     },
     {
       "tier": 4,
       "path": "/v2/mining/license-auctions/",
       "params": {},
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist"
     },
     {
       "tier": 4,
       "path": "/v2/mining/total-production/",
-      "params": {},
+      "params": {
+        "commodity_type": "Coal"
+      },
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist \u2014 commodity_type is REQUIRED; live returns a free 400 without it"
     },
     {
       "tier": 4,
       "path": "/v2/mining/resources-reserves/",
       "params": {},
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist"
     },
     {
       "tier": 4,
       "path": "/v2/mining/exports/",
-      "params": {},
+      "params": {
+        "commodity_type": "Coal",
+        "year": 2024
+      },
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist \u2014 year AND commodity_type are REQUIRED; live returns a free 400 without them"
     },
     {
       "tier": 4,
       "path": "/v2/mining/contracts/",
       "params": {},
       "est_cost": 1,
-      "note": "mining — zero recipes exist"
+      "note": "mining \u2014 zero recipes exist"
     },
     {
       "tier": 4,

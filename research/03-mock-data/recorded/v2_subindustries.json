@@ -1,0 +1,410 @@
+[
+ {
+  "industry": "forestry-paper",
+  "sub_industry": "paper"
+ },
+ {
+  "industry": "metals-minerals",
+  "sub_industry": "diversified-metals-minerals"
+ },
+ {
+  "industry": "electrical",
+  "sub_industry": "electrical-components-equipment"
+ },
+ {
+  "industry": "household-goods",
+  "sub_industry": "housewares-specialties"
+ },
+ {
+  "industry": "forestry-paper",
+  "sub_industry": "diversified-forest"
+ },
+ {
+  "industry": "healthcare-equipment-supplies",
+  "sub_industry": "healthcare-equipment"
+ },
+ {
+  "industry": "entertainment-movie-production",
+  "sub_industry": "entertainment-movie-production"
+ },
+ {
+  "industry": "insurance",
+  "sub_industry": "life-insurance"
+ },
+ {
+  "industry": "machinery",
+  "sub_industry": "construction-machinery-heavy-vehicles"
+ },
+ {
+  "industry": "forestry-paper",
+  "sub_industry": "timber"
+ },
+ {
+  "industry": "alternative-energy-equipment",
+  "sub_industry": "alternative-energy-equipment"
+ },
+ {
+  "industry": "investment-services",
+  "sub_industry": "investment-banking-brokerage-services"
+ },
+ {
+  "industry": "investment-services",
+  "sub_industry": "investment-management"
+ },
+ {
+  "industry": "oil-gas",
+  "sub_industry": "oil-gas-production-refinery"
+ },
+ {
+  "industry": "personal-care-products",
+  "sub_industry": "personal-care-products"
+ },
+ {
+  "industry": "passenger-land-transportation",
+  "sub_industry": "road-transportation"
+ },
+ {
+  "industry": "agricultural-products",
+  "sub_industry": "fish-meat-poultry"
+ },
+ {
+  "industry": "software",
+  "sub_industry": "software"
+ },
+ {
+  "industry": "commercial-services",
+  "sub_industry": "office-supplies"
+ },
+ {
+  "industry": "tourism-recreation",
+  "sub_industry": "recreational-sports-facilities"
+ },
+ {
+  "industry": "gas-utilities",
+  "sub_industry": "gas-utilities"
+ },
+ {
+  "industry": "sport-equipment-hobbies-goods",
+  "sub_industry": "sport-equipment-hobbies-goods"
+ },
+ {
+  "industry": "oil-gas-coal-supports",
+  "sub_industry": "oil-gas-drilling-service"
+ },
+ {
+  "industry": "electric-utilities",
+  "sub_industry": "electric-utilities"
+ },
+ {
+  "industry": "healthcare-equipment-supplies",
+  "sub_industry": "healthcare-supplies-distributions"
+ },
+ {
+  "industry": "metals-minerals",
+  "sub_industry": "gold"
+ },
+ {
+  "industry": "specialty-retail",
+  "sub_industry": "apparel-textile-retail"
+ },
+ {
+  "industry": "metals-minerals",
+  "sub_industry": "iron-steel"
+ },
+ {
+  "industry": "pharmaceuticals",
+  "sub_industry": "pharmaceuticals"
+ },
+ {
+  "industry": "insurance",
+  "sub_industry": "reinsurance"
+ },
+ {
+  "industry": "consumer-financing",
+  "sub_industry": "consumer-financing"
+ },
+ {
+  "industry": "transport-infrastructure-operator",
+  "sub_industry": "marine-ports-services"
+ },
+ {
+  "industry": "diversified-industrial-trading",
+  "sub_industry": "diversified-industrial-trading"
+ },
+ {
+  "industry": "food-staples-retailing",
+  "sub_industry": "food-retail-distributors"
+ },
+ {
+  "industry": "processed-foods",
+  "sub_industry": "dairy-products"
+ },
+ {
+  "industry": "networking-equipment",
+  "sub_industry": "networking-equipment"
+ },
+ {
+  "industry": "heavy-constructions-civil-engineering",
+  "sub_industry": "heavy-constructions-civil-engineering"
+ },
+ {
+  "industry": "commercial-services",
+  "sub_industry": "business-support-services"
+ },
+ {
+  "industry": "real-estate-management-development",
+  "sub_industry": "real-estate-services"
+ },
+ {
+  "industry": "transport-infrastructure-operator",
+  "sub_industry": "airport-operators"
+ },
+ {
+  "industry": "specialty-retail",
+  "sub_industry": "electronics-retail"
+ },
+ {
+  "industry": "telecommunication-service",
+  "sub_industry": "wired-telecommunication-service"
+ },
+ {
+  "industry": "electronic-equipment-instruments-components",
+  "sub_industry": "electronic-equipment-instruments"
+ },
+ {
+  "industry": "professional-services",
+  "sub_industry": "human-resource-employment-services"
+ },
+ {
+  "industry": "it-services-consulting",
+  "sub_industry": "it-services-consulting"
+ },
+ {
+  "industry": "apparel-luxury-goods",
+  "sub_industry": "clothing-accessories-bags"
+ },
+ {
+  "industry": "agricultural-products",
+  "sub_industry": "plantations-crops"
+ },
+ {
+  "industry": "computer-hardware",
+  "sub_industry": "computer-hardware"
+ },
+ {
+  "industry": "airlines",
+  "sub_industry": "airlines"
+ },
+ {
+  "industry": "apparel-luxury-goods",
+  "sub_industry": "footwear"
+ },
+ {
+  "industry": "metals-minerals",
+  "sub_industry": "aluminum"
+ },
+ {
+  "industry": "insurance",
+  "sub_industry": "general-insurance"
+ },
+ {
+  "industry": "commercial-services",
+  "sub_industry": "environmental-facilities-services"
+ },
+ {
+  "industry": "media",
+  "sub_industry": "cable-satellite"
+ },
+ {
+  "industry": "telecommunication-service",
+  "sub_industry": "integrated-telecommunication-service"
+ },
+ {
+  "industry": "chemicals",
+  "sub_industry": "specialty-chemicals"
+ },
+ {
+  "industry": "consumer-distributors",
+  "sub_industry": "consumer-distributors"
+ },
+ {
+  "industry": "tobacco",
+  "sub_industry": "tobacco"
+ },
+ {
+  "industry": "coal",
+  "sub_industry": "coal-production"
+ },
+ {
+  "industry": "holding-investment-companies",
+  "sub_industry": "financial-holdings"
+ },
+ {
+  "industry": "chemicals",
+  "sub_industry": "agricultural-chemicals"
+ },
+ {
+  "industry": "education-support-services",
+  "sub_industry": "education-services"
+ },
+ {
+  "industry": "multi-sector-holdings",
+  "sub_industry": "multi-sector-holdings"
+ },
+ {
+  "industry": "auto-components",
+  "sub_industry": "auto-parts-equipment"
+ },
+ {
+  "industry": "food-staples-retailing",
+  "sub_industry": "supermarkets-convenience-store"
+ },
+ {
+  "industry": "logistics-deliveries",
+  "sub_industry": "logistics-deliveries"
+ },
+ {
+  "industry": "media",
+  "sub_industry": "broadcasting"
+ },
+ {
+  "industry": "consumer-electronics",
+  "sub_industry": "consumer-electronics"
+ },
+ {
+  "industry": "oil-gas",
+  "sub_industry": "oil-gas-storage-distribution"
+ },
+ {
+  "industry": "food-staples-retailing",
+  "sub_industry": "drug-retail-distributors"
+ },
+ {
+  "industry": "media",
+  "sub_industry": "consumer-publishing"
+ },
+ {
+  "industry": "tourism-recreation",
+  "sub_industry": "restaurants"
+ },
+ {
+  "industry": "metals-minerals",
+  "sub_industry": "cooper"
+ },
+ {
+  "industry": "household-goods",
+  "sub_industry": "home-furnishings"
+ },
+ {
+  "industry": "apparel-luxury-goods",
+  "sub_industry": "textiles"
+ },
+ {
+  "industry": "online-applications-services",
+  "sub_industry": "online-applications-services"
+ },
+ {
+  "industry": "specialty-retail",
+  "sub_industry": "home-improvement-retail"
+ },
+ {
+  "industry": "media",
+  "sub_industry": "advertising"
+ },
+ {
+  "industry": "machinery",
+  "sub_industry": "industrial-machinery-components"
+ },
+ {
+  "industry": "wireless-telecommunication-services",
+  "sub_industry": "wireless-telecommunication-services"
+ },
+ {
+  "industry": "specialty-retail",
+  "sub_industry": "automotive-retail"
+ },
+ {
+  "industry": "commercial-services",
+  "sub_industry": "commercial-printing"
+ },
+ {
+  "industry": "banks",
+  "sub_industry": "banks"
+ },
+ {
+  "industry": "building-products-fixtures",
+  "sub_industry": "building-products-fixtures"
+ },
+ {
+  "industry": "auto-components",
+  "sub_industry": "tires"
+ },
+ {
+  "industry": "holding-investment-companies",
+  "sub_industry": "investment-companies"
+ },
+ {
+  "industry": "real-estate-management-development",
+  "sub_industry": "real-estate-development-management"
+ },
+ {
+  "industry": "household-goods",
+  "sub_industry": "household-appliances"
+ },
+ {
+  "industry": "professional-services",
+  "sub_industry": "research-consulting-services"
+ },
+ {
+  "industry": "construction-materials",
+  "sub_industry": "construction-materials"
+ },
+ {
+  "industry": "beverages",
+  "sub_industry": "soft-drinks"
+ },
+ {
+  "industry": "healthcare-providers",
+  "sub_industry": "healthcare-providers"
+ },
+ {
+  "industry": "oil-gas-coal-supports",
+  "sub_industry": "oil-gas-coal-equipment-services"
+ },
+ {
+  "industry": "tourism-recreation",
+  "sub_industry": "travel-agencies"
+ },
+ {
+  "industry": "chemicals",
+  "sub_industry": "basic-chemicals"
+ },
+ {
+  "industry": "coal",
+  "sub_industry": "coal-distribution"
+ },
+ {
+  "industry": "department-stores",
+  "sub_industry": "department-stores"
+ },
+ {
+  "industry": "tourism-recreation",
+  "sub_industry": "hotels-resorts-cruise-lines"
+ },
+ {
+  "industry": "containers-packaging",
+  "sub_industry": "containers-packaging"
+ },
+ {
+  "industry": "processed-foods",
+  "sub_industry": "processed-foods"
+ },
+ {
+  "industry": "beverages",
+  "sub_industry": "liquors"
+ },
+ {
+  "industry": "transport-infrastructure-operator",
+  "sub_industry": "highways-railtracks"
+ }
+]

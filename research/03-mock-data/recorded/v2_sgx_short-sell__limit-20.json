@@ -1,0 +1,154 @@
+{
+ "results": [
+  {
+   "name": "southernalliance",
+   "symbol": "QNS.SI",
+   "date": "2026-09-04",
+   "volume": 10500,
+   "value": 4410.0
+  },
+  {
+   "name": "aspial lifestyle",
+   "symbol": "5UF.SI",
+   "date": "2026-09-04",
+   "volume": 4100,
+   "value": 1455.5
+  },
+  {
+   "name": "kimly",
+   "symbol": "1D0.SI",
+   "date": "2026-09-04",
+   "volume": 31600,
+   "value": 12956.0
+  },
+  {
+   "name": "mencast",
+   "symbol": "5NF.SI",
+   "date": "2026-09-04",
+   "volume": 16400,
+   "value": 1476.0
+  },
+  {
+   "name": "aims apac reit",
+   "symbol": "O5RU.SI",
+   "date": "2026-09-04",
+   "volume": 258600,
+   "value": 376355.0
+  },
+  {
+   "name": "alpha integrated reit",
+   "symbol": "M1GU.SI",
+   "date": "2026-09-04",
+   "volume": 2400,
+   "value": 1164.0
+  },
+  {
+   "name": "capallianz",
+   "symbol": "594.SI",
+   "date": "2026-09-04",
+   "volume": 50000,
+   "value": 100.0
+  },
+  {
+   "name": "jubilee",
+   "symbol": "NHD.SI",
+   "date": "2026-09-04",
+   "volume": 50000,
+   "value": 2650.0
+  },
+  {
+   "name": "metaoptics ltd",
+   "symbol": "9MT.SI",
+   "date": "2026-09-04",
+   "volume": 400,
+   "value": 177.5
+  },
+  {
+   "name": "medtecs intl",
+   "symbol": "546.SI",
+   "date": "2026-09-04",
+   "volume": 120400,
+   "value": 14568.4
+  },
+  {
+   "name": "trendlines",
+   "symbol": "42T.SI",
+   "date": "2026-09-04",
+   "volume": 67200,
+   "value": 3561.6
+  },
+  {
+   "name": "aem sgd",
+   "symbol": "AWX.SI",
+   "date": "2026-09-04",
+   "volume": 214900,
+   "value": 1862260.0
+  },
+  {
+   "name": "asti",
+   "symbol": "575.SI",
+   "date": "2026-09-04",
+   "volume": 38500,
+   "value": 4427.5
+  },
+  {
+   "name": "addvalue tech",
+   "symbol": "A31.SI",
+   "date": "2026-09-04",
+   "volume": 7739000,
+   "value": 1534950.0
+  },
+  {
+   "name": "accrelist ltd",
+   "symbol": "QZG.SI",
+   "date": "2026-09-04",
+   "volume": 92200,
+   "value": 14609.0
+  },
+  {
+   "name": "aoxin q & m",
+   "symbol": "1D4.SI",
+   "date": "2026-09-04",
+   "volume": 106100,
+   "value": 21113.9
+  },
+  {
+   "name": "huationg global",
+   "symbol": "41B.SI",
+   "date": "2026-09-04",
+   "volume": 800,
+   "value": 436.5
+  },
+  {
+   "name": "isoteam",
+   "symbol": "5WF.SI",
+   "date": "2026-09-04",
+   "volume": 79800,
+   "value": 5229.9
+  },
+  {
+   "name": "koh eco",
+   "symbol": "5HV.SI",
+   "date": "2026-09-04",
+   "volume": 26700,
+   "value": 2242.8
+  },
+  {
+   "name": "avepoint",
+   "symbol": "AVP.SI",
+   "date": "2026-09-04",
+   "volume": 7020,
+   "value": 121425.0
+  }
+ ],
+ "pagination": {
+  "total_count": 20217,
+  "showing": 20,
+  "limit": 20,
+  "offset": 0,
+  "has_next": true,
+  "has_previous": false,
+  "next_offset": 20,
+  "previous_offset": null
+ }
+}

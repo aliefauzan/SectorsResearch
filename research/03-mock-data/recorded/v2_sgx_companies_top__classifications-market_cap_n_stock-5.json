@@ -1,0 +1,29 @@
+{
+ "market_cap": [
+  {
+   "symbol": "D05.SI",
+   "market_cap": 223680600000,
+   "company_name": "DBS Group Holdings Ltd"
+  },
+  {
+   "symbol": "O39.SI",
+   "market_cap": 144920840523,
+   "company_name": "Oversea-Chinese Banking Corp Ltd"
+  },
+  {
+   "symbol": "Z74.SI",
+   "market_cap": 73696635499,
+   "company_name": "Singapore Telecommunications Ltd"
+  },
+  {
+   "symbol": "U11.SI",
+   "market_cap": 69353552820,
+   "company_name": "United Overseas Bank Ltd"
+  },
+  {
+   "symbol": "O6Z.SI",
+   "market_cap": 63587790573,
+   "company_name": "Lonza Group Ltd"
+  }
+ ]
+}

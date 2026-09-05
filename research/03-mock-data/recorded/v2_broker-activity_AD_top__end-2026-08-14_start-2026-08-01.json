@@ -1,0 +1,149 @@
+{
+ "broker_code": "AD",
+ "start": "2026-08-01",
+ "end": "2026-08-14",
+ "top_accumulations": [
+  {
+   "rank": 1,
+   "symbol": "TPIA.JK",
+   "net_idr": 1954880000,
+   "buy_idr": 3022010000,
+   "sell_idr": 1067130000
+  },
+  {
+   "rank": 2,
+   "symbol": "BMRI.JK",
+   "net_idr": 1245000000,
+   "buy_idr": 1245000000,
+   "sell_idr": 0
+  },
+  {
+   "rank": 3,
+   "symbol": "BKSL.JK",
+   "net_idr": 777155000,
+   "buy_idr": 800440000,
+   "sell_idr": 23285000
+  },
+  {
+   "rank": 4,
+   "symbol": "GIAA.JK",
+   "net_idr": 603910600,
+   "buy_idr": 1244073600,
+   "sell_idr": 640163000
+  },
+  {
+   "rank": 5,
+   "symbol": "LPKR.JK",
+   "net_idr": 501600000,
+   "buy_idr": 501600000,
+   "sell_idr": 0
+  },
+  {
+   "rank": 6,
+   "symbol": "ARTO.JK",
+   "net_idr": 266575000,
+   "buy_idr": 281370000,
+   "sell_idr": 14795000
+  },
+  {
+   "rank": 7,
+   "symbol": "KPIG.JK",
+   "net_idr": 192740000,
+   "buy_idr": 205550000,
+   "sell_idr": 12810000
+  },
+  {
+   "rank": 8,
+   "symbol": "EURO.JK",
+   "net_idr": 113988000,
+   "buy_idr": 113988000,
+   "sell_idr": 0
+  },
+  {
+   "rank": 9,
+   "symbol": "BABY.JK",
+   "net_idr": 110158600,
+   "buy_idr": 1993138300,
+   "sell_idr": 1882979700
+  },
+  {
+   "rank": 10,
+   "symbol": "BUVA.JK",
+   "net_idr": 69067500,
+   "buy_idr": 447375000,
+   "sell_idr": 378307500
+  }
+ ],
+ "top_distributions": [
+  {
+   "rank": 1,
+   "symbol": "BNBR.JK",
+   "net_idr": -1553399300,
+   "buy_idr": 3527805000,
+   "sell_idr": 5081204300
+  },
+  {
+   "rank": 2,
+   "symbol": "BUMI.JK",
+   "net_idr": -523820000,
+   "buy_idr": 601440000,
+   "sell_idr": 1125260000
+  },
+  {
+   "rank": 3,
+   "symbol": "AGRO.JK",
+   "net_idr": -261231200,
+   "buy_idr": 0,
+   "sell_idr": 261231200
+  },
+  {
+   "rank": 4,
+   "symbol": "DATA.JK",
+   "net_idr": -196402000,
+   "buy_idr": 0,
+   "sell_idr": 196402000
+  },
+  {
+   "rank": 5,
+   "symbol": "LAND.JK",
+   "net_idr": -47586000,
+   "buy_idr": 124000000,
+   "sell_idr": 171586000
+  },
+  {
+   "rank": 6,
+   "symbol": "PSDN.JK",
+   "net_idr": -25000000,
+   "buy_idr": 0,
+   "sell_idr": 25000000
+  },
+  {
+   "rank": 7,
+   "symbol": "IRSX.JK",
+   "net_idr": -18995600,
+   "buy_idr": 14960000,
+   "sell_idr": 33955600
+  },
+  {
+   "rank": 8,
+   "symbol": "KBLV.JK",
+   "net_idr": -15133800,
+   "buy_idr": 500880200,
+   "sell_idr": 516014000
+  },
+  {
+   "rank": 9,
+   "symbol": "DOOH.JK",
+   "net_idr": -14082200,
+   "buy_idr": 91759600,
+   "sell_idr": 105841800
+  },
+  {
+   "rank": 10,
+   "symbol": "INDF.JK",
+   "net_idr": -13965000,
+   "buy_idr": 0,
+   "sell_idr": 13965000
+  }
+ ]
+}
