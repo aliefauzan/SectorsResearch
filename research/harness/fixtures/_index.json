@@ -1,0 +1,3165 @@
+{
+  "/v2/broker-activity/{broker_code}/": {
+    "fixture": "idx/v2_broker_activity_broker_code.json",
+    "status": "200",
+    "summary": "Broker Activity By Code",
+    "tags": [
+      "Brokers"
+    ],
+    "parameters": [
+      {
+        "name": "broker_code",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "symbol",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/broker-activity/{broker_code}/top/": {
+    "fixture": "idx/v2_broker_activity_broker_code_top.json",
+    "status": "200",
+    "summary": "Top Accumulations and Distributions Per Broker",
+    "tags": [
+      "Brokers"
+    ],
+    "parameters": [
+      {
+        "name": "broker_code",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_brokers",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 90
+      }
+    ],
+    "credit_cost": "2 API credits",
+    "credit_default_items": null
+  },
+  "/v2/broker-summary/{symbol}/": {
+    "fixture": "idx/v2_broker_summary_symbol.json",
+    "status": "200",
+    "summary": "Broker Activity Per Symbol",
+    "tags": [
+      "Brokers"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "broker_code",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/broker-summary/{symbol}/top/": {
+    "fixture": "idx/v2_broker_summary_symbol_top.json",
+    "status": "200",
+    "summary": "Top Buyers and Sellers Per Symbol",
+    "tags": [
+      "Brokers"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "cohort",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "all",
+          "institutional",
+          "mixed",
+          "retail",
+          "unknown"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_brokers",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 90
+      },
+      {
+        "name": "origin",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "all",
+          "domestic",
+          "foreign"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "2 API credits",
+    "credit_default_items": null
+  },
+  "/v2/brokers/": {
+    "fixture": "idx/v2_brokers.json",
+    "status": "200",
+    "summary": "Broker Registry",
+    "tags": [
+      "Brokers"
+    ],
+    "parameters": [
+      {
+        "name": "cohort",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "institutional",
+          "mixed",
+          "retail",
+          "unknown"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "origin",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "domestic",
+          "foreign"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/brokers/top/": {
+    "fixture": "idx/v2_brokers_top.json",
+    "status": "200",
+    "summary": "Top Brokers Daily Ranking",
+    "tags": [
+      "Brokers"
+    ],
+    "parameters": [
+      {
+        "name": "cohort",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "all",
+          "institutional",
+          "mixed",
+          "retail",
+          "unknown"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "metric",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "gross",
+          "net"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_brokers",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 90
+      },
+      {
+        "name": "origin",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "all",
+          "domestic",
+          "foreign"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "2 API credits",
+    "credit_default_items": null
+  },
+  "/v2/close/": {
+    "fixture": "idx/v2_close.json",
+    "status": "200",
+    "summary": "Daily Full-Universe Close",
+    "tags": [
+      "Transaction Data"
+    ],
+    "parameters": [
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per page",
+    "credit_default_items": null
+  },
+  "/v2/companies/": {
+    "fixture": "idx/v2_companies.json",
+    "status": "200",
+    "summary": "Companies Screener",
+    "tags": [
+      "Company Screener"
+    ],
+    "parameters": [
+      {
+        "name": "where",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "q",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "order_by",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "desc",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 200
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "include_query_values",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit for structured queries",
+    "credit_default_items": null
+  },
+  "/v2/companies/list_companies_with_segments/": {
+    "fixture": "idx/v2_companies_list_companies_with_segments.json",
+    "status": "200",
+    "summary": "Companies with Revenue Segments",
+    "tags": [
+      "Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/companies/quarterly-financial-dates/": {
+    "fixture": "idx/v2_companies_quarterly_financial_dates.json",
+    "status": "200",
+    "summary": "Latest Quarterly Financial Dates (Universe)",
+    "tags": [
+      "Helper Lists"
+    ],
+    "parameters": [
+      {
+        "name": "year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "since",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per page",
+    "credit_default_items": null
+  },
+  "/v2/companies/top-changes/": {
+    "fixture": "idx/v2_companies_top_changes.json",
+    "status": "200",
+    "summary": "Top Company Movers",
+    "tags": [
+      "Rankings"
+    ],
+    "parameters": [
+      {
+        "name": "sub_sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_stock",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
+      },
+      {
+        "name": "classifications",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "top_gainers",
+          "top_losers"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "periods",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "14d",
+          "1d",
+          "30d",
+          "365d",
+          "7d"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "min_mcap_billion",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested classification × period combination",
+    "credit_default_items": 2
+  },
+  "/v2/company/corporate-actions/{symbol}/": {
+    "fixture": "idx/v2_company_corporate_actions_symbol.json",
+    "status": "200",
+    "summary": "Corporate Actions",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/company/get-segments/{symbol}/": {
+    "fixture": "idx/v2_company_get_segments_symbol.json",
+    "status": "200",
+    "summary": "Company Revenue Segments",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "financial_year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/company/get_quarterly_financial_dates/{symbol}/": {
+    "fixture": "idx/v2_company_get_quarterly_financial_dates_symbol.json",
+    "status": "200",
+    "summary": "Quarterly Financial Dates",
+    "tags": [
+      "Helper Lists"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/company/report/": {
+    "fixture": "idx/v2_company_report.json",
+    "status": "200",
+    "summary": "Company Report",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend",
+          "financials",
+          "future",
+          "management",
+          "overview",
+          "ownership",
+          "peers",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 8
+  },
+  "/v2/company/report/{symbol}/": {
+    "fixture": "idx/v2_company_report_symbol.json",
+    "status": "200",
+    "summary": "Company Report",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend",
+          "financials",
+          "future",
+          "management",
+          "overview",
+          "ownership",
+          "peers",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 8
+  },
+  "/v2/company/shareholders-composition/{symbol}/": {
+    "fixture": "idx/v2_company_shareholders_composition_symbol.json",
+    "status": "200",
+    "summary": "Shareholders Composition",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/daily/{symbol}/": {
+    "fixture": "idx/v2_daily_symbol.json",
+    "status": "200",
+    "summary": "Daily Transaction Data",
+    "tags": [
+      "Transaction Data"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/filings/": {
+    "fixture": "idx/v2_filings.json",
+    "status": "200",
+    "summary": "Company Filings",
+    "tags": [
+      "News & Filings"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sub_sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "transaction_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "buy",
+          "others",
+          "sell"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "tags",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "holder_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "corporate-investor",
+          "insider",
+          "institution"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/financials/quarterly/{symbol}/": {
+    "fixture": "idx/v2_financials_quarterly_symbol.json",
+    "status": "200",
+    "summary": "Company Quarterly Financials",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "report_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "approx",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_quarters",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per quarter returned",
+    "credit_default_items": null
+  },
+  "/v2/foreign-flow/{symbol}/": {
+    "fixture": "idx/v2_foreign_flow_symbol.json",
+    "status": "200",
+    "summary": "Daily Net Foreign Inflow",
+    "tags": [
+      "Brokers"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/free-float/": {
+    "fixture": "idx/v2_free_float.json",
+    "status": "200",
+    "summary": "Free Float Market Analysis",
+    "tags": [
+      "Company Screener"
+    ],
+    "parameters": [
+      {
+        "name": "sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sub_sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "industry",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sub_industry",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per 100 companies returned, rounded up",
+    "credit_default_items": null
+  },
+  "/v2/idx-total/": {
+    "fixture": "idx/v2_idx_total.json",
+    "status": "200",
+    "summary": "IDX Market Summary",
+    "tags": [
+      "Transaction Data"
+    ],
+    "parameters": [
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/index-daily/{index_code}/": {
+    "fixture": "idx/v2_index_daily_index_code.json",
+    "status": "200",
+    "summary": "Index Daily Transaction Data",
+    "tags": [
+      "Transaction Data"
+    ],
+    "parameters": [
+      {
+        "name": "index_code",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/industries/": {
+    "fixture": "idx/v2_industries.json",
+    "status": "200",
+    "summary": "Industries",
+    "tags": [
+      "Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/klse/companies/": {
+    "fixture": "klse/v2_klse_companies.json",
+    "status": "200",
+    "summary": "List KLSE companies filtered by sector",
+    "tags": [
+      "KLSE"
+    ],
+    "parameters": [
+      {
+        "name": "sector",
+        "in": "query",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/klse/companies/top/": {
+    "fixture": "klse/v2_klse_companies_top.json",
+    "status": "200",
+    "summary": "Top KLSE companies by classification",
+    "tags": [
+      "KLSE"
+    ],
+    "parameters": [
+      {
+        "name": "sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_stock",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
+      },
+      {
+        "name": "classifications",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend_yield",
+          "earnings",
+          "market_cap",
+          "pe",
+          "revenue"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "min_mcap_million",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested classification",
+    "credit_default_items": 5
+  },
+  "/v2/klse/company/report/": {
+    "fixture": "klse/v2_klse_company_report.json",
+    "status": "200",
+    "summary": "Full company report for a KLSE-listed symbol",
+    "tags": [
+      "KLSE"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 4
+  },
+  "/v2/klse/company/report/{symbol}/": {
+    "fixture": "klse/v2_klse_company_report_symbol.json",
+    "status": "200",
+    "summary": "Full company report for a KLSE-listed symbol",
+    "tags": [
+      "KLSE"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 4
+  },
+  "/v2/klse/sectors/": {
+    "fixture": "klse/v2_klse_sectors.json",
+    "status": "200",
+    "summary": "List all KLSE sectors",
+    "tags": [
+      "KLSE"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/listing-performance/{symbol}/": {
+    "fixture": "idx/v2_listing_performance_symbol.json",
+    "status": "200",
+    "summary": "Company IPO & Listing Performance",
+    "tags": [
+      "IPO & Performance"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/commodities/": {
+    "fixture": "mining/v2_mining_commodities.json",
+    "status": "200",
+    "summary": "List Commodities",
+    "tags": [
+      "Commodities & Trade"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/commodities/{commodity_name}/price/": {
+    "fixture": "mining/v2_mining_commodities_commodity_name_price.json",
+    "status": "200",
+    "summary": "Commodity Price History",
+    "tags": [
+      "Commodities & Trade"
+    ],
+    "parameters": [
+      {
+        "name": "commodity_name",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start_year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      },
+      {
+        "name": "end_year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/companies/": {
+    "fixture": "mining/v2_mining_companies.json",
+    "status": "200",
+    "summary": "List Mining Companies",
+    "tags": [
+      "Companies"
+    ],
+    "parameters": [
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Aluminium",
+          "Coal",
+          "Copper",
+          "Gold",
+          "Nickel",
+          "Silver",
+          "Zinc and Lead"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "keyword",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "company_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Consultant",
+          "Contractor",
+          "Holding",
+          "Manufacturer",
+          "Mine Owner",
+          "Trader"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "has_financials",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/companies/{slug}/": {
+    "fixture": "mining/v2_mining_companies_slug.json",
+    "status": "200",
+    "summary": "Mining Company Detail",
+    "tags": [
+      "Companies"
+    ],
+    "parameters": [
+      {
+        "name": "slug",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/companies/financials/{slug}/": {
+    "fixture": "mining/v2_mining_companies_financials_slug.json",
+    "status": "200",
+    "summary": "Mining Company Financials",
+    "tags": [
+      "Companies"
+    ],
+    "parameters": [
+      {
+        "name": "slug",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/companies/ownership/{slug}/": {
+    "fixture": "mining/v2_mining_companies_ownership_slug.json",
+    "status": "200",
+    "summary": "Mining Company Ownership",
+    "tags": [
+      "Companies"
+    ],
+    "parameters": [
+      {
+        "name": "slug",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/companies/performance/{slug}/": {
+    "fixture": "mining/v2_mining_companies_performance_slug.json",
+    "status": "200",
+    "summary": "Mining Company Performance",
+    "tags": [
+      "Companies"
+    ],
+    "parameters": [
+      {
+        "name": "slug",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Coal",
+          "Copper",
+          "Gold",
+          "Nickel",
+          "Silver"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/contracts/": {
+    "fixture": "mining/v2_mining_contracts.json",
+    "status": "200",
+    "summary": "Mining Contracts",
+    "tags": [
+      "Contracts & Licenses"
+    ],
+    "parameters": [
+      {
+        "name": "contractor",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "mine_owner",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/exports/": {
+    "fixture": "mining/v2_mining_exports.json",
+    "status": "200",
+    "summary": "Top Export Destinations",
+    "tags": [
+      "Commodities & Trade"
+    ],
+    "parameters": [
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": true,
+        "type": "string",
+        "enum": [
+          "Coal",
+          "Copper",
+          "Gold"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "year",
+        "in": "query",
+        "required": true,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/global-commodity/": {
+    "fixture": "mining/v2_mining_global_commodity.json",
+    "status": "200",
+    "summary": "Global Commodity Data",
+    "tags": [
+      "Commodities & Trade"
+    ],
+    "parameters": [
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Bauxite",
+          "Coal",
+          "Copper",
+          "Gold",
+          "Nickel"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "country",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/license-auctions/": {
+    "fixture": "mining/v2_mining_license_auctions.json",
+    "status": "200",
+    "summary": "Mining License Auctions",
+    "tags": [
+      "Contracts & Licenses"
+    ],
+    "parameters": [
+      {
+        "name": "province",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Bengkulu",
+          "Gorontalo",
+          "Kalimantan Tengah",
+          "Maluku Utara",
+          "Nusa Tenggara Barat",
+          "Sulawesi Selatan",
+          "Sulawesi Utara",
+          "Sumatera Selatan"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Coal",
+          "Copper",
+          "Gold",
+          "Nickel"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "order_by",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "-commodity_type",
+          "-licensed_area_ha",
+          "-participant_count",
+          "-winner_date",
+          "commodity_type",
+          "licensed_area_ha",
+          "participant_count",
+          "winner_date"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "area_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "WIUP",
+          "WIUPK"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "status",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "participant",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "qualified",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "min_participants",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/license-auctions/{wiup_code}/": {
+    "fixture": "mining/v2_mining_license_auctions_wiup_code.json",
+    "status": "200",
+    "summary": "Mining License Auction Detail",
+    "tags": [
+      "Contracts & Licenses"
+    ],
+    "parameters": [
+      {
+        "name": "wiup_code",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/licenses/": {
+    "fixture": "mining/v2_mining_licenses.json",
+    "status": "200",
+    "summary": "Mining Licenses",
+    "tags": [
+      "Contracts & Licenses"
+    ],
+    "parameters": [
+      {
+        "name": "province",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Aceh",
+          "Bali",
+          "Banten",
+          "Bengkulu",
+          "Gorontalo",
+          "Jambi",
+          "Jawa Barat",
+          "Jawa Tengah",
+          "Jawa Timur",
+          "Kalimantan Barat",
+          "Kalimantan Selatan",
+          "Kalimantan Tengah",
+          "Kalimantan Tengah, Kalimantan Timur",
+          "Kalimantan Timur",
+          "Kalimantan Utara",
+          "Kepulauan Bangka Belitung",
+          "Kepulauan Riau",
+          "Lampung",
+          "Maluku",
+          "Maluku Utara",
+          "Nusa Tenggara Barat",
+          "Nusa Tenggara Timur",
+          "Papua",
+          "Papua Barat",
+          "Papua Barat Daya",
+          "Papua Tengah",
+          "Riau",
+          "Sulawesi Barat",
+          "Sulawesi Selatan",
+          "Sulawesi Tengah",
+          "Sulawesi Tengah, Gorontalo, Sulawesi Utara",
+          "Sulawesi Tenggara",
+          "Sulawesi Utara",
+          "Sumatera Barat",
+          "Sumatera Selatan",
+          "Sumatera Utara",
+          "Yogyakarta"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Bauxite",
+          "Clay",
+          "Coal",
+          "Copper",
+          "Gold",
+          "Granite",
+          "Iron",
+          "Limestone",
+          "Nickel",
+          "Non-Metallic Mineral",
+          "Others",
+          "Sand",
+          "Sand, Stone, Gravel",
+          "Tin"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "company",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "order_by",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "-commodity_type",
+          "-license_effective_date",
+          "-license_expiry_date",
+          "-licensed_area_ha",
+          "commodity_type",
+          "license_effective_date",
+          "license_expiry_date",
+          "licensed_area_ha"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "expiring_soon",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "license_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "IPR",
+          "IUP",
+          "IUPK",
+          "KK",
+          "PKP2B",
+          "SIPB"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "activity",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Eksplorasi",
+          "Operasi Produksi"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "cnc",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/resources-reserves/": {
+    "fixture": "mining/v2_mining_resources_reserves.json",
+    "status": "200",
+    "summary": "Resources & Reserves Index",
+    "tags": [
+      "Production & Sites"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/resources-reserves/{province}/": {
+    "fixture": "mining/v2_mining_resources_reserves_province.json",
+    "status": "200",
+    "summary": "Resources & Reserves Detail",
+    "tags": [
+      "Production & Sites"
+    ],
+    "parameters": [
+      {
+        "name": "province",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": [
+          "Aceh",
+          "Banten",
+          "Bengkulu",
+          "Gorontalo",
+          "Jambi",
+          "Jawa Barat",
+          "Jawa Tengah",
+          "Jawa Timur",
+          "Kalimantan Barat",
+          "Kalimantan Selatan",
+          "Kalimantan Tengah",
+          "Kalimantan Timur",
+          "Kalimantan Utara",
+          "Kepulauan Bangka Belitung",
+          "Kepulauan Riau",
+          "Lampung",
+          "Maluku",
+          "Maluku Utara",
+          "Nusa Tenggara Barat",
+          "Nusa Tenggara Timur",
+          "Papua",
+          "Papua Barat",
+          "Papua Barat Daya",
+          "Papua Tengah",
+          "Riau",
+          "Sulawesi Barat",
+          "Sulawesi Selatan",
+          "Sulawesi Tengah",
+          "Sulawesi Tenggara",
+          "Sulawesi Utara",
+          "Sumatera Barat",
+          "Sumatera Selatan",
+          "Sumatera Utara"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Coal",
+          "Cobalt",
+          "Copper",
+          "Gold",
+          "Nickel",
+          "Silver",
+          "Tin"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/sales-destination/{slug}/": {
+    "fixture": "mining/v2_mining_sales_destination_slug.json",
+    "status": "200",
+    "summary": "Company Sales Destinations",
+    "tags": [
+      "Commodities & Trade"
+    ],
+    "parameters": [
+      {
+        "name": "slug",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/sites/": {
+    "fixture": "mining/v2_mining_sites.json",
+    "status": "200",
+    "summary": "Mining Sites",
+    "tags": [
+      "Production & Sites"
+    ],
+    "parameters": [
+      {
+        "name": "province",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Aceh",
+          "Banten",
+          "Gorontalo",
+          "Jambi",
+          "Jawa Timur",
+          "Kalimantan Selatan",
+          "Kalimantan Tengah",
+          "Kalimantan Timur",
+          "Kalimantan Utara",
+          "Maluku",
+          "Maluku Utara",
+          "Nusa Tenggara Barat",
+          "Papua",
+          "Papua Barat",
+          "Sulawesi Barat",
+          "Sulawesi Selatan",
+          "Sulawesi Tengah",
+          "Sulawesi Tenggara",
+          "Sulawesi Utara",
+          "Sumatera Barat",
+          "Sumatera Selatan",
+          "Sumatera Utara"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Coal",
+          "Copper",
+          "Gold",
+          "Nickel"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "company",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "year",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1900,
+        "maximum": 2026
+      },
+      {
+        "name": "order_by",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "-production_volume",
+          "-strip_ratio",
+          "-year",
+          "production_volume",
+          "strip_ratio",
+          "year"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "min_production",
+        "in": "query",
+        "required": false,
+        "type": "number",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/sites/{slug}/": {
+    "fixture": "mining/v2_mining_sites_slug.json",
+    "status": "200",
+    "summary": "Mining Site Detail",
+    "tags": [
+      "Production & Sites"
+    ],
+    "parameters": [
+      {
+        "name": "slug",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/mining/total-production/": {
+    "fixture": "mining/v2_mining_total_production.json",
+    "status": "200",
+    "summary": "Total Commodity Production",
+    "tags": [
+      "Production & Sites"
+    ],
+    "parameters": [
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": true,
+        "type": "string",
+        "enum": [
+          "Coal",
+          "Copper",
+          "Gold",
+          "Nickel"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/most-traded/": {
+    "fixture": "idx/v2_most_traded.json",
+    "status": "200",
+    "summary": "Most Traded Stocks",
+    "tags": [
+      "Rankings"
+    ],
+    "parameters": [
+      {
+        "name": "sub_sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "adjusted",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_stock",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
+      }
+    ],
+    "credit_cost": "2 API credits",
+    "credit_default_items": null
+  },
+  "/v2/news/": {
+    "fixture": "idx/v2_news.json",
+    "status": "200",
+    "summary": "News Articles",
+    "tags": [
+      "News & Filings"
+    ],
+    "parameters": [
+      {
+        "name": "sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sub_sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "commodity_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "Bauxite",
+          "Coal",
+          "Copper",
+          "Gold",
+          "Iron",
+          "Nickel",
+          "Non-Metallic Mineral",
+          "Sand, Stone, Gravel",
+          "Tin"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "tags",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "extension",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "idx",
+          "mining"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "keyword",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "symbols",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/buybacks/": {
+    "fixture": "sgx/v2_sgx_buybacks.json",
+    "status": "200",
+    "summary": "SGX Share Buybacks",
+    "tags": [
+      "SGX - Transaction Data"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/companies/": {
+    "fixture": "sgx/v2_sgx_companies.json",
+    "status": "200",
+    "summary": "SGX Companies Screener",
+    "tags": [
+      "SGX - Company Screener"
+    ],
+    "parameters": [
+      {
+        "name": "where",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "q",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "order_by",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "desc",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 200
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "include_query_values",
+        "in": "query",
+        "required": false,
+        "type": "boolean",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit for structured queries",
+    "credit_default_items": null
+  },
+  "/v2/sgx/companies/top/": {
+    "fixture": "sgx/v2_sgx_companies_top.json",
+    "status": "200",
+    "summary": "Top SGX companies by classification",
+    "tags": [
+      "SGX - Rankings"
+    ],
+    "parameters": [
+      {
+        "name": "sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "n_stock",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 10
+      },
+      {
+        "name": "classifications",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend_yield",
+          "earnings",
+          "market_cap",
+          "pe",
+          "revenue"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "min_mcap_million",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested classification",
+    "credit_default_items": 5
+  },
+  "/v2/sgx/company/report/": {
+    "fixture": "sgx/v2_sgx_company_report.json",
+    "status": "200",
+    "summary": "Full company report for an SGX-listed symbol",
+    "tags": [
+      "SGX - Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 4
+  },
+  "/v2/sgx/company/report/{symbol}/": {
+    "fixture": "sgx/v2_sgx_company_report_symbol.json",
+    "status": "200",
+    "summary": "Full company report for an SGX-listed symbol",
+    "tags": [
+      "SGX - Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "dividend",
+          "financials",
+          "overview",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 4
+  },
+  "/v2/sgx/daily/{symbol}/": {
+    "fixture": "sgx/v2_sgx_daily_symbol.json",
+    "status": "200",
+    "summary": "SGX Daily Price Data",
+    "tags": [
+      "SGX - Transaction Data"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/filings/": {
+    "fixture": "sgx/v2_sgx_filings.json",
+    "status": "200",
+    "summary": "SGX Insider Filings",
+    "tags": [
+      "SGX - News & Filings"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "transaction_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "award",
+          "buy",
+          "others",
+          "sell",
+          "transfer"
+        ],
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "holder_type",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": [
+          "insider",
+          "institution"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/news/": {
+    "fixture": "sgx/v2_sgx_news.json",
+    "status": "200",
+    "summary": "SGX News",
+    "tags": [
+      "SGX - News & Filings"
+    ],
+    "parameters": [
+      {
+        "name": "sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sub_sector",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      },
+      {
+        "name": "tags",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "symbols",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/sectors/": {
+    "fixture": "sgx/v2_sgx_sectors.json",
+    "status": "200",
+    "summary": "List all SGX sectors",
+    "tags": [
+      "SGX - Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/short-sell/": {
+    "fixture": "sgx/v2_sgx_short_sell.json",
+    "status": "200",
+    "summary": "SGX Short Sell",
+    "tags": [
+      "SGX - Transaction Data"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/subsectors/": {
+    "fixture": "sgx/v2_sgx_subsectors.json",
+    "status": "200",
+    "summary": "SGX Subsectors",
+    "tags": [
+      "SGX - Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/sgx/tags/": {
+    "fixture": "sgx/v2_sgx_tags.json",
+    "status": "200",
+    "summary": "SGX News Tags",
+    "tags": [
+      "SGX - Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/subindustries/": {
+    "fixture": "idx/v2_subindustries.json",
+    "status": "200",
+    "summary": "Subindustries",
+    "tags": [
+      "Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/subsector/report/": {
+    "fixture": "idx/v2_subsector_report.json",
+    "status": "200",
+    "summary": "Subsector Report",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "sub_sector",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "companies",
+          "growth",
+          "market_cap",
+          "stability",
+          "statistics",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 6
+  },
+  "/v2/subsector/report/{sub_sector}/": {
+    "fixture": "idx/v2_subsector_report_sub_sector.json",
+    "status": "200",
+    "summary": "Subsector Report",
+    "tags": [
+      "Detailed Reports"
+    ],
+    "parameters": [
+      {
+        "name": "sub_sector",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "sections",
+        "in": "query",
+        "required": false,
+        "type": "array",
+        "enum": [
+          "companies",
+          "growth",
+          "market_cap",
+          "stability",
+          "statistics",
+          "valuation"
+        ],
+        "minimum": null,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit per requested section",
+    "credit_default_items": 6
+  },
+  "/v2/subsectors/": {
+    "fixture": "idx/v2_subsectors.json",
+    "status": "200",
+    "summary": "Subsectors",
+    "tags": [
+      "Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/suspensions/": {
+    "fixture": "idx/v2_suspensions.json",
+    "status": "200",
+    "summary": "Stock Suspensions",
+    "tags": [
+      "News & Filings"
+    ],
+    "parameters": [
+      {
+        "name": "symbol",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "start",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "end",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "enum": null,
+        "minimum": null,
+        "maximum": null
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 1,
+        "maximum": 30
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "enum": null,
+        "minimum": 0,
+        "maximum": null
+      }
+    ],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  },
+  "/v2/tags/": {
+    "fixture": "idx/v2_tags.json",
+    "status": "200",
+    "summary": "News Tags",
+    "tags": [
+      "Helper Lists"
+    ],
+    "parameters": [],
+    "credit_cost": "1 API credit",
+    "credit_default_items": null
+  }
+}

@@ -23,14 +23,14 @@ the repository root, loads the first `.env` it finds, and never overwrites a var
 that is already set in your shell. So a one-off override still works:
 
 ```bash
-SECTORS_BUDGET=5 python3 research/03-mock-data/capture.py --plan research/03-mock-data/plan.json --tier 0
+SECTORS_BUDGET=5 python3 research/harness/src/capture.py --plan research/harness/plans/plan.json --tier 0
 ```
 
 ## 2. Verify without spending anything
 
 ```bash
-cd research/03-mock-data
-python3 capture.py --plan plan.json --dry-run
+cd research/harness
+python3 src/capture.py --plan plans/plan.json --dry-run
 ```
 
 The header should print your `.env` path, the base URL, and `key: set`. The plan should
@@ -42,8 +42,8 @@ The mock serves the spec's own examples and the same credit meter, so the whole 
 can be exercised for free before a single live call:
 
 ```bash
-python3 mock_server.py --port 8787 &
-SECTORS_BASE_URL=http://127.0.0.1:8787 python3 capture.py --plan plan.json --budget 300
+python3 src/mock_server.py --port 8787 &
+SECTORS_BASE_URL=http://127.0.0.1:8787 python3 src/capture.py --plan plans/plan.json --budget 300
 ```
 
 Delete anything the rehearsal wrote to `recorded/` before going live, so synthetic
@@ -52,12 +52,12 @@ payloads never get mistaken for real ones.
 ## 4. Go live, cheaply
 
 ```bash
-python3 capture.py --plan plan.json --tier 0 --budget 5
+python3 src/capture.py --plan plans/plan.json --tier 0 --budget 5
 ```
 
 Then stop and reconcile before anything else. The full procedure — phases, budget
 ceiling, and what to check at each gate — is in
-[`research/VERIFY-PROMPT-LIVE.md`](research/VERIFY-PROMPT-LIVE.md).
+[`research/audit/prompts/VERIFY-PROMPT-LIVE.md`](research/audit/prompts/VERIFY-PROMPT-LIVE.md).
 
 ## The rules that protect the grant
 
@@ -78,7 +78,7 @@ does not top up. Four things burn it fastest:
 
 ## Sharing recordings
 
-`research/03-mock-data/recorded/` **is** committed on purpose. Those payloads were paid
+`research/harness/recorded/` **is** committed on purpose. Those payloads were paid
 for in credits, and `mock_server.py` serves them in preference to the spec examples — so
 once one person has captured a call, everyone else develops against the real response for
 free. Commit new recordings along with the ledger entry that produced them.
@@ -87,15 +87,21 @@ free. Commit new recordings along with the ledger entry that produced them.
 estimated cost, and whatever cost header the API returned. Check it before a big run:
 
 ```bash
-python3 capture.py --report
+python3 src/capture.py --report
 ```
 
 ## What is in this repository
 
 - `research/README.md` — the dossier index, key facts, and the audit record.
-- `research/02-sectors-platform/` — the API in depth: endpoint reference, response shapes,
+- `research/docs/hackathon/` — the competition: rules, tracks, submission checklist.
+- `research/docs/api/` — the API in depth: endpoint reference, response shapes,
   screener query language, credit budget, pitfalls.
-- `research/03-mock-data/` — the mock server, the capture harness, the fixtures and the
+- `research/harness/` — the mock server, the capture harness, the fixtures and the
   synthetic generators. Develop here; call the live API as little as possible.
-- `research/04-build-plan/` — what we are building and the competitive landscape.
-- `research/VERIFY-PROMPT-LIVE.md` — the live verification procedure, not yet run.
+- `research/plan/` — what we are building and the competitive landscape.
+- `research/evidence/` — provenance: verbatim captures, the OpenAPI spec, the portal
+  usage logs that independently confirm what the API charged.
+- `research/audit/` — the six verification passes. `VERIFICATION-LIVE.md` is the one
+  that actually called the API and supersedes the others on behaviour;
+  `prompts/VERIFY-PROMPT-LIVE.md` is the live procedure it followed.
+- `research/tools/` — generators for the two generated docs in `research/docs/api/`.

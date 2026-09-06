@@ -5,18 +5,18 @@ API**, organized so you can act on it.
 
 Researched 4 September 2026. Primary sources: `hackathon.sectors.app`, `sectors.app`,
 `docs.sectors.app`, and the official OpenAPI spec. Raw captures are preserved in
-[`99-raw/`](99-raw/) so every claim here is traceable.
+[`evidence/`](evidence/) so every claim here is traceable.
 
 ---
 
 ## Start here
 
 **If you have five minutes**, read this page and
-[`01-hackathon/00-overview.md`](01-hackathon/00-overview.md).
+[`docs/hackathon/00-overview.md`](docs/hackathon/00-overview.md).
 
 **If you are setting up to run anything**, read [`SETUP.md`](../SETUP.md) first: one
 git-ignored `.env` at the repository root holds `SECTORS_API_KEY`, `SECTORS_BASE_URL` and
-`SECTORS_BUDGET`, and [`03-mock-data/sectors_env.py`](03-mock-data/sectors_env.py) loads it
+`SECTORS_BUDGET`, and [`harness/src/sectors_env.py`](harness/src/sectors_env.py) loads it
 for every script here. No script in this repository reads a key from anywhere else, and none
 writes one to disk.
 
@@ -25,51 +25,73 @@ writes one to disk.
 1. **Deadlines.** Registration closes **22 Sep 2026, 23:59 WIB**. Submissions close **30 Sep 2026, 23:59 WIB**. As of 4 September: 18 days to register, 26 to submit.
 2. **Scoring.** Real-world usability 40%, video & storytelling 30%, technical depth 30%. **Seventy percent is problem framing and communication**, not engineering.
 3. **The one hard constraint.** Sectors MCP or REST API must be a *core* data source — remove it and the product must stop working. Automated trade execution is banned in every track.
-4. **Credits.** 1,000 per team, no top-up. That is one fifth of a single month of an Insider plan. Develop against the [local mock](03-mock-data/), not the live API.
+4. **Credits.** 1,000 per team, no top-up. That is one fifth of a single month of an Insider plan. Develop against the [local mock](harness/), not the live API.
 5. **Track 02 is the least crowded**, but by less than it was. Recounted live 5 Sep and re-counted independently in pass 4: of **48** teams on the public matching board, 15 chose Track 01, 12 chose Track 03, **7 chose Track 02**, 14 have not chosen. On 4 Sep it was 44 and 16/11/4 — the board moved by four teams in a day and three of them picked Track 02. Still the thinnest field and still the most objective qualifying test; **re-count it near the 22 September close.** Note the board is a lower bound on the field: the hackathon Slack reports **105 members** against 52 people on the board.
-6. **The obvious project in each track is already a published Supertype tutorial.** A 7am scheduled top-movers digest to Discord, a natural-language stock chatbot, and a multi-agent fundamental/technical/news analyst are all recipes on docs.sectors.app. See [`already-published.md`](04-build-plan/already-published.md).
-7. **Sectors already ships an alerting product.** Sectors Workflow does entity → trigger → WhatsApp/Email/Slack/Telegram/Sheets with ~60 templates. A bare Track 02 "alert bot" reimplements it. See [`competitive-landscape.md`](04-build-plan/competitive-landscape.md).
-8. **The screener returns only `symbol` and `company_name`.** You can filter on 219 fields but the response doesn't contain them — pass `include_query_values=true` and name your metrics in `where`. This shapes your whole data architecture; see [`08-hidden-data.md`](02-sectors-platform/08-hidden-data.md).
+6. **The obvious project in each track is already a published Supertype tutorial.** A 7am scheduled top-movers digest to Discord, a natural-language stock chatbot, and a multi-agent fundamental/technical/news analyst are all recipes on docs.sectors.app. See [`already-published.md`](plan/already-published.md).
+7. **Sectors already ships an alerting product.** Sectors Workflow does entity → trigger → WhatsApp/Email/Slack/Telegram/Sheets with ~60 templates. A bare Track 02 "alert bot" reimplements it. See [`competitive-landscape.md`](plan/competitive-landscape.md).
+8. **The screener returns only `symbol` and `company_name`.** You can filter on 219 fields but the response doesn't contain them — pass `include_query_values=true` and name your metrics in `where`. This shapes your whole data architecture; see [`08-hidden-data.md`](docs/api/08-hidden-data.md).
 
 ---
 
 ## Map of this folder
 
-### `01-hackathon/` — the competition
+```
+research/
+  docs/hackathon/     the competition — rules, tracks, checklist
+  docs/api/           the Sectors API in depth — 16 reference docs
+  harness/            the offline harness
+    src/              the 10 scripts — run from harness/ as `python3 src/<name>.py`
+    plans/            the capture plans
+    fixtures/         spec examples, split idx/ sgx/ klse/ mining/
+    recorded/         real payloads, flat and keyed by _manifest.json
+    synth/            generated universe, split market/ flow/ company/ mining/
+  plan/               what to build — ideas, competitive landscape, what is already published
+  evidence/           provenance
+    spec/             schema.json, llms.txt, llms-full.txt, postman/
+    hackathon/        captures of the hackathon site
+    sectors/          captures of the Sectors product, docs and agent skills
+    subdomains/       mining/reits sweeps and footer crawls
+    rechecks/         the live re-check notes behind the audit reports
+    usage-log/        portal CSV exports — what the API actually charged
+  audit/              the six verification passes and the prompts that drove them
+  tools/              generators for the two generated docs in docs/api/
+```
+
+### `docs/hackathon/` — the competition
 
 | Doc | What's in it |
 | --- | --- |
-| [`00-overview.md`](01-hackathon/00-overview.md) | What the hackathon is, dates, prizes, judging, teams, eligibility, official channels, partners |
-| [`01-rules.md`](01-hackathon/01-rules.md) | All 14 rule sections in full, plus **the ten rules that most often cost teams the prize** |
-| [`02-tracks.md`](01-hackathon/02-tracks.md) | Each track's qualifying test, what does and doesn't qualify, example directions, and how to choose between them |
-| [`03-submission-checklist.md`](01-hackathon/03-submission-checklist.md) | Phase-by-phase checklist from onboarding to post-submission, plus a minute-by-minute plan for the 3-minute judging video |
+| [`00-overview.md`](docs/hackathon/00-overview.md) | What the hackathon is, dates, prizes, judging, teams, eligibility, official channels, partners |
+| [`01-rules.md`](docs/hackathon/01-rules.md) | All 14 rule sections in full, plus **the ten rules that most often cost teams the prize** |
+| [`02-tracks.md`](docs/hackathon/02-tracks.md) | Each track's qualifying test, what does and doesn't qualify, example directions, and how to choose between them |
+| [`03-submission-checklist.md`](docs/hackathon/03-submission-checklist.md) | Phase-by-phase checklist from onboarding to post-submission, plus a minute-by-minute plan for the 3-minute judging video |
 
-### `02-sectors-platform/` — the data
+### `docs/api/` — the data
 
 | Doc | What's in it |
 | --- | --- |
-| [`00-what-is-sectors.md`](02-sectors-platform/00-what-is-sectors.md) | The product, market coverage, all plans and pricing, every surface, documentation map, and the recipes worth reading before you design |
-| [`01-api-guide.md`](02-sectors-platform/01-api-guide.md) | Auth, base URL, the v1 sunset, **how credit billing actually works**, error codes, hard limits, ticker/slug conventions, pagination, freshness, and nine gotchas |
-| [`02-endpoint-reference.md`](02-sectors-platform/02-endpoint-reference.md) | **All 70 endpoints** — summary tables by market, then full per-endpoint detail with every parameter and credit cost. Generated from the OpenAPI spec |
-| [`03-screener-query-language.md`](02-sectors-platform/03-screener-query-language.md) | The screener in depth: both query modes, full syntax, **all 219 queryable fields in six categories**, twelve worked query patterns, and how to build a defensible composite score |
-| [`04-mcp-and-ai-agents.md`](02-sectors-platform/04-mcp-and-ai-agents.md) | MCP server setup for every client, the full 66-tool catalogue (65 documented), agent skills, OAuth connectors — **and the Track 01 trap** |
-| [`05-credit-budget.md`](02-sectors-platform/05-credit-budget.md) | What everything costs, five rules that save the most, sample budgets per track, and a metered caching client |
-| [`06-parameter-cheatsheet.md`](02-sectors-platform/06-parameter-cheatsheet.md) | Every enum value, default, minimum and maximum in the API — including **four defaults that silently change your results** — plus what's known about rate limits |
-| [`07-response-shapes.md`](02-sectors-platform/07-response-shapes.md) | Data dictionary: the envelope and row keys each of the 70 endpoints returns. The API is **not** uniform — read this before writing a parser |
-| [`15-fetch-strategy.md`](02-sectors-platform/15-fetch-strategy.md) | **The spend plan.** 87 calls in 5 tiers for **176 of 1,000 credits** — against 297 if every parameter defaulted — and the record-once-replay-forever loop |
-| [`14-flare-community-and-engineering.md`](02-sectors-platform/14-flare-community-and-engineering.md) | **FLARE** — the missing definitions for every banking field in the API, with the OJK/Basel III citations · the referral-to-API-credits program · **Stories**, which show what the organizers consider good derived insight · and their search-architecture write-up as engineering calibration |
-| [`13-subdomains-and-terms.md`](02-sectors-platform/13-subdomains-and-terms.md) | **Two entire products on subdomains the sitemap never showed** — `mining.sectors.app` (594 coal companies, unlisted firms, the HBA benchmark) and `reits.sectors.app` (37 S-REITs, **no API at all**) — plus the **Terms of Service commercial-use restriction** |
-| [`12-trading-calendar-and-releases.md`](02-sectors-platform/12-trading-calendar-and-releases.md) | **IDX has 22 market holidays in 2026 and no endpoint exposes them** — a scheduled job that ignores them produces blank days. Plus Sectors' 2026 release timeline and which product features have no API |
-| [`11-data-provenance.md`](02-sectors-platform/11-data-provenance.md) | Where the numbers come from — PDF/XBRL extraction, human-in-the-loop standardization, IDX-IC and OJK/Basel III standards, self-healing corrections, and the datasets that **exist nowhere else** |
-| [`10-domain-pitfalls.md`](02-sectors-platform/10-domain-pitfalls.md) | Mistakes the organizers themselves warn about in their published recipes — the **zero-sum trap** that flattens any broker-flow signal, suspended stocks returning all-zero rows, and the confirmation pattern they use |
-| [`09-sgx-klse-coverage.md`](02-sectors-platform/09-sgx-klse-coverage.md) | SGX's own 85 screener fields, what SGX and KLSE **cannot** do, and three SGX data traps — including duplicate sector labels that silently drop results |
-| [`08-hidden-data.md`](02-sectors-platform/08-hidden-data.md) | **What's actually inside the payloads** — field-level findings that appear in no endpoint description: named institutional flow, whale investors, conglomerate groups, a monthly local/foreign ownership panel, pre-classified news, full OHLC, complete IPO book-building records, and the mining ownership graph |
+| [`00-what-is-sectors.md`](docs/api/00-what-is-sectors.md) | The product, market coverage, all plans and pricing, every surface, documentation map, and the recipes worth reading before you design |
+| [`01-api-guide.md`](docs/api/01-api-guide.md) | Auth, base URL, the v1 sunset, **how credit billing actually works**, error codes, hard limits, ticker/slug conventions, pagination, freshness, and nine gotchas |
+| [`02-endpoint-reference.md`](docs/api/02-endpoint-reference.md) | **All 70 endpoints** — summary tables by market, then full per-endpoint detail with every parameter and credit cost. Generated from the OpenAPI spec |
+| [`03-screener-query-language.md`](docs/api/03-screener-query-language.md) | The screener in depth: both query modes, full syntax, **all 219 queryable fields in six categories**, twelve worked query patterns, and how to build a defensible composite score |
+| [`04-mcp-and-ai-agents.md`](docs/api/04-mcp-and-ai-agents.md) | MCP server setup for every client, the full 66-tool catalogue (65 documented), agent skills, OAuth connectors — **and the Track 01 trap** |
+| [`05-credit-budget.md`](docs/api/05-credit-budget.md) | What everything costs, five rules that save the most, sample budgets per track, and a metered caching client |
+| [`06-parameter-cheatsheet.md`](docs/api/06-parameter-cheatsheet.md) | Every enum value, default, minimum and maximum in the API — including **four defaults that silently change your results** — plus what's known about rate limits |
+| [`07-response-shapes.md`](docs/api/07-response-shapes.md) | Data dictionary: the envelope and row keys each of the 70 endpoints returns. The API is **not** uniform — read this before writing a parser |
+| [`15-fetch-strategy.md`](docs/api/15-fetch-strategy.md) | **The spend plan.** 87 calls in 5 tiers for **176 of 1,000 credits** — against 297 if every parameter defaulted — and the record-once-replay-forever loop |
+| [`14-flare-community-and-engineering.md`](docs/api/14-flare-community-and-engineering.md) | **FLARE** — the missing definitions for every banking field in the API, with the OJK/Basel III citations · the referral-to-API-credits program · **Stories**, which show what the organizers consider good derived insight · and their search-architecture write-up as engineering calibration |
+| [`13-subdomains-and-terms.md`](docs/api/13-subdomains-and-terms.md) | **Two entire products on subdomains the sitemap never showed** — `mining.sectors.app` (594 coal companies, unlisted firms, the HBA benchmark) and `reits.sectors.app` (37 S-REITs, **no API at all**) — plus the **Terms of Service commercial-use restriction** |
+| [`12-trading-calendar-and-releases.md`](docs/api/12-trading-calendar-and-releases.md) | **IDX has 22 market holidays in 2026 and no endpoint exposes them** — a scheduled job that ignores them produces blank days. Plus Sectors' 2026 release timeline and which product features have no API |
+| [`11-data-provenance.md`](docs/api/11-data-provenance.md) | Where the numbers come from — PDF/XBRL extraction, human-in-the-loop standardization, IDX-IC and OJK/Basel III standards, self-healing corrections, and the datasets that **exist nowhere else** |
+| [`10-domain-pitfalls.md`](docs/api/10-domain-pitfalls.md) | Mistakes the organizers themselves warn about in their published recipes — the **zero-sum trap** that flattens any broker-flow signal, suspended stocks returning all-zero rows, and the confirmation pattern they use |
+| [`09-sgx-klse-coverage.md`](docs/api/09-sgx-klse-coverage.md) | SGX's own 85 screener fields, what SGX and KLSE **cannot** do, and three SGX data traps — including duplicate sector labels that silently drop results |
+| [`08-hidden-data.md`](docs/api/08-hidden-data.md) | **What's actually inside the payloads** — field-level findings that appear in no endpoint description: named institutional flow, whale investors, conglomerate groups, a monthly local/foreign ownership panel, pre-classified news, full OHLC, complete IPO book-building records, and the mining ownership graph |
 
-### `03-mock-data/` — simulating Sectors offline
+### `harness/` — simulating Sectors offline
 
 | File | What it is |
 | --- | --- |
-| [`README.md`](03-mock-data/README.md) | Both approaches, when to use which, the recommended workflow, and the one-env-var client switch |
+| [`README.md`](harness/README.md) | Both approaches, when to use which, the recommended workflow, and the one-env-var client switch |
 | `extract_fixtures.py` | Pulls the official example response for all 70 endpoints out of the OpenAPI spec |
 | `mock_server.py` | Local `api.sectors.app` — serves every endpoint, meters credits, emulates 401/402/410/429/503, `GET /__usage` |
 | `synth_universe.py` | Generates an arbitrarily large synthetic IDX universe in Sectors' exact field naming |
@@ -79,23 +101,38 @@ writes one to disk.
 | `fixtures/` | 70 fixtures + `_index.json`, already generated |
 | `synth/` | A sample generated universe (120 companies × 90 days) |
 
-### `04-build-plan/` — what to actually build
+### `plan/` — what to actually build
 
 | Doc | What's in it |
 | --- | --- |
-| [`what-we-can-build.md`](04-build-plan/what-we-can-build.md) | The data nobody else has, then **thirteen concrete project ideas** mapped to tracks, with the exact endpoints and credit cost of each — and a recommendation if you have to pick one |
-| [`competitive-landscape.md`](04-build-plan/competitive-landscape.md) | What the other 48 public teams are doing: **track distribution, team sizes, which skills the field is under-valuing** — plus **Sectors Workflow**, the shipping product that competes with Track 02 |
-| [`already-published.md`](04-build-plan/already-published.md) | **The organizers have already published working tutorials for the most obvious project in each track.** What's taken, the test to apply to your pitch, and the six areas of the API with no recipe at all |
+| [`what-we-can-build.md`](plan/what-we-can-build.md) | The data nobody else has, then **thirteen concrete project ideas** mapped to tracks, with the exact endpoints and credit cost of each — and a recommendation if you have to pick one |
+| [`competitive-landscape.md`](plan/competitive-landscape.md) | What the other 48 public teams are doing: **track distribution, team sizes, which skills the field is under-valuing** — plus **Sectors Workflow**, the shipping product that competes with Track 02 |
+| [`already-published.md`](plan/already-published.md) | **The organizers have already published working tutorials for the most obvious project in each track.** What's taken, the test to apply to your pitch, and the six areas of the API with no recipe at all |
 
 Seventeen ideas total across the two, four of them built on data found only by reading the
 raw payloads.
 
-### `99-raw/` — provenance
+### `evidence/` — provenance
 
 Verbatim captures: every hackathon page, the Sectors home/pricing/API pages, the complete
 `schema.json` (OpenAPI 3.0.3, 70 endpoints, 929 KB) and `llms-full.txt` (the entire docs site
 as one 820 KB text file). Both of the latter are fetchable without auth and are the fastest
 way to give a coding agent complete knowledge of this API.
+
+### `audit/` — how far to trust this
+
+Six verification passes, each auditing the one before it.
+[`audit/README.md`](audit/README.md) gives the order and states what supersedes what — in
+short, [`audit/VERIFICATION-LIVE.md`](audit/VERIFICATION-LIVE.md) is the only pass that called
+the API and wins every behavioural disagreement with the five documentation-only passes.
+
+### `tools/` — the doc generators
+
+`gen_endpoint_ref.py` and `gen_response_shapes.py` produce
+[`docs/api/02-endpoint-reference.md`](docs/api/02-endpoint-reference.md) and
+[`docs/api/07-response-shapes.md`](docs/api/07-response-shapes.md) from `evidence/spec/schema.json`
+and `harness/fixtures/`. **Edit the generator, not the markdown.** Both run with `research/` as
+the working directory.
 
 ---
 
@@ -157,10 +194,10 @@ there is no FAQ, prizes, judges, timeline or sponsor page (all 404). Everything 
 | Bahasa Indonesia rules | **Closed in pass 4: they are not on the website.** The client bundle ships exactly five routes (`/`, `/rules`, `/tracks/*`, `/matching`, `/portal*`); 20 candidate Indonesian paths 404; `?lang=id` and `Accept-Language: id-ID` are both ignored; `<html lang="en">` with no `hreflang`. The rules page still says they exist, so they are distributed some other way — Slack or a document |
 | Prize breakdown by placement or track | Not published anywhere — only the IDR 50M total split (30M cash / 20M credits) |
 | Judge identities | Stated only as "the internal Sectors and Supertype judging team" |
-| Numeric rate limit | Never published. The docs' own recipe implies ~3 req/sec is safe — see [`06-parameter-cheatsheet.md`](02-sectors-platform/06-parameter-cheatsheet.md) |
+| Numeric rate limit | Never published. The docs' own recipe implies ~3 req/sec is safe — see [`06-parameter-cheatsheet.md`](docs/api/06-parameter-cheatsheet.md) |
 | Live Slack discussion | Requires joining; the only place organizers answer track-boundary questions. **105 members as of 5 Sep, and the shared invite link expires ~20 September — before registration closes on the 22nd** |
 | Portal contents (team page, submit form) | Login-gated |
-| ~~Full IDX index code list~~ | **Closed in pass 3.** No *helper endpoint* enumerates them, but the `/v2/index-daily/{index_code}/` description carries an accordion listing all **17**, and `supertypeai/sectors_indices_company_list` publishes a constituent CSV for 15. See [`06-parameter-cheatsheet.md`](02-sectors-platform/06-parameter-cheatsheet.md) |
+| ~~Full IDX index code list~~ | **Closed in pass 3.** No *helper endpoint* enumerates them, but the `/v2/index-daily/{index_code}/` description carries an accordion listing all **17**, and `supertypeai/sectors_indices_company_list` publishes a constituent CSV for 15. See [`06-parameter-cheatsheet.md`](docs/api/06-parameter-cheatsheet.md) |
 
 **Two sources worth re-checking before locking a track:** the Slack `#discussion` channel,
 and the matching board near the 22 September registration close for the final track split.
@@ -186,7 +223,7 @@ is genuinely Insider-gated** — API Key Management reports *"Please upgrade you
 access Sectors API"* and no key can be created. So a live call is not possible until the
 hackathon credits are claimed. That session did verify the **Deterministic Query Builder**,
 which corrected two errors in this dossier (see
-[`03-screener-query-language.md`](02-sectors-platform/03-screener-query-language.md)) — but the
+[`03-screener-query-language.md`](docs/api/03-screener-query-language.md)) — but the
 Playground itself runs in **Demo Mode with mock data** below the Insider tier, so it is not a
 substitute for live responses either.
 
@@ -220,7 +257,7 @@ a map, not the territory.
 
 **The single highest-value next step is not another research pass** — it is registering,
 claiming the credits, making one live call per endpoint family, and diffing the real responses
-against [`07-response-shapes.md`](02-sectors-platform/07-response-shapes.md).
+against [`07-response-shapes.md`](docs/api/07-response-shapes.md).
 
 ### Verification audit — 5 September 2026
 
@@ -243,7 +280,7 @@ Every claim in this dossier was re-checked against the saved raw sources. Method
 1. **Matching-board counts were wrong.** Reported 46 teams and 17/11/5; the true figures are **44 teams, 16/11/4**. The earlier count included track labels from the separate *participant profiles* section. The conclusion strengthens — Track 02 is a quarter of Track 01, not a third.
 2. **MCP mining tool count** said 18; the docs list **19**.
 3. **A misquote.** "Three independent signals is much stronger evidence…" was presented as verbatim; the source sentence begins "…the convergence of three independent signals…". Now quoted in full.
-4. **Four quotes had no saved provenance** — they came from live browser sessions never written to `99-raw/`. Evidence captured in [`99-raw/authenticated-session-captures.md`](99-raw/authenticated-session-captures.md) and [`99-raw/calendar-releases-flare-captures.md`](99-raw/calendar-releases-flare-captures.md).
+4. **Four quotes had no saved provenance** — they came from live browser sessions never written to `evidence/`. Evidence captured in [`evidence/sectors/authenticated-session-captures.md`](evidence/sectors/authenticated-session-captures.md) and [`evidence/sectors/calendar-releases-flare-captures.md`](evidence/sectors/calendar-releases-flare-captures.md).
 
 Earlier passes had already caught and fixed: two wrong credit costs (corporate actions and
 shareholders composition are 1 credit, not 2), a wrong 2-credit endpoint list, a premature
@@ -280,7 +317,7 @@ running API.
 
 Run on the assumption that the corpus contains hallucinations and that **neither prior audit
 record is evidence**. *(Pass 4 re-derived all twelve: **ten stand**, §1.1 is wrong — the correct figure is 297, not 271 — and §1.12 was incomplete, having verified only the paging happy path. §1.8 was not re-checked. See the fourth-pass section below.)* Every check re-derived from a primary source. No live `/v2/*` call, no
-account, no form. Full report: [`VERIFICATION-PASS-3.md`](VERIFICATION-PASS-3.md).
+account, no form. Full report: [`VERIFICATION-PASS-3.md`](audit/VERIFICATION-PASS-3.md).
 
 | Check | Method | Result |
 | --- | --- | --- |
@@ -323,8 +360,8 @@ source and ~40 dataset ingestion pipelines; **two further hosts** — `admin.sec
 Run on the assumption that **pass 3's report is a claim, not evidence**. Each of its twelve
 corrections re-derived from a primary source, then every standing check re-run independently.
 No live `/v2/*` call, no account, no form. Full report:
-[`VERIFICATION-PASS-4.md`](VERIFICATION-PASS-4.md); live evidence:
-[`99-raw/pass4-live-recheck-2026-09-05.md`](99-raw/pass4-live-recheck-2026-09-05.md).
+[`VERIFICATION-PASS-4.md`](audit/VERIFICATION-PASS-4.md); live evidence:
+[`evidence/rechecks/pass4-live-recheck-2026-09-05.md`](evidence/rechecks/pass4-live-recheck-2026-09-05.md).
 
 | Check | Method | Result |
 | --- | --- | --- |
@@ -365,8 +402,8 @@ closes.
 Five audits verified this corpus against documentation. This one called it. **66 of 70
 documented paths returned 200; the other four are duplicate spec entries that cannot be called.
 214 credits of the 1,000 grant. 116 payloads recorded, and the mock replays all of them.** Full
-report: [`VERIFICATION-LIVE.md`](VERIFICATION-LIVE.md); machine-generated evidence:
-[`99-raw/live-capture-2026-09-06.md`](99-raw/live-capture-2026-09-06.md).
+report: [`VERIFICATION-LIVE.md`](audit/VERIFICATION-LIVE.md); machine-generated evidence:
+[`evidence/rechecks/live-capture-2026-09-06.md`](evidence/rechecks/live-capture-2026-09-06.md).
 
 | Check | Method | Result |
 | --- | --- | --- |
@@ -390,7 +427,7 @@ endpoints are now served from real data — zero spec-example fallbacks.** Eleve
 from live behaviour were closed, including four that would have shaped client code wrongly:
 a missing key is **403, not 401**; a non-GET is **405**; an unrouted path returns a
 `{"details","urls"}` body with no `error` key; and an unknown identifier now 404s and bills
-instead of quietly returning BBCA's fixture. `03-mock-data/verify_mock.py` re-runs the whole
+instead of quietly returning BBCA's fixture. `harness/src/verify_mock.py` re-runs the whole
 audit — replay, error, method and header parity — for zero credits.
 
 Two long-open questions closed by probe, at a cost of 1 credit: **`sti` resolves** (200), and
@@ -400,14 +437,14 @@ returns the same free 400. The identifier must be a path segment; they are spec 
 endpoints.
 
 **Cost model settled against the portal's own usage log** (408 rows, committed at
-[`99-raw/usage-log/`](99-raw/usage-log/)): **377 charged, 377 modelled — exact.** Every
+[`evidence/usage-log/`](evidence/usage-log/)): **377 charged, 377 modelled — exact.** Every
 non-flat claim confirmed by a charged row (free-float 10, defaulted report 8, defaulted
 top-changes 10, `?q=` 3, the four flat-2 endpoints). **429s and 403s never appear in the log**,
 confirming from the billing side that they cost nothing. The reconciliation also caught two
 errors in this harness that had cancelled each other out — a plan entry under-costing
 `broker-activity/{code}/top/` by 1, and `capture.py` billing an unrouted 404 that is free —
 plus a third in the mock, which billed free-float 1 where the API charges 10. All fixed;
-`03-mock-data/reconcile_usage.py` re-runs the check.
+`harness/src/reconcile_usage.py` re-runs the check.
 
 **Census, three independent sources:** the spec declares 70 operations (66 callable); the
 documentation site names 67 `GET /v2/…` literals, all inside the spec; the live MCP server
@@ -455,7 +492,7 @@ participant-relevant hosts are enumerated exhaustively rather than explored oppo
 > is a reminder that sitemap enumeration is necessary but not sufficient for closure.
 
 **Every footer link has now been opened individually and classified** — see the table at the
-end of [`14-flare-community-and-engineering.md`](02-sectors-platform/14-flare-community-and-engineering.md).
+end of [`14-flare-community-and-engineering.md`](docs/api/14-flare-community-and-engineering.md).
 That sweep is what surfaced the two subdomains, FLARE, the referral program, Stories, and the
 search-architecture article; a sitemap listing alone would have missed all of them.
 
