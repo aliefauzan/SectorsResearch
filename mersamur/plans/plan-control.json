@@ -1,0 +1,34 @@
+{
+  "name": "Control — small caps that were never suspended, the arm that turns 61,6% from descriptive into discriminative",
+  "grant": 1000,
+  "notes": [
+    "Task 10. Closes the last hole left by the feasibility pass (riset/temuan-kelayakan.md",
+    "§Q1 'Peringatan: perbandingan ini masih tercampur'): the suspended basket was compared",
+    "against blue chips, which confounds size with manipulation. Small stocks have concentrated",
+    "brokers whether or not they are being pumped.",
+    "Symbols are the first ten of `universe.control_group()` — members of the 200-smallest",
+    "screener page with zero suspension events on record, across all nine reason classes and",
+    "all years, not just cooling_down since 2025. Every one already came back inside the paid",
+    "screener row set, so none of them can 404 at 1 credit.",
+    "`start` and `end` are explicit and identical to the window the suspended basket landed on",
+    "(recorded/v2_daily_*.json: 2026-08-10..2026-09-09, 21 trading days). /v2/daily/ defaults to",
+    "the last 30 calendar days, so a defaulted call one day later would silently shift the window",
+    "and make the two arms non-comparable.",
+    "Broker-summary for this arm is deliberately NOT bought here (20 more credits). Momentum is",
+    "tested first; if momentum alone already separates the arms, concentration need not be paid for."
+  ],
+  "control_basket": ["INDX","BMBL","WIDI","OCAP","ARKA","HADE","DIGI","PCAR","AEGS","RICY"],
+  "calls": [
+    {"tier": 1, "path": "/v2/daily/INDX/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1,
+     "note": "control arm — same 21-day window as the suspended basket"},
+    {"tier": 1, "path": "/v2/daily/BMBL/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/WIDI/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/OCAP/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/ARKA/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/HADE/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/DIGI/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/PCAR/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/AEGS/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1},
+    {"tier": 1, "path": "/v2/daily/RICY/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "est_cost": 1}
+  ]
+}

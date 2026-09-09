@@ -668,6 +668,20 @@
     "status": 200,
     "tier": 1
   },
+  "v2_daily_AEGS__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971725.8454971,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/AEGS/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_daily_AGAR": {
     "cost_headers": {},
     "est_cost": 1,
@@ -685,6 +699,20 @@
     "fetched_at": 1788626938.186953,
     "params": {},
     "path": "/v2/daily/ANTM/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_ARKA__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971714.8304892,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/ARKA/",
     "status": 200,
     "tier": 1
   },
@@ -726,6 +754,20 @@
     "status": 200,
     "tier": 1
   },
+  "v2_daily_BMBL__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971705.784831,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/BMBL/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_daily_BMRI": {
     "cost_headers": {},
     "est_cost": 1,
@@ -755,6 +797,48 @@
     "status": 200,
     "tier": 3
   },
+  "v2_daily_DIGI__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971720.139921,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/DIGI/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_HADE__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971717.494488,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/HADE/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_daily_INDX__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971703.425964,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/INDX/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_daily_LIFE": {
     "cost_headers": {},
     "est_cost": 1,
@@ -777,6 +861,20 @@
     "status": 200,
     "tier": 3
   },
+  "v2_daily_OCAP__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971711.2346408,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/OCAP/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_daily_PACK": {
     "cost_headers": {},
     "est_cost": 1,
@@ -788,6 +886,20 @@
     "status": 200,
     "tier": 3
   },
+  "v2_daily_PCAR__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971723.1325288,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/PCAR/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_daily_PPGL": {
     "cost_headers": {},
     "est_cost": 1,
@@ -798,6 +910,20 @@
     "path": "/v2/daily/PPGL/",
     "status": 200,
     "tier": 3
+  },
+  "v2_daily_RICY__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971728.620613,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/RICY/",
+    "status": 200,
+    "tier": 1
   },
   "v2_daily_SAFE": {
     "cost_headers": {},
@@ -840,6 +966,20 @@
     "path": "/v2/daily/TRUK/",
     "status": 200,
     "tier": 3
+  },
+  "v2_daily_WIDI__end-2026-09-09_start-2026-08-10": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788971708.520422,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-09",
+      "start": "2026-08-10"
+    },
+    "path": "/v2/daily/WIDI/",
+    "status": 200,
+    "tier": 1
   },
   "v2_does-not-exist": {
     "billed": true,

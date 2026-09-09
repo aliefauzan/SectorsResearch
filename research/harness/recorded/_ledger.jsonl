@@ -189,3 +189,13 @@
 {"ts": 1788965121.8948858, "path": "/v2/daily/TMPO/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
 {"ts": 1788965124.0181959, "path": "/v2/daily/AGAR/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
 {"ts": 1788965126.549939, "path": "/v2/companies/", "params": {"where": "market_cap<1000000000000", "order_by": "market_cap", "limit": 200, "include_query_values": "true"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971703.425014, "path": "/v2/daily/INDX/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971705.783083, "path": "/v2/daily/BMBL/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971708.5195389, "path": "/v2/daily/WIDI/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971711.2335758, "path": "/v2/daily/OCAP/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971714.8295639, "path": "/v2/daily/ARKA/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971717.4933481, "path": "/v2/daily/HADE/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971720.13858, "path": "/v2/daily/DIGI/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971723.1309571, "path": "/v2/daily/PCAR/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971725.8441138, "path": "/v2/daily/AEGS/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788971728.619064, "path": "/v2/daily/RICY/", "params": {"start": "2026-08-10", "end": "2026-09-09"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
