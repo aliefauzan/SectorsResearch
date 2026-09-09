@@ -27,7 +27,8 @@ Evidence: `harness/recorded/` (payloads, `_manifest.json`, `_ledger.jsonl`) and
 | 405 (free) | 1 |
 | 429 (free, mid-sweep) | 2 |
 | **Credits billed** | **265** |
-| Remaining of grant | ~735 |
+| Charged to the grant, all sources (portal log) | **377** — the 265 above plus 112 from traffic outside `capture.py` |
+| Remaining of grant | ~623 |
 
 Spend by stage: tier 0 helper lists 5 · tier 1 core 28 · tiers 3–4 detail 67 · tier 2 universe
 sweeps 74 · coverage-completion plan 40 · root-cause probes 5 (the rest were free failures) ·

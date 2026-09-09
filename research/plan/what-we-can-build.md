@@ -285,9 +285,10 @@ Given the 40/30/30 weighting and the calendar (18 days to register, 26 to submit
 qualifying bar is objective and easy to clear, the evidence requirement is free if you start
 the scheduler today, the cost is predictable, and the output is instantly legible to a judge.
 
-The public matching board backs this up: of 44 public teams,
-**16 chose Track 01, 11 chose Track 03, and only 4 chose Track 02**. See
-[`competitive-landscape.md`](competitive-landscape.md).
+The public matching board backs this up: on the 5 September recount, of 48 public teams,
+**15 chose Track 01, 12 chose Track 03, and 7 chose Track 02**. The 4 September reading
+(44 teams; 16-11-4) is superseded — Track 02 is still the least crowded, but by half the
+margin it first appeared to have. See [`competitive-landscape.md`](competitive-landscape.md).
 
 **Track 03 with a broker-flow or mining derivation** is the best differentiation play — it
 uses data nobody else has and the derivation is easy to defend.

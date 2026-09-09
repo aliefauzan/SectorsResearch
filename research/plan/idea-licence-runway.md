@@ -95,7 +95,7 @@ parameter, and that is a different project.
 
 ## Credit cost
 
-Roughly 735 of the 1,000-credit grant remain.
+Roughly 623 of the 1,000-credit grant remain (portal log: 377 charged).
 
 `licenses` and `sites` are paginated, so compute the sweep cost before starting it:
 

@@ -10,7 +10,9 @@ research, the Sectors API reference, and a standard-library Python harness whose
 is to let the product be built without spending API credits.
 
 The team grant is **1,000 credits, non-transferable, no top-up, expiring at the end of the
-event**. ~265 were spent on the 6 Sep 2026 live capture, so roughly **735 remain**. Iteration —
+event**. **377 were charged to the grant** — 265 by `capture.py` on the 6 Sep 2026 live capture plus
+112 by traffic outside it, per the portal usage log (`reconcile_usage.py`) — so roughly
+**623 remain**. Iteration —
 not the demo — is what burns them. Everything in `research/harness/` exists so that
 development happens against local recordings and a live call is made at most once.
 

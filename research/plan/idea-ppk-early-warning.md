@@ -92,7 +92,7 @@ Criterion 4 inherits the mining limit: only **9 of 366** mining companies have d
 
 ## Credit cost
 
-Roughly 735 of the 1,000-credit grant remain. Rough daily cycle:
+Roughly 623 of the 1,000-credit grant remain (portal log: 377 charged). Rough daily cycle:
 
 - `/v2/suspensions/` — 1 credit, whole market
 - one screener call with `where=total_equity_mrq < 0 or last_close_price < 51` and
