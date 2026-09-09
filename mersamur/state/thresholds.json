@@ -1,21 +1,44 @@
 {
-  "version": 2,
+  "version": 3,
   "updated_on": "2026-09-10",
   "current": {
     "concentration": 0.45,
     "volume_anomaly": 5.0,
-    "momentum": 90.0
+    "momentum": 90.0,
+    "catalyst": 0.1
   },
   "bounds": {
-    "concentration": {"floor": 0.30, "ceiling": 0.75},
-    "volume_anomaly": {"floor": 2.0, "ceiling": 25.0},
-    "momentum": {"floor": 50.0, "ceiling": 99.0}
+    "concentration": {
+      "floor": 0.3,
+      "ceiling": 0.75
+    },
+    "volume_anomaly": {
+      "floor": 2.0,
+      "ceiling": 25.0
+    },
+    "momentum": {
+      "floor": 50.0,
+      "ceiling": 99.0
+    },
+    "catalyst": {
+      "floor": 0.0,
+      "ceiling": 0.5
+    }
   },
   "cohort_factors": {
-    "retail": 0.90,
-    "mixed": 1.00,
-    "institutional": 1.10,
-    "unknown": 1.00
+    "retail": 0.9,
+    "mixed": 1.0,
+    "institutional": 1.1,
+    "unknown": 1.0
   },
-  "history": []
+  "history": [
+    {
+      "version": 3,
+      "on": "2026-09-10",
+      "axis": "catalyst",
+      "from": null,
+      "to": 0.1,
+      "reason": "Sumbu katalis masuk profil (tugas 09) dan butuh bar. 0,10 adalah pangsa artikel berdimensi fundamental pada sepuluh nama tersuspensi di rekaman 6 September 2026: 5 dari 49 artikel. Bar dibaca terbalik terhadap sumbu lain - sumbu menyala saat pangsa berada di bawah atau sama dengan bar."
+    }
+  ]
 }
