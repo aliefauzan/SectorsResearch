@@ -1,10 +1,10 @@
 # Firewall Tip Saham — dalam bahasa sederhana
 
 Tanggal: 2026-09-09. Pendamping bahasa awam untuk
-[`deep-research-firewall-pump-and-dump.md`](deep-research-firewall-pump-and-dump.md).
+[`deep-research.md`](deep-research.md).
 
 Topik ini **berdiri sendiri**. Riset kedua pada sesi yang sama, tentang akses non-visual, ada di
-[`deep-research-akses-non-visual-simple.md`](deep-research-akses-non-visual-simple.md) — topik
+[`tunanetra/ringkas.md`](../tunanetra/ringkas.md) — topik
 berbeda, tidak saling bergantung.
 
 ---
@@ -43,10 +43,10 @@ kemudian.
 
 ## 3. Input → proses → output
 
-![Alur input, proses, output — firewall tip saham](diagrams/firewall-pump-and-dump-alur.png)
+![Alur input, proses, output — firewall tip saham](diagrams/alur.png)
 
-> Diagram: [`diagrams/firewall-pump-and-dump-alur.drawio`](diagrams/firewall-pump-and-dump-alur.drawio),
-> dibangun oleh [`diagrams/firewall-pump-and-dump-alur.py`](diagrams/firewall-pump-and-dump-alur.py).
+> Diagram: [`diagrams/alur.drawio`](diagrams/alur.drawio),
+> dibangun oleh [`diagrams/alur.py`](diagrams/alur.py).
 
 
 ```

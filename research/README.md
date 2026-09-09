@@ -46,6 +46,8 @@ research/
     recorded/         real payloads, flat and keyed by _manifest.json
     synth/            generated universe, split market/ flow/ company/ mining/
   plan/               what to build — ideas, competitive landscape, what is already published
+    tunanetra/        deep research: non-visual access to IDX stock research
+    pump-and-dump/    deep research: pre-trade firewall for social-media stock tips
   evidence/           provenance
     spec/             schema.json, llms.txt, llms-full.txt, postman/
     hackathon/        captures of the hackathon site
@@ -108,6 +110,9 @@ research/
 | [`what-we-can-build.md`](plan/what-we-can-build.md) | The data nobody else has, then **thirteen concrete project ideas** mapped to tracks, with the exact endpoints and credit cost of each — and a recommendation if you have to pick one |
 | [`competitive-landscape.md`](plan/competitive-landscape.md) | What the other 48 public teams are doing: **track distribution, team sizes, which skills the field is under-valuing** — plus **Sectors Workflow**, the shipping product that competes with Track 02 |
 | [`already-published.md`](plan/already-published.md) | **The organizers have already published working tutorials for the most obvious project in each track.** What's taken, the test to apply to your pitch, and the six areas of the API with no recipe at all |
+| [`idea-shortlist-2026-09-08.md`](plan/idea-shortlist-2026-09-08.md) | The five ideas actually under consideration, each judged against the four gates a judge walks, plus the ranking and the TimesFM appendix |
+| [`tunanetra/`](plan/tunanetra/deep-research.md) | Deep research on **non-visual access to IDX stock research** — the blind and low-vision investor who cannot read the charts. [`ringkas.md`](plan/tunanetra/ringkas.md) is the plain-language companion; [`diagrams/alur.png`](plan/tunanetra/diagrams/alur.png) is the flow |
+| [`pump-and-dump/`](plan/pump-and-dump/deep-research.md) | Deep research on the **pre-trade firewall for social-media stock tips**. [`ringkas.md`](plan/pump-and-dump/ringkas.md) is the plain-language companion, [`agen-risiko-belajar-mandiri.md`](plan/pump-and-dump/agen-risiko-belajar-mandiri.md) the self-learning orchestration layer, [`diagrams/alur.png`](plan/pump-and-dump/diagrams/alur.png) the flow |
 
 Seventeen ideas total across the two, four of them built on data found only by reading the
 raw payloads.

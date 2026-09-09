@@ -50,7 +50,7 @@ sendiri seiring peringatan masa lalunya diadu dengan pengumuman IDX).
 
 > Rancangan lengkap lapisan itu — sumber label, pagar anti-overfitting, kebocoran label, dan
 > anggaran kreditnya — ada di
-> [`idea-agen-risiko-belajar-mandiri.md`](idea-agen-risiko-belajar-mandiri.md).
+> [`pump-and-dump/agen-risiko-belajar-mandiri.md`](pump-and-dump/agen-risiko-belajar-mandiri.md).
 
 ---
 

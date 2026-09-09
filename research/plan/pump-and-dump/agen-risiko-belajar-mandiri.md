@@ -2,7 +2,7 @@
 
 > Meminjam mekanisme belajar dari `yunus-0x/meridian` — *lessons* terstruktur dan
 > *threshold evolution* — dan membuang lapisan eksekusinya, yang dilarang di semua track.
-> Lapisan orkestrasi untuk [`idea-shortlist-2026-09-08.md`](idea-shortlist-2026-09-08.md) #4
+> Lapisan orkestrasi untuk [`idea-shortlist-2026-09-08.md`](../idea-shortlist-2026-09-08.md) #4
 > (pemeriksa risiko pump-and-dump). Track 01.
 
 ## Yang dipinjam dan yang dibuang
@@ -92,7 +92,7 @@ dan lebih bisa dipertahankan:
 ## Loop
 
 Irama tick ditentukan oleh input paling lambat, bukan oleh penutupan pasar. Kadensi refresh
-Sectors berbeda per dataset — lihat [`../docs/api/11-data-provenance.md`](../docs/api/11-data-provenance.md):
+Sectors berbeda per dataset — lihat [`../docs/api/11-data-provenance.md`](../../docs/api/11-data-provenance.md):
 
 | Dataset | Kadensi |
 | --- | --- |
@@ -208,7 +208,7 @@ tanpa biaya. Hanya tick harian yang menyentuh API live.
 ### 4. Saham dengan seluruh fitur nol adalah saham yang disuspensi
 
 Bukan saham yang sepi. Cek `/v2/suspensions/` sebelum menyimpulkan apa pun tentang deret datar.
-Lihat [`../docs/api/10-domain-pitfalls.md`](../docs/api/10-domain-pitfalls.md).
+Lihat [`../docs/api/10-domain-pitfalls.md`](../../docs/api/10-domain-pitfalls.md).
 
 ### 5. Perangkap zero-sum pada data broker
 

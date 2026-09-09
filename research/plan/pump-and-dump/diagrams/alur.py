@@ -76,5 +76,5 @@ f.legend(NO_C,  "kondisi gagal · berhenti atau ditolak")
 f.legend(ALT,   "pengambilan ulang")
 f.legend(NOTE,  "sumber data dan evaluasi", dashed=True)
 
-f.write("research/plan/diagrams/firewall-pump-and-dump-alur.drawio")
+f.write("research/plan/pump-and-dump/diagrams/alur.drawio")
 print("written")

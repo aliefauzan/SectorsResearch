@@ -1,10 +1,10 @@
 # Akses Non-Visual — dalam bahasa sederhana
 
 Tanggal: 2026-09-09. Pendamping bahasa awam untuk
-[`deep-research-akses-non-visual.md`](deep-research-akses-non-visual.md).
+[`deep-research.md`](deep-research.md).
 
 Topik ini **berdiri sendiri**. Riset kedua pada sesi yang sama, tentang firewall tip saham, ada di
-[`deep-research-firewall-pump-and-dump-simple.md`](deep-research-firewall-pump-and-dump-simple.md)
+[`pump-and-dump/ringkas.md`](../pump-and-dump/ringkas.md)
 — topik berbeda, tidak saling bergantung.
 
 ---
@@ -73,10 +73,10 @@ bisa didengar"**.
 
 ## 5. Input → proses → output
 
-![Alur input, proses, output — riset saham yang bisa didengar](diagrams/akses-non-visual-alur.png)
+![Alur input, proses, output — riset saham yang bisa didengar](diagrams/alur.png)
 
-> Diagram: [`diagrams/akses-non-visual-alur.drawio`](diagrams/akses-non-visual-alur.drawio),
-> dibangun oleh [`diagrams/akses-non-visual-alur.py`](diagrams/akses-non-visual-alur.py).
+> Diagram: [`diagrams/alur.drawio`](diagrams/alur.drawio),
+> dibangun oleh [`diagrams/alur.py`](diagrams/alur.py).
 
 
 ```

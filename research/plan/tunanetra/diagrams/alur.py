@@ -60,5 +60,5 @@ f.legend(NO_C,  "kondisi gagal · berhenti atau ditolak")
 f.legend(ALT,   "pengambilan ulang")
 f.legend(NOTE,  "sumber data", dashed=True)
 
-f.write("research/plan/diagrams/akses-non-visual-alur.drawio")
+f.write("research/plan/tunanetra/diagrams/alur.drawio")
 print("written")

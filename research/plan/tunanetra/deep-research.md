@@ -5,12 +5,12 @@ Tanggal: 2026-09-09. Semua pengambilan dilakukan 2026-09-09 kecuali dinyatakan l
 Topik: **investor tunanetra dan low-vision yang tidak bisa membaca grafik, laporan keuangan, dan
 dokumen emiten.** Riset terpisah, berdiri sendiri.
 
-Pendamping: [`deep-research-akses-non-visual-simple.md`](deep-research-akses-non-visual-simple.md)
+Pendamping: [`ringkas.md`](ringkas.md)
 (versi bahasa sederhana). Dokumen ini mendalami ide **#5** di
-[`idea-shortlist-2026-09-08.md`](idea-shortlist-2026-09-08.md).
+[`idea-shortlist-2026-09-08.md`](../idea-shortlist-2026-09-08.md).
 
 Riset kedua yang dijalankan pada sesi yang sama, dengan topik **berbeda**, ada di
-[`deep-research-firewall-pump-and-dump.md`](deep-research-firewall-pump-and-dump.md). Kedua
+[`pump-and-dump/deep-research.md`](../pump-and-dump/deep-research.md). Kedua
 dokumen tidak saling bergantung. Satu paragraf tentang irisannya ada di §A11, dan itu bukan
 premis dokumen ini.
 
@@ -220,7 +220,7 @@ awam.
   Saputri, mahasiswi UIN Sunan Kalijaga, yang bertransaksi mandiri lewat TalkBack.
 - Yulianto, investor tunanetra yang dikutip Solider dan Beritalima, menambahkan dua hal:
   aksesibel ≠ inklusif, dan peringatan terhadap **ketergantungan pada rekomendasi instan** —
-  yang merupakan topik riset terpisah — lihat [`deep-research-firewall-pump-and-dump.md`](deep-research-firewall-pump-and-dump.md).
+  yang merupakan topik riset terpisah — lihat [`pump-and-dump/deep-research.md`](../pump-and-dump/deep-research.md).
 
 **Kesimpulan yang mengubah desain:** bagian *order entry* sudah relatif terpecahkan oleh
 TalkBack/VoiceOver pada sebagian sekuritas. Yang belum terpecahkan adalah **riset emiten**.
@@ -349,10 +349,10 @@ Diurutkan menurut kekuatan bukti yang mendukungnya.
 
 ## A10. Kontrak input – proses – output
 
-![Alur input, proses, output](diagrams/akses-non-visual-alur.png)
+![Alur input, proses, output](diagrams/alur.png)
 
-Sumber diagram: [`diagrams/akses-non-visual-alur.py`](diagrams/akses-non-visual-alur.py) →
-[`diagrams/akses-non-visual-alur.drawio`](diagrams/akses-non-visual-alur.drawio).
+Sumber diagram: [`diagrams/alur.py`](diagrams/alur.py) →
+[`diagrams/alur.drawio`](diagrams/alur.drawio).
 
 
 ### Input
@@ -427,7 +427,7 @@ metrik         : jumlah alur yang selesai tanpa bantuan visual, dan waktunya
 ## A11. Irisan dengan riset lain — satu paragraf, bukan premis
 
 Riset kedua pada sesi ini,
-[`deep-research-firewall-pump-and-dump.md`](deep-research-firewall-pump-and-dump.md), membahas
+[`pump-and-dump/deep-research.md`](../pump-and-dump/deep-research.md), membahas
 topik yang berbeda: memeriksa tip saham media sosial. Irisannya ada dan layak dicatat sekali —
 Yulianto, investor tunanetra yang dikutip Solider dan Beritalima, memperingatkan bahaya
 ketergantungan pada rekomendasi instan, dan kanal tip (Telegram, WhatsApp, YouTube) kebetulan

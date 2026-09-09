@@ -172,6 +172,9 @@ research/
                       call slug via _manifest.json — a cache, not a browsable tree)
     synth/            generated universe, split market/ flow/ company/ mining/
   plan/               build ideas, competitive landscape, what is already published
+    tunanetra/        deep research on non-visual access + its flow diagram
+    pump-and-dump/    deep research on the social-tip firewall, the self-learning
+                      risk agent, and its flow diagram
   evidence/
     spec/             schema.json, llms.txt, llms-full.txt, postman/
     hackathon/        captures of the hackathon site

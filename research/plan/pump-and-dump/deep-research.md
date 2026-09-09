@@ -6,14 +6,14 @@ Topik: **investor ritel menerima satu kode saham dari grup chat dan tidak punya 
 pergerakan nyata dari yang direkayasa.** Riset terpisah, berdiri sendiri.
 
 Pendamping:
-[`deep-research-firewall-pump-and-dump-simple.md`](deep-research-firewall-pump-and-dump-simple.md)
+[`ringkas.md`](ringkas.md)
 (versi bahasa sederhana). Dokumen ini mendalami ide **#4** di
-[`idea-shortlist-2026-09-08.md`](idea-shortlist-2026-09-08.md), dan bersinggungan dengan
-[`idea-agen-risiko-belajar-mandiri.md`](idea-agen-risiko-belajar-mandiri.md) pada bagian
+[`idea-shortlist-2026-09-08.md`](../idea-shortlist-2026-09-08.md), dan bersinggungan dengan
+[`agen-risiko-belajar-mandiri.md`](agen-risiko-belajar-mandiri.md) pada bagian
 kebocoran label.
 
 Riset kedua yang dijalankan pada sesi yang sama, dengan topik **berbeda** (akses non-visual ke
-riset saham), ada di [`deep-research-akses-non-visual.md`](deep-research-akses-non-visual.md).
+riset saham), ada di [`tunanetra/deep-research.md`](../tunanetra/deep-research.md).
 Kedua dokumen tidak saling bergantung.
 
 **Aturan verifikasi.** Setiap klaim faktual membawa DOI, arXiv ID, nomor siaran pers, atau URL
@@ -49,7 +49,7 @@ kosong secara senyap bila diberi `--sort stars`.
 
 # Koreksi terhadap dokumen sebelumnya
 
-Tiga klaim di [`idea-shortlist-2026-09-08.md`](idea-shortlist-2026-09-08.md) perlu direvisi.
+Tiga klaim di [`idea-shortlist-2026-09-08.md`](../idea-shortlist-2026-09-08.md) perlu direvisi.
 
 **K1. "Float tipis" tidak boleh jadi sumbu utama.** Daftar pendek menempatkan `free_float` sebagai
 baris pertama tabel kerapuhan. BEI mengumumkan pada Juli 2026 rencana **menghapus free float
@@ -352,7 +352,7 @@ bisa diklasifikasi, tanggal presisi, dan PDF resmi sebagai provenance. 583 baris
 mengembalikan **snapshot hari ini**, tanpa tanggal. Memakai float hari ini untuk menilai event
 Agustus adalah kebocoran. Gunakan `/v2/company/shareholders-composition/{symbol}/`, yang bertanggal
 bulanan — koreksi yang sama sudah dipakai di
-[`idea-agen-risiko-belajar-mandiri.md`](idea-agen-risiko-belajar-mandiri.md).
+[`agen-risiko-belajar-mandiri.md`](agen-risiko-belajar-mandiri.md).
 
 **UNVERIFIED:** hanya 20 dari 583 baris yang terbaca. Kosakata `reason` pada 563 baris sisanya
 belum diketahui, dan skema pelabelan bergantung padanya. Ini probe pertama yang harus dijalankan,
@@ -414,10 +414,10 @@ bukan klaim kualitatif.
 
 ## B11. Kontrak input – proses – output
 
-![Alur input, proses, output](diagrams/firewall-pump-and-dump-alur.png)
+![Alur input, proses, output](diagrams/alur.png)
 
-Sumber diagram: [`diagrams/firewall-pump-and-dump-alur.py`](diagrams/firewall-pump-and-dump-alur.py) →
-[`diagrams/firewall-pump-and-dump-alur.drawio`](diagrams/firewall-pump-and-dump-alur.drawio).
+Sumber diagram: [`diagrams/alur.py`](diagrams/alur.py) →
+[`diagrams/alur.drawio`](diagrams/alur.drawio).
 
 
 Ditulis sebagai kontrak supaya implementasi tidak melenceng, dan supaya tiap langkah bisa dilacak
