@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "updated_on": "2026-09-09",
+  "current": {
+    "concentration": 0.45
+  },
+  "bounds": {
+    "concentration": {"floor": 0.30, "ceiling": 0.75}
+  },
+  "cohort_factors": {
+    "retail": 0.90,
+    "mixed": 1.00,
+    "institutional": 1.10,
+    "unknown": 1.00
+  },
+  "history": []
+}
