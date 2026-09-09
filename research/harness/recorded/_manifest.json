@@ -32,6 +32,32 @@
     "status": 200,
     "tier": 3
   },
+  "v2_broker-summary_AGAR_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965042.329476,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/AGAR/top/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_broker-summary_ASLI_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965020.649895,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/ASLI/top/",
+    "status": 200,
+    "tier": 2
+  },
   "v2_broker-summary_BBCA__end-2026-08-14_start-2026-08-01": {
     "cost_headers": {},
     "est_cost": 1,
@@ -62,6 +88,84 @@
     "status": 200,
     "tier": 3
   },
+  "v2_broker-summary_CSMI_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965037.2593338,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/CSMI/top/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_broker-summary_LIFE_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965023.7204962,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/LIFE/top/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_broker-summary_NICK_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965026.4511528,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/NICK/top/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_broker-summary_PACK_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965035.2743711,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/PACK/top/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_broker-summary_PPGL_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965030.532916,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/PPGL/top/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_broker-summary_SAFE_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965033.2567198,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/SAFE/top/",
+    "status": 200,
+    "tier": 2
+  },
   "v2_broker-summary_TLKM_top": {
     "cost_headers": {},
     "est_cost": 2,
@@ -70,6 +174,32 @@
     "path": "/v2/broker-summary/TLKM/top/",
     "status": 200,
     "tier": 3
+  },
+  "v2_broker-summary_TMPO_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965039.7534971,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/TMPO/top/",
+    "status": 200,
+    "tier": 2
+  },
+  "v2_broker-summary_TRUK_top__n_brokers-10": {
+    "cost_headers": {},
+    "est_cost": 2,
+    "fetched_at": 1788965028.534446,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "n_brokers": 10
+    },
+    "path": "/v2/broker-summary/TRUK/top/",
+    "status": 200,
+    "tier": 2
   },
   "v2_brokers": {
     "cost_headers": {},
@@ -101,6 +231,22 @@
     "path": "/v2/close/",
     "status": 200,
     "tier": 2
+  },
+  "v2_companies__include_query_values-true_limit-200_order_by-market_cap_where-market_cap-1000000000000": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965126.553427,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "include_query_values": "true",
+      "limit": 200,
+      "order_by": "market_cap",
+      "where": "market_cap<1000000000000"
+    },
+    "path": "/v2/companies/",
+    "status": 200,
+    "tier": 3
   },
   "v2_companies__limit-200_order_by--market_cap_where-market_cap-10000000000": {
     "cost_headers": {},
@@ -522,6 +668,17 @@
     "status": 200,
     "tier": 1
   },
+  "v2_daily_AGAR": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965124.020096,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/AGAR/",
+    "status": 200,
+    "tier": 3
+  },
   "v2_daily_ANTM": {
     "cost_headers": {},
     "est_cost": 1,
@@ -539,6 +696,17 @@
     "path": "/v2/daily/ASII/",
     "status": 200,
     "tier": 1
+  },
+  "v2_daily_ASLI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965103.602624,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/ASLI/",
+    "status": 200,
+    "tier": 3
   },
   "v2_daily_BBCA": {
     "cost_headers": {},
@@ -576,6 +744,72 @@
     "status": 200,
     "tier": 1
   },
+  "v2_daily_CSMI": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965119.685803,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/CSMI/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_daily_LIFE": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965106.1327438,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/LIFE/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_daily_NICK": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965108.180371,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/NICK/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_daily_PACK": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965116.920684,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/PACK/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_daily_PPGL": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965112.9713678,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/PPGL/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_daily_SAFE": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965114.917697,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/SAFE/",
+    "status": 200,
+    "tier": 3
+  },
   "v2_daily_TLKM": {
     "cost_headers": {},
     "est_cost": 1,
@@ -584,6 +818,28 @@
     "path": "/v2/daily/TLKM/",
     "status": 200,
     "tier": 1
+  },
+  "v2_daily_TMPO": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965121.896606,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/TMPO/",
+    "status": 200,
+    "tier": 3
+  },
+  "v2_daily_TRUK": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788965110.899332,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/daily/TRUK/",
+    "status": 200,
+    "tier": 3
   },
   "v2_does-not-exist": {
     "billed": true,
@@ -1247,6 +1503,20 @@
     "status": 200,
     "tier": 1
   },
+  "v2_news__limit-30_symbols-ASLI-LIFE-NICK-TRUK-PPGL": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1788964851.124064,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "limit": 30,
+      "symbols": "ASLI,LIFE,NICK,TRUK,PPGL,SAFE,PACK,CSMI,TMPO,AGAR"
+    },
+    "path": "/v2/news/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_sgx_buybacks__limit-20": {
     "cost_headers": {},
     "est_cost": 1,
@@ -1555,6 +1825,19 @@
     "est_cost": 1,
     "fetched_at": 1788626921.112134,
     "params": {},
+    "path": "/v2/suspensions/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_suspensions__limit-30": {
+    "cost_headers": {},
+    "est_cost": 20,
+    "fetched_at": 1788964845.3340778,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "limit": 30
+    },
     "path": "/v2/suspensions/",
     "status": 200,
     "tier": 1

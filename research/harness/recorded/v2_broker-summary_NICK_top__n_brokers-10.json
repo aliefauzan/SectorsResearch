@@ -1,0 +1,116 @@
+{
+ "symbol": "NICK.JK",
+ "start": "2026-06-11",
+ "end": "2026-09-09",
+ "origin": "all",
+ "cohort": "all",
+ "top_buyers": [
+  {
+   "rank": 1,
+   "broker_code": "PD",
+   "net_idr": 1163553500,
+   "buy_idr": 1512180500,
+   "sell_idr": 348627000
+  },
+  {
+   "rank": 2,
+   "broker_code": "XC",
+   "net_idr": 12499000,
+   "buy_idr": 295405000,
+   "sell_idr": 282906000
+  },
+  {
+   "rank": 3,
+   "broker_code": "CP",
+   "net_idr": 8106500,
+   "buy_idr": 44882500,
+   "sell_idr": 36776000
+  },
+  {
+   "rank": 4,
+   "broker_code": "KK",
+   "net_idr": 1565500,
+   "buy_idr": 23589500,
+   "sell_idr": 22024000
+  },
+  {
+   "rank": 5,
+   "broker_code": "RO",
+   "net_idr": 452500,
+   "buy_idr": 1428500,
+   "sell_idr": 976000
+  }
+ ],
+ "top_sellers": [
+  {
+   "rank": 1,
+   "broker_code": "SQ",
+   "net_idr": -341047000,
+   "buy_idr": 11514000,
+   "sell_idr": 352561000
+  },
+  {
+   "rank": 2,
+   "broker_code": "ES",
+   "net_idr": -150000000,
+   "buy_idr": 0,
+   "sell_idr": 150000000
+  },
+  {
+   "rank": 3,
+   "broker_code": "GR",
+   "net_idr": -127890000,
+   "buy_idr": 15175000,
+   "sell_idr": 143065000
+  },
+  {
+   "rank": 4,
+   "broker_code": "YU",
+   "net_idr": -77902000,
+   "buy_idr": 45603000,
+   "sell_idr": 123505000
+  },
+  {
+   "rank": 5,
+   "broker_code": "CC",
+   "net_idr": -64814000,
+   "buy_idr": 175982500,
+   "sell_idr": 240796500
+  },
+  {
+   "rank": 6,
+   "broker_code": "XL",
+   "net_idr": -62103500,
+   "buy_idr": 757859000,
+   "sell_idr": 819962500
+  },
+  {
+   "rank": 7,
+   "broker_code": "DH",
+   "net_idr": -59067500,
+   "buy_idr": 564000,
+   "sell_idr": 59631500
+  },
+  {
+   "rank": 8,
+   "broker_code": "YP",
+   "net_idr": -57885000,
+   "buy_idr": 58746000,
+   "sell_idr": 116631000
+  },
+  {
+   "rank": 9,
+   "broker_code": "DR",
+   "net_idr": -54107500,
+   "buy_idr": 17028500,
+   "sell_idr": 71136000
+  },
+  {
+   "rank": 10,
+   "broker_code": "AG",
+   "net_idr": -47003000,
+   "buy_idr": 1820000,
+   "sell_idr": 48823000
+  }
+ ]
+}

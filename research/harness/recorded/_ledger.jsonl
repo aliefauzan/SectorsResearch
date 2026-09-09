@@ -166,3 +166,26 @@
 {"ts": 1788628594.974298, "path": "/v2/klse/companies/top/", "params": {}, "status": 200, "est_cost": 5, "billed": true, "billed_cost": 5, "pages_fetched": 0, "cost_headers": {}}
 {"ts": 1788628598.714103, "path": "/v2/companies/", "params": {"q": "banks with return on equity above 15 percent", "limit": 20}, "status": 200, "est_cost": 3, "billed": true, "billed_cost": 3, "pages_fetched": 0, "cost_headers": {}}
 {"ts": 1788628600.482951, "path": "/v2/subsectors/", "params": {}, "status": 403, "est_cost": 1, "billed": false, "billed_cost": 0, "pages_fetched": 0, "cost_headers": {}, "error_body": "{\"error\": \"Authentication credentials were not provided.\"}"}
+{"ts": 1788964845.326256, "path": "/v2/suspensions/", "params": {"limit": 30}, "status": 200, "est_cost": 20, "billed": true, "billed_cost": 20, "pages_fetched": 20, "cost_headers": {}}
+{"ts": 1788964851.121163, "path": "/v2/news/", "params": {"symbols": "ASLI,LIFE,NICK,TRUK,PPGL,SAFE,PACK,CSMI,TMPO,AGAR", "limit": 30}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965020.6475132, "path": "/v2/broker-summary/ASLI/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965023.719509, "path": "/v2/broker-summary/LIFE/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965026.450506, "path": "/v2/broker-summary/NICK/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965028.532873, "path": "/v2/broker-summary/TRUK/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965030.531403, "path": "/v2/broker-summary/PPGL/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965033.25557, "path": "/v2/broker-summary/SAFE/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965035.273226, "path": "/v2/broker-summary/PACK/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965037.2583869, "path": "/v2/broker-summary/CSMI/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965039.7526221, "path": "/v2/broker-summary/TMPO/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965042.32832, "path": "/v2/broker-summary/AGAR/top/", "params": {"n_brokers": 10}, "status": 200, "est_cost": 2, "billed": true, "billed_cost": 2, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965103.60077, "path": "/v2/daily/ASLI/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965106.131372, "path": "/v2/daily/LIFE/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965108.1798642, "path": "/v2/daily/NICK/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965110.897737, "path": "/v2/daily/TRUK/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965112.9701052, "path": "/v2/daily/PPGL/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965114.917025, "path": "/v2/daily/SAFE/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965116.918905, "path": "/v2/daily/PACK/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965119.684556, "path": "/v2/daily/CSMI/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965121.8948858, "path": "/v2/daily/TMPO/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965124.0181959, "path": "/v2/daily/AGAR/", "params": {}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}
+{"ts": 1788965126.549939, "path": "/v2/companies/", "params": {"where": "market_cap<1000000000000", "order_by": "market_cap", "limit": 200, "include_query_values": "true"}, "status": 200, "est_cost": 1, "billed": true, "billed_cost": 1, "pages_fetched": 0, "cost_headers": {}}

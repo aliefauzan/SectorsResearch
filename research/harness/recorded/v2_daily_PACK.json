@@ -1,0 +1,212 @@
+[
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-10",
+  "close": 256,
+  "open": 268,
+  "high": 280,
+  "low": 256,
+  "volume": 122719000,
+  "market_cap": 8729538041600
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-11",
+  "close": 252,
+  "open": 256,
+  "high": 262,
+  "low": 246,
+  "volume": 125767800,
+  "market_cap": 8593189409700
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-12",
+  "close": 270,
+  "open": 252,
+  "high": 276,
+  "low": 250,
+  "volume": 155319900,
+  "market_cap": 9207010685250
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-13",
+  "close": 274,
+  "open": 276,
+  "high": 280,
+  "low": 256,
+  "volume": 168285900,
+  "market_cap": 9343410843550
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-14",
+  "close": 296,
+  "open": 274,
+  "high": 298,
+  "low": 268,
+  "volume": 276164800,
+  "market_cap": 10093611714200
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-18",
+  "close": 324,
+  "open": 300,
+  "high": 324,
+  "low": 300,
+  "volume": 437396300,
+  "market_cap": 11048419658700
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-19",
+  "close": 320,
+  "open": 330,
+  "high": 340,
+  "low": 302,
+  "volume": 301064500,
+  "market_cap": 10912020696000
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-20",
+  "close": 352,
+  "open": 332,
+  "high": 352,
+  "low": 332,
+  "volume": 95075200,
+  "market_cap": 12003222765600
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-21",
+  "close": 386,
+  "open": 386,
+  "high": 386,
+  "low": 352,
+  "volume": 767834600,
+  "market_cap": 13162624964550
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-24",
+  "close": 424,
+  "open": 400,
+  "high": 424,
+  "low": 380,
+  "volume": 580208800,
+  "market_cap": 14458427422200
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-26",
+  "close": 466,
+  "open": 0,
+  "high": 466,
+  "low": 424,
+  "volume": 450689700,
+  "market_cap": 15890735687550
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-27",
+  "close": 466,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 15893273195486
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-28",
+  "close": 510,
+  "open": 480,
+  "high": 510,
+  "low": 470,
+  "volume": 538475000,
+  "market_cap": 17394003630210
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-08-31",
+  "close": 560,
+  "open": 560,
+  "high": 560,
+  "low": 496,
+  "volume": 237278600,
+  "market_cap": 19099432111760
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-09-01",
+  "close": 560,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 19099482937360
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-09-02",
+  "close": 560,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 19100365452560
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-09-03",
+  "close": 560,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 19101262572560
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-09-04",
+  "close": 560,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 19101329929360
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-09-07",
+  "close": 560,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 19101427033360
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-09-08",
+  "close": 560,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 19102843407760
+ },
+ {
+  "symbol": "PACK.JK",
+  "date": "2026-09-09",
+  "close": 560,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 19102913564560
+ }
+]

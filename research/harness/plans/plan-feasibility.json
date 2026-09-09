@@ -1,0 +1,53 @@
+{
+  "name": "Feasibility — the four questions that decide whether the fragility product is worth building",
+  "grant": 1000,
+  "notes": [
+    "Answers red-team.md A2/B5/B6/A1 before any product code is written.",
+    "Tier 1 is decisive on its own: if broker-summary returns nothing usable for third-liner",
+    "stocks, the concentration axis is dead and the product needs rethinking.",
+    "Symbols come from /v2/suspensions/ rows already on disk (2026-08-11..2026-09-04) — no",
+    "guessed identifiers, so no 1-credit 404s.",
+    "The full suspension sweep is not just a test: 583 rows IS the label set, bought once."
+  ],
+  "suspended_basket": ["ASLI","LIFE","NICK","TRUK","PPGL","SAFE","PACK","CSMI","TMPO","AGAR"],
+  "calls": [
+    {"tier": 1, "path": "/v2/suspensions/", "params": {"limit": 30}, "pages": 20, "est_cost": 20,
+     "note": "Q4 — full 583-row history: real base rate, date span, reason classes. This is the label set."},
+
+    {"tier": 1, "path": "/v2/news/",
+     "params": {"symbols": "ASLI,LIFE,NICK,TRUK,PPGL,SAFE,PACK,CSMI,TMPO,AGAR", "limit": 30},
+     "est_cost": 1,
+     "note": "Q2 — does comma-separated `symbols` work, and do suspended third-liners have ANY news? One page of recorded news had 27 symbols and zero overlap with the suspended set."},
+
+    {"tier": 1, "path": "/v2/free-float/", "params": {}, "est_cost": 10,
+     "note": "thinness axis, whole market, bought once — 961 rows"},
+
+    {"tier": 2, "path": "/v2/broker-summary/ASLI/top/", "params": {"n_brokers": 10}, "est_cost": 2, "note": "Q1 gorengan availability"},
+    {"tier": 2, "path": "/v2/broker-summary/LIFE/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/NICK/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/TRUK/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/PPGL/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/SAFE/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/PACK/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/CSMI/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/TMPO/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+    {"tier": 2, "path": "/v2/broker-summary/AGAR/top/", "params": {"n_brokers": 10}, "est_cost": 2},
+
+    {"tier": 3, "path": "/v2/daily/ASLI/", "params": {}, "est_cost": 1, "note": "Q3 momentum baseline — 90d OHLC+volume"},
+    {"tier": 3, "path": "/v2/daily/LIFE/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/NICK/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/TRUK/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/PPGL/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/SAFE/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/PACK/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/CSMI/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/TMPO/", "params": {}, "est_cost": 1},
+    {"tier": 3, "path": "/v2/daily/AGAR/", "params": {}, "est_cost": 1},
+
+    {"tier": 3, "path": "/v2/companies/",
+     "params": {"where": "market_cap<1000000000000", "order_by": "market_cap", "limit": 200,
+                "include_query_values": "true"},
+     "est_cost": 1,
+     "note": "Q3 control universe — small caps that were NOT suspended"}
+  ]
+}
