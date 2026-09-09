@@ -14,6 +14,11 @@ STATE_DIR = os.path.join(PKG_ROOT, "state")
 RUNS_PATH = os.path.join(STATE_DIR, "runs.jsonl")
 TOOLS_DIR = os.path.join(PKG_ROOT, "tools")
 RECORDED_DIR = os.path.join(REPO_ROOT, "research", "harness", "recorded")
+HARNESS_SRC_DIR = os.path.join(REPO_ROOT, "research", "harness", "src")
+# Every billed call the product makes appends one line here. Separate from the
+# harness ledger on purpose: that one records what capture.py bought, this one
+# records what the product spent, and mixing them would make neither reconcilable.
+LEDGER_PATH = os.path.join(STATE_DIR, "credits.jsonl")
 
 # --- schedule ---------------------------------------------------------------
 # 04:00 UTC = 11:00 WIB, weekdays. Deliberately not 07:00 WIB: /v2/suspensions/ —
