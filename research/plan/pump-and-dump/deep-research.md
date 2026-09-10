@@ -365,8 +365,8 @@ dan biayanya ~30 kredit.
 | Label event | `/v2/suspensions/` | `symbol`, `suspension_date`, `reason`, `pdf_url`; `pagination.total_count = 583` |
 | Anomali harga & volume | `/v2/daily/{symbol}/` | `symbol, date, open, high, low, close, volume, market_cap` |
 | Papan panas harian | `/v2/most-traded/` | dict berkunci tanggal (20 tanggal per respons) → `symbol, company_name, volume, price` (5 nama per tanggal) |
-| Konsentrasi broker | `/v2/broker-summary/{symbol}/top/` | `symbol, start, end, origin, cohort, top_buyers[], top_sellers[]`; tiap entri `rank, broker_code, net_idr, buy_idr, sell_idr` |
-| Identitas broker | `/v2/brokers/` | `origin` (foreign/domestic), `cohort` (retail/mixed/institutional/unknown) — cache selamanya |
+| Konsentrasi broker | `/v2/broker-summary/{symbol}/top/` | `symbol, start, end, origin, cohort, top_buyers[], top_sellers[]`; tiap entri `rank, broker_code, net_idr, buy_idr, sell_idr`. **Koreksi C2:** `origin` dan `cohort` di tingkat atas adalah *gema permintaan* (`"all"`, `"all"`), bukan data — entri broker tidak membawa kohort sendiri. Kohort harus di-*join* ke `/v2/brokers/`, atau diminta lewat parameter kueri `cohort=`/`origin=` (keduanya didukung) |
+| Identitas broker | `/v2/brokers/` | **Koreksi C1:** payload nyata mengembalikan `code, name, is_foreign, cohort, license_type` — **tidak ada field `origin`**. Keasingan adalah boolean `is_foreign`. (Field `origin` hanya ada di `synth/flow/brokers.json`, sehingga parser yang ditulis terhadap data sintetis akan `KeyError` pada payload nyata.) Cache selamanya |
 | Arus asing | `/v2/foreign-flow/{symbol}/` | `symbol, start, end, data[]` berisi `date, net_foreign_inflow` |
 | Ketipisan | `/v2/free-float/` | 961 baris `symbol, company_name, free_float` (desimal) — **snapshot, tanpa tanggal** |
 | Rotasi kepemilikan | `/v2/company/shareholders-composition/{symbol}/` | per tanggal bulanan: `shares_number` + 9 kategori lokal (`insurance_l, corporate_l, pension_fund_l, financial_institutions_l, individual_l, mutual_fund_l, securities_companies_l, foundation_l, other_l, total_l`) dan 9 kategori asing (`*_f`) |
@@ -375,6 +375,10 @@ dan biayanya ~30 kredit.
 
 Contoh nyata dari rekaman, berguna sebagai frame pembuka video: pada `top-changes` tanggal
 2026-09-04, tiga nama teratas adalah **UANG.JK +24,92%**, **RONY.JK +24,90%**, **SMMT.JK +24,88%**
+— **Koreksi C4:** angka itu hanya muncul dengan `?min_mcap_billion=0`. Panggilan default
+mengembalikan SMMT +24,88%, NATO +24,63%, PKPK +17,43%. Frame video wajib memasang
+`?classifications=top_gainers&min_mcap_billion=0&periods=1d`; membiarkan `classifications`
+default juga menaikkan biaya dari 1 menjadi 10 kredit —
 — semuanya menempel di pagar ARA papan utama. Dan pada `most-traded` 2026-08-06, nama tervolume
 adalah **BNBR.JK** pada harga **Rp105** dengan volume 7.994.414.100 lembar. Saham yang menempel di
 ARA berhari-hari tanpa satu pun entri di `/v2/news/` adalah kasus definisional yang menjelaskan
@@ -443,14 +447,18 @@ P0  Planner sadar-anggaran
     target ~10 kredit/emiten; cek cache lokal lebih dulu
 
 P1  Baseline dan anomali                                  [Nam & Skillicorn 2023]
-    GET /v2/daily/{symbol}/                → OHLCV ≤90 hari
+    GET /v2/daily/{symbol}/                → OHLCV, rentang ≤90 hari
+                                             KOREKSI C5: tidak ada parameter `limit` di spec;
+                                             batas ada pada rentang, jadi kirim `start`/`end` eksplisit
     baseline = mean, SD atas 5 hari sebelum tanggal-uji
     pump_flag = (close > mean_p + 2·SD_p) AND (volume > mean_v + 2·SD_v)
     jendela pengamatan lanjutan: t+4
 
 P2  Konsentrasi penggerak
     GET /v2/broker-summary/{symbol}/top/   → rank, broker_code, net_idr, buy_idr, sell_idr
-    GET /v2/brokers/                       → origin, cohort           (cache selamanya)
+    GET /v2/brokers/                       → code, name, is_foreign, cohort, license_type
+                                             KOREKSI C1: tidak ada `origin`; pakai `is_foreign`
+                                             (cache selamanya)
     metrik = pangsa nilai beli 5 broker teratas, dibobot kohort
 
 P3  Rotasi kepemilikan
@@ -536,8 +544,12 @@ metrik    : presisi dan recall, dipecah per bucket kapitalisasi,
    dari pemberitaan atas rilis BEI.
 6. **Suara komunitas**: X dan grup Telegram belum di-crawl. Butuh ekstensi OpenCLI aktif atau
    kunci Firecrawl.
-7. **Apakah `cohort` pada `/v2/brokers/` benar-benar membedakan ritel dan institusi dengan andal**
-   — nilainya mencakup `unknown`, dan proporsinya belum dihitung.
+7. ~~**Apakah `cohort` pada `/v2/brokers/` benar-benar membedakan ritel dan institusi dengan
+   andal**~~ — **TERJAWAB (Koreksi C3), gratis, dari `recorded/v2_brokers.json`**: n=88 →
+   `mixed` 42, `institutional` 39, `retail` **5**, `unknown` 2. Hanya 5 dari 88 broker berlabel
+   `retail`, sehingga kalimat keluaran seperti *"empat dari lima broker adalah kohort ritel"*
+   praktis tidak dapat diproduksi. **Sumbu ini dispesifikasi ulang sebagai dominasi
+   institusional/campuran**, bukan partisipasi ritel — lihat `src/fragility.py:score_broker`.
 
 ---
 

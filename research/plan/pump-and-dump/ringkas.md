@@ -59,14 +59,19 @@ INPUT
 PROSES — 5 langkah, tiap langkah menghasilkan angka bersitasi
 
   P1  Baseline & anomali                              [Nam & Skillicorn 2023]
-      /v2/daily/{symbol}/          → OHLCV ≤90 hari
+      /v2/daily/{symbol}/          → OHLCV, rentang ≤90 hari
+                                     C5: tak ada parameter `limit` — kirim `start`/`end`
       baseline = mean & SD atas 5 hari sebelum tanggal-uji
       pump_flag = harga > mean+2SD  DAN  volume > mean+2SD
       jendela pengamatan lanjutan: t+4
 
   P2  Siapa yang menggerakkan
       /v2/broker-summary/{symbol}/top/  → rank, broker_code, net_idr
-      /v2/brokers/                      → origin, cohort   (cache selamanya)
+      /v2/brokers/                      → code, name, is_foreign, cohort, license_type
+                                          C1: tak ada `origin` — pakai `is_foreign`
+                                          C2: kohort per broker hanya lewat join ini,
+                                              bukan dari respons broker-summary
+                                          (cache selamanya)
       metrik = pangsa 5 broker teratas, dibobot kohort
 
   P3  Siapa yang keluar
@@ -160,6 +165,10 @@ menyebut angka yang belum diambil.**
 
 Frame pembuka video yang menjelaskan dirinya sendiri: pada 2026-09-04, tiga gainer teratas —
 UANG +24,92%, RONY +24,90%, SMMT +24,88% — semuanya menempel di batas ARA. *(§B8)*
+**Koreksi C4:** ketiganya hanya muncul dengan `?min_mcap_billion=0`; panggilan default
+mengembalikan SMMT +24,88%, NATO +24,63%, PKPK +17,43%. Pasang
+`?classifications=top_gainers&min_mcap_billion=0&periods=1d` — membiarkan `classifications`
+default juga berbiaya 10 kredit, bukan 1.
 
 ---
 
@@ -185,8 +194,10 @@ dalam pengertian POJK 5/2019. Kami memakai data yang sama untuk mengatakan kebal
 2. **Venue terbit makalah "Finfluencers"** — saat ini baru working paper + CEPR DP20204.
 3. **Penulis dan tahun studi pump-dump BEI** (ProQuest 2088916427).
 4. **Statistik KSEI resmi** — PDF gagal diekstrak; angka dari pemberitaan rilis BEI.
-5. **Keandalan `cohort` pada `/v2/brokers/`** — nilainya mencakup `unknown`, proporsinya belum
-   dihitung.
+5. ~~**Keandalan `cohort` pada `/v2/brokers/`**~~ — **TERJAWAB (Koreksi C3), gratis**: n=88 →
+   `mixed` 42, `institutional` 39, `retail` **5**, `unknown` 2. Karena hanya 5 dari 88 broker
+   berlabel `retail`, sumbu ini dispesifikasi ulang sebagai **dominasi institusional/campuran**,
+   bukan partisipasi ritel.
 6. **Crawl X dan Telegram** — belum jalan: ekstensi OpenCLI tidak tersambung, Firecrawl menolak IP
    ini tanpa kunci API.
 
