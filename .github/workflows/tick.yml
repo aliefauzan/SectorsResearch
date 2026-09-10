@@ -29,9 +29,18 @@ jobs:
           python-version: "3.11"
 
       # No dependencies to install: the cycle is standard library only and reads
-      # cached payloads. It makes no network call and spends no API credits.
+      # cached payloads. Its only network call is to Telegram, which spends no API
+      # credits — SECTORS_API_KEY is deliberately not passed to this job, so a
+      # cycle that started calling the live API would fail here rather than bill
+      # the grant.
+      #
+      # With the two Telegram secrets unset the cycle still runs and still writes
+      # its line; it records that delivery was not configured and moves on.
       - name: Jalankan satu siklus
         working-directory: mersamur
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python3 app/tick.py
 
       - name: Commit log run
@@ -39,7 +48,15 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add mersamur/state/runs.jsonl
+          # notified.json travels with the run log: it is what makes "only
+          # transitions are sent" survive a runner that is destroyed after every
+          # job. Left behind, every weekday would look like a first entrance and
+          # the channel would repeat itself daily. It holds symbols and dates
+          # only — never the bot token. It does not exist until the first cycle
+          # that had something to deliver, so it is added only when present.
+          for path in mersamur/state/runs.jsonl mersamur/state/notified.json; do
+            if [ -f "$path" ]; then git add "$path"; fi
+          done
           if git diff --cached --quiet; then
             echo "tidak ada perubahan pada runs.jsonl"
             exit 0
