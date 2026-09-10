@@ -155,7 +155,8 @@ def score(bag, symbol, test_date=None, source="recorded"):
 
     top = sources.normalize_broker_top(bag.get("broker_top"))
     cohorts = sources.cohort_index(bag.get("brokers")) if bag.get("brokers") else {}
-    axes.append(fragility.score_broker(top["top_buyers"], cohorts, endpoint=broker_endpoint))
+    axes.append(fragility.score_broker(top["top_buyers"], cohorts, endpoint=broker_endpoint,
+                                       window=(top["start"], top["end"])))
 
     if bag.get("news") is None:
         articles = None

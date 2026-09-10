@@ -135,7 +135,8 @@ def pump_flag(rows, test_date):
     return all(axis.fragile for axis in axes)
 
 
-def score_broker(top_buyers, cohort_by_code, endpoint="/v2/broker-summary/{symbol}/top/"):
+def score_broker(top_buyers, cohort_by_code, endpoint="/v2/broker-summary/{symbol}/top/",
+                 window=None):
     """Top-5 concentration of buy value, and how much of it is institutional or mixed.
 
     Re-specified from the research's retail-participation framing: only 5 of the 88
@@ -146,6 +147,12 @@ def score_broker(top_buyers, cohort_by_code, endpoint="/v2/broker-summary/{symbo
     `cohort_by_code` is the join to `/v2/brokers/`; an unknown code counts toward the
     concentration figure but not toward the cohort figure, so a partial join understates
     dominance rather than inventing it.
+
+    `window` is the `(start, end)` the payload actually covers, and it is printed. The
+    recorded ADRO summary spans 2026-06-07 to 2026-09-05 — about 90 days — so this axis
+    does **not** move with the test date the way price and volume do. Saying so is the
+    whole point of citing: a figure that sits next to "as of 2026-08-18" while silently
+    describing a quarter is more misleading than no figure at all.
     """
     citation = ((endpoint, "buy_idr"), ("/v2/brokers/", "cohort"))
     if not top_buyers:
@@ -160,11 +167,15 @@ def score_broker(top_buyers, cohort_by_code, endpoint="/v2/broker-summary/{symbo
     share = sum(b.get("buy_idr") or 0 for b in top5) / total
     heavy = [b for b in top5
              if cohort_by_code.get(b.get("broker_code")) in ("institutional", "mixed")]
+    span = f" over {window[0]}…{window[1]}" if window and all(window) else ""
+    detail = (f"Top {len(top5)} buyers hold {share:.0%} of buy value{span}; "
+              f"{len(heavy)} of {len(top5)} are institutional- or mixed-cohort.")
+    if span:
+        detail += " That window, not the test date — this axis does not move day to day."
     return AxisResult(
         "BROKER",
         share > 0.60,
-        f"Top {len(top5)} buyers hold {share:.0%} of buy value; "
-        f"{len(heavy)} of {len(top5)} are institutional- or mixed-cohort.",
+        detail,
         citation,
         {"share": share, "heavy": len(heavy), "counted": len(top5)},
     )
@@ -279,6 +290,13 @@ def check_axes():
     if broker.values["heavy"] != 2:
         failures.append(f"expected 2 institutional/mixed in the top 5, got {broker.values['heavy']}")
 
+    dated = score_broker(buyers, cohorts, window=("2026-06-07", "2026-09-05"))
+    if "2026-06-07…2026-09-05" not in dated.detail:
+        failures.append("a broker figure with a known window did not disclose it — "
+                        "it reads as if it described the test date")
+    if "over" in broker.detail:
+        failures.append("a broker figure with no known window invented one")
+
     if score_broker([], cohorts).evaluated:
         failures.append("an empty broker list scored instead of reporting not fetched")
     if score_broker([{"broker_code": "YP", "buy_idr": 0}], cohorts).evaluated:
@@ -297,7 +315,7 @@ def check_axes():
     if score_catalyst(None).evaluated:
         failures.append("None articles scored instead of reporting not fetched")
 
-    return failures, 9
+    return failures, 11
 
 
 def main():
