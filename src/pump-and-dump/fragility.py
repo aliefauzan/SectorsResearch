@@ -207,8 +207,8 @@ def _synth_daily_dir():
     lets it be reasoned about as pure arithmetic. Importing the loader to save four lines
     would trade that away.
     """
-    here = os.path.dirname(os.path.abspath(__file__))
-    root = os.path.dirname(here)
+    here = os.path.dirname(os.path.abspath(__file__))      # src/<idea>/
+    root = os.path.dirname(os.path.dirname(here))          # the repository root
     return os.path.join(root, "research", "harness", "synth", "market", "daily")
 
 

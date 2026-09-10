@@ -38,8 +38,8 @@ import json
 import os
 import sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(HERE)
+HERE = os.path.dirname(os.path.abspath(__file__))          # src/pump-and-dump/
+ROOT = os.path.dirname(os.path.dirname(HERE))              # the repository root
 
 #: The three data layers live in the research harness, not beside the product. They were
 #: paid for in credits and they are evidence, so they stay where the capture tooling and
