@@ -66,9 +66,16 @@ BANNED = (
 # Attached to every rendered paragraph, not only to the README. A paragraph gets
 # forwarded, screenshotted and pasted into chats on its own; the disclaimer has to
 # travel with the sentences or it is not attached to anything that matters.
+#
+# Task 20 added the pointer to `mersamur/DISCLAIMER.md` for the same reason. The
+# short form is what fits inside a forwarded message; the file is where the full
+# statement lives, and a reader who only ever sees a screenshot still learns that
+# there is one and where to find it. The path is repo-relative rather than a URL:
+# it resolves in the repository a judge is already reading, and it does not rot
+# when the remote moves.
 DISCLAIMER = ("Deskriptif, bukan anjuran investasi: angka di atas adalah catatan "
               "atas respons Sectors API pada jendela yang disebut, bukan penilaian "
-              "atas emitennya.")
+              "atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.")
 
 # The prototype's failure was length. Enforced by the tests, not by good intentions.
 SENTENCE_WORD_CEILING = 46

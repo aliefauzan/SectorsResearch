@@ -15,6 +15,11 @@ What it prints is `app/render/paragraph.py`'s block: the prose, the disclaimer t
 travels with it, and then every number with the endpoint and field it came from. A
 reader who does not trust the paragraph can walk each line back to the same call.
 
+The short disclaimer in that block points at `mersamur/DISCLAIMER.md`, and so does
+`--help`. Task 20 asks for the pointer in both places because they are reached by
+different readers: `--help` is read before anyone runs the command, the block is
+what gets pasted into a chat afterwards, and neither one implies the other.
+
 Exit codes matter here, because this is the surface a person and a script share:
 
     0   a paragraph was produced
@@ -49,7 +54,9 @@ def one(symbol, cache=None, as_json=False):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(
-        description="Paragraf deskriptif untuk satu ticker IDX, dari data rekaman.")
+        description="Paragraf deskriptif untuk satu ticker IDX, dari data rekaman.",
+        epilog="Deskriptif, bukan saran investasi dan bukan ajakan bertransaksi. "
+               "Teks lengkapnya: mersamur/DISCLAIMER.md.")
     ap.add_argument("symbol", nargs="+",
                     help="kode saham IDX, misalnya LIFE (akhiran .JK boleh)")
     ap.add_argument("--json", action="store_true",
