@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mersamur</title>
+<style>
+:root{
+  --paper:#faf9f6; --ink:#191714; --muted:#6d675f; --rule:#e3dfd6;
+  --panel:#ffffff; --accent:#8a6410; --accent-bg:#f6efdf; --slate:#5b6570;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,sans-serif;
+}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141312; --ink:#eae6df; --muted:#9a938a; --rule:#2c2a26;
+    --panel:#1c1a18; --accent:#d3a24a; --accent-bg:#2a2418; --slate:#8d97a2;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141312; --ink:#eae6df; --muted:#9a938a; --rule:#2c2a26;
+  --panel:#1c1a18; --accent:#d3a24a; --accent-bg:#2a2418; --slate:#8d97a2;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+  line-height:1.55;margin:0;padding:0 20px 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto}
+header{padding:56px 0 28px;border-bottom:1px solid var(--rule)}
+h1{font-size:30px;letter-spacing:-.02em;margin:0 0 6px;font-weight:640}
+.sub{color:var(--muted);font-size:14px;margin:0}
+.strip{margin:22px 0 0;padding:12px 14px;border-left:3px solid var(--accent);
+  background:var(--accent-bg);font-size:13px;color:var(--ink);border-radius:0 4px 4px 0}
+h2{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  font-weight:660;margin:52px 0 4px}
+h2 + .note{margin:0 0 18px}
+.note{color:var(--muted);font-size:13.5px;max-width:74ch}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(184px,1fr));margin:18px 0 0}
+.stat{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;min-width:0}
+.stat b{display:block;font-size:25px;font-weight:640;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;line-height:1.15}
+.stat span{display:block;font-size:12px;color:var(--muted);margin-top:5px}
+.stat small{display:block;font-size:11.5px;color:var(--muted);margin-top:7px;
+  font-family:var(--mono);overflow-wrap:anywhere;line-height:1.45}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:16px}
+th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);font-weight:620;padding:0 10px 8px 0;border-bottom:1px solid var(--rule);
+  white-space:nowrap}
+td{padding:9px 10px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top;
+  font-variant-numeric:tabular-nums}
+td.sym{font-family:var(--mono);font-weight:640;letter-spacing:.02em}
+.tag{display:inline-block;font-size:11px;font-family:var(--mono);padding:1px 6px;
+  border-radius:3px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap}
+.tag.on{color:var(--accent);border-color:var(--accent);background:var(--accent-bg);font-weight:640}
+.tag.unk{color:var(--slate);border-style:dashed}
+.bar{position:relative;height:4px;background:var(--rule);border-radius:2px;margin-top:6px;
+  max-width:150px;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--muted);border-radius:2px}
+.bar i.on{background:var(--accent)}
+.pipe{display:flex;flex-direction:column;gap:0;margin-top:18px}
+.stage{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:start;
+  padding:13px 0;border-bottom:1px solid var(--rule)}
+.stage .dot{width:11px;height:11px;border-radius:50%;background:var(--muted);margin:6px 0 0 7px}
+.stage.on .dot{background:var(--accent)}
+.stage.idle .dot{background:transparent;border:1.5px dashed var(--slate)}
+.stage .who{font-weight:620;font-size:14px}
+.stage .who code{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400;
+  display:block;margin-top:2px}
+.stage .val{font-family:var(--mono);font-size:13px;text-align:right;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.stage .why{grid-column:2/4;color:var(--muted);font-size:13px;margin-top:5px;max-width:72ch}
+.halt{margin:14px 0 0;padding:13px 15px;border:1px solid var(--accent);border-radius:6px;
+  background:var(--accent-bg);font-size:13.5px}
+.halt b{color:var(--accent)}
+.para{background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+  padding:18px 20px;margin-top:14px}
+.para h3{font-family:var(--mono);font-size:13px;margin:0 0 10px;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:12px}
+.para p{margin:0 0 12px;font-size:14.5px;max-width:76ch}
+.para .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--rule);
+  padding-top:11px;margin:0}
+details{margin-top:11px}
+summary{cursor:pointer;font-size:12px;color:var(--muted);font-family:var(--mono)}
+details ul{margin:10px 0 0;padding-left:16px;font-size:12px;font-family:var(--mono);
+  color:var(--muted);line-height:1.7}
+details li{margin-bottom:3px;word-break:break-word}
+ul.plain{list-style:none;padding:0;margin:14px 0 0;font-size:13.5px}
+ul.plain li{padding:9px 0;border-bottom:1px solid var(--rule);color:var(--ink);max-width:80ch}
+ul.plain li b{font-weight:620}
+.tasks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:7px;margin-top:16px}
+.task{font-size:12.5px;padding:7px 10px;border:1px solid var(--rule);border-radius:5px;
+  background:var(--panel);display:flex;gap:8px;align-items:baseline}
+.task b{font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:640}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--rule);
+  color:var(--muted);font-size:12.5px}
+footer code{font-family:var(--mono)}
+
+.layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:44px;align-items:start}
+nav.toc{position:sticky;top:26px;padding:6px 0 0;font-size:13px}
+nav.toc a{display:block;padding:5px 0;color:var(--muted);text-decoration:none;
+  border-left:2px solid transparent;padding-left:11px;margin-left:-11px}
+nav.toc a:hover{color:var(--ink)}
+nav.toc a.active{color:var(--accent);border-left-color:var(--accent);font-weight:620}
+nav.toc .live{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--muted);
+  padding-left:11px;display:flex;align-items:center;gap:6px}
+nav.toc .live i{width:6px;height:6px;border-radius:50%;background:var(--accent);
+  display:inline-block;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.strip-axes{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 4px}
+nav.toc a.switch{margin-top:14px;font-size:12px;font-family:var(--mono);color:var(--accent)}
+h3.mini{font-size:13.5px;font-weight:640;margin:26px 0 0;letter-spacing:-.01em}
+h2[id]{scroll-margin-top:22px}
+.ctx{margin-top:4px}
+.ctx summary{font-size:11px}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr;gap:0}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:4px 14px;margin:18px 0 0;
+    padding-bottom:14px;border-bottom:1px solid var(--rule)}
+  nav.toc a{border-left:0;padding-left:0;margin-left:0}
+  nav.toc .live{padding-left:0;width:100%}
+}
+@media (max-width:640px){
+  .stage{grid-template-columns:20px 1fr}
+  .stage .val{grid-column:2;text-align:left;margin-top:4px}
+  .stage .why{grid-column:2}
+  table{font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>mersamur</h1>
+<p class="sub">Empat sumbu atas satu kode saham, dari respons Sectors API pada jendela yang disebut. Dibaca 2026-09-10 13:46, ambang versi 3.</p>
+<div class="strip">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</div>
+</header>
+<div class="layout">
+<nav class="toc">
+<a href="#ringkas">Hari ini</a>
+<a href="#catatan">Catatan</a>
+<a href="#cara">Cara membaca</a>
+<a class="switch" href="/pipeline">catatan pembangunan →</a>
+</nav>
+<main><h2 id="ringkas">Yang tercatat hari ini</h2>
+<p class="note">Jendela yang dibaca: 2026-08-10 sampai 2026-09-09. Tiap kode saham di bawah diperiksa pada empat sumbu yang datanya saling bebas, dan sebuah kode baru dianggap perlu disebut saat 3 dari 4 sumbu menyala sekaligus.</p>
+<div class="grid">
+<div class="stat"><b>10</b><span>kode saham diperiksa</span><small>daftar pantau</small></div>
+<div class="stat"><b>0</b><span>mencapai 3 sumbu</span><small>tidak ada yang perlu dikirim</small></div>
+<div class="stat"><b>2026-09-09</b><span>terakhir diperiksa</span><small>ok</small></div>
+</div>
+<h2 id="catatan">Catatan per kode saham</h2>
+<p class="note">Tiap angka di dalam kalimat bisa ditelusuri ke endpoint dan medan yang menghasilkannya — buka “sumber tiap angka”. Sebuah sumbu yang tidak terukur ditulis apa adanya, bukan dibaca sebagai keadaan yang tenang.</p>
+<div class="para"><h3>LIFE<span class="tag">2 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, LIFE paling menonjol pada sumbu volume: sesi terakhir tercatat 24,5x median 16 sesi bertransaksi sebelumnya — 147.000 lembar terhadap 6.000 lembar, dengan ambang 5,0x. 2 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 83,8% (menyala), momentum persentil 44, katalis rasio 0,125. IDX tercatat menghentikan perdagangan LIFE sebanyak 2 kali sebelum 2026-08-10, terakhir pada 2025-08-22 dengan klasifikasi cooling_down.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,838 : 0,405</span> <span class="tag on">volume 24,50 : 5,00</span> <span class="tag ">momentum 43,75 : 90,00</span> <span class="tag ">katalis 0,125 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>24,5x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>16 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>147.000 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>6.000 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>83,8% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp9,9 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>40,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.retail)</li>
+<li>44 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>1 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>8 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,125 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2025-08-22 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>ASLI<span class="tag">1 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, ASLI paling menonjol pada sumbu konsentrasi broker: pangsa akumulasi broker teratas mencapai 54,0% dari Rp290,3 miliar nilai panel, dengan ambang 40,5%. 1 dari 4 sumbu tercatat menyala; sumbu lain terbaca volume 1,4x median, momentum persentil 25, katalis rasio 0,500. IDX tercatat menghentikan perdagangan ASLI sebanyak 3 kali sebelum 2026-08-10, terakhir pada 2025-12-02 dengan klasifikasi cooling_down.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,540 : 0,405</span> <span class="tag ">volume 1,36 : 5,00</span> <span class="tag ">momentum 25,00 : 90,00</span> <span class="tag ">katalis 0,500 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>54,0% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp290,3 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>40,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.retail)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>1,4x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>20 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>74.477.600 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>54.618.600 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>25 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,500 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>1 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>3 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2025-12-02 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>NICK<span class="tag">2 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, NICK paling menonjol pada sumbu katalis: 0 dari 5 artikel berdimensi fundamental, rasio 0,000 terhadap ambang 0,100. 2 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 80,5% (menyala), volume 1,0x median, momentum persentil 75. IDX tercatat menghentikan perdagangan NICK sebanyak 1 kali sebelum 2026-08-10, terakhir pada 2025-06-25 dengan klasifikasi cooling_down.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,805 : 0,450</span> <span class="tag ">volume 0,96 : 5,00</span> <span class="tag ">momentum 75,00 : 90,00</span> <span class="tag on">katalis 0,000 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>0 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>5 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,000 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>80,5% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp4,0 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>45,0% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.mixed)</li>
+<li>1,0x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>20 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>32.600 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>33.800 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>75 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>1 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2025-06-25 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>TRUK<span class="tag">2 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, TRUK paling menonjol pada sumbu katalis: 0 dari 3 artikel berdimensi fundamental, rasio 0,000 terhadap ambang 0,100. 2 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 66,6% (menyala), volume 2,4x median, momentum persentil 69. Sebelum 2026-08-10 tidak ada suspensi TRUK yang tercatat pada pengumuman IDX.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,666 : 0,405</span> <span class="tag ">volume 2,38 : 5,00</span> <span class="tag ">momentum 68,75 : 90,00</span> <span class="tag on">katalis 0,000 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>0 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>3 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,000 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>66,6% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp61,5 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>40,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.retail)</li>
+<li>2,4x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>16 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>3.488.800 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>1.467.300 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>69 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>PPGL<span class="tag">1 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, PPGL paling menonjol pada sumbu katalis: 0 dari 8 artikel berdimensi fundamental, rasio 0,000 terhadap ambang 0,100. 1 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 26,7%, volume 1,6x median, momentum persentil 44. IDX tercatat menghentikan perdagangan PPGL sebanyak 2 kali sebelum 2026-08-10, terakhir pada 2026-01-13 dengan klasifikasi cooling_down.</p>
+<div class="strip-axes"><span class="tag ">konsentrasi broker 0,267 : 0,495</span> <span class="tag ">volume 1,61 : 5,00</span> <span class="tag ">momentum 43,75 : 90,00</span> <span class="tag on">katalis 0,000 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>0 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>8 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,000 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>26,7% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp53,7 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>49,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.institutional)</li>
+<li>1,6x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>17 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>8.186.600 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5.073.450 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>44 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>1 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2026-01-13 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>SAFE<span class="tag">2 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, SAFE paling menonjol pada sumbu katalis: 0 dari 4 artikel berdimensi fundamental, rasio 0,000 terhadap ambang 0,100. 2 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 51,8% (menyala), volume 4,1x median, momentum persentil 38. Sebelum 2026-08-10 tidak ada suspensi SAFE yang tercatat pada pengumuman IDX.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,518 : 0,405</span> <span class="tag ">volume 4,12 : 5,00</span> <span class="tag ">momentum 37,50 : 90,00</span> <span class="tag on">katalis 0,000 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>0 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,000 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>51,8% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp13,1 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>40,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.retail)</li>
+<li>4,1x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>14 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>1.586.400 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>385.400 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>38 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>PACK<span class="tag">0 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, tidak satu pun sumbu PACK tercatat menyala; yang paling dekat ke ambangnya adalah katalis, 2 dari 11 artikel berdimensi fundamental, rasio 0,182 terhadap ambang 0,100. Sumbu lain terbaca konsentrasi broker 13,5%, volume 0,8x median, momentum persentil 19. IDX tercatat menghentikan perdagangan PACK sebanyak 3 kali sebelum 2026-08-10, terakhir pada 2025-06-17 dengan klasifikasi cooling_down.</p>
+<div class="strip-axes"><span class="tag ">konsentrasi broker 0,135 : 0,495</span> <span class="tag ">volume 0,82 : 5,00</span> <span class="tag ">momentum 18,75 : 90,00</span> <span class="tag ">katalis 0,182 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>2 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>11 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,182 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>13,5% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp2,3 triliun — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>49,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.institutional)</li>
+<li>0,8x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>13 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>237.278.600 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>288.614.650 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>19 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>3 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2025-06-17 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>CSMI<span class="tag">2 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, CSMI paling menonjol pada sumbu katalis: 0 dari 2 artikel berdimensi fundamental, rasio 0,000 terhadap ambang 0,100. 2 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 61,6% (menyala), volume 1,8x median, momentum persentil 38. IDX tercatat menghentikan perdagangan CSMI sebanyak 2 kali sebelum 2026-08-10, terakhir pada 2025-08-13 dengan klasifikasi price_decline.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,616 : 0,405</span> <span class="tag ">volume 1,79 : 5,00</span> <span class="tag ">momentum 37,50 : 90,00</span> <span class="tag on">katalis 0,000 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>0 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,000 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>61,6% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp302,3 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>40,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.retail)</li>
+<li>1,8x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>11 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>161.840.200 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>90.260.550 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>38 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2025-08-13 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>TMPO<span class="tag">2 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, TMPO paling menonjol pada sumbu katalis: 0 dari 2 artikel berdimensi fundamental, rasio 0,000 terhadap ambang 0,100. 2 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 61,6% (menyala), volume 0,1x median, momentum persentil 56. IDX tercatat menghentikan perdagangan TMPO sebanyak 1 kali sebelum 2026-08-10, terakhir pada 2025-09-03 dengan klasifikasi cooling_down.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,616 : 0,405</span> <span class="tag ">volume 0,14 : 5,00</span> <span class="tag ">momentum 56,25 : 90,00</span> <span class="tag on">katalis 0,000 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>0 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,000 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>61,6% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp421,1 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>40,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.retail)</li>
+<li>0,1x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>20 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>9.163.100 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>65.985.500 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>56 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>1 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2025-09-03 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<div class="para"><h3>AGAR<span class="tag">2 dari 4 sumbu</span></h3>
+<p>Pada jendela 2026-08-10 .. 2026-09-09, AGAR paling menonjol pada sumbu katalis: 0 dari 2 artikel berdimensi fundamental, rasio 0,000 terhadap ambang 0,100. 2 dari 4 sumbu tercatat menyala; sumbu lain terbaca konsentrasi broker 62,6% (menyala), volume 1,2x median, momentum persentil 25. IDX tercatat menghentikan perdagangan AGAR sebanyak 1 kali sebelum 2026-08-10, terakhir pada 2026-07-22 dengan klasifikasi cooling_down.</p>
+<div class="strip-axes"><span class="tag on">konsentrasi broker 0,626 : 0,405</span> <span class="tag ">volume 1,23 : 5,00</span> <span class="tag ">momentum 25,00 : 90,00</span> <span class="tag on">katalis 0,000 : 0,100</span></div>
+<details><summary>sumber tiap angka</summary><ul>
+<li>0 — artikel berdimensi fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2 — artikel di jendela · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,000 — rasio artikel fundamental · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>0,100 — ambang katalis · state/thresholds.json (current.catalyst)</li>
+<li>2026-08-10 — awal jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>2026-09-09 — akhir jendela harian · /v2/daily/{symbol}/ (date, volume)</li>
+<li>62,6% — pangsa broker teratas · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>Rp26,8 miliar — nilai panel broker · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign)</li>
+<li>40,5% — ambang konsentrasi · state/thresholds.json (current.concentration, cohort_factors.retail)</li>
+<li>1,2x — rasio volume terhadap median · /v2/daily/{symbol}/ (date, volume)</li>
+<li>11 — sesi bertransaksi di jendela · /v2/daily/{symbol}/ (date, volume)</li>
+<li>782.600 — volume sesi terakhir · /v2/daily/{symbol}/ (date, volume)</li>
+<li>636.450 — median volume · /v2/daily/{symbol}/ (date, volume)</li>
+<li>5,0x — ambang volume · state/thresholds.json (current.volume_anomaly)</li>
+<li>25 — persentil kenaikan lima sesi · /v2/daily/{symbol}/ (date, close)</li>
+<li>90 — ambang momentum · state/thresholds.json (current.momentum)</li>
+<li>2 — sumbu yang menyala · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>4 — sumbu yang dihitung · /v2/broker-summary/{symbol}/top/ (top_buyers[].broker_code, top_buyers[].buy_idr, top_buyers[].net_idr, top_sellers[].net_idr, start, end) · /v2/brokers/ (code, name, cohort, is_foreign) · /v2/daily/{symbol}/ (date, volume) · /v2/daily/{symbol}/ (date, close) · /v2/news/ (timestamp, symbols, dimension.financials, dimension.future, dimension.technical, pagination.has_next)</li>
+<li>2026-08-10 — batas riwayat · /v2/daily/{symbol}/ (date, volume)</li>
+<li>1 — suspensi tercatat sebelum batas · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+<li>2026-07-22 — tanggal suspensi terakhir · /v2/suspensions/ (symbol, suspension_date, reason)</li>
+</ul></details>
+<p class="disc">Deskriptif, bukan anjuran investasi: angka di atas adalah catatan atas respons Sectors API pada jendela yang disebut, bukan penilaian atas emitennya. Teks lengkapnya: mersamur/DISCLAIMER.md.</p></div>
+<h2 id="cara">Cara membacanya</h2>
+<ul class="plain">
+<li><b>Ini catatan, bukan penilaian.</b> Kalimat di atas menyatakan apa yang dikembalikan Sectors API pada jendela yang disebut. Ia tidak menyatakan apa pun tentang emitennya, dan tidak menyarankan tindakan apa pun.</li>
+<li><b>Empat sumbu, bukan satu skor.</b> Konsentrasi broker, volume, momentum dan katalis dibaca dari empat endpoint berbeda. Yang dilaporkan adalah berapa yang menyala dan mana — bukan rata-rata tertimbang, karena satu angka menyembunyikan sumbu mana yang menanggung bebannya.</li>
+<li><b>Ambangnya terbuka.</b> konsentrasi broker 0,450 · volume 5,000 · momentum 90,000 · katalis 0,100. Angkanya ada di <code>state/thresholds.json</code> beserta alasan tiap kali ia pernah bergerak.</li>
+<li><b>Tidak terukur bukan berarti tenang.</b> Panel broker yang hilang atau kode saham yang tidak ditulis siapa pun dilaporkan sebagai tidak terukur, dan tidak pernah dihitung sebagai sumbu yang padam.</li>
+</ul></main>
+</div>
+<footer>Seluruh teks di halaman ini deskriptif dan diperiksa terhadap daftar kosakata di <code>app/render/paragraph.py</code> sebelum dikirim: satu angka tanpa sumber atau satu kata vonis menghentikan halaman, bukan lolos begitu saja. Pernyataan lengkapnya ada di <code>mersamur/DISCLAIMER.md</code>.</footer>
+</div>
+
+</body>
+</html>

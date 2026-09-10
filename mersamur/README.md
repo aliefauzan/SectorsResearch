@@ -51,7 +51,25 @@ python3 app/evaluate.py --compare-baselines  # gerbang go/no-go vs dua baseline
 python3 app/backtest.py --walk-forward       # replay 2025-01-01..2026-08-26
 python3 app/tick.py --dry-run                # satu siklus harian
 python3 tools/feasibility.py                 # empat uji kelayakan
+python3 tools/dashboard.py                   # papan pengguna -> state/dashboard.html
+python3 tools/dashboard.py --mode pipeline   # catatan pembangunan
+python3 tools/serve.py --open                # keduanya di localhost
 ```
+
+`tools/serve.py` menyajikan papan di `127.0.0.1:8080` dan merakitnya ulang tiap
+permintaan, jadi menjalankan `app/tick.py` atau menggeser satu ambang langsung
+terlihat tanpa dibangun ulang. Ada dua halaman, dan pembedaannya disengaja:
+
+* **`/`** — yang dipakai orang yang memakai produknya: catatan per kode saham,
+  sitasi tiap angka, dan cara membacanya. Tidak ada tahap pipeline, tidak ada
+  gerbang, tidak ada hitungan kredit.
+* **`/pipeline`** — catatan pembangunan untuk yang menilai repo: tahap mana yang
+  jalan dan di titik mana alirannya berhenti, gerbang go/no-go, hasil backtest,
+  kredit, asal tiap payload.
+
+Keduanya menampilkan keadaan sistem, bukan render ulang respons API — pembedaan
+yang dituntut Track 03 — dan keduanya dijaga pemeriksa kosakata yang sama dengan
+paragraf produk: satu kata vonis menghentikan halaman, bukan lolos begitu saja.
 
 Tidak satu pun dari perintah di atas membuka soket ke Sectors API. Semuanya
 membaca payload yang sudah dibayar di `../research/harness/recorded/`.
