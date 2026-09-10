@@ -10,8 +10,8 @@ A product and the research dossier it was built from, for the **Sectors Hackatho
 * **`src/`** — the products, one folder per idea, each named after the research folder it
   came from: `src/pump-and-dump/` answers to `research/plan/pump-and-dump/`, and the next
   one pairs off the same way. Each idea owns its own `run.sh` and its own vocabulary —
-  `score` and `symbols` mean nothing to a voice product — and `src/run.sh` is the router
-  that decides which one you meant.
+  `score` and `symbols` mean nothing to a voice product — so there is no router and no
+  idea argument: `cd` into the folder and run `./run.sh`.
 * **`research/`** — the competition research, the Sectors API reference, and the
   standard-library harness whose whole purpose is to let the products be built without
   spending API credits.
@@ -29,21 +29,21 @@ development happens against local recordings and a live call is made at most onc
 
 All Python is standard library only. No venv, no pip install, no build step.
 
-Everything routine goes through the router, from the repository root:
+Each idea in `src/` carries its own `run.sh` and its own vocabulary. Bare, it starts
+everything that idea needs:
 
 ```bash
-src/run.sh ideas                       # what exists, and what each one answers to
-src/run.sh test                        # every idea's gates, then the harness's
-src/run.sh mock                        # the offline API on :8787 — shared by all ideas
-src/run.sh ui                          # the default idea's UI on :8080
-src/run.sh pump-and-dump score ADRO 2026-08-31
-src/run.sh pump-and-dump help          # each idea documents its own commands
+cd src/pump-and-dump
+./run.sh                       # mock API, then the UI — all three source options work
+./run.sh score ADRO 2026-08-31
+./run.sh symbols               # what can be scored, and which dates already flag
+./run.sh test                  # this product's gates, then the harness's
+./run.sh help
 ```
 
-`IDEA=<name>` changes the default; `SOURCE=synth` switches data layer; `PORT` and
-`MOCK_PORT` move the ports. Only `ideas`, `mock` and `test` belong to the router — every
-other command is the idea's, so ask the idea. The harness commands below are still run
-directly, from `research/harness/`.
+`SOURCE=synth` switches data layer; `PORT` and `MOCK_PORT` move the ports. There is no
+router and no idea argument — a second idea gets its own folder and its own `run.sh`. The
+harness commands below are still run directly, from `research/harness/`.
 
 ```bash
 python3 research/harness/src/sectors_env.py          # preflight: env path, base URL, budget, key set/missing
@@ -187,9 +187,8 @@ independent record of what was actually charged.
 
 ```
 src/
-  run.sh              the router — ideas, mock, test; everything else it delegates
   pump-and-dump/      THE PRODUCT — standard library, reads research/harness/ for data
-    run.sh            this idea's commands: ui, score, symbols, eval, test
+    run.sh            bare: mock + UI. Also score, symbols, eval, test
     fragility.py      the pure scorer: no I/O, no HTTP, no file paths
     sources.py        the one place recorded/ and synth/ shape divergences are reconciled
     firewall.py       the CLI and the fail-closed citation verifier
