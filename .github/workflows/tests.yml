@@ -1,0 +1,52 @@
+name: tes
+
+# Tiga tes wajib tugas 13 — kebocoran fitur, tanda dominansi broker, dan deret nol
+# yang berarti suspensi — berjalan bersama seluruh suite pada tiap push dan tiap
+# pull request. CI yang merah pada hari penjurian lebih buruk daripada tidak ada CI
+# sama sekali, jadi jalurnya dibuat sesederhana mungkin: tidak ada layanan, tidak
+# ada cache, tidak ada langkah yang bisa gagal karena jaringan.
+#
+# NOL KREDIT. Seluruh suite membaca research/harness/recorded/ — payload yang sudah
+# dibayar dan ikut ter-commit — atau direktori sementara. Tidak ada socket yang
+# dibuka dan tidak ada SECTORS_API_KEY yang dibutuhkan; job ini tidak diberi secret
+# apa pun, jadi sebuah tes yang diam-diam memanggil API akan gagal di sini, bukan
+# menagih grant.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tes-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Produk dan harness standard-library saja; pytest adalah satu-satunya
+      # dependensi, dan hanya untuk menjalankan tes. Versinya dipatok supaya
+      # rilis baru pytest tidak memerahkan CI pada minggu penjurian.
+      - name: Pasang pytest
+        run: python3 -m pip install --disable-pip-version-check "pytest==9.1.1"
+
+      - name: Jalankan tiga tes wajib
+        working-directory: mersamur
+        run: |
+          python3 -m pytest -q \
+            app/tests/test_no_leakage.py \
+            app/tests/test_broker_sign.py \
+            app/tests/test_suspended.py
+
+      - name: Jalankan seluruh suite
+        working-directory: mersamur
+        run: python3 -m pytest app/tests/ -q
