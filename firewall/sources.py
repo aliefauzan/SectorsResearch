@@ -39,7 +39,13 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-HARNESS = os.path.dirname(HERE)
+ROOT = os.path.dirname(HERE)
+
+#: The three data layers live in the research harness, not beside the product. They were
+#: paid for in credits and they are evidence, so they stay where the capture tooling and
+#: the ledger that records what they cost can see them. This is the only file that knows
+#: the path; everything else imports RECORDED/SYNTH from here.
+HARNESS = os.path.join(ROOT, "research", "harness")
 RECORDED = os.path.join(HARNESS, "recorded")
 SYNTH = os.path.join(HARNESS, "synth")
 

@@ -40,8 +40,7 @@ import sources
 from sources import NotRecorded
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-HARNESS = os.path.dirname(HERE)
-WARNINGS = os.path.join(HARNESS, "warnings.jsonl")
+WARNINGS = os.path.join(HERE, "warnings.jsonl")
 
 BASELINE_DAYS = fragility.BASELINE_DAYS
 DISCLAIMER = ("Not a buy or sell recommendation. "

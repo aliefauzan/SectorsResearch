@@ -42,7 +42,7 @@ import fragility
 import sources
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-HARNESS = os.path.dirname(HERE)
+HARNESS = sources.HARNESS
 
 #: Rupiah market-cap bucket edges (K2). Chosen from the synthetic distribution —
 #: min 1.8T, median 187.6T — so that all three buckets are populated and the split can

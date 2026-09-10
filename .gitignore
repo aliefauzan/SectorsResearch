@@ -32,4 +32,4 @@ node_modules/
 # Scoring output, not paid data: firewall.py appends a line per run and it regenerates
 # from local payloads every time. The credit ledger it sits next to IS committed —
 # that one records money spent, this one records opinions formed.
-research/harness/warnings.jsonl
+firewall/warnings.jsonl

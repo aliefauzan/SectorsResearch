@@ -43,7 +43,7 @@ import fragility
 import sources
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-HARNESS = os.path.dirname(HERE)
+HARNESS = sources.HARNESS
 
 
 def available(source):

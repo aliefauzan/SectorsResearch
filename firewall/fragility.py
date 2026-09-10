@@ -201,8 +201,15 @@ def score_catalyst(articles, endpoint="/v2/news/"):
 
 
 def _synth_daily_dir():
+    """Resolved here rather than imported from `sources`, deliberately.
+
+    This module has no dependencies and no I/O outside its own self-test, which is what
+    lets it be reasoned about as pure arithmetic. Importing the loader to save four lines
+    would trade that away.
+    """
     here = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(os.path.dirname(here), "synth", "market", "daily")
+    root = os.path.dirname(here)
+    return os.path.join(root, "research", "harness", "synth", "market", "daily")
 
 
 def check_synth_base_rate():

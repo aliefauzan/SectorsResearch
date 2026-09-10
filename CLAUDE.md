@@ -4,10 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-A research dossier and offline data harness for the **Sectors Hackathon 2026** (Supertype /
-Sectors / Algoritma). There is **no product code yet** — `research/` holds the competition
-research, the Sectors API reference, and a standard-library Python harness whose whole purpose
-is to let the product be built without spending API credits.
+A product and the research dossier it was built from, for the **Sectors Hackathon 2026**
+(Supertype / Sectors / Algoritma). Two top-level directories, and the split is the point:
+
+* **`firewall/`** — the product. Firewall Tip Saham: one IDX symbol in, a fragility verdict
+  out, every number carrying the `(endpoint, field)` it came from. Five standard-library
+  files, a browser UI, and no path to the live API that is not opt-in twice.
+* **`research/`** — the competition research, the Sectors API reference, and the
+  standard-library harness whose whole purpose is to let the product be built without
+  spending API credits.
+
+`./run.sh` is the entry point for both. The product reads the harness's recordings, never
+the other way around.
 
 The team grant is **1,000 credits, non-transferable, no top-up, expiring at the end of the
 event**. **377 were charged to the grant** — 265 by `capture.py` on the 6 Sep 2026 live capture plus
@@ -19,6 +27,20 @@ development happens against local recordings and a live call is made at most onc
 ## Commands
 
 All Python is standard library only. No venv, no pip install, no build step.
+
+Everything routine goes through one script, from the repository root:
+
+```bash
+./run.sh ui          # the browser UI on :8080 — recordings only, spends nothing
+./run.sh score ADRO 2026-08-31
+./run.sh symbols     # what can actually be scored, and which dates already flag
+./run.sh test        # every gate, product and harness, including the credit ledger
+./run.sh mock        # the offline API on :8787, for --source mock
+./run.sh eval        # precision and recall against the labels — never accuracy
+```
+
+`SOURCE=synth ./run.sh score AHRL` switches layers; `PORT` and `MOCK_PORT` move the ports.
+The harness commands below are still run directly, from `research/harness/`.
 
 ```bash
 python3 research/harness/src/sectors_env.py          # preflight: env path, base URL, budget, key set/missing
@@ -161,6 +183,14 @@ independent record of what was actually charged.
 ## Layout and reading order
 
 ```
+run.sh                one entry point — ui, score, symbols, test, mock, eval
+firewall/             THE PRODUCT — standard library, reads research/harness/ for data
+  fragility.py        the pure scorer: no I/O, no HTTP, no file paths
+  sources.py          the one place recorded/ and synth/ shape divergences are reconciled
+  firewall.py         the CLI and the fail-closed citation verifier
+  webapp.py           the browser UI — a view over firewall.py, not a second engine
+  eval_fragility.py   precision and recall by market-cap bucket, scored at T-1
+  warnings.jsonl      append-only run ledger (git-ignored: opinions, not paid data)
 research/
   docs/hackathon/     rules, tracks, submission checklist
   docs/api/           the Sectors API in depth — 16 reference docs
