@@ -33,3 +33,11 @@ node_modules/
 # from local payloads every time. The credit ledger it sits next to IS committed —
 # that one records money spent, this one records opinions formed.
 src/*/warnings.jsonl
+
+# Run ledger for the tunanetra reader: opinions, not paid data.
+src/tunanetra/runs.jsonl
+
+# Earnings Relay: the run ledger and the SQLite workflow state. Both regenerate from the
+# same recordings on every `./run.sh demo`, and neither records money spent.
+src/earnings-relay/runs.jsonl
+src/earnings-relay/state/

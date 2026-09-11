@@ -8,9 +8,10 @@ A product and the research dossier it was built from, for the **Sectors Hackatho
 (Supertype / Sectors / Algoritma). Two top-level directories, and the split is the point:
 
 * **`src/`** — the products, one folder per idea, each named after the research folder it
-  came from: `src/pump-and-dump/` answers to `research/plan/pump-and-dump/`, and the next
-  one pairs off the same way. Each idea owns its own `run.sh` and its own vocabulary —
-  `score` and `symbols` mean nothing to a voice product — so there is no router and no
+  came from: `src/pump-and-dump/` answers to `research/plan/pump-and-dump/`, and
+  `src/tunanetra/` and `src/earnings-relay/` pair off the same way. Each idea owns its
+  own `run.sh` and its own vocabulary — `score` and `symbols` mean nothing to a voice
+  product, and `poll` and `review` mean nothing to either — so there is no router and no
   idea argument: `cd` into the folder and run `./run.sh`.
 * **`research/`** — the competition research, the Sectors API reference, and the
   standard-library harness whose whole purpose is to let the products be built without
@@ -41,8 +42,36 @@ cd src/pump-and-dump
 ./run.sh help
 ```
 
+The second idea has its own folder, its own vocabulary and its own `run.sh` — `read`
+and `symbols`, because `score` and `symbols` mean nothing to a product whose job is to be
+listened to:
+
+```bash
+cd src/tunanetra
+./run.sh                       # the UI, on the recordings — no mock needed, nothing to call
+./run.sh read TLKM --lengkap
+./run.sh symbols               # what can be read, and the real window of every series
+./run.sh a11y                  # the WCAG criteria this product actually claims
+./run.sh test                  # this product's gates, then the harness's
+```
+
+The third idea, again its own folder and its own vocabulary — `poll`, `runs`, `draft`
+and `review`, because a scheduled workflow is judged on what its runs did, not on a
+symbol lookup:
+
+```bash
+cd src/earnings-relay
+./run.sh                       # mock API, then the UI on :8082
+./run.sh poll                  # one scheduler tick
+./run.sh demo                  # the scripted five-run proof: new, duplicate, no-op, fail, recover
+./run.sh draft 1               # the draft, with the evidence behind every figure
+./run.sh review 1 --decision approve --as compliance
+./run.sh symbols               # what can be read, and which comparator is computable
+./run.sh test                  # this product's gates, then the harness's
+```
+
 `SOURCE=synth` switches data layer; `PORT` and `MOCK_PORT` move the ports. There is no
-router and no idea argument — a second idea gets its own folder and its own `run.sh`. The
+router and no idea argument — each idea gets its own folder and its own `run.sh`. The
 harness commands below are still run directly, from `research/harness/`.
 
 ```bash
@@ -109,6 +138,16 @@ need; drop down only for volume.
    foreign flow, news) plus `synth_extended.py` (mining, banking LAR, suspensions, corporate
    actions, shareholder panels, filings, segments, quarterly financials, index series, the real
    IDX 2026 holiday calendar). Deterministic per `--seed`. Unlimited volume, not real.
+
+**The year-over-year comparator does not exist on `recorded/`.** Every quarterly payload
+holds the four trailing quarters, so the prior-YEAR quarter is absent for all four
+symbols — `comparable_symbols("recorded", "yoy")` is empty, checked by opening the files.
+`src/earnings-relay/` therefore runs the demo on the sequential comparator, which PRD §9
+allows as an explicit Admin opt-in, labels it on every slide that compares two periods,
+and rejects any sentence that describes it as year-on-year
+(`gate.comparator_mislabelled`). The year-over-year path is exercised on `synth/`, which
+has real same-quarter pairs. `research/harness/plans/plan-earnings-relay.json` would buy
+the missing quarters for 64 credits and is deliberately **not run**.
 
 **`mock_server.py`** serves layer 1 in preference to layer 2 (`X-Mock-Source: recording`) and
 emulates the failure modes that otherwise only appear in production: `Authorization` required,
@@ -195,17 +234,48 @@ src/
     webapp.py         the browser UI — a view over firewall.py, not a second engine
     eval_fragility.py precision and recall by market-cap bucket, scored at T-1
     warnings.jsonl    append-only run ledger (git-ignored: opinions, not paid data)
+  tunanetra/          THE SECOND PRODUCT — IDX fundamentals rendered as sentences and
+                      semantic tables instead of charts. No chart is drawn at all
+    run.sh            bare: the UI. Also read, symbols, a11y, test
+    sources.py        six datasets, and the six recorded/synth divergences reconciled
+    money.py          numbers as Indonesian words; pure, no I/O
+    narrate.py        the derivations and the level-2/3 sentence templates; pure
+    reader.py         the CLI and the fail-closed citation verifier
+    webapp.py         the semantic HTML surface — headings, th/scope/caption, aria-live
+    sonify.js         Web Audio: series direction and event earcon, nothing else
+    a11y_check.py     the WCAG criteria this product claims, checked not asserted
+    runs.jsonl        append-only run ledger (git-ignored)
+  earnings-relay/     THE THIRD PRODUCT — a scheduled workflow that turns one new
+                      quarterly report into one review-ready content pack whose every
+                      figure carries its endpoint, field, formula and as_of
+    run.sh            bare: mock + UI. Also poll, runs, draft, review, edit, audit, demo, test
+    sources.py        the one place the six recorded/synth divergences are reconciled
+    periods.py        fiscal quarter keys and comparator selection; pure
+    metrics.py        the three PRD metrics; pure, and never a zero for an unknown
+    money.py          rupiah as numerals, and the parser gate.py compares with; pure
+    factset.py        immutable facts, content-addressed ids, restatement as version 2
+    template.py       five Indonesian slides, every factual slot naming its fact_ids; pure
+    gate.py           the Claim Risk Gate — seven checks, one adversarial draft each; pure
+    store.py          SQLite state: UNIQUE(event_hash), atomic transitions, append-only audit
+    adapter.py        the only module that opens a socket, and only to localhost
+    relay.py          the CLI, the state machine, and AT-01 … AT-10 as gates
+    webapp.py         Runs / Antrean / Draf & Bukti / Audit / Setup — a view over relay.py
+    runs.jsonl        append-only run ledger (git-ignored)
+    state/            SQLite workflow state (git-ignored; regenerates from the recordings)
 research/
   docs/hackathon/     rules, tracks, submission checklist
   docs/api/           the Sectors API in depth — 16 reference docs
   harness/
     src/              the 10 scripts — run them from harness/ as `python3 src/<name>.py`
     plans/            plan.json (87 calls / 176 credits) + the probe and fidelity plans
+                      + plan-earnings-relay.json (64 credits, WRITTEN AND NOT RUN)
     fixtures/         one OpenAPI example per endpoint, split idx/ sgx/ klse/ mining/
     recorded/         real payloads + _ledger.jsonl + _manifest.json (flat: keyed by
                       call slug via _manifest.json — a cache, not a browsable tree)
     synth/            generated universe, split market/ flow/ company/ mining/
   plan/               build ideas, competitive landscape, what is already published
+    earnings-relay/   the PRD (§§1-22, ER-FR-01 … 18, AT-01 … 10) and the deep research,
+                      mirrored from the Google Doc on 2026-09-10
     tunanetra/        deep research on non-visual access + its flow diagram
     pump-and-dump/    deep research on the social-tip firewall, the self-learning
                       risk agent, and its flow diagram

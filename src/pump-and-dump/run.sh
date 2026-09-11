@@ -39,17 +39,20 @@ case "${1:-all}" in
     # source option actually works; without it, picking "mock" in the dropdown fails.
     # An already-running mock is reused rather than fought with over the port.
     mock_pid=""
+    # mktemp, not a fixed path: a predictable name in a world-writable directory is a
+    # redirect-to-arbitrary-file sink if somebody plants a symlink there first.
+    MOCK_LOG="$(mktemp -t pnd-mock)"
     if mock_is_up; then
       echo "mock API   ·  already running on :$MOCK_PORT — reusing it"
     else
       python3 "$HARNESS/src/mock_server.py" --port "$MOCK_PORT" --credits 1000 \
-        >/tmp/pnd-mock.log 2>&1 &
+        >"$MOCK_LOG" 2>&1 &
       mock_pid=$!
       for _ in $(seq 1 40); do mock_is_up && break; sleep 0.25; done
       if mock_is_up; then
-        echo "mock API   ·  http://127.0.0.1:$MOCK_PORT   (log: /tmp/pnd-mock.log)"
+        echo "mock API   ·  http://127.0.0.1:$MOCK_PORT   (log: $MOCK_LOG)"
       else
-        echo "mock API   ·  failed to start, see /tmp/pnd-mock.log — the UI still works" >&2
+        echo "mock API   ·  failed to start, see $MOCK_LOG — the UI still works" >&2
         echo "              on 'recorded' and 'synth'; only the 'mock' option needs it." >&2
       fi
     fi
@@ -120,12 +123,15 @@ PY
 
   test)
     failed=0
+    # Same reason as the mock log above: a fixed name under /tmp is a symlink sink.
+    GATE_OUT="$(mktemp -t pnd-gate)"
+    trap 'rm -f "$GATE_OUT"' EXIT
     run() {
       local label="$1"; shift
-      if "$@" >/tmp/pnd-gate.out 2>&1; then
+      if "$@" >"$GATE_OUT" 2>&1; then
         printf 'PASS  %s\n' "$label"
       else
-        printf 'FAIL  %s\n' "$label"; sed 's/^/        /' /tmp/pnd-gate.out; failed=1
+        printf 'FAIL  %s\n' "$label"; sed 's/^/        /' "$GATE_OUT"; failed=1
       fi
     }
     run "fragility  scorer"        python3 "$DIR/fragility.py"

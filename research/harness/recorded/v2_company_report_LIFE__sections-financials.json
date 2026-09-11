@@ -1,0 +1,558 @@
+{
+ "symbol": "LIFE.JK",
+ "company_name": "PT MSIG Life Insurance Indonesia Tbk",
+ "financials": {
+  "eps": 98.20380952380953,
+  "historical_eps": {
+   "2020": {
+    "eps": 157.59
+   },
+   "2021": {
+    "eps": 35.15293030099076,
+    "eps_growth": -0.7769
+   },
+   "2022": {
+    "eps": 175.12194288958185,
+    "eps_growth": 3.9817
+   },
+   "2023": {
+    "eps": 60.23238095238095,
+    "eps_growth": -0.6561
+   },
+   "2024": {
+    "eps": 167.3604761904762,
+    "eps_growth": 1.7786
+   },
+   "2025": {
+    "eps": 98.20380952380953,
+    "eps_growth": -0.4132
+   }
+  },
+  "historical_financials": [
+   {
+    "tax": -4592000000,
+    "ebit": null,
+    "year": 2018,
+    "ebitda": null,
+    "revenue": 5237944000000,
+    "earnings": 342536000000,
+    "net_debt": 0,
+    "cash_only": 744579000000,
+    "total_debt": null,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": null,
+    "total_assets": 15552304000000,
+    "total_equity": 7206499000000,
+    "net_cash_flow": null,
+    "operating_pnl": 301003000000,
+    "current_assets": null,
+    "free_cash_flow": 525729000000,
+    "long_term_debt": null,
+    "prepaid_assets": null,
+    "cost_of_revenue": null,
+    "short_term_debt": null,
+    "operating_expense": null,
+    "retained_earnings": null,
+    "total_liabilities": 8345805000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 2100000000,
+    "capital_expenditure": null,
+    "current_liabilities": null,
+    "earnings_before_tax": 337944000000,
+    "financing_cash_flow": null,
+    "investing_cash_flow": null,
+    "operating_cash_flow": 535255000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": null,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": null
+   },
+   {
+    "tax": 2818000000,
+    "ebit": null,
+    "year": 2019,
+    "ebitda": null,
+    "revenue": 4411671000000,
+    "earnings": 286684000000,
+    "net_debt": 0,
+    "cash_only": 681866000000,
+    "total_debt": null,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": null,
+    "total_assets": 16231338000000,
+    "total_equity": 7765675000000,
+    "net_cash_flow": null,
+    "operating_pnl": 319216000000,
+    "current_assets": null,
+    "free_cash_flow": 449359000000,
+    "long_term_debt": null,
+    "prepaid_assets": null,
+    "cost_of_revenue": null,
+    "short_term_debt": null,
+    "operating_expense": null,
+    "retained_earnings": null,
+    "total_liabilities": 8465663000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 1332000000,
+    "capital_expenditure": null,
+    "current_liabilities": null,
+    "earnings_before_tax": 289502000000,
+    "financing_cash_flow": null,
+    "investing_cash_flow": null,
+    "operating_cash_flow": 457092000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": null,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": null
+   },
+   {
+    "tax": 73545000000,
+    "ebit": null,
+    "year": 2020,
+    "ebitda": null,
+    "revenue": 3668659000000,
+    "earnings": 330939000000,
+    "net_debt": 34787000000,
+    "cash_only": 825427000000,
+    "total_debt": 34787000000,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": null,
+    "total_assets": 15847556000000,
+    "total_equity": 8047323000000,
+    "net_cash_flow": null,
+    "operating_pnl": 330939000000,
+    "current_assets": null,
+    "free_cash_flow": -825989000000,
+    "long_term_debt": null,
+    "prepaid_assets": null,
+    "cost_of_revenue": null,
+    "short_term_debt": null,
+    "operating_expense": null,
+    "retained_earnings": null,
+    "total_liabilities": 7734195000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 2094550633,
+    "capital_expenditure": 5641000000,
+    "current_liabilities": null,
+    "earnings_before_tax": 404484000000,
+    "financing_cash_flow": -182322000000,
+    "investing_cash_flow": 1145245000000,
+    "operating_cash_flow": -820348000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": 73545000000,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": null
+   },
+   {
+    "tax": 65401000000,
+    "ebit": null,
+    "year": 2021,
+    "ebitda": null,
+    "revenue": 3649057000000,
+    "earnings": 73824000000,
+    "net_debt": 20474000000,
+    "cash_only": 1524001000000,
+    "total_debt": 20474000000,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": null,
+    "total_assets": 16344767000000,
+    "total_equity": 7567616000000,
+    "net_cash_flow": 706314000000,
+    "operating_pnl": 73824000000,
+    "current_assets": null,
+    "free_cash_flow": 879336000000,
+    "long_term_debt": null,
+    "prepaid_assets": 54990000000,
+    "cost_of_revenue": null,
+    "short_term_debt": null,
+    "operating_expense": null,
+    "retained_earnings": 217114000000,
+    "total_liabilities": 8713141000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 2109257143,
+    "capital_expenditure": 20492000000,
+    "current_liabilities": null,
+    "earnings_before_tax": 139225000000,
+    "financing_cash_flow": -527832000000,
+    "investing_cash_flow": 334318000000,
+    "operating_cash_flow": 899828000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": 65401000000,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": null
+   },
+   {
+    "tax": 60888000000,
+    "ebit": null,
+    "year": 2022,
+    "ebitda": null,
+    "revenue": 2610679000000,
+    "earnings": 367773000000,
+    "net_debt": 9050000000,
+    "cash_only": 1363572000000,
+    "total_debt": 9050000000,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": null,
+    "total_assets": 15536442000000,
+    "total_equity": 7684570000000,
+    "net_cash_flow": -174621000000,
+    "operating_pnl": 367773000000,
+    "current_assets": null,
+    "free_cash_flow": -1332965000000,
+    "long_term_debt": null,
+    "prepaid_assets": 108308000000,
+    "cost_of_revenue": null,
+    "short_term_debt": null,
+    "operating_expense": null,
+    "retained_earnings": 377267000000,
+    "total_liabilities": 7836992000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 2101560000,
+    "capital_expenditure": 11477000000,
+    "current_liabilities": null,
+    "earnings_before_tax": 428661000000,
+    "financing_cash_flow": -83153000000,
+    "investing_cash_flow": 1230020000000,
+    "operating_cash_flow": -1321488000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": 60888000000,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": null
+   },
+   {
+    "tax": 72623000000,
+    "ebit": 199111000000,
+    "year": 2023,
+    "ebitda": 236295000000,
+    "revenue": 3495887000000,
+    "earnings": 126488000000,
+    "net_debt": 14700000,
+    "cash_only": 780815000000,
+    "total_debt": 14700000,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": 1539571000000,
+    "total_assets": 14953956000000,
+    "total_equity": 7491536000000,
+    "net_cash_flow": -583071000000,
+    "operating_pnl": 199111000000,
+    "current_assets": null,
+    "free_cash_flow": -889436000000,
+    "long_term_debt": null,
+    "prepaid_assets": 154884000000,
+    "cost_of_revenue": 1956316000000,
+    "short_term_debt": null,
+    "operating_expense": 1340460000000,
+    "retained_earnings": 129226000000,
+    "total_liabilities": 7451593000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 2108150000,
+    "capital_expenditure": 14319000000,
+    "current_liabilities": null,
+    "earnings_before_tax": 199111000000,
+    "financing_cash_flow": -382441000000,
+    "investing_cash_flow": 674486000000,
+    "operating_cash_flow": -875117000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": 0,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": 0
+   },
+   {
+    "tax": 70748000000,
+    "ebit": null,
+    "year": 2024,
+    "ebitda": null,
+    "revenue": 3255100000000,
+    "earnings": 351457000000,
+    "net_debt": 6876000000,
+    "cash_only": 668876000000,
+    "total_debt": 6876000000,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": null,
+    "total_assets": 14591426000000,
+    "total_equity": 7655162000000,
+    "net_cash_flow": -116234000000,
+    "operating_pnl": 351457000000,
+    "current_assets": null,
+    "free_cash_flow": -620639000000,
+    "long_term_debt": null,
+    "prepaid_assets": 150864000000,
+    "cost_of_revenue": null,
+    "short_term_debt": null,
+    "operating_expense": null,
+    "retained_earnings": 409626000000,
+    "total_liabilities": 6922569000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 2104532934,
+    "capital_expenditure": 16710000000,
+    "current_liabilities": null,
+    "earnings_before_tax": 422205000000,
+    "financing_cash_flow": -89259000000,
+    "investing_cash_flow": 576954000000,
+    "operating_cash_flow": -603929000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": 70748000000,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": null
+   },
+   {
+    "tax": 75379000000,
+    "ebit": null,
+    "year": 2025,
+    "ebitda": null,
+    "revenue": 1968826000000,
+    "earnings": 206228000000,
+    "net_debt": 15453000000,
+    "cash_only": 1001539000000,
+    "total_debt": 15453000000,
+    "inventories": null,
+    "fixed_assets": null,
+    "gross_profit": null,
+    "total_assets": 15871202000000,
+    "total_equity": 8510391000000,
+    "net_cash_flow": 328529000000,
+    "operating_pnl": 206228000000,
+    "current_assets": null,
+    "free_cash_flow": 474417000000,
+    "long_term_debt": null,
+    "prepaid_assets": 140391000000,
+    "cost_of_revenue": null,
+    "short_term_debt": null,
+    "operating_expense": null,
+    "retained_earnings": 1130072000000,
+    "total_liabilities": 7344473000000,
+    "industry_breakdown": null,
+    "outstanding_shares": 2104367347,
+    "capital_expenditure": 41418000000,
+    "current_liabilities": null,
+    "earnings_before_tax": 281607000000,
+    "financing_cash_flow": -345250000000,
+    "investing_cash_flow": 157944000000,
+    "operating_cash_flow": 515835000000,
+    "cash_and_equivalents": null,
+    "net_increased_decreased": null,
+    "non_current_liabilities": null,
+    "non_operating_income_or_loss": 75379000000,
+    "total_cash_and_due_from_banks": null,
+    "interest_expense_non_operating": null
+   }
+  ],
+  "historical_financial_ratio": [
+   {
+    "year": "2018",
+    "leverage": {
+     "debt_to_asset_ratio": null,
+     "debt_to_equity_ratio": 1.1580942424331149,
+     "cash_flow_to_debt_ratio": null,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": 0.10218799590068164
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.33679537128389464
+    },
+    "profitability": {
+     "roa": 0.022024775235875017,
+     "roe": 0.04753154062742533,
+     "net_profit_margin": 0.065395124499231,
+     "gross_profit_margin": null,
+     "operating_profit_margin": 0.05746586828725164
+    }
+   },
+   {
+    "year": "2019",
+    "leverage": {
+     "debt_to_asset_ratio": null,
+     "debt_to_equity_ratio": 1.0901387194287684,
+     "cash_flow_to_debt_ratio": null,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": 0.10360972067046705
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.27179958916510766
+    },
+    "profitability": {
+     "roa": 0.01766237632412066,
+     "roe": 0.03691681663216655,
+     "net_profit_margin": 0.06498308690743258,
+     "gross_profit_margin": null,
+     "operating_profit_margin": 0.07235716353282011
+    }
+   },
+   {
+    "year": "2020",
+    "leverage": {
+     "debt_to_asset_ratio": 0.0021951018819558045,
+     "debt_to_equity_ratio": 0.9610891721383621,
+     "cash_flow_to_debt_ratio": -23.582027768994166,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": -0.22360977130880794
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.2314968314357116
+    },
+    "profitability": {
+     "roa": 0.020882652189397534,
+     "roe": 0.04112411046505776,
+     "net_profit_margin": 0.09020707566443216,
+     "gross_profit_margin": null,
+     "operating_profit_margin": 0.09020707566443216
+    }
+   },
+   {
+    "year": "2021",
+    "leverage": {
+     "debt_to_asset_ratio": 0.001252633335183059,
+     "debt_to_equity_ratio": 1.1513719776479145,
+     "cash_flow_to_debt_ratio": 43.94978997753248,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": 0.24659192772269659
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.22325536974617013
+    },
+    "profitability": {
+     "roa": 0.0045166749700378105,
+     "roe": 0.009755251852102432,
+     "net_profit_margin": 0.020230980223109696,
+     "gross_profit_margin": null,
+     "operating_profit_margin": 0.020230980223109696
+    }
+   },
+   {
+    "year": "2022",
+    "leverage": {
+     "debt_to_asset_ratio": 0.000582501450460794,
+     "debt_to_equity_ratio": 1.0198348118372271,
+     "cash_flow_to_debt_ratio": -146.020773480663,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": -0.5061855555585347
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.16803583471685474
+    },
+    "profitability": {
+     "roa": 0.023671636015504708,
+     "roe": 0.0478586309969198,
+     "net_profit_margin": 0.14087254695042936,
+     "gross_profit_margin": null,
+     "operating_profit_margin": 0.14087254695042936
+    }
+   },
+   {
+    "year": "2023",
+    "leverage": {
+     "debt_to_asset_ratio": 9.830174704272233e-07,
+     "debt_to_equity_ratio": 0.994668249608625,
+     "cash_flow_to_debt_ratio": -59531.768707482996,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": -0.2503275992616466
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.2337767343972391
+    },
+    "profitability": {
+     "roa": 0.008458497537374057,
+     "roe": 0.01688412095997403,
+     "net_profit_margin": 0.03618194752862435,
+     "gross_profit_margin": 0.440394955557774,
+     "operating_profit_margin": 0.05695578833068689
+    }
+   },
+   {
+    "year": "2024",
+    "leverage": {
+     "debt_to_asset_ratio": 0.00047123564208186367,
+     "debt_to_equity_ratio": 0.9043007842289947,
+     "cash_flow_to_debt_ratio": -87.83144269924375,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": -0.1855331633436761
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.22308306261499047
+    },
+    "profitability": {
+     "roa": 0.02408654232972158,
+     "roe": 0.04591111200520642,
+     "net_profit_margin": 0.1079711836809929,
+     "gross_profit_margin": null,
+     "operating_profit_margin": 0.1079711836809929
+    }
+   },
+   {
+    "year": "2025",
+    "leverage": {
+     "debt_to_asset_ratio": 0.0009736502629101438,
+     "debt_to_equity_ratio": 0.8630006541415077,
+     "cash_flow_to_debt_ratio": 33.38089691322073,
+     "interest_coverage_ratio": null
+    },
+    "liquidity": {
+     "current_ratio": null,
+     "operating_cash_flow_margin": 0.2620013144889391
+    },
+    "efficiency": {
+     "fixed_asset_turnover": null,
+     "total_asset_turnover": 0.12405021371412196
+    },
+    "profitability": {
+     "roa": 0.012993848859084523,
+     "roe": 0.02423249413569835,
+     "net_profit_margin": 0.10474668660409808,
+     "gross_profit_margin": null,
+     "operating_profit_margin": 0.10474668660409808
+    }
+   }
+  ],
+  "yoy_quarter_earnings_growth": 0.122460848692489,
+  "yoy_quarter_revenue_growth": 7.40117292498167
+ }
+}

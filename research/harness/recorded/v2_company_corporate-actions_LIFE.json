@@ -1,0 +1,128 @@
+{
+ "symbol": "LIFE.JK",
+ "corporate_actions": {
+  "agm": [
+   {
+    "agm_date": "2022-03-22",
+    "agm_time": "09:00:00",
+    "agm_place": "Sinarmas Land Plaza, Tower Ii, Lt. 39 Jl. Mh. Thamrin No. 51, Jakarta Pusat, DKI Jakarta, kota Adm. Jakarta Pusat",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2022-06-22",
+    "agm_time": "09:00:00",
+    "agm_place": "Sinarmas Land Plaza, Tower Ii, Lt. 39Jl. Mh. Thamrin No. 51, Jakarta Pusat, DKI Jakarta, kota Adm. Jakarta Pusat",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2022-11-22",
+    "agm_time": "10:00:00",
+    "agm_place": "Sinarmas Land Plaza, Tower Ii, Lt. 39Jl. Mh. Thamrin No. 51, Jakarta Pusat, DKI Jakarta, kota Adm. Jakarta Pusat",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2023-06-27",
+    "agm_time": "14:00:00",
+    "agm_place": "Sinarmas Land Plaza Tower 2, Lantai 39Jl. M. H. Thamrin No. 51Jakarta Pusat 10350",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2023-09-19",
+    "agm_time": null,
+    "agm_place": "",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2024-06-25",
+    "agm_time": null,
+    "agm_place": "",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2025-01-07",
+    "agm_time": "10:00:00",
+    "agm_place": "Sinarmas Msig Tower, Lantai 7 Jalan Jend. Sudirman Kav. 21, Jakarta Selatan Kota Adm. Jakarta Selatan",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2025-04-22",
+    "agm_time": "10:00:00",
+    "agm_place": "Sinarmas Land Plaza Thamrin, Tower Ii, Lt. 39, Jl. M. H. Thamrin No. 51, Jakarta Pusat Kota Adm. Jakarta Pusat",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2025-06-24",
+    "agm_time": null,
+    "agm_place": "",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2025-09-23",
+    "agm_time": "10:00:00",
+    "agm_place": "Sinarmas Land Plaza Thamrin, Tower Ii, 39Th Floor Jl. M. H. Thamrin No. 51 Kota Adm. Jakartapusat",
+    "agm_result": null
+   },
+   {
+    "agm_date": "2026-04-28",
+    "agm_time": "11:00:00",
+    "agm_place": "Sinarmas Land Plaza Thamrin, Tower II, 39Th Floor JL. M. H. Thamrin NO. 51, Jakarta Pusat Kotaadm. Jakarta Pusat",
+    "agm_result": "Agenda #1: Shareholders approved the 2025 Annual Report and audited financial statements, granting a full discharge of liability to the Board of Directors and Commissioners for the 2025 fiscal year. The audit was conducted by Purwanto, Susanti & Surja (Ernst & Young Global).\nAgenda #2: The meeting approved the allocation of Rp 206.2 billion in net profit, with Rp 201.6 billion distributed as cash dividends at Rp 96 per share and a portion allocated to general reserves. The dividend payment process is scheduled for completion by May 28, 2026.\nAgenda #3: Shareholders authorized the Board of Commissioners to determine the salaries, allowances, and bonuses for the Board of Directors and Commissioners for the 2026 fiscal year. This determination will be based on proposals from the Nomination and Remuneration Committee while considering the company's financial condition.\nAgenda #4: The Board of Commissioners was granted authority to select and appoint an independent Public Accountant registered with the OJK to audit the 2026 financial statements. This authority includes determining the honorarium and terms of appointment based on recommendations from the Audit Committee.\nAgenda #5: Shareholders approved the reappointment of the Board of Directors and Board of Commissioners with terms lasting until the 2028 Annual GMS, including Wianto as President Director. The Board of Directors was authorized to notarize the meeting results and notify the Ministry of Law regarding the management composition.\nAgenda #6: The meeting approved the feasibility study conducted by KJPP Putri Anugrah & Rekan regarding the spin-off of the Sharia Business Unit into a 99.9% owned subsidiary. The study concluded that the separation would result in a positive and feasible contribution to the company."
+   }
+  ],
+  "bonus": [
+   {
+    "new_ratio": 1,
+    "old_ratio": 1,
+    "payment_date": "2019-09-25"
+   }
+  ],
+  "warrant": null,
+  "dividend": [
+   {
+    "ex_date": "2026-05-08",
+    "payment_date": "2026-05-26",
+    "dividend_yield": null,
+    "dividend_amount": 96
+   },
+   {
+    "ex_date": "2024-07-04",
+    "payment_date": "2024-07-25",
+    "dividend_yield": 0.00579565,
+    "dividend_amount": 38
+   },
+   {
+    "ex_date": "2025-07-04",
+    "payment_date": "2025-07-24",
+    "dividend_yield": 0.0194873,
+    "dividend_amount": 160
+   },
+   {
+    "ex_date": "2023-07-11",
+    "payment_date": "2023-07-28",
+    "dividend_yield": 0.0296411,
+    "dividend_amount": 177
+   },
+   {
+    "ex_date": "2022-07-01",
+    "payment_date": "2022-07-22",
+    "dividend_yield": 0.00575676,
+    "dividend_amount": 34
+   },
+   {
+    "ex_date": "2021-06-07",
+    "payment_date": "2021-06-25",
+    "dividend_yield": 0.0436879,
+    "dividend_amount": 243
+   },
+   {
+    "ex_date": "2020-06-25",
+    "payment_date": "2020-07-17",
+    "dividend_yield": 0.013223,
+    "dividend_amount": 74
+   }
+  ],
+  "right_issue": null,
+  "stock_split": null,
+  "upcoming_dividend": null
+ }
+}

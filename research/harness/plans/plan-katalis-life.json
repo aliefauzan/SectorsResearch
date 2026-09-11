@@ -1,0 +1,89 @@
+{
+  "name": "KATALIS demo symbol — LIFE.JK, the suspended thin-float mover",
+  "grant": 1000,
+  "status": "EXECUTED 2026-09-11 — 7 calls, 7 credits, all 200. Findings: research/plan/demo-symbol-LIFE.md",
+  "basket": [
+    "LIFE"
+  ],
+  "notes": [
+    "Why LIFE.JK and not another symbol. Chosen for zero credits by crossing two payloads already on disk: recorded/v2_free-float.json (961 rows, LIFE free_float 0.075 — the thinnest float among all top-changes gainers) against recorded/v2_companies_top-changes.json (LIFE +50.59% 7d, +124.23% 14d, +118.45% 30d, as of 2026-09-04).",
+    "The reason it beats every other candidate: recorded/v2_suspensions.json already carries TWO LIFE.JK suspensions, 2026-09-02 and 2026-09-04, both reason 'peningkatan harga kumulatif yang signifikan ... cooling down'. That makes this a LABELED event, not just a mover. A card generated as-of 2026-09-01 either raised a pillar before the first suspension or it did not, and a judge can check which from the repo.",
+    "Every call below is one KATALIS reads in pillars.bag_from(). Nothing here is exploratory.",
+    "Not bought, because already on disk and symbol-independent: /v2/brokers/ (registry, 88 codes), /v2/free-float/ (961 rows including LIFE), /v2/suspensions/ (20 rows including both LIFE events).",
+    "Not bought, because KATALIS does not read it: /v2/foreign-flow/ — the foreign split is derived by joining the broker registry's is_foreign against broker-summary, at zero extra credit.",
+    "The company report is requested with sections=financials, one section, one credit. Without the sections parameter it bills 8. Only outstanding_shares is needed, and it lives at financials.historical_financials[].outstanding_shares.",
+    "The daily and index-daily windows deliberately request 2026-05-01..2026-09-10, wider than 90 days. The PRP claims /v2/daily/ silently truncates to the last 90 days rather than erroring. Same credit either way, so this call also settles that claim.",
+    "The broker-summary window is 14 calendar days, the client-side guard the PRP sets while the real limit is undocumented. 2026-08-22..2026-09-04 covers the run-up and both suspension dates.",
+    "EXECUTED 2026-09-11. All seven returned 200. Outcome: /v2/daily/ truncates to 90 CALENDAR days (62 trading rows), not 90 trading days; sections=financials billed 1 and narrowed the payload to three keys; the LIFE tape carries 32 broker codes and all 32 map to the registry; /v2/filings/ returned total_count 0; the API sent no cost headers on any call."
+  ],
+  "calls": [
+    {
+      "tier": 1,
+      "path": "/v2/daily/LIFE/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "baseline_days=45 + event_window=3 + scan. Also tests the 90-day truncation claim."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/index-daily/ihsg/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "momentum needs IHSG over the same baseline; the recorded ihsg payload is only 20 rows, 2026-08-06..2026-09-04."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/broker-summary/LIFE/",
+      "params": {
+        "start": "2026-08-22",
+        "end": "2026-09-04"
+      },
+      "est_cost": 1,
+      "note": "Pilar 1. 14-day guard. Joins locally against the cached /v2/brokers/ registry for origin and cohort at zero extra credit."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/LIFE/",
+      "params": {
+        "sections": "financials"
+      },
+      "est_cost": 1,
+      "note": "outstanding_shares, the denominator of float terserap. One section = one credit."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "symbols": "LIFE.JK",
+        "start": "2026-08-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 preceding/following split. news_lookback_days=7, so 2026-08-01 is generous."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {
+        "symbol": "LIFE.JK",
+        "start": "2026-08-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 material filings. filing_lookback_days=30."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/corporate-actions/LIFE/",
+      "params": {},
+      "est_cost": 1,
+      "note": "Pilar 4 scheduled actions."
+    }
+  ]
+}

@@ -1,0 +1,622 @@
+[
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-12",
+  "close": 5700,
+  "open": null,
+  "high": 6400,
+  "low": 5500,
+  "volume": 11000,
+  "market_cap": 11970000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-15",
+  "close": 6350,
+  "open": null,
+  "high": 6450,
+  "low": 5850,
+  "volume": 13000,
+  "market_cap": 13335000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-17",
+  "close": 6350,
+  "open": 6350,
+  "high": 6350,
+  "low": 5775,
+  "volume": 4700,
+  "market_cap": 13335000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-18",
+  "close": 6000,
+  "open": null,
+  "high": 6475,
+  "low": 5775,
+  "volume": 1400,
+  "market_cap": 12600000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-19",
+  "close": 6000,
+  "open": 6000,
+  "high": 6000,
+  "low": 6000,
+  "volume": 900,
+  "market_cap": 12600000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-22",
+  "close": 6000,
+  "open": null,
+  "high": 6000,
+  "low": 5900,
+  "volume": 900,
+  "market_cap": 12600000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-23",
+  "close": 6000,
+  "open": null,
+  "high": 6000,
+  "low": 5775,
+  "volume": 3200,
+  "market_cap": 12600000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-24",
+  "close": 6050,
+  "open": null,
+  "high": 6100,
+  "low": 5825,
+  "volume": 1600,
+  "market_cap": 12705000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-25",
+  "close": 6025,
+  "open": null,
+  "high": 6025,
+  "low": 5800,
+  "volume": 800,
+  "market_cap": 12652500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-26",
+  "close": 5975,
+  "open": null,
+  "high": 5975,
+  "low": 5800,
+  "volume": 2500,
+  "market_cap": 12547500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-29",
+  "close": 5950,
+  "open": null,
+  "high": 5950,
+  "low": 5800,
+  "volume": 200,
+  "market_cap": 12495000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-06-30",
+  "close": 5825,
+  "open": null,
+  "high": 5900,
+  "low": 5725,
+  "volume": 1000,
+  "market_cap": 12232500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-01",
+  "close": 5775,
+  "open": null,
+  "high": 5800,
+  "low": 5525,
+  "volume": 1500,
+  "market_cap": 12127500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-02",
+  "close": 5675,
+  "open": null,
+  "high": 5775,
+  "low": 5550,
+  "volume": 1300,
+  "market_cap": 11917500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-03",
+  "close": 5825,
+  "open": 5650,
+  "high": 5825,
+  "low": 5650,
+  "volume": 2200,
+  "market_cap": 12232500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-06",
+  "close": 5875,
+  "open": null,
+  "high": 5975,
+  "low": 5875,
+  "volume": 500,
+  "market_cap": 12337500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-07",
+  "close": 5975,
+  "open": null,
+  "high": 5975,
+  "low": 5975,
+  "volume": 100,
+  "market_cap": 12547500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-08",
+  "close": 5975,
+  "open": null,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 12547500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-09",
+  "close": 5975,
+  "open": null,
+  "high": 6000,
+  "low": 5775,
+  "volume": 300,
+  "market_cap": 12547500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-10",
+  "close": 5875,
+  "open": null,
+  "high": 5875,
+  "low": 5525,
+  "volume": 2000,
+  "market_cap": 12337500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-13",
+  "close": 5975,
+  "open": null,
+  "high": 6000,
+  "low": 5575,
+  "volume": 8500,
+  "market_cap": 12547500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-14",
+  "close": 5750,
+  "open": null,
+  "high": 5950,
+  "low": 5675,
+  "volume": 4100,
+  "market_cap": 12075000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-15",
+  "close": 5850,
+  "open": null,
+  "high": 5850,
+  "low": 5750,
+  "volume": 1800,
+  "market_cap": 12285000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-16",
+  "close": 5750,
+  "open": 5850,
+  "high": 5850,
+  "low": 5725,
+  "volume": 1000,
+  "market_cap": 12075000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-17",
+  "close": 5825,
+  "open": null,
+  "high": 5850,
+  "low": 5725,
+  "volume": 2300,
+  "market_cap": 12232500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-20",
+  "close": 5725,
+  "open": null,
+  "high": 5825,
+  "low": 5550,
+  "volume": 1500,
+  "market_cap": 12022500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-21",
+  "close": 5700,
+  "open": null,
+  "high": 5800,
+  "low": 5600,
+  "volume": 1800,
+  "market_cap": 11970000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-22",
+  "close": 5700,
+  "open": 0,
+  "high": 5700,
+  "low": 5550,
+  "volume": 3000,
+  "market_cap": 11970000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-23",
+  "close": 5775,
+  "open": 0,
+  "high": 5800,
+  "low": 5700,
+  "volume": 1900,
+  "market_cap": 12127500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-24",
+  "close": 5575,
+  "open": 0,
+  "high": 5575,
+  "low": 5525,
+  "volume": 200,
+  "market_cap": 11707500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-27",
+  "close": 5600,
+  "open": 0,
+  "high": 5600,
+  "low": 5575,
+  "volume": 1300,
+  "market_cap": 11760000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-28",
+  "close": 5700,
+  "open": 0,
+  "high": 6000,
+  "low": 5600,
+  "volume": 4100,
+  "market_cap": 11970000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-29",
+  "close": 5775,
+  "open": 0,
+  "high": 6000,
+  "low": 5700,
+  "volume": 3500,
+  "market_cap": 12127500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-30",
+  "close": 5850,
+  "open": 0,
+  "high": 5925,
+  "low": 5575,
+  "volume": 7000,
+  "market_cap": 12285000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-07-31",
+  "close": 5800,
+  "open": 0,
+  "high": 5800,
+  "low": 5800,
+  "volume": 200,
+  "market_cap": 12180000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-03",
+  "close": 5800,
+  "open": 0,
+  "high": 5825,
+  "low": 5800,
+  "volume": 1400,
+  "market_cap": 12180000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-04",
+  "close": 5975,
+  "open": 5800,
+  "high": 5975,
+  "low": 5800,
+  "volume": 400,
+  "market_cap": 12547500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-05",
+  "close": 5825,
+  "open": 0,
+  "high": 5950,
+  "low": 5600,
+  "volume": 6900,
+  "market_cap": 12232500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-06",
+  "close": 5875,
+  "open": 5875,
+  "high": 5900,
+  "low": 5800,
+  "volume": 1600,
+  "market_cap": 12337500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-07",
+  "close": 5875,
+  "open": 5850,
+  "high": 5900,
+  "low": 5750,
+  "volume": 1700,
+  "market_cap": 12337500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-10",
+  "close": 5700,
+  "open": 5975,
+  "high": 5975,
+  "low": 5700,
+  "volume": 700,
+  "market_cap": 11970000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-11",
+  "close": 5925,
+  "open": 5925,
+  "high": 6000,
+  "low": 5500,
+  "volume": 15600,
+  "market_cap": 12442500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-12",
+  "close": 5850,
+  "open": 5925,
+  "high": 5925,
+  "low": 5750,
+  "volume": 4300,
+  "market_cap": 12285000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-13",
+  "close": 5950,
+  "open": 5625,
+  "high": 5950,
+  "low": 5625,
+  "volume": 1700,
+  "market_cap": 12495000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-14",
+  "close": 5850,
+  "open": 5725,
+  "high": 5850,
+  "low": 5725,
+  "volume": 200,
+  "market_cap": 12285000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-18",
+  "close": 5700,
+  "open": 5725,
+  "high": 5825,
+  "low": 5625,
+  "volume": 2600,
+  "market_cap": 11970000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-19",
+  "close": 5725,
+  "open": 5900,
+  "high": 5900,
+  "low": 5500,
+  "volume": 20300,
+  "market_cap": 12022500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-20",
+  "close": 5675,
+  "open": 5625,
+  "high": 5725,
+  "low": 5525,
+  "volume": 5400,
+  "market_cap": 11917500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-21",
+  "close": 5675,
+  "open": 5700,
+  "high": 5700,
+  "low": 5625,
+  "volume": 2600,
+  "market_cap": 11917500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-24",
+  "close": 5675,
+  "open": 5675,
+  "high": 5700,
+  "low": 5675,
+  "volume": 6000,
+  "market_cap": 11917500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-26",
+  "close": 6800,
+  "open": 6800,
+  "high": 6800,
+  "low": 5700,
+  "volume": 58100,
+  "market_cap": 14280000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-27",
+  "close": 8150,
+  "open": 6800,
+  "high": 8150,
+  "low": 6800,
+  "volume": 205700,
+  "market_cap": 17115000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-28",
+  "close": 8450,
+  "open": 8850,
+  "high": 9125,
+  "low": 8200,
+  "volume": 130700,
+  "market_cap": 17745000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-08-31",
+  "close": 9925,
+  "open": 8500,
+  "high": 10125,
+  "low": 8500,
+  "volume": 174100,
+  "market_cap": 20842500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-01",
+  "close": 11550,
+  "open": 10075,
+  "high": 11575,
+  "low": 10075,
+  "volume": 128500,
+  "market_cap": 24255000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-02",
+  "close": 11550,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 24255000000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-03",
+  "close": 12725,
+  "open": 13850,
+  "high": 13850,
+  "low": 11650,
+  "volume": 147000,
+  "market_cap": 26722500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-04",
+  "close": 12725,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 26722500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-07",
+  "close": 12725,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 26722500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-08",
+  "close": 12725,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 26722500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-09",
+  "close": 12725,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 26722500000000
+ },
+ {
+  "symbol": "LIFE.JK",
+  "date": "2026-09-10",
+  "close": 12725,
+  "open": 0,
+  "high": 0,
+  "low": 0,
+  "volume": 0,
+  "market_cap": 26722500000000
+ }
+]

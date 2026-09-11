@@ -62,6 +62,20 @@
     "status": 200,
     "tier": 3
   },
+  "v2_broker-summary_LIFE__end-2026-09-04_start-2026-08-22": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1789134763.815464,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-04",
+      "start": "2026-08-22"
+    },
+    "path": "/v2/broker-summary/LIFE/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_broker-summary_TLKM_top": {
     "cost_headers": {},
     "est_cost": 2,
@@ -235,6 +249,17 @@
     "status": 200,
     "tier": 3
   },
+  "v2_company_corporate-actions_LIFE": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1789134772.85033,
+    "method": "GET",
+    "no_auth": false,
+    "params": {},
+    "path": "/v2/company/corporate-actions/LIFE/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_company_corporate-actions_TLKM": {
     "cost_headers": {},
     "est_cost": 1,
@@ -391,6 +416,19 @@
       "sections": "overview"
     },
     "path": "/v2/company/report/BREN/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_company_report_LIFE__sections-financials": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1789134766.119336,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "sections": "financials"
+    },
+    "path": "/v2/company/report/LIFE/",
     "status": 200,
     "tier": 1
   },
@@ -576,6 +614,20 @@
     "status": 200,
     "tier": 1
   },
+  "v2_daily_LIFE__end-2026-09-10_start-2026-05-01": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1789134759.464374,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-10",
+      "start": "2026-05-01"
+    },
+    "path": "/v2/daily/LIFE/",
+    "status": 200,
+    "tier": 1
+  },
   "v2_daily_TLKM": {
     "cost_headers": {},
     "est_cost": 1,
@@ -598,6 +650,21 @@
     "est_cost": 1,
     "fetched_at": 1788626920.556946,
     "params": {},
+    "path": "/v2/filings/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_filings__end-2026-09-10_start-2026-08-01_symbol-LIFE.JK": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1789134770.724191,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-10",
+      "start": "2026-08-01",
+      "symbol": "LIFE.JK"
+    },
     "path": "/v2/filings/",
     "status": 200,
     "tier": 1
@@ -750,6 +817,20 @@
     "est_cost": 1,
     "fetched_at": 1788626921.77514,
     "params": {},
+    "path": "/v2/index-daily/ihsg/",
+    "status": 200,
+    "tier": 1
+  },
+  "v2_index-daily_ihsg__end-2026-09-10_start-2026-05-01": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1789134761.715883,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-10",
+      "start": "2026-05-01"
+    },
     "path": "/v2/index-daily/ihsg/",
     "status": 200,
     "tier": 1
@@ -1235,6 +1316,21 @@
     "path": "/v2/most-traded/",
     "status": 200,
     "tier": 3
+  },
+  "v2_news__end-2026-09-10_start-2026-08-01_symbols-LIFE.JK": {
+    "cost_headers": {},
+    "est_cost": 1,
+    "fetched_at": 1789134768.378773,
+    "method": "GET",
+    "no_auth": false,
+    "params": {
+      "end": "2026-09-10",
+      "start": "2026-08-01",
+      "symbols": "LIFE.JK"
+    },
+    "path": "/v2/news/",
+    "status": 200,
+    "tier": 1
   },
   "v2_news__extension-idx": {
     "cost_headers": {},

@@ -1,0 +1,107 @@
+{
+  "name": "Earnings Relay — the year-over-year comparator, and nothing else",
+  "grant": 1000,
+  "status": "NOT EXECUTED as of 2026-09-10",
+  "basket": [
+    "ADRO",
+    "BBCA",
+    "BBRI",
+    "TLKM",
+    "BMRI",
+    "ASII",
+    "BREN",
+    "ANTM"
+  ],
+  "notes": [
+    "This plan is written and deliberately not run. src/earnings-relay/ works today on the 2026-09-06 recordings, with the PRD's default year-over-year comparator resolving to metric_status=unknown because recorded/ holds only four trailing quarters per symbol. Running this tier flips that comparator from unknown to computable.",
+    "Cost: /v2/financials/quarterly/{symbol}/ bills 1 credit per quarter returned (mock_server.cost_for, 'per quarter returned'), so n_quarters=8 is 8 credits per symbol and this whole tier is 64 of the ~623 credits remaining.",
+    "Every symbol here came back in an earlier response: all eight appear in recorded/v2_companies_quarterly-financial-dates__limit-30.json, which is the merged 960-row sweep already paid for. A guessed identifier 404s and a 404 bills 1 credit.",
+    "n_quarters is explicit on every call. Letting it default is how a defaulted-parameter call costs more than the one that was intended (CLAUDE.md).",
+    "The four symbols in tier 0 are the ones recorded/ already holds at n_quarters=4; re-fetching them at 8 supersedes those files rather than adding to them. Commit the new recordings with their ledger entry, and note in research/audit/ that the four-quarter payloads are now a strict subset.",
+    "Rehearse against the mock first: cd research/harness && SECTORS_BASE_URL=http://127.0.0.1:8787 python3 src/capture.py --plan plans/plan-earnings-relay.json --budget 64 --dry-run. Delete anything a mock rehearsal writes into recorded/ before going live.",
+    "After running it: src/earnings-relay/sources.py's check_series_depth gate FAILS on purpose ('year-over-year became computable on recorded data'), which is the reminder to switch the demo workspace's comparator back to the PRD default and re-run ./run.sh test."
+  ],
+  "calls": [
+    {
+      "tier": 0,
+      "path": "/v2/financials/quarterly/ADRO/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "supersedes the existing n_quarters=4 recording; supplies the prior-year quarter the three PRD §9 metrics need"
+    },
+    {
+      "tier": 0,
+      "path": "/v2/financials/quarterly/BBCA/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "supersedes the existing n_quarters=4 recording; supplies the prior-year quarter the three PRD §9 metrics need"
+    },
+    {
+      "tier": 0,
+      "path": "/v2/financials/quarterly/BBRI/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "supersedes the existing n_quarters=4 recording; supplies the prior-year quarter the three PRD §9 metrics need"
+    },
+    {
+      "tier": 0,
+      "path": "/v2/financials/quarterly/TLKM/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "supersedes the existing n_quarters=4 recording; supplies the prior-year quarter the three PRD §9 metrics need"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/financials/quarterly/BMRI/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "widens the demo watchlist past four symbols; symbol taken from the paid-for quarterly-financial-dates sweep, never guessed"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/financials/quarterly/ASII/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "widens the demo watchlist past four symbols; symbol taken from the paid-for quarterly-financial-dates sweep, never guessed"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/financials/quarterly/BREN/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "widens the demo watchlist past four symbols; symbol taken from the paid-for quarterly-financial-dates sweep, never guessed"
+    },
+    {
+      "tier": 1,
+      "path": "/v2/financials/quarterly/ANTM/",
+      "params": {
+        "n_quarters": 8,
+        "approx": "true"
+      },
+      "est_cost": 8,
+      "note": "widens the demo watchlist past four symbols; symbol taken from the paid-for quarterly-financial-dates sweep, never guessed"
+    }
+  ],
+  "est_total_cost": 64
+}
