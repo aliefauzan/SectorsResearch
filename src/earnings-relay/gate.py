@@ -56,6 +56,7 @@ DIRECTION_MISMATCH = "direction_mismatch"
 COMPARATOR_MISLABELLED = "comparator_mislabelled"
 PROHIBITED_PHRASE = "prohibited_phrase"
 UNKNOWN_METRIC_NARRATED = "unknown_metric_narrated"
+CROSS_SOURCE_MISMATCH = "cross_source_mismatch"
 
 #: Anything in here rejects. Nothing in here is a matter of taste.
 #:
@@ -387,6 +388,67 @@ def check_parsers():
     if status != SUPPORTED:
         failures.append(f"the disclaimer flagged itself: {reasons}")
     return failures, 6
+
+
+def cross_source_mismatch(factset, sources_data):
+    """Compare symbol across recorded/ and fixtures; reject if set differs >1."""
+    reasons = []
+    detail = {}
+    symbols_recorded = set()
+    symbols_fixtures = set()
+    for key in ("v2_company_corporate_actions", "v2_filings", "v2_broker_summary",
+                "v2_daily", "v2_company_report"):
+        data = sources_data.get(key)
+        if isinstance(data, list):
+            for item in data:
+                sym = item.get("symbol") if isinstance(item, dict) else None
+                if sym:
+                    symbols_recorded.add(sym)
+        elif isinstance(data, dict):
+            sym = data.get("symbol")
+            if sym:
+                symbols_recorded.add(sym)
+    fixtures_data = sources_data.get("fixtures", {})
+    fixtures_filings = fixtures_data.get("v2_filings", [])
+    if isinstance(fixtures_filings, list):
+        for item in fixtures_filings:
+            sym = item.get("symbol") if isinstance(item, dict) else None
+            if sym:
+                symbols_fixtures.add(sym)
+    fixtures_symbol = fixtures_data.get("symbol")
+    if fixtures_symbol:
+        symbols_fixtures.add(fixtures_symbol)
+
+    # A2: source dates differ -> needs_review, not consistent
+    as_of_vals = set()
+    for data in sources_data.values():
+        if isinstance(data, dict):
+            d = data.get("as_of")
+            if d:
+                as_of_vals.add(str(d))
+        elif isinstance(data, list) and len(data) > 0:
+            first = data[0]
+            if isinstance(first, dict):
+                d = first.get("as_of")
+                if d:
+                    as_of_vals.add(str(d))
+    fixtures_as_of = sources_data.get("fixtures", {}).get("as_of")
+    if fixtures_as_of:
+        as_of_vals.add(str(fixtures_as_of))
+    if len(as_of_vals) > 1:
+        reasons.append(f"cross_source_mismatch: source dates differ: {sorted(as_of_vals)}")
+        detail["date_diff"] = sorted(as_of_vals)
+        # A2 correction: return needs_review-equivalent (rejected=True with reason) when dates differ
+        # Previously returned (False, 'consistent') incorrectly; now rejected is True.
+
+    if len(symbols_recorded) > 0 and len(symbols_fixtures) > 0:
+        diff = len((symbols_recorded - symbols_fixtures) | (symbols_fixtures - symbols_recorded))
+        if diff > 1:
+            reasons.append(f"cross_source_mismatch: symbol sets differ by {diff} (>1): recorded={sorted(symbols_recorded)} fixtures={sorted(symbols_fixtures)}")
+            detail["symbol_cross_diff"] = {"recorded": sorted(symbols_recorded), "fixtures": sorted(symbols_fixtures), "diff": diff}
+    rejected = bool(reasons)
+    reason_str = "; ".join(reasons) if reasons else "consistent"
+    return rejected, reason_str, detail
 
 
 def main():
