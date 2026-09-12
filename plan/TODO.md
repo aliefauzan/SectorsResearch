@@ -28,7 +28,7 @@ Diperiksa 2026-09-12 dengan perintah, bukan ingatan.
       berstatus OPEN**: `018056-334B67-5DE9C0` ("free trial") dan `01B951-232B54-4E1D9A`
       ("My Billing Account"). `gcloud billing accounts list`.
 - [x] **Proyek GCP ada dan tertagih: `ada-sectors-508410` ("ADA sectors").**
-      Ditautkan 2026-09-12 ke akun penagihan **`018056-334B67-5DE9C0` ("free trial")**.
+      Ditautkan 2026-09-12 ke akun penagihan **`01B951-232B54-4E1D9A` ("My Billing Account")**.
       `gcloud billing projects describe ada-sectors-508410` → `billingEnabled: True`.
 - [x] **Enam API aktif** di proyek itu: `run`, `cloudbuild`, `artifactregistry`,
       `secretmanager`, `storage`, `cloudscheduler`.
@@ -66,24 +66,16 @@ Saya bisa menulis `server.py`, `Dockerfile`, `.dockerignore` dan `cloudbuild.yam
 klik pun. Yang di bawah ini yang tidak bisa.
 
 - [x] **Proyek GCP dibuat dan ditautkan ke akun penagihan.** `ada-sectors-508410`,
-      akun `018056-334B67-5DE9C0` ("free trial"), `billingEnabled: True`.
-      **Bukan akun yang dipilih lebih dulu:** `01B951-232B54-4E1D9A` ("My Billing Account")
-      ditolak dua kali dengan `FAILED_PRECONDITION: Cloud billing quota exceeded`, dan
-      penolakan itu bukan soal jumlah proyek — hanya tiga proyek tertaut di sana. Jalan
-      keluarnya adalah mengajukan kenaikan kuota lewat tautan yang Google berikan, lalu
-      menautkan ulang.
+      akun `01B951-232B54-4E1D9A` ("My Billing Account"), `billingEnabled: True`.
+      Percobaan pertama ditolak `FAILED_PRECONDITION: Cloud billing quota exceeded`; setelah
+      `tubesabp-459213` dilepas dari akun itu, penautan berhasil. Proyek sempat singgah di
+      akun "free trial" di antara keduanya dan sudah dipindah.
 
-- [ ] **Putuskan apakah akun penagihan tetap "free trial" atau dipindah ke "My Billing
-      Account".** Selama di trial, biaya keluar dari kredit welcome, bukan dari kartu — itu
-      posisi yang lebih aman dan itulah yang berlaku sekarang. Memindahkannya nanti adalah
-      satu perintah:
-      ```bash
-      gcloud billing projects link ada-sectors-508410 --billing-account=01B951-232B54-4E1D9A
-      ```
-
-- [ ] **Catat tanggal trial mulai dan sisa harinya.** §10 PRD membuka pertanyaan ini dan ia
-      masih terbuka; `gcloud` tidak mengekspos tanggalnya, jadi bacalah di konsol Billing →
-      Overview. Ia menentukan kapan D10 (panggilan model) berhenti gratis.
+- [ ] **Ketahui batas mana yang berlaku di akun ini: kredit welcome atau kartu.**
+      Ini bukan akun trial, jadi pemakaian di atas Always Free ditagih, bukan dipotong dari
+      kredit. Seluruh komponen §12 dipilih agar muat Always Free — tetapi pasang **anggaran
+      dan peringatan** di konsol Billing → Budgets & alerts supaya kesalahan konfigurasi tidak
+      berjalan diam-diam sepanjang malam. Satu anggaran, nilai kecil, peringatan di 50%.
 
 - [x] **Enam API diaktifkan** di `ada-sectors-508410`: `run`, `cloudbuild`,
       `artifactregistry`, `secretmanager`, `storage`, `cloudscheduler`.

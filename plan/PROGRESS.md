@@ -16,7 +16,7 @@ punya perintahnya sendiri.
 | Fase berjalan | **Fase 0 dan Fase 1 selesai.** Dua dari delapan |
 | Fase berikutnya | Fase 2 · Pipeline deploy |
 | Revisi Cloud Run yang melayani | **tidak ada** — Fase 2 baru pada langkah infrastrukturnya |
-| Proyek GCP | `ada-sectors-508410`, penagihan `018056-334B67-5DE9C0` ("free trial"), enam API aktif, `SECTORS_API_KEY` di Secret Manager v1 |
+| Proyek GCP | `ada-sectors-508410`, penagihan `01B951-232B54-4E1D9A` ("My Billing Account"), enam API aktif, `SECTORS_API_KEY` di Secret Manager v1 |
 | Gate | **98 assertion hijau di 19 fungsi check**, exit 0 (naik dari 73) |
 | Kredit terpakai | **377 terkonfirmasi portal** (ekspor `2026-09-05`), **≈384** termasuk tujuh baris ledger setelah tanggal ekspor |
 | Kredit tersisa | **≈616 dari 1.000** |
@@ -68,7 +68,7 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 | **Sekadar diklaim** (tidak dapat diverifikasi dari repo) | |
 | --- | --- |
 | Onboarding sectors.app tiap peserta sebelum baris kode pertama | Blocker B7 |
-| Tanggal mulai trial GCP dan sisa harinya | Proyek tertaut ke akun "free trial"; `gcloud` tidak mengekspos tanggal mulainya. Lihat `TODO.md` |
+| Apakah ada anggaran dan peringatan biaya di akun penagihan | Proyek tertaut ke akun berbayar, bukan trial; pemakaian di atas Always Free ditagih. Lihat `TODO.md` |
 | Tiga commit lokal (`6128b4b`, `7121ef2`, `83fe2a1`) belum di-push ke origin | `git log origin/master..HEAD --oneline`; lihat `TODO.md` |
 | Kredit tersisa **tepat** ≈616 | Ekspor portal terakhir bertanggal `2026-09-05`; belanja sesudahnya hanya diketahui dari ledger. Blocker B3 |
 
@@ -244,3 +244,16 @@ kembali adalah satu perintah, dan barisnya ada di `TODO.md`.
 
 `cloudbuild.yaml`, `Dockerfile`, `.dockerignore` dan `server.py` belum ditulis — Fase 2 belum
 dimulai. Nol kredit Sectors dibelanjakan.
+
+### 2026-09-12 — penagihan dipindah ke akun yang semula dipilih
+
+`tubesabp-459213` dilepas dari `01B951-232B54-4E1D9A`, kuota terbuka, dan `ada-sectors-508410`
+ditautkan ulang ke akun itu: `billingEnabled: True`. Singgahnya di akun "free trial" berakhir.
+
+Diperiksa setelah pemindahan, karena mengganti akun penagihan bisa menjatuhkan layanan:
+keenam API tetap aktif, dan `SECTORS_API_KEY` versi 1 tetap `enabled` dengan SHA-256 yang
+masih cocok dengan `.env`.
+
+Konsekuensi yang perlu dipegang: ini bukan akun trial, jadi pemakaian di atas Always Free
+ditagih alih-alih dipotong dari kredit welcome. Baris anggaran dan peringatan biaya
+ditambahkan ke `TODO.md`.
