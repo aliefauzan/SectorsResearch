@@ -42,6 +42,7 @@ import re
 import metrics as metrics_module
 import money
 import periods
+import sources
 import template
 
 SUPPORTED = "supported"
@@ -391,71 +392,146 @@ def check_parsers():
 
 
 def cross_source_mismatch(factset, sources_data):
-    """Compare symbol across recorded/ and fixtures; reject if set differs >1."""
+    """Verify cross-source consistency: market_cap, corporate actions, arithmetic invariants.
+    Returns (rejected: bool, reason: str, detail: dict). Zero credit — recorded/ + mock only."""
     reasons = []
     detail = {}
-    symbols_recorded = set()
-    symbols_fixtures = set()
-    for key in ("v2_company_corporate_actions", "v2_filings", "v2_broker_summary",
-                "v2_daily", "v2_company_report"):
-        data = sources_data.get(key)
-        if isinstance(data, list):
-            for item in data:
-                sym = item.get("symbol") if isinstance(item, dict) else None
-                if sym:
-                    symbols_recorded.add(sym)
-        elif isinstance(data, dict):
-            sym = data.get("symbol")
-            if sym:
-                symbols_recorded.add(sym)
-    fixtures_data = sources_data.get("fixtures", {})
-    fixtures_filings = fixtures_data.get("v2_filings", [])
-    if isinstance(fixtures_filings, list):
-        for item in fixtures_filings:
-            sym = item.get("symbol") if isinstance(item, dict) else None
-            if sym:
-                symbols_fixtures.add(sym)
-    fixtures_symbol = fixtures_data.get("symbol")
-    if fixtures_symbol:
-        symbols_fixtures.add(fixtures_symbol)
 
-    # A2: source dates differ -> needs_review, not consistent
-    as_of_vals = set()
-    for data in sources_data.values():
-        if isinstance(data, dict):
-            d = data.get("as_of")
-            if d:
-                as_of_vals.add(str(d))
-        elif isinstance(data, list) and len(data) > 0:
-            first = data[0]
-            if isinstance(first, dict):
-                d = first.get("as_of")
-                if d:
-                    as_of_vals.add(str(d))
-    fixtures_as_of = sources_data.get("fixtures", {}).get("as_of")
-    if fixtures_as_of:
-        as_of_vals.add(str(fixtures_as_of))
-    if len(as_of_vals) > 1:
-        reasons.append(f"cross_source_mismatch: source dates differ: {sorted(as_of_vals)}")
-        detail["date_diff"] = sorted(as_of_vals)
-        # A2 correction: return needs_review-equivalent (rejected=True with reason) when dates differ
-        # Previously returned (False, 'consistent') incorrectly; now rejected is True.
+    # 1. market_cap: v2_daily_<SYM> vs company report (sections=overview) / broker-summary
+    daily_cap = sources_data.get("v2_daily", {}).get("market_cap")
+    report_cap = sources_data.get("v2_company_report", {}).get("overview", {}).get("market_cap")
+    broker_summary_cap = sources_data.get("v2_broker_summary", {}).get("market_cap")
 
-    if len(symbols_recorded) > 0 and len(symbols_fixtures) > 0:
-        diff = len((symbols_recorded - symbols_fixtures) | (symbols_fixtures - symbols_recorded))
-        if diff > 1:
-            reasons.append(f"cross_source_mismatch: symbol sets differ by {diff} (>1): recorded={sorted(symbols_recorded)} fixtures={sorted(symbols_fixtures)}")
-            detail["symbol_cross_diff"] = {"recorded": sorted(symbols_recorded), "fixtures": sorted(symbols_fixtures), "diff": diff}
+    # D4: Perbandingan market_cap hanya pada tanggal yang sama antar sumber
+    daily_date = sources_data.get("v2_daily", {}).get("date")
+    report_as_of = sources_data.get("v2_company_report", {}).get("as_of") or sources_data.get("v2_company_report", {}).get("date")
+    broker_start = sources_data.get("v2_broker_summary", {}).get("start") or sources_data.get("v2_broker_summary", {}).get("date")
+
+    # Hanya bandingkan jika semua sumber yang dibandingkan memiliki tanggal sama (atau setidaknya satu referensi tanggal)
+    dates_available = [d for d in (daily_date, report_as_of, broker_start) if d]
+    # Kunci perbandingan: hanya jika setidaknya dua sumber memiliki tanggal yang sama atau satu referensi yang konsisten
+    comparison_dates = {}
+    if daily_date: comparison_dates["v2_daily"] = daily_date
+    if report_as_of: comparison_dates["v2_company_report"] = report_as_of
+    if broker_start: comparison_dates["v2_broker_summary"] = broker_start
+
+    cap_sources = []
+    if daily_cap is not None:
+        cap_sources.append(("v2_daily", daily_cap, daily_date))
+    if report_cap is not None:
+        cap_sources.append(("v2_company_report (overview)", report_cap, report_as_of))
+    if broker_summary_cap is not None:
+        cap_sources.append(("v2_broker_summary", broker_summary_cap, broker_start))
+
+    # D4: hanya bandingkan jika semua sumber yang dibandingkan memiliki tanggal yang sama
+    if len(cap_sources) >= 2:
+        dates_in_sources = {name: str(date) for name, _, date in cap_sources if date}
+        # Perbandingan berjalan hanya saat semua tanggal konsisten (sama persis)
+        unique_dates = sorted(set(dates_in_sources.values())) if dates_in_sources else []
+        if len(unique_dates) == 1:
+            values = [v for _, v, _ in cap_sources]
+            if max(values) - min(values) > max(values) * 0.05:
+                detail["market_cap_divergence"] = {
+                    "sources": [s for s, _, _ in cap_sources],
+                    "values": {s: v for s, v, _ in cap_sources},
+                    "dates_in_sources": {k: v for k, v in dates_in_sources.items()},
+                    "as_of": factset.get("as_of", "unknown"),
+                }
+                reasons.append(f"market_cap mismatch across endpoints (same date {unique_dates[0]}): {', '.join(s for s, _, _ in cap_sources)}; values {values}; field=market_cap; endpoint=v2_daily vs company_report vs broker-summary")
+        else:
+            # Tanggal tidak sama — tidak bisa bandingkan secara valid; catat tapi tidak tolak hanya karena tanggal berbeda
+            detail["market_cap_date_mismatch"] = {
+                "sources": [s for s, _, _ in cap_sources],
+                "dates": {k: v for k, v in dates_in_sources.items()},
+                "as_of": factset.get("as_of", "unknown"),
+            }
+
+    # 2. Corporate actions: dates/figures dari v2_company_corporate-actions vs filings
+    corp_actions = sources_data.get("v2_company_corporate_actions", {})
+    filings = sources_data.get("v2_filings", [])
+    # D2: jika belum ada perbandingan yang bisa dilakukan, tulis "not_implemented", bukan "verified" palsu
+    if not corp_actions or not filings:
+        detail["corporate_action_check"] = "not_implemented"
+    else:
+        # Perbandingan belum diimplementasikan secara penuh — tidak boleh mengklaim "verified"
+        detail["corporate_action_check"] = "not_implemented"
+
+    # 3. Arithmetic invariants from v2_filings (20/20 consistent pattern)
+    arithmetic_ok = True
+    arithmetic_failures = []
+    for filing in filings:
+        before = filing.get("holding_before")
+        after = filing.get("holding_after")
+        amount = filing.get("amount_transaction")
+        price = filing.get("price")
+        value = filing.get("transaction_value")
+
+        if before is not None and after is not None and amount is not None:
+            # E2: tanda tidak diabaikan — abs selisih dibandingkan jumlah
+            if abs(after - before) != amount:
+                arithmetic_ok = False
+                arithmetic_failures.append(
+                    f"holding_after({after}) - holding_before({before}) != amount({amount}); symbol={filing.get('symbol')}; endpoint={sources.ENDPOINT.get('filings', 'v2_filings')}; as_of={factset.get('as_of', 'unknown')}"
+                )
+        if price is not None and amount is not None and value is not None:
+            expected_value = price * amount
+            # E2: float: toleransi kecil eksplisit (≤1 rupiah atau 0,01%)
+            expected_value = price * amount
+            if abs(value - expected_value) > max(1.0, abs(expected_value) * 0.0001):
+                arithmetic_ok = False
+                arithmetic_failures.append(
+                    f"price({price}) * amount({amount}) != transaction_value({value}); symbol={filing.get('symbol')}; endpoint={sources.ENDPOINT.get('filings', 'v2_filings')}; as_of={factset.get('as_of', 'unknown')}"
+                )
+
+    if not arithmetic_ok:
+        reasons.append("arithmetic invariant failure: " + "; ".join(arithmetic_failures))
+        detail["arithmetic_failures"] = arithmetic_failures
+
     rejected = bool(reasons)
     reason_str = "; ".join(reasons) if reasons else "consistent"
     return rejected, reason_str, detail
+
+
+def check_cross_source():
+    """D1: Panggil cross_source_mismatch dari jalur draft sebagai check ke-8."""
+    failures = []
+    checked = 0
+    try:
+        # Positif: konsisten
+        factset_mock = {"facts": [{"fact_id":"f1","normalized_value":72001235500000}], "as_of":"2026-09-06", "comparator":{}}
+        sources_data = {
+            "v2_daily": {"market_cap": 72001235500000, "date":"2026-09-06"},
+            "v2_company_report": {"overview": {"market_cap": 72001235500000}, "as_of":"2026-09-06"},
+            "v2_company_corporate_actions": {},
+            "v2_filings": [{"symbol":"ADRO.JK","holding_before":100,"holding_after":110,"amount_transaction":10,"price":100,"transaction_value":1000}],
+        }
+        rejected, reason, detail = cross_source_mismatch(factset_mock, sources_data)
+        if rejected:
+            failures.append(f"positif konsisten ditolak: {reason}")
+        else:
+            checked += 1
+            print(f"        cross_source · konsisten (detail keys: {list(detail.keys())})")
+
+        # Negatif: angka digeser 10% (A) harus ditolak
+        sources_bad = sources_data.copy()
+        sources_bad["v2_daily"] = {"market_cap": int(72001235500000 * 1.10), "date":"2026-09-06"}
+        rejected_bad, reason_bad, detail_bad = cross_source_mismatch(factset_mock, sources_bad)
+        if not rejected_bad:
+            failures.append(f"negatif angka digeser tidak ditolak (A): {reason_bad}")
+        else:
+            checked += 1
+            print(f"        cross_source · angka digeser ditolak: {reason_bad}")
+    except Exception as exc:
+        failures.append(f"cross_source_mismatch gagal dipanggil: {exc}")
+    return failures, checked
 
 
 def main():
     results = [("clean draft", *check_clean_draft()),
                ("adversarial drafts", *check_adversarial()),
                ("unknown downgrade", *check_unknown_downgrade()),
-               ("text parsers", *check_parsers())]
+               ("text parsers", *check_parsers()),
+               ("cross_source_mismatch", *check_cross_source())]
 
     failed = 0
     for name, failures, checked in results:

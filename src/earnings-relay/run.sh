@@ -112,6 +112,8 @@ case "${1:-all}" in
     done
     echo "── adapter"
     python3 "$DIR/adapter.py" --self-test || status=1
+    echo "── attack_classes (A1-A7, --run)"
+    python3 "$DIR/attack_classes.py" --run || status=1
     echo "── relay (AT-01 … AT-10)"
     python3 "$DIR/relay.py" --self-test || status=1
     echo "── webapp"

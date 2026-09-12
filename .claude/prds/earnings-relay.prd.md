@@ -1,69 +1,124 @@
-# Earnings Relay — PRD #3 (earnings-relay.prd.md)
+# Earnings Relay — PRD Submission
 
-Status: DRAFT — satu produk, satu tim, satu track.
+Sectors Hackathon 2026 · Track 02 (Automation & Workflows) · satu tim, satu proyek.
 
-## 1. Problema
+**Aturan dokumen:** tidak ada angka tanpa perintah yang memproduksinya. Yang belum diukur
+ditulis `BELUM DIUKUR`, bukan ditebak.
 
-**Cita C2 (verbatim, `deep-research.md`):** `origin` dan `cohort` di tingkat atas adalah *gema permintaan* (`"all"`, `"all"`), bukan data — entri broker tidak membawa kohort sendiri. Kohort harus di-*join* ke `/v2/brokers/`, atau diminta lewat parameter kueri `cohort=`/`origin=` (keduanya didukung).
+## Masalah
 
-**Problema real:** laporan kuartalan (filing/informe) masuk → data broker (FactSet) → draf → gate anti-halusinasi → verifikasi → commit → notifikasi. Setiap angka harus membawa endpoint + field + `as_of`. Tanpa gate, draf bisa memuat `pnl_pct`, `mcap`, `tvl` fiktif atau `market_cap` dari tanggal salah. **Minutos actuales por informe:** 5 menit (reunión 09:00 / deadline publicación — analista Rina, 23 años, junior IDX, 3 personas, sin Bloomberg).
+Tiap laporan kuartalan terbit, seseorang harus menerbitkan ringkasan yang dibaca publik.
+Angkanya datang dari beberapa endpoint yang tidak selalu sepakat: `market_cap` dari harga
+harian berbeda dari `market_cap` di company report bila tanggalnya tidak dikunci; komparator
+kuartal gampang tertukar antara sekuensial dan year-over-year. Satu angka meleset, yang
+terbit adalah pernyataan keuangan yang salah, dan tidak ada yang tahu angka itu asalnya dari
+mana.
 
-## 2. Persona
+Produk ini menolak menerbitkan kalimat yang tidak bisa ditelusuri ke `endpoint + field +
+as_of`, dan membuktikan penolakannya lewat uji serangan yang dijalankan tiap siklus.
 
-**Rina** (23, analyst saham junior IDX, 2 tahun, tim 3 orang). Kerja: baca filing → buat draf → kirim notifikasi sebelum rapat 09:00. Hanya laptop + Sectors API + browser. Tidak ada Bloomberg/Refinitiv. Dalam 5 menit, tahu filing mana berdampak, dengan alasan audit (sitasi endpoint).
+**BELUM DIUKUR:** kutipan verbatim dari 3–5 wawancara dengan orang yang benar-benar
+menerbitkan ringkasan kuartalan (tim IR emiten, analis sekuritas kecil, compliance), plus
+berapa menit proses manual mereka sekarang per laporan. Sampai ada, persona bernama adalah
+asumsi dan tidak ditulis di sini.
 
-## 3. Track
+## Sectors sebagai core data source
 
-**Track 02 (Act)** — alur otomatis `poll → claim → verified/rejected → notify` tanpa intervensi manusia, memenuhi syarat `schedule config + logs + timestamps`. Dipilih karena `unattended run` adalah inti produk, bukan hanya fitur tambahan.
+| Endpoint | Dipakai untuk |
+|---|---|
+| `/v2/companies/quarterly-financial-dates/` | pemicu kuartal baru (`?since=` valid hanya di sini) |
+| `/v2/financials/quarterly/{symbol}/` | angka kuartalan yang dinarasikan |
+| `/v2/daily/{symbol}/` | `market_cap`, `close` — sumber pembanding |
+| `/v2/company/report/{symbol}/?sections=overview` | `market_cap` sumber kedua |
 
-## 4. Sectors como core (etapa 1)
+Cabut Sectors: tidak ada laporan yang masuk, tidak ada fakta yang bisa disitir, tidak ada
+draft yang bisa dibuat. Produk mati, bukan berkurang.
 
-Endpoint: `/v2/filings/`, `/v2/broker-summary/{sym}/` (tanpa `?sections=` — koreksi PRD lama), `/v2/quarterly-financials/` (`?since=` hanya untuk quarterly, bukan filings — koreksi 4). **Eliminar Sectors → producto muere:** cabut filing + broker-summary, produk tidak punya input; lulus Stage 1 (`CLAUDE.md`).
-
-## 5. Funcionamiento
+## Cara kerja
 
 ```
-filing/informe entra → adapter.py (factset) → relay.py draft → gate.py (cross_source_mismatch/D1)
-→ verify (`python3 gate.py`) → commit (`audit_trail.json` JSONL append-only)
-→ notify (scheduler.log timestamp) → rollback (jika `mismatch_score > 0`, status kembali `rejected`, notifikasi dibatalkan sebelum commit).
+kuartal baru terbit
+  → sources.py    muat payload (recorded/ atau mock, nol kredit)
+  → factset.py    fakta imutabel, id content-addressed, restatement = versi 2
+  → template.py   5 slide Indonesia, tiap slot faktual menyebut fact_id
+  → gate.py       5 blok check, termasuk cross_source_mismatch
+  → verify → commit (audit trail append-only) → notify
 ```
-Rollback terjadi **sebelum notify**, bukan sesudah.
 
-## 6. Métricas (cada línea = número + comando)
+Rollback hanya sah **sebelum** notify. Notifikasi terkirim tidak bisa ditarik, jadi urutannya
+invarian.
 
-- catch rate 3/5 → `python3 attack_classes.py --run` (E1 loop ATTACKS; E2 abs+toleransi; E3 negatif kasus; E4 syarat tanggal).
-- cobertura cita 100% → `python3 gate.py` (setiap angka membawa endpoint + field + `as_of`).
-- unattended N días → `state/` (scheduler.log persisten; `cron` log timestamp `/tmp/cron_logs`).
-- crédito usado 0; crédito restante: 623 (de 735 iniciales, 265 gastados 6 Sep 2026, 48 en auditoría, quedan 623) → `recorded/_ledger.jsonl` (0 baris; `python3 src/mock_server.py --port 8787 --credits 1000`).
+`cross_source_mismatch` memeriksa tiga hal:
 
-## 7. Limitaciones honestas
+1. `market_cap` antar endpoint, **hanya bila tanggal kedua sumber sama**.
+2. Invarian aritmetika payload: `abs(holding_after − holding_before) == amount_transaction`,
+   dan `price × amount ≈ transaction_value` dengan toleransi eksplisit karena sumber
+   membulatkan rupiah.
+3. Aksi korporasi: `not_implemented` — ditulis apa adanya, tidak diklaim `verified`.
 
-- `gate.comparator_mislabelled`: komparator hanya memverifikasi label berurutan (sequential), bukan perbandingan YoY (`year-over-year`). Kode: `gate.py:cross_source_mismatch` tidak memiliki `year` field.
-- Ataque B (`field ditukar`) tidak selalu tertangkap — `mutation` `lambda cap: cap` tidak mengubah nilai, hanya simbolik.
-- PRD filing (`agent-berita-saham.prd.md`) tidak diambil sebagai data sumber; `recorded/v2_filings.json` = 20 baris, bukan 23472.
-- `?since=` salah jika diterapkan pada `/v2/filings/`; hanya valid untuk quarterly.
-- Broker-summary dipanggil tanpa `?sections=overview` — panggilan default akan membebankan 1 kredit per simbol, bukan 8.
+## Metrik
 
-## 8. Fuera de alcance
+Semua dari root repo, nol kredit.
 
-- Ejecución trading automático (prohibido por reglas hackathon; `CLAUDE.md`: "automated trade execution is banned in every track").
-- Mobile nativo (no `react-native` o `flutter` en repo).
-- Integración broker (no clave API real; `SECTORS_API_KEY` solo para mock).
-- Vector DB (no `pinecone`/`weaviate` en `.env` ni `convex/`).
-- Multi-agent memori Firestore (`TLTR DB`, `pool-memory.js` — no existe en `src/earnings-relay/`).
+| Metrik | Angka | Perintah |
+|---|---|---|
+| Blok gate lolos | 5 | `cd src/earnings-relay && python3 gate.py \| grep -cE '^PASS'` |
+| Catch rate serangan | 1/5 | `cd src/earnings-relay && python3 attack_classes.py --run \| tail -2` |
+| False positive data asli | 0 dari 20 | blok python di bawah, harus cetak `False` lalu `True` |
+| Run unattended tercatat | `wc -l state/scheduler.jsonl` | riwayat dimulai 12 Sep 2026 |
+| Kredit dipakai proyek ini | 0 | tidak ada entri baru di `research/harness/recorded/_ledger.jsonl` (175 baris, semua capture 6 Sep 2026) |
+| Sisa kredit hibah | 623 dari 1000 | `grep -c "623 remain" CLAUDE.md` |
 
-## 9. Presupuesto crédito
+```bash
+python3 - <<'EOF'
+import json, sys; sys.path.insert(0, 'src/earnings-relay'); import gate
+rows = json.load(open('research/harness/recorded/v2_filings.json'))['results']
+print(gate.cross_source_mismatch({"as_of": "x"}, {"v2_filings": rows})[0])          # False
+f = dict(rows[0]); f["holding_after"] = f["holding_before"] + 2_000_000
+print(gate.cross_source_mismatch({"as_of": "x"}, {"v2_filings": [f]})[0])           # True
+EOF
+```
 
-- 623 restantes; 0 usados; todo dev en `mock_server.py` (`python3 src/mock_server.py --port 8787 --credits 1000`).
-- `recorded/_ledger.jsonl`: 0 baris (`cat recorded/_ledger.jsonl` → vacío o no existe en esta rama).
-- `SECTORS_BUDGET`: 623 (`echo $SECTORS_BUDGET` → 623; `.env` no existe; valor en `CLAUDE.md`).
+Catch rate 1/5 adalah hasil ukur, turun dari angka 2/5 yang sebelumnya diketik tangan. Target
+sebelum submit: 3/5 lewat dua perbaikan di daftar berikutnya.
 
-## 10. Regla única — ningún número sin comando
+## Batasan yang diakui
 
-- 623 → `python3 -c "import os; print(os.environ.get('SECTORS_BUDGET', '623'))"`
-- 0 → `cat research/harness/src/reconcile_usage.py | grep -c "charged" || echo 0`
-- 5 ataques → `python3 src/earnings-relay/attack_classes.py --run`
-- 20 baris filings → `cat research/harness/recorded/v2_filings.json | wc -l`
-- 3/5 catch rate → `python3 src/earnings-relay/attack_classes.py --run` → `grep -o 'PASS\|FAIL'` → `echo 3/5`
+- Komparator: `gate.comparator_mislabelled` menolak kalimat yang menyebut perbandingan
+  sekuensial sebagai year-over-year. Pada `recorded/` tidak ada pasangan kuartal tahun
+  sebelumnya, jadi demo berjalan pada komparator sekuensial dan dilabeli begitu.
+- Serangan B (field ditukar, nilai sama) belum tertangkap: butuh tabel satuan per field.
+- Serangan C (`as_of` basi) belum tertangkap: tanggal berbeda saat ini dilewati dan dilaporkan
+  `consistent`; seharusnya `needs_review`.
+- Serangan E (sitasi hilang) ditangani gate sitasi lain, bukan `cross_source_mismatch`.
+- Aksi korporasi belum dibandingkan.
+- Riwayat unattended baru dimulai 12 Sep 2026. Riwayat lama yang dibuat serentak dengan
+  tanggal mundur sudah dihapus.
+- Bukti pengguna belum ada.
 
-Cualquier afirmación que no pueda generarse con `bash -c` debe eliminarse. Ejemplo eliminado: "20/20 filing konsisten" no tiene comando; reemplazado por `cat recorded/_ledger.jsonl | wc -l` (0 líneas = 0 créditos).
+## Sisa pekerjaan
+
+| # | Item | Efek |
+|---|---|---|
+| 1 | Bandingkan `symbol` antar sumber; tolak bila himpunan > 1 | 1/5 → 2/5 |
+| 2 | Tanggal sumber berbeda → `needs_review`, bukan `consistent` | 2/5 → 3/5 |
+| 3 | Fixture positif `check_cross_source` pakai 20 baris asli | mengunci regresi tanda + float |
+| 4 | Scheduler jalan tiap hari sampai submit | riwayat unattended bertambah sendiri |
+| 5 | Wawancara pengguna | satu-satunya lever untuk bobot 40% |
+
+## Di luar ruang lingkup
+
+Eksekusi trading otomatis (dilarang semua track) · aplikasi mobile native · integrasi broker
+untuk order · vector DB / fine-tune · memori multi-agent terdistribusi.
+
+## Anggaran kredit
+
+Hibah 1000, terpakai 377 pada capture 6 Sep 2026, sisa 623. Proyek ini menambah 0 — seluruh
+pengembangan berjalan pada `research/harness/recorded/` dan `mock_server.py`.
+
+```bash
+cd research/harness && python3 src/mock_server.py --port 8787 --credits 1000
+```
+
+Bila satu live capture diperlukan untuk video, jalankan lewat `capture.py --budget`, bukan
+`curl`, supaya tercatat di `_ledger.jsonl` beserta biayanya.

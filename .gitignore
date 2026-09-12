@@ -41,3 +41,4 @@ src/tunanetra/runs.jsonl
 # same recordings on every `./run.sh demo`, and neither records money spent.
 src/earnings-relay/runs.jsonl
 src/earnings-relay/state/
+.claude/worktrees/

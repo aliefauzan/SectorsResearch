@@ -1,0 +1,13 @@
+{
+  "run_id": "2026-09-12T131729+0800",
+  "started_at": "2026-09-12T13:17:29.595945+08:00",
+  "finished_at": "2026-09-12T13:17:29.650891+08:00",
+  "duration_s": 0.05,
+  "base_url": "http://127.0.0.1:8787",
+  "gate_exit": 0,
+  "gate_pass": 5,
+  "gate_fail": 0,
+  "catch_rate": "CATCH RATE NYATA: 1/5 = 20%",
+  "status": "ok",
+  "credits_spent": 0
+}
