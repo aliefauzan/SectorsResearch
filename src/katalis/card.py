@@ -11,10 +11,12 @@ The last two blocks are the ones that make the card trustworthy rather than conf
 **YANG BELUM KAMI PERIKSA** names what the agent did not look at, and **FIELD** prints the
 endpoints and fields behind every figure above, so a judge can re-derive any of them.
 """
+import os
 import re
 import sys
 from collections import Counter
 
+import classify
 import pillars as P
 import sources
 import thresholds as T
@@ -26,6 +28,18 @@ WIDTH = 76
 #: which a greedier pattern turns into the nonsense token "02..2026". The renderer and its
 #: gate must count with the same pattern or the comparison means nothing.
 NUMBER = r"\d+(?:[.,]\d+)*"
+
+
+def selected_classifier():
+    """The one place in this product that reads `CLASSIFIER`. Everything else is passed it.
+
+    Default `rules`. An unknown value raises `classify.UnknownClassifier` rather than
+    falling back, because a silent fallback is how a card ends up naming an engine that
+    never ran. `check_classifier_is_read_in_one_place` is what keeps this the only reader.
+    """
+    name = os.environ.get("CLASSIFIER", classify.DEFAULT)
+    classify.resolve(name)
+    return name
 
 
 def _rule(char="─"):
@@ -88,6 +102,7 @@ def _render(result, source, company=None):
     span = f"{result['window'][0]}..{result['window'][-1]}" if result["window"] else "—"
     put(f"{label}{' ' * max(1, WIDTH - len(label) - len(span) - len(source) - 5)}"
         f"{span} · {source}")
+    put(f"kabar dilabeli CLASSIFIER={result.get('classifier', classify.DEFAULT)}")
     put(_rule())
 
     for pillar in result["pillars"]:
@@ -154,8 +169,10 @@ def show(symbol, as_of=None, source="recorded"):
         print(f"{symbol}: tidak ada deret harga di sumber {source}", file=sys.stderr)
         return 1
     as_of = as_of or rows[-1]["date"]
+    classifier = selected_classifier()
     try:
-        result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
+        result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of,
+                          classifier=classifier)
     except P.Rejected as exc:
         print(f"{sources.bare(symbol)} {as_of}: TIDAK DINILAI — {exc}")
         print(f"  alasan terdaftar: {T.REJECTS.get(exc.reason, 'tidak terdaftar')}")
@@ -218,6 +235,70 @@ def check_field_block_is_complete():
     return failures, len(P.DEMO_CASES)
 
 
+def check_card_names_its_classifier():
+    """PRD §7: the card says which engine labelled the news, on the card, not in a README."""
+    failures = []
+    for source, symbol, as_of in P.DEMO_CASES:
+        result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
+        text = render(result, source)
+        if f"CLASSIFIER={classify.DEFAULT}" not in text:
+            failures.append(f"{symbol}: the card does not name the classifier it used")
+        lines = [ln for ln in text.splitlines() if "CLASSIFIER=" in ln]
+        if len(lines) != 1:
+            failures.append(f"{symbol}: {len(lines)} lines name a classifier, expected 1")
+    return failures, 2 * len(P.DEMO_CASES)
+
+
+def check_card_builds_without_any_key():
+    """§12.3 rule 3, gated: strip every key from the environment and the card still prints.
+
+    This is the manual check the audit could only describe. `CLASSIFIER` is stripped too, so
+    what is proved is the default path — no key, no variable, still a card.
+    """
+    failures = []
+    names = ("SECTORS_API_KEY", "ANTHROPIC_API_KEY", "OPENAI_API_KEY", "GOOGLE_API_KEY",
+             "GEMINI_API_KEY", "CLASSIFIER")
+    saved = {n: os.environ.pop(n, None) for n in names}
+    try:
+        for source, symbol, as_of in P.DEMO_CASES:
+            classifier = selected_classifier()
+            if classifier != classify.DEFAULT:
+                failures.append(f"with no environment the classifier was {classifier!r}")
+            result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of,
+                              classifier=classifier)
+            text = render(result, source)
+            if "KATALIS menyatakan struktur transaksi" not in text:
+                failures.append(f"{symbol}: no card was produced without any key set")
+    finally:
+        for name, value in saved.items():
+            if value is not None:
+                os.environ[name] = value
+    return failures, 2 * len(P.DEMO_CASES)
+
+
+def check_classifier_is_read_in_one_place():
+    """Exactly one module may look `CLASSIFIER` up in the environment, and it is this one."""
+    failures = []
+    here = os.path.dirname(os.path.abspath(__file__))
+    readers = []
+    for name in sorted(os.listdir(here)):
+        if not name.endswith(".py"):
+            continue
+        with open(os.path.join(here, name), encoding="utf-8") as handle:
+            # Product code only. A gate that sets the variable to prove a refusal is not a
+            # reader of it, and `server.check_misconfigured_classifier_is_a_500` is exactly
+            # that — so the scan stops where each module's gates begin.
+            text = handle.read().split("--------- gates", 1)[0]
+        if re.search(r"environ(?:\.get)?\(\s*[\"']CLASSIFIER", text):
+            readers.append(name)
+    if readers != ["card.py"]:
+        failures.append(f"CLASSIFIER is read from the environment in {readers}, "
+                        f"expected ['card.py'] only")
+    if "CLASSIFIER" not in open(os.path.join(here, "classify.py"), encoding="utf-8").read():
+        failures.append("classify.py does not mention CLASSIFIER at all")
+    return failures, 2
+
+
 def check_rejected_symbol_says_why():
     failures = []
     rows = sources.daily("recorded", "BBCA")
@@ -234,7 +315,9 @@ def check_rejected_symbol_says_why():
 def main():
     total, bad = 0, []
     for check in (check_every_number_is_a_figure, check_no_advice_in_render,
-                  check_field_block_is_complete, check_rejected_symbol_says_why):
+                  check_field_block_is_complete, check_card_names_its_classifier,
+                  check_card_builds_without_any_key, check_classifier_is_read_in_one_place,
+                  check_rejected_symbol_says_why):
         failures, count = check()
         total += count
         bad += failures

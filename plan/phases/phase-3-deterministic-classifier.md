@@ -4,7 +4,7 @@
 
 | | |
 | --- | --- |
-| Keadaan | `[ ]` belum dikerjakan |
+| Keadaan | `[x]` selesai, ter-commit, dan berjalan pada `katalis-api-00003-r8l` |
 | Menutup | PRD §9 baris 5 (M9) |
 | Menunggu | Fase 0 |
 | Kredit Sectors | **0** |
@@ -30,12 +30,12 @@ arsitektur.
 
 ## Tugas
 
-- [ ] **1. Modul baru `classify.py`, murni, tanpa I/O.**
+- [x] **1. Modul baru `classify.py`, murni, tanpa I/O.**
       Satu fungsi publik: artikel masuk, salah satu dari tiga label keluar — `menjelaskan`,
       `melaporkan`, `tak_terkait`. Tidak membaca berkas, tidak memanggil jaringan, tidak membaca
       lingkungan. Modul yang murni adalah modul yang bisa diuji dengan tabel kasus.
 
-- [ ] **2. Aturan, ditulis sebagai tabel, bukan sebagai rantai `if`.**
+- [x] **2. Aturan, ditulis sebagai tabel, bukan sebagai rantai `if`.**
       Sinyalnya sudah ada di payload `/v2/news/`: `title`, `tags`, `dimension`, `timestamp`,
       `symbols`, `body`. Dua pola yang wajib tertangkap, karena keduanya adalah kasus yang
       membuat kartu LIFE salah baca:
@@ -46,37 +46,39 @@ arsitektur.
       atau operasional yang mendahului gerak: kontrak, akuisisi, dividen, perubahan laba, klaim
       material.
 
-- [ ] **3. `CLASSIFIER` dibaca di satu tempat.**
+- [x] **3. `CLASSIFIER` dibaca di satu tempat.**
       Default `rules`. Nilai yang tidak dikenal ditolak dengan pesan bernama, bukan diam-diam
       jatuh ke default — jatuh diam-diam ke default adalah cara paling mudah membuat kartu
       mengklaim ia memakai model padahal tidak.
 
-- [ ] **4. Kartu menyebut classifier mana yang dipakai.**
+- [x] **4. Kartu menyebut classifier mana yang dipakai.**
       Sama seperti ia harus menyebut `shipped` atau `learned`. Satu baris, di dekat identitas
       kartu.
 
-- [ ] **5. Gate: tabel kasus yang dilabeli tangan.**
+- [x] **5. Gate: tabel kasus yang dilabeli tangan.**
       Minimal kedua artikel LIFE yang ada di `research/harness/recorded/`, dengan label yang
       diharapkan tertulis di dalam test. Gate gagal kalau label berubah.
 
-- [ ] **6. Gate: produk berjalan tanpa kunci apa pun.**
+- [x] **6. Gate: produk berjalan tanpa kunci apa pun.**
       Satu check yang membangun kartu dengan seluruh variabel kunci dilepas. Ini adalah versi
       tergate dari apa yang hari ini hanya bisa diuji manual.
 
 ## Kriteria keluar
 
-- [ ] **1.** `cd src/katalis && ./run.sh test; echo $?` mencetak `Semua gate hijau.` dan `0`, dengan
+- [x] **1.** `cd src/katalis && ./run.sh test; echo $?` mencetak `Semua gate hijau.` dan `0`, dengan
       jumlah assertion lebih besar daripada pada akhir Fase 2 dan nol skip.
-- [ ] **2.** `env -u SECTORS_API_KEY -u ANTHROPIC_API_KEY -u OPENAI_API_KEY CLASSIFIER=rules ./run.sh test`
+- [x] **2.** `env -u SECTORS_API_KEY -u ANTHROPIC_API_KEY -u OPENAI_API_KEY CLASSIFIER=rules ./run.sh test`
       mencetak `Semua gate hijau.` dan keluar 0.
-- [ ] **3.** `CLASSIFIER=tidak-ada ./run.sh pilar LIFE 2026-09-01` keluar dengan status bukan nol dan
+- [x] **3.** `CLASSIFIER=tidak-ada ./run.sh pilar LIFE 2026-09-01` keluar dengan status bukan nol dan
       mencetak nama nilai yang tidak dikenal. Ia **tidak** diam-diam memakai `rules`.
-- [ ] **4.** `./run.sh pilar LIFE 2026-09-01` mencetak satu baris yang menyebut `CLASSIFIER=rules`.
-- [ ] **5.** Kedua artikel LIFE di jendela kartu diklasifikasi `melaporkan` oleh tabel kasus di dalam
-      suite, dan gate itu gagal bila salah satu label diubah.
-- [ ] **6.** `grep -rc CLASSIFIER src/katalis/*.py` mengembalikan hitungan bukan nol pada sedikitnya dua
+- [x] **4.** `./run.sh pilar LIFE 2026-09-01` mencetak satu baris yang menyebut `CLASSIFIER=rules`.
+- [x] **5.** Kedua artikel LIFE di jendela kartu diklasifikasi `melaporkan` oleh tabel kasus di dalam
+      suite, dan gate itu gagal bila salah satu label diubah. **Tanggalnya dikoreksi:** keduanya
+      berdiri berdampingan sebagai kabar yang mendahului pada kartu `2026-09-04`, bukan
+      `2026-09-01`, tempat hanya satu artikel duduk di jendela.
+- [x] **6.** `grep -rc CLASSIFIER src/katalis/*.py` mengembalikan hitungan bukan nol pada sedikitnya dua
       berkas.
-- [ ] **7.** `PROGRESS.md` di-commit bersama kode, dan revisi Cloud Run baru melayani perubahan ini.
+- [x] **7.** `PROGRESS.md` di-commit bersama kode, dan revisi Cloud Run baru melayani perubahan ini.
 
 ## Bobot demo
 

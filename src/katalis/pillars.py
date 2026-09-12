@@ -24,6 +24,7 @@ Three rules the file enforces rather than documents:
 import math
 from dataclasses import dataclass, field
 
+import classify
 import sources
 import thresholds as T
 
@@ -359,14 +360,20 @@ def momentum(daily_rows, index_rows, as_of, window):
     return Pillar("momentum", status, headline, figures)
 
 
-def catalyst(articles, filings, actions, as_of, window):
+def catalyst(articles, filings, actions, as_of, window, label=None, symbol=None):
     """Pilar 4 — is there anything that explains it, and did it arrive before or after.
 
     The two judgments that matter here are not fields: whether an article **precedes** the
     move or follows it, and whether it **explains** or merely reports it. The first is
-    arithmetic and lives here. The second is a language judgment and belongs to the planner;
-    what this function records is the temporal split and the structured evidence.
+    arithmetic and lives here. The second is a language judgment and now lives in
+    `classify.py`, which this function calls through `label` — a plain function, passed in,
+    so Fase 6 swaps one argument rather than one architecture.
+
+    Fase 3 records the split and counts it. It deliberately does **not** let the labels move
+    the status yet: changing what the card says is Fase 4, and doing both at once would make
+    it impossible to tell which change moved which card.
     """
+    label = label or classify.label
     start = window[0] if window else as_of
     before, after = [], []
     for row in articles:
@@ -374,6 +381,9 @@ def catalyst(articles, filings, actions, as_of, window):
         if not stamp or stamp > as_of:
             continue
         (before if stamp < start else after).append(row)
+    labels = {id(row): label(row, symbol) for row in before + after}
+    explains = [r for r in before if labels[id(r)] == classify.MENJELASKAN]
+    reports = [r for r in before if labels[id(r)] == classify.MELAPORKAN]
 
     material = [f for f in filings
                 if (f.get("share_percentage_transaction") or 0) >= T.get("filing_material_pct")
@@ -389,6 +399,11 @@ def catalyst(articles, filings, actions, as_of, window):
                ("timestamp", "symbols")),
         Figure("artikel_mengikuti", len(after), sources.ENDPOINT["news"],
                ("timestamp", "symbols")),
+        Figure("menjelaskan_mendahului", len(explains), sources.ENDPOINT["news"],
+               ("title", "tags", "symbols"),
+               note="artikel yang menyebut peristiwa, bukan harga yang sudah bergerak"),
+        Figure("melaporkan_mendahului", len(reports), sources.ENDPOINT["news"],
+               ("title", "tags", "symbols")),
         Figure("filing_material", len(material), sources.ENDPOINT["filings"],
                ("holder_name", "share_percentage_transaction", "transaction_type")),
         Figure("aksi_korporasi", len(in_window), sources.ENDPOINT["corporate_actions"],
@@ -476,8 +491,14 @@ def verdict(pillars, free_float=None, suspensions=None):
     return name, modifiers
 
 
-def assess(bag, symbol, as_of):
-    """Run all four pillars over one pre-fetched bag of rows. Raises Rejected with a reason."""
+def assess(bag, symbol, as_of, classifier=classify.DEFAULT):
+    """Run all four pillars over one pre-fetched bag of rows. Raises Rejected with a reason.
+
+    `classifier` is a name, not a function, so the one thing the card has to print — which
+    engine labelled the news — cannot drift from the one that ran. An unknown name raises
+    `classify.UnknownClassifier` here, before a single figure is built.
+    """
+    label = classify.resolve(classifier)
     daily_rows = bag["daily"]
     if not daily_rows:
         raise Rejected("baseline_tipis", "tidak ada deret harga")
@@ -493,12 +514,16 @@ def assess(bag, symbol, as_of):
         volume(daily_rows, as_of, window),
         momentum(daily_rows, bag["index"], as_of, window),
         catalyst(bag.get("news") or [], bag.get("filings") or [],
-                 bag.get("actions") or [], as_of, window),
+                 bag.get("actions") or [], as_of, window,
+                 label=label, symbol=symbol),
     ]
     halts = suspension_history(bag.get("suspensions") or [], as_of)
     name, modifiers = verdict(pillars, bag.get("free_float"), halts)
     return {"symbol": sources.bare(symbol), "as_of": as_of, "window": window,
             "verdict": name, "modifiers": modifiers, "pillars": pillars,
+            # Which engine labelled the news. The card prints it; `card.selected_classifier`
+            # is the one place the environment is read to choose it.
+            "classifier": classifier,
             # Card-level figures: they cite a modifier on the headline rather than a pillar,
             # and the FIELD block has to print their endpoint like any other.
             "modifier_figures": [f for f in (halts,) if f is not None]}
@@ -743,6 +768,76 @@ def check_recorded_concentration():
     return failures, 4
 
 
+def check_life_articles_are_reports():
+    """The two LIFE articles the old card called "kabar yang mendahului" are reports.
+
+    `classify.CASES` fixes the labels by hand; this gate fixes them against the payload on
+    disk. A title edited in one place and not the other fails here, which is the only way a
+    hand-written label table stays honest about real data.
+    """
+    failures = []
+    rows = sources.news_for("recorded", "LIFE", None, "2026-09-04")
+    if len(rows) < 4:
+        return [f"recorded/LIFE carries {len(rows)} articles; the gate needs the real tape"], 1
+    wanted = {"top gainers": classify.MELAPORKAN,
+              "bei suspends": classify.MELAPORKAN,
+              "net profit": classify.MENJELASKAN}
+    checked = 0
+    for needle, want in wanted.items():
+        hits = [r for r in rows if needle in (r.get("title") or "").lower()]
+        if not hits:
+            failures.append(f"no recorded LIFE article matches {needle!r} any more")
+            continue
+        for row in hits:
+            checked += 1
+            got = classify.label(row, "LIFE")
+            if got != want:
+                failures.append(f"{needle!r}: classified {got}, expected {want} "
+                                f"(rule {classify.rule_for(row, 'LIFE')})")
+    return failures, max(checked, len(wanted))
+
+
+def check_catalyst_counts_what_it_labelled():
+    """`menjelaskan + melaporkan + tak_terkait` over the preceding articles is their count."""
+    failures = []
+    for source, symbol, as_of in DEMO_CASES:
+        bag = bag_from(source, symbol, as_of)
+        result = assess(bag, symbol, as_of)
+        cat = next(p for p in result["pillars"] if p.name == "katalis")
+        before = cat.value("artikel_mendahului")
+        explains = cat.value("menjelaskan_mendahului")
+        reports = cat.value("melaporkan_mendahului")
+        if None in (before, explains, reports):
+            failures.append(f"{symbol}: catalyst lost one of its classification figures")
+            continue
+        if explains + reports > before:
+            failures.append(f"{symbol}: {explains}+{reports} labelled out of {before} "
+                            f"preceding articles — a label was counted twice")
+    # LIFE on 2026-09-04 is the case the phase exists for: three preceding articles, none of
+    # which explains anything, because two report the price and one reports the suspension.
+    bag = bag_from("recorded", "LIFE", "2026-09-04")
+    cat = next(p for p in assess(bag, "LIFE", "2026-09-04")["pillars"] if p.name == "katalis")
+    if cat.value("melaporkan_mendahului") < 1:
+        failures.append("LIFE 2026-09-04: no preceding article was labelled melaporkan")
+    return failures, len(DEMO_CASES) + 1
+
+
+def check_unknown_classifier_stops_the_card():
+    """A name nobody implements must raise before a figure is built, not fall back."""
+    failures = []
+    source, symbol, as_of = ("recorded", "LIFE", "2026-09-01")
+    bag = bag_from(source, symbol, as_of)
+    try:
+        assess(bag, symbol, as_of, classifier="tidak-ada")
+        failures.append("assess built a card with an unknown CLASSIFIER")
+    except classify.UnknownClassifier as exc:
+        if "tidak-ada" not in str(exc):
+            failures.append(f"the refusal does not name the value: {exc}")
+    if assess(bag, symbol, as_of)["classifier"] != classify.DEFAULT:
+        failures.append("the default classifier is not 'rules'")
+    return failures, 3
+
+
 def check_rejects_are_named():
     """A symbol that cannot be scored must fail with a reason from the threshold table."""
     failures = []
@@ -761,6 +856,8 @@ def main():
                   check_as_of_does_not_leak, check_suspension_modifier_respects_as_of,
                   check_verdict_is_never_advice,
                   check_end_to_end, check_recorded_concentration,
+                  check_life_articles_are_reports, check_catalyst_counts_what_it_labelled,
+                  check_unknown_classifier_stops_the_card,
                   check_rejects_are_named):
         failures, count = check()
         total += count

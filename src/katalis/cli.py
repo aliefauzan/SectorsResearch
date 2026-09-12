@@ -14,6 +14,7 @@ import argparse
 import sys
 
 import card
+import classify
 import pillars as P
 import sources
 import thresholds as T
@@ -55,7 +56,8 @@ def cmd_test(args):
     """This product's gates. Each module is its own suite and its own exit code."""
     import importlib
     failed = []
-    for name in ("thresholds", "sources", "pillars", "card", "server", "publish"):
+    for name in ("thresholds", "sources", "classify", "pillars", "card", "server",
+                 "publish"):
         print(f"\n{name}.py")
         module = importlib.import_module(name)
         if module.main() != 0:
@@ -91,7 +93,14 @@ def main(argv=None):
     if not args.command:
         parser.print_help()
         return 0
-    return args.run(args)
+    try:
+        return args.run(args)
+    except classify.UnknownClassifier as exc:
+        # Named, on stderr, with a non-zero exit. The alternative — falling back to `rules`
+        # — would print a card that says CLASSIFIER=rules to someone who asked for something
+        # else, which is the one failure mode Fase 3 exists to make impossible.
+        print(exc, file=sys.stderr)
+        return 2
 
 
 if __name__ == "__main__":

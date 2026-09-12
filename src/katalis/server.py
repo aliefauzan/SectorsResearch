@@ -30,6 +30,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, unquote, urlparse
 
 import card
+import classify
 import pillars as P
 
 #: The two shapes a caller may put in a path or a query. Anything else is a 400 and is
@@ -84,7 +85,13 @@ def route(method, path, query):
     as_of = dates[0] if dates else None
     if as_of is not None and not DATE.match(as_of):
         return 400, "text/plain; charset=utf-8", "tanggal harus YYYY-MM-DD\n"
-    code, body, err = card_text(symbol, as_of)
+    try:
+        code, body, err = card_text(symbol, as_of)
+    except classify.UnknownClassifier as exc:
+        # A misconfigured revision must say so rather than serve a card that names the
+        # engine it fell back to. 500, because the fault is the deployment's, not the
+        # caller's.
+        return 500, "text/plain; charset=utf-8", f"{exc}\n"
     if code != 0:
         return 404, "text/plain; charset=utf-8", err or "tidak ada deret harga\n"
     return 200, "text/plain; charset=utf-8", body
@@ -169,6 +176,28 @@ def check_card_route_matches_the_cli():
     return failures, len(cases)
 
 
+def check_misconfigured_classifier_is_a_500():
+    """`CLASSIFIER=nonsense` on a revision must produce a named 500, never a fallback card."""
+    failures = []
+    source, symbol, as_of = next(c for c in P.DEMO_CASES if c[0] == SOURCE)
+    before = os.environ.get("CLASSIFIER")
+    os.environ["CLASSIFIER"] = "tidak-ada"
+    try:
+        status, _ctype, body = route("GET", f"/card/{symbol}", f"date={as_of}")
+        if status != 500:
+            failures.append(f"a card was served with an unknown CLASSIFIER: {status}")
+        if "tidak-ada" not in body:
+            failures.append("the 500 body does not name the unknown value")
+        if "KATALIS menyatakan" in body:
+            failures.append("a card body was served despite the refusal")
+    finally:
+        if before is None:
+            os.environ.pop("CLASSIFIER", None)
+        else:
+            os.environ["CLASSIFIER"] = before
+    return failures, 3
+
+
 def check_healthz_and_refusals():
     """200 on both health names, 404 on an unknown route, 400 on every malformed input."""
     failures = []
@@ -222,7 +251,8 @@ def check_this_module_computes_nothing():
 
 def main():
     total, bad = 0, []
-    for check in (check_card_route_matches_the_cli, check_healthz_and_refusals,
+    for check in (check_card_route_matches_the_cli, check_misconfigured_classifier_is_a_500,
+                  check_healthz_and_refusals,
                   check_no_secret_can_reach_a_response, check_this_module_computes_nothing):
         failures, count = check()
         total += count
