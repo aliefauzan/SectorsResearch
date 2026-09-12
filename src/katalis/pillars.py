@@ -23,10 +23,26 @@ Three rules the file enforces rather than documents:
 """
 import math
 from dataclasses import dataclass, field
+from datetime import date, timedelta
 
 import classify
 import sources
 import thresholds as T
+
+#: Which rows of `thresholds.TABLE` each pillar reads. Declared rather than inferred, because
+#: the card has to print the origin of the thresholds it actually used, and a caller that
+#: guessed them would sooner or later print an origin for a number nobody applied.
+#: `check_declared_thresholds_are_real` holds every name here against the table itself.
+PILLAR_THRESHOLDS = {
+    "konsentrasi": ("top1_dominant", "neff_dominant", "neff_crowd"),
+    "volume": ("baseline_days", "volume_mad_floor", "volume_z"),
+    "momentum": ("baseline_days", "dead_day_share", "beta_shrink", "price_mad_floor",
+                 "resid_z"),
+    "katalis": ("news_lookback_days", "filing_material_pct"),
+}
+
+#: Read by `verdict()` whichever pillars fired, so every card carries them.
+CARD_THRESHOLDS = ("event_window", "thin_float", "float_absorbed", "foreign_share_in")
 
 #: Card vocabulary. Indonesian, because the reader is.
 TENANG = "tenang"
@@ -89,6 +105,19 @@ def upto(rows, as_of, key="date"):
     if not as_of:
         return list(rows)
     return [r for r in rows if (r.get(key) or "") <= as_of]
+
+
+def lookback_start(as_of, days):
+    """The calendar date `days` before `as_of`, as the same ISO string. None when it is not one.
+
+    Calendar days, not trading days: `news_lookback_days` is written as a news question —
+    how old may a story be and still be read as being about today — and a holiday week is
+    exactly the case a trading-day count would silently widen.
+    """
+    try:
+        return (date.fromisoformat(as_of) - timedelta(days=int(days))).isoformat()
+    except (TypeError, ValueError):
+        return None
 
 
 def window_dates(daily_rows, as_of, size):
@@ -369,21 +398,37 @@ def catalyst(articles, filings, actions, as_of, window, label=None, symbol=None)
     `classify.py`, which this function calls through `label` — a plain function, passed in,
     so Fase 6 swaps one argument rather than one architecture.
 
-    Fase 3 records the split and counts it. It deliberately does **not** let the labels move
-    the status yet: changing what the card says is Fase 4, and doing both at once would make
-    it impossible to tell which change moved which card.
+    Fase 3 recorded the split and counted it without letting it move the status. This is the
+    phase where it moves: the status now follows the **labels** and no longer the count of
+    articles. A Top Gainers round-up and the exchange's own suspension notice are both
+    articles inside the window and neither explains anything, so a card that reads them as
+    "kabar yang mendahului" is telling its reader the move has a cause. It does not.
+
+    `news_lookback_days` is what makes "precedes" mean something. Until this phase the
+    threshold was declared and never read: every article back to the beginning of the tape
+    counted as preceding. An article eleven days old is not news about today, and the count
+    that says it is was the one this phase exists to correct.
     """
     label = label or classify.label
     start = window[0] if window else as_of
-    before, after = [], []
+    lookback = T.get("news_lookback_days")
+    limit = lookback_start(as_of, lookback)
+
+    recent = []
     for row in articles:
         stamp = (row.get("timestamp") or "")[:10]
         if not stamp or stamp > as_of:
             continue
-        (before if stamp < start else after).append(row)
-    labels = {id(row): label(row, symbol) for row in before + after}
-    explains = [r for r in before if labels[id(r)] == classify.MENJELASKAN]
-    reports = [r for r in before if labels[id(r)] == classify.MELAPORKAN]
+        if limit is None or limit <= stamp:
+            recent.append(row)
+
+    labels = {id(row): label(row, symbol) for row in recent}
+    recent_explains = [r for r in recent if labels[id(r)] == classify.MENJELASKAN]
+    recent_reports = [r for r in recent if labels[id(r)] == classify.MELAPORKAN]
+    # An explanation that itself precedes the window. An explanation that arrives *inside*
+    # the window is a different sentence, and gets a different status.
+    explaining_before = [r for r in recent_explains
+                         if ((r.get("timestamp") or "")[:10]) < start]
 
     material = [f for f in filings
                 if (f.get("share_percentage_transaction") or 0) >= T.get("filing_material_pct")
@@ -395,15 +440,17 @@ def catalyst(articles, filings, actions, as_of, window, label=None, symbol=None)
     in_window = [a for a in upto(actions, as_of) if (a.get("date") or "") >= start]
 
     figures = [
-        Figure("artikel_mendahului", len(before), sources.ENDPOINT["news"],
-               ("timestamp", "symbols")),
-        Figure("artikel_mengikuti", len(after), sources.ENDPOINT["news"],
-               ("timestamp", "symbols")),
-        Figure("menjelaskan_mendahului", len(explains), sources.ENDPOINT["news"],
-               ("title", "tags", "symbols"),
-               note="artikel yang menyebut peristiwa, bukan harga yang sudah bergerak"),
-        Figure("melaporkan_mendahului", len(reports), sources.ENDPOINT["news"],
-               ("title", "tags", "symbols")),
+        # The two counts the status turns on. They replaced `artikel_mendahului` and
+        # `artikel_mengikuti`, which counted every article back to the start of the tape and
+        # so printed `menjelaskan_mendahului 2` on a card whose headline said nothing
+        # explained the move. Two numbers, one card, opposite readings — the phase calls
+        # that out, and renaming the count is what fixes it.
+        Figure("artikel_menjelaskan", len(recent_explains), sources.ENDPOINT["news"],
+               ("timestamp", "symbols", "title", "tags", "dimension"),
+               note=f"artikel berlabel menjelaskan dalam {lookback} hari terakhir"),
+        Figure("artikel_melaporkan", len(recent_reports), sources.ENDPOINT["news"],
+               ("timestamp", "symbols", "title", "tags", "dimension"),
+               note=f"artikel berlabel melaporkan dalam {lookback} hari terakhir"),
         Figure("filing_material", len(material), sources.ENDPOINT["filings"],
                ("holder_name", "share_percentage_transaction", "transaction_type")),
         Figure("aksi_korporasi", len(in_window), sources.ENDPOINT["corporate_actions"],
@@ -418,21 +465,30 @@ def catalyst(articles, filings, actions, as_of, window, label=None, symbol=None)
                       f"{top['holder_name']} ({top['holder_type']}) menambah "
                       f"{top['share_percentage_transaction']:.2f} poin persen.",
                       figures, unchecked)
-    if before:
-        head = before[-1]
+    if explaining_before:
+        head = explaining_before[-1]
         return Pillar("katalis", TENANG,
-                      f"Ada kabar yang mendahului: \"{head['title']}\" "
+                      f"Ada kabar yang menjelaskan: \"{head['title']}\" "
                       f"({(head.get('timestamp') or '')[:10]}).",
                       figures, unchecked)
-    if after:
+    if recent_explains:
+        head = recent_explains[-1]
         return Pillar("katalis", WASPADA,
-                      f"Tidak ada kabar yang mendahului lonjakan. {len(after)} artikel terbit "
-                      f"SESUDAHNYA dan melaporkan kenaikannya.",
+                      f"Penjelasannya baru terbit setelah geraknya: \"{head['title']}\" "
+                      f"({(head.get('timestamp') or '')[:10]}).",
                       figures, unchecked)
     if in_window:
         return Pillar("katalis", WASPADA,
                       f"Tidak ada kabar; {len(in_window)} aksi korporasi di jendela.",
                       figures, unchecked)
+    # The defect this phase exists to close: articles inside the window that only report the
+    # price that already moved are not an explanation, and a card that lists them as one is
+    # telling its reader the move has a cause. It does not.
+    if recent_reports:
+        return Pillar("katalis", BAHAYA,
+                      f"Tidak ada kabar yang menjelaskan: {len(recent_reports)} dari "
+                      f"{len(recent)} artikel terbaru hanya melaporkan harga yang sudah "
+                      f"bergerak.", figures, unchecked)
     return Pillar("katalis", BAHAYA,
                   "Tidak ada apa pun yang menjelaskannya: nol artikel, nol filing material, "
                   "nol aksi korporasi.", figures, unchecked)
@@ -476,14 +532,18 @@ def verdict(pillars, free_float=None, suspensions=None):
         modifiers.append(f"PERNAH DISUSPENSI · {suspensions.note.split()[-1]}")
 
     danger = [p.name for p in pillars if p.status == BAHAYA]
-    if conc and conc.status == BAHAYA and mom and mom.status in (BAHAYA, WASPADA):
+    # First, because it is the more specific finding: a tape that moved hard and that nothing
+    # in the news explains is the case this product exists for, and it is true whatever the
+    # concentration pillar found on top of it. `SATU PEMBELI DOMINAN` keeps every tape where
+    # the movement is explained, or where the momentum pillar stayed quiet.
+    if mom and mom.status == BAHAYA and cat and cat.status == BAHAYA:
+        name = "BERGERAK TANPA PENJELASAN"
+    elif conc and conc.status == BAHAYA and mom and mom.status in (BAHAYA, WASPADA):
         name = "SATU PEMBELI DOMINAN"
     elif len(danger) >= 3:
         name = "TIGA PILAR MENYALA"
     elif conc and conc.status == BAHAYA:
         name = "TERKONSENTRASI, TANPA GERAK LUAR BIASA"
-    elif mom and mom.status == BAHAYA and cat and cat.status == BAHAYA:
-        name = "BERGERAK TANPA PENJELASAN"
     elif danger:
         name = "SATU PILAR MENYALA"
     else:
@@ -519,8 +579,23 @@ def assess(bag, symbol, as_of, classifier=classify.DEFAULT):
     ]
     halts = suspension_history(bag.get("suspensions") or [], as_of)
     name, modifiers = verdict(pillars, bag.get("free_float"), halts)
+
+    # Every threshold this card actually read, with the origin `thresholds.provenance()`
+    # reports — `shipped` or `learned`. PRD §7 and §13 ask the card to say which, and the
+    # claim is only checkable if the list is declared next to the code that applies it.
+    applied = list(CARD_THRESHOLDS)
+    for pillar in pillars:
+        applied += PILLAR_THRESHOLDS.get(pillar.name, ())
+    named = []
+    for threshold in applied:
+        if threshold not in named:
+            named.append(threshold)
+    threshold_origins = [{"name": n, "origin": T.provenance(n)[0], "value": T.provenance(n)[1]}
+                         for n in named]
+
     return {"symbol": sources.bare(symbol), "as_of": as_of, "window": window,
             "verdict": name, "modifiers": modifiers, "pillars": pillars,
+            "thresholds": threshold_origins,
             # Which engine labelled the news. The card prints it; `card.selected_classifier`
             # is the one place the environment is read to choose it.
             "classifier": classifier,
@@ -798,28 +873,119 @@ def check_life_articles_are_reports():
 
 
 def check_catalyst_counts_what_it_labelled():
-    """`menjelaskan + melaporkan + tak_terkait` over the preceding articles is their count."""
+    """`menjelaskan + melaporkan` never exceeds the articles the lookback window holds.
+
+    The window is `news_lookback_days` back from the card's own day, and the two counts are
+    what the catalyst status turns on. A total larger than the articles inside the window
+    would mean one was counted twice or reached the count from outside it — the second being
+    the defect this phase closes, because the article that used to be counted was the one
+    dated eleven days earlier.
+    """
     failures = []
     for source, symbol, as_of in DEMO_CASES:
         bag = bag_from(source, symbol, as_of)
-        result = assess(bag, symbol, as_of)
-        cat = next(p for p in result["pillars"] if p.name == "katalis")
-        before = cat.value("artikel_mendahului")
-        explains = cat.value("menjelaskan_mendahului")
-        reports = cat.value("melaporkan_mendahului")
-        if None in (before, explains, reports):
+        cat = next(p for p in assess(bag, symbol, as_of)["pillars"] if p.name == "katalis")
+        explains = cat.value("artikel_menjelaskan")
+        reports = cat.value("artikel_melaporkan")
+        if None in (explains, reports):
             failures.append(f"{symbol}: catalyst lost one of its classification figures")
             continue
-        if explains + reports > before:
-            failures.append(f"{symbol}: {explains}+{reports} labelled out of {before} "
-                            f"preceding articles — a label was counted twice")
-    # LIFE on 2026-09-04 is the case the phase exists for: three preceding articles, none of
-    # which explains anything, because two report the price and one reports the suspension.
+        limit = lookback_start(as_of, T.get("news_lookback_days"))
+        recent = [r for r in sources.news_for(source, symbol, None, as_of)
+                  if limit is None or ((r.get("timestamp") or "")[:10]) >= limit]
+        if explains + reports > len(recent):
+            failures.append(f"{symbol} {as_of}: {explains}+{reports} labelled out of "
+                            f"{len(recent)} articles inside the lookback window — a label "
+                            f"was counted twice or came from outside it")
+    # LIFE on 2026-09-04 is the case the phase exists for: eight articles inside the window,
+    # not one of which explains anything, because they report the price and the suspension.
     bag = bag_from("recorded", "LIFE", "2026-09-04")
     cat = next(p for p in assess(bag, "LIFE", "2026-09-04")["pillars"] if p.name == "katalis")
-    if cat.value("melaporkan_mendahului") < 1:
-        failures.append("LIFE 2026-09-04: no preceding article was labelled melaporkan")
+    if cat.value("artikel_melaporkan") < 1:
+        failures.append("LIFE 2026-09-04: no article in the window was labelled melaporkan")
     return failures, len(DEMO_CASES) + 1
+
+
+def case_label(article):
+    """The label `classify.CASES` pins for this article, matched by title, or None.
+
+    The hand table is matched on the first sixty characters because that is enough to tell
+    every real LIFE headline apart and short enough to survive a trailing clause being
+    edited. Used by `check_life_2026_09_01_is_an_unexplained_move`, which is how a label
+    changed in the Fase 3 table and not in the payload turns this suite red.
+    """
+    title = (article.get("title") or "").strip()[:60]
+    if not title:
+        return None
+    for row, want, _rule in classify.CASES:
+        if (row.get("title") or "").strip()[:60] == title:
+            return want
+    return None
+
+
+def check_life_2026_09_01_is_an_unexplained_move():
+    """The card the whole product is argued from, as a fixture rather than as an illustration.
+
+    2026-09-01 is the shot: LIFE up 41,7% in three sessions, 65% of the net buying from one
+    broker, and not one article that explains it — the two inside the lookback window report
+    the price that already moved. Until this phase the card read that as `tenang` and cited
+    the Top Gainers round-up as "kabar yang mendahului", which is the opposite of the truth.
+
+    It fails on five things, and the fifth is why it is a gate and not a paragraph: every
+    article inside the lookback window that `classify.CASES` also pins must carry the same
+    label in both places. Edit a label in the Fase 3 table without editing the payload and
+    this goes red with it.
+    """
+    failures = []
+    as_of = "2026-09-01"
+    result = assess(bag_from("recorded", "LIFE", as_of), "LIFE", as_of)
+    cat = next(p for p in result["pillars"] if p.name == "katalis")
+    if result["verdict"] != "BERGERAK TANPA PENJELASAN":
+        failures.append(f"LIFE {as_of} reads {result['verdict']!r}, expected "
+                        f"'BERGERAK TANPA PENJELASAN'")
+    if cat.status != BAHAYA:
+        failures.append(f"LIFE {as_of}: pilar katalis reads {cat.status!r}, expected "
+                        f"{BAHAYA!r}")
+    if cat.value("artikel_menjelaskan") != 0:
+        failures.append(f"LIFE {as_of}: artikel_menjelaskan = "
+                        f"{cat.value('artikel_menjelaskan')!r}, expected 0")
+    if not cat.value("artikel_melaporkan"):
+        failures.append(f"LIFE {as_of}: no article was counted as reporting the move, so "
+                        f"the card looks like there was no news at all")
+    limit = lookback_start(as_of, T.get("news_lookback_days"))
+    for row in sources.news_for("recorded", "LIFE", None, as_of):
+        stamp = (row.get("timestamp") or "")[:10]
+        if limit is None or stamp < limit:
+            continue
+        want = case_label(row)
+        got = classify.label(row, "LIFE")
+        if want is None:
+            failures.append(f"LIFE {as_of}: {(row.get('title') or '')[:48]!r} is inside the "
+                            f"lookback window and no classify.CASES row pins its label")
+        elif want != got:
+            failures.append(f"LIFE {as_of}: {(row.get('title') or '')[:48]!r} is pinned "
+                            f"{want!r} in classify.CASES but classifies as {got!r}")
+    return failures, 5
+
+
+def check_declared_thresholds_are_real():
+    """Every threshold a pillar says it reads has to exist in `thresholds.TABLE`.
+
+    A declaration that drifts from the table is worse than no declaration: the card would
+    print the origin of a row nobody applied.
+    """
+    failures = []
+    for pillar, names in sorted(PILLAR_THRESHOLDS.items()):
+        if not names:
+            failures.append(f"{pillar} declares no thresholds at all")
+        for name in names:
+            if name not in T.TABLE:
+                failures.append(f"{pillar} declares {name!r}, which thresholds.TABLE does "
+                                f"not carry")
+    for name in CARD_THRESHOLDS:
+        if name not in T.TABLE:
+            failures.append(f"card declares {name!r}, which thresholds.TABLE does not carry")
+    return failures, len(PILLAR_THRESHOLDS) + len(CARD_THRESHOLDS)
 
 
 def check_unknown_classifier_stops_the_card():
@@ -857,6 +1023,8 @@ def main():
                   check_verdict_is_never_advice,
                   check_end_to_end, check_recorded_concentration,
                   check_life_articles_are_reports, check_catalyst_counts_what_it_labelled,
+                  check_life_2026_09_01_is_an_unexplained_move,
+                  check_declared_thresholds_are_real,
                   check_unknown_classifier_stops_the_card,
                   check_rejects_are_named):
         failures, count = check()

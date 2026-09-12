@@ -106,6 +106,13 @@ class Handler(BaseHTTPRequestHandler):
         status, content_type, body = route("GET", parsed.path, parsed.query)
         raw = body.encode("utf-8")
         self.send_response(status)
+        # One header, and only one. The card is public, keyless and read-only, so `*` grants
+        # a browser on another origin nothing a plain GET could not already fetch; without it
+        # the Fase 7 read-only page, which lives on its own origin, cannot read the card at
+        # all. Sent on every reply including refusals, so a caller that gets a 400 can read
+        # why. It changes no body: `check_card_route_matches_the_cli` compares the bytes of
+        # the card itself against `cli.py`.
+        self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(raw)))
         self.end_headers()
@@ -237,6 +244,43 @@ def check_no_secret_can_reach_a_response():
     return failures, 3
 
 
+def _probe(port, path):
+    """`(status, headers)` for one real request. `_get` stays as it is for the body tests."""
+    import urllib.error
+    import urllib.request
+    try:
+        with urllib.request.urlopen(f"http://127.0.0.1:{port}{path}", timeout=30) as response:
+            return response.status, response.headers
+    except urllib.error.HTTPError as exc:
+        return exc.code, exc.headers
+
+
+def check_cors_header_is_on_every_reply():
+    """The read-only page lives on another origin; without this header it cannot read a card.
+
+    One header and no more. `check_card_route_matches_the_cli` already proves the body did not
+    move, so this gate only has to prove the header is on every reply — including the
+    refusals, because a page that cannot read the `400` that says why is a page that cannot
+    say why either. Ungated, a later change could drop it silently and Fase 7 would only find
+    out from a browser console.
+    """
+    failures = []
+    source, symbol, as_of = next(c for c in P.DEMO_CASES if c[0] == SOURCE)
+    probes = [f"/card/{symbol}?date={as_of}", "/health", "/healthz", "/nope",
+              "/card/LIFE?date=01-09-2026"]
+    httpd, port = _running()
+    try:
+        for path in probes:
+            _status, headers = _probe(port, path)
+            origin = headers.get("Access-Control-Allow-Origin")
+            if origin != "*":
+                failures.append(f"GET {path} answered Access-Control-Allow-Origin: "
+                                f"{origin!r}, expected '*'")
+    finally:
+        httpd.shutdown()
+    return failures, len(probes)
+
+
 def check_this_module_computes_nothing():
     """No figure may be built here. The card comes from `card.show`, or it does not come."""
     failures = []
@@ -253,7 +297,9 @@ def main():
     total, bad = 0, []
     for check in (check_card_route_matches_the_cli, check_misconfigured_classifier_is_a_500,
                   check_healthz_and_refusals,
-                  check_no_secret_can_reach_a_response, check_this_module_computes_nothing):
+                  check_no_secret_can_reach_a_response,
+                  check_cors_header_is_on_every_reply,
+                  check_this_module_computes_nothing):
         failures, count = check()
         total += count
         bad += failures

@@ -42,15 +42,25 @@ Diperiksa 2026-09-12 dengan perintah, bukan ingatan.
 
 ## Sekarang — memblokir commit berikutnya
 
-- [ ] **Push empat commit yang sudah ada.**
-      `git log origin/master..HEAD` menunjukkan `6128b4b`, `7121ef2`, `83fe2a1`, `8a22034` dan
-      commit Fase 2 belum di origin. Tanpa push, Cloud Build tidak punya apa pun untuk dipicu,
-      dan juri tidak punya apa pun untuk dibaca.
+- [x] **Push commit sampai akhir Fase 3.** Sudah terjadi di antara sesi: diperiksa
+      2026-09-12, `git ls-remote origin refs/heads/master` → `29660a1…`, dan
+      `git log origin/master..HEAD --oneline` kosong. Baris lama yang menyebut
+      `6128b4b`, `7121ef2`, `83fe2a1`, `8a22034` belum di origin sudah tidak benar.
+      *Yang belum:* commit Fase 4 di cabang `fase4-verdicts` — ia menunggu baris di bawah,
+      karena yang memutuskan kapan `master` bergerak ke situ adalah pemilik repo.
+
+- [ ] **Deploy revisi Cloud Run Fase 4 — B18.** Revisi yang melayani
+      `katalis-api-00003-r8l` adalah image Fase 3, jadi kartu pilar Katalis yang berbunyi
+      `BERGERAK TANPA PENJELASAN` dan header CORS belum ada di URL publik. Cabang Fase 4
+      (`fase4-verdicts`) belum di-`master`-kan, dan itu keputusan Anda, bukan keputusan agen.
       ```bash
-      git push origin master
+      git push origin master                     # setelah fase4-verdicts di-merge ke master
+      gcloud builds submit --config cloudbuild.yaml --substitutions=SHORT_SHA=fase4 .
       ```
-      *Begitu selesai:* kriteria keluar 1 Fase 2 bisa ditutup — tetapi hanya **setelah** baris
-      koneksi GitHub di bawah, karena tanpa trigger sebuah push tidak memicu apa pun.
+      *Begitu selesai:* kriteria keluar 8 Fase 4 tertutup, `[x]` bisa diberikan, dan sesi
+      Fase 7 bisa membuktikan kriteria 1-nya (halaman baca-saja membaca kartu dari asal lain).
+      *Sudah disiapkan:* `./run.sh test` exit 0 dengan 297 assertion, dan gate
+      `check_cors_header_is_on_every_reply` akan menahan deploy yang menjatuhkan headernya.
 
 - [ ] **Putuskan satu repo yang dikirim ke portal, dan perbaiki nama repo di PRD.**
       Form submission meminta **satu** tautan, dan kriteria kedalaman teknis 30% diverifikasi
