@@ -427,6 +427,22 @@ def filings_for(source, symbol, start=None, end=None):
     return sorted(hits, key=lambda r: r["date"])
 
 
+def suspensions_for(source, symbol, end=None):
+    """Every suspension of one symbol, ascending, optionally cut at `end`.
+
+    `/v2/suspensions/` is the one Sectors asset that never became a product surface — not in
+    28 releases, not in 39 recipes — and the payload is already on disk, so reading it costs
+    nothing. The cut matters more here than anywhere else: a card dated D that knows the
+    symbol was halted on D+1 is not early warning, it is hindsight wearing its clothes.
+    """
+    sym = bare(symbol)
+    rows = [normalize_suspension(r) for r in results_of(load(source, "suspensions"))]
+    rows = [r for r in rows if r["symbol"] == sym and r["suspension_date"]]
+    if end:
+        rows = [r for r in rows if r["suspension_date"] <= end]
+    return sorted(rows, key=lambda r: r["suspension_date"])
+
+
 def corporate_actions(source, symbol, start=None, end=None):
     """Divergence 7: seven typed lists with seven date keys, or flat rows. One shape out."""
     sym = bare(symbol)

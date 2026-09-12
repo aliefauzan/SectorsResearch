@@ -423,9 +423,25 @@ def catalyst(articles, filings, actions, as_of, window):
                   "nol aksi korporasi.", figures, unchecked)
 
 
+def suspension_history(rows, as_of):
+    """Pilar-level context, not a pillar: has the exchange ever halted this symbol before now.
+
+    Returns `None` when it never has, so the card stays silent rather than printing a zero.
+    `rows` must already be cut at `as_of` — `bag_from` does it, and
+    `check_suspension_modifier_respects_as_of` is what proves it stayed done.
+    """
+    seen = [r for r in rows if (r.get("suspension_date") or "") <= as_of]
+    if not seen:
+        return None
+    last = max(r["suspension_date"] for r in seen)
+    return Figure("pernah_disuspensi", len(seen), sources.ENDPOINT["suspensions"],
+                  ("symbol", "suspension_date"),
+                  note=f"terakhir {last}")
+
+
 # ------------------------------------------------------------------------------- verdict
 
-def verdict(pillars, free_float=None):
+def verdict(pillars, free_float=None, suspensions=None):
     """Mechanical, ordered, always filled. Never advice — see the module docstring, rule 3."""
     by_name = {p.name: p for p in pillars}
     conc = by_name.get("konsentrasi")
@@ -441,6 +457,8 @@ def verdict(pillars, free_float=None):
         modifiers.append(f"FLOAT TERSERAP · {absorbed:.1%} berpindah tangan")
     if conc and (conc.value("pangsa_asing") or 0) >= T.get("foreign_share_in"):
         modifiers.append(f"ASING DOMINAN · {conc.value('pangsa_asing'):.0%} dari net beli")
+    if suspensions is not None and suspensions.value:
+        modifiers.append(f"PERNAH DISUSPENSI · {suspensions.note.split()[-1]}")
 
     danger = [p.name for p in pillars if p.status == BAHAYA]
     if conc and conc.status == BAHAYA and mom and mom.status in (BAHAYA, WASPADA):
@@ -477,9 +495,13 @@ def assess(bag, symbol, as_of):
         catalyst(bag.get("news") or [], bag.get("filings") or [],
                  bag.get("actions") or [], as_of, window),
     ]
-    name, modifiers = verdict(pillars, bag.get("free_float"))
+    halts = suspension_history(bag.get("suspensions") or [], as_of)
+    name, modifiers = verdict(pillars, bag.get("free_float"), halts)
     return {"symbol": sources.bare(symbol), "as_of": as_of, "window": window,
-            "verdict": name, "modifiers": modifiers, "pillars": pillars}
+            "verdict": name, "modifiers": modifiers, "pillars": pillars,
+            # Card-level figures: they cite a modifier on the headline rather than a pillar,
+            # and the FIELD block has to print their endpoint like any other.
+            "modifier_figures": [f for f in (halts,) if f is not None]}
 
 
 def bag_from(source, symbol, as_of, cut=True):
@@ -511,6 +533,7 @@ def bag_from(source, symbol, as_of, cut=True):
         "news": maybe(sources.news_for, source, symbol, None, end) or [],
         "filings": maybe(sources.filings_for, source, symbol, None, end) or [],
         "actions": cutoff(maybe(sources.corporate_actions, source, symbol) or []),
+        "suspensions": maybe(sources.suspensions_for, source, symbol, end) or [],
     }
 
 
@@ -599,7 +622,44 @@ def check_as_of_does_not_leak():
                         f"{symbol} {as_of}: {cut_pillar.name}.{figure.name} = "
                         f"{raw_pillar.value(figure.name)!r} with future rows present, "
                         f"{figure.value!r} without — the as-of cut leaks")
+        cut_mods = {f.name: f.value for f in cut_card.get("modifier_figures") or []}
+        raw_mods = {f.name: f.value for f in raw_card.get("modifier_figures") or []}
+        if cut_mods != raw_mods:
+            failures.append(f"{symbol} {as_of}: card-level figures moved when future rows "
+                            f"were present — {raw_mods!r} vs {cut_mods!r}")
     return failures, 1 + len(DEMO_CASES)
+
+
+def check_suspension_modifier_respects_as_of():
+    """The halt modifier must appear only after the halt, and never before it.
+
+    LIFE was suspended on 2026-09-02 and again on 2026-09-04. A card dated 2026-09-01 that
+    already knows either of those is not an early warning; it is the answer read off the back
+    of the paper. Both directions are tested, because a modifier that never fires is as wrong
+    as one that fires early — and only the second direction proves the feature exists.
+    """
+    failures = []
+    before = assess(bag_from("recorded", "LIFE", "2026-09-01"), "LIFE", "2026-09-01")
+    if any("DISUSPENSI" in m for m in before["modifiers"]):
+        failures.append("LIFE 2026-09-01 carries a suspension modifier dated after the card")
+    if any(f.name == "pernah_disuspensi" for f in before["modifier_figures"]):
+        failures.append("LIFE 2026-09-01 built a pernah_disuspensi figure from the future")
+
+    # 2026-09-04, not 2026-09-10: the broker tape for LIFE ends on 2026-09-04, so a later
+    # card is rejected `tanpa_broker` before any modifier is reached. That rejection is
+    # correct, and it is the wrong fixture for this question.
+    after = assess(bag_from("recorded", "LIFE", "2026-09-04"), "LIFE", "2026-09-04")
+    tagged = [m for m in after["modifiers"] if "DISUSPENSI" in m]
+    if not tagged:
+        failures.append("LIFE 2026-09-04 lost the suspension modifier it should carry")
+    elif not tagged[0].endswith("2026-09-04"):
+        failures.append(f"LIFE 2026-09-04 names the wrong halt date: {tagged[0]!r}")
+    halts = [f for f in after["modifier_figures"] if f.name == "pernah_disuspensi"]
+    if not halts:
+        failures.append("LIFE 2026-09-04 printed the modifier without a figure behind it")
+    elif halts[0].value != 2 or halts[0].endpoint != sources.ENDPOINT["suspensions"]:
+        failures.append(f"pernah_disuspensi = {halts[0].value!r} from {halts[0].endpoint!r}")
+    return failures, 4
 
 
 def check_verdict_is_never_advice():
@@ -698,7 +758,8 @@ def check_rejects_are_named():
 def main():
     total, bad = 0, []
     for check in (check_single_buyer, check_sellers_do_not_count, check_no_lots_no_float,
-                  check_as_of_does_not_leak, check_verdict_is_never_advice,
+                  check_as_of_does_not_leak, check_suspension_modifier_respects_as_of,
+                  check_verdict_is_never_advice,
                   check_end_to_end, check_recorded_concentration,
                   check_rejects_are_named):
         failures, count = check()

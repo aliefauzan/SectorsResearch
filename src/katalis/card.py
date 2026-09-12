@@ -111,11 +111,11 @@ def _render(result, source, company=None):
 
     put("   FIELD")
     seen = []
-    for pillar in result["pillars"]:
-        for figure in pillar.figures:
-            entry = (figure.endpoint, figure.fields)
-            if entry not in seen:
-                seen.append(entry)
+    for figure in ([f for pillar in result["pillars"] for f in pillar.figures]
+                   + list(result.get("modifier_figures") or [])):
+        entry = (figure.endpoint, figure.fields)
+        if entry not in seen:
+            seen.append(entry)
     for endpoint, fields in seen:
         put(*_wrap(f"{endpoint} → {', '.join(fields)}", indent=5))
 
@@ -209,11 +209,12 @@ def check_field_block_is_complete():
     for source, symbol, as_of in P.DEMO_CASES:
         result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
         text = render(result, source)
-        for pillar in result["pillars"]:
-            for figure in pillar.figures:
-                if figure.endpoint not in text:
-                    failures.append(f"{symbol}: {figure.endpoint} cited by {figure.name} "
-                                    f"but absent from FIELD")
+        cited = ([f for pillar in result["pillars"] for f in pillar.figures]
+                 + list(result.get("modifier_figures") or []))
+        for figure in cited:
+            if figure.endpoint not in text:
+                failures.append(f"{symbol}: {figure.endpoint} cited by {figure.name} "
+                                f"but absent from FIELD")
     return failures, len(P.DEMO_CASES)
 
 
