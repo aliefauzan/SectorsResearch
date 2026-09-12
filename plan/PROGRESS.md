@@ -13,9 +13,9 @@ punya perintahnya sendiri.
 
 | | |
 | --- | --- |
-| Fase berjalan | **Fase 0 sampai 4 dikerjakan**; `[x]` penuh baru Fase 1 dan 3. Fase 0 `[~]` karena B15, Fase 2 `[~]` karena B17 (trigger push), **Fase 4 `[~]` karena B18 (revisi Cloud Run baru)** |
+| Fase berjalan | **Fase 0 sampai 4 dikerjakan**; `[x]` penuh baru Fase 1, 3 dan 4. Fase 0 `[~]` karena B15, Fase 2 `[~]` karena B17 (trigger push) |
 | Fase berikutnya | Fase 5 · Korpus berlabel — **menunggu B3 ditutup** |
-| Revisi Cloud Run yang melayani | **`katalis-api-00003-r8l`**, 100% lalu lintas, di `https://katalis-api-ibyebnreqa-et.a.run.app` — `GET /card/{simbol}?date=…` dan `GET /health`. **Ia belum memuat Fase 4**; yang dibutuhkan `katalis-api-00004-…` |
+| Revisi Cloud Run yang melayani | **`katalis-api-00004-p7w`**, 100% lalu lintas, di `https://katalis-api-ibyebnreqa-et.a.run.app` — `GET /card/{simbol}?date=…`, `GET /health`, dan header CORS. Image build `00620dab-74a7-4478-a8ef-2b1b46ea3c04` (`SUCCESS` di kelima langkah). **Ia memuat Fase 4** |
 | Proyek GCP | `ada-sectors-508410`, penagihan `01B951-232B54-4E1D9A` ("My Billing Account"), `SECTORS_API_KEY` di Secret Manager v1 sebagai referensi |
 | Yang berjalan di GCP | D1 `katalis-api` · D2 job `katalis-refresh` · D3 scheduler `katalis-refresh-daily` (satu job, `30 18 * * 1-5` Asia/Jakarta) · D4 secret · D6 repo `katalis` (simpan 5 tag) · D7 bucket `katalis-recorded` (`us-east1`). **D5 trigger belum** — B17 |
 | Gate | **297 assertion hijau di 44 fungsi check**, exit 0 (naik dari 243 di 40 fungsi — empat fungsi bertambah: dua di `pillars.py`, satu di `card.py`, satu di `server.py`; `thresholds.py` tetap tidak mencetak dua check-nya per nama) |
@@ -50,6 +50,8 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 | --- | --- |
 | Kartu LIFE terbit dari sebuah URL, byte-identik dengan terminal pengembang | `diff <(curl -s "https://katalis-api-ibyebnreqa-et.a.run.app/card/LIFE?date=2026-09-01") <(cd src/katalis && ./run.sh pilar LIFE 2026-09-01)` → tidak ada selisih, 2.971 byte |
 | `GET /health` mengembalikan `ok` pada revisi yang melayani | `curl -s .../health` |
+| Kartu LIFE `2026-09-01` dari URL publik berbunyi `BERGERAK TANPA PENJELASAN` dengan pilar Katalis `[bahaya]`, bukan `SATU PEMBELI DOMINAN` — build `00620dab`, revisi `katalis-api-00004-p7w` | `curl -s ".../card/LIFE?date=2026-09-01"` |
+| Header CORS sampai ke publik: `Access-Control-Allow-Origin: *` hadir pada `/card/LIFE?date=2026-09-01`, `/health`, dan pada 404 `/nope` | `curl -s -i -H "Origin: http://localhost:8000" .../card/LIFE?date=2026-09-01 \| grep -i access-control-allow-origin` |
 | Kunci hadir sebagai referensi, bukan nilai | `gcloud run services describe katalis-api` → `valueFrom.secretKeyRef` |
 | Gate merah menghentikan deploy: build `60e1a5c0` `FAILURE` di langkah `test`, `push` dan `deploy` tidak pernah berjalan, revisi yang melayani tidak berubah | `gcloud builds describe 60e1a5c0…` → `['SUCCESS','FAILURE','QUEUED','QUEUED','QUEUED']` |
 | Image yang dipush tidak membawa `.env`, `__pycache__`, atau `*.pyc` | `docker run --rm --entrypoint sh …:manual2 -c 'find /app -name ".env*" -o -name "__pycache__" -o -name "*.pyc"'` → nol baris |
@@ -100,10 +102,12 @@ angka lama yang menghitung setiap artikel sampai awal tape (`artikel_mendahului`
 dipotong `news_lookback_days` — ambang yang sampai fase ini dideklarasikan dan tidak pernah
 dibaca. Kartu juga mencetak asal tiap ambang yang dipakainya (B11 ditutup).
 
-Yang belum: **revisi Cloud Run baru** (B18). `katalis-api-00003-r8l` melayani Fase 3, jadi
-kriteria keluar 8 dan `[x]` untuk Fase 4 menunggu satu `gcloud builds submit`. Trigger push
-(B17) juga masih menunggu handshake OAuth GitHub di konsol, dan perintah setelahnya sudah
-tertulis di `infra/trigger.sh`.
+Revisi Cloud Run baru sudah melayani: build `00620dab-74a7-4478-a8ef-2b1b46ea3c04`
+`SUCCESS` di kelima langkah, dan `katalis-api-00004-p7w` menerima 100% lalu lintas. Kriteria
+keluar 8 Fase 4 terpenuhi, jadi fasenya `[x]` (B18 tertutup).
+
+Yang belum: **trigger push** (B17) masih menunggu handshake OAuth GitHub di konsol, dan
+perintah setelahnya sudah tertulis di `infra/trigger.sh`.
 
 ---
 
@@ -128,7 +132,7 @@ Baris bertanda pemilik **Saya (manusia)** punya langkah konkretnya di
 | B12 | PRD §0 mengutip `cat src/katalis/state/thresholds.learned.json` untuk angka "18/18 ambang `shipped`". Berkas itu tidak pernah ada | Anda (agen) | 6, atau koreksi PRD lebih awal | terbuka |
 | B16 | Kartu LIFE tidak dapat dinilai setelah `2026-09-04`: tape `/v2/broker-summary/` berakhir di sana, jadi tanggal yang lebih baru ditolak `tanpa_broker`. Ini benar, dan ia membatasi tanggal mana yang bisa dipakai demo maupun gate | — | 5 | terbuka — hilang sendiri kalau jendela broker LIFE dibeli lebih panjang; tidak dianggarkan |
 | B14 | Headline pilar memakai pembulatannya sendiri: kartu LIFE menulis `65%` sementara figure-nya `64.7%`, dan `2.2` sementara figure-nya `2.17`. Gate baru menerima keduanya karena renderer memang mengeluarkan keduanya; menuntut headline memakai angka figure apa adanya berarti mengubah format keempat pilar | Anda (agen) | 4 | **tetap terbuka** — Fase 4 menjalankannya dan tidak menyentuhnya: keenam tugas berkas fase tidak memuatnya, dan menutupnya berarti satu formatter bersama untuk headline dan figure di keempat pilar. Dinaikkan ke orkestrator, bukan dikerjakan diam-diam |
-| B18 | Kartu Fase 4 belum dilayani Cloud Run: `katalis-api-00003-r8l` adalah image Fase 3, jadi `GET /card/LIFE?date=2026-09-01` dari URL publik masih menjawab `SATU PEMBELI DOMINAN` dan tanpa header CORS | Saya (manusia) — satu `gcloud builds submit` | 4 | terbuka — perintahnya ada di `TODO.md`; sesi Fase 7 menunggu revisi ini untuk membuktikan kriteria 1-nya |
+| B18 | Kartu Fase 4 belum dilayani Cloud Run: `katalis-api-00003-r8l` adalah image Fase 3, jadi `GET /card/LIFE?date=2026-09-01` dari URL publik masih menjawab `SATU PEMBELI DOMINAN` dan tanpa header CORS | Saya (manusia) — satu `gcloud builds submit` | 4 | **tertutup 2026-09-12** — build `00620dab` `SUCCESS`, revisi `katalis-api-00004-p7w` melayani 100%; kartu publik kini `BERGERAK TANPA PENJELASAN` dan header CORS hadir di `/card/…`, `/health`, dan 404 |
 | B15 | `README.md` tingkat repo belum ada | Anda (agen) | 7 | terbuka — dipindah dari Fase 0 lewat bagian Kalau Ini Melar |
 | B17 | Trigger Cloud Build dari push belum ada: `gcloud builds connections list` → nol. Menyambungkan `aliefauzan/SectorsResearch` menuntut handshake OAuth GitHub yang tidak punya bentuk CLI. Commitnya sendiri sudah di origin sampai `29660a1` (diperiksa 2026-09-12), jadi yang tersisa hanya handshake-nya. Sampai itu selesai, kriteria keluar 1 Fase 2 terbuka dan kriteria 2 hanya terbukti lewat `builds submit` | Saya (manusia) — sambungkan repo di konsol, lalu `infra/trigger.sh` | 2 | terbuka |
 | B13 | PRD §6 menulis S3 sebagai "dua simbol, 12 kredit"; §7 dan §9 menulis "enam simbol, 42 kredit" | — | 5 | **tertutup 2026-09-12** — rencana memakai enam simbol / 42 kredit, alasannya di `plan/README.md` |
@@ -143,7 +147,7 @@ Baris bertanda pemilik **Saya (manusia)** punya langkah konkretnya di
 | 1 · Modifier suspensi | `phases/phase-1-suspension-modifier.md` | `[x]` | 0 | Lima tugas, enam kriteria, semuanya terpenuhi, dan sejak `katalis-api-00002-c5r` **terverifikasi hidup** — modifier suspensi terbit dari URL, bukan hanya dari terminal. 94 → 98 gate |
 | 2 · Pipeline deploy | `phases/phase-2-deploy-pipeline.md` | `[~]` | 0 | Tujuh dari delapan tugas selesai dan berjalan; **tugas 8 (trigger push) menunggu OAuth GitHub — B17**, dan karena itu kriteria keluar 1 terbuka dan kriteria 2 hanya terbukti lewat `builds submit`. 98 → 128 gate |
 | 3 · Klasifikasi deterministik | `phases/phase-3-deterministic-classifier.md` | `[x]` | 0 | Enam tugas, tujuh kriteria, semuanya terpenuhi dan berjalan pada `katalis-api-00003-r8l`. `classify.py` lahir murni dan bertabel; `CLASSIFIER` dibaca di satu tempat dan menolak nilai asing dengan exit 2. 128 → 243 gate |
-| 4 · Verdict pilar | `phases/phase-4-pillar-verdicts.md` | `[~]` | 0 | Keenam tugas dan tujuh kriteria yang dapat diperiksa sendiri terpenuhi — kartu LIFE kini `BERGERAK TANPA PENJELASAN` dengan pilar Katalis `[bahaya]`, digate tiap build. **`[~]` karena kriteria 8 menuntut revisi Cloud Run baru, dan `katalis-api-00003-r8l` masih image Fase 3 — B18.** 243 → 297 gate |
+| 4 · Verdict pilar | `phases/phase-4-pillar-verdicts.md` | `[x]` | 0 | Keenam tugas dan delapan kriteria terpenuhi — kartu LIFE kini `BERGERAK TANPA PENJELASAN` dengan pilar Katalis `[bahaya]`, digate tiap build, dan **berjalan pada `katalis-api-00004-p7w`** dengan header CORS (B18 tertutup). 243 → 297 gate |
 | 5 · Korpus berlabel | `phases/phase-5-labeled-corpus.md` | `[ ]` | **42** | Menunggu B3 ditutup sebelum satu panggilan dibuat |
 | 6 · Loop belajar dan model | `phases/phase-6-learning-and-llm.md` | `[ ]` | 0 / kuota model | Potongan pertama di garis potong. Memotongnya memindahkan track |
 | 7 · Permukaan dan submission | `phases/phase-7-surface-and-submission.md` | `[ ]` | 0 | Tidak pernah dipotong |
@@ -432,3 +436,41 @@ Diperiksa dan dicatat: tiga suntikan kriteria 6 masih ditolak (`invented`, `dupl
 membuat gate tugas 6 merah (`4/5`), dan `reconcile_usage.py` masih mencetak portal **377**
 dengan `exit=1` seperti sebelumnya — nomornya tidak bergerak karena Fase 4 tidak memanggil
 API sama sekali.
+
+### 2026-09-12 — `master` dideploy; Fase 4 `[x]`, B18 tertutup
+
+Satu `gcloud builds submit` atas `master` `c3e0489`, dijalankan atas persetujuan manusia
+eksplisit. Tidak ada kode yang disentuh; `src/katalis/*.py` tidak berubah sama sekali.
+
+Build `00620dab-74a7-4478-a8ef-2b1b46ea3c04` `SUCCESS`, kelima langkah hijau
+(`build`, `test`, `hygiene`, `push`, `deploy`). Langkah `test` adalah gate-nya dan ia lulus di
+dalam image yang dideploy, bukan di mesin ini. Revisi yang melayani:
+**`katalis-api-00004-p7w`**, 100% lalu lintas, di
+`https://katalis-api-ibyebnreqa-et.a.run.app`.
+
+Enam bukti, semuanya dari luar terminal:
+
+1. `gcloud run services describe katalis-api --region=asia-southeast2` →
+   `https://katalis-api-ibyebnreqa-et.a.run.app` · `katalis-api-00004-p7w` · `100`.
+2. `curl -s -i -H "Origin: http://localhost:8000" …` → `access-control-allow-origin: *` pada
+   `/card/LIFE?date=2026-09-01`, pada `/health`, dan pada 404 `/nope`.
+3. `diff` kartu `2026-09-01` dari URL terhadap `./run.sh pilar LIFE 2026-09-01` → nol selisih.
+4. `diff` kartu `2026-09-04` → nol selisih, dan modifiernya masih
+   `PERNAH DISUSPENSI · 2026-09-04`.
+5. Kartu publik `2026-09-01` berbunyi `BERGERAK TANPA PENJELASAN` dengan pilar Katalis
+   `[bahaya]` — bukan lagi `SATU PEMBELI DOMINAN`.
+6. `reconcile_usage.py` → portal tetap **377** (408 baris, `exit=1` seperti sebelumnya). Nol
+   kredit Sectors dibelanjakan oleh deploy ini: build tidak memanggil API, dan `SOURCE=recorded`
+   tetap.
+
+B18 tertutup karena kriteria keluar 8 kini benar-benar terpenuhi — revisi baru melayani, dan
+catatan ini di-commit bersama. Karena itu baris Fase 4 naik dari `[~]` ke `[x]`. **B17 tetap
+terbuka**: trigger push masih menunggu handshake OAuth GitHub di konsol.
+
+Untuk sesi `sectors-8` (halaman Fase 7): kriteria keluar 1 kini dapat diulang dengan
+`python3 -m http.server` polos, tanpa proxy — header CORS sudah sampai ke publik, jadi halaman
+baca-saja di asal lain dapat membaca kartu langsung dari URL Cloud Run. Itu pekerjaan lane itu,
+bukan dikerjakan di sini.
+
+Diperiksa dan dicatat: `reconcile_usage.py` masih `exit=1` dengan tujuh endpoint di mana model
+dan tagihan berbeda — keadaan yang sama seperti sebelum Fase 4, bukan regresi.
