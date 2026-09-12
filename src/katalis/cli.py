@@ -55,7 +55,7 @@ def cmd_test(args):
     """This product's gates. Each module is its own suite and its own exit code."""
     import importlib
     failed = []
-    for name in ("thresholds", "sources", "pillars", "card"):
+    for name in ("thresholds", "sources", "pillars", "card", "server", "publish"):
         print(f"\n{name}.py")
         module = importlib.import_module(name)
         if module.main() != 0:

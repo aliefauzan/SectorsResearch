@@ -1,0 +1,30 @@
+# The build context is the repository root, and .gitignore does not apply here. This file is
+# therefore the only thing standing between a key on this laptop and a layer in a public
+# registry, so it denies everything first and then names what may enter.
+*
+
+# The product. Both the directory and its contents: a `!` on the children alone leaves the
+# directory itself excluded by `*`, and `docker build` warns on every COPY because of it.
+!src/katalis
+!src/katalis/**
+
+# The two data layers the gates read. `recorded/` is what the 6 Sep 2026 capture paid for;
+# `synth/` is needed because DEMO_CASES — and so four of the five gate suites — includes a
+# synthetic case, and `./run.sh test` has to pass inside the image, not beside it.
+!research
+!research/harness
+!research/harness/recorded
+!research/harness/recorded/**
+!research/harness/synth
+!research/harness/synth/**
+
+# Denied again, after the allowances above, because a `!` line can otherwise re-admit them
+# from inside an allowed directory.
+**/.env
+**/.env.*
+**/__pycache__/
+**/*.pyc
+**/.git/
+**/.DS_Store
+**/state/
+**/*.jsonl

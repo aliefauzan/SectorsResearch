@@ -42,14 +42,15 @@ Diperiksa 2026-09-12 dengan perintah, bukan ingatan.
 
 ## Sekarang — memblokir commit berikutnya
 
-- [ ] **Push tiga commit yang sudah ada.**
-      `git log origin/master..HEAD` menunjukkan `6128b4b`, `7121ef2`, `83fe2a1` belum di
-      origin. Tanpa push, Cloud Build tidak punya apa pun untuk dipicu, dan juri tidak punya
-      apa pun untuk dibaca.
+- [ ] **Push empat commit yang sudah ada.**
+      `git log origin/master..HEAD` menunjukkan `6128b4b`, `7121ef2`, `83fe2a1`, `8a22034` dan
+      commit Fase 2 belum di origin. Tanpa push, Cloud Build tidak punya apa pun untuk dipicu,
+      dan juri tidak punya apa pun untuk dibaca.
       ```bash
       git push origin master
       ```
-      *Begitu selesai:* Fase 2 bisa memasang trigger yang benar-benar menyala.
+      *Begitu selesai:* kriteria keluar 1 Fase 2 bisa ditutup — tetapi hanya **setelah** baris
+      koneksi GitHub di bawah, karena tanpa trigger sebuah push tidak memicu apa pun.
 
 - [ ] **Putuskan satu repo yang dikirim ke portal, dan perbaiki nama repo di PRD.**
       Form submission meminta **satu** tautan, dan kriteria kedalaman teknis 30% diverifikasi
@@ -87,16 +88,28 @@ klik pun. Yang di bawah ini yang tidak bisa.
       nilai tersimpan — cocok. Batas Always Free: 6 versi secret aktif per bulan.
 
 - [ ] **Sambungkan repo GitHub ke Cloud Build** (konsol, sekali, butuh OAuth GitHub).
+      **Ini satu-satunya baris yang menahan Fase 2 dari `[x]` — blocker B17.**
       Cloud Build → Triggers → Connect repository → `aliefauzan/SectorsResearch`.
-      **Cabangnya `master`, bukan `main`.**
-      *Begitu selesai:* saya bisa membuat trigger dan `cloudbuild.yaml`-nya lewat CLI.
+      **Cabangnya `master`, bukan `main`.** Diperiksa 2026-09-12:
+      `gcloud builds connections list --region=asia-southeast2` → `Listed 0 items.`
+      *Sudah disiapkan:* perintah pembuatan trigger utuh di `infra/trigger.sh`, dan
+      `cloudbuild.yaml` sudah terbukti hijau lewat `gcloud builds submit` (dua build `SUCCESS`)
+      serta terbukti **merah** saat sebuah assertion dirusak. Yang tersisa untuk Anda: satu
+      koneksi di konsol, lalu
+      ```bash
+      ./infra/trigger.sh
+      git push origin master
+      ```
 
-- [ ] **Putuskan region, dan catat keputusannya.**
-      Rencana: bucket di **US** (Always Free Cloud Storage hanya region US), Cloud Run di
-      **`asia-southeast2`** untuk latensi Jakarta. Balikkan kalau biaya keluar-region muncul
-      di tagihan.
+- [x] **Putuskan region, dan catat keputusannya.** Cloud Run `asia-southeast2`, Artifact
+      Registry `asia-southeast2`, bucket **`us-east1`** — satu region US, bukan multi-region
+      `US`, karena Always Free Cloud Storage tidak berlaku untuk multi-region. Dicatat di
+      `PROGRESS.md` dan di berkas Fase 2. Balikkan kalau biaya keluar-region muncul di tagihan;
+      hari ini volumenya satu objek 2.971 byte per hari bursa.
 
-- [ ] **Cek free tier Cloud Scheduler sebelum membuat job kedua.**
+- [ ] **Cek free tier Cloud Scheduler sebelum membuat job kedua.** Satu job ada sekarang
+      (`katalis-refresh-daily`, `30 18 * * 1-5` Asia/Jakarta), jadi baris ini masih belum
+      memblokir — tetapi sekarang ia punya sesuatu untuk dibandingkan.
       Ia **tidak tercantum** di halaman Google Cloud Free Program. Rencana memakai satu job,
       jadi ini tidak memblokir hari ini — tetapi periksa halaman pricing Scheduler sebelum
       job kedua.
@@ -205,3 +218,4 @@ klik pun. Yang di bawah ini yang tidak bisa.
 | Video, teaser, post media sosial | B8 (bagian "repo publik" sudah tertutup) |
 | Satu repo dipilih, nama di PRD diperbaiki | B9 |
 | Keputusan track | B10 |
+| Koneksi GitHub ke Cloud Build | B17 |

@@ -1,0 +1,88 @@
+# The pipeline, and the one property that makes it worth having: the gates run inside the
+# image that gets deployed, not on the machine that built it. A red gate is a red build, and
+# a red build never reaches step 4, so the serving revision does not move.
+#
+#   1. build          the image, tagged with the commit
+#   2. test           ./run.sh test, inside that image
+#   3. hygiene        no .env, no __pycache__ in the image — .gitignore does not reach here
+#   4. push           Artifact Registry (5-tag cleanup policy lives on the repo)
+#   5. deploy         Cloud Run katalis-api, secret by reference
+#
+# Run it by hand against the current tree with:
+#   gcloud builds submit --config cloudbuild.yaml --substitutions=SHORT_SHA=manual .
+
+# A substitution default may not reference another substitution — not even a built-in one, so
+# `${PROJECT_ID}` written here stays a literal and `docker build` rejects the tag. Inside a
+# step's args it does expand, which is why the image path is assembled there and not here.
+substitutions:
+  _REGION: asia-southeast2
+  _SERVICE: katalis-api
+  _REGISTRY: asia-southeast2-docker.pkg.dev
+  _REPO: katalis
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: E2_HIGHCPU_8
+
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --tag=${_REGISTRY}/${PROJECT_ID}/${_REPO}/katalis:${SHORT_SHA}
+      - --tag=${_REGISTRY}/${PROJECT_ID}/${_REPO}/katalis:latest
+      - .
+
+  # The step this whole file exists for. `run.sh test` is the product's own suite; it exits
+  # non-zero on one failed assertion, and a non-zero step ends the build.
+  - id: test
+    name: gcr.io/cloud-builders/docker
+    args: [run, --rm, "${_REGISTRY}/${PROJECT_ID}/${_REPO}/katalis:${SHORT_SHA}", test]
+
+  # Batas eksekusi 7: no key, no bytecode, in any image. Checked against the built layers
+  # rather than against .dockerignore, because the file being right and the image being clean
+  # are two different claims.
+  - id: hygiene
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        found=$$(docker run --rm --entrypoint sh "${_REGISTRY}/${PROJECT_ID}/${_REPO}/katalis:${SHORT_SHA}" -c \
+          'find /app -name ".env*" -o -name "__pycache__" -o -name "*.pyc" | head')
+        if [ -n "$$found" ]; then
+          echo "image carries what it must not:"; echo "$$found"; exit 1
+        fi
+        echo "image clean: no .env, no __pycache__, no .pyc"
+
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args: [push, --all-tags, "${_REGISTRY}/${PROJECT_ID}/${_REPO}/katalis"]
+
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_REGISTRY}/${PROJECT_ID}/${_REPO}/katalis:${SHORT_SHA}
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --min-instances=0
+      - --max-instances=2
+      - --memory=512Mi
+      - --cpu=1
+      - --port=8080
+      - --set-env-vars=SOURCE=recorded
+      # A reference, not a value: the key is resolved by Cloud Run at start-up and never
+      # appears in the service's env list. Kriteria keluar 4 checks exactly this.
+      - --set-secrets=SECTORS_API_KEY=SECTORS_API_KEY:latest
+      - --labels=app=katalis,phase=2
+
+# No `images:` block: the push step above already pushed both tags. `images:` runs after the
+# last step, which would be after the deploy that needs the image to exist.
+
+timeout: 1200s

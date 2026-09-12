@@ -6,6 +6,8 @@
 #   ./run.sh pilar BBCA 2026-08-14    satu simbol, satu tanggal
 #   ./run.sh symbols                  apa yang bisa dinilai, dan kenapa sisanya tidak
 #   ./run.sh method                   tiap ambang, batasnya, dan asalnya
+#   ./run.sh serve                    permukaan HTTP: /card/{simbol}?date=… dan /health
+#   ./run.sh refresh                  D2: render kartu, tulis ke bucket. Bukan kanal
 #   ./run.sh test                     seluruh gate produk ini
 #
 # SOURCE=recorded|synth memilih lapisan data (default: recorded).
@@ -28,6 +30,8 @@ if [ $# -eq 0 ]; then
 fi
 
 case "$1" in
+  serve) exec python3 server.py ;;
+  refresh) shift; exec python3 publish.py "$@" ;;
   test) exec python3 cli.py --source "$SOURCE" test ;;
   *)    exec python3 cli.py --source "$SOURCE" "$@" ;;
 esac

@@ -1,0 +1,14 @@
+# What `gcloud builds submit` may upload. Without this file gcloud falls back to .gitignore,
+# which happens to exclude the key — but "happens to" is not a guarantee, and the source
+# tarball is a second place a key can leave this laptop.
+.git/
+.git**
+.env
+.env.*
+__pycache__/
+**/__pycache__/
+*.pyc
+.DS_Store
+.claude/
+src/katalis/state/
+src/katalis/*.jsonl
