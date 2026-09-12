@@ -67,7 +67,8 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 | **Sekadar diklaim** (tidak dapat diverifikasi dari repo) | |
 | --- | --- |
 | Onboarding sectors.app tiap peserta sebelum baris kode pertama | Blocker B7 |
-| Repo dalam keadaan publik | Blocker B8 |
+| Tanggal mulai trial GCP dan pemilik akun penagihan | `gcloud billing accounts list` menunjukkan dua akun OPEN; mana yang dipakai belum diputuskan |
+| Tiga commit lokal (`6128b4b`, `7121ef2`, `83fe2a1`) belum di-push ke origin | `git log origin/master..HEAD --oneline`; lihat `TODO.md` |
 | Kredit tersisa **tepat** ≈616 | Ekspor portal terakhir bertanggal `2026-09-05`; belanja sesudahnya hanya diketahui dari ledger. Blocker B3 |
 
 ---
@@ -88,6 +89,9 @@ hanya bisa dikerjakan manusia.
 
 ## Blocker
 
+Baris bertanda pemilik **Saya (manusia)** punya langkah konkretnya di
+[`TODO.md`](TODO.md); tabel ini hanya menyatakan keadaannya.
+
 | # | Blocker | Pemilik | Fase | Keadaan |
 | --- | --- | --- | --- | --- |
 | B1 | Gate sitasi menguji keanggotaan token, bukan asal angka | Anda (agen) | 0 | **tertutup 2026-09-12** — gate membandingkan multiset token kartu terhadap yang `_render()` sendiri keluarkan; ketiga suntikan ditolak |
@@ -97,7 +101,7 @@ hanya bisa dikerjakan manusia.
 | B5 | `DEMO_CASES` hanya memuat kasus sintetis | Anda (agen) | 0 | **tertutup 2026-09-12** — `("recorded", "LIFE", "2026-09-01")` masuk, dan keempat gate kartu mengulangi seluruh tuple |
 | B6 | Pilar Katalis berbunyi `tenang` pada LIFE, menyitir "Top Gainers" dan berita suspensi sebagai kabar yang mendahului | Anda (agen) | 3 lalu 4 | terbuka |
 | B7 | Onboarding sectors.app tiap peserta sebelum baris kode pertama tidak dapat diverifikasi dari repo. Commit pertama `2026-09-05`. **Tidak dapat diperbaiki mundur** | Saya (manusia) | kelayakan | terbuka |
-| B8 | Repo publik, video juri, video teaser, dan post media sosial: nol bukti hari ini. Keempatnya syarat submission | Saya (manusia) | 7 | terbuka |
+| B8 | Video juri, video teaser, dan post media sosial: nol bukti hari ini. Ketiganya syarat submission | Saya (manusia) | 7 | terbuka — **bagian "repo publik" tertutup 2026-09-12**: `gh repo view aliefauzan/SectorsResearch` → `PUBLIC`, dibuat `2026-09-05` |
 | B9 | Dua repo. PRD di `SectorsHackathon` (14 berkas, semuanya `.md`); kode di repo ini, remote `SectorsResearch`. Form submission meminta satu tautan, dan kedalaman teknis diverifikasi terhadap repo itu. PRD §12.1 menyebut nama repo yang berbeda dari remote yang sebenarnya | Saya (manusia) | 7 | terbuka |
 | B10 | Track 01 mewajibkan komponen AI/LLM dan orkestrasi milik sendiri. Jalur default KATALIS deterministik; yang memenuhi palang adalah Fase 6. Kalau Fase 6 dipotong, deklarasi track harus berpindah ke Track 03 **sebelum** submit | Saya (manusia) — keputusan | 6 / 7 | terbuka |
 | B11 | Kartu tidak menyebut asal ambang (`shipped` / `learned`) maupun classifier yang dipakai, padahal PRD §7 dan §13 menyatakan ia menyebut keduanya | Anda (agen) | 3 dan 4 | terbuka |

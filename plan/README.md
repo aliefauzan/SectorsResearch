@@ -11,6 +11,10 @@ menyatakan keadaan nyata: fase yang sedang berjalan, revisi Cloud Run yang melay
 gate hijau, sisa kredit, dan apa yang terverifikasi hidup versus terverifikasi lokal versus
 sekadar diklaim. Berkas lain menyatakan rencana; hanya `PROGRESS.md` yang menyatakan kenyataan.
 
+Kalau yang Anda cari adalah **apa yang harus Anda sendiri kerjakan** — membuat proyek GCP,
+mengambil ekspor portal, merekam video, menekan submit — buka [`TODO.md`](TODO.md).
+Berkas itu memuat hanya baris yang seorang agen tidak bisa selesaikan sendiri.
+
 Setelah itu baca `README.md` ini, lalu berkas fase yang ditunjuk `PROGRESS.md`, lalu **hanya
 bagian** `01-architecture.md` dan `02-data-model.md` yang berkas fase itu rujuk. Jangan membaca
 seluruh direktori sebelum bekerja; itu menghabiskan konteks pada bagian yang tidak dipakai.
@@ -36,6 +40,7 @@ dua repo itu sendiri adalah blocker terbuka — lihat baris B2 di `PROGRESS.md`.
 | Berkas | Menjawab |
 | --- | --- |
 | `PROGRESS.md` | Di mana kita sekarang, apa tugas berikutnya, apa yang memblokir |
+| `TODO.md` | **Hanya** pekerjaan manusia: konsol GCP, portal Sectors, akun pihak ketiga, kamera, orang. Pekerjaan kode tidak pernah masuk ke sini |
 | `00-prd.md` | Masalah, pengguna, hipotesis, kriteria sukses, non-goal, loop inti dari ujung ke ujung |
 | `01-architecture.md` | Bentuk sistem, lapisan, katalog modul, empat pilar, topologi deploy D1–D10, pengurangan lingkup yang disengaja, risiko |
 | `02-data-model.md` | Bentuk payload per endpoint dengan nama field terverifikasi, objek `Figure`, kontrak kartu, state machine, tabel ambang |
