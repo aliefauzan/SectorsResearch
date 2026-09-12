@@ -1,0 +1,376 @@
+{
+  "name": "KATALIS corpus Fase 5 - enam simbol berlabel, satu hold-out",
+  "grant": 1000,
+  "status": "REHEARSED ONLY against mock - NOT EXECUTED live (blocks on B3)",
+  "basket": [
+    "PACK",
+    "TRUK",
+    "EKAD",
+    "TMPO",
+    "AGAR",
+    "NICK"
+  ],
+  "hold_out": "NICK.JK",
+  "notes": [
+    "Enam simbol dipilih dari 17 simbol unik di recorded/v2_suspensions.json; LIFE sudah dibeli 2026-09-11 dan tidak diulang. Setiap simbol membawa peristiwa suspensi berlabel, yang membuat korpus Fase 6 mungkin tanpa satu pun kredit tambahan untuk label.",
+    "Tidak ada identifier baru di sini: keenam ticker datang dari recorded/v2_suspensions.json yang sudah ada di disk. Tidak ada broker code, slug mining, atau simbol SGX/KLSE yang ditebak.",
+    "36 panggilan x 1 kredit = 36, di bawah anggaran 42. Selisih 6 sengaja ditinggalkan: --budget di bawah sisa nyata, bukan sama dengan. Tiap entri membawa tepat satu simbol.",
+    "/v2/index-daily/ihsg/ TIDAK dimasukkan: jendela yang sama (2026-05-01..2026-09-10) sudah ada di disk sebagai v2_index-daily_ihsg__end-2026-09-10_start-2026-05-01.json, jadi tidak ada entri tanpa simbol dan tidak ada kredit terbuang.",
+    "/v2/free-float/, /v2/brokers/, /v2/suspensions/ juga tidak dibeli: ketiganya sudah di disk, pasar-lebar, dan sudah memuat keenam simbol (AGAR, EKAD, NICK, PACK, TMPO, TRUK semuanya ada di v2_free-float.json).",
+    "/v2/broker-summary/<sym>/top/ tidak dibeli: pillars.bag_from() tidak membacanya (sources.broker_top ada tapi tak dipakai produk).",
+    "Parameter yang dibatasi di tiap entri: sections=financials (bukan default), start dan end eksplisit di daily/broker-summary/news/filings, symbols dan symbol eksplisit. classifications, periods, dan n_quarters tidak muncul sama sekali karena tidak ada endpoint di rencana ini yang menerimanya.",
+    "Jendela broker 14 hari kalender per simbol adalah batas sisi-klien yang LIFE pakai; batas keras API tidak terdokumentasi. Kalau live menolaknya, penolakan itu 400 (tidak ditagih) dan jendela diperkecil, bukan diperbesar.",
+    "Satu simbol ditahan sebagai hold-out Fase 6 dan disebut namanya di field hold_out: NICK.JK. Ia tetap dibeli (kartunya harus bisa terbit), tetapi tidak boleh dipakai menghasilkan lesson.",
+    "Rehearsal terhadap mock dan biaya sesungguhnya dilaporkan di plan/inputs/fase-5-prep.md. Belanja live 42 kredit adalah pekerjaan manusia yang menunggu B3."
+  ],
+  "calls": [
+    {
+      "tier": 1,
+      "path": "/v2/daily/PACK/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 2 baseline. 45 hari bursa butuh >=45 baris; preseden LIFE: jendela 2026-05-01..2026-09-10 kembali 62 baris karena endpoint memotong 90 hari kalender. Tanggal suspensi 2026-09-01."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/broker-summary/PACK/",
+      "params": {
+        "start": "2026-08-19",
+        "end": "2026-09-02"
+      },
+      "est_cost": 1,
+      "note": "Pilar 1. Jendela 2026-08-19..2026-09-02 = 14 hari kalender, batas sisi-klien yang sama dengan LIFE. Menutup 2026-09-01 dan merentang sedikit sesudahnya."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/PACK/",
+      "params": {
+        "sections": "financials"
+      },
+      "est_cost": 1,
+      "note": "outstanding_shares lewat shares_outstanding(); satu section = 1 kredit, tanpa sections default 8."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "symbols": "PACK.JK",
+        "start": "2026-08-02",
+        "end": "2026-09-07"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 dan classifier. Satu simbol per entri. Jendela 2026-08-02..2026-09-07 = suspensi 2026-09-01 minus 30 sampai plus 6 hari."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {
+        "symbol": "PACK.JK",
+        "start": "2026-08-02",
+        "end": "2026-09-07"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 material filings. filing_lookback_days=30, jendela 2026-08-02..2026-09-07."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/corporate-actions/PACK/",
+      "params": {},
+      "est_cost": 1,
+      "note": "Pilar 4 aksi terjadwal. Endpoint tidak menerima parameter; params kosong disengaja, bukan default yang terlupa."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/TRUK/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 2 baseline. 45 hari bursa butuh >=45 baris; preseden LIFE: jendela 2026-05-01..2026-09-10 kembali 62 baris karena endpoint memotong 90 hari kalender. Tanggal suspensi 2026-09-04."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/broker-summary/TRUK/",
+      "params": {
+        "start": "2026-08-22",
+        "end": "2026-09-05"
+      },
+      "est_cost": 1,
+      "note": "Pilar 1. Jendela 2026-08-22..2026-09-05 = 14 hari kalender, batas sisi-klien yang sama dengan LIFE. Menutup 2026-09-04 dan merentang sedikit sesudahnya."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/TRUK/",
+      "params": {
+        "sections": "financials"
+      },
+      "est_cost": 1,
+      "note": "outstanding_shares lewat shares_outstanding(); satu section = 1 kredit, tanpa sections default 8."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "symbols": "TRUK.JK",
+        "start": "2026-08-05",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 dan classifier. Satu simbol per entri. Jendela 2026-08-05..2026-09-10 = suspensi 2026-09-04 minus 30 sampai plus 6 hari."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {
+        "symbol": "TRUK.JK",
+        "start": "2026-08-05",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 material filings. filing_lookback_days=30, jendela 2026-08-05..2026-09-10."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/corporate-actions/TRUK/",
+      "params": {},
+      "est_cost": 1,
+      "note": "Pilar 4 aksi terjadwal. Endpoint tidak menerima parameter; params kosong disengaja, bukan default yang terlupa."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/EKAD/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 2 baseline. 45 hari bursa butuh >=45 baris; preseden LIFE: jendela 2026-05-01..2026-09-10 kembali 62 baris karena endpoint memotong 90 hari kalender. Tanggal suspensi 2026-08-27."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/broker-summary/EKAD/",
+      "params": {
+        "start": "2026-08-14",
+        "end": "2026-08-28"
+      },
+      "est_cost": 1,
+      "note": "Pilar 1. Jendela 2026-08-14..2026-08-28 = 14 hari kalender, batas sisi-klien yang sama dengan LIFE. Menutup 2026-08-27 dan merentang sedikit sesudahnya."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/EKAD/",
+      "params": {
+        "sections": "financials"
+      },
+      "est_cost": 1,
+      "note": "outstanding_shares lewat shares_outstanding(); satu section = 1 kredit, tanpa sections default 8."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "symbols": "EKAD.JK",
+        "start": "2026-07-28",
+        "end": "2026-09-02"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 dan classifier. Satu simbol per entri. Jendela 2026-07-28..2026-09-02 = suspensi 2026-08-27 minus 30 sampai plus 6 hari."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {
+        "symbol": "EKAD.JK",
+        "start": "2026-07-28",
+        "end": "2026-09-02"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 material filings. filing_lookback_days=30, jendela 2026-07-28..2026-09-02."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/corporate-actions/EKAD/",
+      "params": {},
+      "est_cost": 1,
+      "note": "Pilar 4 aksi terjadwal. Endpoint tidak menerima parameter; params kosong disengaja, bukan default yang terlupa."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/TMPO/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 2 baseline. 45 hari bursa butuh >=45 baris; preseden LIFE: jendela 2026-05-01..2026-09-10 kembali 62 baris karena endpoint memotong 90 hari kalender. Tanggal suspensi 2026-08-27."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/broker-summary/TMPO/",
+      "params": {
+        "start": "2026-08-14",
+        "end": "2026-08-28"
+      },
+      "est_cost": 1,
+      "note": "Pilar 1. Jendela 2026-08-14..2026-08-28 = 14 hari kalender, batas sisi-klien yang sama dengan LIFE. Menutup 2026-08-27 dan merentang sedikit sesudahnya."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/TMPO/",
+      "params": {
+        "sections": "financials"
+      },
+      "est_cost": 1,
+      "note": "outstanding_shares lewat shares_outstanding(); satu section = 1 kredit, tanpa sections default 8."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "symbols": "TMPO.JK",
+        "start": "2026-07-28",
+        "end": "2026-09-02"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 dan classifier. Satu simbol per entri. Jendela 2026-07-28..2026-09-02 = suspensi 2026-08-27 minus 30 sampai plus 6 hari."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {
+        "symbol": "TMPO.JK",
+        "start": "2026-07-28",
+        "end": "2026-09-02"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 material filings. filing_lookback_days=30, jendela 2026-07-28..2026-09-02."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/corporate-actions/TMPO/",
+      "params": {},
+      "est_cost": 1,
+      "note": "Pilar 4 aksi terjadwal. Endpoint tidak menerima parameter; params kosong disengaja, bukan default yang terlupa."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/AGAR/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 2 baseline. 45 hari bursa butuh >=45 baris; preseden LIFE: jendela 2026-05-01..2026-09-10 kembali 62 baris karena endpoint memotong 90 hari kalender. Tanggal suspensi 2026-08-19."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/broker-summary/AGAR/",
+      "params": {
+        "start": "2026-08-06",
+        "end": "2026-08-20"
+      },
+      "est_cost": 1,
+      "note": "Pilar 1. Jendela 2026-08-06..2026-08-20 = 14 hari kalender, batas sisi-klien yang sama dengan LIFE. Menutup 2026-08-19 dan merentang sedikit sesudahnya."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/AGAR/",
+      "params": {
+        "sections": "financials"
+      },
+      "est_cost": 1,
+      "note": "outstanding_shares lewat shares_outstanding(); satu section = 1 kredit, tanpa sections default 8."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "symbols": "AGAR.JK",
+        "start": "2026-07-20",
+        "end": "2026-08-25"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 dan classifier. Satu simbol per entri. Jendela 2026-07-20..2026-08-25 = suspensi 2026-08-19 minus 30 sampai plus 6 hari."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {
+        "symbol": "AGAR.JK",
+        "start": "2026-07-20",
+        "end": "2026-08-25"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 material filings. filing_lookback_days=30, jendela 2026-07-20..2026-08-25."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/corporate-actions/AGAR/",
+      "params": {},
+      "est_cost": 1,
+      "note": "Pilar 4 aksi terjadwal. Endpoint tidak menerima parameter; params kosong disengaja, bukan default yang terlupa."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/daily/NICK/",
+      "params": {
+        "start": "2026-05-01",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 2 baseline. 45 hari bursa butuh >=45 baris; preseden LIFE: jendela 2026-05-01..2026-09-10 kembali 62 baris karena endpoint memotong 90 hari kalender. Tanggal suspensi 2026-09-04."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/broker-summary/NICK/",
+      "params": {
+        "start": "2026-08-22",
+        "end": "2026-09-05"
+      },
+      "est_cost": 1,
+      "note": "Pilar 1. Jendela 2026-08-22..2026-09-05 = 14 hari kalender, batas sisi-klien yang sama dengan LIFE. Menutup 2026-09-04 dan merentang sedikit sesudahnya."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/report/NICK/",
+      "params": {
+        "sections": "financials"
+      },
+      "est_cost": 1,
+      "note": "outstanding_shares lewat shares_outstanding(); satu section = 1 kredit, tanpa sections default 8."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/news/",
+      "params": {
+        "symbols": "NICK.JK",
+        "start": "2026-08-05",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 dan classifier. Satu simbol per entri. Jendela 2026-08-05..2026-09-10 = suspensi 2026-09-04 minus 30 sampai plus 6 hari."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/filings/",
+      "params": {
+        "symbol": "NICK.JK",
+        "start": "2026-08-05",
+        "end": "2026-09-10"
+      },
+      "est_cost": 1,
+      "note": "Pilar 4 material filings. filing_lookback_days=30, jendela 2026-08-05..2026-09-10."
+    },
+    {
+      "tier": 1,
+      "path": "/v2/company/corporate-actions/NICK/",
+      "params": {},
+      "est_cost": 1,
+      "note": "Pilar 4 aksi terjadwal. Endpoint tidak menerima parameter; params kosong disengaja, bukan default yang terlupa."
+    }
+  ]
+}
