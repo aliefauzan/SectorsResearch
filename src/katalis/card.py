@@ -11,7 +11,9 @@ The last two blocks are the ones that make the card trustworthy rather than conf
 **YANG BELUM KAMI PERIKSA** names what the agent did not look at, and **FIELD** prints the
 endpoints and fields behind every figure above, so a judge can re-derive any of them.
 """
+import re
 import sys
+from collections import Counter
 
 import pillars as P
 import sources
@@ -19,6 +21,11 @@ import thresholds as T
 
 MARK = {P.TENANG: "·", P.WASPADA: "!", P.BAHAYA: "!!", P.TAK_TERUKUR: "?"}
 WIDTH = 76
+
+#: One run of digits, kept whole across "1,234.56" but split across "2026-09-02..2026-09-04",
+#: which a greedier pattern turns into the nonsense token "02..2026". The renderer and its
+#: gate must count with the same pattern or the comparison means nothing.
+NUMBER = r"\d+(?:[.,]\d+)*"
 
 
 def _rule(char="─"):
@@ -55,41 +62,54 @@ def _number(figure):
     return str(value)
 
 
-def render(result, source, company=None):
-    """The whole card as one string. Pure: it reads `result`, nothing else."""
-    out = [_rule("━")]
+def _render(result, source, company=None):
+    """The card, and the multiset of number tokens this function itself emitted.
+
+    Every line the card carries is appended through `put`, which counts the numbers in it as
+    it goes. That counter — not a union of notes, units and headlines — is what the citation
+    gate compares the finished card against. A number that reaches the card without passing
+    through here changes the count, and a changed count is a red gate.
+    """
+    out, emitted = [], Counter()
+
+    def put(*lines):
+        for line in lines:
+            out.append(line)
+            emitted.update(re.findall(NUMBER, line))
+
+    put(_rule("━"))
     head = f"{result['verdict']}"
     if result["modifiers"]:
         head += "  ·  " + "  ·  ".join(result["modifiers"])
-    out.append(head)
+    put(head)
     label = f"{result['symbol']}"
     if company:
         label += f" · {company}"
     span = f"{result['window'][0]}..{result['window'][-1]}" if result["window"] else "—"
-    out.append(f"{label}{' ' * max(1, WIDTH - len(label) - len(span) - len(source) - 5)}"
-               f"{span} · {source}")
-    out.append(_rule())
+    put(f"{label}{' ' * max(1, WIDTH - len(label) - len(span) - len(source) - 5)}"
+        f"{span} · {source}")
+    put(_rule())
 
     for pillar in result["pillars"]:
-        out.append(f"{MARK.get(pillar.status, '?'):>2} {pillar.name.upper()}  "
-                   f"[{pillar.status}]")
-        out += _wrap(pillar.headline)
+        put(f"{MARK.get(pillar.status, '?'):>2} {pillar.name.upper()}  "
+            f"[{pillar.status}]")
+        put(*_wrap(pillar.headline))
         numbers = [f"{f.name} {_number(f)}" for f in pillar.figures if f.value is not None]
         if numbers:
-            out += _wrap(" · ".join(numbers), indent=3)
+            put(*_wrap(" · ".join(numbers), indent=3))
         for figure in pillar.figures:
             if figure.note:
-                out += _wrap(f"({figure.name}: {figure.note})", indent=5)
-        out.append("")
+                put(*_wrap(f"({figure.name}: {figure.note})", indent=5))
+        put("")
 
     unchecked = [note for pillar in result["pillars"] for note in pillar.unchecked]
     if unchecked:
-        out.append("   YANG BELUM KAMI PERIKSA")
+        put("   YANG BELUM KAMI PERIKSA")
         for note in unchecked:
-            out += _wrap(f"— {note}", indent=5)
-        out.append("")
+            put(*_wrap(f"— {note}", indent=5))
+        put("")
 
-    out.append("   FIELD")
+    put("   FIELD")
     seen = []
     for pillar in result["pillars"]:
         for figure in pillar.figures:
@@ -97,13 +117,18 @@ def render(result, source, company=None):
             if entry not in seen:
                 seen.append(entry)
     for endpoint, fields in seen:
-        out += _wrap(f"{endpoint} → {', '.join(fields)}", indent=5)
+        put(*_wrap(f"{endpoint} → {', '.join(fields)}", indent=5))
 
-    out.append("")
-    out += _wrap("KATALIS menyatakan struktur transaksi, bukan nasihat investasi. "
-                 "Tidak ada baris di atas yang berarti beli atau jual.", indent=3)
-    out.append(_rule("━"))
-    return "\n".join(out)
+    put("")
+    put(*_wrap("KATALIS menyatakan struktur transaksi, bukan nasihat investasi. "
+               "Tidak ada baris di atas yang berarti beli atau jual.", indent=3))
+    put(_rule("━"))
+    return "\n".join(out), emitted
+
+
+def render(result, source, company=None):
+    """The whole card as one string. Pure: it reads `result`, nothing else."""
+    return _render(result, source, company)[0]
 
 
 def method():
@@ -142,65 +167,54 @@ def show(symbol, as_of=None, source="recorded"):
 # --------------------------------------------------------------------------------- gates
 
 def check_every_number_is_a_figure():
-    """No digit may reach the card that did not arrive inside a cited `Figure`.
+    """No digit may reach the card that the renderer did not itself emit.
 
-    Rendering is where invented numbers get in, so the test is mechanical: take every run
-    of digits in the card, and require each one to be traceable to a figure, a date, a
-    threshold, or the symbol itself.
+    The old form of this gate asked whether a token was a *member* of the union of every
+    note, unit, headline and threshold on the card. That union is wide enough that invented
+    numbers walked through it: `"rasio utang terhadap ekuitas 0.53, margin 2.32%"` scored
+    green. The question here is narrower and is the right one — did `_render` write this
+    number, and did it write it this many times.
     """
-    import re
     failures = []
-    source, symbol, as_of = P.DEMO_CASES[0]
-    result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
-    text = render(result, source)
-
-    # `\d+(?:[.,]\d+)*` keeps "1,234.56" whole while splitting "2026-09-02..2026-09-04"
-    # into its parts, which a greedier pattern turns into the nonsense token "02..2026".
-    number_like = r"\d+(?:[.,]\d+)*"
-    allowed = set()
-    for pillar in result["pillars"]:
-        for figure in pillar.figures:
-            allowed.add(figure.name)
-            for text_source in (_number(figure), figure.note or "", figure.unit or ""):
-                allowed.update(re.findall(number_like, text_source))
-    for date in result["window"]:
-        allowed.update(re.findall(r"\d+", date))
-    allowed.update(re.findall(r"\d+", " ".join(str(v) for v in
-                                               (T.get(n) for n in T.TABLE))))
-    for pillar in result["pillars"]:
-        allowed.update(re.findall(number_like, pillar.headline))
-        for note in pillar.unchecked:
-            allowed.update(re.findall(number_like, note))
-    for token in re.findall(number_like, text):
-        if token not in allowed:
-            failures.append(f"number {token!r} on the card is not traceable to a figure")
-    return failures, 1
+    for source, symbol, as_of in P.DEMO_CASES:
+        result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
+        _, emitted = _render(result, source)
+        text = render(result, source)
+        actual = Counter(re.findall(NUMBER, text))
+        for token, count in sorted((actual - emitted).items()):
+            failures.append(f"{symbol} {as_of}: number {token!r} appears {count} time(s) on "
+                            f"the card without the renderer emitting it")
+        for token, count in sorted((emitted - actual).items()):
+            failures.append(f"{symbol} {as_of}: number {token!r} was emitted {count} more "
+                            f"time(s) than the card shows — the card was rewritten")
+    return failures, len(P.DEMO_CASES)
 
 
 def check_no_advice_in_render():
     failures = []
-    source, symbol, as_of = P.DEMO_CASES[0]
-    result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
-    text = render(result, source).lower()
-    for word in ("sebaiknya", "rekomendasi", "target harga", "layak beli", "jual sekarang"):
-        if word in text:
-            failures.append(f"advice phrase {word!r} reached the card")
-    if "bukan nasihat investasi" not in text:
-        failures.append("the card lost its no-advice line")
-    return failures, 6
+    for source, symbol, as_of in P.DEMO_CASES:
+        result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
+        text = render(result, source).lower()
+        for word in ("sebaiknya", "rekomendasi", "target harga", "layak beli", "jual sekarang"):
+            if word in text:
+                failures.append(f"{symbol}: advice phrase {word!r} reached the card")
+        if "bukan nasihat investasi" not in text:
+            failures.append(f"{symbol}: the card lost its no-advice line")
+    return failures, 6 * len(P.DEMO_CASES)
 
 
 def check_field_block_is_complete():
     """Every endpoint a figure cites has to appear in the FIELD block."""
     failures = []
-    source, symbol, as_of = P.DEMO_CASES[0]
-    result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
-    text = render(result, source)
-    for pillar in result["pillars"]:
-        for figure in pillar.figures:
-            if figure.endpoint not in text:
-                failures.append(f"{figure.endpoint} cited by {figure.name} but absent from FIELD")
-    return failures, 1
+    for source, symbol, as_of in P.DEMO_CASES:
+        result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
+        text = render(result, source)
+        for pillar in result["pillars"]:
+            for figure in pillar.figures:
+                if figure.endpoint not in text:
+                    failures.append(f"{symbol}: {figure.endpoint} cited by {figure.name} "
+                                    f"but absent from FIELD")
+    return failures, len(P.DEMO_CASES)
 
 
 def check_rejected_symbol_says_why():

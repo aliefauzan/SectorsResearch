@@ -13,20 +13,20 @@ punya perintahnya sendiri.
 
 | | |
 | --- | --- |
-| Fase berjalan | **belum ada.** Nol dari delapan fase dimulai |
-| Fase berikutnya | Fase 0 · Fondasi |
-| Revisi Cloud Run yang melayani | **tidak ada** |
-| Gate | **73 assertion hijau di 18 fungsi check**, exit 0 |
+| Fase berjalan | **Fase 0 selesai** (`[~]`, satu butir dilewati). Satu dari delapan |
+| Fase berikutnya | Fase 1 · Modifier suspensi |
+| Revisi Cloud Run yang melayani | **tidak ada** — Fase 2 belum dimulai |
+| Gate | **94 assertion hijau di 18 fungsi check**, exit 0 (naik dari 73) |
 | Kredit terpakai | **377 terkonfirmasi portal** (ekspor `2026-09-05`), **≈384** termasuk tujuh baris ledger setelah tanggal ekspor |
 | Kredit tersisa | **≈616 dari 1.000** |
-| Produk | 1.916 baris, 6 berkas, terlacak git sejak commit `1a439e6` |
+| Produk | 6 berkas, terlacak git sejak commit `1a439e6`; 1.916 baris sebelum Fase 0 |
 | Repo | 720 berkas terlacak, 15 commit, commit pertama `2026-09-05`, remote `https://github.com/aliefauzan/SectorsResearch` |
 | Working tree | bersih; `master` sejajar dengan `origin/master` |
 
 ### Perintah yang menghasilkan baris-baris itu
 
 ```bash
-cd src/katalis && ./run.sh test; echo "exit=$?"     # 19/19 22/22 23/23 9/9 = 73, exit=0
+cd src/katalis && ./run.sh test; echo "exit=$?"     # 20/20 22/22 35/35 17/17 = 94, exit=0
 wc -l src/katalis/*.py src/katalis/*.sh             # Σ 1916
 git ls-files src/katalis                            # 6 berkas
 git ls-files | wc -l                                # 720
@@ -50,13 +50,14 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 | LIFE `siap`, 62 hari bursa, 7 hari aliran broker | `./run.sh symbols` |
 | Kartu LIFE terbit: `SATU PEMBELI DOMINAN · FLOAT TIPIS · free float 7.5%` | `./run.sh pilar LIFE 2026-09-01` |
 | Pilar Katalis berbunyi `[tenang]` pada LIFE — **defect D2 masih terbuka** | perintah yang sama |
-| Gate sitasi bocor pada 2 dari 3 suntikan | monkeypatch `card.render` + `check_every_number_is_a_figure()` |
-| Berkas ambang hasil belajar bergeser diam-diam, suite tetap hijau | tulis `state/thresholds.learned.json`, lalu `./run.sh test` |
-| `actions` tidak dipotong `as_of`; aksi bertanggal `2026-12-31` masuk kartu `as_of=2026-09-01` | `pillars.py:498` + suntikan `sources.corporate_actions` |
-| `DEMO_CASES` hanya memuat kasus sintetis | `pillars.py:38` |
+| Gate sitasi menolak ketiga suntikan (**ditutup Fase 0**) | monkeypatch `card.render` + `check_every_number_is_a_figure()` |
+| Berkas ambang hasil belajar yang diracuni membuat suite merah, exit 1 (**ditutup Fase 0**) | tulis `state/thresholds.learned.json`, lalu `./run.sh test` |
+| `actions` dipotong `as_of`; aksi bertanggal `2026-12-31` tidak lagi masuk kartu (**ditutup Fase 0**) | suntikan `sources.corporate_actions` + `check_as_of_does_not_leak` → `([], 3)` |
+| `DEMO_CASES` memuat kasus `recorded/LIFE` (**ditutup Fase 0**) | `python3 -c "import pillars;print(pillars.DEMO_CASES)"` |
 | Nol referensi `CLASSIFIER`, `llm`, `lesson`, hold-out di `src/katalis/` | pencarian atas enam berkas |
 | `state/` tidak ada di `src/katalis/` | `ls src/katalis/state` |
 | 18 ambang di `thresholds.TABLE` | `python3 -c "import thresholds as T; print(len(T.TABLE))"` |
+| Headline pilar masih memakai pembulatan sendiri (`65%` vs figure `64.7%`) | `./run.sh pilar LIFE 2026-09-01` — blocker B14 |
 | 20 baris suspensi atas 17 simbol unik | `python3` atas `research/harness/recorded/v2_suspensions.json` |
 | 136 berkas payload terekam | `ls research/harness/recorded/*.json \| wc -l` |
 | Tidak ada `.env` atau `__pycache__` terlacak | `git ls-files \| grep -E '\.env\|__pycache__'` → `.env.example` |
@@ -71,16 +72,14 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 
 ## Tugas berikutnya
 
-Buka `plan/phases/phase-0-foundation.md` dan kerjakan tugas 1 sampai 4 berurut: bangun ulang
-render kartu dari daftar `Figure` sehingga gate sitasi membandingkan token terhadap himpunan
-yang fungsi render itu sendiri hasilkan; tambahkan `("recorded", "LIFE", "2026-09-01")` ke
-`DEMO_CASES` di `src/katalis/pillars.py:38` dan buat keempat gate `card.py` mengulangi seluruh
-tuple alih-alih memakai `DEMO_CASES[0]`; buat `check_learned_cannot_escape()` di
-`src/katalis/thresholds.py:138` benar-benar membuka `state/thresholds.learned.json` dan gagal
-bila nilai di dalamnya berbeda dari hasil `clamp()`-nya sendiri; dan potong `actions` pada
-`as_of` di `bag_from()` (`src/katalis/pillars.py:498`), memperhatikan bahwa `corporate_actions`
-adalah dict berkunci jenis aksi dengan nama tanggal berbeda per jenis. Semuanya nol kredit.
-Commit `plan/PROGRESS.md` bersama perubahan kode, dan tuliskan jumlah gate yang baru.
+Buka `plan/phases/phase-1-suspension-modifier.md`. Tambahkan pembaca suspensi per simbol di
+`src/katalis/sources.py` di atas `normalize_suspension()` yang sudah ada, masukkan hasilnya ke
+`bag_from()` lewat pemotongan `as_of` yang sama dengan dataset lain, lahirkan modifier sebagai
+`Figure` bernama `pernah_disuspensi` dengan endpoint `/v2/suspensions/` dan fields
+`(symbol, suspension_date)`, dan cetak ia di headline hanya bila nilainya lebih dari nol. Nol
+kredit: `research/harness/recorded/v2_suspensions.json` sudah di disk. Uji dua arah pada LIFE —
+`2026-09-01` tidak boleh memuat modifier, `2026-09-10` harus memuatnya dengan tanggal
+`2026-09-04`. Commit `plan/PROGRESS.md` bersama perubahan kode.
 
 ---
 
@@ -88,11 +87,11 @@ Commit `plan/PROGRESS.md` bersama perubahan kode, dan tuliskan jumlah gate yang 
 
 | # | Blocker | Pemilik | Fase | Keadaan |
 | --- | --- | --- | --- | --- |
-| B1 | Gate sitasi menguji keanggotaan token, bukan asal angka. `"rasio utang terhadap ekuitas 0.53, margin 2.32%"` dan `"float 15 persen"` lolos hijau | Anda (agen) | 0 | terbuka |
-| B2 | `check_learned_cannot_escape()` tidak pernah membuka berkas ambang hasil belajar; berkas yang diracuni menggeser tiap ambang ke ekstrem batasnya sambil seluruh suite tetap hijau | Anda (agen) | 0 | terbuka |
+| B1 | Gate sitasi menguji keanggotaan token, bukan asal angka | Anda (agen) | 0 | **tertutup 2026-09-12** — gate membandingkan multiset token kartu terhadap yang `_render()` sendiri keluarkan; ketiga suntikan ditolak |
+| B2 | `check_learned_cannot_escape()` tidak pernah membuka berkas ambang hasil belajar | Anda (agen) | 0 | **tertutup 2026-09-12** — gate membaca berkas; `top1_dominant: 0.99` membuat `./run.sh test` exit 1 |
 | B3 | Angka kredit di PRD §0 (272) dan §5 (plafon 332) lebih rendah 105 daripada tagihan portal (377). Ekspor portal terakhir `2026-09-05`, jadi sisa nyata hanya diketahui sampai tanggal itu | Saya (manusia) — ambil ekspor portal baru | 5 | terbuka |
-| B4 | `actions` tidak dipotong `as_of`; satu angka kartu (`aksi_korporasi`) dapat lahir dari tanggal setelah tanggal kartu | Anda (agen) | 0 | terbuka |
-| B5 | `DEMO_CASES` hanya memuat kasus sintetis, jadi keempat gate kartu tidak pernah melihat kartu di atas data nyata | Anda (agen) | 0 | terbuka |
+| B4 | `actions` tidak dipotong `as_of` | Anda (agen) | 0 | **tertutup 2026-09-12** — `bag_from()` memotong `actions`; `check_as_of_does_not_leak` membandingkan tiap figure pada tiap kartu demo |
+| B5 | `DEMO_CASES` hanya memuat kasus sintetis | Anda (agen) | 0 | **tertutup 2026-09-12** — `("recorded", "LIFE", "2026-09-01")` masuk, dan keempat gate kartu mengulangi seluruh tuple |
 | B6 | Pilar Katalis berbunyi `tenang` pada LIFE, menyitir "Top Gainers" dan berita suspensi sebagai kabar yang mendahului | Anda (agen) | 3 lalu 4 | terbuka |
 | B7 | Onboarding sectors.app tiap peserta sebelum baris kode pertama tidak dapat diverifikasi dari repo. Commit pertama `2026-09-05`. **Tidak dapat diperbaiki mundur** | Saya (manusia) | kelayakan | terbuka |
 | B8 | Repo publik, video juri, video teaser, dan post media sosial: nol bukti hari ini. Keempatnya syarat submission | Saya (manusia) | 7 | terbuka |
@@ -100,6 +99,8 @@ Commit `plan/PROGRESS.md` bersama perubahan kode, dan tuliskan jumlah gate yang 
 | B10 | Track 01 mewajibkan komponen AI/LLM dan orkestrasi milik sendiri. Jalur default KATALIS deterministik; yang memenuhi palang adalah Fase 6. Kalau Fase 6 dipotong, deklarasi track harus berpindah ke Track 03 **sebelum** submit | Saya (manusia) — keputusan | 6 / 7 | terbuka |
 | B11 | Kartu tidak menyebut asal ambang (`shipped` / `learned`) maupun classifier yang dipakai, padahal PRD §7 dan §13 menyatakan ia menyebut keduanya | Anda (agen) | 3 dan 4 | terbuka |
 | B12 | PRD §0 mengutip `cat src/katalis/state/thresholds.learned.json` untuk angka "18/18 ambang `shipped`". Berkas itu tidak pernah ada | Anda (agen) | 6, atau koreksi PRD lebih awal | terbuka |
+| B14 | Headline pilar memakai pembulatannya sendiri: kartu LIFE menulis `65%` sementara figure-nya `64.7%`, dan `2.2` sementara figure-nya `2.17`. Gate baru menerima keduanya karena renderer memang mengeluarkan keduanya; menuntut headline memakai angka figure apa adanya berarti mengubah format keempat pilar | Anda (agen) | 4 | terbuka |
+| B15 | `README.md` tingkat repo belum ada | Anda (agen) | 7 | terbuka — dipindah dari Fase 0 lewat bagian Kalau Ini Melar |
 | B13 | PRD §6 menulis S3 sebagai "dua simbol, 12 kredit"; §7 dan §9 menulis "enam simbol, 42 kredit" | — | 5 | **tertutup 2026-09-12** — rencana memakai enam simbol / 42 kredit, alasannya di `plan/README.md` |
 
 ---
@@ -108,7 +109,7 @@ Commit `plan/PROGRESS.md` bersama perubahan kode, dan tuliskan jumlah gate yang 
 
 | Fase | Berkas | Keadaan | Kredit | Catatan |
 | --- | --- | --- | --- | --- |
-| 0 · Fondasi | `phases/phase-0-foundation.md` | `[ ]` | 0 | M6 sudah terpenuhi sebagian: `src/katalis/` terlacak sejak `1a439e6`, `.env` diabaikan. D1, D3, D4 dan dua defect audit masih terbuka |
+| 0 · Fondasi | `phases/phase-0-foundation.md` | `[~]` | 0 | Tujuh dari tujuh tugas dikerjakan, satu sebagian: D1, D3, D4, lubang ambang learned dan look-ahead ditutup; `README.md` tingkat repo dipindah ke Fase 7 (B15). 73 → 94 gate. Belum `[x]` karena belum ada revisi Cloud Run |
 | 1 · Modifier suspensi | `phases/phase-1-suspension-modifier.md` | `[ ]` | 0 | `normalize_suspension()` sudah ada di `sources.py:324`, belum dipakai kartu |
 | 2 · Pipeline deploy | `phases/phase-2-deploy-pipeline.md` | `[ ]` | 0 | Nol komponen ada. Tidak ada `Dockerfile`, `cloudbuild.yaml`, atau proyek GCP |
 | 3 · Klasifikasi deterministik | `phases/phase-3-deterministic-classifier.md` | `[ ]` | 0 | Nol referensi `CLASSIFIER` di `src/katalis/` |
@@ -175,3 +176,23 @@ simbol / 42 kredit, bukan dua / 12 (B13).
 
 Berkas `state/thresholds.learned.json` yang dibuat untuk reproduksi serangan sudah dihapus;
 `ls src/katalis/state` kembali mengembalikan `No such file or directory`.
+
+### 2026-09-12 — Fase 0 dijalankan
+
+Tujuh tugas, enam selesai penuh, satu dilewati sebagian. Gate 73 → **94**, exit 0.
+
+Ditutup: B1 (gate sitasi kini membandingkan multiset token kartu terhadap token yang
+`_render()` sendiri keluarkan — ketiga suntikan yang kemarin hijau sekarang merah), B2
+(`check_learned_cannot_escape()` membuka `state/thresholds.learned.json` dan menolak nilai yang
+harus dijepit; berkas beracun membuat suite exit 1), B4 (`actions` melewati `upto()`, dan
+`check_as_of_does_not_leak` membandingkan **tiap** figure pada tiap kartu demo alih-alih satu
+figure pada satu simbol sintetis), B5 (`DEMO_CASES` memuat `recorded/LIFE`, dan keempat gate
+kartu mengulangi seluruh tuple). D4 ditutup di catatan `baseline_days`.
+
+Dibuka: B14 (headline pilar memakai pembulatan sendiri — gate baru sah menerimanya, tetapi
+klaim "tiap angka membawa sitasinya" baru benar penuh setelah Fase 4 menyeragamkan format
+headline) dan B15 (`README.md` tingkat repo, dipindah ke Fase 7 lewat bagian Kalau Ini Melar
+milik Fase 0).
+
+Nol kredit dibelanjakan. `state/thresholds.learned.json` yang dipakai menguji gate sudah
+dihapus; `ls src/katalis/state` kembali `No such file or directory`.

@@ -34,8 +34,11 @@ BAHAYA = "bahaya"
 TAK_TERUKUR = "tidak terukur"
 
 #: The cases the gates run end to end. `synth/` carries 90 trading days per symbol, which is
-#: what a real baseline needs; the recorded windows are exercised separately, where they reach.
-DEMO_CASES = (("synth", "KVDN", "2026-09-04"),)
+#: what a full baseline needs; `recorded/LIFE` is the real IDX tape the whole product is argued
+#: from, and leaving it out of the gates is what let "73 green" say nothing about the one card
+#: anybody is asked to believe. Every card gate iterates all of these — none may index [0].
+DEMO_CASES = (("synth", "KVDN", "2026-09-04"),
+              ("recorded", "LIFE", "2026-09-01"))
 
 
 @dataclass
@@ -375,7 +378,11 @@ def catalyst(articles, filings, actions, as_of, window):
     material = [f for f in filings
                 if (f.get("share_percentage_transaction") or 0) >= T.get("filing_material_pct")
                 and (f.get("transaction_type") or "") == "buy"]
-    upcoming = [a for a in actions if (a.get("date") or "") >= start]
+    # Cut at `as_of`, not just at `start`. The payload carries the action's own date and no
+    # announcement date, so an action dated after the card cannot be shown to have been
+    # knowable on the card's day — and a figure on a card dated D that comes from data dated
+    # after D is the defect that makes any replay of this product invalid.
+    in_window = [a for a in upto(actions, as_of) if (a.get("date") or "") >= start]
 
     figures = [
         Figure("artikel_mendahului", len(before), sources.ENDPOINT["news"],
@@ -384,7 +391,7 @@ def catalyst(articles, filings, actions, as_of, window):
                ("timestamp", "symbols")),
         Figure("filing_material", len(material), sources.ENDPOINT["filings"],
                ("holder_name", "share_percentage_transaction", "transaction_type")),
-        Figure("aksi_korporasi", len(upcoming), sources.ENDPOINT["corporate_actions"],
+        Figure("aksi_korporasi", len(in_window), sources.ENDPOINT["corporate_actions"],
                ("action_type", "date")),
     ]
     unchecked = ["cuaca dan fase iklim — belum dipasang",
@@ -407,9 +414,9 @@ def catalyst(articles, filings, actions, as_of, window):
                       f"Tidak ada kabar yang mendahului lonjakan. {len(after)} artikel terbit "
                       f"SESUDAHNYA dan melaporkan kenaikannya.",
                       figures, unchecked)
-    if upcoming:
+    if in_window:
         return Pillar("katalis", WASPADA,
-                      f"Tidak ada kabar; {len(upcoming)} aksi korporasi terjadwal.",
+                      f"Tidak ada kabar; {len(in_window)} aksi korporasi di jendela.",
                       figures, unchecked)
     return Pillar("katalis", BAHAYA,
                   "Tidak ada apa pun yang menjelaskannya: nol artikel, nol filing material, "
@@ -475,26 +482,35 @@ def assess(bag, symbol, as_of):
             "verdict": name, "modifiers": modifiers, "pillars": pillars}
 
 
-def bag_from(source, symbol, as_of):
-    """Everything the pillars need, read locally. Missing datasets degrade to empty lists."""
+def bag_from(source, symbol, as_of, cut=True):
+    """Everything the pillars need, read locally. Missing datasets degrade to empty lists.
+
+    `cut=False` builds the same bag with every as-of cut removed. Nothing in the product
+    calls it that way — `check_as_of_does_not_leak` does, because the only honest way to
+    prove a cut happened is to build the card without it and show the card did not move.
+    """
     def maybe(fn, *args, **kwargs):
         try:
             return fn(*args, **kwargs)
         except (sources.NotRecorded, ValueError, KeyError):
             return None
 
+    def cutoff(rows):
+        return upto(rows, as_of) if cut else list(rows)
+
+    end = as_of if cut else None
     shares, shares_fields, shares_exact = (maybe(sources.shares_outstanding, source, symbol)
                                            or (None, (), False))
     return {
-        "daily": upto(sources.daily(source, symbol), as_of),
-        "index": upto(sources.index_daily(source), as_of),
-        "flow": upto(maybe(sources.broker_flow, source, symbol) or [], as_of),
+        "daily": cutoff(sources.daily(source, symbol)),
+        "index": cutoff(sources.index_daily(source)),
+        "flow": cutoff(maybe(sources.broker_flow, source, symbol) or []),
         "registry": maybe(sources.registry_index, source) or {},
         "free_float": maybe(sources.free_float, source, symbol),
         "shares": shares, "shares_fields": shares_fields, "shares_exact": shares_exact,
-        "news": maybe(sources.news_for, source, symbol, None, as_of) or [],
-        "filings": maybe(sources.filings_for, source, symbol, None, as_of) or [],
-        "actions": maybe(sources.corporate_actions, source, symbol) or [],
+        "news": maybe(sources.news_for, source, symbol, None, end) or [],
+        "filings": maybe(sources.filings_for, source, symbol, None, end) or [],
+        "actions": cutoff(maybe(sources.corporate_actions, source, symbol) or []),
     }
 
 
@@ -553,10 +569,14 @@ def check_no_lots_no_float():
 
 
 def check_as_of_does_not_leak():
-    """Rule 2: a figure must not change when rows after `as_of` are added to the source."""
-    # Run on `synth/`, which carries 90 trading days per symbol. The recorded series is 20
-    # days long — cutting it in half leaves too short a baseline to score, which is the
-    # correct behaviour and the wrong fixture for this particular question.
+    """Rule 2: no figure may change when rows after `as_of` are added to the source.
+
+    Two halves. The first is the original mid-series volume test, kept because it isolates
+    the cut from everything else. The second is the one that matters: build every demo card
+    twice, once with the cuts and once without, and require **every figure** to be identical.
+    The old form tested one figure (`volume_z`) on one synthetic symbol, which is how
+    `actions` reached the card uncut for as long as it did.
+    """
     failures = []
     rows = sources.daily("synth", sources.available_symbols("synth")[0])
     cut = rows[len(rows) // 2]["date"]
@@ -564,7 +584,22 @@ def check_as_of_does_not_leak():
     trimmed = volume(upto(rows, cut), cut, window_dates(rows, cut, 3))
     if full.value("volume_z") != trimmed.value("volume_z"):
         failures.append("volume changed when future rows were present — the as-of cut leaks")
-    return failures, 1
+
+    for source, symbol, as_of in DEMO_CASES:
+        cut_card = assess(bag_from(source, symbol, as_of), symbol, as_of)
+        raw_card = assess(bag_from(source, symbol, as_of, cut=False), symbol, as_of)
+        if (cut_card["verdict"], cut_card["modifiers"]) != (raw_card["verdict"],
+                                                            raw_card["modifiers"]):
+            failures.append(f"{symbol} {as_of}: the verdict moved when future rows were "
+                            f"present — {raw_card['verdict']!r} vs {cut_card['verdict']!r}")
+        for cut_pillar, raw_pillar in zip(cut_card["pillars"], raw_card["pillars"]):
+            for figure in cut_pillar.figures:
+                if figure.value != raw_pillar.value(figure.name):
+                    failures.append(
+                        f"{symbol} {as_of}: {cut_pillar.name}.{figure.name} = "
+                        f"{raw_pillar.value(figure.name)!r} with future rows present, "
+                        f"{figure.value!r} without — the as-of cut leaks")
+    return failures, 1 + len(DEMO_CASES)
 
 
 def check_verdict_is_never_advice():

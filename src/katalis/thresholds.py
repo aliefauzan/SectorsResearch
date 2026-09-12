@@ -54,7 +54,9 @@ TABLE = {
                     "baseline from handing a stock a beta of 4 and erasing its own move."),
     "baseline_days": (45, 30, 60,
                       "Trading days of baseline. 45 plus a 10-day scan plus the 3-day "
-                      "exclusion fits one /v2/daily/ call, which caps at 90 days."),
+                      "exclusion fits one /v2/daily/ call, which caps at 90 CALENDAR "
+                      "days — about 62 trading days, which is what LIFE actually "
+                      "returned. Budget against 62 trading days, not 90."),
     "event_window": (3, 1, 5,
                      "Trading days the move and the flow are both measured over. Broker "
                      "summary is daily; three days is long enough to survive one quiet session."),
@@ -136,12 +138,35 @@ def check_table():
 
 
 def check_learned_cannot_escape():
-    """A calibration file asking for something absurd must not change the value used."""
+    """Two questions, and the second one was never asked until it was attacked.
+
+    The first is arithmetic: does `clamp()` hold the bounds. It always did.
+
+    The second is about the file on disk. `get()` clamps a poisoned value silently, so
+    writing `top1_dominant: 0.99` moved the threshold the card uses from 0.40 to 0.60 — its
+    ceiling — while every gate stayed green, because no gate ever opened the file. A value
+    that has to be clamped is a value that should have been **rejected**, and the build is
+    where it gets rejected. This check opens `state/thresholds.learned.json` and fails on
+    anything a calibration loop could not legitimately have written.
+    """
     failures = []
     for name, (_, low, high, _) in TABLE.items():
         if clamp(name, high + 1000) > high or clamp(name, low - 1000) < low:
             failures.append(f"{name}: a runaway calibration escaped its bounds")
-    return failures, 1
+
+    for name, value in sorted(_learned().items()):
+        where = f"{LEARNED}: {name}"
+        if name not in TABLE:
+            failures.append(f"{where} is not a threshold in this table")
+            continue
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            failures.append(f"{where} = {value!r} is not a number")
+            continue
+        if value != clamp(name, value):
+            _, low, high, _ = TABLE[name]
+            failures.append(f"{where} = {value} is outside [{low}, {high}] and was silently "
+                            f"clamped to {clamp(name, value)}")
+    return failures, 2
 
 
 def main():
