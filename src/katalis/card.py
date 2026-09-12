@@ -76,6 +76,14 @@ def _number(figure):
     return str(value)
 
 
+def _scalar(value):
+    """A threshold value in its short form — `0.4`, `45`, `2.5` — so the origin line stays
+    one line and the citation gate counts the same token the reader sees."""
+    if isinstance(value, float):
+        return f"{value:g}"
+    return str(value)
+
+
 def _render(result, source, company=None):
     """The card, and the multiset of number tokens this function itself emitted.
 
@@ -103,6 +111,11 @@ def _render(result, source, company=None):
     put(f"{label}{' ' * max(1, WIDTH - len(label) - len(span) - len(source) - 5)}"
         f"{span} · {source}")
     put(f"kabar dilabeli CLASSIFIER={result.get('classifier', classify.DEFAULT)}")
+    used = result.get("thresholds") or []
+    if used:
+        put(*_wrap("ambang dipakai: " + " · ".join(
+            f"{entry['name']} {_scalar(entry['value'])} {entry['origin']}"
+            for entry in used)))
     put(_rule())
 
     for pillar in result["pillars"]:
@@ -249,6 +262,37 @@ def check_card_names_its_classifier():
     return failures, 2 * len(P.DEMO_CASES)
 
 
+def check_card_names_threshold_origins():
+    """PRD §7 and §13: the card says whether each threshold it applied shipped or was learned.
+
+    The list comes from `pillars.PILLAR_THRESHOLDS`, so the card cannot print an origin for a
+    threshold the pillars never read, and cannot quietly drop one they did.
+    """
+    failures = []
+    checked = 0
+    for source, symbol, as_of in P.DEMO_CASES:
+        result = P.assess(P.bag_from(source, symbol, as_of), symbol, as_of)
+        # Whitespace-flattened, because `_wrap` may break the line between the value and its
+        # origin and the reader still sees one sentence.
+        text = " ".join(render(result, source).split())
+        used = result.get("thresholds") or []
+        checked += 2 + len(used)
+        if not used:
+            failures.append(f"{symbol}: the card names no threshold origin at all")
+        names = [entry["name"] for entry in used]
+        if len(names) != len(set(names)):
+            failures.append(f"{symbol}: a threshold is listed twice: {names}")
+        for entry in used:
+            if entry["origin"] not in ("shipped", "learned"):
+                failures.append(f"{symbol}: {entry['name']} has origin "
+                                f"{entry['origin']!r}, expected shipped or learned")
+            needle = f"{entry['name']} {_scalar(entry['value'])} {entry['origin']}"
+            if needle not in text:
+                failures.append(f"{symbol}: {entry['name']} is applied but the card does "
+                                f"not print {needle!r}")
+    return failures, checked
+
+
 def check_card_builds_without_any_key():
     """§12.3 rule 3, gated: strip every key from the environment and the card still prints.
 
@@ -316,6 +360,7 @@ def main():
     total, bad = 0, []
     for check in (check_every_number_is_a_figure, check_no_advice_in_render,
                   check_field_block_is_complete, check_card_names_its_classifier,
+                  check_card_names_threshold_origins,
                   check_card_builds_without_any_key, check_classifier_is_read_in_one_place,
                   check_rejected_symbol_says_why):
         failures, count = check()

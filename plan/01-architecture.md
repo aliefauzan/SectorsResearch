@@ -57,7 +57,7 @@ substitusi publik, dan itulah yang membuat produk ini lolos uji "cabut Sectors, 
 | **Konsentrasi** | Siapa yang membeli, dan seberapa sedikit tangan | `/v2/broker-summary/{symbol}/` × `/v2/brokers/` | `pangsa_puncak`, `hhi`, `pembeli_efektif`, `pangsa_asing`, `pangsa_kohort`, `float_terserap`, `harga_masuk_puncak` |
 | **Volume** | Apakah ramainya di luar kebiasaan saham itu sendiri | `/v2/daily/{symbol}/` | `volume_puncak`, `volume_z` (z robust, baseline 45 hari bursa, lantai MAD) |
 | **Momentum** | Berapa banyak geraknya miliknya sendiri, bukan milik pasar | `/v2/daily/{symbol}/` + `/v2/index-daily/ihsg/` | `return_kumulatif`, `return_residual`, `beta_efektif`, `residual_z` |
-| **Katalis** | Apakah ada yang **menjelaskan** geraknya, bukan sekadar **melaporkan** | `/v2/news/`, `/v2/filings/`, `/v2/company/corporate-actions/{symbol}/` | `artikel_mendahului`, `artikel_mengikuti`, `filing_material`, `aksi_korporasi` |
+| **Katalis** | Apakah ada yang **menjelaskan** geraknya, bukan sekadar **melaporkan** | `/v2/news/`, `/v2/filings/`, `/v2/company/corporate-actions/{symbol}/` | `artikel_menjelaskan`, `artikel_melaporkan`, `filing_material`, `aksi_korporasi` (Fase 4 menggantikan `artikel_mendahului`/`artikel_mengikuti`, yang menghitung sampai awal tape) |
 
 Pilar Katalis adalah yang paling lemah hari ini dan itu yang dibetulkan Fase 3 dan Fase 4. Ia
 membaca dua artikel LIFE — sebuah "Top Gainers" dan berita suspensinya sendiri — sebagai

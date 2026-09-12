@@ -13,29 +13,29 @@ punya perintahnya sendiri.
 
 | | |
 | --- | --- |
-| Fase berjalan | **Fase 0, 1, 2 dan 3 selesai** — Fase 2 tanpa trigger push. Empat dari delapan |
-| Fase berikutnya | Fase 4 · Verdict pilar |
-| Revisi Cloud Run yang melayani | **`katalis-api-00003-r8l`**, 100% lalu lintas, di `https://katalis-api-ibyebnreqa-et.a.run.app` — `GET /card/{simbol}?date=…` dan `GET /health` |
+| Fase berjalan | **Fase 0 sampai 4 dikerjakan**; `[x]` penuh baru Fase 1 dan 3. Fase 0 `[~]` karena B15, Fase 2 `[~]` karena B17 (trigger push), **Fase 4 `[~]` karena B18 (revisi Cloud Run baru)** |
+| Fase berikutnya | Fase 5 · Korpus berlabel — **menunggu B3 ditutup** |
+| Revisi Cloud Run yang melayani | **`katalis-api-00003-r8l`**, 100% lalu lintas, di `https://katalis-api-ibyebnreqa-et.a.run.app` — `GET /card/{simbol}?date=…` dan `GET /health`. **Ia belum memuat Fase 4**; yang dibutuhkan `katalis-api-00004-…` |
 | Proyek GCP | `ada-sectors-508410`, penagihan `01B951-232B54-4E1D9A` ("My Billing Account"), `SECTORS_API_KEY` di Secret Manager v1 sebagai referensi |
 | Yang berjalan di GCP | D1 `katalis-api` · D2 job `katalis-refresh` · D3 scheduler `katalis-refresh-daily` (satu job, `30 18 * * 1-5` Asia/Jakarta) · D4 secret · D6 repo `katalis` (simpan 5 tag) · D7 bucket `katalis-recorded` (`us-east1`). **D5 trigger belum** — B17 |
-| Gate | **243 assertion hijau di 40 fungsi check**, exit 0 (naik dari 128 di 28 fungsi — baris Fase 2 menulis 26 karena dua check `thresholds.py` tidak dicetak per nama) |
-| Kredit terpakai | **377 terkonfirmasi portal** (ekspor `2026-09-05`), **≈384** termasuk tujuh baris ledger setelah tanggal ekspor. **Nol dibelanjakan di Fase 2 maupun Fase 3** |
+| Gate | **297 assertion hijau di 44 fungsi check**, exit 0 (naik dari 243 di 40 fungsi — empat fungsi bertambah: dua di `pillars.py`, satu di `card.py`, satu di `server.py`; `thresholds.py` tetap tidak mencetak dua check-nya per nama) |
+| Kredit terpakai | **377 terkonfirmasi portal** (ekspor `2026-09-05`), **≈384** termasuk tujuh baris ledger setelah tanggal ekspor. **Nol dibelanjakan di Fase 2, 3 maupun 4** |
 | Kredit tersisa | **≈616 dari 1.000** |
-| Produk | 9 berkas di `src/katalis/` — `classify.py` lahir di Fase 3; ditambah `Dockerfile`, `.dockerignore`, `.gcloudignore`, `cloudbuild.yaml`, `infra/` di akar |
-| Repo | remote `https://github.com/aliefauzan/SectorsResearch`, cabang `master` |
-| Working tree | bersih saat Fase 3 dimulai; **lima commit lokal belum di-push** |
+| Produk | 9 berkas di `src/katalis/` — tidak ada modul baru di Fase 4; `pillars.py`, `card.py`, `server.py` yang berubah |
+| Repo | remote `https://github.com/aliefauzan/SectorsResearch`, cabang `master`. **`origin/master` sudah di `29660a1`**, jadi sampai akhir Fase 3 semuanya sudah di-push — klaim "lima commit lokal belum di-push" di edisi sebelumnya sudah tidak benar |
+| Working tree | bersih saat Fase 4 dimulai; satu commit Fase 4 di cabang `fase4-verdicts`, belum di-push |
 
 ### Perintah yang menghasilkan baris-baris itu
 
 ```bash
-cd src/katalis && ./run.sh test; echo "exit=$?"     # 20 22 92 49 27 20 13 = 243, exit=0
-wc -l src/katalis/*.py src/katalis/*.sh             # Σ 3023
+cd src/katalis && ./run.sh test; echo "exit=$?"     # 20 22 92 62 63 25 13 = 297, exit=0
+wc -l src/katalis/*.py src/katalis/*.sh             # Σ 3282
 git ls-files src/katalis                            # 9 berkas
 git ls-files | wc -l                                # 720
-git log --oneline | wc -l                           # 15
+git log --oneline | wc -l                           # 23
 git log --reverse --format='%ad %h %s' --date=short | head -1   # 2026-09-05 bb83d3a init
 git remote -v
-git status --porcelain                              # kosong
+git status --porcelain                              # bersih sebelum commit Fase 4
 gcloud run services describe katalis-api --region=asia-southeast2 \
   --format='value(status.url,status.traffic[0].revisionName)'
 gcloud scheduler jobs list --location=asia-southeast2
@@ -59,12 +59,16 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 
 | Terverifikasi **lokal** (perintah dijalankan di mesin ini, 2026-09-12) | Perintah |
 | --- | --- |
-| 243 gate hijau di 40 fungsi check, exit 0 | `cd src/katalis && ./run.sh test` |
+| 297 gate hijau di 44 fungsi check, exit 0 | `cd src/katalis && ./run.sh test` |
 | LIFE `siap`, 62 hari bursa, 7 hari aliran broker | `./run.sh symbols` |
-| Kartu LIFE terbit: `SATU PEMBELI DOMINAN · FLOAT TIPIS · free float 7.5%` | `./run.sh pilar LIFE 2026-09-01` |
+| Kartu LIFE terbit: `BERGERAK TANPA PENJELASAN · FLOAT TIPIS · free float 7.5%` | `./run.sh pilar LIFE 2026-09-01` |
+| Kartu LIFE mencetak `artikel_menjelaskan 0 · artikel_melaporkan 1`, dan `/v2/news/ → timestamp, symbols, title, tags, dimension` ada di blok FIELD | `./run.sh pilar LIFE 2026-09-01` |
+| Kartu LIFE mencetak asal 16 ambang yang dipakainya, semuanya `shipped` | `./run.sh pilar LIFE 2026-09-01` → baris `ambang dipakai:` |
+| Header `Access-Control-Allow-Origin: *` hadir pada `/card/…`, `/health`, `/healthz` dan pada penolakan `/nope` | `python3 -c` atas `server._probe`; gate `check_cors_header_is_on_every_reply` |
 | Modifier suspensi terbit hanya setelah peristiwanya: `2026-09-01` diam, `2026-09-04` berbunyi `PERNAH DISUSPENSI · 2026-09-04` | `./run.sh pilar LIFE 2026-09-01` lalu `2026-09-04` |
 | Kartu LIFE `2026-09-10` ditolak `tanpa_broker` — tape broker berakhir `2026-09-04` | `./run.sh pilar LIFE 2026-09-10` |
-| Pilar Katalis berbunyi `[tenang]` pada LIFE — **defect D2 masih terbuka, itu Fase 4** | perintah yang sama |
+| Pilar Katalis LIFE `2026-09-01` kini `[bahaya]` dan verdictnya `BERGERAK TANPA PENJELASAN` — **D2 tertutup 2026-09-12**, dan gate `check_life_2026_09_01_is_an_unexplained_move` mengulanginya tiap build | `./run.sh pilar LIFE 2026-09-01` |
+| Membalik satu label LIFE di `classify.CASES` membuat gate tugas 6 merah, `4/5`, exit 1 | monkeypatch `classify.CASES` + `pillars.check_life_2026_09_01_is_an_unexplained_move()` |
 | Gate sitasi menolak ketiga suntikan (**ditutup Fase 0**) | monkeypatch `card.render` + `check_every_number_is_a_figure()` |
 | Berkas ambang hasil belajar yang diracuni membuat suite merah, exit 1 (**ditutup Fase 0**) | tulis `state/thresholds.learned.json`, lalu `./run.sh test` |
 | `actions` dipotong `as_of`; aksi bertanggal `2026-12-31` tidak lagi masuk kartu (**ditutup Fase 0**) | suntikan `sources.corporate_actions` + `check_as_of_does_not_leak` → `([], 3)` |
@@ -72,7 +76,7 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 | `CLASSIFIER` hidup di lima berkas (`card.py` 12, `classify.py` 7, `server.py` 6, `cli.py` 1, `pillars.py` 1); nol referensi `llm`, `lesson`, hold-out | `grep -rc CLASSIFIER src/katalis/*.py` |
 | `state/` tidak ada di `src/katalis/` | `ls src/katalis/state` |
 | 18 ambang di `thresholds.TABLE` | `python3 -c "import thresholds as T; print(len(T.TABLE))"` |
-| Headline pilar masih memakai pembulatan sendiri (`65%` vs figure `64.7%`) | `./run.sh pilar LIFE 2026-09-01` — blocker B14 |
+| Headline pilar masih memakai pembulatan sendiri (`65%` vs figure `64.7%`, `2.2` vs `2.17`) | `./run.sh pilar LIFE 2026-09-01` — blocker B14, **tidak disentuh Fase 4**: ia tidak termasuk enam tugas berkas fase |
 | 20 baris suspensi atas 17 simbol unik | `python3` atas `research/harness/recorded/v2_suspensions.json` |
 | 136 berkas payload terekam | `ls research/harness/recorded/*.json \| wc -l` |
 | Tidak ada `.env` atau `__pycache__` terlacak | `git ls-files \| grep -E '\.env\|__pycache__'` → `.env.example` |
@@ -81,26 +85,25 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 | --- | --- |
 | Onboarding sectors.app tiap peserta sebelum baris kode pertama | Blocker B7 |
 | Apakah ada anggaran dan peringatan biaya di akun penagihan | Proyek tertaut ke akun berbayar, bukan trial; pemakaian di atas Always Free ditagih. Lihat `TODO.md` |
-| Tiga commit lokal (`6128b4b`, `7121ef2`, `83fe2a1`) belum di-push ke origin | `git log origin/master..HEAD --oneline`; lihat `TODO.md` |
+| ~~Tiga commit lokal (`6128b4b`, `7121ef2`, `83fe2a1`) belum di-push~~ **sudah tidak benar** — `origin/master` di `29660a1`, sama dengan ujung Fase 3 | `git ls-remote origin refs/heads/master` → `29660a1…` |
 | Kredit tersisa **tepat** ≈616 | Ekspor portal terakhir bertanggal `2026-09-05`; belanja sesudahnya hanya diketahui dari ledger. Blocker B3 |
 
 ---
 
 ## Tugas berikutnya
 
-Buka `plan/phases/phase-4-pillar-verdicts.md`. Fase 2 meninggalkan satu lubang yang **tidak**
-menghalanginya: trigger push (B17) menunggu satu handshake OAuth GitHub di konsol, dan
-perintah setelahnya sudah tertulis di `infra/trigger.sh`. Sampai itu ditekan, tiap deploy
-adalah `gcloud builds submit --config cloudbuild.yaml --substitutions=SHORT_SHA=… .` — yang
-menjalankan gate di dalam image yang sama, jadi yang hilang bukan pembuktian artefaknya,
-melainkan pembuktian bahwa sebuah push memulainya.
+Fase 4 menutup D2 dan B6. Kartu LIFE `2026-09-01` berbunyi **BERGERAK TANPA PENJELASAN**,
+pilar Katalisnya `[bahaya]`, dan gate `check_life_2026_09_01_is_an_unexplained_move`
+mengulanginya tiap build — kartu itu berhenti menjadi ilustrasi dan menjadi kasus uji. Dua
+angka lama yang menghitung setiap artikel sampai awal tape (`artikel_mendahului`,
+`artikel_mengikuti`) diganti oleh `artikel_menjelaskan` dan `artikel_melaporkan`, yang
+dipotong `news_lookback_days` — ambang yang sampai fase ini dideklarasikan dan tidak pernah
+dibaca. Kartu juga mencetak asal tiap ambang yang dipakainya (B11 ditutup).
 
-Fase 3 memasang mesinnya dan **sengaja tidak** menyambungkannya ke verdict: `classify.py`
-melabeli "Top Gainers" dan berita suspensi `melaporkan`, kartu mencetak
-`menjelaskan_mendahului 2 · melaporkan_mendahului 1`, tetapi headline pilar Katalis masih
-menyitir Top Gainers sebagai "kabar yang mendahului" dan statusnya masih `[tenang]`. Itu
-Fase 4, dan memisahkannya adalah yang membuat jelas perubahan mana menggerakkan kartu mana.
-B6 karena itu **masih terbuka**.
+Yang belum: **revisi Cloud Run baru** (B18). `katalis-api-00003-r8l` melayani Fase 3, jadi
+kriteria keluar 8 dan `[x]` untuk Fase 4 menunggu satu `gcloud builds submit`. Trigger push
+(B17) juga masih menunggu handshake OAuth GitHub di konsol, dan perintah setelahnya sudah
+tertulis di `infra/trigger.sh`.
 
 ---
 
@@ -116,17 +119,18 @@ Baris bertanda pemilik **Saya (manusia)** punya langkah konkretnya di
 | B3 | Angka kredit di PRD §0 (272) dan §5 (plafon 332) lebih rendah 105 daripada tagihan portal (377). Ekspor portal terakhir `2026-09-05`, jadi sisa nyata hanya diketahui sampai tanggal itu | Saya (manusia) — ambil ekspor portal baru | 5 | terbuka |
 | B4 | `actions` tidak dipotong `as_of` | Anda (agen) | 0 | **tertutup 2026-09-12** — `bag_from()` memotong `actions`; `check_as_of_does_not_leak` membandingkan tiap figure pada tiap kartu demo |
 | B5 | `DEMO_CASES` hanya memuat kasus sintetis | Anda (agen) | 0 | **tertutup 2026-09-12** — `("recorded", "LIFE", "2026-09-01")` masuk, dan keempat gate kartu mengulangi seluruh tuple |
-| B6 | Pilar Katalis berbunyi `tenang` pada LIFE, menyitir "Top Gainers" dan berita suspensi sebagai kabar yang mendahului | Anda (agen) | 3 lalu 4 | terbuka — **separuh pertama tertutup 2026-09-12**: keduanya kini dilabeli `melaporkan` oleh `classify.py` dan dihitung di kartu; headline dan status baru berubah di Fase 4 |
+| B6 | Pilar Katalis berbunyi `tenang` pada LIFE, menyitir "Top Gainers" dan berita suspensi sebagai kabar yang mendahului | Anda (agen) | 3 lalu 4 | **tertutup 2026-09-12** — kartu `2026-09-01` berbunyi `BERGERAK TANPA PENJELASAN`, pilar Katalis `[bahaya]`, dan Top Gainers tidak lagi disitir sebagai kabar yang mendahului; digate oleh `check_life_2026_09_01_is_an_unexplained_move` |
 | B7 | Onboarding sectors.app tiap peserta sebelum baris kode pertama tidak dapat diverifikasi dari repo. Commit pertama `2026-09-05`. **Tidak dapat diperbaiki mundur** | Saya (manusia) | kelayakan | terbuka |
 | B8 | Video juri, video teaser, dan post media sosial: nol bukti hari ini. Ketiganya syarat submission | Saya (manusia) | 7 | terbuka — **bagian "repo publik" tertutup 2026-09-12**: `gh repo view aliefauzan/SectorsResearch` → `PUBLIC`, dibuat `2026-09-05` |
 | B9 | Dua repo. PRD di `SectorsHackathon` (14 berkas, semuanya `.md`); kode di repo ini, remote `SectorsResearch`. Form submission meminta satu tautan, dan kedalaman teknis diverifikasi terhadap repo itu. PRD §12.1 menyebut nama repo yang berbeda dari remote yang sebenarnya | Saya (manusia) | 7 | terbuka |
 | B10 | Track 01 mewajibkan komponen AI/LLM dan orkestrasi milik sendiri. Jalur default KATALIS deterministik; yang memenuhi palang adalah Fase 6. Kalau Fase 6 dipotong, deklarasi track harus berpindah ke Track 03 **sebelum** submit | Saya (manusia) — keputusan | 6 / 7 | terbuka |
-| B11 | Kartu tidak menyebut asal ambang (`shipped` / `learned`) maupun classifier yang dipakai, padahal PRD §7 dan §13 menyatakan ia menyebut keduanya | Anda (agen) | 3 dan 4 | terbuka — **bagian classifier tertutup 2026-09-12**: kartu mencetak satu baris `kabar dilabeli CLASSIFIER=rules`, digate oleh `check_card_names_its_classifier`. Asal ambang tetap Fase 4 |
+| B11 | Kartu tidak menyebut asal ambang (`shipped` / `learned`) maupun classifier yang dipakai, padahal PRD §7 dan §13 menyatakan ia menyebut keduanya | Anda (agen) | 3 dan 4 | **tertutup 2026-09-12** — kartu mencetak `kabar dilabeli CLASSIFIER=rules` (Fase 3) dan satu baris `ambang dipakai:` dengan `shipped`/`learned` untuk tiap ambang yang benar-benar dibaca (Fase 4); dua gate terpisah |
 | B12 | PRD §0 mengutip `cat src/katalis/state/thresholds.learned.json` untuk angka "18/18 ambang `shipped`". Berkas itu tidak pernah ada | Anda (agen) | 6, atau koreksi PRD lebih awal | terbuka |
 | B16 | Kartu LIFE tidak dapat dinilai setelah `2026-09-04`: tape `/v2/broker-summary/` berakhir di sana, jadi tanggal yang lebih baru ditolak `tanpa_broker`. Ini benar, dan ia membatasi tanggal mana yang bisa dipakai demo maupun gate | — | 5 | terbuka — hilang sendiri kalau jendela broker LIFE dibeli lebih panjang; tidak dianggarkan |
-| B14 | Headline pilar memakai pembulatannya sendiri: kartu LIFE menulis `65%` sementara figure-nya `64.7%`, dan `2.2` sementara figure-nya `2.17`. Gate baru menerima keduanya karena renderer memang mengeluarkan keduanya; menuntut headline memakai angka figure apa adanya berarti mengubah format keempat pilar | Anda (agen) | 4 | terbuka |
+| B14 | Headline pilar memakai pembulatannya sendiri: kartu LIFE menulis `65%` sementara figure-nya `64.7%`, dan `2.2` sementara figure-nya `2.17`. Gate baru menerima keduanya karena renderer memang mengeluarkan keduanya; menuntut headline memakai angka figure apa adanya berarti mengubah format keempat pilar | Anda (agen) | 4 | **tetap terbuka** — Fase 4 menjalankannya dan tidak menyentuhnya: keenam tugas berkas fase tidak memuatnya, dan menutupnya berarti satu formatter bersama untuk headline dan figure di keempat pilar. Dinaikkan ke orkestrator, bukan dikerjakan diam-diam |
+| B18 | Kartu Fase 4 belum dilayani Cloud Run: `katalis-api-00003-r8l` adalah image Fase 3, jadi `GET /card/LIFE?date=2026-09-01` dari URL publik masih menjawab `SATU PEMBELI DOMINAN` dan tanpa header CORS | Saya (manusia) — satu `gcloud builds submit` | 4 | terbuka — perintahnya ada di `TODO.md`; sesi Fase 7 menunggu revisi ini untuk membuktikan kriteria 1-nya |
 | B15 | `README.md` tingkat repo belum ada | Anda (agen) | 7 | terbuka — dipindah dari Fase 0 lewat bagian Kalau Ini Melar |
-| B17 | Trigger Cloud Build dari push belum ada: `gcloud builds connections list` → nol. Menyambungkan `aliefauzan/SectorsResearch` menuntut handshake OAuth GitHub yang tidak punya bentuk CLI, dan tiga commit — kini empat — belum di-push. Sampai keduanya selesai, kriteria keluar 1 Fase 2 terbuka dan kriteria 2 hanya terbukti lewat `builds submit` | Saya (manusia) — sambungkan repo di konsol, lalu `infra/trigger.sh` | 2 | terbuka |
+| B17 | Trigger Cloud Build dari push belum ada: `gcloud builds connections list` → nol. Menyambungkan `aliefauzan/SectorsResearch` menuntut handshake OAuth GitHub yang tidak punya bentuk CLI. Commitnya sendiri sudah di origin sampai `29660a1` (diperiksa 2026-09-12), jadi yang tersisa hanya handshake-nya. Sampai itu selesai, kriteria keluar 1 Fase 2 terbuka dan kriteria 2 hanya terbukti lewat `builds submit` | Saya (manusia) — sambungkan repo di konsol, lalu `infra/trigger.sh` | 2 | terbuka |
 | B13 | PRD §6 menulis S3 sebagai "dua simbol, 12 kredit"; §7 dan §9 menulis "enam simbol, 42 kredit" | — | 5 | **tertutup 2026-09-12** — rencana memakai enam simbol / 42 kredit, alasannya di `plan/README.md` |
 
 ---
@@ -139,7 +143,7 @@ Baris bertanda pemilik **Saya (manusia)** punya langkah konkretnya di
 | 1 · Modifier suspensi | `phases/phase-1-suspension-modifier.md` | `[x]` | 0 | Lima tugas, enam kriteria, semuanya terpenuhi, dan sejak `katalis-api-00002-c5r` **terverifikasi hidup** — modifier suspensi terbit dari URL, bukan hanya dari terminal. 94 → 98 gate |
 | 2 · Pipeline deploy | `phases/phase-2-deploy-pipeline.md` | `[~]` | 0 | Tujuh dari delapan tugas selesai dan berjalan; **tugas 8 (trigger push) menunggu OAuth GitHub — B17**, dan karena itu kriteria keluar 1 terbuka dan kriteria 2 hanya terbukti lewat `builds submit`. 98 → 128 gate |
 | 3 · Klasifikasi deterministik | `phases/phase-3-deterministic-classifier.md` | `[x]` | 0 | Enam tugas, tujuh kriteria, semuanya terpenuhi dan berjalan pada `katalis-api-00003-r8l`. `classify.py` lahir murni dan bertabel; `CLASSIFIER` dibaca di satu tempat dan menolak nilai asing dengan exit 2. 128 → 243 gate |
-| 4 · Verdict pilar | `phases/phase-4-pillar-verdicts.md` | `[ ]` | 0 | Kartu LIFE harus berhenti berbunyi `tenang`; labelnya sudah ada sejak Fase 3, yang belum adalah headline dan status |
+| 4 · Verdict pilar | `phases/phase-4-pillar-verdicts.md` | `[~]` | 0 | Keenam tugas dan tujuh kriteria yang dapat diperiksa sendiri terpenuhi — kartu LIFE kini `BERGERAK TANPA PENJELASAN` dengan pilar Katalis `[bahaya]`, digate tiap build. **`[~]` karena kriteria 8 menuntut revisi Cloud Run baru, dan `katalis-api-00003-r8l` masih image Fase 3 — B18.** 243 → 297 gate |
 | 5 · Korpus berlabel | `phases/phase-5-labeled-corpus.md` | `[ ]` | **42** | Menunggu B3 ditutup sebelum satu panggilan dibuat |
 | 6 · Loop belajar dan model | `phases/phase-6-learning-and-llm.md` | `[ ]` | 0 / kuota model | Potongan pertama di garis potong. Memotongnya memindahkan track |
 | 7 · Permukaan dan submission | `phases/phase-7-surface-and-submission.md` | `[ ]` | 0 | Tidak pernah dipotong |
@@ -367,3 +371,64 @@ Yang **tidak** berubah, dan itu disengaja: bunyi kartu. Pilar Katalis LIFE masih
 dan headline-nya masih menyitir Top Gainers. Fase ini memasang mesinnya; Fase 4 yang
 menyambungkannya ke verdict. B6 tetap terbuka, separuh pertamanya tertutup. B11 juga
 separuh: kartu kini menyebut classifier-nya, belum asal ambangnya.
+
+### 2026-09-12 — Fase 4 dijalankan
+
+Enam tugas, semuanya selesai. Gate 243 → **297** di 44 fungsi check, exit 0, nol kredit
+Sectors dan nol kuota model. Kartu LIFE `2026-09-01` berhenti berbunyi `tenang`:
+headline-nya `BERGERAK TANPA PENJELASAN`, pilar Katalisnya `[bahaya]`, dan
+`check_life_2026_09_01_is_an_unexplained_move` mengulanginya tiap build. B6 tertutup.
+B11 tertutup: kartu mencetak satu baris `ambang dipakai:` dengan `shipped`/`learned` untuk
+tiap ambang yang benar-benar dibaca, dan `check_card_names_threshold_origins` menuntut tiap
+baris itu ada di kartu.
+
+**Penyimpangan pertama, dicatat alih-alih diam-diam dibetulkan.** Tugas 1 menulis
+`artikel_mendahului` "berhenti menghitung artikel di dalam jendela lookback dan mulai
+menghitung yang berlabel `menjelaskan`", dan tugas 4 mengizinkan angka lama "tetap ada atau
+diganti". Saya menggantinya. Kalau keduanya dipertahankan, satu kartu akan mencetak
+`menjelaskan_mendahului 2` tepat di bawah headline yang berkata tidak ada yang menjelaskan —
+dua angka yang benar dengan dua arti berbeda, di satu blok, pada shot terpenting video.
+Empat angka lama (`artikel_mendahului`, `artikel_mengikuti`, `menjelaskan_mendahului`,
+`melaporkan_mendahului`) hilang, digantikan `artikel_menjelaskan` dan `artikel_melaporkan`
+yang dipotong `news_lookback_days`. Ambang itu sampai fase ini dideklarasikan dan **tidak
+pernah dibaca**: setiap artikel sampai awal tape dihitung "mendahului". Gate Fase 3
+`check_catalyst_counts_what_it_labelled` karena itu ditulis ulang atas nama baru dengan
+assertion yang sama banyaknya — bukan dihapus, bukan dilonggarkan.
+
+**Penyimpangan kedua: satu header CORS ditambahkan ke `server.py`.**
+`Access-Control-Allow-Origin: *` dikirim pada setiap balasan `GET`, termasuk penolakan 400
+dan 404. Alasannya permintaan lintas sesi yang disetujui manusia: halaman baca-saja Fase 7
+hidup di asal lain, dan tanpa header itu peramban di sana tidak bisa membaca kartu yang ia
+memang boleh baca. Batasnya dipegang: **satu header**, dan badan balasan tidak disentuh sama
+sekali — `check_bodies_are_the_card_verbatim` dan `check_card_route_matches_the_cli` masih
+hijau, artinya byte kartu dari URL masih sama dengan `card.show()` dan `cli.py`. Gate baru
+`check_cors_header_is_on_every_reply` (5 assertion) menahannya supaya deploy berikutnya tidak
+diam-diam menjatuhkannya.
+
+Apakah ini pelanggaran batas eksekusi 2 ("deploy tidak menambah fitur")? **Menurut saya
+tidak, dan inilah alasannya.** Batas itu melarang lapisan permukaan mengubah apa yang
+dihitung — katanya sendiri, "setiap baris logika baru yang muncul karena sekalian sudah di
+Cloud Run ditolak di review". Header ini tidak menghitung apa pun, tidak menyentuh satu
+`Figure`, dan tidak mengubah satu byte kartu. Ia juga tidak memperluas apa yang dapat
+dibaca: kartu ini publik, tanpa kunci, tanpa autentikasi, dan `curl` sudah bisa mengambilnya
+dari mana saja hari ini — `*` hanya memberi peramban izin yang sama yang sudah dimiliki
+setiap klien HTTP lain. Yang berubah adalah satu baris protokol transport pada permukaan yang
+sudah publik. Batas itu tetap utuh: `./run.sh pilar` tidak tahu header ini ada.
+
+**Yang tidak dikerjakan, dan disebut terang-terangan: B14 tetap terbuka.** Berkas fase ini
+punya enam tugas dan B14 tidak salah satunya. Menutupnya berarti satu formatter bersama untuk
+headline dan figure di keempat pilar — perubahan yang menyentuh keempat modul dan tidak
+diminta satu kriteria keluar pun. Saya menaikkannya ke orkestrator alih-alih mengerjakannya
+diam-diam di bawah nama "Fase 4".
+
+**Blocker baru: B18.** `katalis-api-00003-r8l` masih image Fase 3, jadi kriteria keluar 8
+belum dapat dipenuhi dari sini dan Fase 4 berhenti di `[~]`. Perintah deploynya ada di
+`TODO.md`. Satu koreksi pada baris lama sekaligus: `origin/master` sudah di `29660a1`, jadi
+klaim "commit lokal belum di-push" di edisi-edisi sebelumnya sudah tidak benar — yang tersisa
+dari B17 hanya handshake OAuth-nya, bukan push-nya.
+
+Diperiksa dan dicatat: tiga suntikan kriteria 6 masih ditolak (`invented`, `duplicated`,
+`hidden` → ketiganya `exit would be 1`), membalik satu label LIFE di `classify.CASES`
+membuat gate tugas 6 merah (`4/5`), dan `reconcile_usage.py` masih mencetak portal **377**
+dengan `exit=1` seperti sebelumnya — nomornya tidak bergerak karena Fase 4 tidak memanggil
+API sama sekali.

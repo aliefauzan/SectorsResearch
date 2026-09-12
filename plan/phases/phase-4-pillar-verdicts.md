@@ -4,11 +4,11 @@
 
 | | |
 | --- | --- |
-| Keadaan | `[ ]` belum dikerjakan |
+| Keadaan | `[~]` dikerjakan 2026-09-12; hanya kriteria keluar 8 yang tersisa dan ia pekerjaan manusia |
 | Menutup | PRD §9 baris 6 (S2 + D2) |
-| Menunggu | Fase 3 |
-| Kredit Sectors | **0** |
-| Keadaan hari ini | `./run.sh pilar LIFE 2026-09-01` → pilar Katalis `[tenang]` |
+| Menunggu | Fase 3 — sudah `[x]` |
+| Kredit Sectors | **0** — nol dibelanjakan |
+| Keadaan hari ini | `./run.sh pilar LIFE 2026-09-01` → `BERGERAK TANPA PENJELASAN`, pilar Katalis `[bahaya]`. Revisi Cloud Run yang melayani masih image Fase 3 — B18 |
 
 ## Kenapa ini defect yang paling mahal untuk dibiarkan
 
@@ -30,53 +30,55 @@ Setelah fase ini, kartu yang sama harus berbunyi **BERGERAK TANPA PENJELASAN**.
 
 ## Tugas
 
-- [ ] **1. Sambungkan `classify.py` ke `catalyst()`.**
+- [x] **1. Sambungkan `classify.py` ke `catalyst()`.**
       `artikel_mendahului` berhenti menghitung "artikel di dalam jendela lookback" dan mulai
       menghitung "artikel di dalam jendela lookback yang berlabel `menjelaskan`". Artikel
       berlabel `melaporkan` dihitung terpisah dan tetap tercetak — menyembunyikannya akan membuat
       kartu tampak seperti tidak ada berita sama sekali, dan itu juga salah.
 
-- [ ] **2. Status pilar Katalis mengikuti label, bukan jumlah.**
+- [x] **2. Status pilar Katalis mengikuti label, bukan jumlah.**
       Gerak yang besar tanpa satu artikel `menjelaskan` pun adalah `bahaya`, bukan `tenang`.
       Gerak yang besar dengan artikel `menjelaskan` yang mendahuluinya adalah `tenang` atau
       `waspada`, tergantung materialitasnya.
 
-- [ ] **3. Verdict kartu memuat `BERGERAK TANPA PENJELASAN`.**
+- [x] **3. Verdict kartu memuat `BERGERAK TANPA PENJELASAN`.**
       Ini verdict, bukan modifier: ia menggantikan atau mendampingi `SATU PEMBELI DOMINAN`
       menurut aturan verdict yang sudah ada, dan ia lahir dari ambang, bukan dari kalimat.
 
-- [ ] **4. `Figure` baru untuk jumlah per label.**
+- [x] **4. `Figure` baru untuk jumlah per label.**
       `artikel_menjelaskan`, `artikel_melaporkan`. Endpoint `/v2/news/`, fields
       `(timestamp, symbols, title, tags, dimension)`. Angka lama `artikel_mendahului` dan
       `artikel_mengikuti` tetap ada atau diganti — yang tidak boleh adalah angka yang berubah
       artinya tanpa berubah nama.
 
-- [ ] **5. Kartu menyebut asal ambang.**
+- [x] **5. Kartu menyebut asal ambang.**
       PRD §7 dan §13 menyatakan kartu menyebut `shipped` atau `learned`; hari ini ia tidak
       menyebut keduanya, dan audit internal memotong nilai untuk itu.
       `thresholds.provenance()` sudah mengembalikan pasangannya; yang hilang hanya penulisannya.
 
-- [ ] **6. Gate: kartu LIFE adalah kasus uji, bukan ilustrasi.**
+- [x] **6. Gate: kartu LIFE adalah kasus uji, bukan ilustrasi.**
       Satu check yang membangun kartu `("recorded", "LIFE", "2026-09-01")` dan gagal bila verdict
       bukan `BERGERAK TANPA PENJELASAN` atau bila pilar Katalis bukan `bahaya`. Ini adalah gate
       yang mengubah kartu LIFE dari bukti naratif menjadi bukti yang diuji tiap build.
 
 ## Kriteria keluar
 
-- [ ] **1.** `cd src/katalis && ./run.sh test; echo $?` mencetak `Semua gate hijau.` dan `0`, dengan
+- [x] **1.** `cd src/katalis && ./run.sh test; echo $?` mencetak `Semua gate hijau.` dan `0`, dengan
       jumlah assertion lebih besar daripada pada akhir Fase 3 dan nol skip.
-- [ ] **2.** `./run.sh pilar LIFE 2026-09-01` mencetak `BERGERAK TANPA PENJELASAN` di headline dan pilar
+- [x] **2.** `./run.sh pilar LIFE 2026-09-01` mencetak `BERGERAK TANPA PENJELASAN` di headline dan pilar
       Katalis berstatus `bahaya`.
-- [ ] **3.** Kartu yang sama mencetak `artikel_menjelaskan 0` dan `artikel_melaporkan` bukan nol, dengan
+- [x] **3.** Kartu yang sama mencetak `artikel_menjelaskan 0` dan `artikel_melaporkan` bukan nol, dengan
       pasangan `(endpoint, field)`-nya di blok FIELD.
-- [ ] **4.** Kartu yang sama mencetak asal setiap ambang yang dipakainya sebagai `shipped` atau
+- [x] **4.** Kartu yang sama mencetak asal setiap ambang yang dipakainya sebagai `shipped` atau
       `learned`.
-- [ ] **5.** Mengubah label salah satu artikel LIFE di tabel kasus Fase 3 membuat gate baru pada tugas 6
+- [x] **5.** Mengubah label salah satu artikel LIFE di tabel kasus Fase 3 membuat gate baru pada tugas 6
       berubah merah.
-- [ ] **6.** Skrip suntikan Fase 0 kriteria 2 tetap mencetak kegagalan untuk ketiga suntikan.
-- [ ] **7.** `cd research/harness && python3 src/reconcile_usage.py` mencetak total portal yang sama
+- [x] **6.** Skrip suntikan Fase 0 kriteria 2 tetap mencetak kegagalan untuk ketiga suntikan.
+- [x] **7.** `cd research/harness && python3 src/reconcile_usage.py` mencetak total portal yang sama
       persis dengan pada akhir Fase 3.
-- [ ] **8.** `PROGRESS.md` di-commit bersama kode, dan revisi Cloud Run baru melayani perubahan ini.
+- [~] **8.** `PROGRESS.md` di-commit bersama kode, dan revisi Cloud Run baru melayani perubahan ini.
+      **Terpenuhi separuh: commit ada; revisinya belum — B18, pekerjaan manusia.** `katalis-api-00003-r8l` masih image Fase 3, jadi URL publik belum menjawab
+      `BERGERAK TANPA PENJELASAN` dan belum membawa header CORS.
 
 ## Bobot demo
 
