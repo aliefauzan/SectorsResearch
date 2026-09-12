@@ -1,0 +1,180 @@
+{
+  "ok": true,
+  "source": "recorded",
+  "symbols": [
+    {
+      "broker_dates": [],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 2720,
+      "last_volume": 40544500,
+      "name": "Alamtri Resources Indonesia Tbk",
+      "profile": {
+        "daily_close_change": -0.0072992700729927,
+        "last_close_price": 2720,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 78337344224000,
+        "sector": "Energy",
+        "sub_sector": "Oil, Gas & Coal"
+      },
+      "symbol": "ADRO"
+    },
+    {
+      "broker_dates": [],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 3120,
+      "last_volume": 83943400,
+      "name": "Aneka Tambang Tbk.",
+      "profile": {
+        "daily_close_change": -0.00952380952380952,
+        "last_close_price": 3120,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 74975985942000,
+        "sector": "Basic Materials",
+        "sub_sector": "Basic Materials"
+      },
+      "symbol": "ANTM"
+    },
+    {
+      "broker_dates": [],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 4900,
+      "last_volume": 50573000,
+      "name": "Astra International Tbk",
+      "profile": {
+        "daily_close_change": -0.0297029702970297,
+        "last_close_price": 4900,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 198369410386000,
+        "sector": "Industrials",
+        "sub_sector": "Multi-sector Holdings"
+      },
+      "symbol": "ASII"
+    },
+    {
+      "broker_dates": [
+        "2026-08-03",
+        "2026-08-04",
+        "2026-08-05",
+        "2026-08-06",
+        "2026-08-07",
+        "2026-08-10",
+        "2026-08-11",
+        "2026-08-12",
+        "2026-08-13",
+        "2026-08-14"
+      ],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 6700,
+      "last_volume": 93923500,
+      "name": "PT Bank Central Asia Tbk.",
+      "profile": {
+        "daily_close_change": -0.011070110701107,
+        "last_close_price": 6700,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 817683406650000,
+        "sector": "Financials",
+        "sub_sector": "Banks"
+      },
+      "symbol": "BBCA"
+    },
+    {
+      "broker_dates": [],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 3390,
+      "last_volume": 152173900,
+      "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+      "profile": {
+        "daily_close_change": -0.00586510263929619,
+        "last_close_price": 3390,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 508647165279930,
+        "sector": "Financials",
+        "sub_sector": "Banks"
+      },
+      "symbol": "BBRI"
+    },
+    {
+      "broker_dates": [],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 4420,
+      "last_volume": 95373200,
+      "name": "PT Bank Mandiri (Persero) Tbk",
+      "profile": {
+        "daily_close_change": -0.00896860986547085,
+        "last_close_price": 4420,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 408407999982320,
+        "sector": "Financials",
+        "sub_sector": "Banks"
+      },
+      "symbol": "BMRI"
+    },
+    {
+      "broker_dates": [],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 3360,
+      "last_volume": 21631700,
+      "name": "PT Barito Renewables Energy Tbk.",
+      "profile": {
+        "daily_close_change": 0.0,
+        "last_close_price": 3360,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 449521699200000,
+        "sector": "Infrastructures",
+        "sub_sector": "Utilities"
+      },
+      "symbol": "BREN"
+    },
+    {
+      "broker_dates": [
+        "2026-08-24",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-03"
+      ],
+      "days": 62,
+      "first": "2026-06-12",
+      "last": "2026-09-10",
+      "last_close": 12725,
+      "last_volume": 0,
+      "name": "PT MSIG Life Insurance Indonesia Tbk",
+      "profile": null,
+      "symbol": "LIFE"
+    },
+    {
+      "broker_dates": [],
+      "days": 20,
+      "first": "2026-08-06",
+      "last": "2026-09-04",
+      "last_close": 2610,
+      "last_volume": 84953700,
+      "name": "PT Telkom Indonesia (Persero) Tbk",
+      "profile": {
+        "daily_close_change": 0.00384615384615385,
+        "last_close_price": 2610,
+        "latest_close_date": "2026-09-04",
+        "market_cap": 258552385326000,
+        "sector": "Infrastructures",
+        "sub_sector": "Telecommunication"
+      },
+      "symbol": "TLKM"
+    }
+  ]
+}

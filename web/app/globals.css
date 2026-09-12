@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------
+   Catalyst — warm monochrome, ink on bone.
+   Colour is spent only where it carries meaning: evidence state,
+   conflict, and the four semantic washes. Everything else is paper.
+   --------------------------------------------------------------- */
+
+:root {
+  --background: #f7f6f3;
+  --surface: #ffffff;
+  --surface-raised: #fbfbfa;
+  --foreground: #1f1e1c;
+  --muted: #f0efea;
+  --muted-foreground: #6b6862;
+  --border: #e7e5e0;
+  --hairline: rgb(31 30 28 / 0.07);
+
+  --primary: #1a1917;
+  --primary-foreground: #ffffff;
+  --accent: #1f6c9f;
+  --accent-soft: #e1f3fe;
+
+  --attention: #8a5c00;
+  --attention-foreground: #8a5c00;
+  --attention-soft: #fbf3db;
+  --positive: #346538;
+  --positive-soft: #edf3ec;
+  --danger: #9f2f2d;
+  --danger-soft: #fdebec;
+
+  --ring: #1f6c9f;
+  --chart-grid: #e7e5e0;
+  --chart-line: #1a1917;
+  --chart-bar: #c8a55c;
+
+  color-scheme: light;
+}
+
+.dark {
+  --background: #141311;
+  --surface: #1b1a17;
+  --surface-raised: #211f1c;
+  --foreground: #edebe6;
+  --muted: #26241f;
+  --muted-foreground: #a3a09a;
+  --border: #302e29;
+  --hairline: rgb(237 235 230 / 0.10);
+
+  --primary: #efede8;
+  --primary-foreground: #141311;
+  --accent: #8fcbee;
+  --accent-soft: #15303f;
+
+  --attention: #e5be66;
+  --attention-foreground: #e5be66;
+  --attention-soft: #332a15;
+  --positive: #93ce9a;
+  --positive-soft: #1b2e1e;
+  --danger: #f0a3a0;
+  --danger-soft: #3a1f20;
+
+  --ring: #8fcbee;
+  --chart-grid: #302e29;
+  --chart-line: #efede8;
+  --chart-bar: #a98a4a;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-hairline: var(--hairline);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-attention: var(--attention);
+  --color-attention-foreground: var(--attention-foreground);
+  --color-attention-soft: var(--attention-soft);
+  --color-positive: var(--positive);
+  --color-positive-soft: var(--positive-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-ring: var(--ring);
+
+  --font-serif: var(--font-editorial);
+
+  --radius-panel: 12px;
+  --radius-control: 6px;
+
+  --shadow-panel: 0 0 0 0 rgb(0 0 0 / 0);
+  --shadow-lift: 0 2px 8px rgb(20 19 17 / 0.04);
+  --shadow-overlay: 0 1px 2px rgb(20 19 17 / 0.04), 0 16px 48px rgb(20 19 17 / 0.12);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--background); scroll-padding-top: 96px; }
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select, textarea { font: inherit; }
+a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+::selection { background: color-mix(in srgb, var(--accent) 22%, transparent); }
+
+/* Editorial headings: serif, tight, never shouty. */
+.editorial {
+  font-family: var(--font-editorial), "Lyon Text", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+/* Meta lines: mono, small caps, wide. Used for eyebrows and timestamps. */
+.meta {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.font-mono, code, pre, kbd, .tabular { font-variant-numeric: tabular-nums; }
+.chart-grid { stroke: var(--chart-grid); }
+
+kbd {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--background);
+  padding: 1px 5px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  line-height: 16px;
+  color: var(--muted-foreground);
+}
+
+/* Ambient depth: two slow warm light spots behind the app, never on a
+   scrolling container, never interactive. */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  width: 720px;
+  height: 720px;
+  border-radius: 9999px;
+  will-change: transform;
+}
+.ambient::before {
+  top: -280px;
+  left: -180px;
+  background: radial-gradient(circle, rgb(201 168 96 / 0.14), transparent 62%);
+  animation: drift-a 34s ease-in-out infinite alternate;
+}
+.ambient::after {
+  bottom: -320px;
+  right: -220px;
+  background: radial-gradient(circle, rgb(31 108 159 / 0.10), transparent 62%);
+  animation: drift-b 42s ease-in-out infinite alternate;
+}
+.dark .ambient::before { background: radial-gradient(circle, rgb(201 168 96 / 0.09), transparent 62%); }
+.dark .ambient::after { background: radial-gradient(circle, rgb(143 203 238 / 0.07), transparent 62%); }
+
+@keyframes drift-a {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(70px, 50px, 0) scale(1.12); }
+}
+@keyframes drift-b {
+  from { transform: translate3d(0, 0, 0) scale(1.08); }
+  to { transform: translate3d(-60px, -40px, 0) scale(1); }
+}
+
+/* Scroll entry. A block arms itself only after JS confirms it can reveal it
+   again and only when it starts below the fold, so content on screen at load
+   renders settled and a failed script leaves everything readable. */
+[data-reveal="armed"] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--reveal-index, 0) * 80ms);
+}
+
+/* Staggered entry for grid and list children, riding on the parent block's
+   reveal so it too only plays for content arriving from below the fold. No
+   wrapper elements, no per-item inline delays. */
+[data-reveal="shown"] .cascade > * { animation: rise 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+[data-reveal="shown"] .cascade > *:nth-child(1) { animation-delay: 0ms; }
+[data-reveal="shown"] .cascade > *:nth-child(2) { animation-delay: 70ms; }
+[data-reveal="shown"] .cascade > *:nth-child(3) { animation-delay: 140ms; }
+[data-reveal="shown"] .cascade > *:nth-child(4) { animation-delay: 210ms; }
+[data-reveal="shown"] .cascade > *:nth-child(5) { animation-delay: 280ms; }
+[data-reveal="shown"] .cascade > *:nth-child(6) { animation-delay: 350ms; }
+[data-reveal="shown"] .cascade > *:nth-child(n + 7) { animation-delay: 400ms; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* React Flow chrome, brought onto the same 1px-rule system as everything
+   else so the canvas does not read as a third-party widget. */
+.react-flow__controls {
+  box-shadow: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.react-flow__controls-button {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  fill: var(--muted-foreground);
+  width: 26px;
+  height: 26px;
+}
+.react-flow__controls-button:last-child { border-bottom: none; }
+.react-flow__controls-button:hover { background: var(--muted); fill: var(--foreground); }
+.react-flow__attribution {
+  background: transparent;
+  font-size: 9px;
+}
+.react-flow__attribution a { color: var(--muted-foreground); }
+
+.skip-link {
+  position: fixed; left: 16px; top: 10px; z-index: 1000; transform: translateY(-180%);
+  border-radius: var(--radius-control); background: var(--primary); color: var(--primary-foreground);
+  padding: 10px 16px; font-size: 13px; font-weight: 500;
+}
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal="armed"] { opacity: 1; transform: none; }
+}
+
+@media print {
+  aside, nav, .demo-banner, .ambient, .no-print { display: none !important; }
+  main { padding: 0 !important; }
+}

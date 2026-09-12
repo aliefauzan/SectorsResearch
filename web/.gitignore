@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.vercel/
+.playwright-cli/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*-review.png
+.DS_Store
+.vercel
+.vitest/

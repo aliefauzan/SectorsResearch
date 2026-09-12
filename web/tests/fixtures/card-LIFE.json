@@ -1,0 +1,1561 @@
+{
+  "as_of": "2026-09-01",
+  "broker": {
+    "buyers": null,
+    "foreignFlow": null,
+    "freeFloatShares": null,
+    "netForeign": null,
+    "referencePrice": null,
+    "rows": [
+      {
+        "avg_buy_price": 9025.0,
+        "buy_idr": 902500,
+        "code": "AK",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "UBS Sekuritas Indonesia",
+        "net_idr": 902500,
+        "net_lot": 1,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": 8850.0,
+        "buy_idr": 3540000,
+        "code": "AZ",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Sucor Sekuritas",
+        "net_idr": 70000,
+        "net_lot": 0,
+        "origin_inline": null,
+        "sell_idr": 3470000
+      },
+      {
+        "avg_buy_price": 8783.3333,
+        "buy_idr": 2635000,
+        "code": "BQ",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "Korea Investment and Sekuritas Indonesia",
+        "net_idr": -5000,
+        "net_lot": 0,
+        "origin_inline": null,
+        "sell_idr": 2640000
+      },
+      {
+        "avg_buy_price": 8676.3158,
+        "buy_idr": 49455000,
+        "code": "CC",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Mandiri Sekuritas",
+        "net_idr": -58762500,
+        "net_lot": -67,
+        "origin_inline": null,
+        "sell_idr": 108217500
+      },
+      {
+        "avg_buy_price": 8577.7778,
+        "buy_idr": 7720000,
+        "code": "CP",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "KB Valbury Sekuritas",
+        "net_idr": 2512500,
+        "net_lot": 3,
+        "origin_inline": null,
+        "sell_idr": 5207500
+      },
+      {
+        "avg_buy_price": 8816.3793,
+        "buy_idr": 25567500,
+        "code": "DH",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Sinarmas Sekuritas",
+        "net_idr": -28245000,
+        "net_lot": -33,
+        "origin_inline": null,
+        "sell_idr": 53812500
+      },
+      {
+        "avg_buy_price": 8764.2857,
+        "buy_idr": 12270000,
+        "code": "DR",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "RHB Sekuritas Indonesia",
+        "net_idr": -4935000,
+        "net_lot": -6,
+        "origin_inline": null,
+        "sell_idr": 17205000
+      },
+      {
+        "avg_buy_price": 8756.25,
+        "buy_idr": 3502500,
+        "code": "EP",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "MNC Sekuritas",
+        "net_idr": -21385000,
+        "net_lot": -25,
+        "origin_inline": null,
+        "sell_idr": 24887500
+      },
+      {
+        "avg_buy_price": 8425.0,
+        "buy_idr": 1685000,
+        "code": "GR",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Panin Sekuritas TBK.",
+        "net_idr": 1685000,
+        "net_lot": 2,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": 8750.0,
+        "buy_idr": 8750000,
+        "code": "HP",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Henan Putihrai Sekuritas",
+        "net_idr": 8750000,
+        "net_lot": 10,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": 8797.5,
+        "buy_idr": 8797500,
+        "code": "KK",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "Phillip Sekuritas Indonesia",
+        "net_idr": -28892500,
+        "net_lot": -33,
+        "origin_inline": null,
+        "sell_idr": 37690000
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "NI",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "BNI Sekuritas",
+        "net_idr": -2620000,
+        "net_lot": -3,
+        "origin_inline": null,
+        "sell_idr": 2620000
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "OD",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "BRI Danareksa Sekuritas",
+        "net_idr": -8017500,
+        "net_lot": -9,
+        "origin_inline": null,
+        "sell_idr": 8017500
+      },
+      {
+        "avg_buy_price": 8503.1046,
+        "buy_idr": 130097500,
+        "code": "PD",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Indo Premier Sekuritas",
+        "net_idr": 117362500,
+        "net_lot": 138,
+        "origin_inline": null,
+        "sell_idr": 12735000
+      },
+      {
+        "avg_buy_price": 8530.0,
+        "buy_idr": 17060000,
+        "code": "SQ",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "BCA Sekuritas",
+        "net_idr": 14450000,
+        "net_lot": 17,
+        "origin_inline": null,
+        "sell_idr": 2610000
+      },
+      {
+        "avg_buy_price": 8975.0,
+        "buy_idr": 1795000,
+        "code": "XA",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "NH Korindo Sekuritas Indonesia",
+        "net_idr": -7100000,
+        "net_lot": -8,
+        "origin_inline": null,
+        "sell_idr": 8895000
+      },
+      {
+        "avg_buy_price": 8704.9065,
+        "buy_idr": 93142500,
+        "code": "XC",
+        "cohort": "retail",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Ajaib Sekuritas Asia",
+        "net_idr": -18427500,
+        "net_lot": -22,
+        "origin_inline": null,
+        "sell_idr": 111570000
+      },
+      {
+        "avg_buy_price": 8748.5813,
+        "buy_idr": 693762500,
+        "code": "XL",
+        "cohort": "retail",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Stockbit Sekuritas Digital",
+        "net_idr": 29912500,
+        "net_lot": 31,
+        "origin_inline": null,
+        "sell_idr": 663850000
+      },
+      {
+        "avg_buy_price": 8725.0,
+        "buy_idr": 5235000,
+        "code": "YB",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": false,
+        "name": "Yakin Bertumbuh Sekuritas",
+        "net_idr": -7030000,
+        "net_lot": -8,
+        "origin_inline": null,
+        "sell_idr": 12265000
+      },
+      {
+        "avg_buy_price": 8641.8675,
+        "buy_idr": 71727500,
+        "code": "YP",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "Mirae Asset Sekuritas Indonesia",
+        "net_idr": 27475000,
+        "net_lot": 32,
+        "origin_inline": null,
+        "sell_idr": 44252500
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "YU",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-28",
+        "is_foreign": true,
+        "name": "CGS International Sekuritas Indonesia",
+        "net_idr": -17700000,
+        "net_lot": -20,
+        "origin_inline": null,
+        "sell_idr": 17700000
+      },
+      {
+        "avg_buy_price": 9600.0,
+        "buy_idr": 19200000,
+        "code": "AG",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "Kiwoom Sekuritas Indonesia",
+        "net_idr": 15240000,
+        "net_lot": 16,
+        "origin_inline": null,
+        "sell_idr": 3960000
+      },
+      {
+        "avg_buy_price": 9321.7391,
+        "buy_idr": 21440000,
+        "code": "AI",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "Kay Hian Sekuritas",
+        "net_idr": 21440000,
+        "net_lot": 23,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "AZ",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Sucor Sekuritas",
+        "net_idr": -18510000,
+        "net_lot": -19,
+        "origin_inline": null,
+        "sell_idr": 18510000
+      },
+      {
+        "avg_buy_price": 9576.3889,
+        "buy_idr": 17237500,
+        "code": "BQ",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "Korea Investment and Sekuritas Indonesia",
+        "net_idr": -220000,
+        "net_lot": 0,
+        "origin_inline": null,
+        "sell_idr": 17457500
+      },
+      {
+        "avg_buy_price": 9805.1724,
+        "buy_idr": 142175000,
+        "code": "CC",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Mandiri Sekuritas",
+        "net_idr": -6757500,
+        "net_lot": -6,
+        "origin_inline": null,
+        "sell_idr": 148932500
+      },
+      {
+        "avg_buy_price": 9121.7949,
+        "buy_idr": 35575000,
+        "code": "CP",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "KB Valbury Sekuritas",
+        "net_idr": -18030000,
+        "net_lot": -18,
+        "origin_inline": null,
+        "sell_idr": 53605000
+      },
+      {
+        "avg_buy_price": 9406.25,
+        "buy_idr": 3762500,
+        "code": "DH",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Sinarmas Sekuritas",
+        "net_idr": -67500,
+        "net_lot": 0,
+        "origin_inline": null,
+        "sell_idr": 3830000
+      },
+      {
+        "avg_buy_price": 9743.3333,
+        "buy_idr": 14615000,
+        "code": "DR",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "RHB Sekuritas Indonesia",
+        "net_idr": 14615000,
+        "net_lot": 15,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": 9901.1905,
+        "buy_idr": 20792500,
+        "code": "EP",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "MNC Sekuritas",
+        "net_idr": 300000,
+        "net_lot": 0,
+        "origin_inline": null,
+        "sell_idr": 20492500
+      },
+      {
+        "avg_buy_price": 9747.3684,
+        "buy_idr": 37040000,
+        "code": "KK",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "Phillip Sekuritas Indonesia",
+        "net_idr": 13755000,
+        "net_lot": 13,
+        "origin_inline": null,
+        "sell_idr": 23285000
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "LG",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Trimegah Sekuritas Indonesia TBK.",
+        "net_idr": -915000,
+        "net_lot": -1,
+        "origin_inline": null,
+        "sell_idr": 915000
+      },
+      {
+        "avg_buy_price": 9925.0,
+        "buy_idr": 5955000,
+        "code": "MG",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Semesta Indovest Sekuritas",
+        "net_idr": 5955000,
+        "net_lot": 6,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": 9909.375,
+        "buy_idr": 31710000,
+        "code": "NI",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "BNI Sekuritas",
+        "net_idr": -8790000,
+        "net_lot": -9,
+        "origin_inline": null,
+        "sell_idr": 40500000
+      },
+      {
+        "avg_buy_price": 9775.0,
+        "buy_idr": 977500,
+        "code": "OD",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "BRI Danareksa Sekuritas",
+        "net_idr": -11060000,
+        "net_lot": -11,
+        "origin_inline": null,
+        "sell_idr": 12037500
+      },
+      {
+        "avg_buy_price": 9555.5085,
+        "buy_idr": 56377500,
+        "code": "PD",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Indo Premier Sekuritas",
+        "net_idr": -95647500,
+        "net_lot": -108,
+        "origin_inline": null,
+        "sell_idr": 152025000
+      },
+      {
+        "avg_buy_price": 9381.25,
+        "buy_idr": 11257500,
+        "code": "SQ",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "BCA Sekuritas",
+        "net_idr": -7475000,
+        "net_lot": -7,
+        "origin_inline": null,
+        "sell_idr": 18732500
+      },
+      {
+        "avg_buy_price": 9662.5,
+        "buy_idr": 19325000,
+        "code": "XA",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "NH Korindo Sekuritas Indonesia",
+        "net_idr": -2075000,
+        "net_lot": -2,
+        "origin_inline": null,
+        "sell_idr": 21400000
+      },
+      {
+        "avg_buy_price": 9634.6751,
+        "buy_idr": 341067500,
+        "code": "XC",
+        "cohort": "retail",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Ajaib Sekuritas Asia",
+        "net_idr": -36185000,
+        "net_lot": -32,
+        "origin_inline": null,
+        "sell_idr": 377252500
+      },
+      {
+        "avg_buy_price": 9684.2649,
+        "buy_idr": 797015000,
+        "code": "XL",
+        "cohort": "retail",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Stockbit Sekuritas Digital",
+        "net_idr": 135447500,
+        "net_lot": 140,
+        "origin_inline": null,
+        "sell_idr": 661567500
+      },
+      {
+        "avg_buy_price": 9742.8571,
+        "buy_idr": 13640000,
+        "code": "YB",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": false,
+        "name": "Yakin Bertumbuh Sekuritas",
+        "net_idr": 10712500,
+        "net_lot": 11,
+        "origin_inline": null,
+        "sell_idr": 2927500
+      },
+      {
+        "avg_buy_price": 9225.7812,
+        "buy_idr": 88567500,
+        "code": "YP",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "Mirae Asset Sekuritas Indonesia",
+        "net_idr": -12677500,
+        "net_lot": -12,
+        "origin_inline": null,
+        "sell_idr": 101245000
+      },
+      {
+        "avg_buy_price": 9450.0,
+        "buy_idr": 945000,
+        "code": "ZP",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-08-31",
+        "is_foreign": true,
+        "name": "Maybank Sekuritas Indonesia",
+        "net_idr": 945000,
+        "net_lot": 1,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "AT",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Phintraco Sekuritas",
+        "net_idr": -25565000,
+        "net_lot": -23,
+        "origin_inline": null,
+        "sell_idr": 25565000
+      },
+      {
+        "avg_buy_price": 10925.0,
+        "buy_idr": 3277500,
+        "code": "AZ",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Sucor Sekuritas",
+        "net_idr": 3277500,
+        "net_lot": 3,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": 10996.2871,
+        "buy_idr": 111062500,
+        "code": "BQ",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": true,
+        "name": "Korea Investment and Sekuritas Indonesia",
+        "net_idr": 106762500,
+        "net_lot": 97,
+        "origin_inline": null,
+        "sell_idr": 4300000
+      },
+      {
+        "avg_buy_price": 11207.6923,
+        "buy_idr": 101990000,
+        "code": "CC",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Mandiri Sekuritas",
+        "net_idr": -58462500,
+        "net_lot": -55,
+        "origin_inline": null,
+        "sell_idr": 160452500
+      },
+      {
+        "avg_buy_price": 11146.4286,
+        "buy_idr": 7802500,
+        "code": "CP",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": true,
+        "name": "KB Valbury Sekuritas",
+        "net_idr": -4522500,
+        "net_lot": -4,
+        "origin_inline": null,
+        "sell_idr": 12325000
+      },
+      {
+        "avg_buy_price": 11296.1538,
+        "buy_idr": 44055000,
+        "code": "DH",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Sinarmas Sekuritas",
+        "net_idr": 18720000,
+        "net_lot": 16,
+        "origin_inline": null,
+        "sell_idr": 25335000
+      },
+      {
+        "avg_buy_price": 11208.3333,
+        "buy_idr": 10087500,
+        "code": "DR",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": true,
+        "name": "RHB Sekuritas Indonesia",
+        "net_idr": -6295000,
+        "net_lot": -6,
+        "origin_inline": null,
+        "sell_idr": 16382500
+      },
+      {
+        "avg_buy_price": 10242.5,
+        "buy_idr": 10242500,
+        "code": "EP",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "MNC Sekuritas",
+        "net_idr": -2840000,
+        "net_lot": -2,
+        "origin_inline": null,
+        "sell_idr": 13082500
+      },
+      {
+        "avg_buy_price": 10891.6667,
+        "buy_idr": 3267500,
+        "code": "KK",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": true,
+        "name": "Phillip Sekuritas Indonesia",
+        "net_idr": -40877500,
+        "net_lot": -36,
+        "origin_inline": null,
+        "sell_idr": 44145000
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "LG",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Trimegah Sekuritas Indonesia TBK.",
+        "net_idr": -90800000,
+        "net_lot": -80,
+        "origin_inline": null,
+        "sell_idr": 90800000
+      },
+      {
+        "avg_buy_price": null,
+        "buy_idr": 0,
+        "code": "MG",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Semesta Indovest Sekuritas",
+        "net_idr": -6485000,
+        "net_lot": -6,
+        "origin_inline": null,
+        "sell_idr": 6485000
+      },
+      {
+        "avg_buy_price": 11075.0,
+        "buy_idr": 1107500,
+        "code": "NI",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "BNI Sekuritas",
+        "net_idr": -1150000,
+        "net_lot": -1,
+        "origin_inline": null,
+        "sell_idr": 2257500
+      },
+      {
+        "avg_buy_price": 11350.0,
+        "buy_idr": 9080000,
+        "code": "OD",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "BRI Danareksa Sekuritas",
+        "net_idr": -2042500,
+        "net_lot": -2,
+        "origin_inline": null,
+        "sell_idr": 11122500
+      },
+      {
+        "avg_buy_price": 11273.2759,
+        "buy_idr": 32692500,
+        "code": "PD",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Indo Premier Sekuritas",
+        "net_idr": -1767500,
+        "net_lot": -2,
+        "origin_inline": null,
+        "sell_idr": 34460000
+      },
+      {
+        "avg_buy_price": 11352.1739,
+        "buy_idr": 26110000,
+        "code": "SQ",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "BCA Sekuritas",
+        "net_idr": 3047500,
+        "net_lot": 2,
+        "origin_inline": null,
+        "sell_idr": 23062500
+      },
+      {
+        "avg_buy_price": 11235.7143,
+        "buy_idr": 15730000,
+        "code": "XA",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": true,
+        "name": "NH Korindo Sekuritas Indonesia",
+        "net_idr": 15730000,
+        "net_lot": 14,
+        "origin_inline": null,
+        "sell_idr": 0
+      },
+      {
+        "avg_buy_price": 11144.1882,
+        "buy_idr": 302007500,
+        "code": "XC",
+        "cohort": "retail",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Ajaib Sekuritas Asia",
+        "net_idr": -76567500,
+        "net_lot": -67,
+        "origin_inline": null,
+        "sell_idr": 378575000
+      },
+      {
+        "avg_buy_price": 11086.6232,
+        "buy_idr": 679610000,
+        "code": "XL",
+        "cohort": "retail",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Stockbit Sekuritas Digital",
+        "net_idr": 192947500,
+        "net_lot": 172,
+        "origin_inline": null,
+        "sell_idr": 486662500
+      },
+      {
+        "avg_buy_price": 10819.3548,
+        "buy_idr": 33540000,
+        "code": "YB",
+        "cohort": "mixed",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": false,
+        "name": "Yakin Bertumbuh Sekuritas",
+        "net_idr": -6912500,
+        "net_lot": -6,
+        "origin_inline": null,
+        "sell_idr": 40452500
+      },
+      {
+        "avg_buy_price": 10959.375,
+        "buy_idr": 35070000,
+        "code": "YP",
+        "cohort": "institutional",
+        "cohort_inline": null,
+        "date": "2026-09-01",
+        "is_foreign": true,
+        "name": "Mirae Asset Sekuritas Indonesia",
+        "net_idr": -16197500,
+        "net_lot": -14,
+        "origin_inline": null,
+        "sell_idr": 51267500
+      }
+    ],
+    "sellers": null,
+    "totalMarketValue": null,
+    "window": [
+      "2026-08-28",
+      "2026-08-31",
+      "2026-09-01"
+    ]
+  },
+  "classifier": "rules",
+  "decision": {
+    "modifiers": [
+      "FLOAT TIPIS · free float 7.5%"
+    ],
+    "verdict": "BERGERAK TANPA PENJELASAN",
+    "window": [
+      "2026-08-28",
+      "2026-08-31",
+      "2026-09-01"
+    ]
+  },
+  "free_float": 0.075,
+  "modifier_metrics": [],
+  "name": "PT MSIG Life Insurance Indonesia Tbk",
+  "ok": true,
+  "pillars": [
+    {
+      "calculation": null,
+      "headline": "Satu broker, XL (Stockbit Sekuritas Digital), mengambil 65% dari net beli. Pembeli efektif: 2.2.",
+      "metrics": [
+        {
+          "endpoint": "/v2/broker-summary/{symbol}/",
+          "fields": [
+            "summary[].broker_code"
+          ],
+          "name": "broker_puncak",
+          "note": "Stockbit Sekuritas Digital",
+          "unit": "",
+          "value": "XL"
+        },
+        {
+          "endpoint": "/v2/broker-summary/{symbol}/",
+          "fields": [
+            "summary[].nval"
+          ],
+          "name": "pangsa_puncak",
+          "note": "",
+          "unit": "fraksi",
+          "value": 0.6470944118616443
+        },
+        {
+          "endpoint": "/v2/broker-summary/{symbol}/",
+          "fields": [
+            "summary[].nval"
+          ],
+          "name": "hhi",
+          "note": "",
+          "unit": "",
+          "value": 0.4600747263241346
+        },
+        {
+          "endpoint": "/v2/broker-summary/{symbol}/",
+          "fields": [
+            "summary[].nval"
+          ],
+          "name": "pembeli_efektif",
+          "note": "",
+          "unit": "",
+          "value": 2.1735599518576336
+        },
+        {
+          "endpoint": "/v2/brokers/",
+          "fields": [
+            "code",
+            "is_foreign"
+          ],
+          "name": "pangsa_asing",
+          "note": "",
+          "unit": "fraksi",
+          "value": 0.27993516549504033
+        },
+        {
+          "endpoint": "/v2/brokers/",
+          "fields": [
+            "code",
+            "cohort"
+          ],
+          "name": "pangsa_kohort",
+          "note": "",
+          "unit": "",
+          "value": {
+            "institutional": 0.27993516549504033,
+            "mixed": 0.07297042264331541,
+            "retail": 0.6470944118616443
+          }
+        },
+        {
+          "endpoint": "/v2/broker-summary/{symbol}/",
+          "fields": [
+            "summary[].nval"
+          ],
+          "name": "net_beli_total",
+          "note": "",
+          "unit": "IDR",
+          "value": 553717500
+        },
+        {
+          "endpoint": "/v2/broker-summary/{symbol}/",
+          "fields": [
+            "summary[].bavg_per_share"
+          ],
+          "name": "harga_masuk_puncak",
+          "note": "",
+          "unit": "IDR",
+          "value": 9839.823133333333
+        },
+        {
+          "endpoint": "/v2/broker-summary/{symbol}/",
+          "fields": [
+            "summary[].nlot",
+            "financials.historical_financials[].outstanding_shares",
+            "free_float"
+          ],
+          "name": "float_terserap",
+          "note": "",
+          "unit": "fraksi float",
+          "value": 0.00034666666666666667
+        }
+      ],
+      "name": "konsentrasi",
+      "status": "bahaya",
+      "unchecked": []
+    },
+    {
+      "calculation": null,
+      "headline": "Volume puncak 4.2 z di atas kebiasaannya sendiri (45 hari bursa).",
+      "metrics": [
+        {
+          "endpoint": "/v2/daily/{symbol}/",
+          "fields": [
+            "volume"
+          ],
+          "name": "volume_puncak",
+          "note": "",
+          "unit": "lembar",
+          "value": 174100
+        },
+        {
+          "endpoint": "/v2/daily/{symbol}/",
+          "fields": [
+            "volume"
+          ],
+          "name": "volume_z",
+          "note": "baseline 45 hari bursa",
+          "unit": "",
+          "value": 4.178731084636094
+        }
+      ],
+      "name": "volume",
+      "status": "bahaya",
+      "unchecked": []
+    },
+    {
+      "calculation": null,
+      "headline": "Naik +41.7% dalam 3 hari bursa; +41.1% setelah gerak IHSG dikeluarkan, 16.7 z.",
+      "metrics": [
+        {
+          "endpoint": "/v2/daily/{symbol}/",
+          "fields": [
+            "close"
+          ],
+          "name": "return_kumulatif",
+          "note": "",
+          "unit": "fraksi",
+          "value": 0.4171779141104293
+        },
+        {
+          "endpoint": "/v2/daily/{symbol}/",
+          "fields": [
+            "close"
+          ],
+          "name": "return_residual",
+          "note": "setelah gerak IHSG dikeluarkan",
+          "unit": "fraksi",
+          "value": 0.41134988626295993
+        },
+        {
+          "endpoint": "/v2/index-daily/ihsg/",
+          "fields": [
+            "price"
+          ],
+          "name": "beta_efektif",
+          "note": "0,7*beta_OLS + 0,3",
+          "unit": "",
+          "value": 0.3457630952057654
+        },
+        {
+          "endpoint": "/v2/daily/{symbol}/",
+          "fields": [
+            "close"
+          ],
+          "name": "residual_z",
+          "note": "baseline 45 hari bursa",
+          "unit": "",
+          "value": 16.748031582287485
+        }
+      ],
+      "name": "momentum",
+      "status": "bahaya",
+      "unchecked": []
+    },
+    {
+      "calculation": null,
+      "headline": "Tidak ada kabar yang menjelaskan: 1 dari 1 artikel terbaru hanya melaporkan harga yang sudah bergerak.",
+      "metrics": [
+        {
+          "endpoint": "/v2/news/",
+          "fields": [
+            "timestamp",
+            "symbols",
+            "title",
+            "tags",
+            "dimension"
+          ],
+          "name": "artikel_menjelaskan",
+          "note": "artikel berlabel menjelaskan dalam 7 hari terakhir",
+          "unit": "",
+          "value": 0
+        },
+        {
+          "endpoint": "/v2/news/",
+          "fields": [
+            "timestamp",
+            "symbols",
+            "title",
+            "tags",
+            "dimension"
+          ],
+          "name": "artikel_melaporkan",
+          "note": "artikel berlabel melaporkan dalam 7 hari terakhir",
+          "unit": "",
+          "value": 1
+        },
+        {
+          "endpoint": "/v2/filings/",
+          "fields": [
+            "holder_name",
+            "share_percentage_transaction",
+            "transaction_type"
+          ],
+          "name": "filing_material",
+          "note": "",
+          "unit": "",
+          "value": 0
+        },
+        {
+          "endpoint": "/v2/company/corporate-actions/{symbol}/",
+          "fields": [
+            "action_type",
+            "date"
+          ],
+          "name": "aksi_korporasi",
+          "note": "",
+          "unit": "",
+          "value": 0
+        }
+      ],
+      "name": "katalis",
+      "status": "bahaya",
+      "unchecked": [
+        "cuaca dan fase iklim — belum dipasang",
+        "kanal di luar cakupan kami: Telegram, Stockbit, X"
+      ]
+    }
+  ],
+  "price_series": [
+    {
+      "close": 5950,
+      "date": "2026-06-29",
+      "ihsg": 5820.79,
+      "volume": 200
+    },
+    {
+      "close": 5825,
+      "date": "2026-06-30",
+      "ihsg": 5643.194,
+      "volume": 1000
+    },
+    {
+      "close": 5775,
+      "date": "2026-07-01",
+      "ihsg": 5695.116,
+      "volume": 1500
+    },
+    {
+      "close": 5675,
+      "date": "2026-07-02",
+      "ihsg": 5744.556,
+      "volume": 1300
+    },
+    {
+      "close": 5825,
+      "date": "2026-07-03",
+      "ihsg": 5875.78,
+      "volume": 2200
+    },
+    {
+      "close": 5875,
+      "date": "2026-07-06",
+      "ihsg": 5916.07,
+      "volume": 500
+    },
+    {
+      "close": 5975,
+      "date": "2026-07-07",
+      "ihsg": 5986.497,
+      "volume": 100
+    },
+    {
+      "close": 5975,
+      "date": "2026-07-08",
+      "ihsg": 5873.372,
+      "volume": 0
+    },
+    {
+      "close": 5975,
+      "date": "2026-07-09",
+      "ihsg": 5912.442,
+      "volume": 300
+    },
+    {
+      "close": 5875,
+      "date": "2026-07-10",
+      "ihsg": 5924.36,
+      "volume": 2000
+    },
+    {
+      "close": 5975,
+      "date": "2026-07-13",
+      "ihsg": 6037.842,
+      "volume": 8500
+    },
+    {
+      "close": 5750,
+      "date": "2026-07-14",
+      "ihsg": 6039.521,
+      "volume": 4100
+    },
+    {
+      "close": 5850,
+      "date": "2026-07-15",
+      "ihsg": 6041.972,
+      "volume": 1800
+    },
+    {
+      "close": 5750,
+      "date": "2026-07-16",
+      "ihsg": 6108.209,
+      "volume": 1000
+    },
+    {
+      "close": 5825,
+      "date": "2026-07-17",
+      "ihsg": 6175.535,
+      "volume": 2300
+    },
+    {
+      "close": 5725,
+      "date": "2026-07-20",
+      "ihsg": 6231.78,
+      "volume": 1500
+    },
+    {
+      "close": 5700,
+      "date": "2026-07-21",
+      "ihsg": 6340.02,
+      "volume": 1800
+    },
+    {
+      "close": 5700,
+      "date": "2026-07-22",
+      "ihsg": 6334.476,
+      "volume": 3000
+    },
+    {
+      "close": 5775,
+      "date": "2026-07-23",
+      "ihsg": 6315.311,
+      "volume": 1900
+    },
+    {
+      "close": 5575,
+      "date": "2026-07-24",
+      "ihsg": 6196.43,
+      "volume": 200
+    },
+    {
+      "close": 5600,
+      "date": "2026-07-27",
+      "ihsg": 6185.783,
+      "volume": 1300
+    },
+    {
+      "close": 5700,
+      "date": "2026-07-28",
+      "ihsg": 6130.588,
+      "volume": 4100
+    },
+    {
+      "close": 5775,
+      "date": "2026-07-29",
+      "ihsg": 6091.386,
+      "volume": 3500
+    },
+    {
+      "close": 5850,
+      "date": "2026-07-30",
+      "ihsg": 6186.363,
+      "volume": 7000
+    },
+    {
+      "close": 5800,
+      "date": "2026-07-31",
+      "ihsg": 6236.126,
+      "volume": 200
+    },
+    {
+      "close": 5800,
+      "date": "2026-08-03",
+      "ihsg": 6234.497,
+      "volume": 1400
+    },
+    {
+      "close": 5975,
+      "date": "2026-08-04",
+      "ihsg": 6319.613,
+      "volume": 400
+    },
+    {
+      "close": 5825,
+      "date": "2026-08-05",
+      "ihsg": 6351.139,
+      "volume": 6900
+    },
+    {
+      "close": 5875,
+      "date": "2026-08-06",
+      "ihsg": 6343.711,
+      "volume": 1600
+    },
+    {
+      "close": 5875,
+      "date": "2026-08-07",
+      "ihsg": 6409.654,
+      "volume": 1700
+    },
+    {
+      "close": 5700,
+      "date": "2026-08-10",
+      "ihsg": 6365.374,
+      "volume": 700
+    },
+    {
+      "close": 5925,
+      "date": "2026-08-11",
+      "ihsg": 6267.88,
+      "volume": 15600
+    },
+    {
+      "close": 5850,
+      "date": "2026-08-12",
+      "ihsg": 6373.849,
+      "volume": 4300
+    },
+    {
+      "close": 5950,
+      "date": "2026-08-13",
+      "ihsg": 6301.765,
+      "volume": 1700
+    },
+    {
+      "close": 5850,
+      "date": "2026-08-14",
+      "ihsg": 6401.888,
+      "volume": 200
+    },
+    {
+      "close": 5700,
+      "date": "2026-08-18",
+      "ihsg": 6449.83,
+      "volume": 2600
+    },
+    {
+      "close": 5725,
+      "date": "2026-08-19",
+      "ihsg": 6394.125,
+      "volume": 20300
+    },
+    {
+      "close": 5675,
+      "date": "2026-08-20",
+      "ihsg": 6501.585,
+      "volume": 5400
+    },
+    {
+      "close": 5675,
+      "date": "2026-08-21",
+      "ihsg": 6525.69,
+      "volume": 2600
+    },
+    {
+      "close": 5675,
+      "date": "2026-08-24",
+      "ihsg": 6501.667,
+      "volume": 6000
+    },
+    {
+      "close": 6800,
+      "date": "2026-08-26",
+      "ihsg": 6405.685,
+      "volume": 58100
+    },
+    {
+      "close": 8150,
+      "date": "2026-08-27",
+      "ihsg": 6521.75,
+      "volume": 205700
+    },
+    {
+      "close": 8450,
+      "date": "2026-08-28",
+      "ihsg": 6518.121,
+      "volume": 130700
+    },
+    {
+      "close": 9925,
+      "date": "2026-08-31",
+      "ihsg": 6525.478,
+      "volume": 174100
+    },
+    {
+      "close": 11550,
+      "date": "2026-09-01",
+      "ihsg": 6599.943,
+      "volume": 128500
+    }
+  ],
+  "profile": null,
+  "shares_outstanding": {
+    "exact": true,
+    "fields": [
+      "financials.historical_financials[].outstanding_shares"
+    ],
+    "value": 2100000000
+  },
+  "source": "recorded",
+  "symbol": "LIFE",
+  "thresholds": [
+    {
+      "name": "event_window",
+      "origin": "shipped",
+      "value": 3
+    },
+    {
+      "name": "thin_float",
+      "origin": "shipped",
+      "value": 0.15
+    },
+    {
+      "name": "float_absorbed",
+      "origin": "shipped",
+      "value": 0.01
+    },
+    {
+      "name": "foreign_share_in",
+      "origin": "shipped",
+      "value": 0.6
+    },
+    {
+      "name": "top1_dominant",
+      "origin": "shipped",
+      "value": 0.4
+    },
+    {
+      "name": "neff_dominant",
+      "origin": "shipped",
+      "value": 3.0
+    },
+    {
+      "name": "neff_crowd",
+      "origin": "shipped",
+      "value": 8.0
+    },
+    {
+      "name": "baseline_days",
+      "origin": "shipped",
+      "value": 45
+    },
+    {
+      "name": "volume_mad_floor",
+      "origin": "shipped",
+      "value": 0.05
+    },
+    {
+      "name": "volume_z",
+      "origin": "shipped",
+      "value": 2.0
+    },
+    {
+      "name": "dead_day_share",
+      "origin": "shipped",
+      "value": 0.4
+    },
+    {
+      "name": "beta_shrink",
+      "origin": "shipped",
+      "value": 0.7
+    },
+    {
+      "name": "price_mad_floor",
+      "origin": "shipped",
+      "value": 0.005
+    },
+    {
+      "name": "resid_z",
+      "origin": "shipped",
+      "value": 2.5
+    },
+    {
+      "name": "news_lookback_days",
+      "origin": "shipped",
+      "value": 7
+    },
+    {
+      "name": "filing_material_pct",
+      "origin": "shipped",
+      "value": 0.5
+    }
+  ],
+  "unavailable": [
+    {
+      "path": "broker.buyers",
+      "reason": "Net per broker across the window is computed inside pillars.concentration() and never returned by it. Rebuilding that sum here would be new market arithmetic on the surface; broker.rows carries the per-day payload verbatim instead."
+    },
+    {
+      "path": "broker.sellers",
+      "reason": "Same as broker.buyers: the seller side is not produced by any function this product exposes."
+    },
+    {
+      "path": "broker.netForeign",
+      "reason": "A single foreign-flow total over the window is not produced anywhere. broker.foreignFlow carries the per-date net_foreign_inflow rows verbatim, and it is null on a source that never recorded /v2/foreign-flow/."
+    },
+    {
+      "path": "broker.totalMarketValue",
+      "reason": "Gross traded value across the window is not computed by any module here."
+    },
+    {
+      "path": "broker.freeFloatShares",
+      "reason": "free_float x shares_outstanding is arithmetic pillars.concentration() does internally and does not expose. Both inputs are served verbatim under free_float and shares_outstanding, with their own citations."
+    },
+    {
+      "path": "broker.referencePrice",
+      "reason": "No payload on either data layer carries an IDX reference price, and nothing in the product derives one."
+    },
+    {
+      "path": "pillars[].calculation",
+      "reason": "The pillars emit a headline and cited figures, never a formula/substitution pair. The nearest honest thing is the figure's own note, served under pillars[].metrics[].note."
+    }
+  ]
+}

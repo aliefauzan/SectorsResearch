@@ -18,6 +18,7 @@ __pycache__/
 venv/
 .pytest_cache/
 node_modules/
+.next/
 
 # Logs and local scratch
 *.log
