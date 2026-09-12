@@ -106,12 +106,12 @@
 (function () {
   "use strict";
 
-  // The deployment this page serves. There is no proxy and no rewrite in front of it: the
-  // browser talks to this URL, and to nothing else. `?api=https://…` overrides it, which is
-  // only useful for rehearsing against a stand-in; in the shipped page the default is the call.
-  var DEFAULT_API = "https://katalis-api-ibyebnreqa-et.a.run.app";
+  // The one deployment this page serves. There is no proxy, no rewrite, and no way in from the
+  // URL: the endpoint is fixed here, so a crafted link cannot point the page at a host that is
+  // not this API and paint something that looks like a KATALIS card but is not one.
+  var API = "https://katalis-api-ibyebnreqa-et.a.run.app";
+
   var params = new URLSearchParams(window.location.search);
-  var API = (params.get("api") || DEFAULT_API).replace(/\/+$/, "");
 
   var symbolEl = document.getElementById("symbol");
   var dateEl = document.getElementById("date");
@@ -164,7 +164,6 @@
     symbolEl.value = symbol;
     dateEl.value = date;
     var query = new URLSearchParams({ symbol: symbol, date: date });
-    if (API !== DEFAULT_API) query.set("api", API);
     window.history.replaceState(null, "", "?" + query.toString());
     render(symbol, date);
   }

@@ -65,14 +65,21 @@ python3 -m http.server 8000 --directory web       # halaman
 python3 /tmp/corsh/cors_proxy.py 8899             # tiruan header CORS, sekali pakai
 ```
 
-Yang terbukti, lewat Chromium:
+Latihan itu memakai build sementara yang masih menerima `?api=` untuk menunjuk tiruan itu.
+Override tersebut **sudah dihapus** dari halaman yang dikirim, karena review keamanan
+menandainya sebagai open-fetch / content-spoofing: tautan `?api=<host lain>` bisa membuat
+halaman menarik teks dari host yang bukan API kita dan menampilkannya sebagai kartu KATALIS.
+Yang dikirim sekarang memakai satu alamat tetap, dan latihan di bawah karena itu tidak dapat
+diulang apa adanya pada berkas yang sekarang.
+
+Yang terbukti, lewat Chromium (build sementara):
 
 | Yang diperiksa | Hasil |
 | --- | --- |
-| `?api=http://127.0.0.1:8899&symbol=LIFE&date=2026-09-01` | `HTTP 200 · LIFE 2026-09-01`, kartu 2.687 karakter, `font-family` monospace, byte badan sama dengan `curl` (3.199 byte) |
-| `…&date=2026-09-04` | `HTTP 200 · LIFE 2026-09-04`, 2.794 karakter, byte sama dengan `curl` (3.308 byte) |
+| Life `2026-09-01` lewat tiruan | `HTTP 200 · LIFE 2026-09-01`, kartu 2.687 karakter, `font-family` monospace, byte badan sama dengan `curl` (3.199 byte) |
+| Life `2026-09-04` lewat tiruan | `HTTP 200 · LIFE 2026-09-04`, 2.794 karakter, byte sama dengan `curl` (3.308 byte) |
 | preset `LIFE 2026-09-10 (ditolak)` | badan ditampilkan apa adanya: `LIFE 2026-09-10: TIDAK DINILAI — tanpa_broker: no broker summary on this source for this symbol` — alasan bernama dari API, bukan halaman kosong |
-| `http://127.0.0.1:8000/` tanpa `?api=` (lintas asal langsung ke Cloud Run) | `tidak dapat menjangkau katalis-api` + `Failed to fetch` + alamat yang dipanggil — jalur gagal yang jujur, dan bukti kenapa CORS dibutuhkan |
+| `http://127.0.0.1:8000/` apa adanya (lintas asal langsung ke Cloud Run) | `tidak dapat menjangkau katalis-api` + `Failed to fetch` + alamat yang dipanggil — jalur gagal yang jujur, dan bukti kenapa CORS dibutuhkan |
 
 ```bash
 curl -s http://127.0.0.1:8000/ -o /tmp/served.html -w 'HTTP %{http_code}  %{size_download} bytes\n'
