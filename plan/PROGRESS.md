@@ -15,7 +15,8 @@ punya perintahnya sendiri.
 | --- | --- |
 | Fase berjalan | **Fase 0 dan Fase 1 selesai.** Dua dari delapan |
 | Fase berikutnya | Fase 2 · Pipeline deploy |
-| Revisi Cloud Run yang melayani | **tidak ada** — Fase 2 belum dimulai |
+| Revisi Cloud Run yang melayani | **tidak ada** — Fase 2 baru pada langkah infrastrukturnya |
+| Proyek GCP | `ada-sectors-508410`, penagihan `018056-334B67-5DE9C0` ("free trial"), enam API aktif, `SECTORS_API_KEY` di Secret Manager v1 |
 | Gate | **98 assertion hijau di 19 fungsi check**, exit 0 (naik dari 73) |
 | Kredit terpakai | **377 terkonfirmasi portal** (ekspor `2026-09-05`), **≈384** termasuk tujuh baris ledger setelah tanggal ekspor |
 | Kredit tersisa | **≈616 dari 1.000** |
@@ -67,7 +68,7 @@ ls research/evidence/usage-log/                     # lima CSV, semuanya 2026-09
 | **Sekadar diklaim** (tidak dapat diverifikasi dari repo) | |
 | --- | --- |
 | Onboarding sectors.app tiap peserta sebelum baris kode pertama | Blocker B7 |
-| Tanggal mulai trial GCP dan pemilik akun penagihan | `gcloud billing accounts list` menunjukkan dua akun OPEN; mana yang dipakai belum diputuskan |
+| Tanggal mulai trial GCP dan sisa harinya | Proyek tertaut ke akun "free trial"; `gcloud` tidak mengekspos tanggal mulainya. Lihat `TODO.md` |
 | Tiga commit lokal (`6128b4b`, `7121ef2`, `83fe2a1`) belum di-push ke origin | `git log origin/master..HEAD --oneline`; lihat `TODO.md` |
 | Kredit tersisa **tepat** ≈616 | Ekspor portal terakhir bertanggal `2026-09-05`; belanja sesudahnya hanya diketahui dari ledger. Blocker B3 |
 
@@ -222,3 +223,24 @@ Batas tanggal itu dicatat sebagai B16.
 Fase 0 dan Fase 1 keduanya `[x]` dalam bentuk yang lebih lemah yang `plan/README.md` izinkan
 sebelum Fase 2: selesai dan ter-commit, terverifikasi lokal. Keduanya harus dinaikkan ke bentuk
 penuh begitu ada revisi Cloud Run yang melayani.
+
+### 2026-09-12 — infrastruktur Fase 2 disiapkan
+
+Bukan Fase 2 itu sendiri; hanya langkah-langkah konsol yang mendahuluinya, dijalankan atas
+permintaan langsung.
+
+`ada-sectors-508410` ("ADA sectors") ditautkan ke penagihan dan enam API diaktifkan: `run`,
+`cloudbuild`, `artifactregistry`, `secretmanager`, `storage`, `cloudscheduler`.
+`SECTORS_API_KEY` dimuat ke Secret Manager sebagai satu versi aktif, dialirkan dari `.env`
+lewat pipa sehingga nilainya tidak pernah tercetak; kecocokannya diperiksa dengan SHA-256, dan
+`.env` tetap tidak terlacak git.
+
+Satu penyimpangan dari pilihan yang diminta: akun penagihan yang dipilih,
+`01B951-232B54-4E1D9A` ("My Billing Account"), menolak dua kali dengan
+`FAILED_PRECONDITION: Cloud billing quota exceeded` — bukan karena jumlah proyek, karena hanya
+tiga yang tertaut di sana. Proyek ditautkan ke `018056-334B67-5DE9C0` ("free trial") sebagai
+gantinya, yang berarti biaya keluar dari kredit welcome alih-alih dari kartu. Memindahkannya
+kembali adalah satu perintah, dan barisnya ada di `TODO.md`.
+
+`cloudbuild.yaml`, `Dockerfile`, `.dockerignore` dan `server.py` belum ditulis — Fase 2 belum
+dimulai. Nol kredit Sectors dibelanjakan.

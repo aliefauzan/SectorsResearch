@@ -27,8 +27,16 @@ Diperiksa 2026-09-12 dengan perintah, bukan ingatan.
 - [x] **`gcloud` terpasang dan terautentikasi** (SDK 567.0.0), dan ada **dua akun penagihan
       berstatus OPEN**: `018056-334B67-5DE9C0` ("free trial") dan `01B951-232B54-4E1D9A`
       ("My Billing Account"). `gcloud billing accounts list`.
-- [x] **Belum ada proyek GCP untuk KATALIS.**
-      `gcloud projects list --filter="projectId:*katalis*"` → `Listed 0 items.`
+- [x] **Proyek GCP ada dan tertagih: `ada-sectors-508410` ("ADA sectors").**
+      Ditautkan 2026-09-12 ke akun penagihan **`018056-334B67-5DE9C0` ("free trial")**.
+      `gcloud billing projects describe ada-sectors-508410` → `billingEnabled: True`.
+- [x] **Enam API aktif** di proyek itu: `run`, `cloudbuild`, `artifactregistry`,
+      `secretmanager`, `storage`, `cloudscheduler`.
+      `gcloud services list --enabled --project=ada-sectors-508410`
+- [x] **`SECTORS_API_KEY` ada di Secret Manager**, satu versi aktif, dimuat dari
+      `/Users/af/dumpProject/Sectors/.env` lewat pipa — nilainya tidak pernah dicetak.
+      Diverifikasi dengan membandingkan SHA-256 nilai lokal dan nilai tersimpan: cocok.
+      `gcloud secrets versions list SECTORS_API_KEY --project=ada-sectors-508410` → `1 enabled`
 
 ---
 
@@ -57,33 +65,34 @@ Diperiksa 2026-09-12 dengan perintah, bukan ingatan.
 Saya bisa menulis `server.py`, `Dockerfile`, `.dockerignore` dan `cloudbuild.yaml` tanpa satu
 klik pun. Yang di bawah ini yang tidak bisa.
 
-- [ ] **Buat proyek GCP dan tautkan ke akun penagihan.**
-      Pakai akun penagihan yang OPEN. `$300` trial adalah bantalan, bukan rencana — seluruh
-      komponen §12 dipilih agar muat Always Free.
-      ```bash
-      gcloud projects create katalis-idx --name="KATALIS"
-      gcloud billing projects link katalis-idx --billing-account=018056-334B67-5DE9C0
-      gcloud config set project katalis-idx
-      ```
-      *Catat di `PROGRESS.md`:* project id, akun penagihan mana, dan **tanggal trial mulai** —
-      §10 PRD membuka pertanyaan itu dan ia belum terjawab.
+- [x] **Proyek GCP dibuat dan ditautkan ke akun penagihan.** `ada-sectors-508410`,
+      akun `018056-334B67-5DE9C0` ("free trial"), `billingEnabled: True`.
+      **Bukan akun yang dipilih lebih dulu:** `01B951-232B54-4E1D9A` ("My Billing Account")
+      ditolak dua kali dengan `FAILED_PRECONDITION: Cloud billing quota exceeded`, dan
+      penolakan itu bukan soal jumlah proyek — hanya tiga proyek tertaut di sana. Jalan
+      keluarnya adalah mengajukan kenaikan kuota lewat tautan yang Google berikan, lalu
+      menautkan ulang.
 
-- [ ] **Aktifkan API yang dipakai.**
+- [ ] **Putuskan apakah akun penagihan tetap "free trial" atau dipindah ke "My Billing
+      Account".** Selama di trial, biaya keluar dari kredit welcome, bukan dari kartu — itu
+      posisi yang lebih aman dan itulah yang berlaku sekarang. Memindahkannya nanti adalah
+      satu perintah:
       ```bash
-      gcloud services enable run.googleapis.com cloudbuild.googleapis.com \
-        artifactregistry.googleapis.com secretmanager.googleapis.com \
-        storage.googleapis.com cloudscheduler.googleapis.com
+      gcloud billing projects link ada-sectors-508410 --billing-account=01B951-232B54-4E1D9A
       ```
 
-- [ ] **Masukkan `SECTORS_API_KEY` ke Secret Manager.** Satu secret, satu versi aktif.
-      **Jangan** mengirimkan nilai kuncinya ke saya, dan jangan menempelkannya ke chat mana
-      pun — kerjakan baris ini sendiri, dari `.env` yang sudah ada di mesin Anda.
-      ```bash
-      gcloud secrets create SECTORS_API_KEY --replication-policy=automatic
-      # lalu, dari shell Anda sendiri:
-      #   printf '%s' "<nilai dari .env>" | gcloud secrets versions add SECTORS_API_KEY --data-file=-
-      ```
-      Batas Always Free: 6 versi secret aktif per bulan. Dua secret masih jauh di bawahnya.
+- [ ] **Catat tanggal trial mulai dan sisa harinya.** §10 PRD membuka pertanyaan ini dan ia
+      masih terbuka; `gcloud` tidak mengekspos tanggalnya, jadi bacalah di konsol Billing →
+      Overview. Ia menentukan kapan D10 (panggilan model) berhenti gratis.
+
+- [x] **Enam API diaktifkan** di `ada-sectors-508410`: `run`, `cloudbuild`,
+      `artifactregistry`, `secretmanager`, `storage`, `cloudscheduler`.
+
+- [x] **`SECTORS_API_KEY` dimuat ke Secret Manager**, satu secret, satu versi aktif.
+      Nilainya dialirkan dari `.env` ke `gcloud secrets versions add --data-file=-` lewat pipa,
+      jadi ia tidak pernah tercetak, tidak pernah masuk argumen perintah, dan tidak pernah
+      masuk riwayat percakapan. Diverifikasi dengan membandingkan SHA-256 nilai lokal dan
+      nilai tersimpan — cocok. Batas Always Free: 6 versi secret aktif per bulan.
 
 - [ ] **Sambungkan repo GitHub ke Cloud Build** (konsol, sekali, butuh OAuth GitHub).
       Cloud Build → Triggers → Connect repository → `aliefauzan/SectorsResearch`.
