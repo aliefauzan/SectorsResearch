@@ -3,8 +3,14 @@
 The HTTP surface: the same card, over a URL instead of a terminal.
 
     GET /card/{symbol}?date=YYYY-MM-DD    the four-pillar card, as plain text
+    GET /json/card/{symbol}?date=…        the same figures, as JSON (see jsonapi.py)
+    GET /json/symbols                     what this source can serve, as JSON
     GET /healthz                          200, one word, no data read
     GET /health                           the same, under a name Cloud Run lets through
+
+The JSON routes are a view over `jsonapi.py`, which projects figures `pillars.py` already
+built. This module still computes nothing: it validates the two shapes, hands them over, and
+serves the bytes it gets back.
 
 `/healthz` is the name the plan asks for and it answers correctly inside the container — but
 behind Cloud Run it never arrives: Google's front end answers `/healthz` itself with its own
@@ -31,6 +37,7 @@ from urllib.parse import parse_qs, unquote, urlparse
 
 import card
 import classify
+import jsonapi
 import pillars as P
 
 #: The two shapes a caller may put in a path or a query. Anything else is a 400 and is
@@ -45,7 +52,9 @@ PORT = int(os.environ.get("PORT", "8080"))
 USAGE = (
     "KATALIS — satu simbol masuk, empat pilar keluar.\n"
     "\n"
-    "  GET /card/{symbol}?date=YYYY-MM-DD\n"
+    "  GET /card/{symbol}?date=YYYY-MM-DD     kartu empat pilar, teks\n"
+    "  GET /json/card/{symbol}?date=…         angka yang sama, JSON\n"
+    "  GET /json/symbols                      apa yang bisa dilayani\n"
     "  GET /health\n"
     "\n"
     "Bukan nasihat investasi.\n"
@@ -65,6 +74,29 @@ def card_text(symbol, as_of=None, source=None):
     return code, out.getvalue(), err.getvalue()
 
 
+def json_route(parts, query):
+    """The JSON routes' validation, in one place, sharing the two shapes above.
+
+    Kept in this module rather than in `jsonapi.py` because the symbol and date patterns are
+    the same ones the text route refuses with — a scanner that cannot reach the card must not
+    reach the JSON either, and two copies of a regex is how one of them drifts.
+    """
+    if parts == ["json", "symbols"]:
+        return jsonapi.symbols_response(SOURCE)
+    if len(parts) == 3 and parts[1] == "card":
+        symbol = unquote(parts[2])
+        if not SYMBOL.match(symbol):
+            return jsonapi.bad_request("simbol tidak berbentuk simbol")
+        dates = parse_qs(query).get("date", [])
+        if len(dates) > 1:
+            return jsonapi.bad_request("satu tanggal, bukan dua")
+        as_of = dates[0] if dates else None
+        if as_of is not None and not DATE.match(as_of):
+            return jsonapi.bad_request("tanggal harus YYYY-MM-DD")
+        return jsonapi.card_response(symbol, as_of, SOURCE)
+    return jsonapi.not_found("tidak ada rute itu")
+
+
 def route(method, path, query):
     """(status, content_type, body) for one request. Pure: no socket, no global state."""
     if method != "GET":
@@ -74,6 +106,8 @@ def route(method, path, query):
     if path in ("/", ""):
         return 200, "text/plain; charset=utf-8", USAGE
     parts = [p for p in path.split("/") if p]
+    if parts[:1] == ["json"]:
+        return json_route(parts, query)
     if len(parts) != 2 or parts[0] != "card":
         return 404, "text/plain; charset=utf-8", "tidak ada rute itu\n"
     symbol = unquote(parts[1])
@@ -213,7 +247,11 @@ def check_healthz_and_refusals():
                 ("/card/LIFE/lagi", 404),
                 ("/card/%2e%2e%2f%2e%2e%2fetc%2fpasswd", 400),
                 ("/card/LIFE?date=01-09-2026", 400),
-                ("/card/LIFE?date=2026-09-01&date=2026-09-02", 400)]
+                ("/card/LIFE?date=2026-09-01&date=2026-09-02", 400),
+                # The JSON routes refuse the same shapes, because they share the patterns.
+                ("/json", 404), ("/json/card", 404), ("/json/card/LIFE/lagi", 404),
+                ("/json/card/%2e%2e%2f%2e%2e%2fetc%2fpasswd", 400),
+                ("/json/card/LIFE?date=01-09-2026", 400)]
     try:
         for path, want in expected:
             status, _ = _get(port, path)
@@ -263,11 +301,17 @@ def check_cors_header_is_on_every_reply():
     refusals, because a page that cannot read the `400` that says why is a page that cannot
     say why either. Ungated, a later change could drop it silently and Fase 7 would only find
     out from a browser console.
+
+    The JSON routes are probed here too, and that is not an afterthought: they are the routes
+    a Fase 7 browser page would actually fetch, so a header that reached `/card` and not
+    `/json/card` would leave the page unable to read anything but the text card.
     """
     failures = []
     source, symbol, as_of = next(c for c in P.DEMO_CASES if c[0] == SOURCE)
     probes = [f"/card/{symbol}?date={as_of}", "/health", "/healthz", "/nope",
-              "/card/LIFE?date=01-09-2026"]
+              "/card/LIFE?date=01-09-2026",
+              f"/json/card/{symbol}?date={as_of}", "/json/symbols",
+              "/json/card/LIFE?date=01-09-2026"]
     httpd, port = _running()
     try:
         for path in probes:

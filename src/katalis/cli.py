@@ -57,7 +57,7 @@ def cmd_test(args):
     import importlib
     failed = []
     for name in ("thresholds", "sources", "classify", "pillars", "card", "server",
-                 "publish"):
+                 "publish", "jsonapi"):
         print(f"\n{name}.py")
         module = importlib.import_module(name)
         if module.main() != 0:

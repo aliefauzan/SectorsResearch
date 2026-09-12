@@ -504,6 +504,33 @@ def company_name(source, symbol):
     return None
 
 
+#: The six `overview` fields the read surface serves, and the only ones it serves. Each is a
+#: value the company report already carries; none of them is derived, here or downstream.
+PROFILE_FIELDS = ("sector", "sub_sector", "market_cap", "last_close_price",
+                  "latest_close_date", "daily_close_change")
+
+
+def company_profile(source, symbol):
+    """`company_report.overview`, narrowed to the six fields a reader can show, or None.
+
+    None has two causes and the caller cannot tell them apart, which is correct: the source
+    has no company report at all (`synth` never does), or it has one whose `overview` is
+    absent (one recorded symbol is like this). Either way there is nothing to show, and a
+    surface that invented a sector for a symbol that has none would be lying about the same
+    payload it cites.
+    """
+    sym = bare(symbol)
+    try:
+        report = load(source, "company_report", sym)
+    except (NotRecorded, ValueError):
+        return None
+    overview = report.get("overview") if isinstance(report, dict) else None
+    if not isinstance(overview, dict):
+        return None
+    narrowed = {field: overview.get(field) for field in PROFILE_FIELDS}
+    return narrowed if any(value is not None for value in narrowed.values()) else None
+
+
 def shares_outstanding(source, symbol):
     """Shares in issue, as `(value, fields, exact)` — the denominator of float absorbed.
 
